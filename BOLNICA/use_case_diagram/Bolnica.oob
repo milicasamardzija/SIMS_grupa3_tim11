@@ -2864,7 +2864,7 @@ Shadow=0</a:DisplayPreferences>
 </o:UseCaseAssociationSymbol>
 <o:DependencySymbol Id="o80">
 <a:ModificationDate>1615893210</a:ModificationDate>
-<a:Rect>((-1169,-4901), (9134,6243))</a:Rect>
+<a:Rect>((-1169,-4901), (9134,6142))</a:Rect>
 <a:ListOfPoints>((8734,5220),(1351,5220),(1351,-4501))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -2904,7 +2904,7 @@ Shadow=0</a:DisplayPreferences>
 </o:UseCaseAssociationSymbol>
 <o:DependencySymbol Id="o86">
 <a:ModificationDate>1615892701</a:ModificationDate>
-<a:Rect>((-12370,-3280), (390,6189))</a:Rect>
+<a:Rect>((-12370,-3280), (390,6088))</a:Rect>
 <a:ListOfPoints>((-11970,5220),(-2130,5220),(-2130,-2880))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
