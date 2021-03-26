@@ -1,0 +1,15 @@
+M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Hospital.csprojAssemblyReference.cache
+M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\MainWindow.g.cs
+M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\App.g.cs
+M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Hospital_MarkupCompile.cache
+M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Hospital_MarkupCompile.lref
+M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\bin\Debug\Hospital.exe.config
+M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\bin\Debug\Hospital.exe
+M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\bin\Debug\Hospital.pdb
+M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\MainWindow.baml
+M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Hospital.g.resources
+M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Hospital.Properties.Resources.resources
+M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Hospital.csproj.GenerateResource.cache
+M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Hospital.csproj.CoreCompileInputs.cache
+M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Hospital.exe
+M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Hospital.pdb
