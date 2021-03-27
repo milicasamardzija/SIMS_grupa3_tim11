@@ -23,5 +23,17 @@ namespace Hospital
         {
             InitializeComponent();
         }
+        private void izmeniNalogPacijenta(object sender, RoutedEventArgs e)
+        {
+
+            IzmeniNalogPacijenta izmenaNaloga = new IzmeniNalogPacijenta();
+            izmenaNaloga.ShowDialog();
+        }
+
+        private void izbrisiNalogPacijenta(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
     }
 }

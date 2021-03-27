@@ -52,32 +52,21 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#FF00E5E1"
-            Click="KreirajGButton"
+            Click="kreirajGButton"
             Content="Kreiraj guest nalog"
             Cursor="Hand"
             FontFamily="Segoe UI Semilight"
             FontSize="16" />
 
+
         <Button
             Width="160"
             Height="36"
-            Margin="82,196,0,0"
+            Margin="298,196,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#FF00E5E1"
-            Click="IzmeniButton"
-            Content="Izmeni postojeci nalog"
-            Cursor="Hand"
-            FontFamily="Segoe UI Semilight"
-            FontSize="16" />
-        <Button
-            Width="160"
-            Height="36"
-            Margin="562,196,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Background="#FF00E5E1"
-            Click="PrikaziPacijenteButton"
+            Click="prikaziPacijenteButton"
             Content="Prikazi pacijente"
             Cursor="Hand"
             FontFamily="Segoe UI Semilight"
@@ -85,12 +74,24 @@
         <Button
             Width="160"
             Height="36"
-            Margin="318,196,0,0"
+            Margin="54,196,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#FF00E5E1"
-            Click="IzbrisiButton"
+            Click="izbrisiButton"
             Content="Izbrisi nalog"
+            Cursor="Hand"
+            FontFamily="Segoe UI Semilight"
+            FontSize="16" />
+        <Button
+            Width="170"
+            Height="36"
+            Margin="573,196,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="#FF00E5E1"
+            Click="prikaziGPacijenteButton"
+            Content="Prikazi guest pacijente"
             Cursor="Hand"
             FontFamily="Segoe UI Semilight"
             FontSize="16" />

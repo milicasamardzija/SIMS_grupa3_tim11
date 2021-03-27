@@ -36,28 +36,33 @@ namespace Hospital
             KreirajNalog noviNalog = new KreirajNalog();
             noviNalog.ShowDialog();
         }
-        private void KreirajGButton(object sender, RoutedEventArgs e) {
+        private void kreirajGButton(object sender, RoutedEventArgs e) {
 
             KreirajGuestNalog noviGNalog = new KreirajGuestNalog();
             noviGNalog.ShowDialog();
         }
-        private void IzmeniButton(object sender, RoutedEventArgs e)
-        {
+ 
 
-            IzmeniNalogPacijenta izmenaNaloga = new IzmeniNalogPacijenta();
-            izmenaNaloga.ShowDialog();
-        }
-
-        private void IzbrisiButton(object sender, RoutedEventArgs e)
+        private void izbrisiButton(object sender, RoutedEventArgs e)
         {
             IzbrisiNalogPacijenta izbrisiNalog = new IzbrisiNalogPacijenta();
             izbrisiNalog.ShowDialog();
         }
 
-        private void PrikaziPacijenteButton(object sender, RoutedEventArgs e)
+        private void prikaziPacijenteButton(object sender, RoutedEventArgs e)
         {
             PrikaziPacijente prikaz = new PrikaziPacijente();
             prikaz.ShowDialog();
+        }
+        private void izbrisiGButton(object sender, RoutedEventArgs e)
+        {
+          
+        }
+
+        private void prikaziGPacijenteButton(object sender, RoutedEventArgs e)
+        {
+            var prikazG = new PrikaziGuestPacijente();
+            prikazG.ShowDialog();
         }
     }
 }

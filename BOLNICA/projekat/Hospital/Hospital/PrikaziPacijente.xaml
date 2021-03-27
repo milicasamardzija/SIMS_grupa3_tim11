@@ -10,12 +10,8 @@
     Height="450"
     mc:Ignorable="d">
     <Grid Background="#FF78D1D3">
-        <ListBox
-            Width="458"
-            Height="351"
-            Margin="20,59,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+
+
         <Label
             Margin="101,10,0,0"
             HorizontalAlignment="Left"
@@ -23,6 +19,32 @@
             Content="SVI PACIJENTI ZDRAVO BOLNICE"
             FontFamily="Viner Hand ITC"
             FontSize="16" />
+        <DataGrid
+            Width="450"
+            Height="300"
+            Margin="20,50,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
+        <Button
+            Width="75"
+            Margin="72,367,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Izmeni " 
+               Background="#FF00E5E1"
+            Cursor="Hand"
+            FontSize="16"
+            Click="izmeniNalogPacijenta"/>
+        <Button
+            Width="75"
+            Margin="324,367,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="#FF00E5E1"
+            Content="Izbrisi"
+            Cursor="Hand"
+            FontSize="16"
+            Click="izbrisiNalogPacijenta"/>
 
     </Grid>
 </Window>
