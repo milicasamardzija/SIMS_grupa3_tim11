@@ -1,0 +1,28 @@
+﻿<Window
+    x:Class="Hospital.PrikaziPacijente"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Hospital"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="PrikaziPacijente"
+    Width="500"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid Background="#FF78D1D3">
+        <ListBox
+            Width="458"
+            Height="351"
+            Margin="20,59,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
+        <Label
+            Margin="101,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="SVI PACIJENTI ZDRAVO BOLNICE"
+            FontFamily="Viner Hand ITC"
+            FontSize="16" />
+
+    </Grid>
+</Window>

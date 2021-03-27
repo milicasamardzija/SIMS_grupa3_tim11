@@ -55,6 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="IzbrisiNalogPacijenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmeniNalogPacijenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="KreirajGuestNalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -71,6 +79,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="IzbrisiNalogPacijenta.xaml.cs">
+      <DependentUpon>IzbrisiNalogPacijenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzmeniNalogPacijenta.xaml.cs">
+      <DependentUpon>IzmeniNalogPacijenta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="KreirajGuestNalog.xaml.cs">
       <DependentUpon>KreirajGuestNalog.xaml</DependentUpon>
     </Compile>
@@ -82,6 +96,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Nalozi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikaziPacijente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,6 +126,9 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Nalozi.xaml.cs">
       <DependentUpon>Nalozi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrikaziPacijente.xaml.cs">
+      <DependentUpon>PrikaziPacijente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

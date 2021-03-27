@@ -1,12 +1,13 @@
 ﻿<Window
-    x:Class="Hospital.KreirajNalog"
+    x:Class="Hospital.IzmeniNalogPacijenta"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Hospital"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="KreirajNalog"
+    Title="IzmeniNalogPacijenta"
     Width="500"
-    Height="500"
+    Height="600"
     mc:Ignorable="d">
     <Grid Background="#FF78D1D3">
         <Label
@@ -93,6 +94,13 @@
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
 
+        <Label
+            Margin="40,410,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Prikazi zakazane preglede "
+            FontFamily="Segoe UI Semilight"
+            FontSize="15" />
 
         <TextBox
             Width="120"
@@ -159,13 +167,13 @@
             Text=""
             TextWrapping="Wrap" />
         <RadioButton
-            Margin="230,259,0,0"
+            Margin="260,259,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Muski"
             GroupName="pol" />
         <RadioButton
-            Margin="150,260,0,0"
+            Margin="200,260,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Zenski"
@@ -180,7 +188,7 @@
             TextWrapping="Wrap" />
         <Button
             Width="75"
-            Margin="350,433,0,0"
+            Margin="350,490,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#FF00E5E1"
@@ -203,6 +211,12 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
+
+        <DatePicker
+            Margin="260,413,2,2"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" FirstDayOfWeek="Monday" 
+         />
 
     </Grid>
 </Window>

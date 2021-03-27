@@ -34,3 +34,9 @@ D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\KreirajNa
 D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\KreirajNalog.baml
 D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\KreirajGuestNalog.g.cs
 D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\KreirajGuestNalog.baml
+D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\IzmeniNalogPacijenta.g.cs
+D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\IzmeniNalogPacijenta.baml
+D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\IzbrisiNalogPacijenta.g.cs
+D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\IzbrisiNalogPacijenta.baml
+D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\PrikaziPacijente.g.cs
+D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\PrikaziPacijente.baml
