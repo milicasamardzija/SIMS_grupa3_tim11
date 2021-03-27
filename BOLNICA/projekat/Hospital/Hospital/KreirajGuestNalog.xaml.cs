@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Hospital
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for KreirajGuestNalog.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class KreirajGuestNalog : Window
     {
-        public MainWindow()
+        public KreirajGuestNalog()
         {
             InitializeComponent();
-        }
-
-        private void SekretarButton(object sender, RoutedEventArgs e)
-        {
-            Nalozi prozor = new Nalozi();
-            prozor.ShowDialog();
         }
     }
 }

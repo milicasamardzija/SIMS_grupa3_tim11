@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="ZDRAVO BOLNICA" Height="450" Width="800" FontSize="16">
     <Grid>
-        
+        <Button x:Name="Sekretar" Content="SEKRETAR" HorizontalAlignment="Left" Margin="59,164,0,0" VerticalAlignment="Top" Width="75" Cursor="Hand"
+                Click="SekretarButton"/>
+
     </Grid>
 </Window>

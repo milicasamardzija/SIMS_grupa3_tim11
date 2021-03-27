@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\
+D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\
 Hospital
 none
 false
 DEBUG;TRACE
-M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\App.xaml
-11151548125
+D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\App.xaml
+4-953002281
 
-25-111699372
+281854301587
 13-1505183044
-MainWindow.xaml;
+KreirajGuestNalog.xaml;KreirajNalog.xaml;MainWindow.xaml;Nalozi.xaml;
 
-False
+True
 
