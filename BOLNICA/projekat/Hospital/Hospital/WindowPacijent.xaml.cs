@@ -55,7 +55,7 @@ namespace Hospital
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
-           IzmeniTermin it = new IzmeniTermin();
+           IzmeniTermin it = new IzmeniTermin(AppointmentList, (Appointment)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
             it.Show();
         }
 
