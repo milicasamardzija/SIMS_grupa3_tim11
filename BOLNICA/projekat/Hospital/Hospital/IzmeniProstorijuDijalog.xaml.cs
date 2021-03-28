@@ -46,11 +46,6 @@ namespace Hospital
             room.purpose = (Purpose)namenaTxt.SelectedIndex;
             room.capacity = Convert.ToInt16(kapacitetTxt.Text);
 
-          /*  listRoom.ElementAt(index).roomId = Convert.ToInt16(room.roomId);
-            listRoom.ElementAt(index).floor = Convert.ToInt16(room.floor);
-            listRoom.ElementAt(index).purpose = (Purpose)room.purpose;
-            listRoom.ElementAt(index).capacity = Convert.ToInt16(room.capacity);*/
-
             storage.DeleteById(Convert.ToInt16(brojProstorijeTxt.Text));
             storage.Save(room);
 
