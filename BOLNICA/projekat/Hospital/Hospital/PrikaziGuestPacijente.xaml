@@ -22,7 +22,24 @@
             Height="275"
             Margin="29,78,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top"
+            AutoGenerateColumns="True">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="100"
+                    Binding="{Binding name}"
+                    Header="IME" />
+                <DataGridTextColumn
+                    Width="150"
+                    Binding="{Binding surname}"
+                    Header="PREZIME" />
+                <DataGridTextColumn
+                    Width="150"
+                    Binding="{Binding jmbg}"
+                    Header="JMBG" />
+            </DataGrid.Columns>
+        </DataGrid>
         <Button
             Width="89"
             Height="31"
@@ -30,10 +47,10 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#FF00E5E1"
+            Click="izbrisiGuest"
             Content="Izbrisi"
             Cursor="Hand"
-            FontSize="16"
-            Click="izbrisiGuest"/>
+            FontSize="16" />
         <Button
             Width="152"
             Height="31"

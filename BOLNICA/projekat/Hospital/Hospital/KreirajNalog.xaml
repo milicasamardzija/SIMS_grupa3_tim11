@@ -10,6 +10,8 @@
     mc:Ignorable="d">
     <Grid Background="#FF78D1D3">
         <Label
+            Grid.Row="0"
+            Grid.Column="0"
             Margin="40,40,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -17,6 +19,8 @@
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
+            Grid.Row="1"
+            Grid.Column="0"
             Margin="40,70,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -24,12 +28,16 @@
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
+            Grid.Row="2"
+            Grid.Column="0"
             Margin="40,100,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="JMBG"
             FontSize="15" />
         <Label
+            Grid.Row="3"
+            Grid.Column="0"
             Margin="20,130,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -37,6 +45,8 @@
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
+            Grid.Row="4"
+            Grid.Column="0"
             Margin="40,160,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -44,6 +54,8 @@
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
+            Grid.Row="5"
+            Grid.Column="0"
             Margin="40,190,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -51,6 +63,8 @@
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
+            Grid.Row="6"
+            Grid.Column="0"
             Margin="40,220,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -58,6 +72,8 @@
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
+            Grid.Row="7"
+            Grid.Column="0"
             Margin="40,250,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -65,6 +81,8 @@
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
+            Grid.Row="8"
+            Grid.Column="0"
             Margin="30,280,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -72,6 +90,8 @@
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
+            Grid.Row="9"
+            Grid.Column="0"
             Margin="40,310,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -79,6 +99,8 @@
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
+            Grid.Row="10"
+            Grid.Column="0"
             Margin="20,340,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -86,6 +108,8 @@
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
+            Grid.Row="11"
+            Grid.Column="0"
             Margin="40,370,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -95,6 +119,9 @@
 
 
         <TextBox
+            x:Name="imeText"
+            Grid.Row="0"
+            Grid.Column="1"
             Width="120"
             Height="23"
             Margin="200,40,0,0"
@@ -103,6 +130,9 @@
             Text=""
             TextWrapping="Wrap" />
         <TextBox
+            x:Name="prezimeText"
+            Grid.Row="1"
+            Grid.Column="1"
             Width="120"
             Height="23"
             Margin="200,70,0,0"
@@ -111,6 +141,9 @@
             Text=""
             TextWrapping="Wrap" />
         <TextBox
+            x:Name="jmbgText"
+            Grid.Row="2"
+            Grid.Column="1"
             Width="120"
             Height="23"
             Margin="200,100,0,0"
@@ -119,6 +152,9 @@
             Text=""
             TextWrapping="Wrap" />
         <TextBox
+            x:Name="imePrzOsText"
+            Grid.Row="3"
+            Grid.Column="1"
             Width="120"
             Height="23"
             Margin="286,130,0,0"
@@ -127,6 +163,9 @@
             Text=""
             TextWrapping="Wrap" />
         <TextBox
+            x:Name="datrText"
+            Grid.Row="4"
+            Grid.Column="1"
             Width="120"
             Height="23"
             Margin="286,160,0,0"
@@ -135,6 +174,9 @@
             Text=""
             TextWrapping="Wrap" />
         <TextBox
+            x:Name="adresText"
+            Grid.Row="5"
+            Grid.Column="1"
             Width="120"
             Height="23"
             Margin="200,190,0,0"
@@ -143,6 +185,9 @@
             Text=""
             TextWrapping="Wrap" />
         <TextBox
+            x:Name="brTelText"
+            Grid.Row="6"
+            Grid.Column="1"
             Width="120"
             Height="23"
             Margin="200,220,0,0"
@@ -150,27 +195,24 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <TextBox
-            Width="120"
-            Height="23"
-            Margin="286,280,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap" />
+
         <RadioButton
-            Margin="230,259,0,0"
+            Margin="260,259,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Muski"
             GroupName="pol" />
         <RadioButton
-            Margin="150,260,0,0"
+            Margin="200,259,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Zenski"
-            GroupName="pol" />
+            GroupName="pol"
+            RenderTransformOrigin="-0.854,0.322" />
         <TextBox
+            x:Name="zanimanjeText"
+            Grid.Row="8"
+            Grid.Column="1"
             Width="150"
             Height="23"
             Margin="220,315,0,0"
@@ -179,15 +221,22 @@
             Text=""
             TextWrapping="Wrap" />
         <Button
+            x:Name="sacuvajButton"
+            Grid.Row="12"
+            Grid.Column="1"
             Width="75"
             Margin="350,433,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#FF00E5E1"
+            Click="kreirajNalogB"
             Content="Sacuvaj"
             Cursor="Hand"
             FontSize="16" />
         <TextBox
+            x:Name="brKnjiziceText"
+            Grid.Row="9"
+            Grid.Column="1"
             Width="150"
             Height="23"
             Margin="220,345,0,0"
@@ -196,6 +245,9 @@
             Text=""
             TextWrapping="Wrap" />
         <TextBox
+            x:Name="brKartonaText"
+            Grid.Row="10"
+            Grid.Column="1"
             Width="150"
             Height="23"
             Margin="220,375,0,0"
@@ -203,6 +255,37 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-
+        <ComboBox
+            x:Name="zastita"
+            Width="120"
+            Margin="250,280,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+            <ComboBoxItem>
+                radnik
+            </ComboBoxItem>
+            <ComboBoxItem>
+                penzioner
+            </ComboBoxItem>
+            <ComboBoxItem>
+                vojnik
+            </ComboBoxItem>
+            <ComboBoxItem>
+                farmer
+            </ComboBoxItem>
+            <ComboBoxItem>
+                ostalo
+            </ComboBoxItem>
+        </ComboBox>
+        <Button
+            Width="75"
+            Margin="70,433,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="#FF00E5E1"
+            Click="odustaniB"
+            Content="Odustani"
+            Cursor="Hand"
+            FontSize="16" />
     </Grid>
 </Window>

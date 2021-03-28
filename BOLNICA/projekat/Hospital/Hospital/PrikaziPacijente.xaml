@@ -19,32 +19,52 @@
             Content="SVI PACIJENTI ZDRAVO BOLNICE"
             FontFamily="Viner Hand ITC"
             FontSize="16" />
+
         <DataGrid
+            Name="PrikazPacijenata"
             Width="450"
             Height="300"
             Margin="20,50,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top"
+            AutoGenerateColumns="False"
+            ItemsSource="{Binding Path=listPatient}">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="150"
+                    Binding="{Binding name}"
+                    Header="IME" />
+                <DataGridTextColumn
+                    Width="150"
+                    Binding="{Binding surname}"
+                    Header="PREZIME" />
+                <DataGridTextColumn
+                    Width="150"
+                    Binding="{Binding jmbg}"
+                    Header="JMBG" />
+            </DataGrid.Columns>
+        </DataGrid>
         <Button
             Width="75"
             Margin="72,367,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Izmeni " 
-               Background="#FF00E5E1"
+            Background="#FF00E5E1"
+            Click="izmeniNalogPacijenta"
+            Content="Izmeni "
             Cursor="Hand"
-            FontSize="16"
-            Click="izmeniNalogPacijenta"/>
+            FontSize="16" />
         <Button
             Width="75"
             Margin="324,367,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#FF00E5E1"
+            Click="izbrisiNalogPacijenta"
             Content="Izbrisi"
             Cursor="Hand"
-            FontSize="16"
-            Click="izbrisiNalogPacijenta"/>
+            FontSize="16" />
 
     </Grid>
 </Window>

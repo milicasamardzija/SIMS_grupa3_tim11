@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,10 +21,32 @@ namespace Hospital
     /// </summary>
     public partial class PrikaziPacijente : Window
     {
+
+        
+        //public ObservableCollection<Patient> listPatient;
+
+        public ObservableCollection<Patient> listPatient
+        {
+            get;
+            set;
+        }
+
         public PrikaziPacijente()
         {
             InitializeComponent();
+            this.DataContext = this;
+            listPatient = loadJason();
         }
+
+
+        public ObservableCollection<Patient> loadJason()
+        {
+            PatientFileStorage pfs = new PatientFileStorage();
+            ObservableCollection<Patient> rs = new ObservableCollection<Patient>(pfs.GetAll());
+            return rs;
+        }
+
+
         private void izmeniNalogPacijenta(object sender, RoutedEventArgs e)
         {
 

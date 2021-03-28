@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,8 +22,28 @@ namespace Hospital
     {
         public KreirajNalog()
         {
+            
             InitializeComponent();
+         
         }
-        
+        private void kreirajNalogB(object sender, RoutedEventArgs e) {
+            PatientFileStorage pStorage = new PatientFileStorage();
+            Patient newPatient = new Patient(imeText.Text, prezimeText.Text, jmbgText.Text, datrText.Text,
+                adresText.Text, brTelText.Text, Convert.ToInt16(brKnjiziceText.Text), (HealthCareCategory)zastita.SelectedIndex, 
+                Convert.ToInt16(brKartonaText.Text));
+
+
+            pStorage.Save(newPatient);
+           // listPatient.Add(newPatient);
+
+            this.Close();
+
+
+                }
+
+        private void odustaniB(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

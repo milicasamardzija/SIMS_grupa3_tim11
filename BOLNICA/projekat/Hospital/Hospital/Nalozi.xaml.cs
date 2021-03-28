@@ -19,6 +19,9 @@ namespace Hospital
     /// </summary>
     public partial class Nalozi : Window
     {
+
+    
+
         public Nalozi()
         {
             InitializeComponent();

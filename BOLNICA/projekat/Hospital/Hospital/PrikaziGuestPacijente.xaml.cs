@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,15 +21,22 @@ namespace Hospital
     /// </summary>
     public partial class PrikaziGuestPacijente : Window
     {
+
+     
+
         public PrikaziGuestPacijente()
         {
             InitializeComponent();
+     
         }
+
+
 
         private void kreirajStalniNalogButton(object sender, RoutedEventArgs e)
         {
-            var stalniNalog = new KreirajNalog();
-            stalniNalog.Show();
+            /*   var stalniNalog = new KreirajNalog();
+               stalniNalog.Show();
+           */
         }
         private void izbrisiGuest(object sender, RoutedEventArgs e)
         {
