@@ -1,0 +1,27 @@
+﻿<Window x:Class="Hospital.DodajProstorijuDijalog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+        Title="DodajProstorijuDijalog" Height="500" Width="430" WindowStartupLocation="CenterScreen">
+    <Grid Background="LightBlue">
+        <Grid Margin="0,0,-0.4,0">
+            <Label Height="30" Width="100" Margin="35,55,258.6,335" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="0" FontWeight="Bold">Broj prostorije</Label>
+            <TextBox Name="BrojProstorijeText" Height="30" Width="200" Margin="159,55,34.6,335" Grid.Row="0" Grid.Column="1" Background="AliceBlue"/>
+            <Label Height="30" Width="100" Margin="35,120,258.6,270" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="1" FontWeight="Bold">Namena</Label>
+            <ComboBox Name ="NamenaText" Height="30" Width="200" Margin="159,120,34.6,270" Background="AliceBlue">
+                <ComboBoxItem IsSelected="True"> SALA </ComboBoxItem>
+                <ComboBoxItem >SOBA</ComboBoxItem>
+                <ComboBoxItem>ORDINACIJA</ComboBoxItem>
+            </ComboBox>
+            <Label Height="30" Width="100" Margin="35,184,258.6,206" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="2" FontWeight="Bold">Sprat</Label>
+            <TextBox Name="SpratText" Height="30" Width="200" Margin="159,184,34.6,206" Grid.Column="1" Grid.Row="2" Background="AliceBlue"/>
+            <Label Height="30" Margin="35,250,246.6,140" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="3" FontWeight="Bold">Kapacitet prostorije</Label>
+            <TextBox Name="KapacitetText" Height="30" Width="200" Margin="159,250,34.6,140" Grid.Column="1" Grid.Row="3" Background="AliceBlue"/>
+            <Button Margin="75,334,258.6,65" Grid.Column="0" Grid.Row="4" Width="80" Height="30" Background="AliceBlue" Click="dodavanjeProstorije">Potvrdi</Button>
+            <Button Margin="258,334,78.6,65" Grid.Column="1" Grid.Row="4"  Width="80" Height="30" Background="AliceBlue" Click="odustani">Odustani</Button>
+        </Grid>
+    </Grid>
+</Window>
