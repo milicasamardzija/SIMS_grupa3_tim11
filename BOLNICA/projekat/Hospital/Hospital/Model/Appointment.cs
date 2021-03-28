@@ -7,18 +7,20 @@ using System;
 
 public class Appointment
 {
-   public DateTime date;
-   public DateTime time;
-   public float duration;
-   public Room room;
+    //public DateTime date;
+    //public DateTime time;
+   public string date { get; set; }
+   public string time { get; set; }
+   public double duration { get; set; }
+  // public Room room;
    
-   public Doctor doctor;
+  // public Doctor doctor;
    
    /// <summary>
    /// Property for Doctor
    /// </summary>
    /// <pdGenerated>Default opposite class property</pdGenerated>
-   public Doctor Doctor
+  /* public Doctor Doctor
    {
       get
       {
@@ -28,14 +30,14 @@ public class Appointment
       {
          this.doctor = value;
       }
-   }
-   public Patient patient;
+   }*/
+  // public Patient patient;
    
    /// <summary>
    /// Property for Patient
    /// </summary>
    /// <pdGenerated>Default opposite class property</pdGenerated>
-   public Patient Patient
+   /*public Patient Patient
    {
       get
       {
@@ -45,6 +47,6 @@ public class Appointment
       {
          this.patient = value;
       }
-   }
+   }*/
 
 }

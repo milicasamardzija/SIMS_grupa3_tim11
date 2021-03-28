@@ -24,5 +24,11 @@ namespace Hospital
         {
             InitializeComponent();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Pregled p = new Pregled();
+            p.Show();
+        }
     }
 }

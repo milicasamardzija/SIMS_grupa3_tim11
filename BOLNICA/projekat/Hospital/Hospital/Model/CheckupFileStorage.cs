@@ -5,44 +5,93 @@
 
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using System.IO;
 
 public class CheckupFileStorage
 {
    public List<Checkup> GetAll()
    {
-      throw new NotImplementedException();
+        List<Checkup> allCheckups = new List<Checkup>();
+        allCheckups = JsonConvert.DeserializeObject<List<Checkup>>(File.ReadAllText(@"storageCheckup.json"));
+        return allCheckups;
    }
    
    public void Save(Checkup newCheckup)
    {
-      throw new NotImplementedException();
+        List<Checkup> allCheckups = GetAll();
+        allCheckups.Add(newCheckup);
+        SaveAll(allCheckups);
    }
    
    public void SaveAll(List<Checkup> checkups)
    {
-      throw new NotImplementedException();
+        using (StreamWriter file = File.CreateText(@"storageCheckup.json"))
+        {
+            JsonSerializer ser = new JsonSerializer();
+            ser.Serialize(file, checkups);
+        }
    }
    
    public void Delete(Checkup checkup)
    {
-      throw new NotImplementedException();
+        List<Checkup> allCheckups = GetAll();
+        foreach(Checkup ch in allCheckups)
+        {
+            if(ch.idCh == checkup.idCh)
+            {
+                allCheckups.Remove(ch);
+                break;
+            }
+        }
+        SaveAll(allCheckups);
    }
    
    public void DeleteById(int id)
    {
-      throw new NotImplementedException();
+        List<Checkup> allCheckups = GetAll();
+        foreach(Checkup ch in allCheckups)
+        {
+            if(ch.idCh == id)
+            {
+                allCheckups.Remove(ch);
+                break;
+            }
+        }
+        SaveAll(allCheckups);
    }
    
    public Checkup FindById(int id)
    {
-      throw new NotImplementedException();
+        List<Checkup> allCheckups = GetAll();
+        Checkup ret = null;
+        foreach(Checkup ch in allCheckups)
+        {
+            if(ch.idCh == id)
+            {
+                ret = ch;
+                break;
+            }
+        }
+        return ret;
    }
    
    public Boolean ExistsById(int id)
    {
-      throw new NotImplementedException();
+        List<Checkup> allCheckups = GetAll();
+        Boolean ret = false;
+
+        foreach(Checkup ch in allCheckups)
+        {
+            if(ch.idCh == id)
+            {
+                ret = true;
+                break;
+            }
+        }
+        return ret;
    }
    
-   public String fileLocation;
+   //public String fileLocation;
 
 }
