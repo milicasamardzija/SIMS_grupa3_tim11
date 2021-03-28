@@ -38,24 +38,69 @@ public class PatientFileStorage
    
    public void Delete(Patient patient)
    {
-      throw new NotImplementedException();
-   }
-   
-   public void DeleteById(int id)
-   {
-      throw new NotImplementedException();
+        List<Patient> allPatients = GetAll();
+
+        foreach (Patient p in allPatients)
+        {
+            if (p.patientId == patient.patientId)
+            {
+                allPatients.Remove(p);
+                break;
+            }
+        }
+        SaveAll(allPatients);
+    }
+
+    public void DeleteById(int id)
+
+
+    {
+        List<Patient> allPatients = GetAll();
+
+        foreach (Patient patient in allPatients) {
+
+            if (patient.patientId == id) {
+
+                allPatients.Remove(patient);
+                break;
+            }
+        }
+        SaveAll(allPatients);
    }
    
    public Patient FindById(int id)
    {
-      throw new NotImplementedException();
-   }
+        List<Patient> allPatients = GetAll();
+        Patient ret = null;
+
+        foreach (Patient patient in allPatients)
+        {
+            if (patient.patientId == id)
+            {
+                ret = patient;
+                break;
+            }
+        }
+
+        return ret;
+    }
    
    public Boolean ExistsById(int id)
    {
-      throw new NotImplementedException();
+        List<Patient> allPatients = GetAll();
+        Boolean ret = false;
+
+        foreach (Patient patient in allPatients)
+        {
+            if (patient.patientId == id)
+            {
+                ret = true;
+                break;
+            }
+        }
+        return ret;
    }
    
-   public String fileLocation;
+  // public String fileLocation;
 
 }

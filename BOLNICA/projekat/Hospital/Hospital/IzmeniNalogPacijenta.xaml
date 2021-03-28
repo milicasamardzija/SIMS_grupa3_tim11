@@ -103,6 +103,7 @@
             FontSize="15" />
 
         <TextBox
+            x:Name="imeText"
             Width="120"
             Height="23"
             Margin="200,40,0,0"
@@ -111,6 +112,7 @@
             Text=""
             TextWrapping="Wrap" />
         <TextBox
+            x:Name="prezimeText"
             Width="120"
             Height="23"
             Margin="200,70,0,0"
@@ -119,6 +121,7 @@
             Text=""
             TextWrapping="Wrap" />
         <TextBox
+            x:Name="jmbgText"
             Width="120"
             Height="23"
             Margin="200,100,0,0"
@@ -127,6 +130,7 @@
             Text=""
             TextWrapping="Wrap" />
         <TextBox
+            x:Name="osiguraniktText"
             Width="120"
             Height="23"
             Margin="286,130,0,0"
@@ -135,6 +139,7 @@
             Text=""
             TextWrapping="Wrap" />
         <TextBox
+            x:Name="datumText"
             Width="120"
             Height="23"
             Margin="286,160,0,0"
@@ -143,6 +148,7 @@
             Text=""
             TextWrapping="Wrap" />
         <TextBox
+            x:Name="adresaText"
             Width="120"
             Height="23"
             Margin="200,190,0,0"
@@ -151,6 +157,7 @@
             Text=""
             TextWrapping="Wrap" />
         <TextBox
+            x:Name="brText"
             Width="120"
             Height="23"
             Margin="200,220,0,0"
@@ -158,14 +165,28 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <TextBox
+        <ComboBox
+            x:Name="zastitaText"
             Width="120"
-            Height="23"
-            Margin="286,280,0,0"
+            Margin="250,280,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap" />
+            VerticalAlignment="Top">
+            <ComboBoxItem>
+                radnik
+            </ComboBoxItem>
+            <ComboBoxItem>
+                penzioner
+            </ComboBoxItem>
+            <ComboBoxItem>
+                vojnik
+            </ComboBoxItem>
+            <ComboBoxItem>
+                farmer
+            </ComboBoxItem>
+            <ComboBoxItem>
+                ostalo
+            </ComboBoxItem>
+        </ComboBox>
         <RadioButton
             Margin="260,259,0,0"
             HorizontalAlignment="Left"
@@ -179,6 +200,7 @@
             Content="Zenski"
             GroupName="pol" />
         <TextBox
+            x:Name="zanimanjeText"
             Width="150"
             Height="23"
             Margin="220,315,0,0"
@@ -196,6 +218,7 @@
             Cursor="Hand"
             FontSize="16" />
         <TextBox
+            x:Name="brKnjText"
             Width="150"
             Height="23"
             Margin="220,345,0,0"
@@ -204,6 +227,7 @@
             Text=""
             TextWrapping="Wrap" />
         <TextBox
+            x:Name="brKarText"
             Width="150"
             Height="23"
             Margin="220,375,0,0"
@@ -215,8 +239,8 @@
         <DatePicker
             Margin="260,413,2,2"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" FirstDayOfWeek="Monday" 
-         />
+            VerticalAlignment="Top"
+            FirstDayOfWeek="Monday" />
 
     </Grid>
 </Window>

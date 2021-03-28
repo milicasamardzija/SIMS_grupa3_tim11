@@ -30,3 +30,5 @@ D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Release\Hospita
 D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Release\Hospital.csproj.CopyComplete
 D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Release\Hospital.exe
 D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Release\Hospital.pdb
+D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Release\IzbrisiPacijenta.g.cs
+D:\proj\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Release\IzbrisiPacijenta.baml

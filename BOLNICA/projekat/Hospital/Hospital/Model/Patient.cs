@@ -7,6 +7,7 @@ using System;
 
 public class Patient : RegisterUser
 {
+  
    public int patientId { get; set; }
     public HealthCareCategory healthCareCategory { get; set; }
    public int idHealthCard { get; set; }

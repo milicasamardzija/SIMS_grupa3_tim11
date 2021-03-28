@@ -32,17 +32,22 @@
 
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Width="150"
+                    Width="100"
                     Binding="{Binding name}"
                     Header="IME" />
                 <DataGridTextColumn
-                    Width="150"
+                    Width="100"
                     Binding="{Binding surname}"
                     Header="PREZIME" />
                 <DataGridTextColumn
                     Width="150"
                     Binding="{Binding jmbg}"
                     Header="JMBG" />
+          
+            <DataGridTextColumn
+                    Width="100"
+                    Binding="{Binding patientId}"
+                    Header="Id" />
             </DataGrid.Columns>
         </DataGrid>
         <Button

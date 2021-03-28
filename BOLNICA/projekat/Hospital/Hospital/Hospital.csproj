@@ -62,6 +62,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="IzbrisiPacijenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="IzmeniNalogPacijenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -84,6 +88,9 @@
     </Compile>
     <Compile Include="IzbrisiNalogPacijenta.xaml.cs">
       <DependentUpon>IzbrisiNalogPacijenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzbrisiPacijenta.xaml.cs">
+      <DependentUpon>IzbrisiPacijenta.xaml</DependentUpon>
     </Compile>
     <Compile Include="IzmeniNalogPacijenta.xaml.cs">
       <DependentUpon>IzmeniNalogPacijenta.xaml</DependentUpon>

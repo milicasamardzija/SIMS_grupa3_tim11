@@ -23,7 +23,7 @@ namespace Hospital
     {
 
         
-        //public ObservableCollection<Patient> listPatient;
+       
 
         public ObservableCollection<Patient> listPatient
         {
@@ -50,13 +50,14 @@ namespace Hospital
         private void izmeniNalogPacijenta(object sender, RoutedEventArgs e)
         {
 
-            IzmeniNalogPacijenta izmenaNaloga = new IzmeniNalogPacijenta();
-            izmenaNaloga.ShowDialog();
+           // IzmeniNalogPacijenta izmenaNaloga = new IzmeniNalogPacijenta(listPatient, (Patient)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
+          //  izmenaNaloga.ShowDialog();
         }
 
         private void izbrisiNalogPacijenta(object sender, RoutedEventArgs e)
         {
-           
+            IzbrisiPacijenta ip = new IzbrisiPacijenta(listPatient, (Patient)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
+            ip.Show();
         }
 
     }

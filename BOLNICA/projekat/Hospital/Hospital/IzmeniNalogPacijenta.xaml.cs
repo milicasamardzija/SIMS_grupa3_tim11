@@ -11,17 +11,29 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace Hospital
 {
     /// <summary>
     /// Interaction logic for IzmeniNalogPacijenta.xaml
     /// </summary>
-    public partial class IzmeniNalogPacijenta : Window
-    {
-        public IzmeniNalogPacijenta()
+    public partial class IzmeniNalogPacijenta : Window { 
+
+       public ObservableCollection<Patient> listPatient;
+
+        public IzmeniNalogPacijenta(ObservableCollection<Patient> list, Patient selectedPatient)
         {
-            InitializeComponent();
-        }
+          /*  InitializeComponent();
+            listPatient = list;
+            imeText.SelectedText = selectedPatient.name;
+            prezimeText.SelectedText = selectedPatient.surname;
+            jmbgText.SelectedText = selectedPatient.jmbg;
+            osiguraniktText.SelectedText=selectedPatient.
+
+
+            */
+      
+        } 
     }
 }
