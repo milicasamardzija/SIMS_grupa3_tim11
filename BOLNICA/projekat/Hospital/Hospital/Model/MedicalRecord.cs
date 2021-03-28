@@ -11,7 +11,8 @@ public class MedicalRecord
    public BloodType bloodType;
    public Array vaccines;
    public Array allergy;
-   
    public Patient patient;
+
+
 
 }

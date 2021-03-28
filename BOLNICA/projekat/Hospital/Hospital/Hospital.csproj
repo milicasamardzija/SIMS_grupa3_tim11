@@ -68,6 +68,50 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditDialog.xaml">
+		<SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="DodajProstorijuDijalog.xaml.cs">
+      <DependentUpon>DodajProstorijuDijalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzbrisiProstorijuDijalog.xaml.cs">
+      <DependentUpon>IzbrisiProstorijuDijalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzmeniProstorijuDijalog.xaml.cs">
+      <DependentUpon>IzmeniProstorijuDijalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Rooms.xaml.cs">
+      <DependentUpon>Rooms.xaml</DependentUpon>
+    </Compile>
+    <Page Include="DodajProstorijuDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzbrisiProstorijuDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmeniProstorijuDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzbrisiNalogPacijenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzbrisiPacijenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmeniNalogPacijenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KreirajGuestNalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KreirajNalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -87,12 +131,43 @@
     </Compile>
     <Compile Include="EditDialog.xaml.cs">
       <DependentUpon>EditDialog.xaml</DependentUpon>
+	</Compile>
+    <Compile Include="IzbrisiNalogPacijenta.xaml.cs">
+      <DependentUpon>IzbrisiNalogPacijenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzbrisiPacijenta.xaml.cs">
+      <DependentUpon>IzbrisiPacijenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzmeniNalogPacijenta.xaml.cs">
+      <DependentUpon>IzmeniNalogPacijenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KreirajGuestNalog.xaml.cs">
+      <DependentUpon>KreirajGuestNalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KreirajNalog.xaml.cs">
+      <DependentUpon>KreirajNalog.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pregled.xaml">
+		<SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Rooms.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Nalozi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikaziGuestPacijente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikaziPacijente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -119,6 +194,15 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Pregled.xaml.cs">
       <DependentUpon>Pregled.xaml</DependentUpon>
+	</Compile>
+    <Compile Include="Nalozi.xaml.cs">
+      <DependentUpon>Nalozi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrikaziGuestPacijente.xaml.cs">
+      <DependentUpon>PrikaziGuestPacijente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrikaziPacijente.xaml.cs">
+      <DependentUpon>PrikaziPacijente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -145,6 +229,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="slika1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,6 +29,18 @@ namespace Hospital
         {
             Pregled p = new Pregled();
             p.Show();
+		}
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Rooms r = new Rooms();
+            r.Show();
+        }
+        private void SekretarButton(object sender, RoutedEventArgs e)
+        {
+            Nalozi prozor = new Nalozi();
+            prozor.ShowDialog();
+
         }
     }
 }

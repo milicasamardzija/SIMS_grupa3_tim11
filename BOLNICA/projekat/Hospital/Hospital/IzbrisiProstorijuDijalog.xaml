@@ -1,0 +1,41 @@
+﻿<Window x:Class="Hospital.IzbrisiProstorijuDijalog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+        Title="IzbrisiProstorijuDijalog" Height="250" Width="450" WindowStartupLocation="CenterScreen">
+    <Grid Background="LightBlue">
+        <Grid>
+            <TextBlock Text="Da li ste sigurni da zelite da obrisete prostoriju?"
+                       TextAlignment="Center"
+                       Width="300"
+                       Margin="50,30,45,135"
+                       Foreground="DarkBlue"
+                       FontSize="20"
+                       TextWrapping="Wrap"
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       Grid.ColumnSpan="2"/>
+            <Button Grid.Column="0"
+                    Margin="50,120,243.6,50"
+                    Content="Potvrdi"
+                    Height="50"
+                    Width="100"
+                    Foreground="DarkBlue"
+                    Background="AliceBlue"
+                    Click="izbrisi"
+                />
+            <Button Grid.Column="0"
+                    Margin="250,120,43.6,50"
+                    Content="Odustani"
+                    Height="50"
+                    Width="100"
+                    Foreground="DarkBlue"
+                    Background="AliceBlue"
+                    Click="izadji"
+                />
+        </Grid>
+    </Grid>
+</Window>

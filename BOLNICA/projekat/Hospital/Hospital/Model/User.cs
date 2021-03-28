@@ -7,12 +7,13 @@ using System;
 
 public class User
 {
-   public String name;
-   public String surname;
-   public String adress;
-   public String telephoneNumber;
-   public String jmbg;
-   public Gender gender;
-   public DateTime birthdayDate;
+   public String name { get; set; }
+   public String surname { get; set; }
+    public String adress { get; set; }
+    public String telephoneNumber { get; set; }
+    public String jmbg { get; set; }
+    public Gender gender { get; set; }
+    // public DateTime birthdayDate;
+    public String birthdate { get; set; }
 
 }
