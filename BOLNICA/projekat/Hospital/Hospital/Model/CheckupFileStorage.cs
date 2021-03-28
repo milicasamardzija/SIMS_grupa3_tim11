@@ -13,7 +13,7 @@ public class CheckupFileStorage
    public List<Checkup> GetAll()
    {
         List<Checkup> allCheckups = new List<Checkup>();
-        allCheckups = JsonConvert.DeserializeObject<List<Checkup>>(File.ReadAllText(@"storageCheckup.json"));
+        allCheckups = JsonConvert.DeserializeObject<List<Checkup>>(File.ReadAllText(@"./../../../../Hospital/files/storageCheckup.json"));
         return allCheckups;
    }
    
@@ -26,7 +26,7 @@ public class CheckupFileStorage
    
    public void SaveAll(List<Checkup> checkups)
    {
-        using (StreamWriter file = File.CreateText(@"storageCheckup.json"))
+        using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/storageCheckup.json"))
         {
             JsonSerializer ser = new JsonSerializer();
             ser.Serialize(file, checkups);

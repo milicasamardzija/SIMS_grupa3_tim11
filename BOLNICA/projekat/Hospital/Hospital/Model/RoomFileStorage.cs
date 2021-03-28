@@ -14,14 +14,14 @@ public class RoomFileStorage
     {
         List<Room> allRooms = new List<Room>();
 
-        allRooms = JsonConvert.DeserializeObject<List<Room>>(File.ReadAllText(@"storageRooms.json"));
+        allRooms = JsonConvert.DeserializeObject<List<Room>>(File.ReadAllText(@"./../../../../Hospital/files/storageRooms.json"));
 
         return allRooms;
     }
 
     public void SaveAll(List<Room> rooms)
     {
-        using (StreamWriter file = File.CreateText(@"storageRooms.json"))
+        using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/storageRooms.json"))
         {
             JsonSerializer serializer = new JsonSerializer();
             serializer.Serialize(file, rooms);

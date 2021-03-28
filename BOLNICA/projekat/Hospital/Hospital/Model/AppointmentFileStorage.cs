@@ -13,7 +13,7 @@ public class AppointmentFileStorage
    public List<Appointment> GetAll()
    {
         List<Appointment> appointments = new List<Appointment>();
-        appointments = JsonConvert.DeserializeObject<List<Appointment>>(File.ReadAllText(@"termini.json"));
+        appointments = JsonConvert.DeserializeObject<List<Appointment>>(File.ReadAllText(@"./../../../../Hospital/files/termini.json"));
         return appointments;
    }
    
@@ -26,7 +26,7 @@ public class AppointmentFileStorage
    
    public void SaveAll(List<Appointment> appointments)
    {
-        using (StreamWriter file = File.CreateText(@"termini.json"))
+        using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/termini.json"))
         {
             JsonSerializer serializer = new JsonSerializer();
             serializer.Serialize(file, appointments);

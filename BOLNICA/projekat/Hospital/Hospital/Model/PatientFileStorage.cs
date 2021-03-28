@@ -14,7 +14,7 @@ public class PatientFileStorage
    {
       List<Patient> sviPacijenti= new List<Patient>();
 
-        sviPacijenti = JsonConvert.DeserializeObject<List<Patient>>(File.ReadAllText(@"storagePatient.json"));
+        sviPacijenti = JsonConvert.DeserializeObject<List<Patient>>(File.ReadAllText(@"./../../../../Hospital/files/storagePatient.json"));
         return sviPacijenti;
    }
    
@@ -28,7 +28,7 @@ public class PatientFileStorage
    
    public void SaveAll(List<Patient> patients)
    {
-        using (StreamWriter file = File.CreateText(@"storagePatient.json"))
+        using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/storagePatient.json"))
         {
             JsonSerializer serializer = new JsonSerializer();
             serializer.Serialize(file, patients);
