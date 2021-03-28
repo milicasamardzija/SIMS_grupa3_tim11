@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-        Title="Pacijent" Height="450" Width="800">
-    <Grid>
-        
+        Title="Termini" Height="450" Width="800">
+    <Grid Background="LightBlue">
+        <DataGrid x:Name="PrikazPregleda"  HorizontalAlignment="Left" Height="242" Margin="42,109,0,0" VerticalAlignment="Top" Width="504">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Aqua"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+
+
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="DATE" Width="100" Binding="{Binding Path=date}" />
+                <DataGridTextColumn Header="TIME" Width="100" Binding="{Binding Path=time}"/>
+                <DataGridTextColumn Header="DURATION" Width="100"  Binding="{Binding Path=duration}"/>
+                <DataGridTextColumn Header="ROOM" Width="100"  Binding="{Binding Path=room}"/>
+                <DataGridTextColumn Header="DOCTOR" Width="100"  Binding="{Binding Path=doctor}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock x:Name="imePacijenta" HorizontalAlignment="Left" Margin="37,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Height="26"/>
+        <Button Content="Add" HorizontalAlignment="Left" Height="25" Margin="645,81,0,0" VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.5,0.5" Click="add_btn">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.06"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="644,132,0,0" VerticalAlignment="Top" Width="78" Height="24" Click="update_btn"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="644,179,0,0" VerticalAlignment="Top" Width="78" Height="27" Click="delete_btn"/>
     </Grid>
 </Window>

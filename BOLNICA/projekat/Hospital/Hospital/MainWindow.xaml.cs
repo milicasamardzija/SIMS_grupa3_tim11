@@ -24,5 +24,13 @@ namespace Hospital
         {
             InitializeComponent();
         }
+
+        private void login(object sender, RoutedEventArgs e)
+        {
+            Pacijent p = new Pacijent();
+            Application.Current.MainWindow = p;
+            p.Show();
+            this.Close();
+        }
     }
 }

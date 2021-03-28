@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-        Title="ObrisiTermin" Height="450" Width="800">
-    <Grid>
-        
+       Title="Obrisi termin" Height="250" Width="450" WindowStartupLocation="CenterScreen">
+    <Grid Background="LightBlue">
+        <Grid>
+            <TextBlock Text="Da li ste sigurni da zelite da obrisete termin?"
+                       TextAlignment="Center"
+                       Width="300"
+                       Margin="50,30,45,135"
+                       Foreground="DarkBlue"
+                       FontSize="20"
+                       TextWrapping="Wrap"
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       Grid.ColumnSpan="2"/>
+            <Button Grid.Column="0"
+                    Margin="75,113,268.2,57"
+                    Content="DA"
+                    Height="50"
+                    Width="100"
+                    Foreground="DarkBlue"
+                    Background="AliceBlue"
+                />
+            <Button Grid.Column="0"
+                    Margin="265,110,78.2,60"
+                    Content="NE"
+                    Height="50"
+                    Width="100"
+                    Foreground="DarkBlue"
+                    Background="AliceBlue"
+                />
+        </Grid>
     </Grid>
 </Window>

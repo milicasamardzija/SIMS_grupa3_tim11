@@ -24,9 +24,24 @@ namespace Hospital
             InitializeComponent();
         }
 
-        private void next_btn(object sender, RoutedEventArgs e)
-        {
+       
 
+        private void add_btn(object sender, RoutedEventArgs e)
+        {
+            DodajTermin dd = new DodajTermin();
+            dd.Show();
+        }
+
+        private void update_btn(object sender, RoutedEventArgs e)
+        {
+            IzmeniTermin iz = new IzmeniTermin();
+            iz.Show();
+        }
+
+        private void delete_btn(object sender, RoutedEventArgs e)
+        {
+            ObrisiTermin ot = new ObrisiTermin();
+            ot.Show();
         }
     }
 }
