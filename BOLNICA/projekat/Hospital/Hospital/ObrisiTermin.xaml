@@ -24,7 +24,7 @@
                     Height="50"
                     Width="100"
                     Foreground="DarkBlue"
-                    Background="AliceBlue"
+                    Background="AliceBlue" Click="Button_Click"
                 />
             <Button Grid.Column="0"
                     Margin="265,110,78.2,60"
@@ -32,7 +32,7 @@
                     Height="50"
                     Width="100"
                     Foreground="DarkBlue"
-                    Background="AliceBlue"
+                    Background="AliceBlue" Click="Button_Click_1"
                 />
         </Grid>
     </Grid>

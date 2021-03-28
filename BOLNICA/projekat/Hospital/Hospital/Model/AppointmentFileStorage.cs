@@ -5,23 +5,33 @@
 
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using System.IO;
 
 public class AppointmentFileStorage
 {
    public List<Appointment> GetAll()
    {
-      throw new NotImplementedException();
+        List<Appointment> appointments = new List<Appointment>();
+        appointments = JsonConvert.DeserializeObject<List<Appointment>>(File.ReadAllText(@"termini.json"));
+        return appointments;
    }
    
    public void Save(Appointment newAppointment)
    {
-      throw new NotImplementedException();
-   }
+        List<Appointment> app = GetAll();
+        app.Add(newAppointment);
+        SaveAll(app);
+    }
    
    public void SaveAll(List<Appointment> appointments)
    {
-      throw new NotImplementedException();
-   }
+        using (StreamWriter file = File.CreateText(@"termini.json"))
+        {
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.Serialize(file, appointments);
+        }
+    }
    
    public void Delete(Appointment appointment)
    {

@@ -15,16 +15,14 @@ using System.Windows.Shapes;
 namespace Hospital
 {
     /// <summary>
-    /// Interaction logic for Pacijent.xaml
+    /// Interaction logic for WindowPacijent.xaml
     /// </summary>
-    public partial class Pacijent : Window
+    public partial class WindowPacijent : Window
     {
-        public Pacijent()
+        public WindowPacijent()
         {
             InitializeComponent();
         }
-
-       
 
         private void add_btn(object sender, RoutedEventArgs e)
         {
@@ -34,14 +32,15 @@ namespace Hospital
 
         private void update_btn(object sender, RoutedEventArgs e)
         {
-            IzmeniTermin iz = new IzmeniTermin();
-            iz.Show();
+            IzmeniTermin it = new IzmeniTermin();
+            it.Show();
+
         }
 
         private void delete_btn(object sender, RoutedEventArgs e)
         {
-            ObrisiTermin ot = new ObrisiTermin();
-            ot.Show();
+            ObrisiTermin ob = new ObrisiTermin();
+            ob.Show();
         }
     }
 }

@@ -23,5 +23,15 @@ namespace Hospital
         {
             InitializeComponent();
         }
+
+        private void add_appointment(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -27,8 +27,7 @@ namespace Hospital
 
         private void login(object sender, RoutedEventArgs e)
         {
-            Pacijent p = new Pacijent();
-            Application.Current.MainWindow = p;
+            WindowPacijent p = new WindowPacijent();
             p.Show();
             this.Close();
         }

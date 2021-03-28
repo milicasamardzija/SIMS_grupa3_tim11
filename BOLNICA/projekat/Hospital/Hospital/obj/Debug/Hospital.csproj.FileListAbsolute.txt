@@ -16,7 +16,6 @@ M:\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Hospital.pdb
 C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Hospital.csprojAssemblyReference.cache
 C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\MainWindow.g.cs
 C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\ObrisiTermin.g.cs
-C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Pacijent.g.cs
 C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\App.g.cs
 C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Hospital_MarkupCompile.cache
 C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Hospital_MarkupCompile.lref
@@ -29,7 +28,6 @@ C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\H
 C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\MainWindow.baml
 C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\ObrisiTermin.baml
-C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Pacijent.baml
 C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Hospital.g.resources
 C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Hospital.Properties.Resources.resources
 C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\Hospital.csproj.GenerateResource.cache
@@ -39,3 +37,5 @@ C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\H
 C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\IzmeniTermin.g.cs
 C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\DodajTermin.baml
 C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\IzmeniTermin.baml
+C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\WindowPacijent.g.cs
+C:\Users\Korisnik\Documents\GitHub\SIMS_grupa3_tim11\BOLNICA\projekat\Hospital\Hospital\obj\Debug\WindowPacijent.baml

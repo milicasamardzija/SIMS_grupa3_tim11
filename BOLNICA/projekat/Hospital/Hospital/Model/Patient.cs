@@ -12,4 +12,5 @@ public class Patient : RegisterUser
    public int idHealthCard;
    public Boolean guest = false;
 
+ 
 }
