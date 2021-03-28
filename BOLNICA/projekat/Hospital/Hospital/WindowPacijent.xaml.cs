@@ -49,19 +49,19 @@ namespace Hospital
 
         private void dodavanje(object sender, RoutedEventArgs e)
         {
-            DodajTermin dd = new DodajTermin();
+            DodajTermin dd = new DodajTermin(AppointmentList);
             dd.Show();
         }
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
-            IzmeniTermin it = new IzmeniTermin();
+           IzmeniTermin it = new IzmeniTermin();
             it.Show();
         }
 
         private void obrisi(object sender, RoutedEventArgs e)
         {
-            ObrisiTermin ob = new ObrisiTermin();
+            ObrisiTermin ob = new ObrisiTermin(AppointmentList, (Appointment)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
             ob.Show();
         }
     }

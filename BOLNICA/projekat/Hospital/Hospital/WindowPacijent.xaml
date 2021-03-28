@@ -23,7 +23,7 @@
                        FontSize="20"
                        />
         <TextBlock Grid.ColumnSpan="2" Margin="0,0,-0.4,0"/>
-        <DataGrid Name="ListaProstorija"
+        <DataGrid Name="ListaTermina"
                       Margin="147,85,141.247,85"
                       Grid.Column="0"
                       Height="250"
@@ -39,7 +39,7 @@
                 <DataGridTextColumn Header="DATUM" Binding="{Binding date}" Width="100"/>
                 <DataGridTextColumn Header="VREME" Binding="{Binding time}" Width="100"/>
                 <DataGridTextColumn Header="TRAJANJE" Binding="{Binding duration}" Width="100"/>
-                <DataGridTextColumn Header="DOCTOR" Binding="{Binding doctor}" Width="100"/>
+                <DataGridTextColumn Header="DOKTOR" Binding="{Binding doctor}" Width="100"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Horizontal" Margin ="147,300,141.247,20" HorizontalAlignment="Center" Height="100" Width="500" VerticalAlignment="Bottom" Opacity="0.99">

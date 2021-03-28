@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,13 +20,25 @@ namespace Hospital
     /// </summary>
     public partial class DodajTermin : Window
     {
-        public DodajTermin()
+
+        public ObservableCollection<Appointment> appointmentList;
+        public DodajTermin(ObservableCollection<Appointment> lista)
         {
             InitializeComponent();
+            appointmentList = lista;
+
         }
 
         private void add_appointment(object sender, RoutedEventArgs e)
         {
+            AppointmentFileStorage storage = new AppointmentFileStorage();
+
+            Appointment newapp = new Appointment(Convert.ToInt32(idText.Text),Convert.ToString(dateText.Text), Convert.ToString(timeText.Text),Convert.ToDouble(durationText.Text),Convert.ToString(doctorText.Text));
+
+            storage.Save(newapp);
+            appointmentList.Add(newapp);
+
+            this.Close();
 
         }
 

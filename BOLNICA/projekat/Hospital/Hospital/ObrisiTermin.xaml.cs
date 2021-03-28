@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,19 +20,28 @@ namespace Hospital
     /// </summary>
     public partial class ObrisiTermin : Window
     {
-        public ObrisiTermin()
+        public ObservableCollection<Appointment> appointmentList;
+        public int index;
+        public int id;
+        public ObrisiTermin(ObservableCollection<Appointment> list, Appointment selectedApp, int selectedIndex)
         {
             InitializeComponent();
+            appointmentList = list;
+            id = selectedApp.idA;
+            index = selectedIndex;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void da_Click(object sender, RoutedEventArgs e)
         {
-
+            AppointmentFileStorage storage = new AppointmentFileStorage();
+            storage.DeleteById(id);
+            appointmentList.RemoveAt(index);
+            this.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void ne_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }
