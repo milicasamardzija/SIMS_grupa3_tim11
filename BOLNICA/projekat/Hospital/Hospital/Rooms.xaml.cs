@@ -50,10 +50,13 @@ namespace Hospital
 
         private void obrisi(object sender, RoutedEventArgs e)
         {
-            IzbrisiProstorijuDijalog ip = new IzbrisiProstorijuDijalog(RoomList, (Room)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex);
+            IzbrisiProstorijuDijalog ip = new IzbrisiProstorijuDijalog(RoomList,(Room)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex);
             ip.Show();
         }
-
+        //parametri i za brisanje i za izmenu:
+        //1. lista soba iz ovog fajla
+        //2. soba iz reda koji je selektovan
+        //3. indeks reda koji je selektovan
         private void izmeni(object sender, RoutedEventArgs e)
         {
             IzmeniProstorijuDijalog izmeniP = new IzmeniProstorijuDijalog(RoomList,(Room)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex);

@@ -20,23 +20,23 @@ namespace Hospital
     /// </summary>
     public partial class IzbrisiProstorijuDijalog : Window
     {
-        public ObservableCollection<Room> listRoom;
-        public int index;
+        public ObservableCollection<Room> listRoom; 
+        public int index; 
         public int id;
         public IzbrisiProstorijuDijalog(ObservableCollection<Room> list, Room selectedRoom, int selectedIndex)
         {
             InitializeComponent();
             listRoom = list;
-            id = selectedRoom.roomId;
-            index = selectedIndex;
+            id = selectedRoom.roomId; //id sobe koja je selktovana
+            index = selectedIndex; //indeks u tabeli
         }
 
    
         private void izbrisi(object sender, RoutedEventArgs e)
         {
             RoomFileStorage storage = new RoomFileStorage();
-            storage.DeleteById(id);
-            listRoom.RemoveAt(index);
+            storage.DeleteById(id); //brise se iz fajla na osnovu id-a
+            listRoom.RemoveAt(index); //brise se iz prikaza tabele
             this.Close();
         }
 
