@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace Hospital
 {
@@ -19,25 +20,45 @@ namespace Hospital
     /// </summary>
     public partial class WindowPacijent : Window
     {
+
+        public ObservableCollection<Appointment> AppointmentList
+        {
+            get;
+            set;
+        }
         public WindowPacijent()
         {
             InitializeComponent();
-        }
+            this.DataContext = this;
+           // AppointmentList = loadJason();
 
-        private void add_btn(object sender, RoutedEventArgs e)
+        }
+      /*  public ObservableCollection<Room> loadJason()
+        {
+            AppointmentFileStorage fs = new AppointmentFileStorage();
+            ObservableCollection<Appointment> rs = new ObservableCollection<Appointment>(fs.GetAll());
+           return rs;
+        }
+      */
+    
+
+        
+
+       
+
+        private void dodavanje(object sender, RoutedEventArgs e)
         {
             DodajTermin dd = new DodajTermin();
             dd.Show();
         }
 
-        private void update_btn(object sender, RoutedEventArgs e)
+        private void izmeni(object sender, RoutedEventArgs e)
         {
             IzmeniTermin it = new IzmeniTermin();
             it.Show();
-
         }
 
-        private void delete_btn(object sender, RoutedEventArgs e)
+        private void obrisi(object sender, RoutedEventArgs e)
         {
             ObrisiTermin ob = new ObrisiTermin();
             ob.Show();

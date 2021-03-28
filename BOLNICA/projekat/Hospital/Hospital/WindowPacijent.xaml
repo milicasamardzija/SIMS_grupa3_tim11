@@ -5,36 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-    Title="Termini" Height="450" Width="800">
+    Title="Appointments" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="LightBlue">
-        <DataGrid x:Name="PrikazPregleda"  HorizontalAlignment="Left" Height="242" Margin="42,109,0,0" VerticalAlignment="Top" Width="504">
-            <DataGrid.Resources>
-                <Style TargetType="{x:Type DataGridColumnHeader}">
-                    <Setter Property="Background" Value="Aqua"/>
-                    <Setter Property="FontWeight" Value="SemiBold"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="788*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
 
-
-                </Style>
-            </DataGrid.Resources>
+        <TextBlock TextWrapping="Wrap" Text="TERMINI"
+                       HorizontalAlignment="Center"
+                       FontStyle="Italic"
+                       Foreground= "#FF3E3ADD"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="3"
+                       Margin="256,20,209.247,20"
+                       FontSize="20"
+                       />
+        <TextBlock Grid.ColumnSpan="2" Margin="0,0,-0.4,0"/>
+        <DataGrid Name="ListaProstorija"
+                      Margin="147,85,141.247,85"
+                      Grid.Column="0"
+                      Height="250"
+                      Width="500"
+                      Background="AliceBlue"
+                      AutoGenerateColumns="False"
+                      SelectionMode="Single"
+                      IsReadOnly="True"
+                      ItemsSource="{Binding Path = AppointmentList}"
+                      >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="DATE" Width="130" Binding="{Binding Path=date}" />
-                <DataGridTextColumn Header="TIME" Width="130" Binding="{Binding Path=time}"/>
-                <DataGridTextColumn Header="DURATION" Width="130"  Binding="{Binding Path=duration}"/>
-                <DataGridTextColumn Header="DOCTOR" Width="130"  Binding="{Binding Path=doctor}"/>
+                <DataGridTextColumn Header="DATUM" Binding="{Binding datum}" Width="120"/>
+                <DataGridTextColumn Header="VREME" Binding="{Binding vreme}" Width="120"/>
+                <DataGridTextColumn Header="TRAJANJE" Binding="{Binding trajanje}" Width="120"/>
+                <DataGridTextColumn Header="DOCTOR" Binding="{Binding doctor}" Width="120"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock x:Name="imePacijenta" HorizontalAlignment="Left" Margin="37,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188" Height="26"/>
-        <Button Content="Add" HorizontalAlignment="Left" Height="25" Margin="645,81,0,0" VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.5,0.5" Click="add_btn">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.06"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="644,132,0,0" VerticalAlignment="Top" Width="78" Height="24" Click="update_btn"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="644,179,0,0" VerticalAlignment="Top" Width="78" Height="27" Click="delete_btn"/>
+        <StackPanel Orientation="Horizontal" Margin ="147,300,141.247,20" HorizontalAlignment="Center" Height="100" Width="500" VerticalAlignment="Bottom" Opacity="0.99">
+            <Button x:Name="Dodaj" Height="30" Width="80" Margin="50,50,20,10" Background="AliceBlue" Click="dodavanje" Content="DODAJ"></Button>
+            <Button Height="30" Width="80" Margin="50,50,20,10" Background = "AliceBlue" Click="izmeni" Content="IZMENI"></Button>
+            <Button Height="30" Width="80" Margin="50,50,20,10" Background = "AliceBlue" Click="obrisi" Content="IZBRISI"></Button>
+        </StackPanel>
     </Grid>
 </Window>
