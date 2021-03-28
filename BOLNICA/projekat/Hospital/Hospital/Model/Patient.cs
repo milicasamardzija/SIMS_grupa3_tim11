@@ -13,6 +13,7 @@ public class Patient : RegisterUser
    public int idHealthCard { get; set; }
     // public Boolean guest = false;
 
+
     public Patient(String name1, String surname1, String jmbg1, String bdate1, String adress1, String telephoneNumber1,  int pId1, HealthCareCategory hcc,int iHc) {
         name = name1;
         surname = surname1;
@@ -25,4 +26,7 @@ public class Patient : RegisterUser
         idHealthCard = iHc;
     }
   
+
+ 
+
 }

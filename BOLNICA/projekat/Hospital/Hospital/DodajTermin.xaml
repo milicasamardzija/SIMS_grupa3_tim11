@@ -1,0 +1,38 @@
+﻿<Window x:Class="Hospital.DodajTermin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+         Title="Dodaj termin" Height="500" Width="430" WindowStartupLocation="CenterScreen">
+    <Grid Background="LightBlue" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Margin="0,0,0,0.4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0*"/>
+            </Grid.ColumnDefinitions>
+            <Label Margin="50,26,106,413" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="0" FontWeight="Bold">ID</Label>
+            <Label Margin="50,83,106,356" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="0" FontWeight="Bold">Datum</Label>
+
+            <Label Margin="50,145,106,295" Foreground="DarkBlue" FontSize="10" Grid.Column="0" FontWeight="Bold">Vreme</Label>
+
+            <Label Margin="50,209,106,231" Foreground="DarkBlue" FontSize="10" Grid.Column="0" FontWeight="Bold">Trajanje</Label>
+            <TextBox x:Name="timeText"   HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="185" Margin="183,137,0,0"/>
+            <Label Margin="49,275,289,165" Foreground="DarkBlue" FontSize="10" FontWeight="Bold">Doktor</Label>
+            <TextBox  x:Name="doctorText" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="185" RenderTransformOrigin="1.155,1.912" Margin="184,268,0,0"/>
+            <Button Margin="84,347,260,93" Grid.Column="0" Width="80" Height="30" Background="AliceBlue" Click="add_appointment">Dodaj</Button>
+            <Button Margin="206,347,138,93"  Width="80" Height="30" Background="AliceBlue" Click="Button_Click">Odustani</Button>
+            <TextBox  x:Name="durationText" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="184" Margin="184,202,0,0"/>
+            <TextBox x:Name="dateText"    HorizontalAlignment="Left" Margin="186,75,0,0" VerticalAlignment="Top" Height="30" Width="181"/>
+            <TextBox  x:Name="idText"    HorizontalAlignment="Left" Height="31" Margin="185,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181"/>
+
+
+        </Grid>
+
+    </Grid>
+</Window>

@@ -25,6 +25,7 @@ namespace Hospital
             InitializeComponent();
         }
 
+
         private void button_Click(object sender, RoutedEventArgs e)
         {
             Pregled p = new Pregled();
@@ -40,6 +41,13 @@ namespace Hospital
         {
             Nalozi prozor = new Nalozi();
             prozor.ShowDialog();
+
+        }
+        private void login(object sender, RoutedEventArgs e)
+        {
+            WindowPacijent p = new WindowPacijent();
+            p.Show();
+            this.Close();
 
         }
     }

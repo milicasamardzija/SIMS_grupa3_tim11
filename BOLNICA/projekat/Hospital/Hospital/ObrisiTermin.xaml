@@ -1,0 +1,39 @@
+﻿<Window x:Class="Hospital.ObrisiTermin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+       Title="Obrisi termin" Height="250" Width="450" WindowStartupLocation="CenterScreen">
+    <Grid Background="LightBlue">
+        <Grid>
+            <TextBlock Text="Da li ste sigurni da zelite da obrisete termin?"
+                       TextAlignment="Center"
+                       Width="300"
+                       Margin="50,30,45,135"
+                       Foreground="DarkBlue"
+                       FontSize="20"
+                       TextWrapping="Wrap"
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       Grid.ColumnSpan="2"/>
+            <Button Grid.Column="0"
+                    Margin="75,113,268.2,57"
+                    Content="DA"
+                    Height="50"
+                    Width="100"
+                    Foreground="DarkBlue"
+                    Background="AliceBlue" Click="da_Click"
+                />
+            <Button Grid.Column="0"
+                    Margin="265,110,78.2,60"
+                    Content="NE"
+                    Height="50"
+                    Width="100"
+                    Foreground="DarkBlue"
+                    Background="AliceBlue" Click="ne_Click"
+                />
+        </Grid>
+    </Grid>
+</Window>

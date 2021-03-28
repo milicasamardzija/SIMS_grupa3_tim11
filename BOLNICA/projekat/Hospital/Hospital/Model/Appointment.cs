@@ -7,20 +7,34 @@ using System;
 
 public class Appointment
 {
+
     //public DateTime date;
     //public DateTime time;
-   public string date { get; set; }
-   public string time { get; set; }
-   public double duration { get; set; }
+  // public string date { get; set; }
+  // public string time { get; set; }
+ //  public double duration { get; set; }
   // public Room room;
    
-  // public Doctor doctor;
+  
    
    /// <summary>
    /// Property for Doctor
    /// </summary>
    /// <pdGenerated>Default opposite class property</pdGenerated>
-  /* public Doctor Doctor
+  
+
+   public int idA { get; set; }
+   public string date { get; set; }
+   public string time { get; set; }
+   public double duration { get; set; }
+  // public Room room { get; set; }
+   
+   public string doctor { get; set; }
+
+  
+
+   /* public Doctor Doctor
+
    {
       get
       {
@@ -30,6 +44,7 @@ public class Appointment
       {
          this.doctor = value;
       }
+
    }*/
   // public Patient patient;
    
@@ -38,6 +53,18 @@ public class Appointment
    /// </summary>
    /// <pdGenerated>Default opposite class property</pdGenerated>
    /*public Patient Patient
+
+   }
+   */ public string patient { get; set; }
+
+    public Appointment()
+    {
+    }
+
+
+    /*
+    public Patient Patient
+
    {
       get
       {
@@ -49,4 +76,24 @@ public class Appointment
       }
    }*/
 
+
+    public Appointment(int idA,string date, string time, double duration, string doctor, string patient)
+    {
+        this.idA = idA;
+        this.date = date;
+        this.time = time;
+        this.duration = duration;
+        this.doctor = doctor;
+        this.patient = patient;
+    }
+
+
+    public Appointment(int idA, string date, string time, double duration, string doctor)
+    {
+        this.idA = idA;
+        this.date = date;
+        this.time = time;
+        this.duration = duration;
+        this.doctor = doctor;
+    }
 }
