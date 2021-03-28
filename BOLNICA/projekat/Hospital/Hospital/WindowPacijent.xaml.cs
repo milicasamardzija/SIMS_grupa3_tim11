@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Collections.ObjectModel;
 
 namespace Hospital
 {
@@ -30,16 +31,16 @@ namespace Hospital
         {
             InitializeComponent();
             this.DataContext = this;
-           // AppointmentList = loadJason();
+           AppointmentList = loadJason();
 
         }
-      /*  public ObservableCollection<Room> loadJason()
+        public ObservableCollection<Appointment> loadJason()
         {
             AppointmentFileStorage fs = new AppointmentFileStorage();
             ObservableCollection<Appointment> rs = new ObservableCollection<Appointment>(fs.GetAll());
-           return rs;
+            return rs;
         }
-      */
+      
     
 
         

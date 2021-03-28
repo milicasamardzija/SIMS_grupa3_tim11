@@ -35,24 +35,68 @@ public class AppointmentFileStorage
    
    public void Delete(Appointment appointment)
    {
-      throw new NotImplementedException();
-   }
+        List<Appointment> termini = GetAll();
+
+        foreach (Appointment termin in termini)
+        {
+            if (termin.idA == appointment.idA)
+            {
+                termini.Remove(appointment);
+                break;
+            }
+        }
+        SaveAll(termini);
+    }
    
    public void DeleteById(int id)
    {
-      throw new NotImplementedException();
-   }
+        List<Appointment> termini = GetAll();
+
+        foreach (Appointment termin in termini)
+        {
+            if (termin.idA == id)
+            {
+                termini.Remove(termin);
+                break;
+            }
+        }
+        SaveAll(termini);
+    }
    
    public Appointment FindById(int id)
    {
-      throw new NotImplementedException();
-   }
-   
-   public Boolean ExistsById(int id)
-   {
-      throw new NotImplementedException();
-   }
-   
+
+        List<Appointment> termini = GetAll();
+        Appointment app = null;
+
+        foreach (Appointment termin in termini)
+        {
+            if (termin.idA == id)
+            {
+                app = termin;
+                break;
+            }
+        }
+
+        return app;
+    }
+
+    public Boolean ExistsById(int id)
+    {
+        List<Appointment> termini = GetAll();
+        Boolean app = false;
+
+        foreach (Appointment termin in termini)
+        {
+            if (termin.idA == id)
+            {
+                app = true;
+                break;
+            }
+        }
+        return app;
+
+    }
    public String fileLocation;
 
 }

@@ -7,12 +7,13 @@ using System;
 
 public class Appointment
 {
-   public DateTime date { get; set; }
-   public DateTime time { get; set; }
+   public int idA { get; set; }
+   public string date { get; set; }
+   public string time { get; set; }
    public double duration { get; set; }
   // public Room room { get; set; }
    
-   public string doctor;
+   public string doctor { get; set; }
 
   
 
@@ -27,7 +28,7 @@ public class Appointment
          this.doctor = value;
       }
    }
-   */public string patient;
+   */public string patient { get; set; }
 
     public Appointment()
     {
@@ -46,8 +47,9 @@ public class Appointment
          this.patient = value;
       }
    }*/
-    public Appointment(DateTime date, DateTime time, double duration, string doctor, string patient)
+    public Appointment(int idA,string date, string time, double duration, string doctor, string patient)
     {
+        this.idA = idA;
         this.date = date;
         this.time = time;
         this.duration = duration;
@@ -55,8 +57,9 @@ public class Appointment
         this.patient = patient;
     }
 
-    public Appointment(DateTime date, DateTime time, double duration, string doctor)
+    public Appointment(int idA, string date, string time, double duration, string doctor)
     {
+        this.idA = idA;
         this.date = date;
         this.time = time;
         this.duration = duration;
