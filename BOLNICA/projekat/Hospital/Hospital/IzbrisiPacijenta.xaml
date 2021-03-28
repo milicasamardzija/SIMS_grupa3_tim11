@@ -26,7 +26,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#FF00E5E1"
-            Click="potvrdiB"
+            Click="odustaniB"
             Content="Odustani"
             Cursor="Hand"
             FontSize="16" />
@@ -36,7 +36,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#FF00E5E1"
-            Click="odustaniB"
+            Click="potvrdiB"
             Content="Potvrdi"
             Cursor="Hand"
             FontSize="16" />

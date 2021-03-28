@@ -22,17 +22,17 @@ namespace Hospital
 
        public ObservableCollection<Patient> listPatient;
 
-        public IzmeniNalogPacijenta(ObservableCollection<Patient> list, Patient selectedPatient)
+        public IzmeniNalogPacijenta(ObservableCollection<Patient> list, Patient selectedPatient, int sel)
         {
-          /*  InitializeComponent();
-            listPatient = list;
+           InitializeComponent();
+          /*  listPatient = list;
             imeText.SelectedText = selectedPatient.name;
             prezimeText.SelectedText = selectedPatient.surname;
             jmbgText.SelectedText = selectedPatient.jmbg;
             osiguraniktText.SelectedText=selectedPatient.
 
-
             */
+           
       
         } 
     }

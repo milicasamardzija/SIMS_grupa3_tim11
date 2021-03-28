@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for IzbrisiPacijenta.xaml
-    /// </summary>
+
     public partial class IzbrisiPacijenta : Window
     {
         public ObservableCollection<Patient> listPatient;
