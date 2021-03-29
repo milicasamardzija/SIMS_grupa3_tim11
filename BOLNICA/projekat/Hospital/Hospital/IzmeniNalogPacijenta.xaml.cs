@@ -29,7 +29,7 @@ namespace Hospital
             imeText.SelectedText = selectedPatient.name;
             prezimeText.SelectedText = selectedPatient.surname;
             jmbgText.SelectedText = selectedPatient.jmbg;
-            //osiguraniktText.SelectedText=selectedPatient.
+            brText.SelectedText = selectedPatient.telephoneNumber;
             datumText.SelectedText = selectedPatient.birthdate;
             brKnjText.SelectedText = Convert.ToString(selectedPatient.idHealthCard);
             brKarText.SelectedText = Convert.ToString(selectedPatient.patientId);
@@ -48,6 +48,7 @@ namespace Hospital
 
             promeniP.name = imeText.Text;
             promeniP.surname = prezimeText.Text;
+            promeniP.birthdate = datumText.Text;
             promeniP.jmbg = jmbgText.Text;
             promeniP.telephoneNumber = brText.Text;
             promeniP.patientId = Convert.ToInt16(brKarText.Text);

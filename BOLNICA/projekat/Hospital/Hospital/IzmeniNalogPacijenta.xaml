@@ -30,13 +30,13 @@
             VerticalAlignment="Top"
             Content="JMBG"
             FontSize="15" />
-        <Label
+        <!--   <Label
             Margin="20,130,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Prezime i ime lica osiguranika"
             FontFamily="Segoe UI Semilight"
-            FontSize="15" />
+            FontSize="15" />-->
         <Label
             Margin="40,160,0,0"
             HorizontalAlignment="Left"
@@ -72,13 +72,13 @@
             Content="Kategorija zdravstvene zastite"
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
-        <Label
+        <!--  <Label
             Margin="40,310,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Zanimanje "
             FontFamily="Segoe UI Semilight"
-            FontSize="15" />
+            FontSize="15" />-->
         <Label
             Margin="20,340,0,0"
             HorizontalAlignment="Left"
@@ -129,7 +129,7 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <TextBox
+        <!--    <TextBox
             x:Name="osiguraniktText"
             Width="120"
             Height="23"
@@ -137,7 +137,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap" />-->
         <TextBox
             x:Name="datumText"
             Width="120"
@@ -199,7 +199,7 @@
             VerticalAlignment="Top"
             Content="Zenski"
             GroupName="pol" />
-        <TextBox
+        <!--  <TextBox
             x:Name="zanimanjeText"
             Width="150"
             Height="23"
@@ -207,7 +207,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap" />-->
         <Button
             Width="75"
             Margin="350,490,0,0"
