@@ -5,20 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" Background="AliceBlue">
     <Grid>
-        <Button Content="Rooms" HorizontalAlignment="Left" Width="75" Margin="0,0,0,401" Click="Button_Click"/>
-        <Button x:Name="button" Content="Doctor" HorizontalAlignment="Left" Margin="363,180,0,0" VerticalAlignment="Top" Width="84" Height="39" Click="button_Click"/>
-        <Button Content="Rooms" HorizontalAlignment="Left" Width="75" Margin="0,0,0,401" Click="Button_Click"/>
+        <Button Content="Upravnik" HorizontalAlignment="Left" Width="167" Margin="234,129,0,190" Click="Button_Click"/>
+        <Button x:Name="button" Content="Doktor" HorizontalAlignment="Left" Margin="393,129,0,0" VerticalAlignment="Top" Width="167" Height="91" Click="button_Click"/>
         <Button
             x:Name="Sekretar"
-            Width="75"
-            Margin="59,164,0,0"
+            Width="159"
+            Margin="234,220,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="SekretarButton"
-            Content="SEKRETAR"
-            Cursor="Hand" />
-        <Button Content="Login" HorizontalAlignment="Left" Margin="314,285,0,0" VerticalAlignment="Top" Width="100" Height="27" Click="login"/>
+            Content="Sekretar"
+            Cursor="Hand" Height="94" />
+        <Button Content="Pacijent" HorizontalAlignment="Left" Margin="393,220,0,0" VerticalAlignment="Top" Width="167" Height="94" Click="login" RenderTransformOrigin="-0.849,-1.32"/>
     </Grid>
 </Window>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-        Title="Pregled" Height="330.211" Width="515.493" Background="#FFED9CDD">
+        Title="Pregled" Height="330.211" Width="515.493" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,-6.4,-2.6">
         <Label x:Name="label" Content="Checkup" HorizontalAlignment="Left" Margin="215,23,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="1.322,0.683" FontSize="16" FontStyle="Italic" Foreground="#FFE8256D"/>
         <Button x:Name="button" Content="Add" HorizontalAlignment="Left" Margin="53,370,0,0" VerticalAlignment="Top" Width="75" />
