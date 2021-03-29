@@ -71,6 +71,7 @@
             Cursor="Hand"
             FontFamily="Segoe UI Semilight"
             FontSize="16" />
+        <!--
         <Button
             Width="160"
             Height="36"
@@ -83,6 +84,7 @@
             Cursor="Hand"
             FontFamily="Segoe UI Semilight"
             FontSize="16" />
+        -->
         <Button
             Width="170"
             Height="36"

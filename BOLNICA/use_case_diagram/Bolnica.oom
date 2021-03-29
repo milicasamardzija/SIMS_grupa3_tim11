@@ -950,7 +950,7 @@ IndxFKName=%REFR%_FK
 IndxThreshold=
 ColnFKName=%.3:PARENT%_%COLUMN%
 ColnFKNameUse=No</a:ModelOptionsText>
-<a:RepositoryFilename>M:\SIMS_grupa3_tim11\BOLNICA\use_case_diagram\Bolnica.oom</a:RepositoryFilename>
+<a:RepositoryFilename>D:\proj\SIMS_grupa3_tim11\BOLNICA\use_case_diagram\Bolnica.oom</a:RepositoryFilename>
 <c:ObjectLanguage>
 <o:Shortcut Id="o3">
 <a:ObjectID>B33A4812-275F-4890-9C04-727D90714643</a:ObjectID>
@@ -3375,15 +3375,22 @@ Sekretar dobija obavestenje o potrebi otkazivanja termina.\par
 <a:Code>pregled_termina</a:Code>
 <a:CreationDate>1615454390</a:CreationDate>
 <a:Creator>Milica</a:Creator>
-<a:ModificationDate>1615892739</a:ModificationDate>
-<a:Modifier>Milica</a:Modifier>
+<a:ModificationDate>1617006413</a:ModificationDate>
+<a:Modifier>Nevena</a:Modifier>
 <a:Step>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
-{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
 \pard\f0\fs20 1.Biranje korisnika\par
 2.Otvaranje kalendara\par
 3.Pregled zakazanih/slobodnih termina\par
+4. Sistemski se azurira kalendar kod lekara/pacijenta ukoliko je doslo do izmene/zakazivanja\par
 }
 </a:Step>
+<a:UseCase.Extension>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1031{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
+{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
+\pard\f0\fs20\lang1033 3a.  Sekretar zakazuje termin pacijentu\par
+3b. Sekretar menja termin pacijentu \lang1031\par
+}
+</a:UseCase.Extension>
 </o:UseCase>
 <o:UseCase Id="o103">
 <a:ObjectID>67773344-36A2-4C3D-9BB0-C79D772A735B</a:ObjectID>
