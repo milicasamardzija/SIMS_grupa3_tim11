@@ -1601,7 +1601,7 @@ Shadow=0</a:DisplayPreferences>
 </o:UseCaseAssociationSymbol>
 <o:DependencySymbol Id="o44">
 <a:ModificationDate>1615886473</a:ModificationDate>
-<a:Rect>((-1811,25339), (17347,27047))</a:Rect>
+<a:Rect>((-1811,25339), (17347,27056))</a:Rect>
 <a:ListOfPoints>((-1411,26039),(16947,26039))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -2864,7 +2864,7 @@ Shadow=0</a:DisplayPreferences>
 </o:UseCaseAssociationSymbol>
 <o:DependencySymbol Id="o80">
 <a:ModificationDate>1615893210</a:ModificationDate>
-<a:Rect>((-1169,-4901), (9134,6111))</a:Rect>
+<a:Rect>((-1169,-4901), (9134,6189))</a:Rect>
 <a:ListOfPoints>((8734,5220),(1351,5220),(1351,-4501))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -2904,7 +2904,7 @@ Shadow=0</a:DisplayPreferences>
 </o:UseCaseAssociationSymbol>
 <o:DependencySymbol Id="o86">
 <a:ModificationDate>1615892701</a:ModificationDate>
-<a:Rect>((-12370,-3280), (390,6110))</a:Rect>
+<a:Rect>((-12370,-3280), (390,6189))</a:Rect>
 <a:ListOfPoints>((-11970,5220),(-2130,5220),(-2130,-2880))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -3374,14 +3374,14 @@ Sekretar dobija obavestenje o potrebi otkazivanja termina.\par
 <a:Code>pregled_termina</a:Code>
 <a:CreationDate>1615454390</a:CreationDate>
 <a:Creator>Milica</a:Creator>
-<a:ModificationDate>1616984901</a:ModificationDate>
+<a:ModificationDate>1617005547</a:ModificationDate>
 <a:Modifier>Nevena</a:Modifier>
 <a:Step>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
 {\*\generator Riched20 10.0.18362}\viewkind4\uc1 
 \pard\f0\fs20 1.Biranje korisnika\par
 2.Otvaranje kalendara\par
 3.Pregled zakazanih/slobodnih termina\par
-4.Ukoliko je doslo do izmene ili zakazivanja, sistem to unosi u kalendare lekara kod kojih je zakazano i kod pacijenata kojima je zakazano\par
+4.Ukoliko je doslo do izmene ili zakazivanja, sistem to unosi u kalendare lekara kod kojih je zakazano i kod pacijenata kojima je zakazano/izmenjeno\par
 }
 </a:Step>
 <a:UseCase.Extension>{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1031{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
