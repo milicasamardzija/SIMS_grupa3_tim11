@@ -30,13 +30,13 @@
             VerticalAlignment="Top"
             Content="JMBG"
             FontSize="15" />
-        <Label
+        <!--   <Label
             Margin="20,130,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Prezime i ime lica osiguranika"
             FontFamily="Segoe UI Semilight"
-            FontSize="15" />
+            FontSize="15" />-->
         <Label
             Margin="40,160,0,0"
             HorizontalAlignment="Left"
@@ -72,13 +72,13 @@
             Content="Kategorija zdravstvene zastite"
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
-        <Label
+        <!--  <Label
             Margin="40,310,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Zanimanje "
             FontFamily="Segoe UI Semilight"
-            FontSize="15" />
+            FontSize="15" />-->
         <Label
             Margin="20,340,0,0"
             HorizontalAlignment="Left"
@@ -129,7 +129,7 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <TextBox
+        <!--    <TextBox
             x:Name="osiguraniktText"
             Width="120"
             Height="23"
@@ -137,7 +137,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap" />-->
         <TextBox
             x:Name="datumText"
             Width="120"
@@ -199,7 +199,7 @@
             VerticalAlignment="Top"
             Content="Zenski"
             GroupName="pol" />
-        <TextBox
+        <!--  <TextBox
             x:Name="zanimanjeText"
             Width="150"
             Height="23"
@@ -207,16 +207,18 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap" />-->
         <Button
             Width="75"
             Margin="350,490,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#FF00E5E1"
+            Click="izmenaPacijentaB"
             Content="Sacuvaj"
             Cursor="Hand"
             FontSize="16" />
+
         <TextBox
             x:Name="brKnjText"
             Width="150"
@@ -241,6 +243,17 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FirstDayOfWeek="Monday" />
+        <Button
+            Width="75"
+            Height="25"
+            Margin="70,490,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="#FF00E5E1"
+            Click="odustaniB"
+            Content="Odustani"
+            Cursor="Hand"
+            FontSize="16" />
 
     </Grid>
 </Window>

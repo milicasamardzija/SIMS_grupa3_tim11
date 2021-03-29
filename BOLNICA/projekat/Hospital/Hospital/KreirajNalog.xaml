@@ -35,7 +35,7 @@
             VerticalAlignment="Top"
             Content="JMBG"
             FontSize="15" />
-        <Label
+        <!-- <Label
             Grid.Row="3"
             Grid.Column="0"
             Margin="20,130,0,0"
@@ -43,7 +43,7 @@
             VerticalAlignment="Top"
             Content="Prezime i ime lica osiguranika"
             FontFamily="Segoe UI Semilight"
-            FontSize="15" />
+            FontSize="15" />-->
         <Label
             Grid.Row="4"
             Grid.Column="0"
@@ -89,7 +89,7 @@
             Content="Kategorija zdravstvene zastite"
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
-        <Label
+        <!--   <Label
             Grid.Row="9"
             Grid.Column="0"
             Margin="40,310,0,0"
@@ -97,7 +97,7 @@
             VerticalAlignment="Top"
             Content="Zanimanje "
             FontFamily="Segoe UI Semilight"
-            FontSize="15" />
+            FontSize="15" />-->
         <Label
             Grid.Row="10"
             Grid.Column="0"
@@ -151,7 +151,7 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <TextBox
+        <!--   <TextBox
             x:Name="imePrzOsText"
             Grid.Row="3"
             Grid.Column="1"
@@ -161,7 +161,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap" />-->
         <TextBox
             x:Name="datrText"
             Grid.Row="4"
@@ -209,7 +209,7 @@
             Content="Zenski"
             GroupName="pol"
             RenderTransformOrigin="-0.854,0.322" />
-        <TextBox
+        <!--   <TextBox
             x:Name="zanimanjeText"
             Grid.Row="8"
             Grid.Column="1"
@@ -219,7 +219,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap" />-->
         <Button
             x:Name="sacuvajButton"
             Grid.Row="12"
