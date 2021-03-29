@@ -214,9 +214,11 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#FF00E5E1"
+            Click="izmenaPacijentaB"
             Content="Sacuvaj"
             Cursor="Hand"
             FontSize="16" />
+
         <TextBox
             x:Name="brKnjText"
             Width="150"
@@ -241,6 +243,17 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FirstDayOfWeek="Monday" />
+        <Button
+            Width="75"
+            Height="25"
+            Margin="70,490,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="#FF00E5E1"
+            Click="odustaniB"
+            Content="Odustani"
+            Cursor="Hand"
+            FontSize="16" />
 
     </Grid>
 </Window>

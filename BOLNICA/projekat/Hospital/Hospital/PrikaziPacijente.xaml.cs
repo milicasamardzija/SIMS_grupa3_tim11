@@ -21,10 +21,6 @@ namespace Hospital
     /// </summary>
     public partial class PrikaziPacijente : Window
     {
-
-        
-       
-
         public ObservableCollection<Patient> listPatient
         {
             get;
@@ -50,8 +46,8 @@ namespace Hospital
         private void izmeniNalogPacijenta(object sender, RoutedEventArgs e)
         {
 
-           // IzmeniNalogPacijenta izmenaNaloga = new IzmeniNalogPacijenta(listPatient, (Patient)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
-          //  izmenaNaloga.ShowDialog();
+            IzmeniNalogPacijenta izmenaNaloga = new IzmeniNalogPacijenta(listPatient, (Patient)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
+          izmenaNaloga.ShowDialog();
         }
 
         private void izbrisiNalogPacijenta(object sender, RoutedEventArgs e)
