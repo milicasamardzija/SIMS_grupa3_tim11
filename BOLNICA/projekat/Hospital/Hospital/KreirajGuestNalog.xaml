@@ -8,6 +8,7 @@
     Title="KreirajGuestNalog"
     Width="500"
     Height="350"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid Background="#FF78D1D3">
         <Label

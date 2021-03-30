@@ -8,6 +8,7 @@
     Title="PrikaziPacijente"
     Width="500"
     Height="450"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid Background="#FF78D1D3">
 
@@ -43,8 +44,8 @@
                     Width="150"
                     Binding="{Binding jmbg}"
                     Header="JMBG" />
-          
-            <DataGridTextColumn
+
+                <DataGridTextColumn
                     Width="100"
                     Binding="{Binding patientId}"
                     Header="Id" />

@@ -22,7 +22,7 @@ namespace Hospital
 
        public ObservableCollection<Patient> listPatient;
 
-        public IzmeniNalogPacijenta(ObservableCollection<Patient> list, Patient selectedPatient, int sel)
+        public IzmeniNalogPacijenta(ObservableCollection<Patient> list, Patient selectedPatient)
         {
            InitializeComponent();
             listPatient = list;

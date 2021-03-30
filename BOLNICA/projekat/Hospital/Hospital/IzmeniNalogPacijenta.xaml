@@ -8,6 +8,7 @@
     Title="IzmeniNalogPacijenta"
     Width="500"
     Height="600"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid Background="#FF78D1D3">
         <Label

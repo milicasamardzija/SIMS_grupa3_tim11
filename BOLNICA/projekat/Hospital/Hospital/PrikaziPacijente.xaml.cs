@@ -46,7 +46,7 @@ namespace Hospital
         private void izmeniNalogPacijenta(object sender, RoutedEventArgs e)
         {
 
-            IzmeniNalogPacijenta izmenaNaloga = new IzmeniNalogPacijenta(listPatient, (Patient)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
+            IzmeniNalogPacijenta izmenaNaloga = new IzmeniNalogPacijenta(listPatient, (Patient)PrikazPacijenata.SelectedItem);
           izmenaNaloga.ShowDialog();
         }
 
