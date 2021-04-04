@@ -1,28 +1,29 @@
-// File:    GuestFileStorage.cs
+// File:    SecretaryFileStorage.cs
 // Author:  Milica
-// Created: Monday, March 29, 2021 12:19:02 PM
-// Purpose: Definition of Class GuestFileStorage
+// Created: Sunday, April 4, 2021 7:04:22 PM
+// Purpose: Definition of Class SecretaryFileStorage
 
 using System;
+using System.Collections.Generic;
 
-public class GuestFileStorage
+public class SecretaryFileStorage
 {
-   public List<Guest> GetAll()
+   public List<Secretary> GetAll()
    {
       throw new NotImplementedException();
    }
    
-   public void SaveAll(List<Guest> guest)
+   public void SaveAll(List<Secretary> secteraties)
    {
       throw new NotImplementedException();
    }
    
-   public void Save(Guest newGuest)
+   public void Save(Secretary newSecretary)
    {
       throw new NotImplementedException();
    }
    
-   public void Delete(Guest guest)
+   public void Delete(Secretary secretary)
    {
       throw new NotImplementedException();
    }
@@ -32,7 +33,7 @@ public class GuestFileStorage
       throw new NotImplementedException();
    }
    
-   public Guest FindById(int id)
+   public Secretary FindById(int id)
    {
       throw new NotImplementedException();
    }

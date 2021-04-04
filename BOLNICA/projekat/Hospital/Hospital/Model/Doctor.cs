@@ -5,9 +5,10 @@
 
 using System;
 
-public class Doctor : RegisterUser
+public class Doctor : User
 {
    public int doctorId;
    public String specialization;
+   public int freeDays = 25;
 
 }

@@ -9,10 +9,5 @@ public class MedicalRecord
 {
    public int medicalRecordId;
    public BloodType bloodType;
-   public Array vaccines;
-   public Array allergy;
-   public Patient patient;
-
-
 
 }

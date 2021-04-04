@@ -5,7 +5,7 @@
 
 using System;
 
-public class Manager : RegisterUser
+public class Manager : User
 {
    public int managerId;
 

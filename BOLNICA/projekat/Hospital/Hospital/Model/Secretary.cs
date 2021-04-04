@@ -5,7 +5,7 @@
 
 using System;
 
-public class Secretary : RegisterUser
+public class Secretary : User
 {
    public int secretaryId;
 

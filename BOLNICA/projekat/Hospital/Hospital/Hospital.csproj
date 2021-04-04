@@ -37,9 +37,7 @@
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-
       <Private>True</Private>
-
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -61,7 +59,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-
     <Page Include="AddDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -71,7 +68,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditDialog.xaml">
-		<SubType>Designer</SubType>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="DodajProstorijuDijalog.xaml.cs">
@@ -83,6 +80,13 @@
     <Compile Include="IzmeniProstorijuDijalog.xaml.cs">
       <DependentUpon>IzmeniProstorijuDijalog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Adress.cs" />
+    <Compile Include="Model\Appointment.cs" />
+    <Compile Include="Model\City.cs" />
+    <Compile Include="Model\Country.cs" />
+    <Compile Include="Model\DoctorFileStorage.cs" />
+    <Compile Include="Model\ManagerFileStorage.cs" />
+    <Compile Include="Model\SecretaryFileStorage.cs" />
     <Compile Include="Rooms.xaml.cs">
       <DependentUpon>Rooms.xaml</DependentUpon>
     </Compile>
@@ -115,7 +119,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="KreirajNalog.xaml">
-    <SubType>Designer</SubType>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="WindowPacijent.xaml.cs">
@@ -126,7 +130,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzmeniTermin.xaml">
-
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -141,13 +144,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-
     <Compile Include="DeleteDialog.xaml.cs">
       <DependentUpon>DeleteDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="EditDialog.xaml.cs">
       <DependentUpon>EditDialog.xaml</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="IzbrisiNalogPacijenta.xaml.cs">
       <DependentUpon>IzbrisiNalogPacijenta.xaml</DependentUpon>
     </Compile>
@@ -162,21 +164,19 @@
     </Compile>
     <Compile Include="KreirajNalog.xaml.cs">
       <DependentUpon>KreirajNalog.xaml</DependentUpon>
-</Compile>
+    </Compile>
     <Compile Include="DodajTermin.xaml.cs">
       <DependentUpon>DodajTermin.xaml</DependentUpon>
     </Compile>
     <Compile Include="IzmeniTermin.xaml.cs">
       <DependentUpon>IzmeniTermin.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-
     <Page Include="Pregled.xaml">
-		<SubType>Designer</SubType>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Rooms.xaml">
@@ -192,7 +192,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrikaziPacijente.xaml">
-<SubType>Designer</SubType>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ObrisiTermin.xaml">
@@ -200,13 +200,11 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowPacijent.xaml">
-
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Appointment.cs" />
     <Compile Include="Model\AppointmentFileStorage.cs" />
     <Compile Include="Model\BloodType.cs" />
     <Compile Include="Model\Checkup.cs" />
@@ -220,15 +218,13 @@
     <Compile Include="Model\Patient.cs" />
     <Compile Include="Model\PatientFileStorage.cs" />
     <Compile Include="Model\Purpose.cs" />
-    <Compile Include="Model\RegisterUser.cs" />
     <Compile Include="Model\Room.cs" />
     <Compile Include="Model\RoomFileStorage.cs" />
     <Compile Include="Model\Secretary.cs" />
     <Compile Include="Model\User.cs" />
-
     <Compile Include="Pregled.xaml.cs">
       <DependentUpon>Pregled.xaml</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="Nalozi.xaml.cs">
       <DependentUpon>Nalozi.xaml</DependentUpon>
     </Compile>
@@ -237,10 +233,9 @@
     </Compile>
     <Compile Include="PrikaziPacijente.xaml.cs">
       <DependentUpon>PrikaziPacijente.xaml</DependentUpon>
-</Compile>
+    </Compile>
     <Compile Include="ObrisiTermin.xaml.cs">
       <DependentUpon>ObrisiTermin.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

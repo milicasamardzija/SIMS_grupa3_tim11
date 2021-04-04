@@ -28,12 +28,12 @@ namespace Hospital
         }
         private void kreirajNalogB(object sender, RoutedEventArgs e) {
             PatientFileStorage pStorage = new PatientFileStorage();
-            Patient newPatient = new Patient(imeText.Text, prezimeText.Text, jmbgText.Text, datrText.Text,
+        /*    Patient newPatient = new Patient(imeText.Text, prezimeText.Text, jmbgText.Text, datrText.Text,
                 adresText.Text, brTelText.Text, Convert.ToInt16(brKnjiziceText.Text), (HealthCareCategory)zastita.SelectedIndex, 
-                Convert.ToInt16(brKartonaText.Text));
+                Convert.ToInt16(brKartonaText.Text));*/
 
 
-            pStorage.Save(newPatient);
+          //  pStorage.Save(newPatient);
            // listPatient.Add(newPatient);
 
             this.Close();

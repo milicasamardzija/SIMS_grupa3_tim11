@@ -5,18 +5,25 @@
 
 using System;
 
-public class Checkup : Appointment
+namespace Hospital.Model
 {
-   public CheckupType type { get; set; }
-    public int idCh { get; set; }
-    public string patient { get; set; }
-
-    public Checkup(string d, string t, double dur, CheckupType ty, string p)
+    public class Checkup : Appointment
     {
-        date = d;
-        time = t;
-        duration = dur;
-        type = ty;
-        patient = p;
+
+        public Checkup(int ida,int ch, DateTime dateTime1, DateTime dateTime2, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor)
+        {
+            this.idA = ida;
+            this.date = dateTime1;
+            this.time = dateTime2;
+            this.duration = v2;
+            this.doctor = doctor;
+            this.patient = patient;
+            this.idCh = ch;
+            this.type = selectedIndex;
+        }
+
+        public CheckupType type { get; set; }
+        public int idCh { get; set; }
+
     }
 }

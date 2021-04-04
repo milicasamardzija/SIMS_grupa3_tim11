@@ -43,10 +43,10 @@ namespace Hospital
             AppointmentFileStorage storage = new AppointmentFileStorage();
 
             termin.idA = Convert.ToInt32(idText.Text);
-            termin.date = Convert.ToString(dateText.Text);
-            termin.time = Convert.ToString(timeText.Text);
+            termin.date = Convert.ToDateTime(dateText.Text);
+            termin.time = Convert.ToDateTime(timeText.Text);
             termin.duration = Convert.ToDouble(durationText.Text);
-            termin.doctor = Convert.ToString(doctorText.Text);
+        //    termin.doctor = Convert.ToString(doctorText.Text);
 
 
             storage.DeleteById(Convert.ToInt16(idText.Text));

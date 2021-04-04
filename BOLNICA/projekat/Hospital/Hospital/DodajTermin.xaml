@@ -26,7 +26,7 @@
             <Label Margin="49,275,289,165" Foreground="DarkBlue" FontSize="10" FontWeight="Bold">Doktor</Label>
             <TextBox  x:Name="doctorText" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="185" RenderTransformOrigin="1.155,1.912" Margin="184,268,0,0"/>
             <Button Margin="84,347,260,93" Grid.Column="0" Width="80" Height="30" Background="AliceBlue" Click="add_appointment">Dodaj</Button>
-            <Button Margin="206,347,138,93"  Width="80" Height="30" Background="AliceBlue" Click="Button_Click">Odustani</Button>
+            <Button Margin="206,347,138,93"  Width="80" Height="30" Background="AliceBlue" Click="odustani">Odustani</Button>
             <TextBox  x:Name="durationText" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="184" Margin="184,202,0,0"/>
             <TextBox x:Name="dateText"    HorizontalAlignment="Left" Margin="186,75,0,0" VerticalAlignment="Top" Height="30" Width="181"/>
             <TextBox  x:Name="idText"    HorizontalAlignment="Left" Height="31" Margin="185,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181"/>

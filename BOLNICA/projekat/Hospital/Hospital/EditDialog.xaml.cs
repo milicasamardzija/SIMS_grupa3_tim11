@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
+using Hospital.Model;
 
 namespace Hospital
 {
@@ -32,21 +33,21 @@ namespace Hospital
             checkup = selectedCheckup;
             index = selectedIndex;
 
-            dateText.SelectedText = selectedCheckup.date;
-            timeText.SelectedText = selectedCheckup.time;
+            dateText.SelectedText = Convert.ToString(selectedCheckup.date);
+            timeText.SelectedText = Convert.ToString(selectedCheckup.time);
             durationText.SelectedText = Convert.ToString(selectedCheckup.duration);
             comboBox.SelectedIndex = (int)selectedCheckup.type;
-            patientBox.SelectedText = selectedCheckup.patient;
+          //  patientBox.SelectedText = selectedCheckup.patient;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
             CheckupFileStorage st = new CheckupFileStorage();
-            checkup.date = dateText.Text;
-            checkup.time = timeText.Text;
+            checkup.date = Convert.ToDateTime(dateText.Text);
+            checkup.time = Convert.ToDateTime(timeText.Text);
             checkup.duration = Convert.ToDouble(durationText.Text);
             checkup.type = (CheckupType)comboBox.SelectedIndex;
-            checkup.patient = patientBox.Text;
+          //  checkup.patient = patientBox.Text;
 
             //st.DeleteById(Convert.ToInt16(dateText.Text));
             st.Save(checkup);
