@@ -24,22 +24,31 @@ namespace Hospital
     {
 
         public ObservableCollection<Appointment> appointmentList;
-        public DodajTermin(ObservableCollection<Appointment> lista)
+        public int idPatient; //id pacijenta koji je ulogovan
+        public DodajTermin(ObservableCollection<Appointment> lista, int idP)
         {
             InitializeComponent();
             appointmentList = lista;
-
+            idPatient = idP;
         }
         public Patient getPatientFromFile()
         {
             Patient ret = new Patient();
+            PatientFileStorage storage = new PatientFileStorage(); 
+            List<Patient> patients = storage.GetAll();
 
-            PatientFileStorage storage = new PatientFileStorage(); //cita pacijente iz fajla
-            ret = storage.FindById(54); //uzima onog ciji je zdrastveni karton 54
-
+            foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
+            {
+                if (patient.patientId == idPatient) //pronalazi pacijenta sa id-jem ulogovanog pacijenta
+                {
+                    ret = patient;
+                    break; //kada ga nadje izlazi iz petlje
+                }
+            }
             return ret;
         }
 
+        //ova fija uvek ubacuje jednog istog doktora, kada se u tabeli prikaze doktor i kada on bude moga da se izabere onda se ova fija treba izmeniti da bi se nasao bas izabrani doktor iz fajla i ubacio u termin
         public Doctor getDoctorFromFile()
         {
             Doctor ret = new Doctor();
@@ -62,7 +71,7 @@ namespace Hospital
             //sa pacijentom
             // Appointment newapp = new Appointment(Convert.ToInt32(idText.Text), Convert.ToString(dateText.Text), Convert.ToString(timeText.Text), Convert.ToDouble(durationText.Text), Convert.ToString(doctorText.Text),patient);
 
-            //sa doktorom
+            //mislim da treba da se napravi neka fija koja vraca idAppointmenta koji ne postoji u fajlu i da se automatski taj id ubacuje u novi Appointment
             Appointment newapp = new Appointment(Convert.ToInt32(idText.Text), Convert.ToDateTime(dateText.Text), Convert.ToDateTime(timeText.Text), Convert.ToDouble(durationText.Text), doctor, patient);
 
             storage.Save(newapp);

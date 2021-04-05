@@ -51,14 +51,12 @@ namespace Hospital
                     ret.Add(checkup); //dodajemo taj pregled u listu koju vracamo za ispis u tabelu
                 }
             }
-
-
             return ret;
         }
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            AddDialog ad = new AddDialog(CheckupList);
+            AddDialog ad = new AddDialog(CheckupList,id); //salje se i id doktora koji je ulogovan
             ad.Show();
         }
 

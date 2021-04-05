@@ -24,13 +24,17 @@ namespace Hospital
     public partial class AddDialog : Window
     {
         public ObservableCollection<Checkup> listCheckup;
+        public int idD; //id ulogovanog doktora
 
-        public AddDialog(ObservableCollection<Checkup> list)
+        public AddDialog(ObservableCollection<Checkup> list, int idDoctor)
         {
             InitializeComponent();
             listCheckup = list;
+            idD = idDoctor; 
         }
 
+        //trenutno uvek dodaje istog pacijenta
+        //kada se doda da se u tabeli prikazuje pacijent treba promeniti metodu da bi se od svih pacijenata nasao bas onaj za koji je zakazan termin
         public Patient getPatientFromFile()
         {
             Patient ret = new Patient();
@@ -41,12 +45,19 @@ namespace Hospital
             return ret;
         }
 
-        public Doctor getDoctorFromFile()
+        public Doctor getDoctorFromFile() //fija koja vraca doktora koji je ulogovan na sistem i koji ce biti ubacen u termin
         {
             Doctor ret = new Doctor();
-
             List<Doctor> doctors = JsonConvert.DeserializeObject<List<Doctor>>(File.ReadAllText(@"./../../../../Hospital/files/storageDoctor.json")); //cita listu doktora iz fajla
-            ret = doctors[0]; //uzima prvog u listi(jedinog)
+           
+            foreach (Doctor doctor in doctors)  //prolaz kroz sve dokore u fajlu
+            {
+                if (doctor.doctorId == idD) //pronalazi doktora sa id-jem ulogovanog doktora
+                {
+                    ret = doctor;
+                    break; //kada ga nadje izlazi iz petlje
+                }
+            }
 
             return ret;
         }
@@ -56,9 +67,10 @@ namespace Hospital
             CheckupFileStorage st = new CheckupFileStorage();
             Patient patient = getPatientFromFile();
             Doctor doctor = getDoctorFromFile();
-            int ida = 1;
+            int ida = 1;  //ovo sam lupila id appointemnta, tu treba ispraviti da bude bas idAppointment-a koji treba
+            int idch = 5; //ovo sam lupila id checkup-a tu treba napraviti neku funkciju koja ce za svaki novi pregled da generise novi id koji vec ne postoji
 
-            Checkup newCheckup = new Checkup(ida,1, Convert.ToDateTime(dateText.Text), Convert.ToDateTime(timeText.Text), Convert.ToDouble(durationText.Text), (CheckupType)comboBox.SelectedIndex,patient,doctor);
+            Checkup newCheckup = new Checkup(ida,idch, Convert.ToDateTime(dateText.Text), Convert.ToDateTime(timeText.Text), Convert.ToDouble(durationText.Text), (CheckupType)comboBox.SelectedIndex,patient,doctor);
             st.Save(newCheckup);
             listCheckup.Add(newCheckup);
             this.Close();
