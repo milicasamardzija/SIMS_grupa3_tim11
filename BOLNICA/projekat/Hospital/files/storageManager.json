@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Stefan",
+    "surname": "Pavlovic",
+    "telephoneNumber": "0641235566",
+    "jmbg": "0502987999852",
+    "gender": 0,
+    "birthdate": "05.02.19987.",
+    "username": "stefan",
+    "password": "stefan123",
+    "adress": {
+      "street": "Vojove Misica",
+      "streetNumber": 3,
+      "city": 2,
+      "country": 0
+    },
+    "mangerId" : 1
+  }
+]

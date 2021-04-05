@@ -66,15 +66,54 @@ namespace Hospital
             }
             else if (uloga.SelectedIndex == 1) //lekar
             {
+                DoctorFileStorage df = new DoctorFileStorage();
+                List<Doctor> doctors = df.GetAll();
 
+                foreach (Doctor doctor in doctors)
+                {
+                    if (doctor.username.Equals(ime.Text) && doctor.password.Equals(lozinka.Password))
+                    {
+                        id = doctor.doctorId;
+                        Pregled d = new Pregled(); 
+                        d.Show();
+                        this.Close();
+                        return;
+                    }
+                }
             }
             else if (uloga.SelectedIndex == 2) //sekretar
             {
+                SecretaryFileStorage sf = new SecretaryFileStorage();
+                List<Secretary> secretaries = sf.GetAll();
 
+                foreach (Secretary secretary in secretaries)
+                {
+                    if (secretary.username.Equals(ime.Text) && secretary.password.Equals(lozinka.Password))
+                    {
+                        id = secretary.secretaryId;
+                        Nalozi s = new Nalozi();
+                        s.Show();
+                        this.Close();
+                        return;
+                    }
+                }
             }
             else if (uloga.SelectedIndex == 3) //upravnik
             {
+                ManagerFileStorage mf = new ManagerFileStorage();
+                List<Manager> managers = mf.GetAll();
 
+                foreach (Manager manager in managers)
+                {
+                    if (manager.username.Equals(ime.Text) && manager.password.Equals(lozinka.Password))
+                    {
+                        id = manager.managerId;
+                        Rooms m = new Rooms();
+                        m.Show();
+                        this.Close();
+                        return;
+                    }
+                }
             }
             else 
             {
