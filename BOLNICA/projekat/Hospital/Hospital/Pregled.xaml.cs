@@ -28,18 +28,32 @@ namespace Hospital
             set;
         }
 
-        public Pregled()
+        public int id;
+
+        public Pregled(int idDoctor)
         {
             InitializeComponent();
             this.DataContext = this;
-            CheckupList = loadJson();
+            id = idDoctor;
+            CheckupList = loadJson(id);
         }
 
-        public ObservableCollection<Checkup> loadJson()
+        public ObservableCollection<Checkup> loadJson(int idD)
         {
             CheckupFileStorage cs = new CheckupFileStorage();
-            ObservableCollection<Checkup> cc = new ObservableCollection<Checkup>(cs.GetAll());
-            return cc;
+            ObservableCollection<Checkup> cc = new ObservableCollection<Checkup>(cs.GetAll()); //svi pregledi
+            ObservableCollection<Checkup> ret = new ObservableCollection<Checkup>(); //ovde ce biti ubaceni pregledi koje ima bas lekar sa prosledjenim id-em(odnosno id lekara koji je ulogovan na sistem)
+
+            foreach (Checkup checkup in cc) //prolazimo kroz sve preglede u fajlu
+            {
+                if (checkup.doctor.doctorId == idD) //trazimo pregled koji ima doktora sa prosledjenim id-jem
+                {
+                    ret.Add(checkup); //dodajemo taj pregled u listu koju vracamo za ispis u tabelu
+                }
+            }
+
+
+            return ret;
         }
 
         private void add_Click(object sender, RoutedEventArgs e)

@@ -20,47 +20,29 @@ namespace Hospital
     /// </summary>
     public partial class MainWindow : Window
     {
-        public int id { get; set; }
+        public int id { get; set; } //id ulogovanog korisnika
         public MainWindow()
         {
             InitializeComponent();
-            id = -1;
+            id = -1; //inicijalno je na vrednosti koju nece imati nijedan korsinik(id ce nam ici od 1 pa dalje)
         }
 
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            Pregled p = new Pregled();
-            p.Show();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Rooms r = new Rooms();
-            r.Show();
-        }
-        private void SekretarButton(object sender, RoutedEventArgs e)
-        {
-            Nalozi prozor = new Nalozi();
-            prozor.ShowDialog();
-
-        }
         private void login(object sender, RoutedEventArgs e)
         {
             if (uloga.SelectedIndex == 0) //pacijent
             {
                 PatientFileStorage pf = new PatientFileStorage();
-                List<Patient> patients = pf.GetAll();
+                List<Patient> patients = pf.GetAll(); //svi pacijenti iz fajla
 
                 foreach (Patient patient in patients)
                 {
-                    if (patient.username.Equals(ime.Text) && patient.password.Equals(lozinka.Password))
+                    if (patient.username.Equals(ime.Text) && patient.password.Equals(lozinka.Password)) //ako su sifra i korisnicko ime nadjeni u fajlu
                     {
-                        id = patient.patientId;
-                        WindowPacijent p = new WindowPacijent(id);
+                        id = patient.patientId; //preuzimamo id pacijenta koji dalje prosledjujemo prozoru koji se prvi otvara, pa dalje ostalim prozorima da bismo uvek prikazivali podatke na osnovu ovog id-ja(odnosno bas sa korisnika koji je ulogovan)
+                        WindowPacijent p = new WindowPacijent(id); //otvara se prozor i prosledjuje id
                         p.Show();
-                        this.Close();
-                        return;
+                        this.Close(); 
+                        return; //da ne bi trazio u drugim fajlovima
                     }
                 }
             }
@@ -74,7 +56,7 @@ namespace Hospital
                     if (doctor.username.Equals(ime.Text) && doctor.password.Equals(lozinka.Password))
                     {
                         id = doctor.doctorId;
-                        Pregled d = new Pregled(); 
+                        Pregled d = new Pregled(id); 
                         d.Show();
                         this.Close();
                         return;

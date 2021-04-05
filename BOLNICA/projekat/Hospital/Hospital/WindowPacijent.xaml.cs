@@ -39,25 +39,19 @@ namespace Hospital
         {
             AppointmentFileStorage fs = new AppointmentFileStorage();
             ObservableCollection<Appointment> rs = new ObservableCollection<Appointment>(fs.GetAll()); //svi termini
-            ObservableCollection<Appointment> ret = new ObservableCollection<Appointment>();
+            ObservableCollection<Appointment> ret = new ObservableCollection<Appointment>(); //ovde ce biti ubaceni termini za pacijenta sa prisledjenim id-jem(odnosno id pacijenta koji je ulogovan na sistem)
 
-            foreach (Appointment appointment in rs)
+            foreach (Appointment appointment in rs) //prolazimo kroz sve termine u fajlu
             {
-                if (appointment.patient.patientId == id)
+                if (appointment.patient.patientId == id) //trazimo termin koji ima pacijenta sa prosledjenim id-jem
                 {
-                    ret.Add(appointment);
+                    ret.Add(appointment); //dodajemo taj termin u listu koju vracamo za ispis u tabelu
                 }
             }
 
             return ret;
         }
-      
     
-
-        
-
-       
-
         private void dodavanje(object sender, RoutedEventArgs e)
         {
             DodajTermin dd = new DodajTermin(AppointmentList);
