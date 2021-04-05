@@ -5,19 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" Background="AliceBlue">
-    <Grid>
-        <Button Content="Upravnik" HorizontalAlignment="Left" Width="167" Margin="234,129,0,190" Click="Button_Click"/>
-        <Button x:Name="button" Content="Doktor" HorizontalAlignment="Left" Margin="393,129,0,0" VerticalAlignment="Top" Width="167" Height="91" Click="button_Click"/>
-        <Button
-            x:Name="Sekretar"
-            Width="159"
-            Margin="234,220,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Click="SekretarButton"
-            Content="Sekretar"
-            Cursor="Hand" Height="94" />
-        <Button Content="Pacijent" HorizontalAlignment="Left" Margin="393,220,0,0" VerticalAlignment="Top" Width="167" Height="94" Click="login" RenderTransformOrigin="-0.849,-1.32"/>
+        Title="Prijava" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Background="LightBlue">
+        <TextBlock HorizontalAlignment="Left" FontSize="20"  Margin="240,128,0,0" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.449,-0.716"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="240,195,0,0" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.539,-0.065"/>
+        <TextBox Name="ime" HorizontalAlignment="Left" FontSize="17" Margin="388,128,0,0" Text="{Binding Value}" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" Height="27"/>
+        <PasswordBox Name="lozinka" HorizontalAlignment="Left" FontSize="17" Margin="388,195,0,0" VerticalAlignment="Top" Width="142" Height="27" />
+        <Button Content="Login" HorizontalAlignment="Left" Margin="320,335,0,0" VerticalAlignment="Top" Width="100" Height="27" Click="login"/>
+        <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Content="Uloga" FontSize="20" HorizontalAlignment="Left" Margin="240,247,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="uloga" HorizontalAlignment="Left" Margin="388,247,0,0" VerticalAlignment="Top" Width="142" Height="37" >
+            <ComboBoxItem IsSelected="True">PACIJENT</ComboBoxItem>
+            <ComboBoxItem>LEKAR</ComboBoxItem>
+            <ComboBoxItem>SEKRETAR</ComboBoxItem>
+            <ComboBoxItem>UPRAVNIK</ComboBoxItem>
+        </ComboBox>
     </Grid>
 </Window>

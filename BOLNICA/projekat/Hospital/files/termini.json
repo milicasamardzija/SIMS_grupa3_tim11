@@ -1,1 +1,105 @@
-[{"idA":1,"date":"12.02.2020.","time":"20:15h","duration":0.5,"doctor":"Goran Jagodic","patient":{"patientId":12,"healthCareCategory":1,"idHealthCard":54,"guest":false,"username":null,"password":null,"name":"Nevena","surname":"Ati","adress":"Nema","telephoneNumber":"08765678","jmbg":"123456567","gender":0,"birthdayDate":"0001-01-01T00:00:00"}}]
+[
+  {
+    "idA": 1,
+    "date": "12.02.2020.",
+    "time": "20:15",
+    "duration": 0.5,
+    "doctor": {
+      "name": "Bratislava",
+      "surname": "Bozilov",
+      "adress": {
+        "street": "Vojove Misica",
+        "streetNumber": 14,
+        "city": 5,
+        "country": 0
+      },
+      "telephoneNumber": "064/1234455",
+      "jmbg": "0105999888654",
+      "gender": 1,
+      "birthdayDate": "15.04.1960.",
+      "username": "",
+      "password": "",
+      "doctorId": 15,
+      "specialization": "pedijatrija"
+    },
+    "patient": {
+      "username": "aaa",
+      "password": "aaa",
+      "patientId": 12,
+      "healthCareCategory": 1,
+      "idHealthCard": 54,
+      "name": "Nevena",
+      "surname": "Atic",
+      "adress": {
+        "street": "Vojove Misica",
+        "streetNumber": 14,
+        "city": 5,
+        "country": 0
+      },
+      "telephoneNumber": "",
+      "jmbg": "123456567",
+      "gender": 0,
+      "birthdate": "28.3.1999.",
+      "occupation": "profesor",
+      "insurence": "Olivera Atic",
+      "guest": false
+    }
+  },
+  {
+  "idA"
+  :
+  20,
+  "date"
+  :
+  "12.02.2020.",
+  "time"
+  :
+  "20:15",
+  "duration"
+  :
+  0.5,
+  "doctor"
+  :
+  {
+    "name": "Bratislava",
+    "surname": "Bozilov",
+    "adress": {
+      "street": "Vojove Misica",
+      "streetNumber": 14,
+      "city": 5,
+      "country": 0
+    },
+    "telephoneNumber": "064/1234455",
+    "jmbg": "0105999888654",
+    "gender": 1,
+    "birthdayDate": "15.04.1960.",
+    "username": "",
+    "password": "",
+    "doctorId": 15,
+    "specialization": "pedijatrija"
+  },
+  "patient":
+  {
+    "username": "aaa",
+    "password": "aaa",
+    "patientId": 12,
+    "healthCareCategory": 1,
+    "idHealthCard": 54,
+    "name": "Nevena",
+    "surname": "Atic",
+    "adress": {
+      "street": "Vojove Misica",
+      "streetNumber": 14,
+      "city": 5,
+      "country": 0
+    },
+    "telephoneNumber": "",
+    "jmbg": "123456567",
+    "gender": 0,
+    "birthdate": "28.3.1999.",
+    "occupation": "profesor",
+    "insurence": "Olivera Atic",
+    "guest": false
+  },
+  }
+]

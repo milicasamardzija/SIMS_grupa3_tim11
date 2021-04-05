@@ -21,24 +21,35 @@ namespace Hospital
     /// </summary>
     public partial class WindowPacijent : Window
     {
-
+        public int id { get; set; }
         public ObservableCollection<Appointment> AppointmentList
         {
             get;
             set;
         }
-        public WindowPacijent()
+        public WindowPacijent(int idP)
         {
             InitializeComponent();
             this.DataContext = this;
-           AppointmentList = loadJason();
+            id = idP;
+            AppointmentList = loadJason();
 
         }
         public ObservableCollection<Appointment> loadJason()
         {
             AppointmentFileStorage fs = new AppointmentFileStorage();
-            ObservableCollection<Appointment> rs = new ObservableCollection<Appointment>(fs.GetAll());
-            return rs;
+            ObservableCollection<Appointment> rs = new ObservableCollection<Appointment>(fs.GetAll()); //svi termini
+            ObservableCollection<Appointment> ret = new ObservableCollection<Appointment>();
+
+            foreach (Appointment appointment in rs)
+            {
+                if (appointment.patient.patientId == id)
+                {
+                    ret.Add(appointment);
+                }
+            }
+
+            return ret;
         }
       
     

@@ -7,24 +7,36 @@
     "time": "11:30",
     "duration": 56.0,
     "patient": {
-      "adress": "Nema",
-      "birthdayDate": "0001-01-01T00:00:00",
-      "gender": 0,
-      "guest": false,
+      "username": "aaa",
+      "password": "aaa",
+      "patientId": 12,
       "healthCareCategory": 1,
       "idHealthCard": 54,
-      "jmbg": "123456567",
       "name": "Nevena",
-      "password": null,
-      "patientId": 12,
-      "surname": "Ati",
-      "telephoneNumber": "08765678",
-      "username": null
+      "surname": "Atic",
+      "adress": {
+        "street": "Vojove Misica",
+        "streetNumber": 14,
+        "city": 5,
+        "country": 0
+      },
+      "telephoneNumber": "",
+      "jmbg": "123456567",
+      "gender": 0,
+      "birthdate": "28.3.1999.",
+      "occupation": "profesor",
+      "insurence":"Olivera Atic",
+      "guest": false
     },
     "doctor": {
       "name": "Bratislava",
       "surname": "Bozilov",
-      "adress": "Vojvode Misica",
+      "adress": {
+        "street": "Ljubisava Andrica",
+        "streetNumber": 10,
+        "city": 5,
+        "country": 0
+      },
       "telephoneNumber": "064/1234455",
       "jmbg": "0105999888654",
       "gender": 1,

@@ -1,1 +1,41 @@
-[{"username":null,"password":null,"patientId":12,"healthCareCategory":1,"idHealthCard":54,"name":"Nevena","surname":"Atic","adress":"Nema","telephoneNumber":"","jmbg":"123456567","gender":0,"birthdate":"28.3.1999."},{"username":null,"password":null,"patientId":222,"healthCareCategory":3,"idHealthCard":22222,"name":"Milica","surname":"Marinkov","adress":"Milica","telephoneNumber":"0698564258","jmbg":"257894562","gender":0,"birthdate":"Milica"}]
+[
+  {
+    "username": "aaa",
+    "password": "aaa",
+    "patientId": 12,
+    "healthCareCategory": 1,
+    "idHealthCard": 54,
+    "name": "Nevena",
+    "surname": "Atic",
+    "adress": {"street":"Vojove Misica", "streetNumber": 14, "city": 5, "country": 0},
+    "telephoneNumber": "",
+    "jmbg": "123456567",
+    "gender": 0,
+    "birthdate": "28.3.1999.",
+    "occupation": "profesor",
+    "insurence":"Olivera Atic",
+    "guest" : false
+  },
+  {
+    "username": "bbb",
+    "password": "bbb",
+    "patientId": 10,
+    "healthCareCategory": 3,
+    "idHealthCard": 22222,
+    "name": "Milica",
+    "surname": "Marinkov",
+    "adress": {
+      "street": "Ljubisava Andrica",
+      "streetNumber": 10,
+      "city": 5,
+      "country": 0
+    },
+    "telephoneNumber": "0698564258",
+    "jmbg": "257894562",
+    "gender": 0,
+    "birthdate": "Milica",
+    "occupation": "profesor",
+    "insurence":"Jovan Samardzija",
+    "guest": false
+  }
+]

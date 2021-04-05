@@ -20,9 +20,11 @@ namespace Hospital
     /// </summary>
     public partial class MainWindow : Window
     {
+        public int id { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+            id = -1;
         }
 
 
@@ -30,7 +32,7 @@ namespace Hospital
         {
             Pregled p = new Pregled();
             p.Show();
-		}
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -45,10 +47,41 @@ namespace Hospital
         }
         private void login(object sender, RoutedEventArgs e)
         {
-            WindowPacijent p = new WindowPacijent();
-            p.Show();
-            this.Close();
+            if (uloga.SelectedIndex == 0) //pacijent
+            {
+                PatientFileStorage pf = new PatientFileStorage();
+                List<Patient> patients = pf.GetAll();
 
+                foreach (Patient patient in patients)
+                {
+                    if (patient.username.Equals(ime.Text) && patient.password.Equals(lozinka.Password))
+                    {
+                        id = patient.patientId;
+                        WindowPacijent p = new WindowPacijent(id);
+                        p.Show();
+                        this.Close();
+                        return;
+                    }
+                }
+            }
+            else if (uloga.SelectedIndex == 1) //lekar
+            {
+
+            }
+            else if (uloga.SelectedIndex == 2) //sekretar
+            {
+
+            }
+            else if (uloga.SelectedIndex == 3) //upravnik
+            {
+
+            }
+            else 
+            {
+                MessageBox.Show("Neuspesno logovanje!");
+            }
+
+                MessageBox.Show("Neuspesno logovanje!");
         }
     }
 }
