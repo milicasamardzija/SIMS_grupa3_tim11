@@ -21,11 +21,7 @@ namespace Hospital
     /// </summary>
     public partial class Rooms : Window
     {
-        public ObservableCollection<Room> RoomList
-        {
-            get;
-            set;
-        }
+        public ObservableCollection<Room> RoomList { get; set; }
 
         public Rooms()
         {
@@ -34,11 +30,11 @@ namespace Hospital
             RoomList = loadJason();
         }
 
-  
+
         public ObservableCollection<Room> loadJason()
         {
             RoomFileStorage fs = new RoomFileStorage();
-            ObservableCollection<Room> rs = new ObservableCollection<Room>(fs.GetAll());
+            ObservableCollection<Room> rs = new ObservableCollection<Room>(fs.GetAll()); //cita iz fajla listu i prebacuje u tip OservableCollection da bi moglo da se prikaze u tabeli
             return rs;
         }
 
@@ -53,10 +49,7 @@ namespace Hospital
             IzbrisiProstorijuDijalog ip = new IzbrisiProstorijuDijalog(RoomList,(Room)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex);
             ip.Show();
         }
-        //parametri i za brisanje i za izmenu:
-        //1. lista soba iz ovog fajla
-        //2. soba iz reda koji je selektovan
-        //3. indeks reda koji je selektovan
+        
         private void izmeni(object sender, RoutedEventArgs e)
         {
             IzmeniProstorijuDijalog izmeniP = new IzmeniProstorijuDijalog(RoomList,(Room)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex);

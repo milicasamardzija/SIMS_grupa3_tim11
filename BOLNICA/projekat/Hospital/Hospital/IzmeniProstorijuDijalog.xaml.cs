@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,9 +24,12 @@ namespace Hospital
         public ObservableCollection<Room> listRoom; //tabela
         public Room room; //soba koja je selektovana u tabeli
         public int index; //index selekovanog reda u tablei
+
+      
         public IzmeniProstorijuDijalog(ObservableCollection<Room> list,Room selectedRoom,int selectedIndex)
         {
             InitializeComponent();
+            this.DataContext = this;
 
             //pokusaj da pronadjem tacno sobu koja je selktovana i da sve radim nad njom
             foreach(Room r in list)
@@ -40,11 +44,12 @@ namespace Hospital
             listRoom = list;
             index = selectedIndex;
 
+
             //ovo se popunjavaju textBox-evi da bi kada se otvori dijalog bilo uneto ono sto se nalazi u tabeli
-            brojProstorijeTxt.SelectedText = Convert.ToString(room.roomId);
-            spratTxt.SelectedText = Convert.ToString(room.floor);
-            namenaTxt.SelectedIndex = (int)room.purpose;
-            kapacitetTxt.SelectedText = Convert.ToString(room.capacity);  
+              brojProstorijeTxt.SelectedText = Convert.ToString(room.roomId);
+              spratTxt.SelectedText = Convert.ToString(room.floor);
+              namenaTxt.SelectedIndex = (int)room.purpose;
+              kapacitetTxt.SelectedText = Convert.ToString(room.capacity); 
         }
 
         private void izmenaProstorije(object sender, RoutedEventArgs e)

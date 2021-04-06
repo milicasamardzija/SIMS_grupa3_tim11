@@ -35,10 +35,10 @@
                       ItemsSource="{Binding Path = RoomList}"
                       >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="BROJ" Width="150" Binding="{Binding roomId}"/>
-                <DataGridTextColumn Header="NAMENA" Width="150"  Binding="{Binding purpose}"/>
-                <DataGridTextColumn Header="SPRAT" Width="100"  Binding="{Binding floor}"/>
-                <DataGridTextColumn Header="KAPACITET" Width="100"  Binding="{Binding capacity}"/>
+                <DataGridTextColumn Header="BROJ" Width="150" Binding="{Binding Path = RoomId}"/>
+                <DataGridTextColumn Header="NAMENA" Width="150"  Binding="{Binding Path = Purpose}"/>
+                <DataGridTextColumn Header="SPRAT" Width="100"  Binding="{Binding Path = Floor}"/>
+                <DataGridTextColumn Header="KAPACITET" Width="100"  Binding="{Binding Path = Capacity}"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Horizontal" Margin ="147,300,141.247,20" HorizontalAlignment="Center" Height="100" Width="500" VerticalAlignment="Bottom" Opacity="0.99">
