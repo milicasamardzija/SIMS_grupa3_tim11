@@ -5,25 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-        Title="Pregled" Height="330.211" Width="515.493" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
+        Title="Pregled" Height="554.982" Width="905.915" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,-6.4,-2.6">
-        <Label x:Name="label" Content="Checkup" HorizontalAlignment="Left" Margin="215,23,0,0" VerticalAlignment="Top" Width="72" RenderTransformOrigin="1.322,0.683" FontSize="16" FontStyle="Italic" Foreground="#FFE8256D"/>
-        <Button x:Name="button" Content="Add" HorizontalAlignment="Left" Margin="53,370,0,0" VerticalAlignment="Top" Width="75" />
-        <Button x:Name="button1" Content="Edit" HorizontalAlignment="Left" Margin="195,370,0,0" VerticalAlignment="Top" Width="75" />
-        <Button x:Name="button2" Content="Delete" HorizontalAlignment="Left" Margin="340,370,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label" Content="Pregled" HorizontalAlignment="Left" Margin="31,10,0,0" VerticalAlignment="Top" Width="97" RenderTransformOrigin="1.322,0.683" FontSize="24" FontStyle="Italic" Foreground="#FFE8256D"/>
 
-        <DataGrid x:Name="ListCheckups" Margin="31,71,37,77.8" Grid.Column="0" Background="MistyRose" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path = CheckupList}">
+        <DataGrid x:Name="ListCheckups" Margin="31,71,274.6,103.2" Grid.Column="0" Background="MistyRose" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path = CheckupList}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="DATE" Binding="{Binding date}"/>
-                <DataGridTextColumn Header="TIME" Binding="{Binding time}"/>
-                <DataGridTextColumn Header="DURATION" Binding="{Binding duration}"/>
-                <DataGridTextColumn Header="TYPE" Binding="{Binding type}"/>
-                <DataGridTextColumn Header="PATIENT" Binding="{Binding patient}"/>
+                <DataGridTextColumn Header="DATUM" Binding="{Binding date}" FontSize="16"/>
+                <DataGridTextColumn Header="VREME" Binding="{Binding time}" FontSize="16"/>
+                <DataGridTextColumn Header="TRAJANJE" Binding="{Binding duration}" FontSize="16"/>
+                <DataGridTextColumn Header="TIP" Binding="{Binding type}" FontSize="16"/>
+                <DataGridTextColumn Header="PACIJENT" Binding="{Binding patient}" FontSize="16"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="edit" Content="Edit" HorizontalAlignment="Left" Margin="215,253,0,0" VerticalAlignment="Top" Width="75" Click="edit_Click"/>
-        <Button x:Name="delete" Content="Delete" HorizontalAlignment="Left" Margin="398,253,0,0" VerticalAlignment="Top" Width="75" Click="delete_Click"/>
-        <Button x:Name="add" Content="Add" HorizontalAlignment="Left" Margin="31,253,0,0" VerticalAlignment="Top" Width="75" Click="add_Click"/>
+        <Button x:Name="edit" Content="Izmeni pregled" HorizontalAlignment="Left" Margin="171,463,0,0" VerticalAlignment="Top" Width="116" Click="edit_Click" FontSize="16"/>
+        <Button x:Name="delete" Content="Obrisi pregled" HorizontalAlignment="Left" Margin="314,463,0,0" VerticalAlignment="Top" Width="112" Click="delete_Click" FontSize="16"/>
+        <Button x:Name="add" Content="Dodaj pregled" HorizontalAlignment="Left" Margin="31,463,0,0" VerticalAlignment="Top" Width="116" Click="add_Click" FontSize="16"/>
+        <Button x:Name="button" Content="Odjava" HorizontalAlignment="Left" Margin="755,463,0,0" VerticalAlignment="Top" Width="88" FontSize="16"/>
+        <Button x:Name="button1" Content="Izvestaj" HorizontalAlignment="Left" Margin="478,463,0,0" VerticalAlignment="Top" Width="86" FontSize="16"/>
+        <Button x:Name="button2" Content="Pregled kartona" HorizontalAlignment="Left" Margin="672,71,0,0" VerticalAlignment="Top" Width="171" RenderTransformOrigin="0.244,0.61" FontSize="16"/>
+        <Button x:Name="button3" Content="Davanje uputa" HorizontalAlignment="Left" Margin="672,123,0,0" VerticalAlignment="Top" Width="171" FontSize="16"/>
+        <Button x:Name="button4" Content="Propisivanje terapije" HorizontalAlignment="Left" Margin="672,176,0,0" VerticalAlignment="Top" Width="171" RenderTransformOrigin="0.033,0.309" FontSize="16"/>
+        <Button x:Name="button5" Content="Uvid u sale" HorizontalAlignment="Left" Margin="672,236,0,0" VerticalAlignment="Top" Width="171" FontSize="16"/>
+        <Button x:Name="button6" Content="Upravljanje blogom" HorizontalAlignment="Left" Margin="672,293,0,0" VerticalAlignment="Top" Width="171" FontSize="16"/>
+        <Button x:Name="button7" Content="Potroseni materijal" HorizontalAlignment="Left" Margin="672,355,0,0" VerticalAlignment="Top" Width="171" FontSize="16"/>
+        <Button x:Name="button8" Content="Profil" HorizontalAlignment="Left" Margin="626,463,0,0" VerticalAlignment="Top" Width="89" FontSize="16" RenderTransformOrigin="0.267,0.32"/>
 
     </Grid>
 </Window>
