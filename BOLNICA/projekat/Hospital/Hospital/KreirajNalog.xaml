@@ -7,9 +7,9 @@
     Title="KreirajNalog"
     Width="500"
     Height="500"
-    mc:Ignorable="d"
-    WindowStartupLocation="CenterScreen">
-    <Grid Background="#FF78D1D3">
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid Background="#FF78D1D3" Margin="0,0,-154.4,0.4">
         <Label
             Grid.Row="0"
             Grid.Column="0"
@@ -36,7 +36,7 @@
             VerticalAlignment="Top"
             Content="JMBG"
             FontSize="15" />
-        <!-- <Label
+        <Label
             Grid.Row="3"
             Grid.Column="0"
             Margin="20,130,0,0"
@@ -44,7 +44,7 @@
             VerticalAlignment="Top"
             Content="Prezime i ime lica osiguranika"
             FontFamily="Segoe UI Semilight"
-            FontSize="15" />-->
+            FontSize="15" />
         <Label
             Grid.Row="4"
             Grid.Column="0"
@@ -90,7 +90,7 @@
             Content="Kategorija zdravstvene zastite"
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
-        <!--   <Label
+        <Label
             Grid.Row="9"
             Grid.Column="0"
             Margin="40,310,0,0"
@@ -98,7 +98,7 @@
             VerticalAlignment="Top"
             Content="Zanimanje "
             FontFamily="Segoe UI Semilight"
-            FontSize="15" />-->
+            FontSize="15" />
         <Label
             Grid.Row="10"
             Grid.Column="0"
@@ -152,7 +152,7 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <!--   <TextBox
+        <TextBox
             x:Name="imePrzOsText"
             Grid.Row="3"
             Grid.Column="1"
@@ -162,7 +162,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
-            TextWrapping="Wrap" />-->
+            TextWrapping="Wrap" />
         <TextBox
             x:Name="datrText"
             Grid.Row="4"
@@ -175,10 +175,8 @@
             Text=""
             TextWrapping="Wrap" />
         <TextBox
-            x:Name="adresText"
-            Grid.Row="5"
-            Grid.Column="1"
-            Width="120"
+            x:Name="ulText"
+            Width="71"
             Height="23"
             Margin="200,190,0,0"
             HorizontalAlignment="Left"
@@ -197,20 +195,8 @@
             Text=""
             TextWrapping="Wrap" />
 
-        <RadioButton
-            Margin="260,259,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Muski"
-            GroupName="pol" />
-        <RadioButton
-            Margin="200,259,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Zenski"
-            GroupName="pol"
-            RenderTransformOrigin="-0.854,0.322" />
-        <!--   <TextBox
+
+        <TextBox
             x:Name="zanimanjeText"
             Grid.Row="8"
             Grid.Column="1"
@@ -220,7 +206,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
-            TextWrapping="Wrap" />-->
+            TextWrapping="Wrap" />
         <Button
             x:Name="sacuvajButton"
             Grid.Row="12"
@@ -288,5 +274,45 @@
             Content="Odustani"
             Cursor="Hand"
             FontSize="16" />
+        <ComboBox
+            Width="120"
+            Margin="250,250,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            x:Name="pol" >
+            <ComboBoxItem>
+                Muski
+            </ComboBoxItem>
+        </ComboBox>
+        <TextBox x:Name="broj" HorizontalAlignment="Left" Height="23" Margin="324,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46"/>
+        <Label Content="ulica" HorizontalAlignment="Left" Margin="173,190,0,0" VerticalAlignment="Top"/>
+        <Label Content="broj" HorizontalAlignment="Left" Margin="295,190,0,0" VerticalAlignment="Top"/>
+        <Label Content="grad" HorizontalAlignment="Left" Margin="389,190,0,0" VerticalAlignment="Top" Width="36"/>
+        <ComboBox x:Name="grad" HorizontalAlignment="Left" Margin="425,194,0,0" VerticalAlignment="Top" Width="71">
+            <ComboBoxItem> Novi Sad</ComboBoxItem>
+            <ComboBoxItem>Beograd</ComboBoxItem>
+            <ComboBoxItem>Valjevo</ComboBoxItem>
+            <ComboBoxItem>Sabac</ComboBoxItem>
+            <ComboBoxItem>Subotica</ComboBoxItem>
+            <ComboBoxItem>Backa Palanka</ComboBoxItem>
+            <ComboBoxItem>Nis</ComboBoxItem>
+            <ComboBoxItem>Kikinda</ComboBoxItem>
+            <ComboBoxItem>Zrenjanin</ComboBoxItem>
+            <ComboBoxItem>Sarajevo</ComboBoxItem>
+            <ComboBoxItem>Bjeljina</ComboBoxItem>
+            <ComboBoxItem>Bar</ComboBoxItem>
+            <ComboBoxItem>Sutomore</ComboBoxItem>
+            <ComboBoxItem>Zagreb</ComboBoxItem>
+            <ComboBoxItem>Osijek</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="drzava" HorizontalAlignment="Left" Margin="577,193,0,0" VerticalAlignment="Top" Width="46">
+            <ComboBoxItem>SRB</ComboBoxItem>
+            <ComboBoxItem>BiH</ComboBoxItem>
+            <ComboBoxItem>CG</ComboBoxItem>
+            <ComboBoxItem>HR</ComboBoxItem>
+            <ComboBoxItem>SLO</ComboBoxItem>
+        </ComboBox>
+        <Label Content="drzava" HorizontalAlignment="Left" Margin="525,190,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

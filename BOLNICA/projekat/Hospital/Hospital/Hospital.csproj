@@ -85,6 +85,7 @@
     <Compile Include="Model\City.cs" />
     <Compile Include="Model\Country.cs" />
     <Compile Include="Model\DoctorFileStorage.cs" />
+    <Compile Include="Model\IzbrisiNalogPacijenta.xaml.cs" />
     <Compile Include="Model\ManagerFileStorage.cs" />
     <Compile Include="Model\SecretaryFileStorage.cs" />
     <Compile Include="Rooms.xaml.cs">
@@ -99,10 +100,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzmeniProstorijuDijalog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="IzbrisiNalogPacijenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -149,9 +146,6 @@
     </Compile>
     <Compile Include="EditDialog.xaml.cs">
       <DependentUpon>EditDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="IzbrisiNalogPacijenta.xaml.cs">
-      <DependentUpon>IzbrisiNalogPacijenta.xaml</DependentUpon>
     </Compile>
     <Compile Include="IzbrisiPacijenta.xaml.cs">
       <DependentUpon>IzbrisiPacijenta.xaml</DependentUpon>

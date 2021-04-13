@@ -29,15 +29,21 @@ namespace Hospital
             imeText.SelectedText = selectedPatient.name;
             prezimeText.SelectedText = selectedPatient.surname;
             jmbgText.SelectedText = selectedPatient.jmbg;
+            pol.SelectedIndex = (int)selectedPatient.gender; //ovako se setuje opcija combo box-a
             brText.SelectedText = selectedPatient.telephoneNumber;
             datumText.SelectedText = selectedPatient.birthdate;
             brKnjText.SelectedText = Convert.ToString(selectedPatient.idHealthCard);
             brKarText.SelectedText = Convert.ToString(selectedPatient.patientId);
+            zanimanjeText.SelectedText = selectedPatient.occupation;
+            zastitaText.SelectedIndex = (int)selectedPatient.healthCareCategory;
+            osiguraniktText.SelectedText = selectedPatient.insurence;
+            ulicaText.SelectedText = Convert.ToString(selectedPatient.adress.street);
+            broj.SelectedText = Convert.ToString(selectedPatient.adress.streetNumber);
+            grad.SelectedIndex = (int)selectedPatient.adress.city;  
+            drzava.SelectedIndex = (int)selectedPatient.adress.country;
+         
 
-
-
-
-        } 
+        }
 
         private void izmenaPacijentaB(object sender, RoutedEventArgs e)
         {
@@ -50,9 +56,17 @@ namespace Hospital
             promeniP.surname = prezimeText.Text;
             promeniP.birthdate = datumText.Text;
             promeniP.jmbg = jmbgText.Text;
+            promeniP.occupation = zanimanjeText.Text;
+            promeniP.insurence = osiguraniktText.Text;
+            promeniP.gender = (Gender)pol.SelectedIndex;    //ovako ide za combo box
             promeniP.telephoneNumber = brText.Text;
             promeniP.patientId = Convert.ToInt16(brKarText.Text);
             promeniP.idHealthCard = Convert.ToInt16(brKnjText.Text);
+            promeniP.healthCareCategory = (HealthCareCategory)zastitaText.SelectedIndex;
+            promeniP.adress.city =((City)grad.SelectedIndex);
+            promeniP.adress.country =(Country)drzava.SelectedIndex;
+            promeniP.adress.street = ulicaText.Text;
+            promeniP.adress.streetNumber = Convert.ToInt16(broj.Text);
 
             pfs.Delete(izbrisiP);
             pfs.Save(promeniP);

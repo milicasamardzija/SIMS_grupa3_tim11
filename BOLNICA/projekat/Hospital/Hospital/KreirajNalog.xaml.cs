@@ -15,35 +15,43 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
+
     /// Interaction logic for KreirajNalog.xaml
-    /// </summary>
+
     public partial class KreirajNalog : Window
     {
+        public ObservableCollection<Patient> listPatient;
+
         public KreirajNalog()
         {
-            
+
             InitializeComponent();
-         
+
         }
-        private void kreirajNalogB(object sender, RoutedEventArgs e) {
+      //  public static String pol;
+        private void kreirajNalogB(object sender, RoutedEventArgs e)
+        {
             PatientFileStorage pStorage = new PatientFileStorage();
-        /*    Patient newPatient = new Patient(imeText.Text, prezimeText.Text, jmbgText.Text, datrText.Text,
-                adresText.Text, brTelText.Text, Convert.ToInt16(brKnjiziceText.Text), (HealthCareCategory)zastita.SelectedIndex, 
-                Convert.ToInt16(brKartonaText.Text));*/
+            Patient newPatient = new Patient(imeText.Text, prezimeText.Text, brTelText.Text, jmbgText.Text, (Gender)pol.SelectedIndex, datrText.Text,
+                 Convert.ToInt16(brKnjiziceText.Text), (HealthCareCategory)zastita.SelectedIndex,
+                Convert.ToInt16(brKartonaText.Text), zanimanjeText.Text, imePrzOsText.Text, new Adress(ulText.Text, Convert.ToInt16(broj.Text), (City)grad.SelectedIndex, (Country)drzava.SelectedItem)
+              );
 
 
-          //  pStorage.Save(newPatient);
-           // listPatient.Add(newPatient);
+             pStorage.Save(newPatient);
+            listPatient.Add(newPatient);
 
             this.Close();
 
 
-                }
+        }
 
         private void odustaniB(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+
+       
     }
 }

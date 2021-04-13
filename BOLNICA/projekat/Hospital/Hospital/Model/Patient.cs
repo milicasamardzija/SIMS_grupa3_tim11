@@ -7,13 +7,33 @@ using System;
 
 public class Patient : User
 {
-   public int patientId;
-   public HealthCareCategory healthCareCategory;
-   public int idHealthCard;
-   public String occupation;
-   public String insurence;
-   public Boolean guest = false;
-   
-  // public MedicalRecord medicalRecord;
+   public int patientId { get; set; }
+   public HealthCareCategory healthCareCategory { get; set; }
+    public int idHealthCard { get; set; }
+    public String occupation { get; set; }
+    public String insurence { get; set; }
+    public Boolean guest = false;
+
+   public Patient(String n, String s, String tel, String jmb, Gender g, String b, int pId, HealthCareCategory hcc, int idhc, String oc, String ins, Adress adr) 
+    { 
+        this.name=n;
+        this.surname=s;
+        this.telephoneNumber=tel;
+        this.jmbg=jmb;
+        this.gender=g;
+        this.birthdate=b;
+        this.patientId = pId;
+        this.healthCareCategory = hcc;
+        this.idHealthCard = idhc;
+        this.occupation = oc;
+        this.insurence = ins;
+        this.adress = adr;
+
+}
+
+    public Patient()
+    {
+    }
+    // public MedicalRecord medicalRecord;
 
 }

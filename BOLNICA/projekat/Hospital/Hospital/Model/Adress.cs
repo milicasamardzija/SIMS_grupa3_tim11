@@ -7,9 +7,18 @@ using System;
 
 public class Adress
 {
-   public String street;
-   public int streetNumber;
-   public City city;
-   public Country country;
+    public Adress(string street, int streetNumber, City city, Country country)
+    {
+        this.street = street;
+        this.streetNumber = streetNumber;
+        this.city = city;
+        this.country = country;
+    }
+
+    public String street{ get; set; }
+   public int streetNumber { get; set; }
+    public City city { get; set; }
+    public Country country { get; set; }
+
 
 }
