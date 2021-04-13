@@ -57,6 +57,8 @@ namespace Hospital
             room.purpose = (Purpose)namenaTxt.SelectedIndex;
             room.capacity = Convert.ToInt16(kapacitetTxt.Text);
 
+            listRoom[index] = new Room(Convert.ToInt16(room.roomId), Convert.ToInt16(room.floor), false, (Purpose)room.purpose, Convert.ToInt16(room.capacity));
+          
             storage.DeleteById(Convert.ToInt16(brojProstorijeTxt.Text)); //brisem sobu iz postojece liste u fajlu
             storage.Save(room); //cuvam novu izmenjenu sobu
 
