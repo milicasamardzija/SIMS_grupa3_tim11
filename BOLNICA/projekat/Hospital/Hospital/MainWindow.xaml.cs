@@ -90,8 +90,10 @@ namespace Hospital
                     if (manager.username.Equals(ime.Text) && manager.password.Equals(lozinka.Password))
                     {
                         id = manager.managerId;
-                        Rooms m = new Rooms();
-                        m.Show();
+                        /* Rooms m = new Rooms();
+                         m.Show();*/
+                        ManagerView mv = new ManagerView();
+                        mv.Show();
                         this.Close();
                         return;
                     }

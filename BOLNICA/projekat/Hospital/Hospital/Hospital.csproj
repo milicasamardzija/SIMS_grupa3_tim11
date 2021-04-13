@@ -63,7 +63,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BelsekaMagacin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DeleteDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DodajInventarDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -71,14 +79,32 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="BelsekaMagacin.xaml.cs">
+      <DependentUpon>BelsekaMagacin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DodajInventarDijalog.xaml.cs">
+      <DependentUpon>DodajInventarDijalog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodajProstorijuDijalog.xaml.cs">
       <DependentUpon>DodajProstorijuDijalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzbrisiInventarDijalog.xaml.cs">
+      <DependentUpon>IzbrisiInventarDijalog.xaml</DependentUpon>
     </Compile>
     <Compile Include="IzbrisiProstorijuDijalog.xaml.cs">
       <DependentUpon>IzbrisiProstorijuDijalog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IzmenaInventaraDijalog.xaml.cs">
+      <DependentUpon>IzmenaInventaraDijalog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IzmeniProstorijuDijalog.xaml.cs">
       <DependentUpon>IzmeniProstorijuDijalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Magacin.xaml.cs">
+      <DependentUpon>Magacin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerView.xaml.cs">
+      <DependentUpon>ManagerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Adress.cs" />
     <Compile Include="Model\Appointment.cs" />
@@ -87,6 +113,9 @@
     <Compile Include="Model\DoctorFileStorage.cs" />
     <Compile Include="Model\ManagerFileStorage.cs" />
     <Compile Include="Model\SecretaryFileStorage.cs" />
+    <Compile Include="PremestanjeInventaraDijalog.xaml.cs">
+      <DependentUpon>PremestanjeInventaraDijalog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rooms.xaml.cs">
       <DependentUpon>Rooms.xaml</DependentUpon>
     </Compile>
@@ -94,7 +123,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="IzbrisiInventarDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="IzbrisiProstorijuDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmenaInventaraDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -122,6 +159,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Sobe.xaml.cs">
+      <DependentUpon>Sobe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowPacijent.xaml.cs">
       <DependentUpon>WindowPacijent.xaml</DependentUpon>
     </Compile>
@@ -130,6 +170,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzmeniTermin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Magacin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,7 +219,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ManagerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pregled.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PremestanjeInventaraDijalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -196,6 +248,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ObrisiTermin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sobe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
