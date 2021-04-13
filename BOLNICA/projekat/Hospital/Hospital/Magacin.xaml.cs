@@ -39,7 +39,7 @@ namespace Hospital
 
         private void premesti(object sender, RoutedEventArgs e)
         {
-            MagacinFrame.NavigationService.Navigate(new PremestanjeInventaraDijalog(MagacinFrame));
+            MagacinFrame.NavigationService.Navigate(new PremestiInventarUSobu());
         }
 
         private void izmeni(object sender, RoutedEventArgs e)

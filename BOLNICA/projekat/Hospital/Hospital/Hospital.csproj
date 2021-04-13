@@ -88,6 +88,9 @@
     <Compile Include="DodajProstorijuDijalog.xaml.cs">
       <DependentUpon>DodajProstorijuDijalog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Inventar.xaml.cs">
+      <DependentUpon>Inventar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IzbrisiInventarDijalog.xaml.cs">
       <DependentUpon>IzbrisiInventarDijalog.xaml</DependentUpon>
     </Compile>
@@ -116,10 +119,17 @@
     <Compile Include="PremestanjeInventaraDijalog.xaml.cs">
       <DependentUpon>PremestanjeInventaraDijalog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PremestiInventarUSobu.xaml.cs">
+      <DependentUpon>PremestiInventarUSobu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rooms.xaml.cs">
       <DependentUpon>Rooms.xaml</DependentUpon>
     </Compile>
     <Page Include="DodajProstorijuDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inventar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -228,6 +238,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PremestanjeInventaraDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PremestiInventarUSobu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

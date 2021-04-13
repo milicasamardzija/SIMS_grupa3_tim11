@@ -35,10 +35,17 @@
                       ItemsSource="{Binding Path = RoomList}"
                       >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="BROJ" Width="150" Binding="{Binding roomId}"/>
+                <DataGridTextColumn Header="BROJ" Width="140" Binding="{Binding roomId}"/>
                 <DataGridTextColumn Header="NAMENA" Width="150"  Binding="{Binding purpose}"/>
-                <DataGridTextColumn Header="SPRAT" Width="100"  Binding="{Binding floor}"/>
-                <DataGridTextColumn Header="KAPACITET" Width="100"  Binding="{Binding capacity}"/>
+                <DataGridTextColumn Header="SPRAT" Width="70"  Binding="{Binding floor}"/>
+                <DataGridTextColumn Header="KAPACITET" Width="70"  Binding="{Binding capacity}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Prikaz" Background="LightBlue" Click="prikazInventara" FontWeight="Bold"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Horizontal" Margin ="147,300,141.247,20" HorizontalAlignment="Center" Height="100" Width="500" VerticalAlignment="Bottom" Opacity="0.99">

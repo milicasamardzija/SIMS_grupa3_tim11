@@ -62,5 +62,11 @@ namespace Hospital
             IzmeniProstorijuDijalog izmeniP = new IzmeniProstorijuDijalog(RoomList,(Room)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex);
             izmeniP.Show();
         }
+
+        private void prikazInventara(object sender, RoutedEventArgs e)
+        {
+            Inventar i = new Inventar();
+            i.Show();
+        }
     }
 }
