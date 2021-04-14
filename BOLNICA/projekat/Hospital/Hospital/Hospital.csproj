@@ -91,9 +91,6 @@
     <Compile Include="Inventar.xaml.cs">
       <DependentUpon>Inventar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Inventory.cs" />
-    <Compile Include="InventoryFileStorage.cs" />
-    <Compile Include="InventoryType.cs" />
     <Compile Include="IzbrisiInventarDijalog.xaml.cs">
       <DependentUpon>IzbrisiInventarDijalog.xaml</DependentUpon>
     </Compile>
@@ -125,7 +122,6 @@
     <Compile Include="PremestiInventarUSobu.xaml.cs">
       <DependentUpon>PremestiInventarUSobu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RoomInventory.cs" />
     <Compile Include="Rooms.xaml.cs">
       <DependentUpon>Rooms.xaml</DependentUpon>
     </Compile>
