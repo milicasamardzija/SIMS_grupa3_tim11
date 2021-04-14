@@ -21,11 +21,25 @@ namespace Hospital
     public partial class IzmeniNalogPacijenta : Window { 
 
        public ObservableCollection<Patient> listPatient;
-
+        public Patient patient;
+        public int index;
         public IzmeniNalogPacijenta(ObservableCollection<Patient> list, Patient selectedPatient, int sel)
         {
            InitializeComponent();
             listPatient = list;
+
+            foreach (Patient p in listPatient)
+            {
+                if (p.Equals(selectedPatient))
+                {
+                    patient=p;
+                    break;
+                }
+            }
+
+            listPatient=list;
+            index = sel;
+
             imeText.SelectedText = selectedPatient.name;
             prezimeText.SelectedText = selectedPatient.surname;
             jmbgText.SelectedText = selectedPatient.jmbg;
@@ -67,6 +81,24 @@ namespace Hospital
             promeniP.adress.country =(Country)drzava.SelectedIndex;
             promeniP.adress.street = ulicaText.Text;
             promeniP.adress.streetNumber = Convert.ToInt16(broj.Text);
+
+           /* listPatient[index]= new Patient(promeniP.name,
+            promeniP.surname,
+             promeniP.telephoneNumber,
+            promeniP.jmbg,
+    
+            promeniP.gender,
+            promeniP.birthdate,
+            Convert.ToInt16(promeniP.patientId),
+              promeniP.healthCareCategory,
+            promeniP.idHealthCard,
+            promeniP.occupation,
+
+            promeniP.insurence,
+            promeniP.adress.street,
+            Convert.ToInt16(promeniP.adress.streetNumber),
+            (int)promeniP.adress.city,
+            (int)promeniP.adress.country); */
 
             pfs.Delete(izbrisiP);
             pfs.Save(promeniP);

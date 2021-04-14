@@ -248,6 +248,9 @@
             <ComboBoxItem>
                 Muski
             </ComboBoxItem>
+            <ComboBoxItem>
+              Zenski
+            </ComboBoxItem>
         </ComboBox>
         <TextBox
             x:Name="broj"

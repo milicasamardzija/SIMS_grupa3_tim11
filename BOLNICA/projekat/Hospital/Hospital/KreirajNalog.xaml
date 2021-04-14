@@ -9,7 +9,7 @@
     Height="500"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid Background="#FF78D1D3" Margin="0,0,-154.4,0.4">
+    <Grid Margin="0,0,-154.4,0.4" Background="#FF78D1D3">
         <Label
             Grid.Row="0"
             Grid.Column="0"
@@ -275,21 +275,49 @@
             Cursor="Hand"
             FontSize="16" />
         <ComboBox
+            x:Name="pol"
             Width="120"
             Margin="250,250,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            x:Name="pol" >
+            VerticalAlignment="Top">
             <ComboBoxItem>
                 Muski
             </ComboBoxItem>
+            <ComboBoxItem>
+                Zenski
+            </ComboBoxItem>
         </ComboBox>
-        <TextBox x:Name="broj" HorizontalAlignment="Left" Height="23" Margin="324,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46"/>
-        <Label Content="ulica" HorizontalAlignment="Left" Margin="173,190,0,0" VerticalAlignment="Top"/>
-        <Label Content="broj" HorizontalAlignment="Left" Margin="295,190,0,0" VerticalAlignment="Top"/>
-        <Label Content="grad" HorizontalAlignment="Left" Margin="389,190,0,0" VerticalAlignment="Top" Width="36"/>
-        <ComboBox x:Name="grad" HorizontalAlignment="Left" Margin="425,194,0,0" VerticalAlignment="Top" Width="71">
-            <ComboBoxItem> Novi Sad</ComboBoxItem>
+        <TextBox
+            x:Name="broj"
+            Width="46"
+            Height="23"
+            Margin="324,190,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <Label
+            Margin="173,190,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="ulica" />
+        <Label
+            Margin="295,190,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="broj" />
+        <Label
+            Width="36"
+            Margin="389,190,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="grad" />
+        <ComboBox
+            x:Name="grad"
+            Width="71"
+            Margin="425,194,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+            <ComboBoxItem>Novi Sad</ComboBoxItem>
             <ComboBoxItem>Beograd</ComboBoxItem>
             <ComboBoxItem>Valjevo</ComboBoxItem>
             <ComboBoxItem>Sabac</ComboBoxItem>
@@ -305,14 +333,23 @@
             <ComboBoxItem>Zagreb</ComboBoxItem>
             <ComboBoxItem>Osijek</ComboBoxItem>
         </ComboBox>
-        <ComboBox Name="drzava" HorizontalAlignment="Left" Margin="577,193,0,0" VerticalAlignment="Top" Width="46">
+        <ComboBox
+            Name="drzava"
+            Width="46"
+            Margin="577,193,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
             <ComboBoxItem>SRB</ComboBoxItem>
             <ComboBoxItem>BiH</ComboBoxItem>
             <ComboBoxItem>CG</ComboBoxItem>
             <ComboBoxItem>HR</ComboBoxItem>
             <ComboBoxItem>SLO</ComboBoxItem>
         </ComboBox>
-        <Label Content="drzava" HorizontalAlignment="Left" Margin="525,190,0,0" VerticalAlignment="Top"/>
+        <Label
+            Margin="525,190,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="drzava" />
 
     </Grid>
 </Window>

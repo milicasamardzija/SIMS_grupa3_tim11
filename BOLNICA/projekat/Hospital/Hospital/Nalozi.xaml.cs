@@ -27,12 +27,6 @@ namespace Hospital
             InitializeComponent();
         }
 
-        private void vratiNaPocetak(object sender, RoutedEventArgs e)
-        {
-
-            
-
-        }
 
         private void KreirajButton(object sender,  RoutedEventArgs e)
         {
@@ -57,10 +51,7 @@ namespace Hospital
             PrikaziPacijente prikaz = new PrikaziPacijente();
             prikaz.ShowDialog();
         }
-        private void izbrisiGButton(object sender, RoutedEventArgs e)
-        {
-          
-        }
+    
 
         private void prikaziGPacijenteButton(object sender, RoutedEventArgs e)
         {

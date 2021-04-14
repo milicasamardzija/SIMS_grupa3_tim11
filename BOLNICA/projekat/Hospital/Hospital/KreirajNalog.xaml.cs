@@ -28,7 +28,7 @@ namespace Hospital
             InitializeComponent();
 
         }
-      //  public static String pol;
+   
         private void kreirajNalogB(object sender, RoutedEventArgs e)
         {
             PatientFileStorage pStorage = new PatientFileStorage();
