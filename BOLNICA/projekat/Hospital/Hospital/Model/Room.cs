@@ -4,22 +4,118 @@
 // Purpose: Definition of Class Room
 
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 
-public class Room
+public class Room : INotifyPropertChanged
 {
-   public int roomId { get; set; }
-   public int floor { get; set; }
-   public Boolean occupancy { get; set; }
-   public Purpose purpose { get; set; }
-   public int capacity { get; set; }
+   public int roomId;
+   public int floor;
+   public Boolean occupancy;
+   public Purpose purpose;
+   public int capacity;
    
+   public System.Collections.Generic.List<RoomInventory> roomInventory;
 
-    public Room(int v1, int v2, bool v3, Purpose p, int v4)
+    public Room() { }
+
+    public Room(int id, int f, bool o, Purpose p, int c)
     {
-        this.roomId = v1;
-        this.floor = v2;
-        this.occupancy = v3;
-        this.purpose = p;
-        this.capacity = v4;
+        roomId = id;
+        floor = f;
+        occupancy = o;
+        purpose = p;
+        capacity = c;
+    }
+
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected virtual void OnProperychanged(string name)
+    {
+        if (PropertyChanged != null)
+        {
+            PropertyChanged(this, new PropertyChangedEventArgs(name));
+        }
+    }
+
+    public int RoomId
+    {
+        get
+        {
+            return roomId;
+        }
+        set
+        {
+            if (value != roomId)
+            {
+                roomId = value;
+                OnProperychanged("RoomId");
+            }
+        }
+    }
+
+    public int Floor
+    {
+        get
+        {
+            return floor;
+        }
+        set
+        {
+            if(value != floor)
+            {
+                floor = value;
+                OnProperychanged("Floor");
+            }
+        }
+    }
+
+    public bool Occupancy
+    {
+        get
+        {
+            return occupancy;
+        }
+        set
+        {
+            if (value != occupancy)
+            {
+                occupancy = value;
+                OnProperychanged("Occupancy");
+            }
+        }
+    }
+
+    public Purpose Purpose
+    {
+        get
+        {
+            return purpose;
+        }
+        set
+        {
+            if (value != purpose)
+            {
+                purpose = value;
+                OnProperychanged("Purpose");
+            }
+        }
+    }
+
+    public int Capacity
+    {
+        get
+        {
+            return capacity;
+        }
+        set
+        {
+            if(value != capacity)
+            {
+                capacity = value;
+                OnProperychanged("Capacity");
+            }
+        }
     }
 }

@@ -114,7 +114,12 @@
     <Compile Include="Model\City.cs" />
     <Compile Include="Model\Country.cs" />
     <Compile Include="Model\DoctorFileStorage.cs" />
+    <Compile Include="Model\INotifyPropertChanged.cs" />
+    <Compile Include="Model\Inventory.cs" />
+    <Compile Include="Model\InventoryFileStorage.cs" />
+    <Compile Include="Model\InventoryType.cs" />
     <Compile Include="Model\ManagerFileStorage.cs" />
+    <Compile Include="Model\RoomInventory.cs" />
     <Compile Include="Model\SecretaryFileStorage.cs" />
     <Compile Include="PremestanjeInventaraDijalog.xaml.cs">
       <DependentUpon>PremestanjeInventaraDijalog.xaml</DependentUpon>
