@@ -6,9 +6,22 @@
              xmlns:local="clr-namespace:Hospital"
              mc:Ignorable="d" 
             Height="768" Width="1538"  Background="LightBlue">
-    <Grid Margin="0,0,-4,0.6" RenderTransformOrigin="0.5,0.5">
-        <DataGrid Name="ListaInventara" Background="AliceBlue" HorizontalAlignment="Left" Height="424" Margin="69,142,0,0" VerticalAlignment="Top" Width="800">
-            <DataGrid.Columns></DataGrid.Columns>
+    <Grid Margin="0,0,-4,0.6" >
+        <DataGrid Name="ListaInventara" 
+                  Background="AliceBlue" 
+                  HorizontalAlignment="Left"
+                  Height="424" 
+                  Margin="155,142,0,0" 
+                  VerticalAlignment="Top" 
+                  Width="605"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  ItemsSource="{Binding Path = InventoryList}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="TIP" Width="200" Binding="{Binding Type}"/>
+                <DataGridTextColumn Header="IME" Width="200" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="KOLICINA" Width="200" Binding="{Binding Quantity}" />
+            </DataGrid.Columns>
         </DataGrid>
         <TextBlock  FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="69,47,0,0" TextWrapping="Wrap" Text="Inventar bolnice koji se nalazi u magacinu" VerticalAlignment="Top" Height="42" Width="650" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
         <Frame Name="MagacinFrame" Content="" HorizontalAlignment="Left" Margin="1019,142,0,0" VerticalAlignment="Top" Height="424" Width="463" BorderBrush="#FFB42412" OpacityMask="Black" Foreground="#FFA31818"/>

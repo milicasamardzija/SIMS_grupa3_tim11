@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,14 +22,32 @@ namespace Hospital
     public partial class IzbrisiInventarDijalog : UserControl
     {
         public Frame frame;
-        public IzbrisiInventarDijalog(Frame m)
+        public ObservableCollection<Inventory> listInventory;
+        public int index;
+        public int id;
+        public IzbrisiInventarDijalog(Frame m,ObservableCollection<Inventory> list,Inventory selecetdInventory, int selectedIndex)
         {
             InitializeComponent();
             frame = m;
+            listInventory = list;
+            id = selecetdInventory.inventoryId;
+            index = selectedIndex;
+
+            ImeTxt.SelectedText = selecetdInventory.name;
+            KolicinaTxt.SelectedText = Convert.ToString(selecetdInventory.quantity);
+            TypeTxt.SelectedIndex = (int)selecetdInventory.type;
         }
         private void odustani(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new BelsekaMagacin());
+        }
+
+        private void izbrisi(object sender, RoutedEventArgs e)
+        {
+            InventoryFileStorage storage = new InventoryFileStorage();
+            storage.DeleteById(id);
+            listInventory.RemoveAt(index);
+            frame.NavigationService.Navigate(this);
         }
     }
 }

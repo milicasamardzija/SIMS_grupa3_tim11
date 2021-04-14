@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,15 +22,48 @@ namespace Hospital
     public partial class DodajInventarDijalog : UserControl
     {
         public Frame frame;
-        public DodajInventarDijalog(Frame m)
+        public ObservableCollection<Inventory> listInventory;
+        public DodajInventarDijalog(Frame m,ObservableCollection<Inventory> list)
         {
             InitializeComponent();
             frame = m;
+            listInventory = list;
+        }
+
+        public int generisiId()
+        {
+            int ret = 0;
+
+            InventoryFileStorage storage = new InventoryFileStorage();
+            List<Inventory> allInventories = storage.GetAll();
+
+            foreach (Inventory inventoryBig in allInventories)
+            {
+                foreach (Inventory inventory in allInventories)
+                {
+                    if (ret == inventory.inventoryId)
+                    {
+                        ++ret;
+                        break;
+                    }
+                }
+            }
+            return ret;
         }
 
         private void odustani(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new BelsekaMagacin());
+        }
+
+        private void dodaj(object sender, RoutedEventArgs e)
+        {
+            InventoryFileStorage storage = new InventoryFileStorage();
+
+            Inventory newInventory = new Inventory(generisiId(),NameTxt.Text,Convert.ToInt32(QuantityTxt.Text),(InventoryType)TypeTxt.SelectedIndex);
+
+            storage.Save(newInventory);
+            listInventory.Add(newInventory);
         }
     }
 }
