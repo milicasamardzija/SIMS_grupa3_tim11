@@ -11,4 +11,10 @@ public class RoomInventory
    public int inventoryId;
    public int quantity;
 
+    public RoomInventory(int roomId, int inventoryId, int quantity)
+    {
+        this.roomId = roomId;
+        this.inventoryId = inventoryId;
+        this.quantity = quantity;
+    }
 }

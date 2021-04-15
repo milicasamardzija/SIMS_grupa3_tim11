@@ -1,0 +1,32 @@
+[
+  {
+    "roomId": 0,
+    "inventoryId": 2,
+    "quantity": 5
+  },
+  {
+    "roomId": 0,
+    "inventoryId": 1,
+    "quantity": 6
+  },
+  {
+    "roomId": 0,
+    "inventoryId": 0,
+    "quantity": 7
+  },
+  {
+    "roomId": 1,
+    "inventoryId": 0,
+    "quantity": 7
+  },
+  {
+    "roomId": 1,
+    "inventoryId": 2,
+    "quantity": 5
+  },
+  {
+    "roomId": 2,
+    "inventoryId": 1,
+    "quantity": 15
+  }
+]

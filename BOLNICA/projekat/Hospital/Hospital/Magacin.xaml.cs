@@ -38,8 +38,6 @@ namespace Hospital
         {
             InventoryFileStorage storage = new InventoryFileStorage();
             ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>(storage.GetAll());
-            int p = ret.Count();
-            Console.WriteLine(p);
             return ret;
         }
 

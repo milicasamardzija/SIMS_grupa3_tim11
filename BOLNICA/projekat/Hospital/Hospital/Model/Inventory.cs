@@ -15,7 +15,7 @@ public class Inventory : INotifyPropertChanged
 
     public System.Collections.Generic.List<RoomInventory> roomInventory;
 
-    public Inventory() { }
+   // public Inventory() { }
 
     public Inventory(int id, String n, int q, InventoryType t)
     {

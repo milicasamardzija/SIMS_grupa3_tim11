@@ -65,7 +65,7 @@ namespace Hospital
 
         private void prikazInventara(object sender, RoutedEventArgs e)
         {
-            Inventar i = new Inventar();
+            Inventar i = new Inventar((Room)ListaProstorija.SelectedItem);
             i.Show();
         }
     }

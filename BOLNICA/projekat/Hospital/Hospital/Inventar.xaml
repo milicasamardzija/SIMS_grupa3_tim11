@@ -13,20 +13,13 @@
                       Background="AliceBlue"
                       AutoGenerateColumns="False"
                       SelectionMode="Single"
-                      IsReadOnly="True" 
+                      IsReadOnly="False" 
+                      ItemsSource="{Binding Path = listInventory}" 
                       >
-            <DataGrid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.129"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </DataGrid.RenderTransform>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="TIP" Width="140"/>
-                <DataGridTextColumn Header="IME" Width="150"/>
-                <DataGridTextColumn Header="KOLICINA" Width="70"  />
+                <DataGridTextColumn Header="TIP" Width="180" Binding="{Binding Type}"/>
+                <DataGridTextColumn Header="IME" Width="200" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="KOLICINA" Width="180" Binding="{Binding Quantity}" />
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock  FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="81,91,0,0" TextWrapping="Wrap" Text="Inventar jedne sobe" VerticalAlignment="Top" Height="42" Width="650" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
