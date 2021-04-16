@@ -20,13 +20,13 @@ namespace Hospital
     /// </summary>
     public partial class KreirajGuestNalog : Window
     {
-        public ObservableCollection<Patient> listPatient;
+      //  public ObservableCollection<Patient> listPatient;
         public KreirajGuestNalog()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void kreirajGuest(object sender, RoutedEventArgs e)
         {
             PatientFileStorage pStorage = new PatientFileStorage();
             Patient newPatient = new Patient(imeText.Text, prezimeText.Text, brojTelText.Text, jmbgText.Text, (Gender)pol.SelectedIndex,
@@ -34,12 +34,12 @@ namespace Hospital
               Convert.ToInt16(brKarText.Text));
 
             pStorage.Save(newPatient);
-            listPatient.Add(newPatient);
+           // listPatient.Add(newPatient);
 
             this.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void odustani(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

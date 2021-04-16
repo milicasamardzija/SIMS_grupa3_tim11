@@ -20,7 +20,7 @@ namespace Hospital
 
     public partial class KreirajNalog : Window
     {
-        public ObservableCollection<Patient> listPatient;
+      
 
         public KreirajNalog()
         {
@@ -34,13 +34,12 @@ namespace Hospital
             PatientFileStorage pStorage = new PatientFileStorage();
             Patient newPatient = new Patient(imeText.Text, prezimeText.Text, brTelText.Text, jmbgText.Text, (Gender)pol.SelectedIndex, datrText.Text,
                  Convert.ToInt16(brKnjiziceText.Text), (HealthCareCategory)zastita.SelectedIndex,
-                Convert.ToInt16(brKartonaText.Text), zanimanjeText.Text, imePrzOsText.Text, new Adress(ulText.Text, Convert.ToInt16(broj.Text), (City)grad.SelectedIndex, (Country)drzava.SelectedItem)
+                Convert.ToInt16(brKartonaText.Text), zanimanjeText.Text, imePrzOsText.Text, new Adress(ulText.Text, Convert.ToInt16(broj.Text), (City)grad.SelectedIndex, (Country)drzava.SelectedIndex)
               );
 
 
              pStorage.Save(newPatient);
-            listPatient.Add(newPatient);
-
+          
             this.Close();
 
 

@@ -8,6 +8,7 @@
     Title="KreirajGuestNalog"
     Width="500"
     Height="500"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid Margin="0,0,-6.4,0.4" Background="#FF78D1D3">
         <Label
@@ -103,7 +104,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#FF00E5E1"
-            Click="Button_Click"
+            Click="kreirajGuest"
             Content="Sacuvaj"
             Cursor="Hand"
             FontSize="16" />
@@ -123,7 +124,7 @@
             Margin="40,382,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="Button_Click_1"
+            Click="odustani"
             Content="Odustani"
             Cursor="Hand" />
         <Label

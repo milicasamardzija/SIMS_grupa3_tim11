@@ -80,6 +80,9 @@
     <Compile Include="IzmeniProstorijuDijalog.xaml.cs">
       <DependentUpon>IzmeniProstorijuDijalog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="KreirajStalniNalog.xaml.cs">
+      <DependentUpon>KreirajStalniNalog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\Adress.cs" />
     <Compile Include="Model\Appointment.cs" />
     <Compile Include="Model\City.cs" />
@@ -127,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzmeniTermin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KreirajStalniNalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

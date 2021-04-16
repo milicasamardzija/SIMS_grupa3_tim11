@@ -37,10 +37,10 @@ namespace Hospital
         //kada se doda da se u tabeli prikazuje pacijent treba promeniti metodu da bi se od svih pacijenata nasao bas onaj za koji je zakazan termin
         public Patient getPatientFromFile()
         {
-            Patient ret = new Patient();
+           // Patient ret = new Patient();
 
             PatientFileStorage storage = new PatientFileStorage(); //cita pacijente iz fajla
-            ret = storage.FindById(54); //uzima onog ciji je zdrastveni karton 54
+            Patient ret = storage.FindById(54); //uzima onog ciji je zdrastveni karton 54
 
             return ret;
         }
