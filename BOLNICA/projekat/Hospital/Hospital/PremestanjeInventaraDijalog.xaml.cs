@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,10 +22,18 @@ namespace Hospital
     public partial class PremestanjeInventaraDijalog : UserControl
     {
         public Frame frame;
-        public PremestanjeInventaraDijalog(Frame m)
+        public ObservableCollection<Inventory> listInventory;
+        public int index;
+        public int idInventory;
+        public Inventory inventory;
+
+        public PremestanjeInventaraDijalog(Frame m, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex)
         {
             InitializeComponent();
             frame = m;
+            listInventory = list;
+            index = selectedIndex;
+            inventory = selecetedInventory;
         }
         private void odustani(object sender, RoutedEventArgs e)
         {

@@ -27,7 +27,7 @@ namespace Hospital
         {
             InitializeComponent();
             listRoom = list;
-            id = selectedRoom.roomId; //id sobe koja je selktovana
+            id = selectedRoom.RoomId; //id sobe koja je selktovana
             index = selectedIndex; //indeks u tabeli
         }
 

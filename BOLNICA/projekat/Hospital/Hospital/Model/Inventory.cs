@@ -4,18 +4,19 @@
 // Purpose: Definition of Class Inventory
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 public class Inventory : INotifyPropertChanged
 {
-    public int inventoryId;
-    public String name;
-    public int quantity;
-    public InventoryType type;
+    private int inventoryId;
+    private String name;
+    private int quantity;
+    private InventoryType type;
 
-    public System.Collections.Generic.List<RoomInventory> roomInventory;
+    public List<RoomInventory> roomInventory;
 
-   // public Inventory() { }
+    public Inventory() { }
 
     public Inventory(int id, String n, int q, InventoryType t)
     {
@@ -23,7 +24,7 @@ public class Inventory : INotifyPropertChanged
         name = n;
         quantity = q;
         type = t;
-
+        roomInventory = new List<RoomInventory>();
     }
 
     public event PropertyChangedEventHandler PropertyChanged;

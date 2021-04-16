@@ -31,13 +31,13 @@ namespace Hospital
             InitializeComponent();
             frame = m;
             listInventory = list;
-            id = selecetedInventory.inventoryId;
+            id = selecetedInventory.InventoryId;
             index = selectedIndex;
             inventory = selecetedInventory;
 
-            ImeTxt.SelectedText = inventory.name;
-            KolicinaTxt.SelectedText = Convert.ToString(inventory.quantity);
-            TypeTxt.SelectedIndex = (int)inventory.type;
+            ImeTxt.SelectedText = inventory.Name;
+            KolicinaTxt.SelectedText = Convert.ToString(inventory.Quantity);
+            TypeTxt.SelectedIndex = (int)inventory.Type;
 
         }
 
@@ -50,14 +50,15 @@ namespace Hospital
         {
             InventoryFileStorage storage = new InventoryFileStorage();
 
-            inventory.name = ImeTxt.Text;
-            inventory.quantity = Convert.ToInt32(KolicinaTxt.Text);
-            inventory.type = (InventoryType)TypeTxt.SelectedIndex;
+            inventory.Name = ImeTxt.Text;
+            inventory.Quantity = Convert.ToInt32(KolicinaTxt.Text);
+            inventory.Type = (InventoryType)TypeTxt.SelectedIndex;
 
-            listInventory[index] = new Inventory(inventory.inventoryId,inventory.name,inventory.quantity,inventory.type);
+            listInventory[index] = new Inventory(inventory.InventoryId,inventory.Name,inventory.Quantity,inventory.Type);
 
-            storage.DeleteById(inventory.inventoryId);
-            storage.Save(inventory);
+            storage.SaveAll(listInventory);
+          //  storage.DeleteById(inventory.inventoryId);
+           // storage.Save(inventory);
 
             frame.NavigationService.Navigate(this);
 

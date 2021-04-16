@@ -6,40 +6,30 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 
 public class InventoryFileStorage
 {
-    public List<Inventory> GetAll()
+    public ObservableCollection<Inventory> GetAll()
     {
-        List<Inventory> allInventory = new List<Inventory>();
+        ObservableCollection<Inventory> allInventory = new ObservableCollection<Inventory>();
 
-        allInventory = JsonConvert.DeserializeObject<List<Inventory>>(File.ReadAllText(@"./../../../../Hospital/files/storageInventory.json"));
+        allInventory = JsonConvert.DeserializeObject<ObservableCollection<Inventory>>(File.ReadAllText(@"./../../../../Hospital/files/storageInventory.json"));
 
         return allInventory;
     }
 
     public void Save(Inventory newInventory)
     {
-        List<Inventory> allInventories = GetAll();
-        int br = 0;
+        ObservableCollection<Inventory> allInventories = GetAll();
 
-        /* foreach (Inventory inventory in allInventories)
-         {
-             if (ExistsById(inventory.inventoryId))
-             {
-                 allInventories[br] = newInventory;
-             } else
-             {
-                 allInventories.Add(newInventory);
-             }
-             br++;*/
+         allInventories.Add(newInventory);
 
-        allInventories.Add(newInventory);
         SaveAll(allInventories);
     }
 
-    public void SaveAll(List<Inventory> inventories)
+    public void SaveAll(ObservableCollection<Inventory> inventories)
     {
         using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/storageInventory.json"))
         {
@@ -50,11 +40,11 @@ public class InventoryFileStorage
 
     public void Delete(Inventory inventory)
     {
-        List<Inventory> allInventories = GetAll();
+        ObservableCollection<Inventory> allInventories = GetAll();
 
         foreach (Inventory temp in allInventories)
         {
-            if (temp.inventoryId == inventory.inventoryId)
+            if (temp.InventoryId == inventory.InventoryId)
             {
                 allInventories.Remove(temp);
                 break;
@@ -65,11 +55,11 @@ public class InventoryFileStorage
 
     public void DeleteById(int id)
     {
-        List<Inventory> allInventories = GetAll();
+        ObservableCollection<Inventory> allInventories = GetAll();
 
         foreach (Inventory inventory in allInventories)
         {
-            if (inventory.inventoryId == id)
+            if (inventory.InventoryId == id)
             {
                 allInventories.Remove(inventory);
                 break;
@@ -80,12 +70,12 @@ public class InventoryFileStorage
 
     public Inventory FindById(int id)
     {
-        List<Inventory> allInventories = GetAll();
+        ObservableCollection<Inventory> allInventories = GetAll();
         Inventory ret = null;
 
         foreach (Inventory inventory in allInventories)
         {
-            if (inventory.inventoryId == id)
+            if (inventory.InventoryId == id)
             {
                 ret = inventory;
                 break;
@@ -97,12 +87,12 @@ public class InventoryFileStorage
 
     public Boolean ExistsById(int id)
     {
-        List<Inventory> allInventories = GetAll();
+        ObservableCollection<Inventory> allInventories = GetAll();
         Boolean ret = false;
 
         foreach (Inventory inventory in allInventories)
         {
-            if (inventory.inventoryId == id)
+            if (inventory.InventoryId == id)
             {
                 ret = true;
                 break;

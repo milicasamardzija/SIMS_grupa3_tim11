@@ -26,12 +26,20 @@ namespace Hospital
             get;
             set;
         }
-        public Magacin()
+
+        public ObservableCollection<Room> ListRoom
+        {
+            get;
+            set;
+        }
+
+        public Magacin(ObservableCollection<Room> roomList)
         {
             InitializeComponent();
             MagacinFrame.NavigationService.Navigate(new BelsekaMagacin());
             this.DataContext = this;
             InventoryList = loadJason();
+            ListRoom = roomList;
         }
 
         public ObservableCollection<Inventory> loadJason()
@@ -53,7 +61,7 @@ namespace Hospital
 
         private void premesti(object sender, RoutedEventArgs e)
         {
-            MagacinFrame.NavigationService.Navigate(new PremestiInventarUSobu());
+            MagacinFrame.NavigationService.Navigate(new PremestiInventarUSobu(MagacinFrame, InventoryList, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex, ListRoom));
         }
 
         private void izmeni(object sender, RoutedEventArgs e)

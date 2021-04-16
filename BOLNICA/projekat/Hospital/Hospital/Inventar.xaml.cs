@@ -31,10 +31,10 @@ namespace Hospital
         public Inventar(Room selectedRoom)
         {
             InitializeComponent();
-            InventarPemesti.NavigationService.Navigate(new PremestanjeInventaraDijalog(InventarPemesti));
             this.DataContext = this;
             room = selectedRoom;
             listInventory = loadJason();
+            InventarPemesti.NavigationService.Navigate(new PremestanjeInventaraDijalog(InventarPemesti, listInventory,(Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
         }
 
         public ObservableCollection<Inventory> loadJason()
@@ -46,27 +46,26 @@ namespace Hospital
             ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>();
 
            foreach (RoomInventory r in storage.GetAll())
-            {
-                if (r.roomId.Equals(room.roomId))
+           {
+                if (r.roomId.Equals(room.RoomId))
                 {
                     RoomInventory roomFound = storage.FindById(r.roomId);
                     rooms.Add(new RoomInventory(r.roomId,r.inventoryId,r.quantity));
                 }
 
-            }
+           }
 
-            foreach (RoomInventory i in rooms) {
+            foreach (RoomInventory i in rooms) 
+            {
                  foreach (Inventory inventr in storageInventory.GetAll())
                  {
-                            if (i.inventoryId == inventr.inventoryId)
-                            {
-                                Inventory foundInventory = storageInventory.FindById(i.inventoryId);
-                                ret.Add(new Inventory(foundInventory.inventoryId, foundInventory.name, i.quantity, foundInventory.type));
-
-                            }
-                    }
-                }
-
+                        if (i.inventoryId == inventr.InventoryId)
+                        {
+                            Inventory foundInventory = storageInventory.FindById(i.inventoryId);
+                            ret.Add(new Inventory(foundInventory.InventoryId, foundInventory.Name, i.quantity, foundInventory.Type));
+                        }
+                   }
+             }
             return ret;
         }
     }

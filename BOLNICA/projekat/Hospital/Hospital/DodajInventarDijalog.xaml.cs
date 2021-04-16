@@ -35,13 +35,13 @@ namespace Hospital
             int ret = 0;
 
             InventoryFileStorage storage = new InventoryFileStorage();
-            List<Inventory> allInventories = storage.GetAll();
+            ObservableCollection<Inventory> allInventories = storage.GetAll();
 
             foreach (Inventory inventoryBig in allInventories)
             {
                 foreach (Inventory inventory in allInventories)
                 {
-                    if (ret == inventory.inventoryId)
+                    if (ret == inventory.InventoryId)
                     {
                         ++ret;
                         break;

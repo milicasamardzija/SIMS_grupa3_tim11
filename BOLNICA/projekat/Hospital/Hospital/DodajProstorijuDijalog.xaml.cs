@@ -38,7 +38,7 @@ namespace Hospital
             foreach (Room roomBig in allRooms) {
                 foreach (Room room in allRooms)
                 {
-                    if (ret == room.roomId)
+                    if (ret == room.RoomId)
                     {
                         ++ret;
                         break;

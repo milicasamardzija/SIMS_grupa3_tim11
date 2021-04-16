@@ -30,12 +30,12 @@ namespace Hospital
             InitializeComponent();
             frame = m;
             listInventory = list;
-            id = selecetdInventory.inventoryId;
+            id = selecetdInventory.InventoryId;
             index = selectedIndex;
 
-            ImeTxt.SelectedText = selecetdInventory.name;
-            KolicinaTxt.SelectedText = Convert.ToString(selecetdInventory.quantity);
-            TypeTxt.SelectedIndex = (int)selecetdInventory.type;
+            ImeTxt.SelectedText = selecetdInventory.Name;
+            KolicinaTxt.SelectedText = Convert.ToString(selecetdInventory.Quantity);
+            TypeTxt.SelectedIndex = (int)selecetdInventory.Type;
         }
         private void odustani(object sender, RoutedEventArgs e)
         {

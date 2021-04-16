@@ -9,15 +9,15 @@ using System.ComponentModel;
 
 public class Room : INotifyPropertChanged
 {
-   public int roomId;
-   public int floor;
-   public Boolean occupancy;
-   public Purpose purpose;
-   public int capacity;
+   private int roomId;
+   private int floor;
+   private Boolean occupancy;
+   private Purpose purpose;
+   private int capacity;
    
    public System.Collections.Generic.List<RoomInventory> roomInventory;
 
-    public Room() { }
+   public Room() { }
 
     public Room(int id, int f, bool o, Purpose p, int c)
     {
@@ -26,6 +26,7 @@ public class Room : INotifyPropertChanged
         occupancy = o;
         purpose = p;
         capacity = c;
+        roomInventory = new List<RoomInventory>();
     }
 
 

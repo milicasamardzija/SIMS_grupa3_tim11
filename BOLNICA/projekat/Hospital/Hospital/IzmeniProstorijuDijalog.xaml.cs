@@ -41,10 +41,10 @@ namespace Hospital
             index = selectedIndex;
 
             //ovo se popunjavaju textBox-evi da bi kada se otvori dijalog bilo uneto ono sto se nalazi u tabeli
-            brojProstorijeTxt.SelectedText = Convert.ToString(room.roomId);
-            spratTxt.SelectedText = Convert.ToString(room.floor);
-            namenaTxt.SelectedIndex = (int)room.purpose;
-            kapacitetTxt.SelectedText = Convert.ToString(room.capacity);  
+            brojProstorijeTxt.SelectedText = Convert.ToString(room.RoomId);
+            spratTxt.SelectedText = Convert.ToString(room.Floor);
+            namenaTxt.SelectedIndex = (int)room.Purpose;
+            kapacitetTxt.SelectedText = Convert.ToString(room.Capacity);  
         }
 
         private void izmenaProstorije(object sender, RoutedEventArgs e)
@@ -52,12 +52,12 @@ namespace Hospital
             RoomFileStorage storage = new RoomFileStorage();
 
             //menjam sobu
-            room.roomId = Convert.ToInt16(brojProstorijeTxt.Text);
-            room.floor = Convert.ToInt16(spratTxt.Text);
-            room.purpose = (Purpose)namenaTxt.SelectedIndex;
-            room.capacity = Convert.ToInt16(kapacitetTxt.Text);
+            room.RoomId = Convert.ToInt16(brojProstorijeTxt.Text);
+            room.Floor = Convert.ToInt16(spratTxt.Text);
+            room.Purpose = (Purpose)namenaTxt.SelectedIndex;
+            room.Capacity = Convert.ToInt16(kapacitetTxt.Text);
 
-            listRoom[index] = new Room(Convert.ToInt16(room.roomId), Convert.ToInt16(room.floor), false, (Purpose)room.purpose, Convert.ToInt16(room.capacity));
+            listRoom[index] = new Room(Convert.ToInt16(room.RoomId), Convert.ToInt16(room.Floor), false, (Purpose)room.Purpose, Convert.ToInt16(room.Capacity));
           
             storage.DeleteById(Convert.ToInt16(brojProstorijeTxt.Text)); //brisem sobu iz postojece liste u fajlu
             storage.Save(room); //cuvam novu izmenjenu sobu

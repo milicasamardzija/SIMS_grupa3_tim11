@@ -9,7 +9,6 @@
         <Label Content="Ime" HorizontalAlignment="Left" Margin="30,85,0,0" VerticalAlignment="Top" Height="50" Width="64" FontSize="24" FontWeight="Bold"/>
         <Label Content="Tip" HorizontalAlignment="Left" Margin="30,19,0,0" VerticalAlignment="Top" Height="54" Width="92" FontSize="24" FontWeight="Bold"/>
         <Label Content="Kolicina" HorizontalAlignment="Left" Margin="30,163,0,0" VerticalAlignment="Top" Height="53" Width="110" FontSize="24" RenderTransformOrigin="0.512,0.925" FontWeight="Bold"/>
-        <TextBox HorizontalAlignment="Left" Height="54" Margin="180,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244"/>
         <TextBox HorizontalAlignment="Left" Height="53" Margin="180,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244"/>
         <TextBox HorizontalAlignment="Left" Height="50" Margin="180,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244"/>
         <Button Background="LightBlue" Content="Premesti" HorizontalAlignment="Left" Margin="30,335,0,0" VerticalAlignment="Top" Width="132" FontSize="24" Height="62" FontWeight="Bold"/>
@@ -18,5 +17,9 @@
         <TextBox HorizontalAlignment="Left" Height="52" Margin="180,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244"/>
         <RadioButton Content="Prostorija" HorizontalAlignment="Left" Margin="63,226,0,0" VerticalAlignment="Top" Height="38" Width="157" FontSize="24" RenderTransformOrigin="0,0" FontWeight="Bold"/>
         <RadioButton Content="Magacin" HorizontalAlignment="Left" Margin="245,226,0,0" VerticalAlignment="Top" Height="38" Width="157" FontSize="24" RenderTransformOrigin="0,0" FontWeight="Bold"/>
+        <ComboBox Name="TypeTxt" HorizontalAlignment="Left" Margin="180,19,0,0" VerticalAlignment="Top" Width="244" Height="41">
+            <ComboBoxItem IsSelected="True">STATICKI</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">DINAMICKI</ComboBoxItem>
+        </ComboBox>
     </Grid>
 </UserControl>
