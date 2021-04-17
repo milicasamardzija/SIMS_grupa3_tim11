@@ -33,7 +33,7 @@ namespace Hospital
             
             idText.SelectedText = Convert.ToString(selectedApp.idA);
             dateText.SelectedText = Convert.ToString(selectedApp.date);
-            timeText.SelectedText = Convert.ToString(selectedApp.time);
+            //timeText.SelectedText = Convert.ToString(selectedApp.time);
             durationText.SelectedText = Convert.ToString(selectedApp.duration);
             doctorText.SelectedText = Convert.ToString(selectedApp.doctor);
         }
@@ -44,7 +44,7 @@ namespace Hospital
 
             termin.idA = Convert.ToInt32(idText.Text);
             termin.date = Convert.ToDateTime(dateText.Text);
-            termin.time = Convert.ToDateTime(timeText.Text);
+           // termin.time = Convert.ToDateTime(timeText.Text);
             termin.duration = Convert.ToDouble(durationText.Text);
         //    termin.doctor = Convert.ToString(doctorText.Text);
 

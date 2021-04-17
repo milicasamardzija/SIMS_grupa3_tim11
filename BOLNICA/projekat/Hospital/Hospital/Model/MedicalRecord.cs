@@ -9,5 +9,5 @@ public class MedicalRecord
 {
    public int medicalRecordId;
    public BloodType bloodType;
-
+    public String allergy;
 }

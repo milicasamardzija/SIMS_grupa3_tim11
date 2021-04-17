@@ -16,5 +16,23 @@
     "password": "braca",
     "doctorId": 15,
     "specialization": "pedijatrija"
+  },
+ {
+    "name": "Mladen",
+    "surname": "Stojanovic",
+    "adress": {
+      "street": "Dunavska",
+      "streetNumber": 15,
+      "city": 5,
+      "country": 0
+    },
+    "telephoneNumber": "064/1235544",
+    "jmbg": "0105999777654",
+    "gender": 0,
+    "birthdayDate": "15.08.1972.",
+    "username": "mladen",
+    "password": "mladen",
+    "doctorId": 16,
+    "specialization": "neurohirurgija"
   }
 ]

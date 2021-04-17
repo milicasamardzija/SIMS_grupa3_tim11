@@ -32,24 +32,53 @@ namespace Hospital
             listCheckup = list;
             checkup = selectedCheckup;
             index = selectedIndex;
-
-            dateText.SelectedText = Convert.ToString(selectedCheckup.date);
+            datePick.SelectedDate = Convert.ToDateTime(selectedCheckup.date);
+            //datePick.DisplayDate = new DateTime(2021, 04, 17);
             timeText.SelectedText = Convert.ToString(selectedCheckup.time);
             durationText.SelectedText = Convert.ToString(selectedCheckup.duration);
             comboBox.SelectedIndex = (int)selectedCheckup.type;
-          //  patientBox.SelectedText = selectedCheckup.patient;
+            //patientBox.SelectedText = Convert.ToString(selectedCheckup.patient);
+        }
+
+        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DateTime newdate = (DateTime)(((DatePicker)sender).SelectedDate);
+        }
+
+        public int generisiID()
+        {
+            int ret = 0;
+            CheckupFileStorage storage = new CheckupFileStorage();
+            List<Checkup> allCheckups = storage.GetAll();
+            foreach (Checkup ch in allCheckups)
+            {
+                foreach (Checkup checkup in allCheckups)
+                {
+                    if (ret == checkup.idCh)
+                    {
+                        ++ret;
+                        break;
+                    }
+                }
+            }
+            return ret;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
             CheckupFileStorage st = new CheckupFileStorage();
-            checkup.date = Convert.ToDateTime(dateText.Text);
-            checkup.time = Convert.ToDateTime(timeText.Text);
+            checkup.date = datePick.DisplayDate;
+            checkup.time = Convert.ToString(timeText.Text);
             checkup.duration = Convert.ToDouble(durationText.Text);
             checkup.type = (CheckupType)comboBox.SelectedIndex;
-          //  checkup.patient = patientBox.Text;
+            // checkup.patient = patientBox.Text;
+            int ida = 1;
+            int idc = generisiID();
 
-            //st.DeleteById(Convert.ToInt16(dateText.Text));
+             listCheckup[index] = new Checkup(ida, idc, datePick.DisplayDate, Convert.ToString(checkup.Time),  Convert.ToDouble(checkup.Duration), 
+            (CheckupType)checkup.Type,checkup.Patient, checkup.Doctor);
+
+            st.DeleteById(Convert.ToInt16(durationText.Text));
             st.Save(checkup);
             this.Close();
         }

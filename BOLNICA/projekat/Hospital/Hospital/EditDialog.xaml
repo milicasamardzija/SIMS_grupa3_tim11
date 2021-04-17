@@ -5,23 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-        Title="Izmeni pregled" Height="481.369" Width="372.557" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
+        Title="Izmeni pregled" Height="460.149" Width="404.946" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label x:Name="label" Content="Datum" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="64" FontSize="16"/>
-        <Label x:Name="label1" Content="Vreme" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top" Width="64" FontSize="16"/>
-        <Label x:Name="label2" Content="Trajanje" HorizontalAlignment="Left" Margin="10,163,0,0" VerticalAlignment="Top" Width="64" FontSize="16"/>
-        <Label x:Name="label3" Content="Tip" HorizontalAlignment="Left" Margin="10,226,0,0" VerticalAlignment="Top" Width="64" FontSize="16"/>
-        <TextBox x:Name="dateText" HorizontalAlignment="Left" Height="32" Margin="118,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="207" FontSize="16"/>
-        <TextBox x:Name="timeText" HorizontalAlignment="Left" Height="32" Margin="118,88,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="207" FontSize="16"/>
-        <TextBox x:Name="durationText" HorizontalAlignment="Left" Height="32" Margin="118,163,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="207" FontSize="16"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="118,226,0,0" VerticalAlignment="Top" Width="207" Height="32" FontSize="16">
+        <Label x:Name="label" Content="Datum" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="91" FontSize="16"/>
+        <DatePicker x:Name="datePick" HorizontalAlignment="Left" SelectedDateChanged="DatePicker_SelectedDateChanged" Height="25" Margin="168,27,0,378.4" Width="207"/>
+        <Label x:Name="label2" Content="Trajanje" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Width="64" FontSize="16"/>
+        <Label x:Name="label3" Content="Tip" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" Width="64" FontSize="16"/>
+        <TextBox x:Name="durationText" HorizontalAlignment="Left" Height="32" Margin="168,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="207" FontSize="16"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="168,188,0,0" VerticalAlignment="Top" Width="207" Height="32" FontSize="16">
             <ComboBoxItem FontSize="16">Pregled</ComboBoxItem>
             <ComboBoxItem FontSize="16">Kontrolni pregled</ComboBoxItem>
             <ComboBoxItem FontSize="16">Operacija</ComboBoxItem>
         </ComboBox>
-        <Button x:Name="button" Content="Potvrdi" HorizontalAlignment="Left" Margin="24,388,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" FontSize="16"/>
-        <Button x:Name="button1" Content="Odbaci" HorizontalAlignment="Left" Margin="250,388,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click" FontSize="16"/>
-        <Label x:Name="label4" Content="Pacijent" HorizontalAlignment="Left" Margin="10,296,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <TextBox x:Name="patientBox" HorizontalAlignment="Left" Height="32" Margin="118,296,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="207" FontSize="16"/>
+        <Button x:Name="button" Content="Potvrdi" HorizontalAlignment="Left" Margin="26,369,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" FontSize="16"/>
+        <Button x:Name="button1" Content="Odbaci" HorizontalAlignment="Left" Margin="281,369,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click" FontSize="16"/>
+        <Label x:Name="label4" Content="Pacijent" HorizontalAlignment="Left" Margin="10,243,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="patientBox" HorizontalAlignment="Left" Height="32" Margin="168,243,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="207" FontSize="16"/>
+        <Label x:Name="label_Copy" Content="Vreme" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" Width="91" FontSize="16"/>
+        <TextBox x:Name="timeText" HorizontalAlignment="Left" Height="32" Margin="168,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="207" FontSize="16"/>
     </Grid>
 </Window>

@@ -29,6 +29,7 @@ namespace Hospital
         }
 
         public int id;
+        public int idpacijenta = 1;
 
         public Pregled(int idDoctor)
         {
@@ -46,17 +47,17 @@ namespace Hospital
 
             foreach (Checkup checkup in cc) //prolazimo kroz sve preglede u fajlu
             {
-                if (checkup.doctor.doctorId == idD) //trazimo pregled koji ima doktora sa prosledjenim id-jem
-                {
+                //if (checkup.doctor.doctorId == idD) //trazimo pregled koji ima doktora sa prosledjenim id-jem
+                //{
                     ret.Add(checkup); //dodajemo taj pregled u listu koju vracamo za ispis u tabelu
-                }
+                //}
             }
             return ret;
         }
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            AddDialog ad = new AddDialog(CheckupList,id); //salje se i id doktora koji je ulogovan
+            AddDialog ad = new AddDialog(CheckupList, id); //salje se i id doktora koji je ulogovan
             ad.Show();
         }
 
@@ -70,6 +71,31 @@ namespace Hospital
         {
             DeleteDialog dd = new DeleteDialog(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
             dd.Show();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            PregledPacijenata pp = new PregledPacijenata();
+            pp.Show();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mw = new MainWindow();
+            mw.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            IzdavanjeRecepta ir = new IzdavanjeRecepta();
+            ir.Show();
+        }
+
+        private void button9_Click(object sender, RoutedEventArgs e)
+        {
+            KreiranjeAnamneze ka = new KreiranjeAnamneze(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
+            ka.Show();
         }
     }
 }
