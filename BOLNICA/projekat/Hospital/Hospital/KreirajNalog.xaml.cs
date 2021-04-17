@@ -53,13 +53,13 @@ namespace Hospital
         {
             PatientFileStorage pStorage = new PatientFileStorage();
 
-            Patient newPatient = new Patient(imeText.Text, prezimeText.Text, brTelText.Text, jmbgText.Text, (Gender)pol.SelectedIndex, (DateTime)datum.SelectedDate,
-                 generisiId(), (HealthCareCategory)zastita.SelectedIndex,
-                Convert.ToInt16(brKnjiziceText.Text), zanimanjeText.Text, imePrzOsText.Text, new Adress(ulText.Text, Convert.ToInt16(broj.Text), (City)grad.SelectedIndex, (Country)drzava.SelectedIndex)
-              );
+            Patient newPatient = new Patient(imeText.Text, prezimeText.Text, brTelText.Text, jmbgText.Text, (Gender)pol.SelectedIndex, (DateTime)datum.SelectedDate,generisiId(), (HealthCareCategory)zastita.SelectedIndex,Convert.ToInt16(brKnjiziceText.Text), zanimanjeText.Text, imePrzOsText.Text, new Adress(ulText.Text, Convert.ToInt16(broj.Text), (City)grad.SelectedIndex, (Country)drzava.SelectedIndex));
+           
+            MedicalRecordsFileStorage mStorage = new MedicalRecordsFileStorage();
+            MedicalRecord newRecord = new MedicalRecord(imeText.Text, prezimeText.Text, jmbgText.Text, (Gender)pol.SelectedIndex, (DateTime)datum.SelectedDate, generisiId(), (HealthCareCategory)zastita.SelectedIndex, Convert.ToInt16(brKnjiziceText.Text), (BloodType)krvnaGrupa.SelectedIndex, alergeni.Text);
 
-
-             pStorage.Save(newPatient);
+            pStorage.Save(newPatient);
+            mStorage.Save(newRecord);
           
             this.Close();
 

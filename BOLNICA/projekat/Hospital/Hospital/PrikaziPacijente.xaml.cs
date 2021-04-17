@@ -26,12 +26,15 @@ namespace Hospital
             get;
             set;
         }
+       
+
 
         public PrikaziPacijente()
         {
             InitializeComponent();
             this.DataContext = this;
             listPatient = loadJason();
+           
         }
 
 
@@ -52,6 +55,7 @@ namespace Hospital
             return ret;
         }
 
+   
 
         private void izmeniNalogPacijenta(object sender, RoutedEventArgs e)
         {

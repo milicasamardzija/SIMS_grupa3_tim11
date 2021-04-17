@@ -97,6 +97,7 @@
     <Compile Include="Model\DoctorFileStorage.cs" />
     <Compile Include="Model\IzbrisiNalogPacijenta.xaml.cs" />
     <Compile Include="Model\ManagerFileStorage.cs" />
+    <Compile Include="Model\MedicalRecordsFileStorage.cs" />
     <Compile Include="Model\SecretaryFileStorage.cs" />
     <Compile Include="Prijava.xaml.cs">
       <DependentUpon>Prijava.xaml</DependentUpon>
