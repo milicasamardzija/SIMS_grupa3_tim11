@@ -12,25 +12,35 @@
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
         <Grid Margin="0,0,0,0.4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="121*"/>
+                <RowDefinition Height="114*"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="0*"/>
             </Grid.ColumnDefinitions>
-            <Label Margin="50,26,106,413" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="0" FontWeight="Bold">ID</Label>
-            <Label Margin="50,83,106,356" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="0" FontWeight="Bold">Datum</Label>
+            <Label Margin="50,83,243,127.4" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="0" FontWeight="Bold" Content="Datum "/>
 
-            <Label Margin="50,145,106,295" Foreground="DarkBlue" FontSize="10" Grid.Column="0" FontWeight="Bold">Vreme</Label>
+            <Label Margin="47,199,109,11.4" Foreground="DarkBlue" FontSize="10" Grid.Column="0" FontWeight="Bold">Trajanje</Label>
+            <Label Margin="49,33.193,289,165" Foreground="DarkBlue" FontSize="10" FontWeight="Bold" Grid.Row="1">Doktor</Label>
+            <TextBox  x:Name="doctorText" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="185" RenderTransformOrigin="1.155,1.912" Margin="184,26.193,0,0" Grid.Row="1"/>
+            <Button Margin="84,140.6,260,57.4" Grid.Column="0" Width="80" Height="30" Background="AliceBlue" Click="add_appointment" Grid.Row="1">Dodaj</Button>
+            <Button Margin="208,140.6,136,57.4"  Width="80" Height="30" Background="AliceBlue" Click="odustani" Grid.Row="1">Odustani</Button>
+            <TextBox  x:Name="durationText" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="184" Margin="185,197,0,0"/>
+            <ComboBox Name="time" SelectedValuePath="Content" HorizontalAlignment="Left" VerticalAlignment="Top" Width="182" Margin="189,136,0,0">
+                <ComboBoxItem>08:00</ComboBoxItem>
+                <ComboBoxItem>08:30</ComboBoxItem>
+                <ComboBoxItem>09:00</ComboBoxItem>
+                <ComboBoxItem>09:30</ComboBoxItem>
+                <ComboBoxItem>10:00</ComboBoxItem>
+                <ComboBoxItem>10:30</ComboBoxItem>
+                <ComboBoxItem>11:00</ComboBoxItem>
 
-            <Label Margin="50,209,106,231" Foreground="DarkBlue" FontSize="10" Grid.Column="0" FontWeight="Bold">Trajanje</Label>
-            <TextBox x:Name="timeText"   HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="185" Margin="183,137,0,0"/>
-            <Label Margin="49,275,289,165" Foreground="DarkBlue" FontSize="10" FontWeight="Bold">Doktor</Label>
-            <TextBox  x:Name="doctorText" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="185" RenderTransformOrigin="1.155,1.912" Margin="184,268,0,0"/>
-            <Button Margin="84,347,260,93" Grid.Column="0" Width="80" Height="30" Background="AliceBlue" Click="add_appointment">Dodaj</Button>
-            <Button Margin="206,347,138,93"  Width="80" Height="30" Background="AliceBlue" Click="odustani">Odustani</Button>
-            <TextBox  x:Name="durationText" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="184" Margin="184,202,0,0"/>
-            <TextBox x:Name="dateText"    HorizontalAlignment="Left" Margin="186,75,0,0" VerticalAlignment="Top" Height="30" Width="181"/>
-            <TextBox  x:Name="idText"    HorizontalAlignment="Left" Height="31" Margin="185,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181"/>
 
+            </ComboBox>
+            <Label  Content="Vreme&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="49,130,0,0" Foreground="DarkBlue" FontSize="10"/>
+            <DatePicker Name="date" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="186,84,0,0" Width="183"/>
 
         </Grid>
 

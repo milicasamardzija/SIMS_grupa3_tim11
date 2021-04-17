@@ -61,9 +61,18 @@ namespace Hospital
 
         private void add_appointment(object sender, RoutedEventArgs e)
         {
+
             AppointmentFileStorage storage = new AppointmentFileStorage();
             Patient patient = getPatientFromFile();
             Doctor doctor = getDoctorFromFile();
+
+            ComboBoxItem item = time.SelectedItem as ComboBoxItem;
+            String t = item.Content.ToString();
+            String d = date.Text;
+            DateTime dt = DateTime.Parse(d + " " + t);
+            int id = storage.GetAll().Count() + 1;
+
+
 
             //tvooj
             // Appointment newapp = new Appointment(Convert.ToInt32(idText.Text),Convert.ToString(dateText.Text), Convert.ToString(timeText.Text),Convert.ToDouble(durationText.Text),Convert.ToString(doctorText.Text));
@@ -72,7 +81,7 @@ namespace Hospital
             // Appointment newapp = new Appointment(Convert.ToInt32(idText.Text), Convert.ToString(dateText.Text), Convert.ToString(timeText.Text), Convert.ToDouble(durationText.Text), Convert.ToString(doctorText.Text),patient);
 
             //mislim da treba da se napravi neka fija koja vraca idAppointmenta koji ne postoji u fajlu i da se automatski taj id ubacuje u novi Appointment
-            Appointment newapp = new Appointment(Convert.ToInt32(idText.Text), Convert.ToDateTime(dateText.Text), Convert.ToDateTime(timeText.Text), Convert.ToDouble(durationText.Text), doctor, patient);
+            Appointment newapp = new Appointment(id, dt, Convert.ToDouble(durationText.Text), doctor, patient);
 
             storage.Save(newapp);
             appointmentList.Add(newapp);
