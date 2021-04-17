@@ -23,14 +23,14 @@ namespace Hospital
         public MainWindow()
         {
             InitializeComponent();
-            Prijava prijava = new Prijava();
+            Prijava prijava = new Prijava(new BlogGlavni());
             frame.Navigate(prijava);
             
         }
 
         private void prijava(object sender, RoutedEventArgs e)
         {
-            Prijava p = new Prijava();
+            Prijava p = new Prijava(new BlogGlavni());
             frame.Navigate(p);
 
         }

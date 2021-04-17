@@ -45,7 +45,7 @@ namespace Hospital
             jmbgText.SelectedText = selectedPatient.jmbg;
             pol.SelectedIndex = (int)selectedPatient.gender; //ovako se setuje opcija combo box-a
             brText.SelectedText = selectedPatient.telephoneNumber;
-            datumText.SelectedText = selectedPatient.birthdate;
+            datum.SelectedDate = (DateTime)selectedPatient.birthdayDate;
             brKnjText.SelectedText = Convert.ToString(selectedPatient.idHealthCard);
             brKarText.SelectedText = Convert.ToString(selectedPatient.patientId);
             zanimanjeText.SelectedText = selectedPatient.occupation;
@@ -68,7 +68,7 @@ namespace Hospital
 
             promeniP.name = imeText.Text;
             promeniP.surname = prezimeText.Text;
-            promeniP.birthdate = datumText.Text;
+            promeniP.birthdayDate = (DateTime)datum.SelectedDate;
             promeniP.jmbg = jmbgText.Text;
             promeniP.occupation = zanimanjeText.Text;
             promeniP.insurence = osiguraniktText.Text;

@@ -80,7 +80,7 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <TextBox
+        <!-- <TextBox
             x:Name="datRodjText"
             Width="120"
             Height="23"
@@ -88,7 +88,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap" />-->
         <TextBox
             x:Name="brojTelText"
             Width="120"
@@ -143,7 +143,20 @@
             Width="120"
             Margin="200,225,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top">
+            <ComboBoxItem IsSelected="True">
+                AB
+            </ComboBoxItem>
+            <ComboBoxItem>
+                A
+            </ComboBoxItem>
+            <ComboBoxItem>
+                B
+            </ComboBoxItem>
+            <ComboBoxItem>
+                O
+            </ComboBoxItem>
+        </ComboBox>
         <TextBox
             x:Name="alergeniText"
             Width="134"
@@ -153,20 +166,12 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <Label
-            Margin="50,309,0,0"
-            HorizontalAlignment="Left"
+        <DatePicker
+            Name="datum"
+            Width="126"
+            Margin="200,120,174,0"
             VerticalAlignment="Top"
-            Content="Broj kartona" />
-        <TextBox
-            x:Name="brKarText"
-            Width="120"
-            Height="23"
-            Margin="200,309,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap" />
+            IsTodayHighlighted="True" />
 
     </Grid>
 </Window>

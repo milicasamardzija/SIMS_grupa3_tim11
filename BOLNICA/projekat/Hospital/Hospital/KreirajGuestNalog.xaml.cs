@@ -26,12 +26,32 @@ namespace Hospital
             InitializeComponent();
         }
 
+        public int generisiIdG()
+        {
+            int ret = 100;
+
+            PatientFileStorage pfs = new PatientFileStorage();
+            ObservableCollection<Patient> allPatients = pfs.GetAll();
+
+            foreach (Patient pId in allPatients)
+            {
+                foreach (Patient p in allPatients)
+                {
+                    if (ret == p.patientId)
+                    {
+                        ++ret;
+                        break;
+                    }
+                }
+            }
+            return ret;
+        }
         private void kreirajGuest(object sender, RoutedEventArgs e)
         {
             PatientFileStorage pStorage = new PatientFileStorage();
             Patient newPatient = new Patient(imeText.Text, prezimeText.Text, brojTelText.Text, jmbgText.Text, (Gender)pol.SelectedIndex,
-                datRodjText.Text,
-              Convert.ToInt16(brKarText.Text));
+                (DateTime)datum.SelectedDate,
+              generisiIdG());
 
             pStorage.Save(newPatient);
            // listPatient.Add(newPatient);

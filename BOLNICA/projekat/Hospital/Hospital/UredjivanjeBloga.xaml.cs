@@ -19,15 +19,19 @@ namespace Hospital
     /// </summary>
     public partial class UredjivanjeBloga : Window
     {
-        public UredjivanjeBloga()//String bg)
+        Page blog;
+        public UredjivanjeBloga(Page bg)
         {
 
             InitializeComponent();
-           // textBlog.Text= bg;
+            blog = bg;
         }
 
+      
+
         private void odustani(object sender, RoutedEventArgs e)
-        {
+        {  
+         
             this.Close();
         }
     }

@@ -22,8 +22,9 @@ public class User
     public String telephoneNumber { get; set; }
     public String jmbg { get; set; }
     public Gender gender { get; set; }
-    // public DateTime birthdayDate;
-    public String birthdate { get; set; }
+
+    public DateTime birthdayDate;
+    //public String birthdate { get; set; }
     public String username { get; set; }
     public String password { get; set; }
 

@@ -23,7 +23,7 @@ namespace Hospital
 
         private String ob;
 
-       public String Obavestenje
+       public String Ob
         {
             get
             {
@@ -31,13 +31,14 @@ namespace Hospital
             }
             set
             {
-                ob = obavestenjaSekretara.Text;
+                ob = obavestenjaText.Text;
             }
 
         }
         public BlogGlavni()
         {
             InitializeComponent();
+            ob = obavestenjaText.Text;
         }
 
 

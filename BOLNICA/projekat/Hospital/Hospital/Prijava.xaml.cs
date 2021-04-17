@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,17 +22,19 @@ namespace Hospital
     public partial class Prijava : Page
     {
         public int id { get; set; } //id ulogovanog korisnika
-        public Prijava()
+        public Page blog;
+        public Prijava(BlogGlavni blogGlavni)
         {
             InitializeComponent();
             id = -1; //inicijalno je na vrednosti koju nece imati nijedan korsinik(id ce nam ici od 1 pa dalje)
+            blog = blogGlavni;
         }
         private void login(object sender, RoutedEventArgs e)
         {
             if (uloga.SelectedIndex == 0) //pacijent
             {
                 PatientFileStorage pf = new PatientFileStorage();
-                List<Patient> patients = pf.GetAll(); //svi pacijenti iz fajla
+                ObservableCollection<Patient> patients = pf.GetAll(); //svi pacijenti iz fajla
 
                 foreach (Patient patient in patients)
                 {
@@ -72,7 +75,7 @@ namespace Hospital
                     if (secretary.username.Equals(ime.Text) && secretary.password.Equals(lozinka.Password))
                     {
                         id = secretary.secretaryId;
-                        Nalozi s = new Nalozi();
+                        Nalozi s = new Nalozi(blog);
                         s.Show();
                         // Sekretar s = new Sekretar();
                         // s.Show();

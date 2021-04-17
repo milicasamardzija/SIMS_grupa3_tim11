@@ -28,12 +28,33 @@ namespace Hospital
             InitializeComponent();
 
         }
-   
+
+        public int generisiId()
+        {
+            int ret = 0;
+
+            PatientFileStorage pfs = new PatientFileStorage();
+            ObservableCollection<Patient> allPatients = pfs.GetAll();
+
+            foreach (Patient pId in allPatients)
+            {
+                foreach (Patient p in allPatients)
+                {
+                    if (ret == p.patientId)
+                    {
+                        ++ret;
+                        break;
+                    }
+                }
+            }
+            return ret;
+        }
         private void kreirajNalogB(object sender, RoutedEventArgs e)
         {
             PatientFileStorage pStorage = new PatientFileStorage();
-            Patient newPatient = new Patient(imeText.Text, prezimeText.Text, brTelText.Text, jmbgText.Text, (Gender)pol.SelectedIndex, datrText.Text,
-                 Convert.ToInt16(brKartonaText.Text), (HealthCareCategory)zastita.SelectedIndex,
+
+            Patient newPatient = new Patient(imeText.Text, prezimeText.Text, brTelText.Text, jmbgText.Text, (Gender)pol.SelectedIndex, (DateTime)datum.SelectedDate,
+                 generisiId(), (HealthCareCategory)zastita.SelectedIndex,
                 Convert.ToInt16(brKnjiziceText.Text), zanimanjeText.Text, imePrzOsText.Text, new Adress(ulText.Text, Convert.ToInt16(broj.Text), (City)grad.SelectedIndex, (Country)drzava.SelectedIndex)
               );
 

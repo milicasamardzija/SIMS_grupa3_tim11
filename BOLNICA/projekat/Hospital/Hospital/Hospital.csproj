@@ -132,9 +132,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="Sekretar.xaml.cs">
-      <DependentUpon>Sekretar.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UredjivanjeBloga.xaml.cs">
       <DependentUpon>UredjivanjeBloga.xaml</DependentUpon>
     </Compile>
@@ -217,10 +214,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ObrisiTermin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sekretar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
