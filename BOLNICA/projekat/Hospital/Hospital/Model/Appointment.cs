@@ -7,8 +7,8 @@ using System;
 
 public class Appointment
 {
-   public DateTime date { get; set; }   
-   public DateTime time { get; set; }
+    public DateTime dateTime { get; set; }
+
     public double duration { get; set; }
     public int idA { get; set; }
 
@@ -17,11 +17,11 @@ public class Appointment
 
     public Appointment() { }
 
-    public Appointment(int v, DateTime dateTime1, DateTime dateTime2, double v2, Doctor doctor, Patient patient)
+    public Appointment(int v, DateTime dateTime, double v2, Doctor doctor, Patient patient)
     {
         this.idA = v;
-        this.date = dateTime1;
-        this.time = dateTime2;
+        this.dateTime = dateTime;
+
         this.duration = v2;
         this.doctor = doctor;
         this.patient = patient;

@@ -60,7 +60,7 @@ namespace Hospital
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
-           IzmeniTermin it = new IzmeniTermin(AppointmentList, (Appointment)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
+           IzmeniTermin it = new IzmeniTermin(AppointmentList, (Appointment)ListaTermina.SelectedItem, ListaTermina.SelectedIndex,id);
             it.Show();
         }
 

@@ -35,11 +35,10 @@
                       ItemsSource="{Binding Path = AppointmentList}"
                       >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding idA}" Width="100"/>
-                <DataGridTextColumn Header="DATUM" Binding="{Binding date}" Width="100"/>
-                <DataGridTextColumn Header="VREME" Binding="{Binding time}" Width="100"/>
-                <DataGridTextColumn Header="TRAJANJE" Binding="{Binding duration}" Width="100"/>
-                <DataGridTextColumn Header="DOKTOR" Binding="{Binding doctor}" Width="100"/>
+                <DataGridTextColumn Header="         ID" Binding="{Binding idA}" Width="80"/>
+                <DataGridTextColumn Header="  DATUM I VREME " Binding="{Binding dateTime}" Width="120"/>
+                <DataGridTextColumn Header="    TRAJANJE U MINUTIMA" Binding="{Binding duration}" Width="170"/>
+                <DataGridTextColumn Header="        DOKTOR" Binding="{Binding doctor}" Width="160"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Horizontal" Margin ="147,300,141.247,20" HorizontalAlignment="Center" Height="100" Width="500" VerticalAlignment="Bottom" Opacity="0.99">

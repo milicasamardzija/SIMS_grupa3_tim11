@@ -13,8 +13,8 @@ namespace Hospital.Model
         public Checkup(int ida,int ch, DateTime dateTime1, DateTime dateTime2, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor)
         {
             this.idA = ida;
-            this.date = dateTime1;
-            this.time = dateTime2;
+            this.dateTime = dateTime1;
+            
             this.duration = v2;
             this.doctor = doctor;
             this.patient = patient;
