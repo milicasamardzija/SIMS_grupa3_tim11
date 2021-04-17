@@ -31,8 +31,8 @@ namespace Hospital
             jmbgText.SelectedText = selectedPatient.jmbg;
             brText.SelectedText = selectedPatient.telephoneNumber;
             datumText.SelectedText = selectedPatient.birthdate;
-            brKnjText.SelectedText = Convert.ToString(selectedPatient.idHealthCard);
-            brKarText.SelectedText = Convert.ToString(selectedPatient.patientId);
+            brKnjText.SelectedText = Convert.ToString(selectedPatient.IdHealthCard);
+            brKarText.SelectedText = Convert.ToString(selectedPatient.PatientId);
 
 
 
@@ -51,8 +51,8 @@ namespace Hospital
             promeniP.birthdate = datumText.Text;
             promeniP.jmbg = jmbgText.Text;
             promeniP.telephoneNumber = brText.Text;
-            promeniP.patientId = Convert.ToInt16(brKarText.Text);
-            promeniP.idHealthCard = Convert.ToInt16(brKnjText.Text);
+            promeniP.PatientId = Convert.ToInt16(brKarText.Text);
+            promeniP.IdHealthCard = Convert.ToInt16(brKnjText.Text);
 
             pfs.Delete(izbrisiP);
             pfs.Save(promeniP);

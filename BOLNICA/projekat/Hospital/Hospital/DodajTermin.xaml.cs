@@ -39,7 +39,7 @@ namespace Hospital
 
             foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
             {
-                if (patient.patientId == idPatient) //pronalazi pacijenta sa id-jem ulogovanog pacijenta
+                if (patient.PatientId == idPatient) //pronalazi pacijenta sa id-jem ulogovanog pacijenta
                 {
                     ret = patient;
                     break; //kada ga nadje izlazi iz petlje

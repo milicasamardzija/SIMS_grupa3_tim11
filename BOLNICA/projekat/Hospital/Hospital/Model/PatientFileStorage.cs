@@ -42,7 +42,7 @@ public class PatientFileStorage
 
         foreach (Patient p in allPatients)
         {
-            if (p.patientId == patient.patientId)
+            if (p.PatientId == patient.PatientId)
             {
                 allPatients.Remove(p);
                 break;
@@ -59,7 +59,7 @@ public class PatientFileStorage
 
         foreach (Patient patient in allPatients) {
 
-            if (patient.patientId == id) {
+            if (patient.PatientId == id) {
 
                 allPatients.Remove(patient);
                 break;
@@ -75,7 +75,7 @@ public class PatientFileStorage
 
         foreach (Patient patient in allPatients)
         {
-            if (patient.patientId == id)
+            if (patient.PatientId == id)
             {
                 ret = patient;
                 break;
@@ -92,7 +92,7 @@ public class PatientFileStorage
 
         foreach (Patient patient in allPatients)
         {
-            if (patient.patientId == id)
+            if (patient.PatientId == id)
             {
                 ret = true;
                 break;

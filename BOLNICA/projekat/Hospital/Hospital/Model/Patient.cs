@@ -4,16 +4,48 @@
 // Purpose: Definition of Class Patient
 
 using System;
+using System.ComponentModel;
 
 public class Patient : User
 {
-   public int patientId;
-   public HealthCareCategory healthCareCategory;
-   public int idHealthCard;
-   public String occupation;
-   public String insurence;
-   public Boolean guest = false;
-   
-  // public MedicalRecord medicalRecord;
+   private int patientId;
+   private HealthCareCategory healthCareCategory;
+   private int idHealthCard;
+   private String occupation;
+   private String insurence;
+   private Boolean guest = false;
 
+// public MedicalRecord medicalRecord;
+
+    public int PatientId
+    {
+        get
+        {
+            return patientId;
+        }
+        set
+        {
+            if (value != patientId)
+            {
+                patientId = value;
+                OnProperychanged("PatientId");
+            }
+        }
+    }
+
+    public int IdHealthCard
+    {
+        get
+        {
+            return idHealthCard;
+        }
+        set
+        {
+            if (value != idHealthCard)
+            {
+                idHealthCard = value;
+                OnProperychanged("IdHealthCard");
+            }
+        }
+    }
 }

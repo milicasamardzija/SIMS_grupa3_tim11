@@ -8,12 +8,12 @@
         Title="PregledPacijenata" Height="299.304" Width="526.218" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label x:Name="label" Content="Pacijenti" FontSize="16" Foreground="#FFFF00BB" FontStyle="Italic"/>
-        <DataGrid x:Name="Pacijenti" Margin="10,43,29,59.6" ItemsSource="{Binding Path=ListPatient}">
+        <DataGrid x:Name="Pacijenti" AutoGenerateColumns="False" Margin="10,43,29,59.6" ItemsSource="{Binding Path=ListPatient}">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="100" Binding="{Binding name}" Header="IME" />
-                <DataGridTextColumn Width="100" Binding="{Binding surname}" Header="PREZIME" />
-                <DataGridTextColumn  Width="150" Binding="{Binding jmbg}" Header="JMBG" />
-                <DataGridTextColumn Width="100" Binding="{Binding patientId}" Header="Id" />
+                <DataGridTextColumn Width="100" Binding="{Binding Name}" Header="IME" />
+                <DataGridTextColumn Width="100" Binding="{Binding Surname}" Header="PREZIME" />
+                <DataGridTextColumn  Width="150" Binding="{Binding Jmbg}" Header="JMBG" />
+                <DataGridTextColumn Width="100" Binding="{Binding PatientId}" Header="Id" />
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="button1" Content="Prikazi karton" Margin="10,223,399,20.6" Click="button1_Click"/>
