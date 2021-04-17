@@ -69,5 +69,12 @@ namespace Hospital
             ObrisiTermin ob = new ObrisiTermin(AppointmentList, (Appointment)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
             ob.Show();
         }
+
+        private void Nazad_na_pocetnu(object sender, RoutedEventArgs e)
+        {
+            PocetnaPacijent pp = new PocetnaPacijent(id);
+            pp.Show();
+            this.Close();
+        }
     }
 }

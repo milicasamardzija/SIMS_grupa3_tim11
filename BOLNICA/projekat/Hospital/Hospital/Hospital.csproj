@@ -87,6 +87,12 @@
     <Compile Include="Model\DoctorFileStorage.cs" />
     <Compile Include="Model\ManagerFileStorage.cs" />
     <Compile Include="Model\SecretaryFileStorage.cs" />
+    <Compile Include="PocetnaPacijent.xaml.cs">
+      <DependentUpon>PocetnaPacijent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazObavestenja.xaml.cs">
+      <DependentUpon>PrikazObavestenja.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rooms.xaml.cs">
       <DependentUpon>Rooms.xaml</DependentUpon>
     </Compile>
@@ -175,7 +181,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PocetnaPacijent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pregled.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikazObavestenja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
