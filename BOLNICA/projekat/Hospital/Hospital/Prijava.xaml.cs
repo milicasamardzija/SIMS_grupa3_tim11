@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,32 +17,33 @@ using System.Windows.Shapes;
 namespace Hospital
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Prijava.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Prijava : Page
     {
-        public MainWindow()
+        public int id { get; set; } //id ulogovanog korisnika
+        public Page blog;
+        public Prijava(BlogGlavni blogGlavni)
         {
             InitializeComponent();
-            Prijava prijava = new Prijava(new BlogGlavni());
-            frame.Navigate(prijava);
-            
+            id = -1; //inicijalno je na vrednosti koju nece imati nijedan korsinik(id ce nam ici od 1 pa dalje)
+            blog = blogGlavni;
         }
-
-        private void prijava(object sender, RoutedEventArgs e)
+        private void login(object sender, RoutedEventArgs e)
         {
-            Prijava p = new Prijava(new BlogGlavni());
-            frame.Navigate(p);
-
+            if (uloga.SelectedIndex == 0) //pacijent
+            {
+                PatientFileStorage pf = new PatientFileStorage();
+                ObservableCollection<Patient> patients = pf.GetAll(); //svi pacijenti iz fajla
 
                 foreach (Patient patient in patients)
                 {
                     if (patient.username.Equals(ime.Text) && patient.password.Equals(lozinka.Password)) //ako su sifra i korisnicko ime nadjeni u fajlu
                     {
-                        id = patient.PatientId; //preuzimamo id pacijenta koji dalje prosledjujemo prozoru koji se prvi otvara, pa dalje ostalim prozorima da bismo uvek prikazivali podatke na osnovu ovog id-ja(odnosno bas sa korisnika koji je ulogovan)
+                        id = patient.patientId; //preuzimamo id pacijenta koji dalje prosledjujemo prozoru koji se prvi otvara, pa dalje ostalim prozorima da bismo uvek prikazivali podatke na osnovu ovog id-ja(odnosno bas sa korisnika koji je ulogovan)
                         WindowPacijent p = new WindowPacijent(id); //otvara se prozor i prosledjuje id
                         p.Show();
-                        this.Close(); 
+                       // this.Close();
                         return; //da ne bi trazio u drugim fajlovima
                     }
                 }
@@ -56,9 +58,9 @@ namespace Hospital
                     if (doctor.username.Equals(ime.Text) && doctor.password.Equals(lozinka.Password))
                     {
                         id = doctor.doctorId;
-                        Pregled d = new Pregled(id); 
+                        Pregled d = new Pregled(id);
                         d.Show();
-                        this.Close();
+                       // this.Close();
                         return;
                     }
                 }
@@ -73,9 +75,11 @@ namespace Hospital
                     if (secretary.username.Equals(ime.Text) && secretary.password.Equals(lozinka.Password))
                     {
                         id = secretary.secretaryId;
-                        Nalozi s = new Nalozi();
+                        Nalozi s = new Nalozi(blog);
                         s.Show();
-                        this.Close();
+                        // Sekretar s = new Sekretar();
+                        // s.Show();
+                       // this.Close();
                         return;
                     }
                 }
@@ -85,15 +89,24 @@ namespace Hospital
                 ManagerFileStorage mf = new ManagerFileStorage();
                 List<Manager> managers = mf.GetAll();
 
+                foreach (Manager manager in managers)
+                {
+                    if (manager.username.Equals(ime.Text) && manager.password.Equals(lozinka.Password))
+                    {
+                        id = manager.managerId;
+                        Rooms m = new Rooms();
+                        m.Show();
+                       // this.Close();
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Neuspesno logovanje!");
+            }
+
+            MessageBox.Show("Neuspesno logovanje!");
         }
-
-        private void blog(object sender, RoutedEventArgs e)
-        {
-            BlogGlavni b = new BlogGlavni();
-            frame.Navigate(b);
-
-        }
-
-        
     }
 }

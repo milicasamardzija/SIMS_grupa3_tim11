@@ -35,7 +35,7 @@ namespace Hospital
         {
             Patient ret = new Patient();
             PatientFileStorage storage = new PatientFileStorage(); 
-            List<Patient> patients = storage.GetAll();
+            ObservableCollection<Patient> patients = storage.GetAll();
 
             foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
             {

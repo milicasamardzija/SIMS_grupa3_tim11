@@ -5,28 +5,29 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using Newtonsoft.Json;
 
 public class PatientFileStorage
 {
-   public List<Patient> GetAll()
+   public ObservableCollection<Patient> GetAll()
    {
-      List<Patient> sviPacijenti= new List<Patient>();
+      ObservableCollection<Patient> sviPacijenti= new ObservableCollection<Patient>();
 
-        sviPacijenti = JsonConvert.DeserializeObject<List<Patient>>(File.ReadAllText(@"./../../../../Hospital/files/storagePatient.json"));
+        sviPacijenti = JsonConvert.DeserializeObject<ObservableCollection<Patient>>(File.ReadAllText(@"./../../../../Hospital/files/storagePatient.json"));
         return sviPacijenti;
    }
    
    public void Save(Patient newPatient)
    {
-        List<Patient> sviPacijenti = GetAll();
+        ObservableCollection<Patient> sviPacijenti = GetAll();
         sviPacijenti.Add(newPatient);
         SaveAll(sviPacijenti);
       
    }
    
-   public void SaveAll(List<Patient> patients)
+   public void SaveAll(ObservableCollection<Patient> patients)
    {
         using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/storagePatient.json"))
         {
@@ -38,7 +39,7 @@ public class PatientFileStorage
    
    public void Delete(Patient patient)
    {
-        List<Patient> allPatients = GetAll();
+        ObservableCollection<Patient> allPatients = GetAll();
 
         foreach (Patient p in allPatients)
         {
@@ -55,7 +56,7 @@ public class PatientFileStorage
 
 
     {
-        List<Patient> allPatients = GetAll();
+        ObservableCollection<Patient> allPatients = GetAll();
 
         foreach (Patient patient in allPatients) {
 
@@ -70,7 +71,7 @@ public class PatientFileStorage
    
    public Patient FindById(int id)
    {
-        List<Patient> allPatients = GetAll();
+        ObservableCollection<Patient> allPatients = GetAll();
         Patient ret = null;
 
         foreach (Patient patient in allPatients)
@@ -87,7 +88,7 @@ public class PatientFileStorage
    
    public Boolean ExistsById(int id)
    {
-        List<Patient> allPatients = GetAll();
+        ObservableCollection<Patient> allPatients = GetAll();
         Boolean ret = false;
 
         foreach (Patient patient in allPatients)
@@ -101,6 +102,6 @@ public class PatientFileStorage
         return ret;
    }
    
-  // public String fileLocation;
+
 
 }
