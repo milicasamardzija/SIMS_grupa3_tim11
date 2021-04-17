@@ -88,4 +88,84 @@ public class User : INotifyPropertyChanged
             }
         }
     }
+
+    public String TelephoneNumber
+    {
+        get
+        {
+            return telephoneNumber;
+        }
+        set
+        {
+            if (value != telephoneNumber)
+            {
+                telephoneNumber = value;
+                OnProperychanged("TelephoneNumber");
+            }
+        }
+    }
+
+    public Gender Gender
+    {
+        get
+        {
+            return gender;
+        }
+        set
+        {
+            if (value != gender)
+            {
+                gender = value;
+                OnProperychanged("Gender");
+            }
+        }
+    }
+
+    public DateTime BirthdayDate
+    {
+        get
+        {
+            return birthdayDate;
+        }
+        set
+        {
+            if (value != birthdayDate)
+            {
+                birthdayDate = value;
+                OnProperychanged("BirthdayDate");
+            }
+        }
+    }
+
+    public String Username
+    {
+        get
+        {
+            return username;
+        }
+        set
+        {
+            if (value != username)
+            {
+                username = value;
+                OnProperychanged("Username");
+            }
+        }
+    }
+
+    public String Password
+    {
+        get
+        {
+            return password;
+        }
+        set
+        {
+            if (value != password)
+            {
+                password = value;
+                OnProperychanged("Password");
+            }
+        }
+    }
 }

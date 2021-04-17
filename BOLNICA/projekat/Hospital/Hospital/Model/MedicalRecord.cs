@@ -8,11 +8,6 @@ using System.Windows.Controls;
 
 public class MedicalRecord : Patient
 {
-
-   public int medicalRecordId;
-   public BloodType bloodType;
-    public String allergy;
-
    public int medicalRecordId { get; set; }
    public BloodType bloodType { get; set; }
     public String alergens { get; set; }
@@ -25,8 +20,8 @@ public class MedicalRecord : Patient
         this.gender = g;
         this.birthdayDate = dr;
         this.medicalRecordId=mid;   //medical record id ce biti isto sto i patientId, pa cu po tome traziti
-        this.healthCareCategory = hcc;
-        this.idHealthCard = idhc;
+        this.HealthCareCategory = hcc;
+        this.IdHealthCard = idhc;
         this.bloodType = bt;
         this.alergens = a;
 

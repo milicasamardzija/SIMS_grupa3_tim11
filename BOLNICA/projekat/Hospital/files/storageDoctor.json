@@ -11,28 +11,10 @@
     "telephoneNumber": "064/1234455",
     "jmbg": "0105999888654",
     "gender": 1,
-    "birthdayDate": "15.04.1960.",
+    "birthdayDate": "2021-04-09T00:00:00",
     "username": "braca",
     "password": "braca",
     "doctorId": 15,
     "specialization": "pedijatrija"
-  },
- {
-    "name": "Mladen",
-    "surname": "Stojanovic",
-    "adress": {
-      "street": "Dunavska",
-      "streetNumber": 15,
-      "city": 5,
-      "country": 0
-    },
-    "telephoneNumber": "064/1235544",
-    "jmbg": "0105999777654",
-    "gender": 0,
-    "birthdayDate": "15.08.1972.",
-    "username": "mladen",
-    "password": "mladen",
-    "doctorId": 16,
-    "specialization": "neurohirurgija"
   }
 ]

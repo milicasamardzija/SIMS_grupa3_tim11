@@ -37,7 +37,7 @@ namespace Hospital
             {
                 foreach (Patient p in allPatients)
                 {
-                    if (ret == p.patientId)
+                    if (ret == p.PatientId)
                     {
                         ++ret;
                         break;

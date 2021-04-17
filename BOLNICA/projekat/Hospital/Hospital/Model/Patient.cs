@@ -14,7 +14,7 @@ public class Patient : User
    private int idHealthCard;
    private String occupation;
    private String insurence;
-   private Boolean guest = false;
+   public Boolean guest = false;
 
    
 
@@ -84,6 +84,54 @@ public class Patient : User
             {
                 idHealthCard = value;
                 OnProperychanged("IdHealthCard");
+            }
+        }
+    }
+
+    public HealthCareCategory HealthCareCategory
+    {
+        get
+        {
+            return healthCareCategory;
+        }
+        set
+        {
+            if (value != healthCareCategory)
+            {
+                healthCareCategory = value;
+                OnProperychanged("HealthCareCategory");
+            }
+        }
+    }
+
+    public String Occupation
+    {
+        get
+        {
+            return occupation;
+        }
+        set
+        {
+            if (value != occupation)
+            {
+                occupation = value;
+                OnProperychanged("Occupation");
+            }
+        }
+    }
+
+    public String Insurence
+    {
+        get
+        {
+            return insurence;
+        }
+        set
+        {
+            if (value != insurence)
+            {
+                insurence = value;
+                OnProperychanged("Insurence");
             }
         }
     }

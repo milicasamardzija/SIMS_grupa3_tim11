@@ -51,16 +51,16 @@ namespace Hospital
            // pol.SelectedIndex = (int)selectedPatient.gender; //ovako se setuje opcija combo box-a
             brText.SelectedText = selectedPatient.telephoneNumber;
 
-            datumText.SelectedText = selectedPatient.birthdate;
+            datum.SelectedDate = (DateTime)selectedPatient.BirthdayDate;
             brKnjText.SelectedText = Convert.ToString(selectedPatient.IdHealthCard);
             brKarText.SelectedText = Convert.ToString(selectedPatient.PatientId);
 
             datum.SelectedDate = (DateTime)selectedPatient.birthdayDate;
-            brKnjText.SelectedText = Convert.ToString(selectedPatient.idHealthCard);
-            brKarText.SelectedText = Convert.ToString(selectedPatient.patientId);
-            zanimanjeText.SelectedText = selectedPatient.occupation;
-            zastitaText.SelectedIndex = (int)selectedPatient.healthCareCategory;
-            osiguraniktText.SelectedText = selectedPatient.insurence;
+            brKnjText.SelectedText = Convert.ToString(selectedPatient.IdHealthCard);
+            brKarText.SelectedText = Convert.ToString(selectedPatient.PatientId);
+            zanimanjeText.SelectedText = selectedPatient.Occupation;
+            zastitaText.SelectedIndex = (int)selectedPatient.HealthCareCategory;
+            osiguraniktText.SelectedText = selectedPatient.Insurence;
             ulicaText.SelectedText = Convert.ToString(selectedPatient.adress.street);
             broj.SelectedText = Convert.ToString(selectedPatient.adress.streetNumber);
             grad.SelectedIndex = (int)selectedPatient.adress.city;  
@@ -90,15 +90,15 @@ namespace Hospital
             promeniP.surname = prezimeText.Text;
             promeniP.birthdayDate = (DateTime)datum.SelectedDate;
             promeniP.jmbg = jmbgText.Text;
-            promeniP.occupation = zanimanjeText.Text;
-            promeniP.insurence = osiguraniktText.Text;
+            promeniP.Occupation = zanimanjeText.Text;
+            promeniP.Insurence = osiguraniktText.Text;
             promeniP.gender = (Gender)pol.SelectedIndex;    //ovako ide za combo box
             promeniP.telephoneNumber = brText.Text;
 
             promeniP.PatientId = Convert.ToInt16(brKarText.Text);
             
             promeniP.IdHealthCard = Convert.ToInt16(brKnjText.Text);
-            promeniP.healthCareCategory = (HealthCareCategory)zastitaText.SelectedIndex;
+            promeniP.HealthCareCategory = (HealthCareCategory)zastitaText.SelectedIndex;
             promeniP.adress.city =((City)grad.SelectedIndex);
             promeniP.adress.country =(Country)drzava.SelectedIndex;
             promeniP.adress.street = ulicaText.Text;
@@ -115,8 +115,8 @@ namespace Hospital
             promeniM.jmbg = jmbgText.Text;
             promeniM.gender = (Gender)pol.SelectedIndex;
             promeniM.medicalRecordId= Convert.ToInt16(brKarText.Text);
-            promeniM.idHealthCard = Convert.ToInt16(brKnjText.Text);
-            promeniM.healthCareCategory= (HealthCareCategory)zastitaText.SelectedIndex;
+            promeniM.IdHealthCard = Convert.ToInt16(brKnjText.Text);
+            promeniM.HealthCareCategory= (HealthCareCategory)zastitaText.SelectedIndex;
             promeniM.bloodType = (BloodType)krvnaGrupa.SelectedIndex;
             promeniM.alergens = alergeni.Text;
 
