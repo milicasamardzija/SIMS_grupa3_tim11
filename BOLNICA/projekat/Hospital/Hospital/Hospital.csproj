@@ -63,6 +63,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BlogGlavni.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DeleteDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -71,6 +75,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="BlogGlavni.xaml.cs">
+      <DependentUpon>BlogGlavni.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodajProstorijuDijalog.xaml.cs">
       <DependentUpon>DodajProstorijuDijalog.xaml</DependentUpon>
     </Compile>
@@ -91,6 +98,9 @@
     <Compile Include="Model\IzbrisiNalogPacijenta.xaml.cs" />
     <Compile Include="Model\ManagerFileStorage.cs" />
     <Compile Include="Model\SecretaryFileStorage.cs" />
+    <Compile Include="Prijava.xaml.cs">
+      <DependentUpon>Prijava.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rooms.xaml.cs">
       <DependentUpon>Rooms.xaml</DependentUpon>
     </Compile>
@@ -122,6 +132,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Sekretar.xaml.cs">
+      <DependentUpon>Sekretar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UredjivanjeBloga.xaml.cs">
+      <DependentUpon>UredjivanjeBloga.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowPacijent.xaml.cs">
       <DependentUpon>WindowPacijent.xaml</DependentUpon>
     </Compile>
@@ -180,6 +196,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Prijava.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Rooms.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -197,6 +217,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ObrisiTermin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sekretar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UredjivanjeBloga.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

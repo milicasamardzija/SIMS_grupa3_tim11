@@ -5,7 +5,7 @@
 
 using System;
 
-public class MedicalRecord
+public class MedicalRecord : Patient
 {
    public int medicalRecordId;
    public BloodType bloodType;

@@ -33,8 +33,8 @@ namespace Hospital
         {
             PatientFileStorage pStorage = new PatientFileStorage();
             Patient newPatient = new Patient(imeText.Text, prezimeText.Text, brTelText.Text, jmbgText.Text, (Gender)pol.SelectedIndex, datrText.Text,
-                 Convert.ToInt16(brKnjiziceText.Text), (HealthCareCategory)zastita.SelectedIndex,
-                Convert.ToInt16(brKartonaText.Text), zanimanjeText.Text, imePrzOsText.Text, new Adress(ulText.Text, Convert.ToInt16(broj.Text), (City)grad.SelectedIndex, (Country)drzava.SelectedIndex)
+                 Convert.ToInt16(brKartonaText.Text), (HealthCareCategory)zastita.SelectedIndex,
+                Convert.ToInt16(brKnjiziceText.Text), zanimanjeText.Text, imePrzOsText.Text, new Adress(ulText.Text, Convert.ToInt16(broj.Text), (City)grad.SelectedIndex, (Country)drzava.SelectedIndex)
               );
 
 

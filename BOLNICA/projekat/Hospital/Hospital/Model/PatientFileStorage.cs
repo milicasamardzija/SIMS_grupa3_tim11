@@ -101,6 +101,6 @@ public class PatientFileStorage
         return ret;
    }
    
-  // public String fileLocation;
+
 
 }

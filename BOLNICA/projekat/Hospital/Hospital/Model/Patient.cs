@@ -24,9 +24,9 @@ public class Patient : User
         this.jmbg=jmb;
         this.gender=g;
         this.birthdate=b;
-        this.patientId = pId;
+        this.patientId = pId; //id pacijenta je meni isto sto i broj kartona 
         this.healthCareCategory = hcc;
-        this.idHealthCard = idhc;
+        this.idHealthCard = idhc; //broj zdrav knjizice
         this.occupation = oc;
         this.insurence = ins;
         this.adress = adr;
@@ -52,24 +52,6 @@ public class Patient : User
 
     }
 
-    /* public Patient(string name, string surname, string telephoneNumber, string jmbg, Gender gender, string birthdate, short v1, HealthCareCategory healthCareCategory, int idHealthCard, string occupation, string insurence, string street, short v2, int city, int country)
-     {
-         this.name = name;
-         this.surname = surname;
-         this.telephoneNumber = telephoneNumber;
-         this.jmbg = jmbg;
-         this.gender = gender;
-         this.birthdate = birthdate;
-         V1 = v1;
-         this.healthCareCategory = healthCareCategory;
-         this.idHealthCard = idHealthCard;
-         this.occupation = occupation;
-         this.insurence = insurence;
-         Street = street;
-         V2 = v2;
-         City = city;
-         Country = country;
-     } */
-    // public MedicalRecord medicalRecord;
+    
 
 }

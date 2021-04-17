@@ -58,5 +58,11 @@ namespace Hospital
             var prikazG = new PrikaziGuestPacijente();
             prikazG.ShowDialog();
         }
+       
+        private void blog(object sender, RoutedEventArgs e)
+        {
+            UredjivanjeBloga blog = new UredjivanjeBloga();
+            blog.ShowDialog();
+        }
     }
 }

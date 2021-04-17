@@ -10,38 +10,31 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Hospital
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Sekretar.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Sekretar : Window
     {
-        public MainWindow()
+        public Sekretar()
         {
             InitializeComponent();
-            Prijava prijava = new Prijava();
-            frame.Navigate(prijava);
-            
+            Nalozi n = new Nalozi();
+            frame.Navigate(n);
         }
 
-        private void prijava(object sender, RoutedEventArgs e)
+        private void otvoriPacijenta(object sender, RoutedEventArgs e)
         {
-            Prijava p = new Prijava();
-            frame.Navigate(p);
-
+            Nalozi nalog = new Nalozi();
+            frame.Navigate(nalog);
         }
-
         private void blog(object sender, RoutedEventArgs e)
         {
-            BlogGlavni b = new BlogGlavni();
-            frame.Navigate(b);
-
+            UredjivanjeBloga blog = new UredjivanjeBloga();
+            frame.Navigate(blog);
         }
-
-        
     }
 }
