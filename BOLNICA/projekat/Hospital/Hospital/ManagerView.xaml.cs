@@ -40,7 +40,6 @@ namespace Hospital
 
         private void sobe(object sender, RoutedEventArgs e)
         {
-            //   frame.NavigationService.Navigate(new Sobe());
             Rooms r = new Rooms(RoomList);
             r.Show();
         }

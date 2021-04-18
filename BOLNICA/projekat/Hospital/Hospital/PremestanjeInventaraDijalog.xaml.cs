@@ -54,8 +54,14 @@ namespace Hospital
             InventoryFileStorage inventoryStorage = new InventoryFileStorage();
             RoomFileStorage roomStorage = new RoomFileStorage();
 
+            int idRoom = -1;
+
             //argumenti
-            int idRoom = Convert.ToInt32(IdSobeTxt.Text);
+            if (!IdSobeTxt.Text.Equals(""))
+            {
+                idRoom = Convert.ToInt32(IdSobeTxt.Text);
+            }
+            
             int quantity = Convert.ToInt32(KolicinaTxt.Text);
             String name = ImeTxt.SelectedText;
             InventoryType type = (InventoryType)TypeTxt.SelectedIndex;
@@ -72,6 +78,26 @@ namespace Hospital
 
             if (magacin) // prebacuje se u magacin
             {
+                foreach (RoomInventory inveRoom in all)
+                {
+                    //smanjuje se kolicina inventara u sobi
+                    if (inveRoom.inventoryId == idInventory && inveRoom.roomId == roomOutId)
+                    {
+                        inveRoom.quantity -= quantity;
+                        listInventory[index] = new Inventory(inveRoom.inventoryId, inventory.Name, inveRoom.quantity, inventory.Type);
+                        storage.SaveAll(all);
+
+                        foreach (Inventory i  in inventories)
+                        {
+                            if (i.InventoryId == idInventory)
+                            {
+                                i.Quantity += quantity;
+                                inventoryStorage.SaveAll(inventories);
+                                break;
+                            }
+                        }
+                    }
+                }
 
             } else //prebacuje se iz sobe u drugu sobu
             {
@@ -172,7 +198,9 @@ namespace Hospital
                 {
                     //dodaje se novi objekat u fajl RoomInventory
                     RoomInventory newRInventory = new RoomInventory(idRoom,idInventory,quantity);
-                    storage.Save(newRInventory);
+                    List<RoomInventory> listRoomInv = storage.GetAll();
+                    listRoomInv.Add(newRInventory);
+                    storage.SaveAll(listRoomInv);
 
                     //dodaje se u listu RoomInventory unete sobe
                     foreach (Room r in rooms)
