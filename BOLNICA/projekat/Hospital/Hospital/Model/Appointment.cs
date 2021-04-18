@@ -74,6 +74,21 @@ public class Appointment : INotifyPropertyChanged
         }
     }
 
+    public DateTime DateTime
+    {
+        get
+        {
+            return dateTime;
+        }
+        set
+        {
+            if (value != dateTime)
+            {
+                date = value;
+                OnPropertyChanged("DateTime");
+            }
+        }
+    }
     public String Time
     {
         get

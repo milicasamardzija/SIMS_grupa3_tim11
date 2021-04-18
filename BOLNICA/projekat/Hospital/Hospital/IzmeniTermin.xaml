@@ -18,7 +18,7 @@
             </Grid.ColumnDefinitions>
             <Label  x:Name="date" Margin="64,146,92,295" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="0" FontWeight="Bold" Content="Datum"/>
             <Label Margin="65,288,273,8" Foreground="DarkBlue" FontSize="10" FontWeight="Bold">Doktor</Label>
-            <TextBox  x:Name="doctorText" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="185" RenderTransformOrigin="1.155,1.912" Margin="187,57,0,0"/>
+            <TextBox  x:Name="doctorText" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="178" RenderTransformOrigin="1.155,1.912" Margin="194,285,0,0"/>
             <Button Margin="87,364,257,76" Grid.Column="0" Width="80" Height="30" Background="AliceBlue" Click="add_appointment">Izmeni</Button>
             <Button Margin="232,363,112,77"  Width="80" Height="30" Background="AliceBlue" Click="odustani_click">Odustani</Button>
 
@@ -39,7 +39,7 @@
 
 
         </Grid>
-        <TextBox  x:Name="idText"  HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181" Margin="191,291,0,0"/>
+        <TextBox  x:Name="idText"  HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181" Margin="189,62,0,0"/>
 
 
 
