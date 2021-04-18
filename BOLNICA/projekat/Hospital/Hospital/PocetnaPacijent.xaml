@@ -1,0 +1,15 @@
+﻿<Window x:Class="Hospital.PocetnaPacijent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+        Title="PocetnaPacijent" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button Content="Pregled termina&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="317,83,0,0" Height="44" Click="prikaz_termina"/>
+        <Button Content="Zdravstveni karton&#xD;&#xA;" HorizontalAlignment="Left" Margin="316,177,0,0" VerticalAlignment="Top" Width="135" Height="44" Click="klik_na_karton"/>
+        <Button Content="Obavestenja" HorizontalAlignment="Left" Margin="317,267,0,0" VerticalAlignment="Top" Width="130" Height="44" Click="klik_na_obavestenja"/>
+        <Button Content="Odjava&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="13,386,0,0" Height="22" Click="Odjava"/>
+    </Grid>
+</Window>

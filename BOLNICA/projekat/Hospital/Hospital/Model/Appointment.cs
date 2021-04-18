@@ -23,8 +23,19 @@ public class Appointment : INotifyPropertyChanged
     public int idA;
     public Patient patient;
     public Doctor doctor;
+    public DateTime dateTime { get; set; }
 
     public Appointment() { }
+
+    public Appointment(int v, DateTime dateTime, double v2, Doctor doctor, Patient patient)
+    {
+        this.idA = v;
+        this.dateTime = dateTime;
+
+        this.duration = v2;
+        this.doctor = doctor;
+        this.patient = patient;
+    }
 
     public Appointment(int v, DateTime dateTime1, String tm, double v2, Doctor doctor, Patient patient)
     {
@@ -35,6 +46,7 @@ public class Appointment : INotifyPropertyChanged
         this.doctor = doctor;
         this.patient = patient;
     }
+
 
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -62,6 +74,21 @@ public class Appointment : INotifyPropertyChanged
         }
     }
 
+    public DateTime DateTime
+    {
+        get
+        {
+            return dateTime;
+        }
+        set
+        {
+            if (value != dateTime)
+            {
+                date = value;
+                OnPropertyChanged("DateTime");
+            }
+        }
+    }
     public String Time
     {
         get
