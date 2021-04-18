@@ -34,12 +34,10 @@ namespace Hospital
             frame.Navigate(p);
 
         }
-
         private void blog(object sender, RoutedEventArgs e)
         {
             BlogGlavni b = new BlogGlavni();
             frame.Navigate(b);
-
         }
 
         

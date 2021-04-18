@@ -9,7 +9,7 @@
     <Grid Background="LightBlue">
         <Grid Margin="0,0,-0.4,0">
             <Label Height="30" Width="100" Margin="35,55,258.6,335" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="0" FontWeight="Bold">Broj prostorije</Label>
-            <TextBox Name="brojProstorijeTxt" Height="30" Width="200" Margin="159,55,34.6,335" Grid.Row="0" Grid.Column="1" Background="AliceBlue"/>
+            <TextBox IsReadOnly="True" Name="brojProstorijeTxt" Height="30" Width="200" Margin="159,55,34.6,335" Grid.Row="0" Grid.Column="1" Background="AliceBlue"/>
             <Label Height="30" Width="100" Margin="35,120,258.6,270" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="1" FontWeight="Bold">Namena</Label>
             <ComboBox Name="namenaTxt" Height="30" Width="200" Margin="159,120,34.6,270" Background="AliceBlue">
                 <ComboBoxItem>SALA</ComboBoxItem>
