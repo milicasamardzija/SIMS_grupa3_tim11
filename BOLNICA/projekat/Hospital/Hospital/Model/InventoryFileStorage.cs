@@ -11,25 +11,25 @@ using System.IO;
 
 public class InventoryFileStorage
 {
-    public ObservableCollection<Inventory> GetAll()
+    public List<Inventory> GetAll()
     {
-        ObservableCollection<Inventory> allInventory = new ObservableCollection<Inventory>();
+        List<Inventory> allInventory = new List<Inventory>();
 
-        allInventory = JsonConvert.DeserializeObject<ObservableCollection<Inventory>>(File.ReadAllText(@"./../../../../Hospital/files/storageInventory.json"));
+        allInventory = JsonConvert.DeserializeObject<List<Inventory>>(File.ReadAllText(@"./../../../../Hospital/files/storageInventory.json"));
 
         return allInventory;
     }
 
     public void Save(Inventory newInventory)
     {
-        ObservableCollection<Inventory> allInventories = GetAll();
+        List<Inventory> allInventories = GetAll();
 
          allInventories.Add(newInventory);
 
         SaveAll(allInventories);
     }
 
-    public void SaveAll(ObservableCollection<Inventory> inventories)
+    public void SaveAll(List<Inventory> inventories)
     {
         using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/storageInventory.json"))
         {
@@ -40,7 +40,7 @@ public class InventoryFileStorage
 
     public void Delete(Inventory inventory)
     {
-        ObservableCollection<Inventory> allInventories = GetAll();
+        List<Inventory> allInventories = GetAll();
 
         foreach (Inventory temp in allInventories)
         {
@@ -55,7 +55,7 @@ public class InventoryFileStorage
 
     public void DeleteById(int id)
     {
-        ObservableCollection<Inventory> allInventories = GetAll();
+        List<Inventory> allInventories = GetAll();
 
         foreach (Inventory inventory in allInventories)
         {
@@ -70,7 +70,7 @@ public class InventoryFileStorage
 
     public Inventory FindById(int id)
     {
-        ObservableCollection<Inventory> allInventories = GetAll();
+        List<Inventory> allInventories = GetAll();
         Inventory ret = null;
 
         foreach (Inventory inventory in allInventories)
@@ -87,7 +87,7 @@ public class InventoryFileStorage
 
     public Boolean ExistsById(int id)
     {
-        ObservableCollection<Inventory> allInventories = GetAll();
+        List<Inventory> allInventories = GetAll();
         Boolean ret = false;
 
         foreach (Inventory inventory in allInventories)

@@ -35,7 +35,7 @@ namespace Hospital
             int ret = 0;
 
             InventoryFileStorage storage = new InventoryFileStorage();
-            ObservableCollection<Inventory> allInventories = storage.GetAll();
+            List<Inventory> allInventories = storage.GetAll();
 
             foreach (Inventory inventoryBig in allInventories)
             {

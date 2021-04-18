@@ -36,6 +36,7 @@ namespace Hospital
         {
             RoomFileStorage storage = new RoomFileStorage();
             RoomInventoryFileStorage storageInventory = new RoomInventoryFileStorage();
+            InventoryFileStorage storageOfInventories = new InventoryFileStorage();
 
             storage.DeleteById(id); //brise se iz fajla na osnovu id-a
             listRoom.RemoveAt(index); //brise se iz prikaza tabele
@@ -45,6 +46,21 @@ namespace Hospital
                 if (inventory.roomId == id)
                 {
                     storageInventory.DeleteByIdRoom(id);
+                }
+            }
+
+            List<Inventory> allInventories = storageOfInventories.GetAll();
+            foreach (Inventory inv in allInventories)
+            {
+                if (inv.roomInventory != null) {
+                    foreach (RoomInventory ri in inv.roomInventory.ToList())
+                    {
+                        if (ri.roomId == id)
+                        {
+                            inv.roomInventory.Remove(ri);
+                            storageOfInventories.SaveAll(allInventories);
+                        }
+                    }
                 }
             }
 

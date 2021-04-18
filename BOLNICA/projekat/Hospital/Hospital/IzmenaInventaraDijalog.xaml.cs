@@ -49,17 +49,21 @@ namespace Hospital
         private void izmeni(object sender, RoutedEventArgs e)
         {
             InventoryFileStorage storage = new InventoryFileStorage();
+            List<Inventory> allInventories = storage.GetAll();
 
-            inventory.Name = ImeTxt.Text;
-            inventory.Quantity = Convert.ToInt32(KolicinaTxt.Text);
-            inventory.Type = (InventoryType)TypeTxt.SelectedIndex;
+            foreach (Inventory i in allInventories) {
+                if (i.InventoryId == id)
+                {
+                    i.Name = ImeTxt.Text;
+                    i.Quantity = Convert.ToInt32(KolicinaTxt.Text);
+                    i.Type = (InventoryType)TypeTxt.SelectedIndex;
+                    listInventory[index] = new Inventory(i.InventoryId, i.Name, i.Quantity, i.Type);
+                    break;
+                }
+            }
 
-            listInventory[index] = new Inventory(inventory.InventoryId,inventory.Name,inventory.Quantity,inventory.Type);
-
-            storage.SaveAll(listInventory);
-          //  storage.DeleteById(inventory.inventoryId);
-           // storage.Save(inventory);
-
+            storage.SaveAll(allInventories);
+   
             frame.NavigationService.Navigate(this);
 
         }
