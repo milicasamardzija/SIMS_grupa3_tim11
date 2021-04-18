@@ -41,7 +41,7 @@ namespace Hospital
                     if (patient.username.Equals(ime.Text) && patient.password.Equals(lozinka.Password)) //ako su sifra i korisnicko ime nadjeni u fajlu
                     {
                         id = patient.PatientId; //preuzimamo id pacijenta koji dalje prosledjujemo prozoru koji se prvi otvara, pa dalje ostalim prozorima da bismo uvek prikazivali podatke na osnovu ovog id-ja(odnosno bas sa korisnika koji je ulogovan)
-                        WindowPacijent p = new WindowPacijent(id); //otvara se prozor i prosledjuje id
+                        PocetnaPacijent p = new PocetnaPacijent(id); //otvara se prozor i prosledjuje id
                         p.Show();
                        // this.Close();
                         return; //da ne bi trazio u drugim fajlovima

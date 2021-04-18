@@ -60,7 +60,7 @@ namespace Hospital
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
-           IzmeniTermin it = new IzmeniTermin(AppointmentList, (Appointment)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
+           IzmeniTermin it = new IzmeniTermin(AppointmentList, (Appointment)ListaTermina.SelectedItem, ListaTermina.SelectedIndex,id);
             it.Show();
         }
 
@@ -68,6 +68,13 @@ namespace Hospital
         {
             ObrisiTermin ob = new ObrisiTermin(AppointmentList, (Appointment)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
             ob.Show();
+        }
+
+        private void Nazad_na_pocetnu(object sender, RoutedEventArgs e)
+        {
+            PocetnaPacijent pp = new PocetnaPacijent(id);
+            pp.Show();
+            this.Close();
         }
     }
 }

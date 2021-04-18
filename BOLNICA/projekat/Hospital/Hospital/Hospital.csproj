@@ -111,6 +111,9 @@
     <Compile Include="OdjaviSe.xaml.cs">
       <DependentUpon>OdjaviSe.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PocetnaPacijent.xaml.cs">
+      <DependentUpon>PocetnaPacijent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PostojeceAnamneze.xaml.cs">
       <DependentUpon>PostojeceAnamneze.xaml</DependentUpon>
     </Compile>
@@ -124,6 +127,9 @@
     <Compile Include="Model\SecretaryFileStorage.cs" />
     <Compile Include="Prijava.xaml.cs">
       <DependentUpon>Prijava.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazObavestenja.xaml.cs">
+      <DependentUpon>PrikazObavestenja.xaml</DependentUpon>
     </Compile>
     <Compile Include="Rooms.xaml.cs">
       <DependentUpon>Rooms.xaml</DependentUpon>
@@ -225,6 +231,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PocetnaPacijent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PostojeceAnamneze.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -242,6 +252,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Prijava.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikazObavestenja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
