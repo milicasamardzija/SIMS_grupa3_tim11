@@ -8,7 +8,7 @@
     Title="IzbrisiPacijenta"
     Width="500"
     Height="300"
-    WindowStartupLocation="CenterScreen"
+    WindowStartupLocation="CenterOwner"
     mc:Ignorable="d">
     <Grid Background="#FF78D1D3">
         <Label

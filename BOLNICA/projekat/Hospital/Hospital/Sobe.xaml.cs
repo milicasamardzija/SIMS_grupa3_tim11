@@ -10,29 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Hospital
 {
     /// <summary>
-    /// Interaction logic for UredjivanjeBloga.xaml
+    /// Interaction logic for Sobe.xaml
     /// </summary>
-    public partial class UredjivanjeBloga : Window
+    public partial class Sobe : UserControl
     {
-        Page blog;
-        public UredjivanjeBloga(Page bg)
+        public Sobe()
         {
-
             InitializeComponent();
-            blog = bg;
-        }
-
-      
-
-        private void odustani(object sender, RoutedEventArgs e)
-        {  
-         
-            this.Close();
         }
     }
 }

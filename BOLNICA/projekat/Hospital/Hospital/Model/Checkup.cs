@@ -4,19 +4,17 @@
 // Purpose: Definition of Class Checkup
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace Hospital.Model
 {
     public class Checkup : Appointment
     {
 
-        public Checkup(int ida, int ch, DateTime dateTime1, String ti, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor)
+        public Checkup(int ida,int ch, DateTime dateTime1, DateTime dateTime2, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor)
         {
             this.idA = ida;
             this.date = dateTime1;
-            this.time = ti;
+            this.time = dateTime2;
             this.duration = v2;
             this.doctor = doctor;
             this.patient = patient;
@@ -24,51 +22,8 @@ namespace Hospital.Model
             this.type = selectedIndex;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string name)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
-
-        public CheckupType type;
-        public int idCh;
-
-        public CheckupType Type
-        {
-            get
-            {
-                return type;
-            }
-            set
-            {
-                if(value != type)
-                {
-                    type = value;
-                    OnPropertyChanged("Type");
-                }
-            }
-        }
-
-        public int IdCh
-        {
-            get
-            {
-                return idCh;
-            }
-            set
-            {
-                if (value != idCh)
-                {
-                    idCh = value;
-                    OnPropertyChanged("IdCh");
-                }
-            }
-        }
-
+        public CheckupType type { get; set; }
+        public int idCh { get; set; }
 
     }
 }

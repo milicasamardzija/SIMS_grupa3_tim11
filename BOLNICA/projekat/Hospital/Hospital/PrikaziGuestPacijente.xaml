@@ -8,7 +8,6 @@
     Title="PrikaziGuestPacijente"
     Width="500"
     Height="450"
-    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid Background="#FF78D1D3">
         <Label
@@ -19,14 +18,12 @@
             FontFamily="Viner Hand ITC"
             FontSize="16" />
         <DataGrid
-            x:Name="PrikaziGPacijente"
             Width="428"
             Height="275"
             Margin="29,78,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            AutoGenerateColumns="True"
-            ItemsSource="{Binding Path=listGPatient}">
+            AutoGenerateColumns="True">
 
             <DataGrid.Columns>
                 <DataGridTextColumn

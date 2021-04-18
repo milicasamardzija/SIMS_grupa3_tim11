@@ -5,29 +5,28 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
 using Newtonsoft.Json;
 
 public class PatientFileStorage
 {
-   public ObservableCollection<Patient> GetAll()
+   public List<Patient> GetAll()
    {
-      ObservableCollection<Patient> sviPacijenti= new ObservableCollection<Patient>();
+      List<Patient> sviPacijenti= new List<Patient>();
 
-        sviPacijenti = JsonConvert.DeserializeObject<ObservableCollection<Patient>>(File.ReadAllText(@"./../../../../Hospital/files/storagePatient.json"));
+        sviPacijenti = JsonConvert.DeserializeObject<List<Patient>>(File.ReadAllText(@"./../../../../Hospital/files/storagePatient.json"));
         return sviPacijenti;
    }
    
    public void Save(Patient newPatient)
    {
-        ObservableCollection<Patient> sviPacijenti = GetAll();
+        List<Patient> sviPacijenti = GetAll();
         sviPacijenti.Add(newPatient);
         SaveAll(sviPacijenti);
       
    }
    
-   public void SaveAll(ObservableCollection<Patient> patients)
+   public void SaveAll(List<Patient> patients)
    {
         using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/storagePatient.json"))
         {
@@ -39,11 +38,11 @@ public class PatientFileStorage
    
    public void Delete(Patient patient)
    {
-        ObservableCollection<Patient> allPatients = GetAll();
+        List<Patient> allPatients = GetAll();
 
         foreach (Patient p in allPatients)
         {
-            if (p.PatientId == patient.PatientId)
+            if (p.patientId == patient.patientId)
             {
                 allPatients.Remove(p);
                 break;
@@ -56,11 +55,11 @@ public class PatientFileStorage
 
 
     {
-        ObservableCollection<Patient> allPatients = GetAll();
+        List<Patient> allPatients = GetAll();
 
         foreach (Patient patient in allPatients) {
 
-            if (patient.PatientId == id) {
+            if (patient.patientId == id) {
 
                 allPatients.Remove(patient);
                 break;
@@ -71,12 +70,12 @@ public class PatientFileStorage
    
    public Patient FindById(int id)
    {
-        ObservableCollection<Patient> allPatients = GetAll();
+        List<Patient> allPatients = GetAll();
         Patient ret = null;
 
         foreach (Patient patient in allPatients)
         {
-            if (patient.PatientId == id)
+            if (patient.patientId == id)
             {
                 ret = patient;
                 break;
@@ -88,12 +87,12 @@ public class PatientFileStorage
    
    public Boolean ExistsById(int id)
    {
-        ObservableCollection<Patient> allPatients = GetAll();
+        List<Patient> allPatients = GetAll();
         Boolean ret = false;
 
         foreach (Patient patient in allPatients)
         {
-            if (patient.PatientId == id)
+            if (patient.patientId == id)
             {
                 ret = true;
                 break;
@@ -102,6 +101,6 @@ public class PatientFileStorage
         return ret;
    }
    
-
+  // public String fileLocation;
 
 }

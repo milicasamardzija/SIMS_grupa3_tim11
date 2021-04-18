@@ -27,19 +27,11 @@ namespace Hospital
             set;
         }
 
-        public Rooms()
+        public Rooms(ObservableCollection<Room> roomList)
         {
             InitializeComponent();
             this.DataContext = this;
-            RoomList = loadJason();
-        }
-
-  
-        public ObservableCollection<Room> loadJason()
-        {
-            RoomFileStorage fs = new RoomFileStorage();
-            ObservableCollection<Room> rs = new ObservableCollection<Room>(fs.GetAll());
-            return rs;
+            RoomList = roomList;
         }
 
         private void dodavanje(object sender, RoutedEventArgs e)
@@ -61,6 +53,12 @@ namespace Hospital
         {
             IzmeniProstorijuDijalog izmeniP = new IzmeniProstorijuDijalog(RoomList,(Room)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex);
             izmeniP.Show();
+        }
+
+        private void prikazInventara(object sender, RoutedEventArgs e)
+        {
+            Inventar i = new Inventar((Room)ListaProstorija.SelectedItem);
+            i.Show();
         }
     }
 }

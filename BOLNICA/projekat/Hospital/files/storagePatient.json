@@ -1,1 +1,41 @@
-[{"guest":true,"birthdayDate":"0001-01-01T00:00:00","patientId":3,"healthCareCategory":0,"idHealthCard":0,"occupation":null,"insurence":null,"name":"Marijana","surname":"Mateus","telephoneNumber":"2658746","jmbg":"123456789","gender":1,"username":null,"password":null,"adress":null},{"guest":true,"birthdayDate":"1989-07-16T00:00:00","patientId":100,"healthCareCategory":0,"idHealthCard":0,"occupation":null,"insurence":null,"name":"Katarina","surname":"Hauzler","telephoneNumber":"56589742","jmbg":"26587942","gender":1,"username":null,"password":null,"adress":null},{"guest":false,"birthdayDate":"1999-05-01T00:00:00","patientId":0,"healthCareCategory":4,"idHealthCard":123,"occupation":"student","insurence":"Jovan Samardzija","name":"Milica","surname":"Marinkov","telephoneNumber":"064589579","jmbg":"0105999777586","gender":1,"username":null,"password":null,"adress":{"street":"Vojvode Misica","streetNumber":1,"city":3,"country":0}}]
+[
+  {
+    "username": "aaa",
+    "password": "aaa",
+    "patientId": 12,
+    "healthCareCategory": 1,
+    "idHealthCard": 54,
+    "name": "Nevena",
+    "surname": "Atic",
+    "adress": {"street":"Vojove Misica", "streetNumber": 14, "city": 5, "country": 0},
+    "telephoneNumber": "",
+    "jmbg": "123456567",
+    "gender": 0,
+    "birthdate": "28.3.1999.",
+    "occupation": "profesor",
+    "insurence":"Olivera Atic",
+    "guest" : false
+  },
+  {
+    "username": "bbb",
+    "password": "bbb",
+    "patientId": 10,
+    "healthCareCategory": 3,
+    "idHealthCard": 22222,
+    "name": "Milica",
+    "surname": "Marinkov",
+    "adress": {
+      "street": "Ljubisava Andrica",
+      "streetNumber": 10,
+      "city": 5,
+      "country": 0
+    },
+    "telephoneNumber": "0698564258",
+    "jmbg": "257894562",
+    "gender": 0,
+    "birthdate": "Milica",
+    "occupation": "profesor",
+    "insurence":"Jovan Samardzija",
+    "guest": false
+  }
+]

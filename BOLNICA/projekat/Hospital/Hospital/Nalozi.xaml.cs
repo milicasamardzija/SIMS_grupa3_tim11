@@ -20,14 +20,19 @@ namespace Hospital
     public partial class Nalozi : Window
     {
 
-        public Page blogg;
+    
 
-        public Nalozi(Page blogGlavni)
+        public Nalozi()
         {
             InitializeComponent();
-            blogg = blogGlavni;
         }
 
+        private void vratiNaPocetak(object sender, RoutedEventArgs e)
+        {
+
+            
+
+        }
 
         private void KreirajButton(object sender,  RoutedEventArgs e)
         {
@@ -52,18 +57,15 @@ namespace Hospital
             PrikaziPacijente prikaz = new PrikaziPacijente();
             prikaz.ShowDialog();
         }
-    
+        private void izbrisiGButton(object sender, RoutedEventArgs e)
+        {
+          
+        }
 
         private void prikaziGPacijenteButton(object sender, RoutedEventArgs e)
         {
             var prikazG = new PrikaziGuestPacijente();
             prikazG.ShowDialog();
-        }
-       
-        private void blog(object sender, RoutedEventArgs e)
-        {
-            UredjivanjeBloga blog = new UredjivanjeBloga(blogg);
-            blog.ShowDialog();
         }
     }
 }

@@ -16,54 +16,31 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-   
+    /// <summary>
     /// Interaction logic for PrikaziGuestPacijente.xaml
-    
+    /// </summary>
     public partial class PrikaziGuestPacijente : Window
     {
 
-
-        public ObservableCollection<Patient> listGPatient
-        {
-            get;
-            set;
-        }
+     
 
         public PrikaziGuestPacijente()
         {
             InitializeComponent();
-            this.DataContext = this;
-            listGPatient = loadJason();
-
+     
         }
 
-        private ObservableCollection<Patient> loadJason()
-        {
-            PatientFileStorage pfs = new PatientFileStorage();
-            ObservableCollection<Patient> rs = new ObservableCollection<Patient>(pfs.GetAll());
-            ObservableCollection<Patient> ret = new ObservableCollection<Patient>();
 
-            foreach (Patient p in rs)
-           {
-               if(p.guest==true)
-               {
-                   ret.Add(p);
-                }
-           }
-
-            return ret;
-        }
 
         private void kreirajStalniNalogButton(object sender, RoutedEventArgs e)
         {
-              var stalniNalog = new KreirajStalniNalog(listGPatient, (Patient)PrikaziGPacijente.SelectedItem, PrikaziGPacijente.SelectedIndex);
+            /*   var stalniNalog = new KreirajNalog();
                stalniNalog.Show();
-           
+           */
         }
         private void izbrisiGuest(object sender, RoutedEventArgs e)
         {
-            IzbrisiPacijenta p = new IzbrisiPacijenta(listGPatient, (Patient)PrikaziGPacijente.SelectedItem, PrikaziGPacijente.SelectedIndex);
-            p.Show();
+            
         }
        
     }
