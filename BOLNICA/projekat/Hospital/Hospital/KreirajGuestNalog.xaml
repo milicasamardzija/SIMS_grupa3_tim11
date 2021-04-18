@@ -80,15 +80,7 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <!-- <TextBox
-            x:Name="datRodjText"
-            Width="120"
-            Height="23"
-            Margin="200,123,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap" />-->
+
         <TextBox
             x:Name="brojTelText"
             Width="120"
@@ -144,7 +136,7 @@
             Margin="200,225,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
-            <ComboBoxItem IsSelected="True">
+            <ComboBoxItem>
                 AB
             </ComboBoxItem>
             <ComboBoxItem>
@@ -159,9 +151,9 @@
         </ComboBox>
         <TextBox
             x:Name="alergeniText"
-            Width="134"
+            Width="120"
             Height="33"
-            Margin="186,265,0,0"
+            Margin="200,265,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""

@@ -27,6 +27,20 @@ public class MedicalRecord : Patient
 
 
     }
+    public MedicalRecord(String n, String s, String j, Gender g, DateTime dr, int mid, BloodType bt, String a)
+    {
+        this.name = n;
+        this.surname = s;
+        this.jmbg = j;
+        this.gender = g;
+        this.birthdayDate = dr;
+        this.medicalRecordId = mid;   //medical record id ce biti isto sto i patientId, pa cu po tome traziti
+        
+        this.bloodType = bt;
+        this.alergens = a;
+
+
+    }
 }
 
 

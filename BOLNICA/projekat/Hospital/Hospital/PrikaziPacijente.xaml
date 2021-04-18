@@ -47,7 +47,7 @@
 
                 <DataGridTextColumn
                     Width="100"
-                    Binding="{Binding patientId}"
+                    Binding="{Binding PatientId}"
                     Header="Id" />
             </DataGrid.Columns>
         </DataGrid>

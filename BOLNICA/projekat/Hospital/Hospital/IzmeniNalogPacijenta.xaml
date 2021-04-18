@@ -159,16 +159,7 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <!--<TextBox
-            x:Name="datumText"
-            Grid.ColumnSpan="2"
-            Width="120"
-            Height="23"
-            Margin="286,160,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap" />-->
+
         <TextBox
             x:Name="ulicaText"
             Width="107"
@@ -248,6 +239,7 @@
             Margin="220,375,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            IsEnabled="False"
             IsReadOnly="True"
             Text=""
             TextWrapping="Wrap" />
@@ -366,8 +358,8 @@
             Height="22"
             Margin="479,280,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            IsEditable="False">
+            VerticalAlignment="Top">
+
             <ComboBoxItem>
                 AB
             </ComboBoxItem>

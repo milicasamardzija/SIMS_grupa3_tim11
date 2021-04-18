@@ -54,8 +54,12 @@ namespace Hospital
               generisiIdG());
 
             pStorage.Save(newPatient);
-           // listPatient.Add(newPatient);
+            // listPatient.Add(newPatient);
 
+            MedicalRecordsFileStorage mfs = new MedicalRecordsFileStorage();
+            MedicalRecord newGuest = new MedicalRecord(imeText.Text, prezimeText.Text, jmbgText.Text, (Gender)pol.SelectedIndex, (DateTime)datum.SelectedDate, generisiIdG(), (BloodType)krvnaGrupa.SelectedIndex, alergeniText.Text);
+
+            mfs.Save(newGuest);
             this.Close();
         }
 
