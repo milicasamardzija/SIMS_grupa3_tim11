@@ -21,41 +21,41 @@ namespace Hospital
     /// </summary>
     public partial class PrikaziKartonPacijenta : Window
     {
-
+        
         public ObservableCollection<MedicalRecord> MedicalList
         {
             get;
             set;
         }
-
+        
         public ObservableCollection<Patient> Pacijenti;
         public Patient patient;
         public int idP;
 
-        public PrikaziKartonPacijenta(ObservableCollection<Patient> list, Patient selectedPatient,int idPac)
+        public PrikaziKartonPacijenta(ObservableCollection<Patient> list, Patient selectedPatient,int selectedIndex)
         {
             InitializeComponent();
             this.DataContext = this;
             Pacijenti = list;
             patient = selectedPatient;
-            idP = idPac;
-            //MedicalList = loadFileJ(idP);
+            idP = selectedIndex;
+            MedicalList = loadFileJ(idP);
         }
 
-        /*public ObservableCollection<MedicalRecord> loadFileJ(int id)
+        public ObservableCollection<MedicalRecord> loadFileJ(int id)
         {
-            MedicalRecordFileStorage mst = new MedicalRecordFileStorage();
+            MedicalRecordsFileStorage mst = new MedicalRecordsFileStorage();
             ObservableCollection<MedicalRecord> mr = new ObservableCollection<MedicalRecord>(mst.GetAll());
             ObservableCollection<MedicalRecord> mrr = new ObservableCollection<MedicalRecord>();
             foreach(MedicalRecord m in mr)
             {
-                if(m.patient.patientId == id)
+                if(m.PatientId == id)
                 {
-                    ret.Add(m);
+                    mrr.Add(m);
                 }
             }
-            return ret;
-        }*/
+            return mrr;
+        }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {

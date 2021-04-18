@@ -9,16 +9,16 @@
     <Grid>
         <DataGrid x:Name="ListMedical" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Height="257" Width="669" ItemsSource="{Binding Path=MedicalList}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="IME" Binding="{Binding name}" FontSize="16"/>
-                <DataGridTextColumn Header="PREZIME" Binding="{Binding surname}" FontSize="16"/>
-                <DataGridTextColumn Header="BROJ TELEFONA" Binding="{Binding telephoneNumber}" FontSize="16"/>
-                <DataGridTextColumn Header="JMBG" Binding="{Binding jmbg}" FontSize="16"/>
-                <DataGridTextColumn Header="POL" Binding="{Binding gender}" FontSize="16"/>
-                <DataGridTextColumn Header="DATUM RODJENJA" Binding="{Binding birthdate}" FontSize="16"/>
-                <DataGridTextColumn Header="ADRESA" Binding="{Binding adress}" FontSize="16"/>
-                <DataGridTextColumn Header="BROJ KARTONA" Binding="{Binding medicalRecordId}" FontSize="16"/>
-                <DataGridTextColumn Header="KRVNA GRUPA" Binding="{Binding bloodType}" FontSize="16"/>
-                <DataGridTextColumn Header="ALERGIJE" Binding="{Binding allergy}" FontSize="16"/>
+                <DataGridTextColumn Header="IME" Binding="{Binding Name}" FontSize="16"/>
+                <DataGridTextColumn Header="PREZIME" Binding="{Binding Surname}" FontSize="16"/>
+                <DataGridTextColumn Header="BROJ TELEFONA" Binding="{Binding TelephoneNumber}" FontSize="16"/>
+                <DataGridTextColumn Header="JMBG" Binding="{Binding Jmbg}" FontSize="16"/>
+                <DataGridTextColumn Header="POL" Binding="{Binding Gender}" FontSize="16"/>
+                <DataGridTextColumn Header="DATUM RODJENJA" Binding="{Binding Birthdate}" FontSize="16"/>
+                <DataGridTextColumn Header="ADRESA" Binding="{Binding Adress}" FontSize="16"/>
+                <DataGridTextColumn Header="BROJ KARTONA" Binding="{Binding MedicalRecordId}" FontSize="16"/>
+                <DataGridTextColumn Header="KRVNA GRUPA" Binding="{Binding BloodType}" FontSize="16"/>
+                <DataGridTextColumn Header="ALERGIJE" Binding="{Binding Allergy}" FontSize="16"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="label" Content="Zdravstveni karton" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" FontSize="16"/>
