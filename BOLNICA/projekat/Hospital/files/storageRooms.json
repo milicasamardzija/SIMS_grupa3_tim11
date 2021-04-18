@@ -1,97 +1,18 @@
 [
   {
-    "roomInventory": [
-    ],
+    "roomInventory": [],
     "RoomId": 0,
-    "Floor": 50,
-    "Occupancy": false,
-    "Purpose": 0,
-    "Capacity": 50
-  },
-  {
-    "roomInventory": null,
-    "RoomId": 2,
-    "Floor": 5,
-    "Occupancy": false,
-    "Purpose": 0,
-    "Capacity": 5
-  },
-  {
-    "roomInventory": null,
-    "RoomId": 1,
-    "Floor": 2,
-    "Occupancy": false,
-    "Purpose": 1,
-    "Capacity": 2
-  },
-  {
-    "roomInventory": [
-    ],
-    "RoomId": 3,
     "Floor": 11,
     "Occupancy": false,
-    "Purpose": 1,
+    "Purpose": 0,
     "Capacity": 10
   },
   {
-    "roomInventory": null,
-    "RoomId": 4,
-    "Floor": 7,
+    "roomInventory": [],
+    "RoomId": 1,
+    "Floor": 1,
     "Occupancy": false,
     "Purpose": 2,
     "Capacity": 0
-  },
-  {
-    "roomInventory": null,
-    "RoomId": 5,
-    "Floor": 5,
-    "Occupancy": false,
-    "Purpose": 0,
-    "Capacity": 4
-  },
-  {
-    "roomInventory": null,
-    "RoomId": 6,
-    "Floor": 2,
-    "Occupancy": false,
-    "Purpose": 0,
-    "Capacity": 2
-  },
-  {
-    "roomInventory": [
-    ],
-    "RoomId": 7,
-    "Floor": 11,
-    "Occupancy": false,
-    "Purpose": 0,
-    "Capacity": 2
-  },
-  {
-    "roomInventory": [
-      {
-        "roomId": 8,
-        "inventoryId": 11,
-        "quantity": 3
-      }
-    ],
-    "RoomId": 8,
-    "Floor": 4,
-    "Occupancy": false,
-    "Purpose": 0,
-    "Capacity": 5
-  },
-  {
-    "roomInventory": [
-      {
-        "roomId": 9,
-        "inventoryId": 12,
-        "quantity": 3
-      }
-    ],
-    "RoomId": 9,
-    "Floor": 15,
-    "Occupancy": false,
-    "Purpose": 0,
-    "Capacity": 3
   }
 ]

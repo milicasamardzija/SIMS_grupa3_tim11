@@ -31,12 +31,23 @@ namespace Hospital
             index = selectedIndex; //indeks u tabeli
         }
 
-   
+
         private void izbrisi(object sender, RoutedEventArgs e)
         {
             RoomFileStorage storage = new RoomFileStorage();
+            RoomInventoryFileStorage storageInventory = new RoomInventoryFileStorage();
+
             storage.DeleteById(id); //brise se iz fajla na osnovu id-a
             listRoom.RemoveAt(index); //brise se iz prikaza tabele
+
+            foreach (RoomInventory inventory in storageInventory.GetAll())
+            {
+                if (inventory.roomId == id)
+                {
+                    storageInventory.DeleteByIdRoom(id);
+                }
+            }
+
             this.Close();
         }
 

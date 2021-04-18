@@ -24,5 +24,6 @@
         </DataGrid>
         <TextBlock  FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="81,91,0,0" TextWrapping="Wrap" Text="Inventar jedne sobe" VerticalAlignment="Top" Height="42" Width="650" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
         <Frame Name="InventarPemesti" HorizontalAlignment="Left" Margin="747,191,0,0" VerticalAlignment="Top" Height="424" Width="463" BorderBrush="#FFB42412" OpacityMask="Black" Foreground="#FFA31818"/>
+        <Button Click="premesti" Content="Premesti" HorizontalAlignment="Left" Margin="330,599,0,0" VerticalAlignment="Top" Width="96" Height="38"/>
     </Grid>
 </Window>

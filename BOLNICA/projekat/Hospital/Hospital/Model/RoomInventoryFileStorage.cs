@@ -50,7 +50,7 @@ public class RoomInventoryFileStorage
         SaveAll(allInventories);
     }
    
-   public void DeleteById(int id)
+   public void DeleteByIdInventory(int id)
    {
         List<RoomInventory> allInventories = GetAll();
 
@@ -64,8 +64,23 @@ public class RoomInventoryFileStorage
         }
         SaveAll(allInventories);
    }
-   
-   public RoomInventory FindById(int id)
+
+    public void DeleteByIdRoom(int id)
+    {
+        List<RoomInventory> allInventories = GetAll();
+
+        foreach (RoomInventory inventory in allInventories)
+        {
+            if (inventory.roomId == id)
+            {
+                allInventories.Remove(inventory);
+                break;
+            }
+        }
+        SaveAll(allInventories);
+    }
+
+    public RoomInventory FindById(int id)
    {
         List<RoomInventory> allInventories = GetAll();
         RoomInventory ret = null;

@@ -34,7 +34,8 @@ namespace Hospital
             this.DataContext = this;
             room = selectedRoom;
             listInventory = loadJason();
-            InventarPemesti.NavigationService.Navigate(new PremestanjeInventaraDijalog(InventarPemesti, listInventory,(Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
+            InventarPemesti.NavigationService.Navigate(new BelsekaMagacin());
+        
         }
 
         public ObservableCollection<Inventory> loadJason()
@@ -67,6 +68,11 @@ namespace Hospital
                    }
              }
             return ret;
+        }
+
+        private void premesti(object sender, RoutedEventArgs e)
+        {
+            InventarPemesti.NavigationService.Navigate(new PremestanjeInventaraDijalog(InventarPemesti, listInventory, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
         }
     }
 }

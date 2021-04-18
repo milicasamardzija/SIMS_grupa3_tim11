@@ -51,40 +51,73 @@ namespace Hospital
 
         private void premesti(object sender, RoutedEventArgs e)
         {
+            //storages
             RoomInventoryFileStorage storage = new RoomInventoryFileStorage();
             InventoryFileStorage inventoryStorage = new InventoryFileStorage();
             RoomFileStorage roomStorage= new RoomFileStorage();
 
+            //argumenti
             int idRoom = Convert.ToInt32(IdSobeTxt.Text);
             int quantity = Convert.ToInt32(KolicinaTxt.Text);
+            InventoryType type = (InventoryType)TypeTxt.SelectedIndex;
 
+            //ako ne postoji inventar u toj sobi, odnosno pravi se oni RoomInventory objekat
             Boolean nadjen = true;
 
+            //liste
             List<RoomInventory> all = storage.GetAll();
+            List<Room> rooms = roomStorage.GetAll();
 
+            //ako postoji vec zeljeni inventar u unetoj sobi
             foreach (RoomInventory roomInv in all)
             {
-                if (roomInv.inventoryId == idInventory && roomInv.roomId == Convert.ToInt32(IdSobeTxt.Text))
+                if (roomInv.inventoryId == idInventory && roomInv.roomId == idRoom)
                 {
-                    roomInv.quantity += quantity;
-                    inventory.Quantity -= quantity;
-                    nadjen = false;
-                    storage.SaveAll(all);
+                    roomInv.quantity += quantity;   //povecava se inventar u sobi
+                    inventory.Quantity -= quantity; //smanjuje se inevntar u magacinu
+                    nadjen = false;                 //new pravi se novi objekat RoomIvnetory
+                    storage.SaveAll(all);           //izmene se cuvaju u RoomInventory
+
+                    //izmene se cuvaju i u listi RoomInventory sobe u koju se prebacuje
+                    foreach (Room r in rooms)
+                    {
+                        if (r.RoomId == idRoom)
+                        {
+                            foreach (RoomInventory ri in r.roomInventory)
+                            {
+                                if (ri.inventoryId == idInventory)
+                                {
+                                    ri.quantity += quantity;
+                                }
+                            }
+                        }
+
+                        break;
+                    }
+
+                    List<RoomInventory> inventoryRoomInv = inventory.roomInventory;
+
+                    foreach (RoomInventory invent in inventoryRoomInv)
+                    {
+                        if ( invent.roomId == idRoom && invent.inventoryId == idInventory)
+                        {
+                            invent.quantity += quantity;        //cuvaju se izmene u inventaru u listi RoomInventory
+                        }
+                    }
+
                     break;
                 }
             }
 
-            if (nadjen)
+            if (nadjen)  //ako ne postoji izabrani inventar u unetoj sobi
             {
-                RoomInventory newInventory = new RoomInventory(idRoom, inventory.InventoryId, quantity);
-                storage.Save(newInventory);
-                inventory.Quantity -= quantity;
+                RoomInventory newInventory = new RoomInventory(idRoom, inventory.InventoryId, quantity); //pravi se novi objekat
+                storage.Save(newInventory);       //cuva se u fajl RoomStorage
+                inventory.Quantity -= quantity;   //smanjuje se kolicina inventara u magacinu
 
-                inventory.roomInventory.Add(newInventory);
+                inventory.roomInventory.Add(newInventory);   //dodaju se izmene i u inventary
 
-                List<Room> rooms = roomStorage.GetAll();
-
-                foreach (Room r in rooms)
+                foreach (Room r in rooms)                    //cuvaju se izmene i u sobi u koju se prebacuje
                 {
                     if (r.RoomId == idRoom)
                     {
@@ -95,7 +128,7 @@ namespace Hospital
                 roomStorage.SaveAll(rooms);
             }
 
-            inventoryStorage.SaveAll(listInventory);
+            inventoryStorage.SaveAll(listInventory);          //sve izmene nad inventarom se cuvaju
 
             listInventory[index] = new Inventory(inventory.InventoryId,inventory.Name,inventory.Quantity,inventory.Type);
 
