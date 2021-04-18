@@ -14,17 +14,14 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for UredjivanjeBloga.xaml
-    /// </summary>
     public partial class UredjivanjeBloga : Window
     {
         Page blog;
-        public UredjivanjeBloga(Page bg)
+        public UredjivanjeBloga()
         {
 
             InitializeComponent();
-            blog = bg;
+            
         }
 
       

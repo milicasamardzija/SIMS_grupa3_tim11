@@ -20,8 +20,6 @@ namespace Hospital
     public partial class Nalozi : Window
     {
 
-        public Page blogg;
-
         public Nalozi(Page blogGlavni)
         {
             InitializeComponent();
@@ -62,7 +60,7 @@ namespace Hospital
        
         private void blog(object sender, RoutedEventArgs e)
         {
-            UredjivanjeBloga blog = new UredjivanjeBloga(blogg);
+            UredjivanjeBloga blog = new UredjivanjeBloga();
             blog.ShowDialog();
         }
     }

@@ -37,7 +37,9 @@ namespace Hospital
 
         private void blog(object sender, RoutedEventArgs e)
         {
+
             BlogGlavni b = new BlogGlavni();
+            
             frame.Navigate(b);
 
         }

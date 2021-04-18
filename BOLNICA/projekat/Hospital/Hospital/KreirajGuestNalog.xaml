@@ -113,12 +113,15 @@
         </ComboBox>
         <Button
             Width="75"
-            Margin="40,382,0,0"
+            Height="25"
+            Margin="40,389,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Background="#FF00E5E1"
             Click="odustani"
             Content="Odustani"
-            Cursor="Hand" />
+            Cursor="Hand"
+            FontSize="16" />
         <Label
             Margin="50,225,0,0"
             HorizontalAlignment="Left"
@@ -137,13 +140,13 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem>
-                AB
-            </ComboBoxItem>
-            <ComboBoxItem>
                 A
             </ComboBoxItem>
             <ComboBoxItem>
                 B
+            </ComboBoxItem>
+            <ComboBoxItem>
+                AB
             </ComboBoxItem>
             <ComboBoxItem>
                 O

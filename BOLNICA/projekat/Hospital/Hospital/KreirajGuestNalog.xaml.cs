@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for KreirajGuestNalog.xaml
-    /// </summary>
     public partial class KreirajGuestNalog : Window
     {
       //  public ObservableCollection<Patient> listPatient;

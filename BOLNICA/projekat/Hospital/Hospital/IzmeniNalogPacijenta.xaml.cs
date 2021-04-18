@@ -15,9 +15,6 @@ using System.Collections.ObjectModel;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for IzmeniNalogPacijenta.xaml
-    /// </summary>
     public partial class IzmeniNalogPacijenta : Window { 
 
        public ObservableCollection<Patient> listPatient;
