@@ -26,7 +26,7 @@ namespace Hospital
         {
             InitializeComponent();
             listPatient = list;
-            id = selectedPatient.patientId;
+            id = selectedPatient.PatientId;
             index = selectedIndex;
         }
 

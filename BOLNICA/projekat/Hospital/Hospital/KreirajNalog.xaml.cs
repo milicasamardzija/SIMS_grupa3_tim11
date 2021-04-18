@@ -15,35 +15,63 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
+
     /// Interaction logic for KreirajNalog.xaml
-    /// </summary>
+
     public partial class KreirajNalog : Window
     {
+      
+
         public KreirajNalog()
         {
-            
+
             InitializeComponent();
-         
+
         }
-        private void kreirajNalogB(object sender, RoutedEventArgs e) {
+
+        public int generisiId()
+        {
+            int ret = 0;
+
+            PatientFileStorage pfs = new PatientFileStorage();
+            ObservableCollection<Patient> allPatients = pfs.GetAll();
+
+            foreach (Patient pId in allPatients)
+            {
+                foreach (Patient p in allPatients)
+                {
+                    if (ret == p.PatientId)
+                    {
+                        ++ret;
+                        break;
+                    }
+                }
+            }
+            return ret;
+        }
+        private void kreirajNalogB(object sender, RoutedEventArgs e)
+        {
             PatientFileStorage pStorage = new PatientFileStorage();
-        /*    Patient newPatient = new Patient(imeText.Text, prezimeText.Text, jmbgText.Text, datrText.Text,
-                adresText.Text, brTelText.Text, Convert.ToInt16(brKnjiziceText.Text), (HealthCareCategory)zastita.SelectedIndex, 
-                Convert.ToInt16(brKartonaText.Text));*/
 
+            Patient newPatient = new Patient(imeText.Text, prezimeText.Text, brTelText.Text, jmbgText.Text, (Gender)pol.SelectedIndex, (DateTime)datum.SelectedDate,generisiId(), (HealthCareCategory)zastita.SelectedIndex,Convert.ToInt16(brKnjiziceText.Text), zanimanjeText.Text, imePrzOsText.Text, new Adress(ulText.Text, Convert.ToInt16(broj.Text), (City)grad.SelectedIndex, (Country)drzava.SelectedIndex));
+           
+            MedicalRecordsFileStorage mStorage = new MedicalRecordsFileStorage();
+            MedicalRecord newRecord = new MedicalRecord(imeText.Text, prezimeText.Text, jmbgText.Text, (Gender)pol.SelectedIndex, (DateTime)datum.SelectedDate, generisiId(), (HealthCareCategory)zastita.SelectedIndex, Convert.ToInt16(brKnjiziceText.Text), (BloodType)krvnaGrupa.SelectedIndex, alergeni.Text);
 
-          //  pStorage.Save(newPatient);
-           // listPatient.Add(newPatient);
-
+            pStorage.Save(newPatient);
+            mStorage.Save(newRecord);
+          
             this.Close();
 
 
-                }
+        }
 
         private void odustaniB(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+
+       
     }
 }

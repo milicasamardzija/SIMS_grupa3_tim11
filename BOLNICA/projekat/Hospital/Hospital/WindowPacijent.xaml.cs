@@ -43,7 +43,7 @@ namespace Hospital
 
             foreach (Appointment appointment in rs) //prolazimo kroz sve termine u fajlu
             {
-                if (appointment.patient.patientId == id) //trazimo termin koji ima pacijenta sa prosledjenim id-jem
+                if (appointment.patient.PatientId == id) //trazimo termin koji ima pacijenta sa prosledjenim id-jem
                 {
                     ret.Add(appointment); //dodajemo taj termin u listu koju vracamo za ispis u tabelu
                 }

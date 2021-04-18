@@ -35,11 +35,11 @@ namespace Hospital
         {
             Patient ret = new Patient();
             PatientFileStorage storage = new PatientFileStorage(); 
-            List<Patient> patients = storage.GetAll();
+            ObservableCollection<Patient> patients = storage.GetAll();
 
             foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
             {
-                if (patient.patientId == idPatient) //pronalazi pacijenta sa id-jem ulogovanog pacijenta
+                if (patient.PatientId == idPatient) //pronalazi pacijenta sa id-jem ulogovanog pacijenta
                 {
                     ret = patient;
                     break; //kada ga nadje izlazi iz petlje
@@ -72,10 +72,11 @@ namespace Hospital
             // Appointment newapp = new Appointment(Convert.ToInt32(idText.Text), Convert.ToString(dateText.Text), Convert.ToString(timeText.Text), Convert.ToDouble(durationText.Text), Convert.ToString(doctorText.Text),patient);
 
             //mislim da treba da se napravi neka fija koja vraca idAppointmenta koji ne postoji u fajlu i da se automatski taj id ubacuje u novi Appointment
-            Appointment newapp = new Appointment(Convert.ToInt32(idText.Text), Convert.ToDateTime(dateText.Text), Convert.ToDateTime(timeText.Text), Convert.ToDouble(durationText.Text), doctor, patient);
-
-            storage.Save(newapp);
-            appointmentList.Add(newapp);
+            // Appointment newapp = new Appointment(Convert.ToInt32(idText.Text), Convert.ToDateTime(dateText.Text), Convert.ToDateTime(timeText.Text), Convert.ToDouble(durationText.Text), doctor, patient);
+            // Appointment newapp = new Appointment(Convert.ToInt32(idText.Text), Convert.ToDateTime(timeText.Text), Convert.ToDouble(durationText.Text), doctor, patient);
+         
+            //storage.Save(newapp);
+            //appointmentList.Add(newapp);
 
             this.Close();
 

@@ -16,25 +16,32 @@ using System.Windows.Shapes;
 namespace Hospital
 {
     /// <summary>
-    /// Interaction logic for BelsekaMagacin.xaml
+    /// Interaction logic for BlogGlavni.xaml
     /// </summary>
-
-   
-   // public String Beleska { get; set; }
-
-    public partial class BelsekaMagacin : UserControl
+    public partial class BlogGlavni : Page
     {
-        public string beleska;
-        public BelsekaMagacin()
+
+        private String ob;
+
+       public String Ob
+        {
+            get
+            {
+                return ob;
+            }
+            set
+            {
+                ob = obavestenjaText.Text;
+            }
+
+        }
+        public BlogGlavni()
         {
             InitializeComponent();
-            BeleskaTxt.Text = beleska;
-
+            ob = obavestenjaText.Text;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            beleska = BeleskaTxt.Text;
-        }
+
+
     }
 }

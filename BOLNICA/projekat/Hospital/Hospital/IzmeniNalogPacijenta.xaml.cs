@@ -21,41 +21,134 @@ namespace Hospital
     public partial class IzmeniNalogPacijenta : Window { 
 
        public ObservableCollection<Patient> listPatient;
-
+        public ObservableCollection<MedicalRecord> listRecord;
+        public Patient patient;
+        public int index;
+        public MedicalRecord record;
         public IzmeniNalogPacijenta(ObservableCollection<Patient> list, Patient selectedPatient, int sel)
         {
            InitializeComponent();
             listPatient = list;
+
+            foreach (Patient p in listPatient)
+            {
+                if (p.Equals(selectedPatient))
+                {
+                    patient = p;
+                    break;
+                }
+            }
+
+         
+
+            listPatient=list;
+            index = sel;
+
+            //za nalog
             imeText.SelectedText = selectedPatient.name;
             prezimeText.SelectedText = selectedPatient.surname;
             jmbgText.SelectedText = selectedPatient.jmbg;
+           // pol.SelectedIndex = (int)selectedPatient.gender; //ovako se setuje opcija combo box-a
             brText.SelectedText = selectedPatient.telephoneNumber;
-            datumText.SelectedText = selectedPatient.birthdate;
-            brKnjText.SelectedText = Convert.ToString(selectedPatient.idHealthCard);
-            brKarText.SelectedText = Convert.ToString(selectedPatient.patientId);
+
+            datum.SelectedDate = (DateTime)selectedPatient.BirthdayDate;
+            brKnjText.SelectedText = Convert.ToString(selectedPatient.IdHealthCard);
+            brKarText.SelectedText = Convert.ToString(selectedPatient.PatientId);
+
+            datum.SelectedDate = (DateTime)selectedPatient.birthdayDate;
+            brKnjText.SelectedText = Convert.ToString(selectedPatient.IdHealthCard);
+            brKarText.SelectedText = Convert.ToString(selectedPatient.PatientId);
+            zanimanjeText.SelectedText = selectedPatient.Occupation;
+            zastitaText.SelectedIndex = (int)selectedPatient.HealthCareCategory;
+            osiguraniktText.SelectedText = selectedPatient.Insurence;
+            ulicaText.SelectedText = Convert.ToString(selectedPatient.adress.street);
+            broj.SelectedText = Convert.ToString(selectedPatient.adress.streetNumber);
+            grad.SelectedIndex = (int)selectedPatient.adress.city;  
+            drzava.SelectedIndex = (int)selectedPatient.adress.country;
 
 
-
-
-        } 
+            //za karton
+           /* imeText.SelectedText = selectedRecord.name;
+            prezimeText.SelectedText = selectedRecord.surname;
+            jmbgText.SelectedText = selectedRecord.jmbg;
+            pol.SelectedIndex = (int)selectedRecord.gender; //ov
+            brKnjText.SelectedText = Convert.ToString(selectedRecord.idHealthCard);
+            brKarText.SelectedText = Convert.ToString(selectedRecord.medicalRecordId); //id = br Kartona
+            alergeni.SelectedText = selectedRecord.alergens;
+            krvnaGrupa.SelectedIndex = (int)selectedRecord.bloodType; */
+        }
 
         private void izmenaPacijentaB(object sender, RoutedEventArgs e)
         {
 
             PatientFileStorage pfs = new PatientFileStorage();
-            Patient promeniP = pfs.FindById(Convert.ToInt16(brKarText.Text));
+            Patient promeniP = pfs.FindById(Convert.ToInt16(brKarText.
+                Text));
             Patient izbrisiP = pfs.FindById(Convert.ToInt16(brKarText.Text));
 
             promeniP.name = imeText.Text;
             promeniP.surname = prezimeText.Text;
-            promeniP.birthdate = datumText.Text;
+            promeniP.birthdayDate = (DateTime)datum.SelectedDate;
             promeniP.jmbg = jmbgText.Text;
+            promeniP.Occupation = zanimanjeText.Text;
+            promeniP.Insurence = osiguraniktText.Text;
+            promeniP.gender = (Gender)pol.SelectedIndex;    //ovako ide za combo box
             promeniP.telephoneNumber = brText.Text;
-            promeniP.patientId = Convert.ToInt16(brKarText.Text);
-            promeniP.idHealthCard = Convert.ToInt16(brKnjText.Text);
+
+            promeniP.PatientId = Convert.ToInt16(brKarText.Text);
+            
+            promeniP.IdHealthCard = Convert.ToInt16(brKnjText.Text);
+            promeniP.HealthCareCategory = (HealthCareCategory)zastitaText.SelectedIndex;
+            promeniP.adress.city =((City)grad.SelectedIndex);
+            promeniP.adress.country =(Country)drzava.SelectedIndex;
+            promeniP.adress.street = ulicaText.Text;
+            promeniP.adress.streetNumber = Convert.ToInt16(broj.Text);
+
+
+            MedicalRecordsFileStorage mfs = new MedicalRecordsFileStorage();
+            MedicalRecord promeniM = mfs.FindById(Convert.ToInt16(brKarText.Text));
+            MedicalRecord izbrisiM = mfs.FindById(Convert.ToInt16(brKarText.Text));
+
+            promeniM.name = imeText.Text;
+            promeniM.surname = prezimeText.Text;
+            promeniM.birthdayDate = (DateTime)datum.SelectedDate;
+            promeniM.jmbg = jmbgText.Text;
+            promeniM.gender = (Gender)pol.SelectedIndex;
+            promeniM.medicalRecordId= Convert.ToInt16(brKarText.Text);
+            promeniM.IdHealthCard = Convert.ToInt16(brKnjText.Text);
+            promeniM.HealthCareCategory= (HealthCareCategory)zastitaText.SelectedIndex;
+            promeniM.bloodType = (BloodType)krvnaGrupa.SelectedIndex;
+            promeniM.alergens = alergeni.Text;
+
+            mfs.Delete(izbrisiM);
+            mfs.Save(promeniM);
+
+
+
+
+            /* listPatient[index]= new Patient(promeniP.name,
+             promeniP.surname,
+              promeniP.telephoneNumber,
+             promeniP.jmbg,
+
+             promeniP.gender,
+             promeniP.birthdate,
+             Convert.ToInt16(promeniP.patientId),
+               promeniP.healthCareCategory,
+             promeniP.idHealthCard,
+             promeniP.occupation,
+
+             promeniP.insurence,
+             promeniP.adress.street,
+             Convert.ToInt16(promeniP.adress.streetNumber),
+             (int)promeniP.adress.city,
+             (int)promeniP.adress.country); */
+
 
             pfs.Delete(izbrisiP);
             pfs.Save(promeniP);
+
+
 
             this.Close();
 

@@ -1,0 +1,29 @@
+﻿<Window x:Class="Hospital.KreiranjeAnamneze"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+        Title="KreiranjeAnamneze" Height="459.223" Width="521.694" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button x:Name="button" Content="Sacuvaj" HorizontalAlignment="Left" Margin="24,387,0,0" VerticalAlignment="Top" Width="75" FontSize="16" RenderTransformOrigin="0.204,-0.284" Click="button_Click"/>
+        <Button x:Name="button1" Content="Izadji" HorizontalAlignment="Left" Margin="424,387,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Click="button1_Click"/>
+        <Label x:Name="label" Content="Prezime i ime pacijenta" HorizontalAlignment="Left" Margin="24,21,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label1" Content="Pol" HorizontalAlignment="Left" Margin="24,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.036,0.383" FontSize="16"/>
+        <Label x:Name="label2" Content="Datum i mesto rodjenja" HorizontalAlignment="Left" Margin="24,90,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label3" Content="Adresa stanovanja" HorizontalAlignment="Left" Margin="24,126,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label4" Content="Bracno stanje" HorizontalAlignment="Left" Margin="24,164,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label5" Content="Zanimanje" HorizontalAlignment="Left" Margin="24,201,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label6" Content="Zakljucak" HorizontalAlignment="Left" Margin="24,238,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.06,0.291"/>
+        <TextBox x:Name="textIme" HorizontalAlignment="Left" Height="23" Margin="276,29,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="223"/>
+        <TextBox x:Name="textPol" HorizontalAlignment="Left" Height="23" Margin="276,57,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="223"/>
+        <TextBox x:Name="textDatum" HorizontalAlignment="Left" Height="23" Margin="276,90,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="223"/>
+        <TextBox x:Name="textAdresa" HorizontalAlignment="Left" Height="23" Margin="276,126,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="223"/>
+        <TextBox x:Name="textBrak" HorizontalAlignment="Left" Height="23" Margin="276,164,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="223"/>
+        <TextBox x:Name="textZanimanje" HorizontalAlignment="Left" Height="23" Margin="276,201,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="223"/>
+        <TextBox x:Name="textZakljucak" HorizontalAlignment="Left" Height="95" Margin="24,275,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="475"/>
+        <Button x:Name="button2" Content="Postojece" HorizontalAlignment="Left" Margin="227,387,0,0" FontSize="16" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.282,0.301" Click="button2_Click"/>
+
+    </Grid>
+</Window>

@@ -28,31 +28,11 @@ namespace Hospital
             listRoom = list;
         }
 
-        public int generisiId()
-        {
-            int ret = 0;
-
-            RoomFileStorage storage = new RoomFileStorage();
-            List<Room> allRooms = storage.GetAll();
-
-            foreach (Room roomBig in allRooms) {
-                foreach (Room room in allRooms)
-                {
-                    if (ret == room.RoomId)
-                    {
-                        ++ret;
-                        break;
-                    }
-                }
-            }
-            return ret;
-        }
-
         private void dodavanjeProstorije(object sender, RoutedEventArgs e)
         {
             RoomFileStorage storage = new RoomFileStorage();
 
-            Room newRoom = new Room(generisiId(), Convert.ToInt16(SpratText.Text), false, (Purpose)NamenaText.SelectedIndex, Convert.ToInt16(KapacitetText.Text));
+            Room newRoom = new Room(Convert.ToInt16(BrojProstorijeText.Text), Convert.ToInt16(SpratText.Text), false, (Purpose)NamenaText.SelectedIndex, Convert.ToInt16(KapacitetText.Text));
 
             storage.Save(newRoom);
             listRoom.Add(newRoom);
