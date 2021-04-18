@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Hospital.Magacin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hospital"
+             mc:Ignorable="d" 
+            Height="768" Width="1538"  Background="LightBlue">
+    <Grid Margin="0,0,-4,0.6" >
+        <DataGrid Name="ListaInventara" 
+                  Background="AliceBlue" 
+                  HorizontalAlignment="Left"
+                  Height="424" 
+                  Margin="155,142,0,0" 
+                  VerticalAlignment="Top" 
+                  Width="605"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  ItemsSource="{Binding Path = InventoryList}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="TIP" Width="200" Binding="{Binding Type}"/>
+                <DataGridTextColumn Header="IME" Width="200" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="KOLICINA" Width="200" Binding="{Binding Quantity}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock  FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="69,47,0,0" TextWrapping="Wrap" Text="Inventar bolnice koji se nalazi u magacinu" VerticalAlignment="Top" Height="42" Width="650" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
+        <Frame Name="MagacinFrame" Content="" HorizontalAlignment="Left" Margin="1019,142,0,0" VerticalAlignment="Top" Height="424" Width="463" BorderBrush="#FFB42412" OpacityMask="Black" Foreground="#FFA31818"/>
+        <Button Background="AliceBlue"  Content="Dodaj" HorizontalAlignment="Left" Margin="69,626,0,0" VerticalAlignment="Top" Width="151" Height="76" FontSize="24" FontWeight="Bold" Click="dodaj" />
+        <Button Background="AliceBlue" Content="Izbrisi" HorizontalAlignment="Left" Margin="491,627,0,0" VerticalAlignment="Top" Width="157" Height="75" FontSize="24" FontWeight="Bold" Click="izbrisi"/>
+        <Button Background="AliceBlue" Content="Prebaci" HorizontalAlignment="Left" Margin="714,627,0,0" VerticalAlignment="Top" Width="155" Height="75" FontSize="24" FontWeight="Bold" Click="premesti" />
+        <Button Background="AliceBlue" Content="Izmeni" HorizontalAlignment="Left" Margin="277,626,0,0" VerticalAlignment="Top" Width="157" Height="75" Click="izmeni" FontSize="24" FontWeight="Bold"/>
+    </Grid>
+</UserControl>

@@ -10,18 +10,31 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Hospital
 {
     /// <summary>
-    /// Interaction logic for IzbrisiNalogPacijenta.xaml
+    /// Interaction logic for BelsekaMagacin.xaml
     /// </summary>
-    public partial class IzbrisiNalogPacijenta : Window
+
+   
+   // public String Beleska { get; set; }
+
+    public partial class BelsekaMagacin : UserControl
     {
-        public IzbrisiNalogPacijenta()
+        public string beleska;
+        public BelsekaMagacin()
         {
             InitializeComponent();
+            BeleskaTxt.Text = beleska;
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            beleska = BeleskaTxt.Text;
         }
     }
 }

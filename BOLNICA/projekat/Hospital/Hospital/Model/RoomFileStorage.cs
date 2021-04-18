@@ -41,7 +41,7 @@ public class RoomFileStorage
 
         foreach (Room temp in allRooms)
         {
-            if (temp.roomId == room.roomId)
+            if (temp.RoomId == room.RoomId)
             {
                 allRooms.Remove(temp);
                 break;
@@ -57,7 +57,7 @@ public class RoomFileStorage
 
         foreach (Room room in allRooms)
         {
-            if (room.roomId == id)
+            if (room.RoomId == id)
             {
                 ret = room;
                 break;
@@ -73,7 +73,7 @@ public class RoomFileStorage
 
         foreach (Room room in allRooms)
         {
-            if (room.roomId == id)
+            if (room.RoomId == id)
             {
                 allRooms.Remove(room);
                 break;
@@ -89,7 +89,7 @@ public class RoomFileStorage
 
         foreach (Room room in allRooms)
         {
-            if (room.roomId == id)
+            if (room.RoomId == id)
             {
                 ret = true;
                 break;
