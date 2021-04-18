@@ -27,6 +27,11 @@ namespace Hospital
             get;
             set;
         }
+       /* public ObservableCollection<MedicalRecord> MedicalList
+        {
+            get;
+            set;
+        }*/
 
         public PregledPacijenata()
         {
