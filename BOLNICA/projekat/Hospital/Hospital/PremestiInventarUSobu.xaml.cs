@@ -119,13 +119,15 @@ namespace Hospital
                 }
             }
 
+
             //ako ne postoji izabrani inventar u unetoj sobi
             if (nadjen)
             {
+    
                 //dodaje se novi objekat u fajl RoomInventory
                 RoomInventory newRInventory = new RoomInventory(idRoom,idInventory,quantity);
                 storage.Save(newRInventory);
-
+            
                 //dodaje se u listu RoomInventory unete sobe
                 foreach (Room r in rooms)
                 {

@@ -5,9 +5,11 @@
 
 public class RoomInventory
 {
-   public int roomId;
-   public int inventoryId;
-   public int quantity;
+    public int roomId;
+    public int inventoryId;
+    public int quantity;
+
+
 
     public RoomInventory(int room, int inventoryId, int quantity)
     {

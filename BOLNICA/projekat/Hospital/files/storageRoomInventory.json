@@ -1,1 +1,27 @@
-[{"roomId":0,"inventoryId":1,"quantity":5},{"roomId":1,"inventoryId":2,"quantity":2},{"roomId":1,"inventoryId":1,"quantity":4},{"roomId":1,"inventoryId":0,"quantity":3}]
+[
+  {
+    "roomId": 0,
+    "inventoryId": 1,
+    "quantity": 6
+  },
+  {
+    "roomId": 1,
+    "inventoryId": 2,
+    "quantity": 3
+  },
+  {
+    "roomId": 1,
+    "inventoryId": 1,
+    "quantity": 5
+  },
+  {
+    "roomId": 1,
+    "inventoryId": 0,
+    "quantity": 7
+  },
+  {
+    "roomId": 3,
+    "inventoryId": 1,
+    "quantity": 12
+  }
+]

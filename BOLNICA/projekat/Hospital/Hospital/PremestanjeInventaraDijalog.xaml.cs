@@ -198,9 +198,7 @@ namespace Hospital
                 {
                     //dodaje se novi objekat u fajl RoomInventory
                     RoomInventory newRInventory = new RoomInventory(idRoom,idInventory,quantity);
-                    List<RoomInventory> listRoomInv = storage.GetAll();
-                    listRoomInv.Add(newRInventory);
-                    storage.SaveAll(listRoomInv);
+                    storage.Save(newRInventory);
 
                     //dodaje se u listu RoomInventory unete sobe
                     foreach (Room r in rooms)
