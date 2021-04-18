@@ -25,6 +25,8 @@ namespace Hospital
         public Patient patient;
         public int index;
         public MedicalRecord record;
+
+        public int id;
         public IzmeniNalogPacijenta(ObservableCollection<Patient> list, Patient selectedPatient, int sel)
         {
            InitializeComponent();
@@ -44,11 +46,17 @@ namespace Hospital
             listPatient=list;
             index = sel;
 
+            //da bih nasla odgovarajuci karton pacijenta
+            id = selectedPatient.PatientId;
+            MedicalRecordsFileStorage mfs = new MedicalRecordsFileStorage();
+            record = mfs.FindById(id);
+
+
             //za nalog
             imeText.SelectedText = selectedPatient.name;
             prezimeText.SelectedText = selectedPatient.surname;
             jmbgText.SelectedText = selectedPatient.jmbg;
-           // pol.SelectedIndex = (int)selectedPatient.gender; //ovako se setuje opcija combo box-a
+            pol.SelectedIndex = (int)selectedPatient.gender; //ovako se setuje opcija combo box-a
             brText.SelectedText = selectedPatient.telephoneNumber;
 
             datum.SelectedDate = (DateTime)selectedPatient.BirthdayDate;
@@ -67,23 +75,16 @@ namespace Hospital
             drzava.SelectedIndex = (int)selectedPatient.adress.country;
 
 
-            //za karton
-           /* imeText.SelectedText = selectedRecord.name;
-            prezimeText.SelectedText = selectedRecord.surname;
-            jmbgText.SelectedText = selectedRecord.jmbg;
-            pol.SelectedIndex = (int)selectedRecord.gender; //ov
-            brKnjText.SelectedText = Convert.ToString(selectedRecord.idHealthCard);
-            brKarText.SelectedText = Convert.ToString(selectedRecord.medicalRecordId); //id = br Kartona
-            alergeni.SelectedText = selectedRecord.alergens;
-            krvnaGrupa.SelectedIndex = (int)selectedRecord.bloodType; */
+           //nadjene informacije i iz kartona
+            alergeni.SelectedText = record.alergens;
+            krvnaGrupa.SelectedIndex = (int)record.bloodType; 
         }
 
         private void izmenaPacijentaB(object sender, RoutedEventArgs e)
         {
 
             PatientFileStorage pfs = new PatientFileStorage();
-            Patient promeniP = pfs.FindById(Convert.ToInt16(brKarText.
-                Text));
+            Patient promeniP = pfs.FindById(Convert.ToInt16(brKarText.Text));
             Patient izbrisiP = pfs.FindById(Convert.ToInt16(brKarText.Text));
 
             promeniP.name = imeText.Text;
@@ -122,27 +123,6 @@ namespace Hospital
 
             mfs.Delete(izbrisiM);
             mfs.Save(promeniM);
-
-
-
-
-            /* listPatient[index]= new Patient(promeniP.name,
-             promeniP.surname,
-              promeniP.telephoneNumber,
-             promeniP.jmbg,
-
-             promeniP.gender,
-             promeniP.birthdate,
-             Convert.ToInt16(promeniP.patientId),
-               promeniP.healthCareCategory,
-             promeniP.idHealthCard,
-             promeniP.occupation,
-
-             promeniP.insurence,
-             promeniP.adress.street,
-             Convert.ToInt16(promeniP.adress.streetNumber),
-             (int)promeniP.adress.city,
-             (int)promeniP.adress.country); */
 
 
             pfs.Delete(izbrisiP);
