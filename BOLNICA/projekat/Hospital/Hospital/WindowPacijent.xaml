@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
     Title="Nalog" Height="450" Width="800" WindowStartupLocation="CenterScreen">
-    <Grid Background="LightBlue">
+    <Grid Background="LightBlue" Margin="-23,0,-0.4,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="283*"/>
             <ColumnDefinition Width="505*"/>

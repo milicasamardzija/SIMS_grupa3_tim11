@@ -16,13 +16,14 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="0*"/>
             </Grid.ColumnDefinitions>
-            <Label  x:Name="date" Margin="64,146,92,295" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="0" FontWeight="Bold" Content="Datum"/>
-            <Label Margin="65,288,273,8" Foreground="DarkBlue" FontSize="10" FontWeight="Bold">Doktor</Label>
-            <TextBox  x:Name="doctorText" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="178" RenderTransformOrigin="1.155,1.912" Margin="194,285,0,0"/>
+            <Label  x:Name="date" Margin="66,116,90,325" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="0" FontWeight="Bold" Content="Datum"/>
+            <Label Margin="64,293,274,2" Foreground="DarkBlue" FontSize="10" FontWeight="Bold">Doktor</Label>
+
             <Button Margin="87,364,257,76" Grid.Column="0" Width="80" Height="30" Background="AliceBlue" Click="add_appointment">Izmeni</Button>
             <Button Margin="232,363,112,77"  Width="80" Height="30" Background="AliceBlue" Click="odustani_click">Odustani</Button>
+            <Button x:Name="button1" Content="Slobodni doktori&#xD;&#xA;" HorizontalAlignment="Left" Margin="127,249,0,0" VerticalAlignment="Top" Width="150" Click="button1_Click" Height="22"/>
 
-            <ComboBox Name="timeText" SelectedValuePath="Content" HorizontalAlignment="Left" VerticalAlignment="Top" Width="182" Margin="190,215,0,0"  Height="28">
+            <ComboBox Name="timeText" SelectedValuePath="Content" HorizontalAlignment="Left" VerticalAlignment="Top" Width="182" Margin="188,182,0,0"  Height="28">
                 <ComboBoxItem>08:00</ComboBoxItem>
                 <ComboBoxItem>08:30</ComboBoxItem>
                 <ComboBoxItem>09:00</ComboBoxItem>
@@ -33,14 +34,27 @@
 
 
             </ComboBox>
-            <Label Content="Vreme" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="DarkBlue" FontSize="10" x:Name="time" Margin="65,229,0,0" RenderTransformOrigin="0.359,0.616"/>
-            <Label Content="ID&#xD;&#xA;" HorizontalAlignment="Left" Margin="69,0,0,385" Height="26" VerticalAlignment="Bottom"/>
-            <DatePicker x:Name="dateText" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="189,145,0,0" Width="183"/>
+            <Label Content="Vreme" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="DarkBlue" FontSize="10" x:Name="time" Margin="68,187,0,0" RenderTransformOrigin="0.43,-0.681"/>
+            <Label Content="ID&#xD;&#xA;" HorizontalAlignment="Left" Margin="69,0,0,385"  Foreground="DarkBlue"  Height="26" VerticalAlignment="Bottom"  FontSize="10"/>
+            <DatePicker x:Name="dateText" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="188,115,0,0" Width="183"/>
 
 
         </Grid>
         <TextBox  x:Name="idText"  HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181" Margin="189,62,0,0"/>
-
+        <ComboBox x:Name="lekar" ItemsSource="{Binding Path=Lekar}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="177" Margin="193,292,0,0" Height="27" IsSynchronizedWithCurrentItem="False" FontSize="14">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0} {1}">
+                                <Binding Path="ime"/>
+                                <Binding Path="prezime"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
 
 
     </Grid>

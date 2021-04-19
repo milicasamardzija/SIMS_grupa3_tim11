@@ -27,6 +27,8 @@ namespace Hospital
         public Appointment termin;
         public int index;
         public int idPatient; //id pacijenta koji je ulogovan
+        private List<string> lista;
+       private List<global::Doctor> lekari;
 
 
 
@@ -43,10 +45,17 @@ namespace Hospital
 
             // time.SelectedText = Convert.ToString(selectedApp.time);
 
-            doctorText.SelectedText = Convert.ToString(selectedApp.doctor);
+           // lekar.SelectedText = Convert.ToString(selectedApp.doctor);
 
             dateText.SelectedDate = selectedApp.dateTime;
             timeText.SelectedValue = selectedApp.dateTime.ToString("HH:mm");
+
+
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, termin.dateTime.AddDays(-3));
+            CalendarDateRange kalendar1 = new CalendarDateRange(termin.dateTime.AddDays(3), DateTime.MaxValue);
+            dateText.BlackoutDates.Add(kalendar);
+            dateText.BlackoutDates.Add(kalendar1);
+
 
 
         }
@@ -117,6 +126,9 @@ namespace Hospital
 
         }
 
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }
