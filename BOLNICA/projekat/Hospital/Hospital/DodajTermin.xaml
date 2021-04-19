@@ -19,7 +19,15 @@
             <Label Margin="50,83,106,127.807" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="0" FontWeight="Bold">
 
             </Label>
-            <Label Margin="53,301,285,-103" Foreground="DarkBlue" FontSize="10" FontWeight="Bold">Doktor</Label>
+            <ComboBox x:Name="prioritetCombo" HorizontalAlignment="Left" Margin="174,51,0,0" VerticalAlignment="Top" Width="193" Height="33" SelectionChanged="prioritetCombo_SelectionChanged" RenderTransformOrigin="0.154,0.425">
+                <ComboBoxItem>
+                    Lekar
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Vreme
+                </ComboBoxItem>
+            </ComboBox>
+            <Label Margin="48,278,290,-80" Foreground="DarkBlue" FontSize="10" FontWeight="Bold">Doktor</Label>
             <Button Margin="84,369,260,71" Grid.Column="0" Width="80" Height="30" Background="AliceBlue" Click="add_appointment">Dodaj</Button>
             <Button Margin="211,366,133,74"  Width="80" Height="30" Background="AliceBlue" Click="odustani">Odustani</Button>
             <ComboBox Name="time" SelectedValuePath="Content" HorizontalAlignment="Left" VerticalAlignment="Top" Width="198" Margin="171,182,0,0" Height="33">
@@ -50,9 +58,9 @@
 
 
             </ComboBox>
-            <Label  Content="Datum" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="53,91,0,0" Foreground="DarkBlue" FontSize="10" FontWeight="Bold" RenderTransformOrigin="0.646,1.134"/>
+            <Label  Content="Datum" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="53,118,0,0" Foreground="DarkBlue" FontSize="10" FontWeight="Bold" RenderTransformOrigin="0.646,1.134"/>
             <Label  Content="Vreme&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,189,0,0" Foreground="DarkBlue" FontSize="10"  FontWeight="Bold"/>
-            <ComboBox x:Name="lekar" ItemsSource="{Binding Path=Lekar}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="197" Margin="171,288,0,0" Height="32" IsSynchronizedWithCurrentItem="False" FontSize="14">
+            <ComboBox x:Name="lekar" ItemsSource="{Binding Path=Lekar}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="197" Margin="170,270,0,0" Height="32" IsSynchronizedWithCurrentItem="False" FontSize="14">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock>
@@ -68,7 +76,9 @@
             </ComboBox>
 
         </Grid>
-        <DatePicker Name="date" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="169,94,0,0" Width="199"/>
+        <DatePicker Name="date" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="172,117,0,0" Width="199"/>
+        <Label Content="Prioritet&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,58,0,0" RenderTransformOrigin="0.308,0.477" Foreground="DarkBlue" FontSize="10" FontWeight="Bold"/>
+
 
     </Grid>
 </Window>

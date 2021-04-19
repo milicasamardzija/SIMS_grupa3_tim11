@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace Hospital
 {
@@ -25,11 +26,17 @@ namespace Hospital
 
         public ObservableCollection<Appointment> appointmentList;
         public int idPatient; //id pacijenta koji je ulogovan
+        private List<string> lista;
+        private List<global::Doctor> lekari;
         public DodajTermin(ObservableCollection<Appointment> lista, int idP)
         {
             InitializeComponent();
             appointmentList = lista;
             idPatient = idP;
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
+            date.BlackoutDates.Add(kalendar);
+            lekar.IsEnabled = false;
+            time.IsEnabled = false;
         }
         public Patient getPatientFromFile()
         {
@@ -93,6 +100,142 @@ namespace Hospital
         {
             this.Close();
         }
+        private void date_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            if (prioritetCombo.SelectedIndex == 0)
+            {
+                time.IsEnabled = true;
+                global::Doctor l = (global::Doctor)lekar.SelectedItem;
+
+                AppointmentFileStorage storage = new AppointmentFileStorage();
+                List<Appointment> termini = storage.GetAll();
+                foreach (Appointment t in termini)
+                {
+                    if (t.Doctor.jmbg.Equals(l.jmbg))
+                    {
+                        if ((t.dateTime.Date == date.SelectedDate))
+                        {
+                            string sat = t.dateTime.Hour.ToString();
+                            string minute = t.dateTime.Minute.ToString();
+                            string izbaci;
+                            int brojac1 = 0;
+                            int brojac2 = 0;
+                            foreach (char s in sat)
+                            {
+                                ++brojac1;
+
+                            }
+                            foreach (char s in minute)
+                            {
+                                ++brojac2;
+                            }
+                            if (brojac1 == 1)
+                            {
+                                izbaci = "0" + sat + ":" + minute;
+                            }
+                            else
+                            {
+
+                                izbaci = sat + ":" + minute;
+                            }
+
+                            if (brojac2 == 1)
+                            {
+                                izbaci = izbaci + "0";
+
+                            }
+                            Debug.WriteLine(izbaci);
+                            lista.Remove(izbaci);
+
+
+                        }
+                    }
+
+                }
+                time.ItemsSource = lista;
+            }
+            else
+            {
+                lekar.IsEnabled = true;
+                AppointmentFileStorage storage = new AppointmentFileStorage();
+                List<Appointment> termini = storage.GetAll();
+                foreach (Appointment t in termini)
+                {
+                    string sat = t.dateTime.Hour.ToString();
+                    string minute = t.dateTime.Minute.ToString();
+                    string izbaci;
+                    int brojac1 = 0;
+                    int brojac2 = 0;
+                    foreach (char s in sat)
+                    {
+                        ++brojac1;
+
+                    }
+                    foreach (char s in minute)
+                    {
+                        ++brojac2;
+                    }
+                    if (brojac1 == 1)
+                    {
+                        izbaci = "0" + sat + ":" + minute;
+                    }
+                    else
+                    {
+
+                        izbaci = sat + ":" + minute;
+                    }
+
+                    if (brojac2 == 1)
+                    {
+                        izbaci = izbaci + "0";
+
+                    }
+
+                    if ((t.dateTime.Date == date.SelectedDate) && (time.SelectedItem.Equals(izbaci)))
+                    {
+                        {
+
+                            Debug.WriteLine(izbaci);
+                            lekari.Remove(t.Doctor);
+                            lekar.ItemsSource = lekari;
+                            lekar.SelectedIndex = lekari.Count() - 1;
+
+
+
+                        }
+
+
+                    }
+
+                }
+
+                lekar.ItemsSource = lekari;
+
+            }
+        }
+
+
+        private void prioritetCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (prioritetCombo.SelectedIndex == 0)
+            {
+                lekar.IsEnabled = true;
+                lekar.ItemsSource = lekari;
+            }
+            else
+            {
+                time.IsEnabled = true;
+                date.IsEnabled = false;
+                time.ItemsSource = lista;
+            }
+        }
+
+        private void time_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            date.IsEnabled = true;
+        }
+
     }
 }
 
