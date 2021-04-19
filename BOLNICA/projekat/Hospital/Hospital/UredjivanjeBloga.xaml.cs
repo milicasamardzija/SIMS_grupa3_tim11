@@ -19,19 +19,38 @@ namespace Hospital
     /// </summary>
     public partial class UredjivanjeBloga : Window
     {
-        Page blog;
-        public UredjivanjeBloga(Page bg)
+       // Page blog;
+        public UredjivanjeBloga()
         {
 
             InitializeComponent();
-            blog = bg;
+            textBlog.SelectedText = loadJason();
+
+            
         }
 
-      
+        public String loadJason()
+        {
+            NoticeFileStorage pfs = new NoticeFileStorage();
+            List<Notice> rs = new List<Notice>(pfs.GetAll());
+            String ret = rs[0].notice;
+            return ret;
+        }
 
-        private void odustani(object sender, RoutedEventArgs e)
-        {  
-         
+        private void sacuvajIzmene(object sender, RoutedEventArgs e)
+        {
+          
+            NoticeFileStorage nfs = new NoticeFileStorage();
+            List<Notice> rs = new List<Notice>(nfs.GetAll());
+        
+          
+
+
+        }
+   
+
+    private void odustani(object sender, RoutedEventArgs e)
+        { 
             this.Close();
         }
     }

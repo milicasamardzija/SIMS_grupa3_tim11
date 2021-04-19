@@ -137,6 +137,8 @@
     <Compile Include="Model\InventoryType.cs" />
     <Compile Include="Model\IzbrisiNalogPacijenta.xaml.cs" />
     <Compile Include="Model\ManagerFileStorage.cs" />
+    <Compile Include="Model\Notice.cs" />
+    <Compile Include="Model\NoticeFileStorage.cs" />
     <Compile Include="Model\Recipe.cs" />
     <Compile Include="Model\RecipeFileStorage.cs" />
     <Compile Include="Model\RoomInventory.cs" />

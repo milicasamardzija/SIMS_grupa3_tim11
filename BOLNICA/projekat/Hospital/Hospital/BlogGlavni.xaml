@@ -31,21 +31,11 @@
         <TextBox
             x:Name="obavestenjaText"
             Width="239"
-            Height="79"
+            Height="187"
             Margin="42,122,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Text="Pozdrav svim zaposlenima! Covid 19 je pod kontrolom, svaka cast!"
-            TextWrapping="Wrap" 
-            IsEnabled="False"/>
-        <TextBlock
-            x:Name="obavestenjaSekretara"
-            Width="132"
-            Height="74"
-            Margin="69,231,599,0"
-            VerticalAlignment="Top"
-            Background="LightGray"
-            Text=""
+            IsEnabled="False"
             TextWrapping="Wrap" />
 
     </Grid>
