@@ -53,9 +53,14 @@ namespace Hospital
             RoomInventoryFileStorage storage = new RoomInventoryFileStorage();
             InventoryFileStorage inventoryStorage = new InventoryFileStorage();
             RoomFileStorage roomStorage = new RoomFileStorage();
+            int idRoom = -1;
 
             //argumenti
-            int idRoom = Convert.ToInt32(IdSobeTxt.Text);
+
+            if (!IdSobeTxt.Text.Equals("")) {
+                idRoom = Convert.ToInt32(IdSobeTxt.Text);
+            }
+
             int quantity = Convert.ToInt32(KolicinaTxt.Text);
             String name = ImeTxt.SelectedText;
             InventoryType type = (InventoryType)TypeTxt.SelectedIndex;
@@ -72,6 +77,26 @@ namespace Hospital
 
             if (magacin) // prebacuje se u magacin
             {
+                foreach (RoomInventory ri in all)
+                {
+                    if (ri.inventoryId == idInventory && ri.roomId == roomOutId)
+                    {
+                        ri.quantity -= quantity;
+                        listInventory[index] = new Inventory(ri.inventoryId, inventory.Name, ri.quantity, inventory.Type);
+                        storage.SaveAll(all);
+                        break;
+                    }
+                }
+
+                foreach (Inventory invent in inventories)
+                {
+                    if (invent.InventoryId == idInventory)
+                    {
+                        invent.Quantity += quantity;
+                        inventoryStorage.SaveAll(inventories);
+                        break;
+                    }
+                }
 
             } else //prebacuje se iz sobe u drugu sobu
             {
