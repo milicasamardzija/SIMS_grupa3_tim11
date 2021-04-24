@@ -11,23 +11,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Hospital
 {
     /// <summary>
-    /// Interaction logic for DodajProstorijuDijalog.xaml
+    /// Interaction logic for DodajProstoriju.xaml
     /// </summary>
-    public partial class DodajProstorijuDijalog : Window
+    public partial class DodajProstoriju : UserControl
     {
         public ObservableCollection<Room> listRoom;
-
-        public DodajProstorijuDijalog(ObservableCollection<Room> list)
+        public Frame frame;
+        public DodajProstoriju(ObservableCollection<Room> list, Frame sobeFrame)
         {
             InitializeComponent();
             listRoom = list;
+            frame = sobeFrame;
         }
-
         public int generisiId()
         {
             int ret = 0;
@@ -35,7 +36,8 @@ namespace Hospital
             RoomFileStorage storage = new RoomFileStorage();
             List<Room> allRooms = storage.GetAll();
 
-            foreach (Room roomBig in allRooms) {
+            foreach (Room roomBig in allRooms)
+            {
                 foreach (Room room in allRooms)
                 {
                     if (ret == room.RoomId)
@@ -57,12 +59,12 @@ namespace Hospital
             storage.Save(newRoom);
             listRoom.Add(newRoom);
 
-            this.Close();
         }
 
         private void odustani(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            frame.NavigationService.Navigate(new BelsekaMagacin());
         }
+
     }
 }

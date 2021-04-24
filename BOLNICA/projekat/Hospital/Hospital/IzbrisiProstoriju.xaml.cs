@@ -11,26 +11,33 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Hospital
 {
     /// <summary>
-    /// Interaction logic for IzbrisiProstorijuDijalog.xaml
+    /// Interaction logic for IzbrisiProstoriju.xaml
     /// </summary>
-    public partial class IzbrisiProstorijuDijalog : Window
+    public partial class IzbrisiProstoriju : UserControl
     {
-        public ObservableCollection<Room> listRoom; 
-        public int index; 
+        public ObservableCollection<Room> listRoom;
+        public int index;
         public int id;
-        public IzbrisiProstorijuDijalog(ObservableCollection<Room> list, Room selectedRoom, int selectedIndex)
+        public Frame frame;
+        public IzbrisiProstoriju(ObservableCollection<Room> list, Room selectedRoom, int selectedIndex,Frame f)
         {
             InitializeComponent();
             listRoom = list;
             id = selectedRoom.RoomId; //id sobe koja je selktovana
             index = selectedIndex; //indeks u tabeli
-        }
+            frame = f;
 
+            brojProstorijeTxt.SelectedText = Convert.ToString(selectedRoom.RoomId);
+            spratTxt.SelectedText = Convert.ToString(selectedRoom.Floor);
+            namenaTxt.SelectedIndex = (int)selectedRoom.Purpose;
+            kapacitetTxt.SelectedText = Convert.ToString(selectedRoom.Capacity);
+        }
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
@@ -52,7 +59,8 @@ namespace Hospital
             List<Inventory> allInventories = storageOfInventories.GetAll();
             foreach (Inventory inv in allInventories)
             {
-                if (inv.roomInventory != null) {
+                if (inv.roomInventory != null)
+                {
                     foreach (RoomInventory ri in inv.roomInventory.ToList())
                     {
                         if (ri.roomId == id)
@@ -63,13 +71,11 @@ namespace Hospital
                     }
                 }
             }
-
-            this.Close();
         }
 
-        private void izadji(object sender, RoutedEventArgs e)
+        private void odustani(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            frame.NavigationService.Navigate(new BelsekaMagacin());
         }
     }
 }

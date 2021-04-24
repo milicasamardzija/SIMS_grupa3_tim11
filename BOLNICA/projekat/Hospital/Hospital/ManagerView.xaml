@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-        Title="ManagerView" WindowStartupLocation="CenterScreen" Height="840" Width="1545" Background="BlanchedAlmond">
+        Title="ManagerView" WindowStartupLocation="CenterScreen" Height="680" Width="1280" Background="AliceBlue">
     <Grid>
-        <Menu HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="1894" Background="AliceBlue" Margin="0,0,-0.4,0">
+        <Menu HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="1280" Background="AliceBlue" Margin="0,0,-0.4,0">
             <MenuItem Header="Magacin" FontSize="30" Click="magacin"></MenuItem>
             <GridSplitter Background="Black" Height="42" Width="1"/>
             <MenuItem Header="Sobe" FontSize="30" Click="sobe"></MenuItem>
             <GridSplitter Background="Black" Height="42" Width="1"/>
         </Menu>
-        <Frame Name="frame" HorizontalAlignment="Left" Margin="0,42,0,0" VerticalAlignment="Top" Height="768" Width="1538" NavigationUIVisibility="Hidden" />
+        <Frame Name="frame" HorizontalAlignment="Left" Margin="0,40,-6.4,-31.6" VerticalAlignment="Top" Height="642" Width="1280" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>

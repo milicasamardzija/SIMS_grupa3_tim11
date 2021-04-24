@@ -41,6 +41,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -79,6 +81,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="DodajProstoriju.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EditDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,8 +98,8 @@
     <Compile Include="DodajInventarDijalog.xaml.cs">
       <DependentUpon>DodajInventarDijalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DodajProstorijuDijalog.xaml.cs">
-      <DependentUpon>DodajProstorijuDijalog.xaml</DependentUpon>
+    <Compile Include="DodajProstoriju.xaml.cs">
+      <DependentUpon>DodajProstoriju.xaml</DependentUpon>
     </Compile>
     <Compile Include="Inventar.xaml.cs">
       <DependentUpon>Inventar.xaml</DependentUpon>
@@ -101,8 +107,8 @@
     <Compile Include="IzbrisiInventarDijalog.xaml.cs">
       <DependentUpon>IzbrisiInventarDijalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IzbrisiProstorijuDijalog.xaml.cs">
-      <DependentUpon>IzbrisiProstorijuDijalog.xaml</DependentUpon>
+    <Compile Include="IzbrisiProstoriju.xaml.cs">
+      <DependentUpon>IzbrisiProstoriju.xaml</DependentUpon>
     </Compile>
     <Compile Include="IzdavanjeRecepta.xaml.cs">
       <DependentUpon>IzdavanjeRecepta.xaml</DependentUpon>
@@ -110,8 +116,8 @@
     <Compile Include="IzmenaInventaraDijalog.xaml.cs">
       <DependentUpon>IzmenaInventaraDijalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IzmeniProstorijuDijalog.xaml.cs">
-      <DependentUpon>IzmeniProstorijuDijalog.xaml</DependentUpon>
+    <Compile Include="IzmeniProstoriju.xaml.cs">
+      <DependentUpon>IzmeniProstoriju.xaml</DependentUpon>
     </Compile>
     <Compile Include="KreiranjeAnamneze.xaml.cs">
       <DependentUpon>KreiranjeAnamneze.xaml</DependentUpon>
@@ -170,16 +176,12 @@
     <Compile Include="Prijava.xaml.cs">
       <DependentUpon>Prijava.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PrikazInventaraUSobi.xaml.cs">
+      <DependentUpon>PrikazInventaraUSobi.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PrikazObavestenja.xaml.cs">
       <DependentUpon>PrikazObavestenja.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Rooms.xaml.cs">
-      <DependentUpon>Rooms.xaml</DependentUpon>
-    </Compile>
-    <Page Include="DodajProstorijuDijalog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Inventar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -188,7 +190,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="IzbrisiProstorijuDijalog.xaml">
+    <Page Include="IzbrisiProstoriju.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,7 +202,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="IzmeniProstorijuDijalog.xaml">
+    <Page Include="IzmeniProstoriju.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -220,6 +222,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Sobe.xaml.cs">
+      <DependentUpon>Sobe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UredjivanjeBloga.xaml.cs">
       <DependentUpon>UredjivanjeBloga.xaml</DependentUpon>
     </Compile>
@@ -325,11 +330,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PrikazObavestenja.xaml">
+    <Page Include="PrikazInventaraUSobi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Rooms.xaml">
+    <Page Include="PrikazObavestenja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -346,6 +351,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ObrisiTermin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sobe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

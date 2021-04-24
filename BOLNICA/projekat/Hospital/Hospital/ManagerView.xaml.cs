@@ -34,15 +34,12 @@ namespace Hospital
 
         private void magacin(object sender, RoutedEventArgs e)
         {
-
             frame.NavigationService.Navigate(new Magacin(RoomList));
         }
 
         private void sobe(object sender, RoutedEventArgs e)
         {
-            //   frame.NavigationService.Navigate(new Sobe());
-            Rooms r = new Rooms(RoomList);
-            r.Show();
+            frame.NavigationService.Navigate(new Sobe(RoomList,frame));
         }
 
         public ObservableCollection<Room> loadJason()
