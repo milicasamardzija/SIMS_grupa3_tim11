@@ -1,1 +1,114 @@
-[{"roomId":1,"inventoryId":3,"quantity":3},{"roomId":1,"inventoryId":1,"quantity":2},{"roomId":2,"inventoryId":0,"quantity":7},{"roomId":0,"inventoryId":0,"quantity":9},{"roomId":2,"inventoryId":3,"quantity":5}]
+[
+  {
+    "Room": {
+      "RoomId": 0,
+      "Floor": 6,
+      "Occupancy": false,
+      "Purpose": 1,
+      "Capacity": 0
+    },
+    "Inventory": {
+      "InventoryId": 1,
+      "Name": "stolica",
+      "Quantity": 16,
+      "Type": 0
+    },
+    "Quantity": 0
+  },
+  {
+    "Room": {
+      "RoomId": 0,
+      "Floor": 6,
+      "Occupancy": false,
+      "Purpose": 1,
+      "Capacity": 0
+    },
+    "Inventory": {
+      "InventoryId": 2,
+      "Name": "zavoj",
+      "Quantity": 20,
+      "Type": 1
+    },
+    "Quantity": 2
+  },
+  {
+    "Room": {
+      "RoomId": 2,
+      "Floor": 10,
+      "Occupancy": false,
+      "Purpose": 2,
+      "Capacity": 0
+    },
+    "Inventory": {
+      "InventoryId": 2,
+      "Name": "zavoj",
+      "Quantity": 17,
+      "Type": 1
+    },
+    "Quantity": 1
+  },
+  {
+    "Room": {
+      "RoomId": 0,
+      "Floor": 6,
+      "Occupancy": false,
+      "Purpose": 1,
+      "Capacity": 0
+    },
+    "Inventory": {
+      "InventoryId": 0,
+      "Name": "krevet",
+      "Quantity": 15,
+      "Type": 0
+    },
+    "Quantity": 6
+  },
+  {
+    "Room": {
+      "RoomId": 2,
+      "Floor": 10,
+      "Occupancy": false,
+      "Purpose": 2,
+      "Capacity": 0
+    },
+    "Inventory": {
+      "InventoryId": 1,
+      "Name": "stolica",
+      "Quantity": 13,
+      "Type": 0
+    },
+    "Quantity": 2
+  },
+  {
+    "Room": {
+      "RoomId": 0,
+      "Floor": 6,
+      "Occupancy": false,
+      "Purpose": 1,
+      "Capacity": 0
+    },
+    "Inventory": {
+      "InventoryId": 3,
+      "Name": "BOZE POMOZI",
+      "Quantity": 10,
+      "Type": 1
+    },
+    "Quantity": 2
+  },
+  {
+    "Room": {
+      "RoomId": 2,
+      "Floor": 10,
+      "Occupancy": false,
+      "Purpose": 2,
+      "Capacity": 0
+    },
+    "Inventory": {
+      "InventoryId": 3,
+      "Name": "BOZE POMOZI",
+      "Quantity": 2,
+      "Type": 1
+    },
+    "Quantity": 2
+  }
+]

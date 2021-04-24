@@ -51,10 +51,9 @@ namespace Hospital
 
         private void premesti(object sender, RoutedEventArgs e)
         {
-            //storages
             RoomInventoryFileStorage storage = new RoomInventoryFileStorage();
             InventoryFileStorage inventoryStorage = new InventoryFileStorage();
-            RoomFileStorage roomStorage= new RoomFileStorage();
+            RoomFileStorage roomStorage = new RoomFileStorage();
 
             //argumenti
             int idRoom = Convert.ToInt32(IdSobeTxt.Text);
@@ -67,88 +66,70 @@ namespace Hospital
 
             //liste
             List<RoomInventory> all = storage.GetAll();
-            List<Room> rooms = roomStorage.GetAll();
             List<Inventory> inventories = inventoryStorage.GetAll();
 
-            foreach (RoomInventory roomInv in all)
+            if (all != null)
             {
-                //ako vec postoji zeljeni inventar u unetoj sobi
-                if (roomInv.inventoryId == idInventory && roomInv.roomId == idRoom)
+
+                foreach (RoomInventory roomInv in all)
                 {
-                    roomInv.quantity += quantity;  //povecava se kolicina inventara u sobi
-                    nadjen = false;
-                    storage.SaveAll(all);           //kompletna izmenja lista se serijalizuje
+                    if (roomInv.Inventory != null) {
+                        //ako vec postoji zeljeni inventar u unetoj sobi
+                        if (roomInv.Inventory.InventoryId == idInventory && roomInv.Room.RoomId == idRoom)
+                        {
+                            roomInv.Quantity += quantity;   //povecava se kolicina inventara u sobi
+                            nadjen = false;
+                            storage.SaveAll(all);           //kompletna izmenja lista se serijalizuje
+                            break;
+                        }
+                    }
+                }
 
+                //ako ne postoji izabrani inventar u unetoj sobi
+                if (nadjen)
+                {
+                    Room room = new Room();
+                    Inventory invent = new Inventory();
 
-                    //izmene se cuvaju i u RoomInventory listi sobe u koju se prebacuje
-                    foreach (Room r in rooms)
+                    foreach (Room r in roomStorage.GetAll())
                     {
                         if (r.RoomId == idRoom)
                         {
-                            foreach (RoomInventory inventoryInRoom in r.roomInventory)
-                            {
-                                if (inventoryInRoom.inventoryId == idInventory)
-                                {
-                                    inventoryInRoom.quantity += quantity;   //uvecava se kolicina pronadjenog inventara
-                                    roomStorage.SaveAll(rooms);
-                                    break;
-                                }
-                            }
+                            room.RoomId = r.RoomId;
+                            room.Floor = r.Floor;
+                            room.Occupancy = r.Occupancy;
+                            room.Purpose = r.Purpose;
+                            break;
                         }
                     }
 
-                    //izmene se cuvaju i u RoomInventory listi inventara koji se prebacuje
-                    foreach (Inventory i in inventories)
+                    foreach (Inventory i in inventoryStorage.GetAll())
                     {
                         if (i.InventoryId == idInventory)
                         {
-                            i.Quantity -= quantity;
-                            listInventory[index] = new Inventory(i.InventoryId, i.Name, i.Quantity, i.Type);
-                            foreach (RoomInventory roomInInventory in i.roomInventory)
-                            {
-                                if (roomInInventory.inventoryId == idInventory)
-                                {
-                                    roomInInventory.quantity += quantity;
-                                    inventoryStorage.SaveAll(inventories);
-                                    break;
-                                }
-                            }
+                            invent.InventoryId = i.InventoryId;
+                            invent.Name = i.Name;
+                            invent.Quantity = i.Quantity;
+                            invent.Type = i.Type;
+                            break;
                         }
                     }
-                    break;
-                }
-            }
 
-            //ako ne postoji izabrani inventar u unetoj sobi
-            if (nadjen)
-            {
-                //dodaje se novi objekat u fajl RoomInventory
-                RoomInventory newRInventory = new RoomInventory(idRoom,idInventory,quantity);
-                storage.Save(newRInventory);
-
-                //dodaje se u listu RoomInventory unete sobe
-                foreach (Room r in rooms)
-                {
-                    if (r.RoomId == idRoom)
-                    {
-                        r.roomInventory.Add(newRInventory);
-                        roomStorage.SaveAll(rooms);
-                        break;
-                    }
+                    RoomInventory newRInventory = new RoomInventory(room, invent, quantity);
+                    storage.Save(newRInventory);
                 }
 
-                //dodaje se u listu RoomInventory izabranog inventara
                 foreach (Inventory i in inventories)
                 {
                     if (i.InventoryId == idInventory)
                     {
                         i.Quantity -= quantity;
-                        listInventory[index] = new Inventory(i.InventoryId, i.Name, i.Quantity, i.Type);
-                        i.roomInventory.Add(newRInventory);
                         inventoryStorage.SaveAll(inventories);
+                        listInventory[index] = new Inventory(inventory.InventoryId, inventory.Name, i.Quantity, inventory.Type);
                         break;
                     }
                 }
+
             }
 
             frame.NavigationService.Navigate(this);

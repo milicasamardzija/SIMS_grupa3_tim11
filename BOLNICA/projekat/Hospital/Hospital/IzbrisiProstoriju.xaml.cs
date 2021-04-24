@@ -50,25 +50,9 @@ namespace Hospital
 
             foreach (RoomInventory inventory in storageInventory.GetAll())
             {
-                if (inventory.roomId == id)
+                if (inventory.Room.RoomId == id)
                 {
                     storageInventory.DeleteByIdRoom(id);
-                }
-            }
-
-            List<Inventory> allInventories = storageOfInventories.GetAll();
-            foreach (Inventory inv in allInventories)
-            {
-                if (inv.roomInventory != null)
-                {
-                    foreach (RoomInventory ri in inv.roomInventory.ToList())
-                    {
-                        if (ri.roomId == id)
-                        {
-                            inv.roomInventory.Remove(ri);
-                            storageOfInventories.SaveAll(allInventories);
-                        }
-                    }
                 }
             }
         }

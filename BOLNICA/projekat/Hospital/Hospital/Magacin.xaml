@@ -24,7 +24,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock  FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="69,47,0,0" TextWrapping="Wrap" Text="Inventar bolnice koji se nalazi u magacinu" VerticalAlignment="Top" Height="42" Width="650" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
-        <Frame Name="MagacinFrame" Content="" HorizontalAlignment="Left" Margin="724,92,0,0" VerticalAlignment="Top" Height="400" Width="470" BorderBrush="#FFB42412" OpacityMask="Black" Foreground="#FFA31818"/>
+        <Frame Name="MagacinFrame" Content="" HorizontalAlignment="Left" Margin="724,92,0,0" VerticalAlignment="Top" Height="400" Width="470" BorderBrush="#FFB42412" OpacityMask="Black" Foreground="#FFA31818" NavigationUIVisibility="Hidden"/>
         <Button Background="AliceBlue"  Content="Dodaj" HorizontalAlignment="Left" Margin="69,514,0,0" VerticalAlignment="Top" Width="133" Height="48" FontSize="24" FontWeight="Bold" Click="dodaj" RenderTransformOrigin="0.562,-0.422" />
         <Button Background="AliceBlue" Content="Izbrisi" HorizontalAlignment="Left" Margin="724,514,0,0" VerticalAlignment="Top" Width="129" Height="47" FontSize="24" FontWeight="Bold" Click="izbrisi" RenderTransformOrigin="0.487,0.41"/>
         <Button Background="AliceBlue" Content="Prebaci" HorizontalAlignment="Left" Margin="1100,515,0,0" VerticalAlignment="Top" Width="121" Height="47" FontSize="24" FontWeight="Bold" Click="premesti" RenderTransformOrigin="0.817,-0.283" />

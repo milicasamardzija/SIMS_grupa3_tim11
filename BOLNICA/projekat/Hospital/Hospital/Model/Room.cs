@@ -1,8 +1,3 @@
-// File:    Room.cs
-// Author:  Nevena
-// Created: Monday, March 22, 2021 2:37:12 PM
-// Purpose: Definition of Class Room
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +9,7 @@ public class Room : INotifyPropertyChanged
    private Boolean occupancy;
    private Purpose purpose;
    private int capacity;
-   
-   public System.Collections.Generic.List<RoomInventory> roomInventory;
-
+ 
    public Room() { }
 
     public Room(int id, int f, bool o, Purpose p, int c)
@@ -26,7 +19,6 @@ public class Room : INotifyPropertyChanged
         occupancy = o;
         purpose = p;
         capacity = c;
-        roomInventory = new List<RoomInventory>();
     }
 
 

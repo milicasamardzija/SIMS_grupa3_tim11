@@ -101,9 +101,6 @@
     <Compile Include="DodajProstoriju.xaml.cs">
       <DependentUpon>DodajProstoriju.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Inventar.xaml.cs">
-      <DependentUpon>Inventar.xaml</DependentUpon>
-    </Compile>
     <Compile Include="IzbrisiInventarDijalog.xaml.cs">
       <DependentUpon>IzbrisiInventarDijalog.xaml</DependentUpon>
     </Compile>
@@ -182,10 +179,6 @@
     <Compile Include="PrikazObavestenja.xaml.cs">
       <DependentUpon>PrikazObavestenja.xaml</DependentUpon>
     </Compile>
-    <Page Include="Inventar.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="IzbrisiInventarDijalog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -28,41 +28,30 @@ namespace Hospital
         }
 
         public Room room;
-        public PrikazInventaraUSobi()
+        public PrikazInventaraUSobi(Room selectedRoom)
         {
             InitializeComponent();
+            this.DataContext = this;
+            room = selectedRoom;
+            listInventory = loadJason();
             InventarPemesti.NavigationService.Navigate(new BelsekaMagacin());
         }
 
         public ObservableCollection<Inventory> loadJason()
         {
             RoomInventoryFileStorage storage = new RoomInventoryFileStorage();
-            InventoryFileStorage storageInventory = new InventoryFileStorage();
 
-            List<RoomInventory> rooms = new List<RoomInventory>(); //lista RoomInvnetory koja sadrzi samo elemente koji imaju id selektovane sobe
             ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>();
 
             foreach (RoomInventory r in storage.GetAll())
             {
-                if (r.roomId.Equals(room.RoomId))
+                if (r.Room.RoomId.Equals(room.RoomId))
                 {
-                    RoomInventory roomFound = storage.FindById(r.roomId);
-                    rooms.Add(new RoomInventory(r.roomId, r.inventoryId, r.quantity));
+                    ret.Add(new Inventory(r.Inventory.InventoryId,r.Inventory.Name,r.Quantity,r.Inventory.Type));
                 }
 
             }
 
-            foreach (RoomInventory i in rooms)
-            {
-                foreach (Inventory inventr in storageInventory.GetAll())
-                {
-                    if (i.inventoryId == inventr.InventoryId)
-                    {
-                        Inventory foundInventory = storageInventory.FindById(i.inventoryId);
-                        ret.Add(new Inventory(foundInventory.InventoryId, foundInventory.Name, i.quantity, foundInventory.Type));
-                    }
-                }
-            }
             return ret;
         }
 

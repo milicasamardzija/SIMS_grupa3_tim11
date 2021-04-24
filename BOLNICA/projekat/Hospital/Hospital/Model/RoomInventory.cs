@@ -1,24 +1,54 @@
-// File:    RoomInventory.cs
-// Author:  Milica
-// Created: Tuesday, April 13, 2021 3:17:07 PM
-// Purpose: Definition of Class RoomInventory
-
 using System;
 
 public class RoomInventory
 {
-   public int roomId;
-   public int inventoryId;
-   public int quantity;
+    private Room room;
+    private Inventory inventory;
+    private int quantity;
 
-   /* public RoomInventory()
+    public Room Room
     {
-    }*/
-
-    public RoomInventory(int room, int inventoryId, int quantity)
-    {
-        this.roomId = room;
-        this.inventoryId = inventoryId;
-        this.quantity = quantity;
+        get
+        {
+            return room;
+        }
+        set
+        {
+            room = value;
+        }
     }
+
+    public Inventory Inventory
+    {
+        get
+        {
+            return inventory;
+        }
+        set
+        {
+            inventory = value;
+        }
+    }
+
+    public int Quantity
+    {
+        get
+        {
+            return quantity;
+        }
+        set
+        {
+            quantity = value;
+        }
+    }
+
+    public RoomInventory() { }
+
+    public RoomInventory(Room r, Inventory i, int q)
+    {
+        room = r;
+        inventory = i;
+        quantity = q;
+    }
+
 }

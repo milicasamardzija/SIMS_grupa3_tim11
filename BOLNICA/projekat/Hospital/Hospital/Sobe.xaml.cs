@@ -54,7 +54,7 @@ namespace Hospital
 
         private void prikazInventara(object sender, RoutedEventArgs e)
         {
-           frameMagacin.NavigationService.Navigate(new PrikazInventaraUSobi());
+           frameMagacin.NavigationService.Navigate(new PrikazInventaraUSobi((Room)ListaProstorija.SelectedItem));
         }
     }
 }

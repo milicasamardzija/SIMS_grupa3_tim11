@@ -22,7 +22,9 @@ public class RoomInventoryFileStorage
    public void Save(RoomInventory newRoomInventory)
    {
         List<RoomInventory> allInventories = GetAll();
+
         allInventories.Add(newRoomInventory);
+
         SaveAll(allInventories);
     }
    
@@ -41,7 +43,7 @@ public class RoomInventoryFileStorage
 
         foreach (RoomInventory temp in allInventories)
         {
-            if (temp.inventoryId == roomInventory.inventoryId)
+            if (temp.Inventory.InventoryId == roomInventory.Inventory.InventoryId)
             {
                 allInventories.Remove(temp);
                 break;
@@ -56,7 +58,7 @@ public class RoomInventoryFileStorage
 
         foreach (RoomInventory inventory in allInventories)
         {
-            if (inventory.inventoryId == id)
+            if (inventory.Inventory.InventoryId == id)
             {
                 allInventories.Remove(inventory);
                 break;
@@ -71,7 +73,7 @@ public class RoomInventoryFileStorage
 
         foreach (RoomInventory inventory in allInventories)
         {
-            if (inventory.roomId == id)
+            if (inventory.Room.RoomId == id)
             {
                 allInventories.Remove(inventory);
                 break;
@@ -80,14 +82,14 @@ public class RoomInventoryFileStorage
         SaveAll(allInventories);
     }
 
-    public RoomInventory FindById(int id)
+    public RoomInventory FindByRoomId(int id)
    {
         List<RoomInventory> allInventories = GetAll();
         RoomInventory ret = null;
 
         foreach (RoomInventory inventory in allInventories)
         {
-            if (inventory.inventoryId == id)
+            if (inventory.Room.RoomId == id)
             {
                 ret = inventory;
                 break;
@@ -104,7 +106,7 @@ public class RoomInventoryFileStorage
 
         foreach (RoomInventory inventory in allInventories)
         {
-            if (inventory.inventoryId == id)
+            if (inventory.Inventory.InventoryId == id)
             {
                 ret = true;
                 break;
