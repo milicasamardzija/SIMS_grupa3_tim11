@@ -59,6 +59,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ZamenaLekova.xaml.cs">
+      <DependentUpon>ZamenaLekova.xaml</DependentUpon>
+    </Compile>
     <Page Include="AddDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -95,6 +98,9 @@
     <Compile Include="DodajProstorijuDijalog.xaml.cs">
       <DependentUpon>DodajProstorijuDijalog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Evidencija.xaml.cs">
+      <DependentUpon>Evidencija.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Inventar.xaml.cs">
       <DependentUpon>Inventar.xaml</DependentUpon>
     </Compile>
@@ -109,6 +115,9 @@
     </Compile>
     <Compile Include="IzmenaInventaraDijalog.xaml.cs">
       <DependentUpon>IzmenaInventaraDijalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaLeka.xaml.cs">
+      <DependentUpon>IzmenaLeka.xaml</DependentUpon>
     </Compile>
     <Compile Include="IzmeniProstorijuDijalog.xaml.cs">
       <DependentUpon>IzmeniProstorijuDijalog.xaml</DependentUpon>
@@ -180,6 +189,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Evidencija.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Inventar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -199,6 +212,10 @@
     <Page Include="IzmenaInventaraDijalog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="IzmenaLeka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzmeniProstorijuDijalog.xaml">
       <SubType>Designer</SubType>
@@ -354,6 +371,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowPacijent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ZamenaLekova.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

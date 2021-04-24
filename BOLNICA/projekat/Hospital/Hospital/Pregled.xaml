@@ -32,7 +32,7 @@
         <Button x:Name="button9" Content="Anamneza" HorizontalAlignment="Left" Margin="672,268,0,0" VerticalAlignment="Top" Width="171" FontSize="16" Click="button9_Click" />
         <Button x:Name="button10" Content="O klinici" HorizontalAlignment="Left" Margin="164,463,0,0" VerticalAlignment="Top" Width="98" FontSize="16" RenderTransformOrigin="0.267,0.32"/>
         <Button x:Name="button11" Content="Blog" HorizontalAlignment="Left" Margin="300,463,0,0" VerticalAlignment="Top" Width="94" FontSize="16" RenderTransformOrigin="0.267,0.32"/>
-        <Button x:Name="button12" Content="Evidencija" HorizontalAlignment="Left" Margin="444,463,0,0" VerticalAlignment="Top" Width="102" FontSize="16" RenderTransformOrigin="0.267,0.32"/>
+        <Button x:Name="button12" Content="Evidencija" HorizontalAlignment="Left" Margin="444,463,0,0" VerticalAlignment="Top" Width="102" FontSize="16" RenderTransformOrigin="0.267,0.32" Click="button12_Click"/>
 
     </Grid>
 </Window>

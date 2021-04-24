@@ -97,5 +97,11 @@ namespace Hospital
             KreiranjeAnamneze ka = new KreiranjeAnamneze(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
             ka.Show();
         }
+
+        private void button12_Click(object sender, RoutedEventArgs e)
+        {
+            Evidencija ee = new Evidencija();
+            ee.Show();
+        }
     }
 }
