@@ -40,6 +40,7 @@ namespace Hospital
             this.DataContext = this;
             InventoryList = loadJason();
             ListRoom = roomList;
+            ListaInventara.ItemsSource = InventoryList;
         }
 
         public ObservableCollection<Inventory> loadJason()
@@ -67,6 +68,53 @@ namespace Hospital
         private void izmeni(object sender, RoutedEventArgs e)
         {
             MagacinFrame.NavigationService.Navigate(new IzmenaInventaraDijalog(MagacinFrame, InventoryList, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
+        }
+
+        private List<Inventory> filteredInventory = new List<Inventory>();
+
+        private void PretragaTxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            InventoryFileStorage storage = new InventoryFileStorage();
+            List<Inventory> all = storage.GetAll();
+
+            filteredInventory.Clear();
+
+            if (PretragaTxt.Text.Equals(""))
+            {
+                ListaInventara.ItemsSource = loadJason();
+            }
+            else
+            {
+                foreach (Inventory inv in all)
+                {
+                    if (inv.Name.Contains(PretragaTxt.Text))
+                    {
+                        filteredInventory.Add(inv);
+
+                    }
+                    if (PretragaTxt.Text.Contains("0") || PretragaTxt.Text.Contains("1") || PretragaTxt.Text.Contains("2") || PretragaTxt.Text.Contains("3") || PretragaTxt.Text.Contains("4") || PretragaTxt.Text.Contains("5") || PretragaTxt.Text.Contains("6") || PretragaTxt.Text.Contains("7") || PretragaTxt.Text.Contains("8") || PretragaTxt.Text.Contains("9")) {
+                        if (inv.Quantity == Convert.ToInt32(PretragaTxt.Text))
+                        {
+                            filteredInventory.Add(inv);
+                        }
+
+                    }
+                    if (PretragaTxt.Text.Equals("staticki"))
+                    {
+                        if (inv.Type == InventoryType.staticki)
+                        {
+                            filteredInventory.Add(inv);
+                        }
+                    } else if (PretragaTxt.Text.Equals("dinamicki"))
+                    {
+                        if (inv.Type == InventoryType.dinamicki)
+                        {
+                            filteredInventory.Add(inv);
+                        }
+                    }
+                }
+                ListaInventara.ItemsSource = filteredInventory.ToList();
+            }
         }
     }
 }
