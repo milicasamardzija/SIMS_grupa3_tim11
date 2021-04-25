@@ -5,12 +5,19 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Hospital"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="KreirajGuestNalog"
+    Title="Kreiraj guest nalog"
     Width="500"
-    Height="500"
+    Height="400"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid Margin="0,0,-6.4,0.4" Background="#FF78D1D3">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Offset="0" Color="Gray" />
+                <GradientStop Offset="1" Color="White" />
+                <GradientStop Offset="0.094" Color="#FF2BACC5" />
+            </LinearGradientBrush>
+        </Grid.Background>
         <Label
             Margin="40,19,0,0"
             HorizontalAlignment="Left"
@@ -80,15 +87,7 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <!-- <TextBox
-            x:Name="datRodjText"
-            Width="120"
-            Height="23"
-            Margin="200,123,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap" />-->
+
         <TextBox
             x:Name="brojTelText"
             Width="120"
@@ -100,14 +99,15 @@
             TextWrapping="Wrap" />
         <Button
             Width="75"
-            Margin="387,376,0,0"
+            Margin="387,335,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="#FF00E5E1"
             Click="kreirajGuest"
             Content="Sacuvaj"
             Cursor="Hand"
-            FontSize="16" />
+            FontFamily="Cooper Black"
+            FontSize="14"
+            Foreground="#FF0852AE" />
         <ComboBox
             x:Name="pol"
             Width="120"
@@ -121,23 +121,27 @@
         </ComboBox>
         <Button
             Width="75"
-            Margin="40,382,0,0"
+            Margin="40,335,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="odustani"
             Content="Odustani"
-            Cursor="Hand" />
+            Cursor="Hand"
+            FontFamily="Cooper Black"
+            Foreground="#FF0852AE" />
         <Label
             Margin="50,225,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Krvna grupa" />
+            Content="Krvna grupa"
+            FontSize="14" />
 
         <Label
             Margin="50,265,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Alergeni" />
+            Content="Alergeni"
+            FontSize="14" />
         <ComboBox
             x:Name="krvnaGrupa"
             Width="120"
@@ -157,21 +161,19 @@
                 O
             </ComboBoxItem>
         </ComboBox>
-        <TextBox
-            x:Name="alergeniText"
-            Width="134"
-            Height="33"
-            Margin="186,265,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap" />
         <DatePicker
             Name="datum"
-            Width="126"
-            Margin="200,120,174,0"
+            Margin="200,120,173.6,0"
             VerticalAlignment="Top"
             IsTodayHighlighted="True" />
+        <Button
+            Width="75"
+            Margin="221,265,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Dodaj"
+            FontFamily="Cooper Black"
+            Foreground="#FF0852AE" />
 
     </Grid>
 </Window>

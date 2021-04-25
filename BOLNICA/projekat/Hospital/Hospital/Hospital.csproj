@@ -67,6 +67,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Sekretar\Alergeni.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Sekretar\Blog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -90,6 +94,11 @@
     <Compile Include="BelsekaMagacin.xaml.cs">
       <DependentUpon>BelsekaMagacin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Alergens.cs" />
+    <Compile Include="Model\AlergensFileStorage.cs" />
+    <Compile Include="Sekretar\Alergeni.xaml.cs">
+      <DependentUpon>Alergeni.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sekretar\Blog.xaml.cs">
       <DependentUpon>Blog.xaml</DependentUpon>
     </Compile>
@@ -101,6 +110,9 @@
     </Compile>
     <Compile Include="DodajProstorijuDijalog.xaml.cs">
       <DependentUpon>DodajProstorijuDijalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sekretar\DodajAlergene.xaml.cs">
+      <DependentUpon>DodajAlergene.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sekretar\InformacijeKlinike.xaml.cs">
       <DependentUpon>InformacijeKlinike.xaml</DependentUpon>
@@ -190,6 +202,10 @@
       <DependentUpon>Rooms.xaml</DependentUpon>
     </Compile>
     <Page Include="DodajProstorijuDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sekretar\DodajAlergene.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -359,7 +375,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PrikaziPacijente.xaml">
+    <Page Include="Sekretar\PrikaziPacijente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -399,7 +415,7 @@
     <Compile Include="Sekretar\PrikaziGuestPacijente.xaml.cs">
       <DependentUpon>PrikaziGuestPacijente.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PrikaziPacijente.xaml.cs">
+    <Compile Include="Sekretar\PrikaziPacijente.xaml.cs">
       <DependentUpon>PrikaziPacijente.xaml</DependentUpon>
     </Compile>
     <Compile Include="ObrisiTermin.xaml.cs">
@@ -442,6 +458,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="logo-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Sekretar\vector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="zdravo.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

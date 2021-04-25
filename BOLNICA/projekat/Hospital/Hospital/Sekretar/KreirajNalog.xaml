@@ -6,103 +6,109 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="KreirajNalog"
     Width="700"
-    Height="550"
+    Height="450"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid Margin="0,0,-6.2,0.4" Background="#FF78D1D3">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Offset="0" Color="Gray" />
+                <GradientStop Offset="1" Color="White" />
+                <GradientStop Offset="0.094" Color="#FF2BACC5" />
+            </LinearGradientBrush>
+        </Grid.Background>
         <Label
             Grid.Row="0"
             Grid.Column="0"
-            Margin="40,40,0,0"
+            Margin="40,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Ime"
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
-            Grid.Row="1"
             Grid.Column="0"
-            Margin="40,70,0,0"
+            Margin="40,49,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Prezime"
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
-            Grid.Row="2"
             Grid.Column="0"
-            Margin="40,100,0,0"
+            Margin="40,79,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="JMBG"
             FontSize="15" />
         <Label
-            Grid.Row="3"
             Grid.Column="0"
-            Margin="20,130,0,0"
+            Margin="30,108,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Prezime i ime lica osiguranika"
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
-            Grid.Row="4"
             Grid.Column="0"
-            Margin="40,160,0,0"
+            Margin="40,138,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Datum rodjenja"
             FontFamily="Segoe UI Semilight"
-            FontSize="15" />
+            FontSize="15">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform AngleX="2.121" />
+                    <RotateTransform />
+                    <TranslateTransform X="-0.563" />
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
         <Label
-            Grid.Row="5"
             Grid.Column="0"
-            Margin="40,190,0,0"
+            Margin="40,169,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Adresa"
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
-            Grid.Row="6"
             Grid.Column="0"
-            Margin="40,220,0,0"
+            Margin="40,199,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Broj telefona"
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
-            Grid.Row="7"
             Grid.Column="0"
-            Margin="40,250,0,0"
+            Margin="43,229,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Pol"
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
-            Grid.Row="8"
             Grid.Column="0"
-            Margin="30,280,0,0"
+            Margin="30,258,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Kategorija zdravstvene zastite"
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
-            Grid.Row="9"
             Grid.Column="0"
-            Margin="40,310,0,0"
+            Margin="40,285,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Zanimanje "
             FontFamily="Segoe UI Semilight"
             FontSize="15" />
         <Label
-            Grid.Row="10"
             Grid.Column="0"
-            Margin="20,340,0,0"
+            Margin="28,315,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Broj zdravstvene knjizice "
@@ -113,32 +119,27 @@
         <TextBox
             x:Name="imeText"
             Grid.Row="0"
-            Grid.Column="1"
             Width="120"
             Height="23"
-            Margin="200,40,0,0"
+            Margin="151,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
         <TextBox
             x:Name="prezimeText"
-            Grid.Row="1"
-            Grid.Column="1"
             Width="120"
             Height="23"
-            Margin="200,70,0,0"
+            Margin="151,49,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
         <TextBox
             x:Name="jmbgText"
-            Grid.Row="2"
-            Grid.Column="1"
             Width="120"
             Height="23"
-            Margin="200,100,0,0"
+            Margin="151,80,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
@@ -147,51 +148,38 @@
             x:Name="imePrzOsText"
             Width="120"
             Height="23"
-            Margin="237,130,0,0"
+            Margin="237,109,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <!-- <TextBox
-            x:Name="datrText"
-            Grid.Row="4"
-            Grid.Column="1"
-            Width="120"
-            Height="23"
-            Margin="286,160,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap" />-->
+
         <TextBox
             x:Name="ulText"
             Width="71"
             Height="23"
-            Margin="200,190,0,0"
+            Margin="205,169,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
         <TextBox
             x:Name="brTelText"
-            Grid.Row="6"
-            Grid.Column="1"
             Width="120"
             Height="23"
-            Margin="200,220,0,0"
+            Margin="204,200,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            RenderTransformOrigin="0.412,-0.591"
             Text=""
             TextWrapping="Wrap" />
 
 
         <TextBox
             x:Name="zanimanjeText"
-            Grid.Row="8"
-            Grid.Column="1"
             Width="150"
             Height="23"
-            Margin="220,315,0,0"
+            Margin="204,289,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
@@ -199,21 +187,21 @@
         <Button
             x:Name="sacuvajButton"
             Width="75"
-            Margin="548,456,0,0"
+            Margin="411,375,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="#FF00E5E1"
             Click="kreirajNalogB"
             Content="Sacuvaj"
             Cursor="Hand"
-            FontSize="16" />
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="#FF0852AE"
+            TextElement.FontSize="14" />
         <TextBox
             x:Name="brKnjiziceText"
-            Grid.Row="9"
-            Grid.Column="1"
             Width="150"
             Height="23"
-            Margin="220,345,0,0"
+            Margin="204,322,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
@@ -221,7 +209,7 @@
         <ComboBox
             x:Name="zastita"
             Width="120"
-            Margin="250,280,0,0"
+            Margin="237,258,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem>
@@ -242,18 +230,20 @@
         </ComboBox>
         <Button
             Width="75"
-            Margin="75,450,0,0"
+            Margin="151,375,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="#FF00E5E1"
             Click="odustaniB"
             Content="Odustani"
             Cursor="Hand"
-            FontSize="16" />
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="#FF0852AE"
+            TextElement.FontSize="14" />
         <ComboBox
             x:Name="pol"
             Width="120"
-            Margin="250,250,0,0"
+            Margin="204,229,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem>
@@ -267,30 +257,31 @@
             x:Name="broj"
             Width="46"
             Height="23"
-            Margin="324,190,0,0"
+            Margin="324,169,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
         <Label
-            Margin="173,190,0,0"
+            Margin="166,169,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="ulica" />
         <Label
-            Margin="295,190,0,0"
+            Margin="294,169,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="broj" />
+            Content="broj"
+            RenderTransformOrigin="0.507,-0.594" />
         <Label
             Width="36"
-            Margin="389,190,0,0"
+            Margin="389,168,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="grad" />
         <ComboBox
             x:Name="grad"
             Width="71"
-            Margin="425,194,0,0"
+            Margin="425,169,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem>Novi Sad</ComboBoxItem>
@@ -312,7 +303,7 @@
         <ComboBox
             Name="drzava"
             Width="46"
-            Margin="577,193,0,0"
+            Margin="575,168,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem>SRB</ComboBoxItem>
@@ -322,26 +313,26 @@
             <ComboBoxItem>SLO</ComboBoxItem>
         </ComboBox>
         <Label
-            Margin="525,190,0,0"
+            Margin="525,168,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="drzava" />
         <DatePicker
             Name="datum"
             Width="120"
-            Margin="237,160,0,0"
+            Margin="237,143,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top" />
         <Label
-            Margin="499,250,0,0"
+            Margin="411,229,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Krvna grupa"
             FontSize="14" />
         <ComboBox
             Name="krvnaGrupa"
-            Width="120"
-            Margin="482,284,0,0"
+            Width="74"
+            Margin="509,229,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem>
@@ -358,19 +349,22 @@
             </ComboBoxItem>
         </ComboBox>
         <Label
-            Margin="509,325,0,0"
+            Margin="411,315,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Alergeni"
             FontSize="14" />
-        <TextBox
-            Name="alergeni"
-            Width="125"
-            Height="55"
-            Margin="482,359,92.8,0"
+        <Button
+            Width="75"
+            Margin="509,321,0,0"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap" />
+            Content="Dodaj"
+            FontWeight="Bold"
+            Foreground="#FF0852AE"
+            TextElement.FontSize="14"
+            Click="dodajAlergene"
+            Cursor="Hand"/>
 
     </Grid>
 </Window>

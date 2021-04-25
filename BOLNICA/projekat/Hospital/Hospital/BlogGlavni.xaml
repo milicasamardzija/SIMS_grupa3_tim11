@@ -25,36 +25,58 @@
             Foreground="#FF234EB3" />
         <TextBox
             x:Name="obavestenjaText"
-            Margin="26,116,395,190.6"
-         
+            Margin="26,116,368,190.6"
+            Background="{x:Null}"
+            BorderBrush="{x:Null}"
+            FontWeight="Bold"
             IsEnabled="False"
             TextWrapping="Wrap" />
-        <Image
-            Height="71"
-            IsEnabled="False"
-            Source="logo-removebg-preview.png" StretchDirection="DownOnly" Margin="507,0,96,314.6" VerticalAlignment="Bottom" />
         <Label
-            
+            Margin="26,230,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="ZANIMLJIVOSTI"
             FontFamily="Cooper Black"
             FontSize="16"
-            Foreground="#FF234EB3" Margin="26,278,0,0" />
+            Foreground="#FF234EB3" />
         <Label
-            Margin="441,140,0,0"
+            Width="309"
+            Margin="437,23,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Lider u inovaciji, na usluzi pacijenata!"
+            Content="Uvek tu za Vas!"
             FontFamily="Comic Sans MS"
             FontSize="16"
             FontStyle="Italic"
             FontWeight="Bold"
-            Foreground="#FF227638" Width="309" />
-        <Label Content="OBAVESTENJA ZA SVE ZAPOSLENE " HorizontalAlignment="Left" Margin="26,82,0,0" VerticalAlignment="Top"  FontFamily="Cooper"
+            Foreground="#FF227638" />
+        <Label
+            Margin="26,82,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="OBAVESTENJA  "
+            FontFamily="Cooper"
             FontSize="16"
             FontWeight="Bold"
-               Foreground="#FF234EB3"/>
+            Foreground="#FF234EB3" />
+        <Image
+            Width="309"
+            Height="166"
+            Margin="437,64,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            RenderTransformOrigin="0.412,0.462"
+            Source="zdravo.PNG" />
+        <TextBox
+            Width="720"
+            Height="88"
+            Margin="26,264,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="{x:Null}"
+            IsReadOnly="True"
+            Text=""
+            TextWrapping="Wrap" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False" />
 
     </Grid>
 </Page>

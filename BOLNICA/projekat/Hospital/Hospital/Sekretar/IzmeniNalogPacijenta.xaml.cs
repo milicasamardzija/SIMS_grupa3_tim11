@@ -76,7 +76,7 @@ namespace Hospital
 
 
            //nadjene informacije i iz kartona
-            alergeni.SelectedText = record.alergens;
+           // alergeni.SelectedText = record.alergens;
             krvnaGrupa.SelectedIndex = (int)record.bloodType; 
         }
 
@@ -119,7 +119,7 @@ namespace Hospital
             promeniM.IdHealthCard = Convert.ToInt16(brKnjText.Text);
             promeniM.HealthCareCategory= (HealthCareCategory)zastitaText.SelectedIndex;
             promeniM.bloodType = (BloodType)krvnaGrupa.SelectedIndex;
-            promeniM.alergens = alergeni.Text;
+           // promeniM.alergens = alergeni.Text;
 
             mfs.Delete(izbrisiM);
             mfs.Save(promeniM);

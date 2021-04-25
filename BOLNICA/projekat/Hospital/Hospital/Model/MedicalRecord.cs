@@ -1,18 +1,16 @@
-// File:    MedicalRecord.cs
-// Author:  Milica
-// Created: Wednesday, March 24, 2021 9:12:35 PM
-// Purpose: Definition of Class MedicalRecord
+
 
 using System;
+using System.Collections.Generic;
 using System.Windows.Controls;
 
 public class MedicalRecord : Patient
 {
     public int medicalRecordId;
     public BloodType bloodType;
-    public String alergens;
+    public List<String> alergens;
 
-    public MedicalRecord(String n, String s, String j, Gender g, DateTime dr, int mid, HealthCareCategory hcc, int idhc, BloodType bt, String a)
+    public MedicalRecord(String n, String s, String j, Gender g, DateTime dr, int mid, HealthCareCategory hcc, int idhc, BloodType bt)
     {
         this.name = n;
         this.surname = s;
@@ -23,7 +21,7 @@ public class MedicalRecord : Patient
         this.HealthCareCategory = hcc;
         this.IdHealthCard = idhc;
         this.bloodType = bt;
-        this.alergens = a;
+       // this.alergens = a;
 
 
     }
@@ -72,7 +70,7 @@ public class MedicalRecord : Patient
             }
         }
     }
-    public String Alergens
+    public List<String> Alergens
     {
         get
         {
