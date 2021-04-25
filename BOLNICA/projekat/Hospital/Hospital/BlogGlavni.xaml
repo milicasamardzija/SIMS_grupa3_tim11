@@ -15,7 +15,7 @@
         <Label
             Width="158"
             Height="34"
-            Margin="42,25,0,0"
+            Margin="26,23,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="{x:Null}"
@@ -23,36 +23,26 @@
             FontFamily="Cooper Black"
             FontSize="18"
             Foreground="#FF234EB3" />
-        <Label
-            Margin="42,76,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="OBAVESTENJA ZA SVE ZAPOSLENE"
-            FontFamily="Cooper Black"
-            FontSize="16"
-            Foreground="#FF234EB3" />
         <TextBox
             x:Name="obavestenjaText"
-            Width="394"
-            Height="125"
-            Margin="42,122,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
+            Margin="26,116,395,190.6"
+         
             IsEnabled="False"
             TextWrapping="Wrap" />
         <Image
-            Margin="441,43,62,291.6"
-            Source="logo-removebg-preview.png" StretchDirection="DownOnly" IsEnabled="False"/>
+            Height="71"
+            IsEnabled="False"
+            Source="logo-removebg-preview.png" StretchDirection="DownOnly" Margin="507,0,96,314.6" VerticalAlignment="Bottom" />
         <Label
-            Margin="42,268,0,0"
+            
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="ZANIMLJIVOSTI"
             FontFamily="Cooper Black"
             FontSize="16"
-            Foreground="#FF234EB3" />
+            Foreground="#FF234EB3" Margin="26,278,0,0" />
         <Label
-            Margin="451,158,0,0"
+            Margin="441,140,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Lider u inovaciji, na usluzi pacijenata!"
@@ -60,7 +50,11 @@
             FontSize="16"
             FontStyle="Italic"
             FontWeight="Bold"
-            Foreground="#FF227638" />
+            Foreground="#FF227638" Width="309" />
+        <Label Content="OBAVESTENJA ZA SVE ZAPOSLENE " HorizontalAlignment="Left" Margin="26,82,0,0" VerticalAlignment="Top"  FontFamily="Cooper"
+            FontSize="16"
+            FontWeight="Bold"
+               Foreground="#FF234EB3"/>
 
     </Grid>
 </Page>

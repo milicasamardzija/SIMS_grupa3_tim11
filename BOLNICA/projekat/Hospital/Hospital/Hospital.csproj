@@ -67,7 +67,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Blog.xaml">
+    <Page Include="Sekretar\Blog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -90,7 +90,7 @@
     <Compile Include="BelsekaMagacin.xaml.cs">
       <DependentUpon>BelsekaMagacin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Blog.xaml.cs">
+    <Compile Include="Sekretar\Blog.xaml.cs">
       <DependentUpon>Blog.xaml</DependentUpon>
     </Compile>
     <Compile Include="BlogGlavni.xaml.cs">
@@ -102,7 +102,7 @@
     <Compile Include="DodajProstorijuDijalog.xaml.cs">
       <DependentUpon>DodajProstorijuDijalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="InformacijeKlinike.xaml.cs">
+    <Compile Include="Sekretar\InformacijeKlinike.xaml.cs">
       <DependentUpon>InformacijeKlinike.xaml</DependentUpon>
     </Compile>
     <Compile Include="Inventar.xaml.cs">
@@ -126,7 +126,7 @@
     <Compile Include="KreiranjeAnamneze.xaml.cs">
       <DependentUpon>KreiranjeAnamneze.xaml</DependentUpon>
     </Compile>
-    <Compile Include="KreirajStalniNalog.xaml.cs">
+    <Compile Include="Sekretar\KreirajStalniNalog.xaml.cs">
       <DependentUpon>KreirajStalniNalog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Magacin.xaml.cs">
@@ -157,7 +157,7 @@
     <Compile Include="OdjaviSe.xaml.cs">
       <DependentUpon>OdjaviSe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pacijenti.xaml.cs">
+    <Compile Include="Sekretar\Pacijenti.xaml.cs">
       <DependentUpon>Pacijenti.xaml</DependentUpon>
     </Compile>
     <Compile Include="PocetnaPacijent.xaml.cs">
@@ -193,7 +193,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="InformacijeKlinike.xaml">
+    <Page Include="Sekretar\InformacijeKlinike.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -221,19 +221,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IzbrisiPacijenta.xaml">
+    <Page Include="Sekretar\IzbrisiPacijenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IzmeniNalogPacijenta.xaml">
+    <Page Include="Sekretar\IzmeniNalogPacijenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="KreirajGuestNalog.xaml">
+    <Page Include="Sekretar\KreirajGuestNalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="KreirajNalog.xaml">
+    <Page Include="Sekretar\KreirajNalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -252,7 +252,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="KreirajStalniNalog.xaml">
+    <Page Include="Sekretar\KreirajStalniNalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -277,16 +277,16 @@
     <Compile Include="EditDialog.xaml.cs">
       <DependentUpon>EditDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IzbrisiPacijenta.xaml.cs">
+    <Compile Include="Sekretar\IzbrisiPacijenta.xaml.cs">
       <DependentUpon>IzbrisiPacijenta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IzmeniNalogPacijenta.xaml.cs">
+    <Compile Include="Sekretar\IzmeniNalogPacijenta.xaml.cs">
       <DependentUpon>IzmeniNalogPacijenta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="KreirajGuestNalog.xaml.cs">
+    <Compile Include="Sekretar\KreirajGuestNalog.xaml.cs">
       <DependentUpon>KreirajGuestNalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="KreirajNalog.xaml.cs">
+    <Compile Include="Sekretar\KreirajNalog.xaml.cs">
       <DependentUpon>KreirajNalog.xaml</DependentUpon>
     </Compile>
     <Compile Include="DodajTermin.xaml.cs">
@@ -307,7 +307,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pacijenti.xaml">
+    <Page Include="Sekretar\Pacijenti.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -351,11 +351,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Nalozi.xaml">
+    <Page Include="Sekretar\Nalozi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PrikaziGuestPacijente.xaml">
+    <Page Include="Sekretar\PrikaziGuestPacijente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -393,10 +393,10 @@
     <Compile Include="Pregled.xaml.cs">
       <DependentUpon>Pregled.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Nalozi.xaml.cs">
+    <Compile Include="Sekretar\Nalozi.xaml.cs">
       <DependentUpon>Nalozi.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PrikaziGuestPacijente.xaml.cs">
+    <Compile Include="Sekretar\PrikaziGuestPacijente.xaml.cs">
       <DependentUpon>PrikaziGuestPacijente.xaml</DependentUpon>
     </Compile>
     <Compile Include="PrikaziPacijente.xaml.cs">
@@ -432,16 +432,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="slika1.png" />
+    <Resource Include="Sekretar\logo-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Sekretar\kvalitet-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Sekretar\mapa.PNG" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="logo-removebg-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="kvalitet-removebg-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="mapa.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

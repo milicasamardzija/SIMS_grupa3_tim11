@@ -53,7 +53,7 @@
             FontSize="14"
             Foreground="#FF234EB3" />
         <Image
-            Margin="350,40,103,255"
+            Margin="350,40,103,245"
             Source="kvalitet-removebg-preview.png"
             Stretch="Fill" />
         <Image

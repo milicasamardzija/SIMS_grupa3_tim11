@@ -19,9 +19,9 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Image
-            Width="137"
+            Width="175"
             Height="71"
-            Margin="590,33,0,0"
+            Margin="552,33,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="logo-removebg-preview.png" />
