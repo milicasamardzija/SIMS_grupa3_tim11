@@ -20,50 +20,35 @@ namespace Hospital
     public partial class Nalozi : Window
     {
 
-        public Page blogg;
+      //  public Page blogg;
 
-        public Nalozi(Page blogGlavni)
+        public Nalozi() //(Page blogGlavni)
         {
             InitializeComponent();
-            blogg = blogGlavni;
+            // blogg = blogGlavni;
+            //Pacijenti pacijenti = new Pacijenti();
+           // frameS.Navigate(pacijenti);
+
         }
 
-
-        private void KreirajButton(object sender,  RoutedEventArgs e)
+        private void pacijenti(object sender, RoutedEventArgs e)
         {
-            KreirajNalog noviNalog = new KreirajNalog();
-            noviNalog.ShowDialog();
-        }
-        private void kreirajGButton(object sender, RoutedEventArgs e) {
+            Pacijenti p = new Pacijenti();
+            frameS.Navigate(p);
 
-            KreirajGuestNalog noviGNalog = new KreirajGuestNalog();
-            noviGNalog.ShowDialog();
         }
- 
 
-        private void izbrisiButton(object sender, RoutedEventArgs e)
+        private void blog(object sender, RoutedEventArgs e)
         {
-            IzbrisiNalogPacijenta izbrisiNalog = new IzbrisiNalogPacijenta();
-            izbrisiNalog.ShowDialog();
-        }
-
-        private void prikaziPacijenteButton(object sender, RoutedEventArgs e)
-        {
-            PrikaziPacijente prikaz = new PrikaziPacijente();
-            prikaz.ShowDialog();
-        }
-    
-
-        private void prikaziGPacijenteButton(object sender, RoutedEventArgs e)
-        {
-            var prikazG = new PrikaziGuestPacijente();
-            prikazG.ShowDialog();
+            Blog b = new Blog();
+            frameS.Navigate(b);
         }
        
-        private void blog(object sender, RoutedEventArgs e)
+       
+      /*  private void blog(object sender, RoutedEventArgs e)
         {
             UredjivanjeBloga blog = new UredjivanjeBloga();
             blog.ShowDialog();
-        }
+        } */
     }
 }

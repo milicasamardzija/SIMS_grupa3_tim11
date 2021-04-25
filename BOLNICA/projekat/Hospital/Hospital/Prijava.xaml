@@ -17,6 +17,8 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="20"
+            FontWeight="Bold"
+            Foreground="#FF0852AE"
             RenderTransformOrigin="0.449,-0.716"
             Text="Korisnicko ime"
             TextWrapping="Wrap" />
@@ -25,7 +27,8 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="20"
-            RenderTransformOrigin="0.539,-0.065"
+            FontWeight="Bold"
+            Foreground="#FF0852AE"
             Text="Lozinka"
             TextWrapping="Wrap" />
         <TextBox
@@ -53,14 +56,18 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="login"
-            Content="Prijava" />
-        <!--<Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>-->
+            Content="Prijava"
+            FontWeight="Bold"
+            Foreground="#FF0852AE" />
+
         <Label
             Margin="240,204,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Uloga"
-            FontSize="20" />
+            FontSize="20"
+            FontWeight="Bold"
+            Foreground="#FF0852AE" />
         <ComboBox
             Name="uloga"
             Width="142"
@@ -68,10 +75,10 @@
             Margin="388,214,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
-            <ComboBoxItem IsSelected="True">PACIJENT</ComboBoxItem>
-            <ComboBoxItem>LEKAR</ComboBoxItem>
-            <ComboBoxItem>SEKRETAR</ComboBoxItem>
-            <ComboBoxItem>UPRAVNIK</ComboBoxItem>
+            <ComboBoxItem Foreground="#FF0852AE" IsSelected="True">PACIJENT</ComboBoxItem>
+            <ComboBoxItem Foreground="#FF0852AE">LEKAR</ComboBoxItem>
+            <ComboBoxItem Foreground="#FF0852AE">SEKRETAR</ComboBoxItem>
+            <ComboBoxItem Foreground="#FF0852AE">UPRAVNIK</ComboBoxItem>
         </ComboBox>
         <TextBlock
             x:Name="textBlock"
@@ -80,6 +87,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="20"
+            Foreground="#FF0852AE"
             Text="Da biste se prijavili na sistem upisite svoje korisnicko ime i lozinku. Oznacite da li koristite sistem kao pacijent, lekar, sekretar ili upravnik."
             TextWrapping="Wrap" />
     </Grid>

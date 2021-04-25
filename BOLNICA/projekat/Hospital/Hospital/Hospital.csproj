@@ -67,6 +67,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Blog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BlogGlavni.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -85,6 +89,9 @@
     </Page>
     <Compile Include="BelsekaMagacin.xaml.cs">
       <DependentUpon>BelsekaMagacin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Blog.xaml.cs">
+      <DependentUpon>Blog.xaml</DependentUpon>
     </Compile>
     <Compile Include="BlogGlavni.xaml.cs">
       <DependentUpon>BlogGlavni.xaml</DependentUpon>
@@ -149,6 +156,9 @@
     <Compile Include="Model\SpecCheckup.cs" />
     <Compile Include="OdjaviSe.xaml.cs">
       <DependentUpon>OdjaviSe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pacijenti.xaml.cs">
+      <DependentUpon>Pacijenti.xaml</DependentUpon>
     </Compile>
     <Compile Include="PocetnaPacijent.xaml.cs">
       <DependentUpon>PocetnaPacijent.xaml</DependentUpon>
@@ -227,9 +237,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="UredjivanjeBloga.xaml.cs">
-      <DependentUpon>UredjivanjeBloga.xaml</DependentUpon>
-    </Compile>
     <Compile Include="WindowPacijent.xaml.cs">
       <DependentUpon>WindowPacijent.xaml</DependentUpon>
     </Compile>
@@ -300,6 +307,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pacijenti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PocetnaPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -353,10 +364,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ObrisiTermin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UredjivanjeBloga.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

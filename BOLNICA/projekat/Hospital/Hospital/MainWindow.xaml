@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Prijava"
     Width="800"
-    Height="500"
+    Height="450"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid Background="LightBlue">
@@ -20,25 +20,31 @@
             VerticalAlignment="Top"
             NavigationUIVisibility="Hidden" />
         <Menu
-            Width="250"
+            Width="296"
             Height="30"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top">
+            VerticalAlignment="Top"
+            Background="LightGray">
             <MenuItem
-                Background="LightGray"
                 Click="prijava"
                 FontSize="20"
-                Header="PACIJENTI" />
+                FontWeight="Bold"
+                Foreground="#FF0852AE"
+                Header="PRIJAVA  " />
             <MenuItem
                 Background="LightGray"
                 Click="blog"
                 FontSize="20"
-                Header="BLOG" />
+                FontWeight="Bold"
+                Foreground="#FF0852AE"
+                Header="BLOG  " />
             <MenuItem
                 Background="LightGray"
                 Click="informacije"
                 FontSize="20"
-                Header="O klinici" />
+                FontWeight="Bold"
+                Foreground="#FF0852AE"
+                Header="O KLINICI" />
 
         </Menu>
 
