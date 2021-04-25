@@ -13,30 +13,54 @@
 
     <Grid>
         <Label
-            Width="266"
-            Height="52"
-            Margin="42,31,0,0"
+            Width="158"
+            Height="34"
+            Margin="42,25,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Zdravo bolnica"
-            FontFamily="Lucida Handwriting"
-            FontSize="20" />
+            Background="{x:Null}"
+            Content="Zdravo bolnica "
+            FontFamily="Cooper Black"
+            FontSize="18"
+            Foreground="#FF234EB3" />
         <Label
-            Width="102"
-            Height="29"
-            Margin="42,88,0,0"
+            Margin="42,76,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="OBAVESTENJA" />
+            Content="OBAVESTENJA ZA SVE ZAPOSLENE"
+            FontFamily="Cooper Black"
+            FontSize="16"
+            Foreground="#FF234EB3" />
         <TextBox
             x:Name="obavestenjaText"
-            Width="239"
-            Height="187"
+            Width="394"
+            Height="125"
             Margin="42,122,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsEnabled="False"
             TextWrapping="Wrap" />
+        <Image
+            Margin="441,43,62,291.6"
+            Source="logo-removebg-preview.png" StretchDirection="DownOnly" IsEnabled="False"/>
+        <Label
+            Margin="42,268,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="ZANIMLJIVOSTI"
+            FontFamily="Cooper Black"
+            FontSize="16"
+            Foreground="#FF234EB3" />
+        <Label
+            Margin="451,158,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Lider u inovaciji, na usluzi pacijenata!"
+            FontFamily="Comic Sans MS"
+            FontSize="16"
+            FontStyle="Italic"
+            FontWeight="Bold"
+            Foreground="#FF227638" />
 
     </Grid>
 </Page>

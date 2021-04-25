@@ -95,6 +95,9 @@
     <Compile Include="DodajProstorijuDijalog.xaml.cs">
       <DependentUpon>DodajProstorijuDijalog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InformacijeKlinike.xaml.cs">
+      <DependentUpon>InformacijeKlinike.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Inventar.xaml.cs">
       <DependentUpon>Inventar.xaml</DependentUpon>
     </Compile>
@@ -177,6 +180,10 @@
       <DependentUpon>Rooms.xaml</DependentUpon>
     </Compile>
     <Page Include="DodajProstorijuDijalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InformacijeKlinike.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -419,6 +426,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="slika1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="kvalitet-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="mapa.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

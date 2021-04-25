@@ -15,26 +15,14 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-   
-    public partial class BlogGlavni : Page
+    /// <summary>
+    /// Interaction logic for InformacijeKlinike.xaml
+    /// </summary>
+    public partial class InformacijeKlinike : Page
     {
-
-       
-        
-        public BlogGlavni()
+        public InformacijeKlinike()
         {
             InitializeComponent();
-            obavestenjaText.SelectedText = loadJason();
         }
-
-        public String loadJason()
-        {
-             NoticeFileStorage pfs = new NoticeFileStorage();
-             List<Notice> rs = new List<Notice>(pfs.GetAll());
-             String ret = rs[0].notice;
-              return ret;
-          
-        }
-
     }
 }

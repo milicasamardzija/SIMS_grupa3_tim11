@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Prijava"
     Width="800"
-    Height="450"
+    Height="500"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid Background="LightBlue">
@@ -17,7 +17,8 @@
             Height="390"
             Margin="0,30,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top"
+            NavigationUIVisibility="Hidden" />
         <Menu
             Width="250"
             Height="30"
@@ -35,28 +36,11 @@
                 Header="BLOG" />
             <MenuItem
                 Background="LightGray"
-                Click="blog"
+                Click="informacije"
                 FontSize="20"
                 Header="O klinici" />
 
         </Menu>
-        <!--
-        <TextBlock HorizontalAlignment="Left" FontSize="20"  Margin="240,128,0,0" Text="Korisnicko ime" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.449,-0.716"/>
-        <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="240,195,0,0" Text="Lozinka" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.539,-0.065"/>
-        <TextBox Name="ime" HorizontalAlignment="Left" FontSize="17" Margin="388,128,0,0" Text="{Binding Value}" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" Height="27"/>
-        <PasswordBox Name="lozinka" HorizontalAlignment="Left" FontSize="17" Margin="388,195,0,0" VerticalAlignment="Top" Width="142" Height="27" />
-        <Button Content="Prijava" HorizontalAlignment="Left" Margin="320,335,0,0" VerticalAlignment="Top" Width="100" Height="27" Click="login"/>-->
-        <!--<Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>-->
-        <!-- <Label Content="Uloga" FontSize="20" HorizontalAlignment="Left" Margin="240,247,0,0" VerticalAlignment="Top"/>
-        <ComboBox Name="uloga" HorizontalAlignment="Left" Margin="388,247,0,0" VerticalAlignment="Top" Width="142" Height="37" >
-            <ComboBoxItem IsSelected="True">PACIJENT</ComboBoxItem>
-            <ComboBoxItem>LEKAR</ComboBoxItem>
-            <ComboBoxItem>SEKRETAR</ComboBoxItem>
-            <ComboBoxItem>UPRAVNIK</ComboBoxItem>
-        </ComboBox>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="27,46,0,0" TextWrapping="Wrap" Text="Da biste se prijavili na sistem upisite svoje korisnicko ime i lozinku. Oznacite da li koristite sistem kao pacijent, lekar, sekretar ili upravnik." VerticalAlignment="Top" FontSize="20"/>
-
-        -->
 
     </Grid>
 </Window>

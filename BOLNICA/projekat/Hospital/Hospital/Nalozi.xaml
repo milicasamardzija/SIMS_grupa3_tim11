@@ -27,14 +27,6 @@
             Content="PACIJENTI"
             FontFamily="Viner Hand ITC"
             FontSize="16" />
-        <Image
-            Width="102"
-            Height="105"
-            Margin="35,45,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            RenderTransformOrigin="0.5,0.5"
-            Source="slika1.png" />
         <Button
             x:Name="Nalog"
             Width="160"
@@ -87,7 +79,16 @@
             Cursor="Hand"
             FontFamily="Segoe UI Semilight"
             FontSize="16" />
-        <Button  Background="#FF00E5E1" Content="Uredjivanje bloga" HorizontalAlignment="Left" Margin="62,239,0,0" VerticalAlignment="Top" Width="136" Height="35" Click="blog" Cursor="Hand"/>
+        <Button
+            Width="136"
+            Height="35"
+            Margin="62,239,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="#FF00E5E1"
+            Click="blog"
+            Content="Uredjivanje bloga"
+            Cursor="Hand" />
 
 
 
