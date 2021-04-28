@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
         Title="KreiranjeAnamneze" Height="459.223" Width="521.694" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid ToolTip="Pritiskajuci strelice na tastaturi oznacite prazna polja, pritisnite tipku Enter, unesite podatke, zatim oznacite zeljeno dugme i pritisnite Enter">
         <Button x:Name="button" Content="Sacuvaj" HorizontalAlignment="Left" Margin="24,387,0,0" VerticalAlignment="Top" Width="75" FontSize="16" RenderTransformOrigin="0.204,-0.284" Click="button_Click"/>
         <Button x:Name="button1" Content="Izadji" HorizontalAlignment="Left" Margin="424,387,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Click="button1_Click"/>
         <Label x:Name="label" Content="Prezime i ime pacijenta" HorizontalAlignment="Left" Margin="24,21,0,0" VerticalAlignment="Top" FontSize="16"/>

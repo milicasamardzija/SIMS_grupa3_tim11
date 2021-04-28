@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
         Title="PrikaziKartonPacijenta" Height="362.721" Width="693.607" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid ToolTip="Pritiskajuci strelice oznacite zeljeno dugme, zatim pritiskom na tipku Enter izvrsice se zeljena akcija">
         <DataGrid x:Name="ListMedical" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Height="257" Width="669" ItemsSource="{Binding Path=MedicalList}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="IME" Binding="{Binding Name}" FontSize="16"/>

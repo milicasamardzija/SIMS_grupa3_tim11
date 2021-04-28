@@ -103,5 +103,17 @@ namespace Hospital
             Evidencija ee = new Evidencija();
             ee.Show();
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            IzvestajLekara il = new IzvestajLekara();
+            il.Show();
+        }
+
+        private void button8_Click(object sender, RoutedEventArgs e)
+        {
+            ProfilLekara pl = new ProfilLekara();
+            pl.Show();
+        }
     }
 }

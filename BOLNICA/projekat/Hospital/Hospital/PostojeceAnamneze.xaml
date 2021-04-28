@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
         Title="PostojeceAnamneze" Height="342.463" Width="612.237" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid ToolTip="Kada zelite da vidite sve podatke u tabeli, krecite se strelicama za gore ili dole, takodje i za levo ili desno">
         <DataGrid x:Name="ListAnamnesis" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" Height="219" Width="576" Background="MistyRose" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path = AnamnesisList}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="IME I PREZIME" Binding="{Binding nameS}" FontSize="16"/>

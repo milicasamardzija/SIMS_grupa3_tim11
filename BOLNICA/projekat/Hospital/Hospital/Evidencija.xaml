@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-        Title="Evidencija" Height="306.265" Width="438.515" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
+        Title="Evidencija" Height="361.267" Width="607.389" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label x:Name="label1" Content="Lekovi" Margin="19,10,329,216.8" FontSize="20" Foreground="#FFFF00B2"/>
-        <DataGrid x:Name="ListMedicines" Margin="19,65,23,81.8" Grid.Column="0" Background="MistyRose" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path = MedicineList}">
+        <DataGrid x:Name="ListMedicines" Margin="19,65,195.8,82" Grid.Column="0" Background="MistyRose" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path = MedicineList}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="IDLEKA" FontSize="16"/>
                 <DataGridTextColumn Header="NAZIV" FontSize="16"/>
@@ -16,8 +16,10 @@
                 <DataGridTextColumn Header="SASTOJCI" FontSize="16"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="button1" Content="Izmeni lek" Margin="19,227,314,17.8" FontSize="16" Click="button1_Click"/>
-        <Button x:Name="button2" Content="Izadji" Margin="314,227,23,17.8" FontSize="16" Click="button2_Click"/>
-        <Button x:Name="button3" Content="Zamena lekova" Margin="155,227,156,17.8" FontSize="16" Click="button3_Click"/>
+        <Button x:Name="button1" Content="Izmeni lek" Margin="19,277,391.8,18" FontSize="16" Click="button1_Click"/>
+        <Button x:Name="button2" Content="Izadji" Margin="420,277,23.8,18" FontSize="16" Click="button2_Click"/>
+        <Button x:Name="button3" Content="Zamena lekova" Margin="228,277,195.8,18" FontSize="16" Click="button3_Click"/>
+        <Button x:Name="button4" Content="Potroseni materijal" Margin="420,65,23.8,226" FontSize="16" Click="button4_Click"/>
+
     </Grid>
 </Window>

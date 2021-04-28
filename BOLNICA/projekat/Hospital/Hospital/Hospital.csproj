@@ -59,6 +59,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DodajPotroseniMaterijal.xaml.cs">
+      <DependentUpon>DodajPotroseniMaterijal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzvestajLekara.xaml.cs">
+      <DependentUpon>IzvestajLekara.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PotroseniMaterijal.xaml.cs">
+      <DependentUpon>PotroseniMaterijal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrikaziIzvestajLekara.xaml.cs">
+      <DependentUpon>PrikaziIzvestajLekara.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Profil.xaml.cs">
+      <DependentUpon>Profil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfilLekara.xaml.cs">
+      <DependentUpon>ProfilLekara.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ZamenaLekova.xaml.cs">
       <DependentUpon>ZamenaLekova.xaml</DependentUpon>
     </Compile>
@@ -81,6 +99,10 @@
     <Page Include="DodajInventarDijalog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DodajPotroseniMaterijal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditDialog.xaml">
       <SubType>Designer</SubType>
@@ -229,6 +251,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="IzvestajLekara.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="KreirajGuestNalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -318,6 +344,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PotroseniMaterijal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pregled.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -334,6 +364,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="PrikaziIzvestajLekara.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PrikaziKartonPacijenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -343,6 +377,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrikazObavestenja.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Profil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfilLekara.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
