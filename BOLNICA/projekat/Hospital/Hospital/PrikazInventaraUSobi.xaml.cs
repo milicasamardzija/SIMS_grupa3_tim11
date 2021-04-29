@@ -40,14 +40,16 @@ namespace Hospital
         public ObservableCollection<Inventory> loadJason()
         {
             RoomInventoryFileStorage storage = new RoomInventoryFileStorage();
+            InventoryFileStorage inventoryStorage = new InventoryFileStorage();
 
             ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>();
 
             foreach (RoomInventory r in storage.GetAll())
             {
-                if (r.Room.RoomId.Equals(room.RoomId))
+                if (r.idRoom.Equals(room.RoomId))
                 {
-                    ret.Add(new Inventory(r.Inventory.InventoryId,r.Inventory.Name,r.Quantity,r.Inventory.Type));
+                    Inventory i = inventoryStorage.FindById(r.idInventory);
+                    ret.Add(new Inventory(i.InventoryId,i.Name,r.Quantity,i.Type));
                 }
 
             }

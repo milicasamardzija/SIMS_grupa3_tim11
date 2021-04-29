@@ -144,7 +144,7 @@ namespace Hospital
                         }
                     }
 
-                    RoomInventory newRInventory = new RoomInventory(room, invent, quantity);
+                    RoomInventory newRInventory = new RoomInventory(room.RoomId,room, invent.InventoryId ,invent, quantity);
                     all.Add(newRInventory);
                 }
 

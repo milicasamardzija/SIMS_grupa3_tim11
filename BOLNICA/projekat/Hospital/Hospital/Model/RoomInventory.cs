@@ -1,11 +1,16 @@
+using Newtonsoft.Json;
 using System;
 
 public class RoomInventory
 {
     private Room room;
+    public int idRoom { get; set; }
     private Inventory inventory;
+    public int idInventory { get; set; }
     private int quantity;
+    public DateTime date { get; set; }
 
+    [JsonIgnore]
     public Room Room
     {
         get
@@ -18,6 +23,7 @@ public class RoomInventory
         }
     }
 
+   [JsonIgnore]
     public Inventory Inventory
     {
         get
@@ -44,9 +50,11 @@ public class RoomInventory
 
     public RoomInventory() { }
 
-    public RoomInventory(Room r, Inventory i, int q)
-    {
+    public RoomInventory(int idR, Room r, int idI, Inventory i, int q)
+    {   
+        idRoom = idR;
         room = r;
+        idInventory = idI;
         inventory = i;
         quantity = q;
     }

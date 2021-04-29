@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -30,7 +31,21 @@ namespace Hospital
             InitializeComponent();
             RoomList = loadJason();
             frame.NavigationService.Navigate(new Magacin(RoomList));
+
+         //   getTasks();
         }
+
+    /*    private void getTasks()
+        {
+          StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
+
+            foreach (StaticInventoryMovement task in storage.GetAll())
+            {
+                Task t = new Task();
+                t.Start();
+            }
+
+        }*/
 
         private void magacin(object sender, RoutedEventArgs e)
         {
