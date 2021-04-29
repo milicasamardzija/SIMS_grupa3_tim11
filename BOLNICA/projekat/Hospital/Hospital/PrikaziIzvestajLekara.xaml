@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="PrikaziIzvestajLekara" Height="418.678" Width="528.481" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid ToolTip="Da biste izasli iz izvestaja strelicama oznacite dugme Izadji i pritiskom tipke Enter cete izaci iz Izvestaja">
-        <Label x:Name="label1" Content="Izvestaj pregleda stanja pacijenta" Margin="93,23,114.4,323.8" FontSize="20"/>
-        <Button x:Name="button1" Content="Izadji" HorizontalAlignment="Left" Margin="387,337,0,22.8" Width="109" FontSize="16" Click="button1_Click"/>
+        <Label x:Name="label1" Content="Izvestaj pregleda stanja pacijenta" Margin="93,23,114.4,308.8" FontSize="20"/>
+        <Button x:Name="button1" Content="Izadji" HorizontalAlignment="Left" Margin="387,333,0,19.8" Width="109" FontSize="16" Click="button1_Click"/>
         <TextBlock x:Name="text" Text="" Margin="35,85,26.4,85.8" />
     </Grid>
 </Window>

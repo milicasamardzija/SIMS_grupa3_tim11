@@ -11,7 +11,7 @@
         <Label x:Name="label2" Content="Naziv" Margin="17,64,301,231.8" FontSize="16"/>
         <Label x:Name="label3" Content="Gramaza" Margin="17,114,301,174.8" FontSize="16"/>
         <Label x:Name="label4" Content="Sastojci" Margin="17,171,301,119.8" FontSize="16"/>
-        <Button x:Name="button1" Content="Izmeni" Margin="17,292,268,26.8"/>
-        <Button x:Name="button2" Content="Odbaci" Margin="256,292,29,26.8" Click="button2_Click"/>
+        <Button x:Name="button1" Content="Izmeni" Margin="17,283,268,26.8" FontSize="16"/>
+        <Button x:Name="button2" Content="Odbaci" Margin="256,283,29,26.8" Click="button2_Click" FontSize="16"/>
     </Grid>
 </Window>

@@ -14,8 +14,8 @@
         <TextBox x:Name="idTextB" HorizontalAlignment="Left" Height="23" Margin="303,84,0,206.6" Width="246"/>
         <TextBox x:Name="pocText" HorizontalAlignment="Left" Height="23" Margin="303,120,0,170.6" Width="246"/>
         <TextBox x:Name="krajText" HorizontalAlignment="Left" Height="23" Margin="303,165,0,125.6" Width="246"/>
-        <Button x:Name="button1" Content="Prikazi izvestaj" HorizontalAlignment="Left" Margin="24,249,0,25.6" Width="122" FontSize="16" Click="button1_Click"/>
-        <Button x:Name="button2" Content="Izadji" HorizontalAlignment="Left" Margin="427,249,0,25.6" Width="122" FontSize="16" Click="button2_Click"/>
+        <Button x:Name="button1" Content="Prikazi izvestaj" HorizontalAlignment="Left" Margin="24,240,0,25.6" Width="122" FontSize="16" Click="button1_Click"/>
+        <Button x:Name="button2" Content="Izadji" HorizontalAlignment="Left" Margin="427,240,0,25.6" Width="122" FontSize="16" Click="button2_Click"/>
 
     </Grid>
 </Window>
