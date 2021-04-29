@@ -15,30 +15,30 @@ using System.Windows.Shapes;
 namespace Hospital
 {
     /// <summary>
-    /// Interaction logic for Evidencija.xaml
+    /// Interaction logic for EvidencijaLekar.xaml
     /// </summary>
-    public partial class Evidencija : Window
+    public partial class EvidencijaLekar : Window
     {
-        public Evidencija()
+        public EvidencijaLekar()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            Evidencija ee = new Evidencija();
+            ee.Show();
+        }
+
+        private void button5_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void button3_Click(object sender, RoutedEventArgs e)
         {
-            IzmenaLeka il = new IzmenaLeka();
-            il.Show();
-        }
-
-        private void button4_Click(object sender, RoutedEventArgs e)
-        {
-            RevizijaLekaLekar rll = new RevizijaLekaLekar();
-            rll.Show();
+            PotroseniMaterijal potr = new PotroseniMaterijal();
+            potr.Show();
         }
     }
 }

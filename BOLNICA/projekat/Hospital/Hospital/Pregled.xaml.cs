@@ -100,8 +100,8 @@ namespace Hospital
 
         private void button12_Click(object sender, RoutedEventArgs e)
         {
-            Evidencija ee = new Evidencija();
-            ee.Show();
+            EvidencijaLekar el = new EvidencijaLekar();
+            el.Show();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

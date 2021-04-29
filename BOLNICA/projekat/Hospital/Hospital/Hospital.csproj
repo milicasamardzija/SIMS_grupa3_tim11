@@ -62,6 +62,9 @@
     <Compile Include="DodajPotroseniMaterijal.xaml.cs">
       <DependentUpon>DodajPotroseniMaterijal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EvidencijaLekar.xaml.cs">
+      <DependentUpon>EvidencijaLekar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IzvestajLekara.xaml.cs">
       <DependentUpon>IzvestajLekara.xaml</DependentUpon>
     </Compile>
@@ -76,6 +79,9 @@
     </Compile>
     <Compile Include="ProfilLekara.xaml.cs">
       <DependentUpon>ProfilLekara.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RevizijaLekaLekar.xaml.cs">
+      <DependentUpon>RevizijaLekaLekar.xaml</DependentUpon>
     </Compile>
     <Compile Include="ZamenaLekova.xaml.cs">
       <DependentUpon>ZamenaLekova.xaml</DependentUpon>
@@ -212,6 +218,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Evidencija.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EvidencijaLekar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -385,6 +395,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ProfilLekara.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RevizijaLekaLekar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
