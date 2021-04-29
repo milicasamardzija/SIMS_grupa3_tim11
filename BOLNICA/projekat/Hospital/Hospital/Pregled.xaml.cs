@@ -115,5 +115,11 @@ namespace Hospital
             ProfilLekara pl = new ProfilLekara();
             pl.Show();
         }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            DavanjeUputa du = new DavanjeUputa();
+            du.Show();
+        }
     }
 }

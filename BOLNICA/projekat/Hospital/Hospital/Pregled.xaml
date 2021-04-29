@@ -26,7 +26,7 @@
         <Button x:Name="button" Content="Odjava" HorizontalAlignment="Left" Margin="747,463,0,0" VerticalAlignment="Top" Width="96" FontSize="16" Click="button_Click"/>
         <Button x:Name="button1" Content="Izvestaj" HorizontalAlignment="Left" Margin="599,463,0,0" VerticalAlignment="Top" Width="95" FontSize="16" RenderTransformOrigin="0.286,0.479" Click="button1_Click"/>
         <Button x:Name="button2" Content="Pacijenti" HorizontalAlignment="Left" Margin="672,216,0,0" VerticalAlignment="Top" Width="171" RenderTransformOrigin="0.244,0.61" FontSize="16" Click="button2_Click"/>
-        <Button x:Name="button3" Content="Davanje uputa" HorizontalAlignment="Left" Margin="672,370,0,0" VerticalAlignment="Top" Width="171" FontSize="16"/>
+        <Button x:Name="button3" Content="Davanje uputa" HorizontalAlignment="Left" Margin="672,370,0,0" VerticalAlignment="Top" Width="171" FontSize="16" Click="button3_Click"/>
         <Button x:Name="button4" Content="Izdavanje recepta" HorizontalAlignment="Left" Margin="672,319,0,0" VerticalAlignment="Top" Width="171" RenderTransformOrigin="0.033,0.309" FontSize="16" Click="button4_Click"/>
         <Button x:Name="button8" Content="Profil" HorizontalAlignment="Left" Margin="31,463,0,0" VerticalAlignment="Top" Width="97" FontSize="16" RenderTransformOrigin="0.267,0.32" Click="button8_Click"/>
         <Button x:Name="button9" Content="Anamneza" HorizontalAlignment="Left" Margin="672,268,0,0" VerticalAlignment="Top" Width="171" FontSize="16" Click="button9_Click" />

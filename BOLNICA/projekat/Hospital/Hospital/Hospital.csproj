@@ -59,6 +59,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DavanjeUputa.xaml.cs">
+      <DependentUpon>DavanjeUputa.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodajPotroseniMaterijal.xaml.cs">
       <DependentUpon>DodajPotroseniMaterijal.xaml</DependentUpon>
     </Compile>
@@ -83,6 +86,12 @@
     <Compile Include="RevizijaLekaLekar.xaml.cs">
       <DependentUpon>RevizijaLekaLekar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UputZaAmbulantnoSpecijalistickiPregled.xaml.cs">
+      <DependentUpon>UputZaAmbulantnoSpecijalistickiPregled.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZakaziPregledLekar.xaml.cs">
+      <DependentUpon>ZakaziPregledLekar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ZamenaLekova.xaml.cs">
       <DependentUpon>ZamenaLekova.xaml</DependentUpon>
     </Compile>
@@ -95,6 +104,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="BlogGlavni.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DavanjeUputa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -422,11 +435,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UputZaAmbulantnoSpecijalistickiPregled.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UredjivanjeBloga.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowPacijent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ZakaziPregledLekar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
