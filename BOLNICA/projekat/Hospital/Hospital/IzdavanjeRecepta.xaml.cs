@@ -22,7 +22,7 @@ namespace Hospital
         public IzdavanjeRecepta()
         {
             InitializeComponent();
-            datePicker.DisplayDate = new DateTime(2021, 04, 17);
+            datePicker.DisplayDate = new DateTime(2021, 04, 10);
         }
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
@@ -30,17 +30,36 @@ namespace Hospital
             DateTime newdate = (DateTime)(((DatePicker)sender).SelectedDate);
         }
 
+        public int generateID()
+        {
+            int ret = 0;
+            RecipeFileStorage storage = new RecipeFileStorage();
+            List<Recipe> allRecipe = storage.GetAll();
+            foreach (Recipe recipes in allRecipe)
+            {
+                foreach (Recipe recipe in allRecipe)
+                {
+                    if (ret == recipe.idRecipe)
+                    {
+                        ++ret;
+                        break;
+                    }
+                }
+            }
+            return ret;
+        }
+
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            RecipeFileStorage st = new RecipeFileStorage();
+            RecipeFileStorage storageRecipe = new RecipeFileStorage();
             List<Recipe> recipeList = new List<Recipe>();
-            int id = 1;
-            Recipe r = new Recipe(id, Convert.ToString(textBox.Text), Convert.ToString(textBox1.Text), Convert.ToString(textBox2),
-                Convert.ToString(textBox3), datePicker.DisplayDate, Convert.ToString(textBox5.Text),
+            
+            Recipe r = new Recipe(generateID(), Convert.ToString(textBox.Text), Convert.ToString(textBox1.Text), Convert.ToString(textBox2.Text),
+                Convert.ToString(textBox3.Text), datePicker.DisplayDate, Convert.ToString(textBox5.Text),
                 Convert.ToInt16(textBox6.Text), Convert.ToInt16(textBox7.Text), Convert.ToString(textBox8.Text), Convert.ToString(textBox9.Text),
                 Convert.ToString(textBox10.Text), Convert.ToDateTime(textBox11.Text), Convert.ToDateTime(textBox12.Text),
                 Convert.ToInt16(textBox13.Text));
-            st.Save(r);
+            storageRecipe.Save(r);
             recipeList.Add(r);
             //this.Close();
         }

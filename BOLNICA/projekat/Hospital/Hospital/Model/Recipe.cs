@@ -22,12 +22,12 @@ public class Recipe
     public int idMedicine;
     public String quantity;
     public String diagnosis;
-    public String opis;
+    public String description;
     public DateTime beginning;
     public DateTime end;
     public int number;
 
-    public Recipe(int id, String n, String s, String dateB, String idH, DateTime d, String mr, int idd, int idm, String q, String di, String op, DateTime b, DateTime e, int num)
+    public Recipe(int id, String n, String s, String dateB, String idH, DateTime d, String mr, int idd, int idm, String q, String di, String des, DateTime b, DateTime e, int num)
     {
         idRecipe = id;
         name = n;
@@ -40,7 +40,7 @@ public class Recipe
         idMedicine = idm;
         quantity = q;
         diagnosis = di;
-        opis = op;
+        description = des;
         beginning = b;
         end = e;
         number = num;
@@ -221,18 +221,18 @@ public class Recipe
             }
         }
     }
-    public String Opis
+    public String Description
     {
         get
         {
-            return opis;
+            return description;
         }
         set
         {
-            if (value != opis)
+            if (value != description)
             {
-                opis = value;
-                OnPropertyChanged("Opis");
+                description = value;
+                OnPropertyChanged("Description");
             }
         }
     }

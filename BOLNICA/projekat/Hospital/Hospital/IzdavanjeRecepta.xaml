@@ -15,7 +15,7 @@
         <Label x:Name="label3" Content="Broj zdravstvene knjizice" HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="label4" Content="Datum propisivanja leka" HorizontalAlignment="Left" Margin="10,231,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="label5" Content="Broj kartona/protokola" HorizontalAlignment="Left" Margin="10,279,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="label6" Content="ID broj lekara" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label6" Content="ID lekara" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="label7" Content="Sifra propisanog leka" HorizontalAlignment="Left" Margin="10,381,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="label8" Content="Dijagnoza" HorizontalAlignment="Left" Margin="10,479,0,0" VerticalAlignment="Top" FontSize="16"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="284,29,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
@@ -27,7 +27,7 @@
         <TextBox x:Name="textBox6" HorizontalAlignment="Left" Height="23" Margin="284,330,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
         <TextBox x:Name="textBox7" HorizontalAlignment="Left" Height="23" Margin="284,381,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
         <TextBox x:Name="textBox8" HorizontalAlignment="Left" Height="23" Margin="284,432,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
-        <Label x:Name="label9" Content="Kolicina leka" HorizontalAlignment="Left" Margin="13,432,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label9" Content="Gramaza" HorizontalAlignment="Left" Margin="13,432,0,0" VerticalAlignment="Top" FontSize="16"/>
         <TextBox x:Name="textBox9" HorizontalAlignment="Left" Height="23" Margin="284,488,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
         <Label x:Name="label10" Content="Opis" HorizontalAlignment="Left" Margin="10,540,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="label11" Content="Pocetak terapije" HorizontalAlignment="Left" Margin="13,600,0,0" VerticalAlignment="Top" FontSize="16"/>
