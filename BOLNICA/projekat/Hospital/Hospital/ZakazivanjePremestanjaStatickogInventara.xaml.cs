@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.Controller;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -34,6 +35,7 @@ namespace Hospital
         private int idRoom ;
         private int quantity;
         private DateTime dateExecution;
+        private Inventory inventoryChandge;
 
         public ZakazivanjePremestanjaStatickogInventara(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex)
         {
@@ -54,7 +56,7 @@ namespace Hospital
 
         private void doMovement()
         {
-            InventoryFileStorage inventoryStorage = new InventoryFileStorage();
+            /*InventoryFileStorage inventoryStorage = new InventoryFileStorage();
             RoomFileStorage roomStorage = new RoomFileStorage();
             RoomInventoryFileStorage roomInventoryStorage = new RoomInventoryFileStorage();
 
@@ -125,7 +127,11 @@ namespace Hospital
                 }
 
             StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
-            storage.DeleteByIds(idRoom,-1,inventory.InventoryId);
+            storage.DeleteByIds(idRoom,-1,inventory.InventoryId);*/
+
+            InventoryController controller = new InventoryController();
+            controller.moveInventory();
+
         }
 
         public void doWork()
@@ -153,6 +159,7 @@ namespace Hospital
             
             Task task = new Task(doWork);
             task.Start();
+          
             frame.NavigationService.Navigate(this);
         }
     }

@@ -61,8 +61,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller\InventoryController.cs" />
+    <Compile Include="Controller\RoomsController.cs" />
     <Compile Include="Model\StaticInventoryMovement.cs" />
     <Compile Include="Model\StaticInvnetoryMovementFileStorage.cs" />
+    <Compile Include="Service\InventoryService.cs" />
+    <Compile Include="Service\RoomsService.cs" />
     <Compile Include="ZakazivanjePremestanjaStatickogInventara.xaml.cs">
       <DependentUpon>ZakazivanjePremestanjaStatickogInventara.xaml</DependentUpon>
     </Compile>
