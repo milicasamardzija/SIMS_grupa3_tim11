@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,26 +27,60 @@ namespace Hospital
             get;
             set;
         }
+        private DateTime dateExecution;
+        private Inventory inventory;
+        private int idRoom;
+        private int quantity;
         public ManagerView()
         {
             InitializeComponent();
             RoomList = loadJason();
             frame.NavigationService.Navigate(new Magacin(RoomList));
-
-         //   getTasks();
+            getTasks();
         }
 
-    /*    private void getTasks()
+      private void getTasks()
         {
-          StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
+            StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
+            InventoryFileStorage storageInventory = new InventoryFileStorage();
 
             foreach (StaticInventoryMovement task in storage.GetAll())
             {
-                Task t = new Task();
+                dateExecution = task.Date;
+                idRoom = task.RoomInId;
+                quantity = task.Quantity;
+
+                foreach (Inventory i in storageInventory.GetAll())
+                {
+                    if (i.InventoryId == task.InventoryId)
+                    {
+                        inventory = i;
+                        break;
+                    }
+                }
+
+                Task t = new Task(doWork);
                 t.Start();
             }
 
-        }*/
+        }
+
+        private void doWork()
+        {
+            StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
+            TimeSpan t = dateExecution.Subtract(DateTime.Now);
+            
+            if (dateExecution < DateTime.Now)
+            {
+                storage.moveInventory(inventory, idRoom, quantity);
+            }
+            else
+            {
+                Thread.Sleep(t);
+                storage.moveInventory(inventory, idRoom, quantity);
+            }
+
+        }
 
         private void magacin(object sender, RoutedEventArgs e)
         {

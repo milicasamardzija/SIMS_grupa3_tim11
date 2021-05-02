@@ -10,9 +10,5 @@ namespace Hospital.Controller
     class InventoryController
     {
         private InventoryService service = new InventoryService();
-        public void moveInventory()
-        {
-            service.moveInventory();
-        }
     }
 }
