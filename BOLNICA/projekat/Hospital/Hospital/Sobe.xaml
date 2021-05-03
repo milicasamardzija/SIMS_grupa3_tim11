@@ -33,9 +33,16 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Prikaz" Background="LightBlue" Click="prikazInventara" FontWeight="Bold"/>
+                            <Button Content="Inventar" Background="LightBlue" Click="prikazInventara" FontWeight="Bold"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button Content="Radovi" Background="LightBlue" Click="prikazRadova" FontWeight="Bold"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>

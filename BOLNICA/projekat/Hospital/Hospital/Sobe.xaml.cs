@@ -56,5 +56,10 @@ namespace Hospital
         {
            frameMagacin.NavigationService.Navigate(new PrikazInventaraUSobi((Room)ListaProstorija.SelectedItem));
         }
+
+        private void prikazRadova(object sender, RoutedEventArgs e)
+        {
+            SobeFrame.NavigationService.Navigate(new PrikazRadovaUSobi());
+        }
     }
 }
