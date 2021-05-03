@@ -7,8 +7,24 @@ using System;
 
 public class Doctor : User
 {
-   public int doctorId;
+    public int doctorId;
    public String specialization;
    public int freeDays = 25;
 
+
+    public int DoctorId
+    {
+        get
+        {
+            return doctorId;
+        }
+        set
+        {
+            if (value != doctorId)
+            {
+                doctorId = value;
+                OnProperychanged("DoctorId");
+            }
+        }
+    }
 }

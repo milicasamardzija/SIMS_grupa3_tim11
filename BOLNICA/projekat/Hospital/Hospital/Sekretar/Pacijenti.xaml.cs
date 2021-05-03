@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.Sekretar;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,8 +45,10 @@ namespace Hospital
             noviGNalog.ShowDialog();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void allCheckups(object sender, RoutedEventArgs e)
         {
+            PrikaziPreglede ch = new PrikaziPreglede();
+            ch.Show();
 
         }
     }

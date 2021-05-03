@@ -8,52 +8,99 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Sekretar"
     Width="800"
-    Height="450"
+    Height="500"
     Visibility="Visible"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid Background="LightBlue">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Offset="0" Color="Gray" />
+                <GradientStop Offset="1" Color="White" />
+                <GradientStop Offset="0.094" Color="#FF2BACC5" />
+            </LinearGradientBrush>
+        </Grid.Background>
         <Frame
             x:Name="frameS"
             Width="794"
-            Height="391"
-            Margin="0,24,0,0"
+            Height="444"
+            Margin="0,30,-0.4,-3.6"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            NavigationUIVisibility="Hidden" />
+            NavigationUIVisibility="Hidden">
+            <Frame.Background>
+                <ImageBrush />
+            </Frame.Background>
+        </Frame>
         <Menu
             Width="794"
-            Height="24"
+            Height="30"
             Margin="0,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <MenuItem
                 FontSize="16"
                 FontWeight="Bold"
-                Header="POCETNA"
-                TextElement.Foreground="#FF0852AE" />
+                Header="      ANALITIKA"
+                TextElement.Foreground="#FF0852AE">
+                <MenuItem.Background>
+                    <ImageBrush
+                        AlignmentX="Left"
+                        ImageSource="Chart-Bar-icon.png"
+                        Stretch="None" />
+                </MenuItem.Background>
+            </MenuItem>
             <MenuItem
                 Click="blog"
                 FontSize="16"
                 FontWeight="Bold"
-                Header="BLOG"
-                TextElement.Foreground="#FF0852AE" />
+                Header="    OBAVESTENJA"
+                TextElement.Foreground="#FF0852AE">
+                <MenuItem.Background>
+                    <ImageBrush
+                        AlignmentX="Left"
+                        ImageSource="bell-icon.png"
+                        Stretch="None" />
+                </MenuItem.Background>
+            </MenuItem>
             <MenuItem
                 FontSize="16"
                 FontWeight="Bold"
-                Header="MOJ PROFIL"
-                TextElement.Foreground="#FF0852AE" />
+                Header="     MOJ PROFIL"
+                TextElement.Foreground="#FF0852AE">
+                <MenuItem.Background>
+                    <ImageBrush
+                        AlignmentX="Left"
+                        ImageSource="User-icon.png"
+                        Stretch="None" />
+                </MenuItem.Background>
+            </MenuItem>
             <MenuItem
                 Click="pacijenti"
                 FontSize="16"
                 FontWeight="Bold"
-                Header="PACIJENTI"
-                TextElement.Foreground="#FF0852AE" />
+                Header="     PACIJENTI"
+                TextElement.Foreground="#FF0852AE">
+                <MenuItem.Background>
+                    <ImageBrush
+                        AlignmentX="Left"
+                        ImageSource="Patients-icon.png"
+                        Stretch="None" />
+                </MenuItem.Background>
+            </MenuItem>
             <MenuItem
+                Height="30"
                 FontSize="16"
                 FontWeight="Bold"
-                Header="TRANSFER PACIJENATA"
-                TextElement.Foreground="#FF0852AE" />
+                Header="    TRANSFER PACIJENATA"
+                TextElement.Foreground="#FF0852AE">
+                <MenuItem.Background>
+                    <ImageBrush
+                        AlignmentX="Left"
+                        ImageSource="Transfer-icon.png"
+                        Stretch="None" />
+                </MenuItem.Background>
+            </MenuItem>
         </Menu>
 
 

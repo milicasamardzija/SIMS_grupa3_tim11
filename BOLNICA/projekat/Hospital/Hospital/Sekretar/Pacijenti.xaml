@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:Hospital"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Pacijenti"
-    d:DesignHeight="391"
+    d:DesignHeight="500"
     d:DesignWidth="794"
     mc:Ignorable="d">
 
@@ -25,93 +25,127 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="logo-removebg-preview.png" />
-        <TextBox
-            Width="302"
-            Height="68"
-            Margin="24,33,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Background="{x:Null}"
-            FontWeight="Bold"
-            Foreground="#FF03174F"
-            IsEnabled="False"
-            SelectionBrush="#FF1683DA"
-            Text="Deo aplikacije namenjen manipulaciji nalogom pacijenta: upravljanje nalozima, kreiranje novih, izmena postojecih, kao i predgled svih relevantnih podataka nasih pacijenata."
-            TextWrapping="Wrap" />
+
         <Button
-            Width="216"
-            Height="30"
-            Margin="45,135,0,0"
+            Width="180"
+            Height="32"
+            Margin="75,135,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="#FFD8E8E0"
             Click="prikaziPacijente"
-            Content="Prikaz registrovanih pacijenata"
+            Content="        Registrovani pacijenti"
             Cursor="Hand"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="User-Files-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
-            Width="216"
-            Height="28"
-            Margin="45,194,0,0"
+            Width="180"
+            Height="32"
+            Margin="75,194,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="#FFD8E8E0"
             Click="prikaziGPacijenteButton"
-            Content="Prikaz  guest pacijenata"
+            Content="Guest pacijenti"
             Cursor="Hand"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="Folder-Sync-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
             Width="168"
-            Height="30"
+            Height="32"
             Margin="375,135,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="#FFD8E8E0"
             Click="KreirajButton"
-            Content="Kreiraj novi nalog"
+            Content="Novi nalog"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="Button-White-Add-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
             Width="168"
-            Height="28"
+            Height="32"
             Margin="375,194,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="#FFD8E8E0"
             Click="kreirajGButton"
-            Content="Kreiraj novi guest nalog"
+            Content="   Novi guest nalog"
             Cursor="Hand"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="Add-icon.png"
+                    Opacity="0.8"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
-            Width="216"
-            Height="28"
-            Margin="45,266,0,0"
+            Width="180"
+            Height="32"
+            Margin="75,266,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="#FFD8E8E0"
-            Click="Button_Click"
-            Content="Pregled svih termina"
+            Click="allCheckups"
+            Content="     Pregled svih termina"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="Search-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
             Width="168"
-            Height="28"
+            Height="32"
             Margin="375,266,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Background="#FFD8E8E0"
-            Content="Placanje termina"
+            Content="    Placanje termina"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="Credit-Card-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
+        <Label
+            Margin="75,47,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="PACIJENTI ZDRAVO BOLNICE"
+            FontFamily="Chooper Black"
+            FontSize="18"
+            FontWeight="Bold"
+            Foreground="#FF123EB9" />
 
 
     </Grid>

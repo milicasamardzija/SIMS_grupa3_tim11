@@ -17,6 +17,11 @@ namespace Hospital.Sekretar
 {
     public partial class Alergeni : Window
     {
+        public Window window;
+        public MedicalRecord newRecord;
+        public Patient newPatient;
+        public ObservableCollection<Alergens> newAlergens;
+        public Alergens newAlergen;
 
         public ObservableCollection<Alergens> listAllAlergens
         {
@@ -28,25 +33,59 @@ namespace Hospital.Sekretar
             get;
             set;
         }
-        public Alergeni()
+        public Alergeni(Window w)
         {
             InitializeComponent();
             this.DataContext = this;
             listAllAlergens = loadJason();
+           // listAlergens = newAlergens; //selektovani se dodaju
+            window = w;
+
         }
 
         public ObservableCollection<Alergens> loadJason()
         {
             AlergensFileStorage afs = new AlergensFileStorage();
-           // ObservableCollection<Alergens> a = new ObservableCollection<Alergens>();
             ObservableCollection<Alergens> ret = new ObservableCollection<Alergens>(afs.GetAll());
 
             return ret;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddAlergens(object sender, RoutedEventArgs e)
         {
+            //AlergensFileStorage afs = new AlergensFileStorage();
 
+            //listAlergens.Add((Alergens)all.SelectedItem);
+            // listAllAlergens.Remove((Alergens)all.SelectedItem);
+            var item = listAllAlergens[all.CurrentCell.Column.DisplayIndex];
+            listAlergens.Add(item);
+            listAllAlergens.Remove(item);
+
+            all.ItemsSource = listAllAlergens;
+            selected.ItemsSource = listAlergens;
+
+            MedicalRecordsFileStorage mfs = new MedicalRecordsFileStorage();
+            PatientFileStorage pfs = new PatientFileStorage();
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+        private void Cancel(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

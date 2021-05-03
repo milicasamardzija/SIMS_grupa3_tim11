@@ -19,6 +19,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <DataGrid
+            x:Name="all"
             Width="208"
             Height="191"
             Margin="29,41,0,0"
@@ -27,6 +28,7 @@
             ItemsSource="{Binding Path=listAllAlergens}" />
 
         <DataGrid
+            x:Name="selected"
             Width="205"
             Height="191"
             Margin="298,41,0,0"
@@ -57,7 +59,7 @@
             Margin="408,243,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="Button_Click"
+            Click="AddAlergens"
             Content="Dodaj"
             FontWeight="Bold"
             Foreground="#FF0E2C91"

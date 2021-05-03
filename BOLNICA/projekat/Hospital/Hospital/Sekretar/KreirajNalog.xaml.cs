@@ -73,9 +73,10 @@ namespace Hospital
         }
 
         private void dodajAlergene(object sender, RoutedEventArgs e)
-        {
-            Alergeni a = new Alergeni();
+        { 
+            Alergeni a = new Alergeni(Owner);
             a.Show();
+
         }
     }
 }
