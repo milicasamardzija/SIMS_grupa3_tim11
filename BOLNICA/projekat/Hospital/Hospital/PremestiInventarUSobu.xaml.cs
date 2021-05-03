@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -27,6 +28,10 @@ namespace Hospital
         public int idInventory;
         public Inventory inventory;
         public ObservableCollection<Room> listRooms;
+        private StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
+        private InventoryFileStorage inventoryStorage = new InventoryFileStorage();
+        private int idRoom;
+        private int quantity;
 
         public PremestiInventarUSobu(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, ObservableCollection<Room> listRoom)
         {
@@ -51,86 +56,10 @@ namespace Hospital
 
         private void premesti(object sender, RoutedEventArgs e)
         {
-            RoomInventoryFileStorage storage = new RoomInventoryFileStorage();
-            InventoryFileStorage inventoryStorage = new InventoryFileStorage();
-            RoomFileStorage roomStorage = new RoomFileStorage();
-
-            //argumenti
-            int idRoom = Convert.ToInt32(IdSobeTxt.Text);
-            int quantity = Convert.ToInt32(KolicinaTxt.Text);
-            String name = ImeTxt.SelectedText;
-            InventoryType type = (InventoryType)TypeTxt.SelectedIndex;
-
-            //ako ne postoji inventar u toj sobi, odnosno pravi se novi RoomInventory objekat
-            Boolean nadjen = true;
-
-            //liste
-            List<RoomInventory> all = storage.GetAll();
-            List<Inventory> inventories = inventoryStorage.GetAll();
-
-            if (all != null)
-            {
-
-                foreach (RoomInventory roomInv in all)
-                {
-                    if (roomInv.Inventory != null) {
-                        //ako vec postoji zeljeni inventar u unetoj sobi
-                        if (roomInv.Inventory.InventoryId == idInventory && roomInv.Room.RoomId == idRoom)
-                        {
-                            roomInv.Quantity += quantity;   //povecava se kolicina inventara u sobi
-                            nadjen = false;
-                            storage.SaveAll(all);           //kompletna izmenja lista se serijalizuje
-                            break;
-                        }
-                    }
-                }
-
-                //ako ne postoji izabrani inventar u unetoj sobi
-                if (nadjen)
-                {
-                    Room room = new Room();
-                    Inventory invent = new Inventory();
-
-                    foreach (Room r in roomStorage.GetAll())
-                    {
-                        if (r.RoomId == idRoom)
-                        {
-                            room.RoomId = r.RoomId;
-                            room.Floor = r.Floor;
-                            room.Occupancy = r.Occupancy;
-                            room.Purpose = r.Purpose;
-                            break;
-                        }
-                    }
-
-                    foreach (Inventory i in inventoryStorage.GetAll())
-                    {
-                        if (i.InventoryId == idInventory)
-                        {
-                            invent.InventoryId = i.InventoryId;
-                            invent.Name = i.Name;
-                            invent.Quantity = i.Quantity;
-                            invent.Type = i.Type;
-                            break;
-                        }
-                    }
-
-                    RoomInventory newRInventory = new RoomInventory(room.RoomId,room, invent.InventoryId, invent, quantity);
-                    storage.Save(newRInventory);
-                }
-
-                foreach (Inventory i in inventories)
-                {
-                    if (i.InventoryId == idInventory)
-                    {
-                        i.Quantity -= quantity;
-                        inventoryStorage.SaveAll(inventories);
-                        listInventory[index] = new Inventory(inventory.InventoryId, inventory.Name, i.Quantity, inventory.Type);
-                        break;
-                    }
-                }
-            }
-
+            idRoom = Convert.ToInt32(IdSobeTxt.Text);
+            
+            quantity = Convert.ToInt32(KolicinaTxt.Text);
+            inventoryStorage.moveInventory(inventory, idRoom, -1, quantity);
             frame.NavigationService.Navigate(this);
         }
     }

@@ -59,7 +59,11 @@ namespace Hospital
 
         private void premesti(object sender, RoutedEventArgs e)
         {
-            InventarPemesti.NavigationService.Navigate(new PremestanjeInventaraDijalog(InventarPemesti, listInventory, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex, room));
+            Inventory inventory = (Inventory)ListaInventara.SelectedItem;
+            if (inventory.Type == InventoryType.staticki)
+                InventarPemesti.NavigationService.Navigate(new ZakazivanjePremestanjaStatickogInventaraUSobu(InventarPemesti, listInventory, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex, room));
+            else
+                InventarPemesti.NavigationService.Navigate(new PremestanjeInventaraDijalog(InventarPemesti, listInventory, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex, room));
         }
     }
 }

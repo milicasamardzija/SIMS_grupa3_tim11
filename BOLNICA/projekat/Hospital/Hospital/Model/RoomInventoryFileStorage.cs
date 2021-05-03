@@ -43,7 +43,7 @@ public class RoomInventoryFileStorage
 
         foreach (RoomInventory temp in allInventories)
         {
-            if (temp.Inventory.InventoryId == roomInventory.Inventory.InventoryId)
+            if (temp.idInventory == roomInventory.idInventory && temp.idRoom == roomInventory.idRoom)
             {
                 allInventories.Remove(temp);
                 break;
@@ -73,7 +73,7 @@ public class RoomInventoryFileStorage
 
         foreach (RoomInventory inventory in allInventories)
         {
-            if (inventory.Room.RoomId == id)
+            if (inventory.idRoom == id)
             {
                 allInventories.Remove(inventory);
                 break;

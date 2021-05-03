@@ -5,11 +5,23 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Hospital.Model
 {
     class StaticInvnetoryMovementFileStorage
     {
+        private InventoryFileStorage inventoryStorage { get; set; }
+        private RoomFileStorage roomStorage { get; set; }
+        private RoomInventoryFileStorage roomInventoryStorage { get; set; }
+
+        public StaticInvnetoryMovementFileStorage()
+        {
+            inventoryStorage = new InventoryFileStorage();
+            roomStorage = new RoomFileStorage();
+            roomInventoryStorage = new RoomInventoryFileStorage();
+        }
+
         public List<StaticInventoryMovement> GetAll()
         {
             List<StaticInventoryMovement> allInventory = new List<StaticInventoryMovement>();
@@ -52,12 +64,14 @@ namespace Hospital.Model
             SaveAll(all);
         }
 
-        public void moveInventory(Inventory inventory, int idRoom, int quantity)
+        public void moveInventoryStatic(Inventory inventory, int idRoomIn, int idRoomOut, int quantity)
         {
-            InventoryFileStorage inventoryStorage = new InventoryFileStorage();
-            RoomFileStorage roomStorage = new RoomFileStorage();
-            RoomInventoryFileStorage roomInventoryStorage = new RoomInventoryFileStorage();
+            moveInventory(inventory,idRoomIn,idRoomOut,quantity);
+            this.DeleteByIds(idRoomIn, idRoomOut, inventory.InventoryId);
+        }
 
+        public void moveInventory(Inventory inventory, int idRoomIn, int idRoomOut, int quantity)
+        {
             //ako ne postoji inventar u toj sobi, odnosno pravi se novi RoomInventory objekat
             Boolean nadjen = true;
 
@@ -65,67 +79,104 @@ namespace Hospital.Model
             List<RoomInventory> all = roomInventoryStorage.GetAll();
             List<Inventory> inventories = inventoryStorage.GetAll();
 
-            foreach (RoomInventory roomInv in all)
-            {
-                //ako vec postoji zeljeni inventar u unetoj sobi
-                if (roomInv.idInventory == inventory.InventoryId && roomInv.idRoom == idRoom)
+            if (idRoomIn != -1) {
+                foreach (RoomInventory roomInv in all)
                 {
-                    roomInv.Quantity += quantity;   //povecava se kolicina inventara u sobi
-                    nadjen = false;
-                    roomInventoryStorage.SaveAll(all);           //kompletna izmenja lista se serijalizuje
-                    break;
+                    //ako vec postoji zeljeni inventar u unetoj sobi
+                    if (roomInv.idInventory == inventory.InventoryId && roomInv.idRoom == idRoomIn)
+                    {
+                        roomInv.Quantity += quantity;     //povecava se kolicina inventara u sobi
+                        nadjen = false;
+                        roomInventoryStorage.SaveAll(all);//kompletna izmenja lista se serijalizuje
+                        break;
+                    }
+
                 }
 
-            }
-
-            //ako ne postoji izabrani inventar u unetoj sobi
-            if (nadjen)
-            {
-                Room room = new Room();
-                Inventory invent = new Inventory();
-
-                foreach (Room r in roomStorage.GetAll())
+                //ako ne postoji izabrani inventar u unetoj sobi
+                if (nadjen)
                 {
-                    if (r.RoomId == idRoom)
+                    Room room = new Room();
+                    Inventory invent = new Inventory();
+
+                    foreach (Room r in roomStorage.GetAll())
                     {
-                        room.RoomId = r.RoomId;
-                        room.Floor = r.Floor;
-                        room.Occupancy = r.Occupancy;
-                        room.Purpose = r.Purpose;
+                        if (r.RoomId == idRoomIn)
+                        {
+                            room.RoomId = r.RoomId;
+                            room.Floor = r.Floor;
+                            room.Occupancy = r.Occupancy;
+                            room.Purpose = r.Purpose;
+                            break;
+                        }
+                    }
+
+                    foreach (Inventory i in inventoryStorage.GetAll())
+                    {
+                        if (i.InventoryId == inventory.InventoryId)
+                        {
+                            invent.InventoryId = i.InventoryId;
+                            invent.Name = i.Name;
+                            invent.Quantity = i.Quantity;
+                            invent.Type = i.Type;
+                            break;
+                        }
+                    }
+                    RoomInventory newInventory = new RoomInventory(idRoomIn, room, invent.InventoryId, invent, quantity);
+                    MessageBox.Show(Convert.ToString(newInventory.idRoom));
+                    all.Add(newInventory);
+                }
+            }
+            else //ako se prebacuje u magacin
+            {
+                foreach (Inventory invent in inventories)
+                {
+                    if (invent.InventoryId == inventory.InventoryId)
+                    {
+                        invent.Quantity += quantity;
+                        inventoryStorage.SaveAll(inventories);
                         break;
                     }
                 }
+            }
 
-                foreach (Inventory i in inventoryStorage.GetAll())
+            if (idRoomOut == -1)
+            {
+                foreach (Inventory i in inventories)
                 {
                     if (i.InventoryId == inventory.InventoryId)
                     {
-                        invent.InventoryId = i.InventoryId;
-                        invent.Name = i.Name;
-                        invent.Quantity = i.Quantity;
-                        invent.Type = i.Type;
+                        i.Quantity -= quantity;
+
+                        if (i.Quantity == 0)
+                        {
+                            inventories.Remove(i);
+                        }
+
+                        inventoryStorage.SaveAll(inventories);
+                        roomInventoryStorage.SaveAll(all);
                         break;
                     }
                 }
-
-                RoomInventory newInventory = new RoomInventory(room.RoomId, room, invent.InventoryId, invent, quantity);
-                roomInventoryStorage.Save(newInventory);
-
             }
-
-            foreach (Inventory i in inventories)
+            else
             {
-                if (i.InventoryId == inventory.InventoryId)
+                foreach (RoomInventory ri in all)
                 {
-                    i.Quantity -= quantity;
-                    inventoryStorage.SaveAll(inventories);
-                    //                       listInventory[index] = new Inventory(inventory.InventoryId, inventory.Name, i.Quantity, inventory.Type);
-                    break;
+                    if (ri.idRoom == idRoomOut && ri.idInventory == inventory.InventoryId)
+                    {
+                        ri.Quantity -= quantity;
+
+                        if (ri.Quantity == 0)
+                        {
+                            all.Remove(ri);
+                        }
+
+                        roomInventoryStorage.SaveAll(all);
+                        break;
+                    }
                 }
             }
-
-            StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
-            storage.DeleteByIds(idRoom, -1, inventory.InventoryId);
         }
     }
 }

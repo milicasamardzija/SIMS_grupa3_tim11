@@ -50,7 +50,7 @@ namespace Hospital
 
             foreach (RoomInventory inventory in storageInventory.GetAll())
             {
-                if (inventory.Room.RoomId == id)
+                if (inventory.idRoom== id)
                 {
                     storageInventory.DeleteByIdRoom(id);
                 }

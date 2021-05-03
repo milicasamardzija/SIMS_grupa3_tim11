@@ -29,7 +29,8 @@ namespace Hospital
         }
         private DateTime dateExecution;
         private Inventory inventory;
-        private int idRoom;
+        private int idRoomIn;
+        private int idRoomOut;
         private int quantity;
         public ManagerView()
         {
@@ -47,7 +48,8 @@ namespace Hospital
             foreach (StaticInventoryMovement task in storage.GetAll())
             {
                 dateExecution = task.Date;
-                idRoom = task.RoomInId;
+                idRoomIn = task.RoomInId;
+                idRoomOut = task.RoomOutId;
                 quantity = task.Quantity;
 
                 foreach (Inventory i in storageInventory.GetAll())
@@ -72,12 +74,12 @@ namespace Hospital
             
             if (dateExecution < DateTime.Now)
             {
-                storage.moveInventory(inventory, idRoom, quantity);
+                storage.moveInventoryStatic(inventory, idRoomIn, idRoomOut, quantity);
             }
             else
             {
                 Thread.Sleep(t);
-                storage.moveInventory(inventory, idRoom, quantity);
+                storage.moveInventoryStatic(inventory, idRoomIn, idRoomOut, quantity);
             }
 
         }

@@ -1,5 +1,4 @@
-﻿using Hospital.Controller;
-using Hospital.Model;
+﻿using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,29 +18,25 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for ZakazivanjePremestanjaStatickogInventara.xaml
-    /// </summary>
-    /// public Frame frame;
-   
-    public partial class ZakazivanjePremestanjaStatickogInventara : UserControl
+    public partial class ZakazivanjePremestanjaStatickogInventaraUSobu : UserControl
     {
         private ObservableCollection<Inventory> listInventory;
         private Inventory inventory;
         private Frame frame;
         private DateTime date;
-        private int idRoom ;
+        private int idRoom;
         private int quantity;
         private DateTime dateExecution;
         private String time;
-
-        public ZakazivanjePremestanjaStatickogInventara(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex)
+        private Room roomOut;
+        public ZakazivanjePremestanjaStatickogInventaraUSobu(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, Room room)
         {
             InitializeComponent();
             frame = magacinFrame;
             listInventory = list;
-            inventory = selecetedInventory; 
-    
+            inventory = selecetedInventory;
+            roomOut = room;
+
             ImeTxt.SelectedText = inventory.Name;
             KolicinaTxt.SelectedText = Convert.ToString(inventory.Quantity);
             TypeTxt.SelectedIndex = (int)inventory.Type;
@@ -54,41 +49,49 @@ namespace Hospital
         public void doWork()
         {
             StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
-            TimeSpan t = dateExecution.Subtract(DateTime.Now);
+            TimeSpan t = dateExecution.Subtract(DateTime.Now); //ovo racuna vreme koje je potrebno da nit spava
 
-            if (dateExecution < DateTime.Now)
+            if (dateExecution < DateTime.Now) //ovo je slucaj kada je vreme premestanja proslo dok je aplikacija bila iskljucena,
+                                              //pa cim se ukljuci dolazi do premestanja
             {
-                storage.moveInventoryStatic(inventory, idRoom,-1, quantity);
+                storage.moveInventoryStatic(inventory, idRoom, roomOut.RoomId, quantity);
             }
             else
-            { 
+            {
                 Thread.Sleep(t);
-                storage.moveInventoryStatic(inventory, idRoom,-1, quantity);
+                storage.moveInventoryStatic(inventory, idRoom, roomOut.RoomId, quantity);
             }
         }
 
         private void premesti(object sender, RoutedEventArgs e)
         {
             //argumenti
-            idRoom = Convert.ToInt32(IdSobeTxt.Text);
+            if (!IdSobeTxt.Text.Equals(""))
+            {
+                idRoom = Convert.ToInt32(IdSobeTxt.Text);
+            } else
+            {
+                idRoom = -1;
+            }
             quantity = Convert.ToInt32(KolicinaTxt.Text);
             date = (DateTime)DatumTxt.SelectedDate;
             time = VremeTxt.Text;
 
-            TimeSpan t = TimeSpan.ParseExact(time,"c",null);
+            //ove dve linije dodaju na datum uneto vreme(datum uzimam preko DatePicker-a a vreme je String)
+            TimeSpan t = TimeSpan.ParseExact(time, "c", null); 
             dateExecution = date.Add(t);
 
-            saveNewMovement();
-            
+            saveNewMovement(); //ovde samo pravim novi objekat klase u kojoj imam sve informacije o premestanju
+
             Task task = new Task(doWork);
             task.Start();
-          
+
             frame.NavigationService.Navigate(this);
         }
 
         private void saveNewMovement()
         {
-            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, -1, inventory.InventoryId, quantity, dateExecution);
+            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, roomOut.RoomId, inventory.InventoryId, quantity, dateExecution);
             StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
             storage.Save(newMovement);
         }
