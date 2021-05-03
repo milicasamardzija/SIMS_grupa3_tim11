@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
               Height="400" Width="470" Background="AliceBlue">
     <Grid>
-        <TextBox Name="BeleskaTxt" HorizontalAlignment="Left" Height="197" Margin="65,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="338" FontSize="24" SelectionBrush="#FFD74D00" Background="#FF42BCBA" FontWeight="Bold"/>
+        <TextBlock Name="BeleskaTxt" HorizontalAlignment="Left" Height="197" Margin="65,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="338" FontSize="24" Background="#FF42BCBA" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Margin="28,36,0,0" TextWrapping="Wrap" Text="Zakazani radovi u sobi:" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Height="56" Width="288" Foreground="#FF2333AE"/>
     </Grid>
 </UserControl>

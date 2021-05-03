@@ -70,10 +70,14 @@
     <Compile Include="PrikazRadovaUSobi.xaml.cs">
       <DependentUpon>PrikazRadovaUSobi.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PrikazSobaRenoviranje.xaml.cs">
+      <DependentUpon>PrikazSobaRenoviranje.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RenoviranjeSobe.xaml.cs">
       <DependentUpon>RenoviranjeSobe.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\InventoryService.cs" />
+    <Compile Include="Service\RoomRenovationFileStorage.cs" />
     <Compile Include="Service\RoomsService.cs" />
     <Compile Include="ZakazivanjePremestanjaStatickogInventara.xaml.cs">
       <DependentUpon>ZakazivanjePremestanjaStatickogInventara.xaml</DependentUpon>
@@ -368,6 +372,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrikazRadovaUSobi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikazSobaRenoviranje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

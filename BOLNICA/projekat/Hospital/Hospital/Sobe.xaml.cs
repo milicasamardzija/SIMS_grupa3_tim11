@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for Sobe.xaml
-    /// </summary>
     public partial class Sobe : UserControl
     {
         public ObservableCollection<Room> RoomList
@@ -60,6 +57,16 @@ namespace Hospital
         private void prikazRadova(object sender, RoutedEventArgs e)
         {
             SobeFrame.NavigationService.Navigate(new PrikazRadovaUSobi());
+        }
+
+        private void zakaziRenoviranje(object sender, RoutedEventArgs e)
+        {
+            SobeFrame.NavigationService.Navigate(new RenoviranjeSobe(SobeFrame, (Room)ListaProstorija.SelectedItem));
+        }
+
+        private void RenoviranjePrikaz(object sender, RoutedEventArgs e)
+        {
+            frameMagacin.NavigationService.Navigate(new PrikazSobaRenoviranje());
         }
     }
 }

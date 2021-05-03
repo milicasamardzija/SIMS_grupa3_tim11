@@ -1,4 +1,5 @@
-﻿using Hospital.Service;
+﻿using Hospital.Model;
+using Hospital.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,10 @@ namespace Hospital.Controller
 {
     class RoomsController
     {
-        
+        private RoomsService service = new RoomsService();
+        public void zakaziRenoviranje(RoomRenovation renovation)
+        {
+            service.zakaziRenoviranje(renovation);
+        }
     }
 }
