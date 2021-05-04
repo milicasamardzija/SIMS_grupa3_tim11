@@ -10,9 +10,17 @@ namespace Hospital.Service
     class MedicineService
     {
         private MedicineFileStorage storageMedicine;
+        private MedicineReviewFileStorage storageReview;
         public MedicineService()
         {
             storageMedicine = new MedicineFileStorage();
+            storageReview = new MedicineReviewFileStorage();
+        }
+
+        public void sendMediciToRevision(Medicine newMedicine)
+        {
+            storageMedicine.Save(newMedicine);
+       //     storageReview.Save(new MedicineReview(newMedicine));
         }
     }
 }

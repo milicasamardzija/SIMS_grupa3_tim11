@@ -42,6 +42,10 @@ namespace Hospital.Model
             approved = approvement;
         }
 
+        public Medicine()
+        {
+        }
+
         public int IdMedicine
         {
             get

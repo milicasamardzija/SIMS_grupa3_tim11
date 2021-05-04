@@ -29,6 +29,10 @@ namespace Hospital
             MedicineList = loadJason();
         }
 
+        public LekoviPrikazUpravnik()
+        {
+        }
+
         public ObservableCollection<Medicine> loadJason()
         {
             MedicineFileStorage storage = new MedicineFileStorage();
@@ -47,7 +51,7 @@ namespace Hospital
 
         private void dodaj(object sender, RoutedEventArgs e)
         {
-
+            frameUprvanik.NavigationService.Navigate(new DodavanjeLekaRevizija(frameUprvanik));
         }
 
         private void izmeni(object sender, RoutedEventArgs e)

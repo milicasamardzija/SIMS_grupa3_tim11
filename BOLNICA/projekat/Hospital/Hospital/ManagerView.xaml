@@ -15,6 +15,6 @@
             <MenuItem Header="Lekovi" FontSize="30" Click="lekovi"></MenuItem>
             <GridSplitter Background="Black" Height="42" Width="1"/>
         </Menu>
-        <Frame Name="frame" HorizontalAlignment="Left" Margin="0,40,-6.4,-31.6" VerticalAlignment="Top" Height="642" Width="1280" NavigationUIVisibility="Hidden" />
+        <Frame Name="frame" HorizontalAlignment="Left" Margin="0,40,-6.4,0" VerticalAlignment="Top" Height="610" Width="1280" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>

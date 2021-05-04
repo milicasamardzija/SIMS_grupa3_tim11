@@ -64,6 +64,9 @@
     <Compile Include="Controller\InventoryController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
     <Compile Include="Controller\RoomsController.cs" />
+    <Compile Include="DodavanjeLekaRevizija.xaml.cs">
+      <DependentUpon>DodavanjeLekaRevizija.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LekoviPrikazUpravnik.xaml.cs">
       <DependentUpon>LekoviPrikazUpravnik.xaml</DependentUpon>
     </Compile>
@@ -154,6 +157,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="DodajPotroseniMaterijal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DodavanjeLekaRevizija.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

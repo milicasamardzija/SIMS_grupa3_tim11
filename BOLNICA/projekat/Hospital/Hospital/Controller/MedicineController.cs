@@ -1,4 +1,5 @@
-﻿using Hospital.Service;
+﻿using Hospital.Model;
+using Hospital.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,11 @@ namespace Hospital.Controller
         MedicineController()
         {
             service = new MedicineService();
+        }
+
+        public void sendMedicineToRevision(Medicine newMedicine)
+        {
+            service.sendMediciToRevision(newMedicine);
         }
     }
 }
