@@ -43,9 +43,10 @@ namespace Hospital
             get;
             set;
         }
-        public Medicine newMedicine;
-        public Frame frame;
+        private Frame frame;
         private MedicineController controller;
+        private List<int> medicineIds;
+        private List<int> ingredientsIds;
 
         public DodavanjeLekaRevizija(Frame frameUpravnik)
         {
@@ -56,7 +57,9 @@ namespace Hospital
             MedicinesBase = loadJasonMedicines();
             IngredientsMedicine = new ObservableCollection<Ingredient>();
             ReplacementMedicine = new ObservableCollection<Medicine>();
-            newMedicine = new Medicine();
+            controller = new MedicineController();
+            medicineIds = new List<int>();
+            ingredientsIds = new List<int>();
         }
 
         public ObservableCollection<Ingredient> loadJasonIngredients()
@@ -73,12 +76,44 @@ namespace Hospital
             return ret;
         }
 
+        public int generisiId()
+        {
+            int ret = 0;
+
+            MedicineFileStorage storage = new MedicineFileStorage();
+            List<Medicine> all = storage.GetAll();
+
+            foreach (Medicine mediicneBig in all)
+            {
+                foreach (Medicine medicine in all)
+                {
+                    if (ret == medicine.IdMedicine)
+                    {
+                        ++ret;
+                        break;
+                    }
+                }
+            }
+            return ret;
+        }
+
         private void dodajSastojak(object sender, RoutedEventArgs e)
         {
             IngredientsMedicine.Add((Ingredient)SastojciBaza.SelectedItem);
             IngredientsBase.Remove((Ingredient)SastojciBaza.SelectedItem);
         }
 
+        public void convert()
+        {
+            foreach (Medicine medicine in ReplacementMedicine)
+            {
+                medicineIds.Add(medicine.IdMedicine);
+            }
+            foreach (Ingredient ingredient in IngredientsMedicine)
+            {
+                ingredientsIds.Add(ingredient.IdIngredient);
+            }
+        }
         private void dodajZamenskiLek(object sender, RoutedEventArgs e)
         {
             ReplacementMedicine.Add((Medicine)ZamenskilekoviBaza.SelectedItem);
@@ -87,7 +122,9 @@ namespace Hospital
 
         private void Potvrdi(object sender, RoutedEventArgs e)
         {
-            controller.sendMedicineToRevision(newMedicine);
+            convert();
+            controller.sendMedicineToRevision(new Medicine(generisiId(),NazivTxt.Text,Convert.ToDouble(GramazaTxt.Text), TipTxt.Text,ingredientsIds,medicineIds,false),0);
+            frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));
         }
 
         private void Odustani(object sender, RoutedEventArgs e)

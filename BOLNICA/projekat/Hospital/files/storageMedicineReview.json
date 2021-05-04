@@ -1,18 +1,1 @@
-[
-  {
-    "idMedicineReview": 0,
-    "idMedicine": 0,
-    "idDoctor": 0,
-    "typeReview": 0,
-    "review": "Lek je odobren.",
-    "done": true
-  },
-  {
-    "idMedicineReview": 1,
-    "idMedicine": 2,
-    "idDoctor": 1,
-    "typeReview": 1,
-    "review": "",
-    "done": false
-  }
-]
+[{"IdMedicineReview":0,"IdMedicine":0,"IdDoctor":0,"TypeReview":0,"Review":"Lek je odobren.","Done":true},{"IdMedicineReview":1,"IdMedicine":2,"IdDoctor":1,"TypeReview":1,"Review":"","Done":false},{"IdMedicineReview":2,"IdMedicine":3,"IdDoctor":0,"TypeReview":0,"Review":"","Done":false}]

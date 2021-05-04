@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace Hospital.Controller
 {
-    class MedicineController
+    public class MedicineController
     {
         private MedicineService service;
-        MedicineController()
+        public MedicineController()
         {
             service = new MedicineService();
         }
 
-        public void sendMedicineToRevision(Medicine newMedicine)
+        public void sendMedicineToRevision(Medicine newMedicine, int idDoctor)
         {
-            service.sendMediciToRevision(newMedicine);
+            service.sendMediciToRevision(newMedicine, idDoctor);
         }
     }
 }
