@@ -12,6 +12,8 @@ namespace Hospital.Model
     {
         private int idMedicineReview;
         private int idMedicine;
+        private int idDoctor;
+        private Doctor doctor;
         private ReviewType typeReview;
         private String review;
         private Boolean done;
@@ -26,10 +28,11 @@ namespace Hospital.Model
             }
         }
 
-        public MedicineReview(int id, int medicineId, ReviewType tReview, String reviewTxt, Boolean reviewDone)
+        public MedicineReview(int id, int medicineId,int doctorId, ReviewType tReview, String reviewTxt, Boolean reviewDone)
         {
             idMedicineReview = id;
             idMedicine = medicineId;
+            idDoctor = doctorId;
             typeReview = tReview;
             review = reviewTxt;
             done = reviewDone;
@@ -63,6 +66,39 @@ namespace Hospital.Model
                 {
                     idMedicine = value;
                     OnProperychanged("IdMedicine");
+                }
+            }
+        }
+
+        public int IdDoctor
+        {
+            get
+            {
+                return idDoctor;
+            }
+            set
+            {
+                if (value != idDoctor)
+                {
+                    idDoctor = value;
+                    OnProperychanged("IdDoctor");
+                }
+            }
+        }
+
+        [JsonIgnore]
+        public Doctor Doctor
+        {
+            get
+            {
+                return doctor;
+            }
+            set
+            {
+                if (value != doctor)
+                {
+                    doctor = value;
+                    OnProperychanged("Doctor");
                 }
             }
         }

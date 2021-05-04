@@ -2,6 +2,7 @@
   {
     "idMedicineReview": 0,
     "idMedicine": 0,
+    "idDoctor": 0,
     "typeReview": 0,
     "review": "Lek je odobren.",
     "done": true
@@ -9,6 +10,7 @@
   {
     "idMedicineReview": 1,
     "idMedicine": 2,
+    "idDoctor": 1,
     "typeReview": 1,
     "review": "",
     "done": false
