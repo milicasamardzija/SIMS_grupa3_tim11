@@ -1,0 +1,72 @@
+﻿using Hospital.Model;
+using Hospital.Prikaz;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Hospital
+{
+    /// <summary>
+    /// Interaction logic for LekoviRevizijaUpravnik.xaml
+    /// </summary>
+    public partial class LekoviRevizijaUpravnik : UserControl
+    {
+        public ObservableCollection<LekRevizija> MedicineReviewList { get; set; }
+        
+        public LekoviRevizijaUpravnik()
+        {
+            InitializeComponent();
+            this.DataContext = this;
+            MedicineReviewList = loadJson();
+        }
+
+        public ObservableCollection<LekRevizija> loadJson()
+        {
+            MedicineFileStorage storageMedicine = new MedicineFileStorage();
+            MedicineReviewFileStorage storageMedicineReview = new MedicineReviewFileStorage();
+            ObservableCollection<LekRevizija> ret = new ObservableCollection<LekRevizija>();
+
+            foreach (Medicine medicine in storageMedicine.GetAll())
+            {
+                if (!medicine.Approved)
+                {
+                    foreach (MedicineReview medicineRewiev in storageMedicineReview.GetAll()) 
+                    {
+                        if (medicineRewiev.IdMedicine == medicine.IdMedicine)
+                        {
+                            ret.Add(new LekRevizija(medicine.Name,medicine.Type,medicineRewiev.TypeReview,medicineRewiev.Done, medicine.IdMedicine, medicineRewiev.IdMedicineReview));
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        private void dodaj(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void izmeni(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void izbrisi(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }
+}

@@ -100,5 +100,10 @@ namespace Hospital
             ObservableCollection<Room> rs = new ObservableCollection<Room>(fs.GetAll());
             return rs;
         }
+
+        private void lekovi(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));
+        }
     }
 }

@@ -62,7 +62,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controller\InventoryController.cs" />
+    <Compile Include="Controller\MedicineController.cs" />
     <Compile Include="Controller\RoomsController.cs" />
+    <Compile Include="LekoviPrikazUpravnik.xaml.cs">
+      <DependentUpon>LekoviPrikazUpravnik.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LekoviRevizijaUpravnik.xaml.cs">
+      <DependentUpon>LekoviRevizijaUpravnik.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\Ingredient.cs" />
     <Compile Include="Model\IngredientsFileStorage.cs" />
     <Compile Include="Model\Medicine.cs" />
@@ -72,7 +79,9 @@
     <Compile Include="Model\ReviewType.cs" />
     <Compile Include="Model\StaticInventoryMovement.cs" />
     <Compile Include="Model\StaticInvnetoryMovementFileStorage.cs" />
+    <Compile Include="Prikaz\LekRevizija.cs" />
     <Compile Include="Service\InventoryService.cs" />
+    <Compile Include="Service\MedicineService.cs" />
     <Compile Include="Service\RoomsService.cs" />
     <Compile Include="ZakazivanjePremestanjaStatickogInventara.xaml.cs">
       <DependentUpon>ZakazivanjePremestanjaStatickogInventara.xaml</DependentUpon>
@@ -322,6 +331,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="KreirajStalniNalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LekoviPrikazUpravnik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LekoviRevizijaUpravnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
