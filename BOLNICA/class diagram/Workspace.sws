@@ -7,7 +7,7 @@
 		<Model Expanded="Yes" ID="{1A208A45-3D9E-4B3C-956B-5416D97B10BC}" Loaded="No" Name="Bolnica" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="Bolnica.oom"/>
 		<Model Expanded="Yes" ID="{1A208A45-3D9E-4B3C-956B-5416D97B10BC}" Loaded="No" Name="Bolnica" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="PomeranjeTermina.oom"/>
 		<Model Expanded="Yes" ID="{1A208A45-3D9E-4B3C-956B-5416D97B10BC}" Loaded="No" Name="Bolnica" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="Bolnica.oom"/>
-		<Model Expanded="Yes" ID="{1A208A45-3D9E-4B3C-956B-5416D97B10BC}" Name="Bolnica" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="PomeranjeTermina.oom"/>
+		<Model ID="{1A208A45-3D9E-4B3C-956B-5416D97B10BC}" Name="Bolnica" Selected="Yes" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="PomeranjeTermina.oom"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>

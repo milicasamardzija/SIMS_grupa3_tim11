@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
         Title="Pregled" Height="554.982" Width="905.915" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
-    <Grid Margin="0,0,-6.4,-2.6">
+    <Grid Margin="0,0,-6.4,-2.6" ToolTip="Pritiskanjem strelica na tastaturi oznacite zeljeno dugme, zatim pritisnite tipku na kojoj pise Enter.">
         <Label x:Name="label" Content="Pregled" HorizontalAlignment="Left" Margin="31,10,0,0" VerticalAlignment="Top" Width="97" RenderTransformOrigin="1.322,0.683" FontSize="24" FontStyle="Italic" Foreground="#FFE8256D"/>
 
-        <DataGrid x:Name="ListCheckups" Margin="31,71,274.6,103.2" Grid.Column="0" Background="MistyRose" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path = CheckupList}">
+                <DataGrid x:Name="ListCheckups" Margin="31,71,274.6,103.2" Grid.Column="0" Background="MistyRose" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path = CheckupList}" ToolTip="Za izmenu i brisanje pregleda potrebno je oznaciti zeljeni pregled">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding IdCh}" FontSize="16"/>
                 <DataGridTextColumn Header="DATUM I VREME" Binding="{Binding Date}" FontSize="16"/>
@@ -24,15 +24,15 @@
         <Button x:Name="delete" Content="Obrisi pregled" HorizontalAlignment="Left" Margin="672,166,0,0" VerticalAlignment="Top" Width="171" Click="delete_Click" FontSize="16"/>
         <Button x:Name="add" Content="Dodaj pregled" HorizontalAlignment="Left" Margin="672,71,0,0" VerticalAlignment="Top" Width="171" Click="add_Click" FontSize="16"/>
         <Button x:Name="button" Content="Odjava" HorizontalAlignment="Left" Margin="747,463,0,0" VerticalAlignment="Top" Width="96" FontSize="16" Click="button_Click"/>
-        <Button x:Name="button1" Content="Izvestaj" HorizontalAlignment="Left" Margin="599,463,0,0" VerticalAlignment="Top" Width="95" FontSize="16" RenderTransformOrigin="0.286,0.479"/>
+        <Button x:Name="button1" Content="Izvestaj" HorizontalAlignment="Left" Margin="599,463,0,0" VerticalAlignment="Top" Width="95" FontSize="16" RenderTransformOrigin="0.286,0.479" Click="button1_Click"/>
         <Button x:Name="button2" Content="Pacijenti" HorizontalAlignment="Left" Margin="672,216,0,0" VerticalAlignment="Top" Width="171" RenderTransformOrigin="0.244,0.61" FontSize="16" Click="button2_Click"/>
-        <Button x:Name="button3" Content="Davanje uputa" HorizontalAlignment="Left" Margin="672,370,0,0" VerticalAlignment="Top" Width="171" FontSize="16"/>
+        <Button x:Name="button3" Content="Davanje uputa" HorizontalAlignment="Left" Margin="672,370,0,0" VerticalAlignment="Top" Width="171" FontSize="16" Click="button3_Click"/>
         <Button x:Name="button4" Content="Izdavanje recepta" HorizontalAlignment="Left" Margin="672,319,0,0" VerticalAlignment="Top" Width="171" RenderTransformOrigin="0.033,0.309" FontSize="16" Click="button4_Click"/>
-        <Button x:Name="button8" Content="Profil" HorizontalAlignment="Left" Margin="31,463,0,0" VerticalAlignment="Top" Width="97" FontSize="16" RenderTransformOrigin="0.267,0.32"/>
+        <Button x:Name="button8" Content="Profil" HorizontalAlignment="Left" Margin="31,463,0,0" VerticalAlignment="Top" Width="97" FontSize="16" RenderTransformOrigin="0.267,0.32" Click="button8_Click"/>
         <Button x:Name="button9" Content="Anamneza" HorizontalAlignment="Left" Margin="672,268,0,0" VerticalAlignment="Top" Width="171" FontSize="16" Click="button9_Click" />
         <Button x:Name="button10" Content="O klinici" HorizontalAlignment="Left" Margin="164,463,0,0" VerticalAlignment="Top" Width="98" FontSize="16" RenderTransformOrigin="0.267,0.32"/>
         <Button x:Name="button11" Content="Blog" HorizontalAlignment="Left" Margin="300,463,0,0" VerticalAlignment="Top" Width="94" FontSize="16" RenderTransformOrigin="0.267,0.32"/>
-        <Button x:Name="button12" Content="Evidencija" HorizontalAlignment="Left" Margin="444,463,0,0" VerticalAlignment="Top" Width="102" FontSize="16" RenderTransformOrigin="0.267,0.32"/>
+        <Button x:Name="button12" Content="Evidencija" HorizontalAlignment="Left" Margin="444,463,0,0" VerticalAlignment="Top" Width="102" FontSize="16" RenderTransformOrigin="0.267,0.32" Click="button12_Click"/>
 
     </Grid>
 </Window>

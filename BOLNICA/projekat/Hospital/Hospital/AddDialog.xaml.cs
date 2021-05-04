@@ -68,7 +68,7 @@ namespace Hospital
             return ret;
         }
 
-        public int generisiID()
+        public int generateID()
         {
             int ret = 0;
             CheckupFileStorage storage = new CheckupFileStorage();
@@ -95,7 +95,7 @@ namespace Hospital
             int ida = 1;  //ovo sam lupila id appointemnta, tu treba ispraviti da bude bas idAppointment-a koji treba
             //int idch; //ovo sam lupila id checkup-a tu treba napraviti neku funkciju koja ce za svaki novi pregled da generise novi id koji vec ne postoji
 
-            Checkup newCheckup = new Checkup(ida, generisiID(), dateP.DisplayDate, Convert.ToString(timeText.Text), Convert.ToDouble(durationText.Text),
+            Checkup newCheckup = new Checkup(ida, generateID(), dateP.DisplayDate, Convert.ToString(timeText.Text), Convert.ToDouble(durationText.Text),
                 (CheckupType)comboBox.SelectedIndex,patient,doctor);
             st.Save(newCheckup);
             listCheckup.Add(newCheckup);

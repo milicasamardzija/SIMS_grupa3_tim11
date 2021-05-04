@@ -1,0 +1,21 @@
+﻿<Window x:Class="Hospital.ZamenaLekova"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+        Title="ZamenaLekova" Height="347.854" Width="413.457" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DataGrid x:Name="ListMedicine" Margin="20,43,21.2,104.4" Grid.Column="0" Background="MistyRose" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path = MedicinesList}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="IDLEKA" FontSize="16"/>
+                <DataGridTextColumn Header="NAZIV" FontSize="16"/>
+                <DataGridTextColumn Header="GRAMAZA" FontSize="16"/>
+                <DataGridTextColumn Header="SASTOJCI" FontSize="16"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="button1" Content="Zamenite" Margin="20,253,272.2,27.4"/>
+        <Button x:Name="button2" Content="Izadji" Margin="271,253,21.2,27.4" Click="button2_Click"/>
+    </Grid>
+</Window>

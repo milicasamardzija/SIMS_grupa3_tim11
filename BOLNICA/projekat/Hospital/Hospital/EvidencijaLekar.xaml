@@ -1,0 +1,23 @@
+﻿<Window x:Class="Hospital.EvidencijaLekar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+        Title="EvidencijaLekar" Height="348.724" Width="683.1" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label x:Name="label1" Content="Izaberite zeljenu funkcionalnost tako sto cete strelicama na tastaturi oznaciti zeljeno dugme" Margin="10,0,9.8,282.2" FontSize="16"/>
+        <Label x:Name="label2" Content="i kada pritisnete taster na kome pise Enter, prikazace Vam se zeljeni prozor" Margin="10,37,105.8,241.2" FontSize="16"/>
+        <Label x:Name="label3" Content="Da biste manipulisali blogom pritisnite dugme pored" Margin="10,83,262.2,198.2" FontSize="14"/>
+        <Label x:Name="label4" Content="Da biste pristupili salama pritisnite dugme pored" Margin="10,121,262.2,165.2" FontSize="14"/>
+        <Label x:Name="label5" Content="Da biste uneli potroseni materijal pritisnite dugme pored" Margin="10,159,262.2,127.2" FontSize="14"/>
+        <Label x:Name="label6" Content="Da biste manipulisali lekovima pritisnite dugme pored" Margin="10,197,262.2,82.2" FontSize="14"/>
+        <Button x:Name="button1" Content="Upravljanje blogom" HorizontalAlignment="Left" Height="30" Margin="483,83,0,206.2" Width="137" FontSize="14"/>
+        <Button x:Name="button2" Content="Uvid u sale" HorizontalAlignment="Left" Height="30" Margin="483,124,0,165.2" Width="137" FontSize="14"/>
+        <Button x:Name="button3" Content="Potroseni materijal" HorizontalAlignment="Left" Height="30" Margin="483,162,0,127.2" Width="137" FontSize="14" Click="button3_Click"/>
+        <Button x:Name="button4" Content="Uvid u lekove" HorizontalAlignment="Left" Height="30" Margin="483,207,0,82.2" Width="137" FontSize="14" Click="button4_Click"/>
+        <Button x:Name="button5" Content="Izadji" HorizontalAlignment="Left" Height="30" Margin="528,268,0,21.2" Width="92" FontSize="14" Click="button5_Click"/>
+
+    </Grid>
+</Window>
