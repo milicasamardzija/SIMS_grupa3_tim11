@@ -1,0 +1,16 @@
+[
+  {
+    "idMedicineReview": 0,
+    "idMedicine": 0,
+    "typeReview": 0,
+    "review": "Lek je odobren.",
+    "done": true
+  },
+  {
+    "idMedicineReview": 1,
+    "idMedicine": 2,
+    "typeReview": 1,
+    "review": "",
+    "done": false
+  }
+]
