@@ -18,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for LekoviRevizijaUpravnik.xaml
-    /// </summary>
     public partial class LekoviRevizijaUpravnik : UserControl
     {
         public ObservableCollection<LekRevizija> MedicineReviewList { get; set; }
@@ -54,6 +51,22 @@ namespace Hospital
                     }
                 }
             }
+
+            foreach (Medicine medicine in storageMedicine.GetAll())
+            {
+                if (medicine.Delete)
+                {
+                    foreach (MedicineReview medicineRewiev in storageMedicineReview.GetAll())
+                    {
+                        if (medicineRewiev.IdMedicine == medicine.IdMedicine)
+                        {
+                            ret.Add(new LekRevizija(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.IdMedicine, medicineRewiev.IdMedicineReview));
+                            break;
+                        }
+                    }
+                }
+            }
+
             return ret;
         }
 
@@ -70,6 +83,11 @@ namespace Hospital
         private void prikaziReviziju(object sender, SelectionChangedEventArgs e)
         {
             LekoviRevizijaFrame.Navigate(new LekoviPrikazRevizijeUpravnik((LekRevizija)ListaLekovaRevizija.SelectedItem));
+        }
+
+        private void izbrisiRezenziju(object sender, RoutedEventArgs e)
+        {
+            LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeRecenzijeUpravnik(frame, (LekRevizija)ListaLekovaRevizija.SelectedItem));
         }
     }
 }

@@ -19,6 +19,7 @@ namespace Hospital.Model
         private List<int> idsIngredients;
         private List<int> idsMedicines;
         private Boolean approved;
+        private Boolean delete;
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -40,6 +41,7 @@ namespace Hospital.Model
             idsIngredients = ingredientsMedicine;
             idsMedicines = replacementMedicine;
             approved = approvement;
+            delete = false;
         }
 
         public Medicine()
@@ -188,6 +190,22 @@ namespace Hospital.Model
                 {
                     approved = value;
                     OnProperychanged("Approved");
+                }
+            }
+        }
+
+        public Boolean Delete
+        {
+            get
+            {
+                return delete;
+            }
+            set
+            {
+                if (value != delete)
+                {
+                    delete = value;
+                    OnProperychanged("Delete");
                 }
             }
         }

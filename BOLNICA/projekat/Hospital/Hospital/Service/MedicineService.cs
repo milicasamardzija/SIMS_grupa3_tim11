@@ -43,6 +43,21 @@ namespace Hospital.Service
         public void deleteMedicine(Medicine medicine, int idDoctor)
         {
             storageReview.Save(new MedicineReview(generateIdMedicineReview(), medicine.IdMedicine, idDoctor, ReviewType.brisanje, "", false));
+            deleteFleg(medicine);
+        }
+
+        public void deleteFleg(Medicine medicine)
+        {
+            List<Medicine> all = storageMedicine.GetAll();
+            foreach (Medicine medic in all)
+            {
+                if (medic.IdMedicine == medicine.IdMedicine)
+                {
+                    medic.Delete = true;
+                    storageMedicine.SaveAll(all);
+                    break;
+                }
+            }
         }
 
         internal void approvedMedicine(LekRevizija revision)
@@ -54,6 +69,7 @@ namespace Hospital.Service
                 {
                     medicine.Approved = true;
                     storageMedicine.SaveAll(all);
+                    storageReview.DeleteById(revision.IdMedicineReview);
                     break;
                 }
             }

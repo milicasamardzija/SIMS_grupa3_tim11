@@ -1,1 +1,1 @@
-[{"IdMedicine":0,"Name":"aa","Type":"aa","Quantity":3.0,"IdsIngredients":[],"IdsMedicines":[],"Approved":false},{"IdMedicine":1,"Name":"bb","Type":"bb","Quantity":2.0,"IdsIngredients":[],"IdsMedicines":[],"Approved":true}]
+[{"IdMedicine":0,"Name":"aa","Type":"aa","Quantity":3.0,"IdsIngredients":[],"IdsMedicines":[],"Approved":true,"Delete":true}]

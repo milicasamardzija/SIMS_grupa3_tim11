@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for LekoviPrikazRevizijeUpravnik.xaml
-    /// </summary>
     public partial class LekoviPrikazRevizijeUpravnik : UserControl
     {
         private LekRevizija revizija = new LekRevizija();
