@@ -3,6 +3,7 @@
 // Created: Monday, March 22, 2021 3:25:31 PM
 // Purpose: Definition of Class Appointment
 
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,9 @@ public class Appointment : INotifyPropertyChanged
     public int idA;
     public Patient patient;
     public Doctor doctor;
+    public Room room;
+    public int idRoom { get; set; }
+
     public DateTime dateTime { get; set; }
 
     public Appointment() { }
@@ -58,6 +62,38 @@ public class Appointment : INotifyPropertyChanged
         }
     }
 
+    [JsonIgnore]
+    public Room Room
+    {
+        get
+        {
+            return room;
+        }
+        set
+        {
+            if (value != room)
+            {
+                room = value;
+                OnPropertyChanged("Date");
+            }
+        }
+    }
+
+    public int IdRoom
+    {
+        get
+        {
+            return idRoom;
+        }
+        set
+        {
+            if (value != idRoom)
+            {
+                idRoom = value;
+                OnPropertyChanged("Date");
+            }
+        }
+    }
     public DateTime Date
     {
         get
