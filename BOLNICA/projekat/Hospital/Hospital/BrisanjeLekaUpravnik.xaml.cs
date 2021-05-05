@@ -23,6 +23,8 @@ namespace Hospital
         private Frame frame = new Frame();
         private LekRevizija revision = new LekRevizija();
         private MedicineFileStorage storage = new MedicineFileStorage();
+        private MedicineReviewFileStorage reviewStorage = new MedicineReviewFileStorage();
+   
         public BrisanjeLekaUpravnik(Frame frameLekovi, LekRevizija selectedRevision)
         {
             InitializeComponent();
@@ -33,6 +35,7 @@ namespace Hospital
         private void obrisi(object sender, RoutedEventArgs e)
         {
             storage.DeleteById(revision.IdMedicine);
+            reviewStorage.DeleteByIdMedicine(revision.IdMedicine);
             frame.NavigationService.Navigate(new LekoviRevizijaUpravnik(frame));
         }
 

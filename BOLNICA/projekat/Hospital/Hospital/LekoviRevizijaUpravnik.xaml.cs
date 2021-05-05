@@ -31,6 +31,7 @@ namespace Hospital
             this.DataContext = this;
             MedicineReviewList = loadJson();
             frame = frameUpravnik;
+            
         }
 
         public ObservableCollection<LekRevizija> loadJson()
@@ -61,14 +62,14 @@ namespace Hospital
             LekoviRevizijaFrame.NavigationService.Navigate(new DodavanjeLekaUpravnik(frame, (LekRevizija)ListaLekovaRevizija.SelectedItem));
         }
 
-        private void izmeni(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
         private void izbrisi(object sender, RoutedEventArgs e)
         {
             LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeLekaUpravnik(frame,(LekRevizija)ListaLekovaRevizija.SelectedItem));
+        }
+
+        private void prikaziReviziju(object sender, SelectionChangedEventArgs e)
+        {
+            LekoviRevizijaFrame.Navigate(new LekoviPrikazRevizijeUpravnik((LekRevizija)ListaLekovaRevizija.SelectedItem));
         }
     }
 }

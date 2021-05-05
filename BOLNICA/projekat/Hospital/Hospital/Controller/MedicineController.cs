@@ -26,5 +26,10 @@ namespace Hospital.Controller
         {
             service.approvedMedicine(revision);
         }
+
+        internal void deleteMedicine(Medicine medicine, int tag)
+        {
+            service.deleteMedicine(medicine,tag);
+        }
     }
 }

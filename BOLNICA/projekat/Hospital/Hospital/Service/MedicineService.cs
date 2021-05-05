@@ -40,6 +40,11 @@ namespace Hospital.Service
             return ret;
         }
 
+        public void deleteMedicine(Medicine medicine, int idDoctor)
+        {
+            storageReview.Save(new MedicineReview(generateIdMedicineReview(), medicine.IdMedicine, idDoctor, ReviewType.brisanje, "", false));
+        }
+
         internal void approvedMedicine(LekRevizija revision)
         {
             List<Medicine> all = storageMedicine.GetAll();

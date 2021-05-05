@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Hospital.BrisanjeLekaRevizijaUpravnik"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hospital"
+             mc:Ignorable="d" 
+             Height="401" Width="470" Background="AliceBlue">
+    <Grid>
+        <Label Content="Naziv" HorizontalAlignment="Left" Margin="34,32,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Tip" HorizontalAlignment="Left" Margin="34,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.809,6.038" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Specijalizacija" HorizontalAlignment="Left" Margin="34,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.809,6.038" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Lekar" HorizontalAlignment="Left" Margin="34,246,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.809,6.038" FontSize="18" FontWeight="Bold"/>
+        <ComboBox Name="LekarComboBox" HorizontalAlignment="Left" Margin="245,246,0,0" VerticalAlignment="Top" Width="204" Height="33" FontSize="18" FontWeight="Bold"/>
+        <ComboBox Name="SpecijalizacijaComboBox" HorizontalAlignment="Left" Margin="245,187,0,0" VerticalAlignment="Top" Width="204" FontSize="18" FontWeight="Bold" SelectionChanged="getDoctors"/>
+        <TextBox Name="NazivTxt" Text="{Binding Medicine.Name}" HorizontalAlignment="Left" Height="27" Margin="245,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontSize="18" FontWeight="Bold"/>
+        <TextBox Name="TipTxt" Text="{Binding Medicine.Type}" HorizontalAlignment="Left" Height="29" Margin="245,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontSize="18" FontWeight="Bold"/>
+        <Button Background="LightBlue" Content="Potvrdi" HorizontalAlignment="Left" Margin="85,327,0,0" VerticalAlignment="Top" Width="96" FontSize="18" FontWeight="Bold" Height="37" RenderTransformOrigin="0.5,0.5" Click="potvrdi">
+        </Button>
+        <Button Background="LightBlue" Content="Odustani" HorizontalAlignment="Left" Margin="298,327,0,0" VerticalAlignment="Top" Width="96" FontSize="18" FontWeight="Bold" Height="37" RenderTransformOrigin="1.385,0.296" Click="odustani">
+        </Button>
+
+
+    </Grid>
+</UserControl>

@@ -61,7 +61,7 @@ namespace Hospital
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-
+            LekoviFrame.NavigationService.Navigate(new BrisanjeLekaRevizijaUpravnik((Medicine)ListaLekova.SelectedItem, frameUprvanik));
         }
 
         private void prikazRevizije(object sender, RoutedEventArgs e)
