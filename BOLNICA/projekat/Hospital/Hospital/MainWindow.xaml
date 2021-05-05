@@ -17,36 +17,46 @@
             Height="390"
             Margin="0,30,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            NavigationUIVisibility="Hidden" />
+            VerticalAlignment="Top" />
         <Menu
-            Width="296"
+            Width="250"
             Height="30"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Background="LightGray">
+            VerticalAlignment="Top">
             <MenuItem
+                Background="LightGray"
                 Click="prijava"
                 FontSize="20"
-                FontWeight="Bold"
-                Foreground="#FF0852AE"
-                Header="PRIJAVA  " />
+                Header="PACIJENTI" />
             <MenuItem
                 Background="LightGray"
                 Click="blog"
                 FontSize="20"
-                FontWeight="Bold"
-                Foreground="#FF0852AE"
-                Header="BLOG  " />
+                Header="BLOG" />
             <MenuItem
                 Background="LightGray"
-                Click="informacije"
+                Click="blog"
                 FontSize="20"
-                FontWeight="Bold"
-                Foreground="#FF0852AE"
-                Header="O KLINICI" />
+                Header="O klinici" />
 
         </Menu>
+        <!--
+        <TextBlock HorizontalAlignment="Left" FontSize="20"  Margin="240,128,0,0" Text="Korisnicko ime" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.449,-0.716"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="240,195,0,0" Text="Lozinka" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.539,-0.065"/>
+        <TextBox Name="ime" HorizontalAlignment="Left" FontSize="17" Margin="388,128,0,0" Text="{Binding Value}" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" Height="27"/>
+        <PasswordBox Name="lozinka" HorizontalAlignment="Left" FontSize="17" Margin="388,195,0,0" VerticalAlignment="Top" Width="142" Height="27" />
+        <Button Content="Prijava" HorizontalAlignment="Left" Margin="320,335,0,0" VerticalAlignment="Top" Width="100" Height="27" Click="login"/>-->
+        <!--<Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>-->
+        <!-- <Label Content="Uloga" FontSize="20" HorizontalAlignment="Left" Margin="240,247,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="uloga" HorizontalAlignment="Left" Margin="388,247,0,0" VerticalAlignment="Top" Width="142" Height="37" >
+            <ComboBoxItem IsSelected="True">PACIJENT</ComboBoxItem>
+            <ComboBoxItem>LEKAR</ComboBoxItem>
+            <ComboBoxItem>SEKRETAR</ComboBoxItem>
+            <ComboBoxItem>UPRAVNIK</ComboBoxItem>
+        </ComboBox>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="27,46,0,0" TextWrapping="Wrap" Text="Da biste se prijavili na sistem upisite svoje korisnicko ime i lozinku. Oznacite da li koristite sistem kao pacijent, lekar, sekretar ili upravnik." VerticalAlignment="Top" FontSize="20"/>
+
+        -->
 
     </Grid>
 </Window>

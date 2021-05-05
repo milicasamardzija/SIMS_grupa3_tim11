@@ -17,17 +17,17 @@ public class User : INotifyPropertyChanged
    {
       throw new NotImplementedException();
    }
-
-    public String name;
-    public String surname;
-    public String telephoneNumber;
-    public String jmbg;
-    public Gender gender;
+   
+   public String name { get; set; }
+   public String surname { get; set; }
+    public String telephoneNumber { get; set; }
+    public String jmbg { get; set; }
+    public Gender gender { get; set; }
 
     public DateTime birthdayDate;
-
-    public String username;
-    public String password;
+    //public String birthdate { get; set; }
+    public String username { get; set; }
+    public String password { get; set; }
 
     public Adress adress { get; set; }
 

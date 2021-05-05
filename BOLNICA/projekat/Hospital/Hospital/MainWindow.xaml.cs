@@ -36,18 +36,12 @@ namespace Hospital
         }
 
         private void blog(object sender, RoutedEventArgs e)
-       {
-            BlogGlavni b = new BlogGlavni();
-           frame.Navigate(b);
-
-       }
-
-        private void informacije(object sender, RoutedEventArgs e)
         {
-            InformacijeKlinike info = new InformacijeKlinike();
-            frame.Navigate(info);
+            BlogGlavni b = new BlogGlavni();
+            frame.Navigate(b);
 
         }
 
+        
     }
 }

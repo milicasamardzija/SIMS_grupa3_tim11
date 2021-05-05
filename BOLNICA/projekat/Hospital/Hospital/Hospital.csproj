@@ -124,18 +124,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Sekretar\Alergeni.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sekretar\AlergeniDodaj.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sekretar\Blog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="BlogGlavni.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -167,17 +155,6 @@
     <Compile Include="BelsekaMagacin.xaml.cs">
       <DependentUpon>BelsekaMagacin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Alergens.cs" />
-    <Compile Include="Model\AlergensFileStorage.cs" />
-    <Compile Include="Sekretar\Alergeni.xaml.cs">
-      <DependentUpon>Alergeni.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sekretar\AlergeniDodaj.xaml.cs">
-      <DependentUpon>AlergeniDodaj.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sekretar\Blog.xaml.cs">
-      <DependentUpon>Blog.xaml</DependentUpon>
-    </Compile>
     <Compile Include="BlogGlavni.xaml.cs">
       <DependentUpon>BlogGlavni.xaml</DependentUpon>
     </Compile>
@@ -187,24 +164,8 @@
     <Compile Include="DodajProstoriju.xaml.cs">
       <DependentUpon>DodajProstoriju.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="Evidencija.xaml.cs">
       <DependentUpon>Evidencija.xaml</DependentUpon>
-</Compile>
-    <Compile Include="Sekretar\CheckupController.cs" />
-    <Compile Include="Sekretar\CheckupService.cs" />
-    <Compile Include="Sekretar\DodajAlergene.xaml.cs">
-      <DependentUpon>DodajAlergene.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sekretar\DodajPregled.xaml.cs">
-      <DependentUpon>DodajPregled.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sekretar\InformacijeKlinike.xaml.cs">
-      <DependentUpon>InformacijeKlinike.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Inventar.xaml.cs">
-      <DependentUpon>Inventar.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="IzbrisiInventarDijalog.xaml.cs">
       <DependentUpon>IzbrisiInventarDijalog.xaml</DependentUpon>
@@ -227,7 +188,7 @@
     <Compile Include="KreiranjeAnamneze.xaml.cs">
       <DependentUpon>KreiranjeAnamneze.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\KreirajStalniNalog.xaml.cs">
+    <Compile Include="KreirajStalniNalog.xaml.cs">
       <DependentUpon>KreirajStalniNalog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Magacin.xaml.cs">
@@ -257,12 +218,6 @@
     <Compile Include="Model\SpecCheckup.cs" />
     <Compile Include="OdjaviSe.xaml.cs">
       <DependentUpon>OdjaviSe.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sekretar\OtkaziTermin.xaml.cs">
-      <DependentUpon>OtkaziTermin.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sekretar\Pacijenti.xaml.cs">
-      <DependentUpon>Pacijenti.xaml</DependentUpon>
     </Compile>
     <Compile Include="PocetnaPacijent.xaml.cs">
       <DependentUpon>PocetnaPacijent.xaml</DependentUpon>
@@ -297,24 +252,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Page Include="EvidencijaLekar.xaml">
- <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sekretar\DodajAlergene.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sekretar\DodajPregled.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sekretar\InformacijeKlinike.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Inventar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -342,52 +280,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\IzbrisiPacijenta.xaml">
+    <Page Include="IzbrisiPacijenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\IzmeniNalogPacijenta.xaml">
+    <Page Include="IzmeniNalogPacijenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Page Include="IzvestajLekara.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="KreirajGuestNalog.xaml">
- <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sekretar\KreirajGuestNalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\KreirajNalog.xaml">
+    <Page Include="KreirajNalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Compile Include="Sobe.xaml.cs">
       <DependentUpon>Sobe.xaml</DependentUpon>
     </Compile>
     <Compile Include="UredjivanjeBloga.xaml.cs">
       <DependentUpon>UredjivanjeBloga.xaml</DependentUpon>
-  </Compile>
-    <Compile Include="Sekretar\PrikaziPreglede.xaml.cs">
-      <DependentUpon>PrikaziPreglede.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sekretar\PrioritetDatum.xaml.cs">
-      <DependentUpon>PrioritetDatum.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sekretar\PrioritetLekar.xaml.cs">
-      <DependentUpon>PrioritetLekar.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sekretar\SacuvajDatum.xaml.cs">
-      <DependentUpon>SacuvajDatum.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sekretar\SacuvajLekara.xaml.cs">
-      <DependentUpon>SacuvajLekara.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowPacijent.xaml.cs">
       <DependentUpon>WindowPacijent.xaml</DependentUpon>
@@ -404,7 +321,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\KreirajStalniNalog.xaml">
+    <Page Include="KreirajStalniNalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -429,16 +346,16 @@
     <Compile Include="EditDialog.xaml.cs">
       <DependentUpon>EditDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\IzbrisiPacijenta.xaml.cs">
+    <Compile Include="IzbrisiPacijenta.xaml.cs">
       <DependentUpon>IzbrisiPacijenta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\IzmeniNalogPacijenta.xaml.cs">
+    <Compile Include="IzmeniNalogPacijenta.xaml.cs">
       <DependentUpon>IzmeniNalogPacijenta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\KreirajGuestNalog.xaml.cs">
+    <Compile Include="KreirajGuestNalog.xaml.cs">
       <DependentUpon>KreirajGuestNalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\KreirajNalog.xaml.cs">
+    <Compile Include="KreirajNalog.xaml.cs">
       <DependentUpon>KreirajNalog.xaml</DependentUpon>
     </Compile>
     <Compile Include="DodajTermin.xaml.cs">
@@ -456,14 +373,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="OdjaviSe.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sekretar\OtkaziTermin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sekretar\Pacijenti.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -527,15 +436,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\Nalozi.xaml">
+    <Page Include="Nalozi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\PrikaziGuestPacijente.xaml">
+    <Page Include="PrikaziGuestPacijente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\PrikaziPacijente.xaml">
+    <Page Include="PrikaziPacijente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -543,7 +452,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Page Include="Sobe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -553,27 +461,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UredjivanjeBloga.xaml">
- <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sekretar\PrikaziPreglede.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sekretar\PrioritetDatum.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sekretar\PrioritetLekar.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sekretar\SacuvajDatum.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sekretar\SacuvajLekara.xaml">
-
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -619,13 +506,13 @@
     <Compile Include="Pregled.xaml.cs">
       <DependentUpon>Pregled.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Nalozi.xaml.cs">
+    <Compile Include="Nalozi.xaml.cs">
       <DependentUpon>Nalozi.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\PrikaziGuestPacijente.xaml.cs">
+    <Compile Include="PrikaziGuestPacijente.xaml.cs">
       <DependentUpon>PrikaziGuestPacijente.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\PrikaziPacijente.xaml.cs">
+    <Compile Include="PrikaziPacijente.xaml.cs">
       <DependentUpon>PrikaziPacijente.xaml</DependentUpon>
     </Compile>
     <Compile Include="ObrisiTermin.xaml.cs">
@@ -658,73 +545,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Sekretar\logo-removebg-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\kvalitet-removebg-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\mapa.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="logo-removebg-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\vector.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="zdravo.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\Glyph-Add-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\Pencil-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\Stop-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\Arrow-Left-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\Button-White-Add-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\Credit-Card-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\Folder-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\Folder-Sync-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\Search-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\Add-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\User-Files-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\User-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\Patients-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\Transfer-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\Comment-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\bell-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Sekretar\Chart-Bar-icon.png" />
+    <Resource Include="slika1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

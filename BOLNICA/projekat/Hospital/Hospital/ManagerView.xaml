@@ -1,4 +1,3 @@
-
 ﻿<Window x:Class="Hospital.ManagerView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -15,7 +14,5 @@
             <GridSplitter Background="Black" Height="42" Width="1"/>
         </Menu>
         <Frame Name="frame" HorizontalAlignment="Left" Margin="0,40,-6.4,-31.6" VerticalAlignment="Top" Height="642" Width="1280" NavigationUIVisibility="Hidden" />
-
-﻿
     </Grid>
 </Window>

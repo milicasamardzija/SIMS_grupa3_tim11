@@ -10,21 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Hospital
 {
-   
-    public partial class BlogGlavni : Page
+    /// <summary>
+    /// Interaction logic for UredjivanjeBloga.xaml
+    /// </summary>
+    public partial class UredjivanjeBloga : Window
     {
-
-       
-        
-        public BlogGlavni()
+       // Page blog;
+        public UredjivanjeBloga()
         {
+
             InitializeComponent();
-            obavestenjaText.SelectedText = loadJason();
+            textBlog.SelectedText = loadJason();
+
+            
         }
 
         public String loadJason()
@@ -35,5 +37,21 @@ namespace Hospital
             return ret;
         }
 
+        private void sacuvajIzmene(object sender, RoutedEventArgs e)
+        {
+          
+            NoticeFileStorage nfs = new NoticeFileStorage();
+            List<Notice> rs = new List<Notice>(nfs.GetAll());
+        
+          
+
+
+        }
+   
+
+    private void odustani(object sender, RoutedEventArgs e)
+        { 
+            this.Close();
+        }
     }
 }
