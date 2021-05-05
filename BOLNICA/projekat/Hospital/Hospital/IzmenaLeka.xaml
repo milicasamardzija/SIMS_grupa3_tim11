@@ -12,12 +12,12 @@
         <Label x:Name="label5" Content="Vrsta" Margin="17,148,301,277.6" FontSize="16"/>
         <Label x:Name="label4" Content="Sastojci" Margin="17,218,301,205.6" FontSize="16"/>
         <Label x:Name="label6" Content="Zamenski lekovi" Margin="17,288,301,132.6" FontSize="16"/>
-        <ComboBox Margin="141,218,29,224.6">
+        <ComboBox Margin="141,218,29,224.6" x:Name="combo1">
         </ComboBox>
-        <Button x:Name="button1" Content="Izmeni" Margin="17,405,268,26.6" FontSize="16"/>
+        <Button x:Name="button1" Content="Izmeni" Margin="17,405,268,26.6" FontSize="16" Click="button1_Click"/>
         <Button x:Name="button2" Content="Odbaci" Margin="256,405,29,26.6" Click="button2_Click" FontSize="16"/>
         <TextBox x:Name="vrstaLText" HorizontalAlignment="Left" Height="30" Margin="141,148,0,299.6" Width="226"/>
-        <ComboBox Margin="141,288,29,154.6">
+        <ComboBox Margin="141,288,29,154.6" x:Name="combo2">
         </ComboBox>
         <TextBox x:Name="gramazaLText" HorizontalAlignment="Left" Height="30" Margin="141,82,0,365.6" Width="226"/>
         <TextBox x:Name="nazivLText" HorizontalAlignment="Left" Height="30" Margin="141,19,0,428.6" Width="226"/>
