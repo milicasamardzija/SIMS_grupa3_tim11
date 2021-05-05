@@ -56,7 +56,7 @@ namespace Hospital
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
-
+            frameUprvanik.NavigationService.Navigate(new IzmenaLekaUpravnik((Medicine)ListaLekova.SelectedItem, frameUprvanik,MedicineList));
         }
 
         private void izbrisi(object sender, RoutedEventArgs e)

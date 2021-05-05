@@ -67,6 +67,12 @@
     <Compile Include="DodavanjeLekaRevizija.xaml.cs">
       <DependentUpon>DodavanjeLekaRevizija.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IzmenaLekaRevizija.xaml.cs">
+      <DependentUpon>IzmenaLekaRevizija.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IzmenaLekaUpravnik.xaml.cs">
+      <DependentUpon>IzmenaLekaUpravnik.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LekoviPrikazUpravnik.xaml.cs">
       <DependentUpon>LekoviPrikazUpravnik.xaml</DependentUpon>
     </Compile>
@@ -287,6 +293,14 @@
     <Page Include="IzmenaInventaraDijalog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="IzmenaLekaRevizija.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IzmenaLekaUpravnik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="IzmeniProstoriju.xaml">
       <Generator>MSBuild:Compile</Generator>
