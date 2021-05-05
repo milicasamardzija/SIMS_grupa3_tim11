@@ -18,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for DodavanjeLekaRevizija.xaml
-    /// </summary>
     public partial class DodavanjeLekaRevizija : UserControl
     {
         public ObservableCollection<Ingredient> IngredientsBase
@@ -43,8 +40,10 @@ namespace Hospital
             get;
             set;
         }
+
         private Frame frame;
         private MedicineController controller;
+        private DoctorFileStorage storage;
         private List<int> medicineIds;
         private List<int> ingredientsIds;
 
@@ -60,6 +59,8 @@ namespace Hospital
             controller = new MedicineController();
             medicineIds = new List<int>();
             ingredientsIds = new List<int>();
+            storage = new DoctorFileStorage();
+            dodajSpecijalizacije();
         }
 
         public ObservableCollection<Ingredient> loadJasonIngredients()
@@ -72,7 +73,14 @@ namespace Hospital
         public ObservableCollection<Medicine> loadJasonMedicines()
         {
             MedicineFileStorage storage = new MedicineFileStorage();
-            ObservableCollection<Medicine> ret = new ObservableCollection<Medicine>(storage.GetAll());
+            ObservableCollection<Medicine> ret = new ObservableCollection<Medicine>();
+                foreach (Medicine medicine in storage.GetAll())
+                {
+                    if (medicine.Approved)
+                    {
+                        ret.Add(medicine);
+                    }
+                }
             return ret;
         }
 
@@ -123,13 +131,53 @@ namespace Hospital
         private void Potvrdi(object sender, RoutedEventArgs e)
         {
             convert();
-            controller.sendMedicineToRevision(new Medicine(generisiId(),NazivTxt.Text,Convert.ToDouble(GramazaTxt.Text), TipTxt.Text,ingredientsIds,medicineIds,false),0);
+            ComboBoxItem item = (ComboBoxItem)DoktoriIsfiltrirani.SelectedItem;
+            controller.sendMedicineToRevision(new Medicine(generisiId(), NazivTxt.Text, Convert.ToDouble(GramazaTxt.Text), TipTxt.Text, ingredientsIds, medicineIds, false), Convert.ToInt32(item.Tag));
             frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));
         }
 
         private void Odustani(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));
+        }
+
+        public void dodajSpecijalizacije()
+        {
+            foreach (Doctor doctor in storage.GetAll())
+            {
+                ComboBoxItem item = new ComboBoxItem();
+                item.Content = doctor.specialization;
+                SpecijalizacijaComboBox.Items.Add(item);
+            }
+        }
+
+        public List<Doctor> doktoriPoSpecijalizaciji()
+        {
+            List<Doctor> filtratedDoctors = new List<Doctor>();
+            foreach (Doctor doctor in storage.GetAll())
+            {  
+                //if(doctor.specialization == SpecijalizacijaComboBox.SelectedItem)
+                if ( 0 == SpecijalizacijaComboBox.SelectedIndex)
+                {
+                    filtratedDoctors.Add(doctor);
+                }
+            }
+            
+            return filtratedDoctors;
+        }
+
+        private void getDoctors(object sender, SelectionChangedEventArgs e)
+        {
+            DoktoriIsfiltrirani.Items.Clear();
+            List<Doctor> doctors = doktoriPoSpecijalizaciji();
+            foreach (Doctor doctor in doctors)
+            {
+                ComboBoxItem item = new ComboBoxItem();
+                item.Content = doctor.Name + "  " + doctor.Surname;
+                item.Tag = doctor.doctorId;
+                DoktoriIsfiltrirani.Items.Add(item);
+            }
+
         }
     }
 }

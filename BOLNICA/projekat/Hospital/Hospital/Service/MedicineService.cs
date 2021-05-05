@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Hospital.Service
 {
@@ -42,6 +43,7 @@ namespace Hospital.Service
         {
             storageMedicine.Save(newMedicine);
             storageReview.Save(new MedicineReview(generateIdMedicineReview(),newMedicine.IdMedicine,idDoctor,ReviewType.dodavanje,"",false));
+            MessageBox.Show(Convert.ToString(idDoctor));
         }
     }
 }

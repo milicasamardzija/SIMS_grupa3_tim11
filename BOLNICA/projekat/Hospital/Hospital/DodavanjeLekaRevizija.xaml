@@ -40,8 +40,8 @@
         <Button Content="Potvrdi" Click="Potvrdi" Background="AliceBlue" HorizontalAlignment="Left" Margin="451,587,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43"/>
         <Button Content="Odustani" Click="Odustani" Background="AliceBlue" HorizontalAlignment="Left" Margin="679,587,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43"/>
         <Label Content="Specijalizacija" HorizontalAlignment="Left" Margin="701,26,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
-        <ComboBox HorizontalAlignment="Left" Margin="873,26,0,0" VerticalAlignment="Top" Width="244" Height="34"/>
+        <ComboBox Name="SpecijalizacijaComboBox" Background="AliceBlue" HorizontalAlignment="Left" Margin="873,26,0,0" VerticalAlignment="Top" Width="244" Height="34" SelectionChanged="getDoctors"/>
         <Label Content="Doktor" HorizontalAlignment="Left" Margin="701,82,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
-        <DataGrid HorizontalAlignment="Left" Height="92" Margin="873,82,0,0" VerticalAlignment="Top" Width="244"/>
+        <ComboBox Name="DoktoriIsfiltrirani" HorizontalAlignment="Left" Margin="873,82,0,0" VerticalAlignment="Top" Width="244" Height="34"/>
     </Grid>
 </UserControl>
