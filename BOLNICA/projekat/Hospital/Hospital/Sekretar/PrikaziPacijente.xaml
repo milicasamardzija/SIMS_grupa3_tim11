@@ -41,15 +41,15 @@
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="100"
-                    Binding="{Binding name}"
+                    Binding="{Binding Name}"
                     Header="IME" />
                 <DataGridTextColumn
                     Width="100"
-                    Binding="{Binding surname}"
+                    Binding="{Binding Surname}"
                     Header="PREZIME" />
                 <DataGridTextColumn
                     Width="150"
-                    Binding="{Binding jmbg}"
+                    Binding="{Binding Jmbg}"
                     Header="JMBG" />
 
                 <DataGridTextColumn
@@ -82,6 +82,13 @@
             FontWeight="Bold"
             Foreground="#FF0852AE"
             TextElement.FontSize="14" />
+        <Button
+            Width="75"
+            Margin="193,330,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="addAlergents"
+            Content="Alergeni" />
 
     </Grid>
 </Window>

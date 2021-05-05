@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Hospital.Sekretar;
 
 namespace Hospital
 {
@@ -68,5 +69,10 @@ namespace Hospital
             ip.Show();
         }
 
+        private void addAlergents(object sender, RoutedEventArgs e)
+        {
+            Alergeni a = new Alergeni(listPatient, (Patient)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
+            a.Show();
+        }
     }
 }

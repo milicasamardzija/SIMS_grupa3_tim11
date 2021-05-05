@@ -369,9 +369,9 @@
 
         <ComboBox
             Name="krvnaGrupa"
-            Width="120"
+            Width="150"
             Height="22"
-            Margin="479,280,0,0"
+            Margin="220,409,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsEditable="False">
@@ -388,29 +388,12 @@
                 O
             </ComboBoxItem>
         </ComboBox>
-        <Label
-            Width="140"
-            Height="29"
-            Margin="479,325,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Alergeni"
-            FontSize="14" />
 
         <Label
-            Margin="479,250,0,0"
+            Margin="40,405,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Krvna grupa" />
-        <TextBox
-            x:Name="alergeni"
-            Width="120"
-            Height="57"
-            Margin="479,354,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap" />
 
     </Grid>
 </Window>

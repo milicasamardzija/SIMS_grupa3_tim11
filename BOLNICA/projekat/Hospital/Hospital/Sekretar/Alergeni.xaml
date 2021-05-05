@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Alergeni"
     Width="550"
-    Height="300"
+    Height="350"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
@@ -19,26 +19,26 @@
             </LinearGradientBrush>
         </Grid.Background>
         <DataGrid
-            x:Name="all"
-            Width="208"
+            x:Name="svi"
+            Width="171"
             Height="191"
-            Margin="29,41,0,0"
+            Margin="24,41,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             ItemsSource="{Binding Path=listAllAlergens}" />
 
         <DataGrid
             x:Name="selected"
-            Width="205"
+            Width="161"
             Height="191"
-            Margin="298,41,0,0"
+            Margin="345,46,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             ItemsSource="{Binding Path=listAlergens}" />
 
         <Label
             Name="sviAlergeni"
-            Margin="29,10,0,0"
+            Margin="24,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Lista svih alergena"
@@ -47,7 +47,7 @@
             Foreground="#FF1B4C93" />
         <Label
             Name="alergeniPacijenta"
-            Margin="298,12,0,0"
+            Margin="345,12,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Alergeni datog pacijenta"
@@ -55,22 +55,47 @@
             FontWeight="Bold"
             Foreground="#FF1B4C93" />
         <Button
-            Width="75"
-            Margin="408,243,0,0"
+            Width="61"
+            Height="21"
+            Margin="237,116,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="AddAlergens"
             Content="Dodaj"
+            Cursor="Hand"
             FontWeight="Bold"
             Foreground="#FF0E2C91"
             TextElement.FontFamily="Chooper Black" />
         <Image
             Width="51"
             Height="40"
-            Margin="247,108,0,0"
+            Margin="247,46,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="vector.png" />
+        <Button
+            Width="60"
+            Height="21"
+            Margin="237,142,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="RemoveAlergen"
+            Content="Obrisi"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
+        <Button
+            Width="98"
+            Height="23"
+            Margin="221,233,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="saveAlergens"
+            Content="Sacuvaj alergene"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
+
+
+
 
 
     </Grid>

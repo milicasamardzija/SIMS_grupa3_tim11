@@ -27,4 +27,19 @@ public class Doctor : User
             }
         }
     }
+    public String Specialization
+    {
+        get
+        {
+            return specialization;
+        }
+        set
+        {
+            if (value != specialization)
+            {
+                specialization = value;
+                OnProperychanged("Specialization");
+            }
+        }
+    }
 }

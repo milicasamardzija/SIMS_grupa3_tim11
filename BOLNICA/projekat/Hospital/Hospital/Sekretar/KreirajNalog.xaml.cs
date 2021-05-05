@@ -25,10 +25,13 @@ namespace Hospital
 
         public KreirajNalog()
         {
-
+          //  Window ownedWindow = new Window();
+           // ownedWindow.Owner = this;
             InitializeComponent();
 
         }
+        public System.Windows.Window Owner { get; set; }
+        
 
         public int generisiId()
         {
@@ -73,10 +76,13 @@ namespace Hospital
         }
 
         private void dodajAlergene(object sender, RoutedEventArgs e)
-        { 
-            Alergeni a = new Alergeni(Owner);
-            a.Show();
-
+        {
+            // Alergeni a = new Alergeni();
+            //   a.Show();
+            AlergeniDodaj a2 = new AlergeniDodaj();
+            alergens.Navigate(a2);
         }
+
+       
     }
 }

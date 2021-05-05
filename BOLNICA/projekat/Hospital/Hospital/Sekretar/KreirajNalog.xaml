@@ -20,7 +20,7 @@
         <Label
             Grid.Row="0"
             Grid.Column="0"
-            Margin="40,10,0,0"
+            Margin="40,3,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Ime"
@@ -28,7 +28,7 @@
             FontSize="15" />
         <Label
             Grid.Column="0"
-            Margin="40,49,0,0"
+            Margin="40,30,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Prezime"
@@ -36,14 +36,14 @@
             FontSize="15" />
         <Label
             Grid.Column="0"
-            Margin="40,79,0,0"
+            Margin="40,57,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="JMBG"
             FontSize="15" />
         <Label
             Grid.Column="0"
-            Margin="30,108,0,0"
+            Margin="40,84,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Prezime i ime lica osiguranika"
@@ -51,7 +51,7 @@
             FontSize="15" />
         <Label
             Grid.Column="0"
-            Margin="40,138,0,0"
+            Margin="40,111,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Datum rodjenja"
@@ -68,7 +68,7 @@
         </Label>
         <Label
             Grid.Column="0"
-            Margin="40,169,0,0"
+            Margin="40,138,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Adresa"
@@ -76,7 +76,7 @@
             FontSize="15" />
         <Label
             Grid.Column="0"
-            Margin="40,199,0,0"
+            Margin="40,165,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Broj telefona"
@@ -84,7 +84,7 @@
             FontSize="15" />
         <Label
             Grid.Column="0"
-            Margin="43,229,0,0"
+            Margin="40,192,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Pol"
@@ -92,7 +92,7 @@
             FontSize="15" />
         <Label
             Grid.Column="0"
-            Margin="30,258,0,0"
+            Margin="40,219,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Kategorija zdravstvene zastite"
@@ -100,7 +100,7 @@
             FontSize="15" />
         <Label
             Grid.Column="0"
-            Margin="40,285,0,0"
+            Margin="40,246,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Zanimanje "
@@ -108,7 +108,7 @@
             FontSize="15" />
         <Label
             Grid.Column="0"
-            Margin="28,315,0,0"
+            Margin="40,273,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Broj zdravstvene knjizice "
@@ -121,7 +121,7 @@
             Grid.Row="0"
             Width="120"
             Height="23"
-            Margin="151,10,0,0"
+            Margin="151,3,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
@@ -130,7 +130,7 @@
             x:Name="prezimeText"
             Width="120"
             Height="23"
-            Margin="151,49,0,0"
+            Margin="151,30,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
@@ -139,16 +139,16 @@
             x:Name="jmbgText"
             Width="120"
             Height="23"
-            Margin="151,80,0,0"
+            Margin="151,58,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
         <TextBox
             x:Name="imePrzOsText"
-            Width="120"
+            Width="178"
             Height="23"
-            Margin="237,109,0,0"
+            Margin="245,84,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
@@ -156,18 +156,18 @@
 
         <TextBox
             x:Name="ulText"
-            Width="71"
+            Width="86"
             Height="23"
-            Margin="205,169,0,0"
+            Margin="245,137,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
         <TextBox
             x:Name="brTelText"
-            Width="120"
+            Width="97"
             Height="23"
-            Margin="204,200,0,0"
+            Margin="245,164,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             RenderTransformOrigin="0.412,-0.591"
@@ -177,9 +177,9 @@
 
         <TextBox
             x:Name="zanimanjeText"
-            Width="150"
+            Width="96"
             Height="23"
-            Margin="204,289,0,0"
+            Margin="246,246,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
@@ -199,17 +199,17 @@
             TextElement.FontSize="14" />
         <TextBox
             x:Name="brKnjiziceText"
-            Width="150"
+            Width="97"
             Height="23"
-            Margin="204,322,0,0"
+            Margin="245,273,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
         <ComboBox
             x:Name="zastita"
-            Width="120"
-            Margin="237,258,0,0"
+            Width="96"
+            Margin="246,219,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem>
@@ -242,10 +242,11 @@
             TextElement.FontSize="14" />
         <ComboBox
             x:Name="pol"
-            Width="120"
-            Margin="204,229,0,0"
+            Width="96"
+            Margin="246,192,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top">
+            VerticalAlignment="Top"
+            RenderTransformOrigin="0.233,0.591">
             <ComboBoxItem>
                 Muski
             </ComboBoxItem>
@@ -255,33 +256,33 @@
         </ComboBox>
         <TextBox
             x:Name="broj"
-            Width="46"
+            Width="33"
             Height="23"
-            Margin="324,169,0,0"
+            Margin="378,137,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
         <Label
-            Margin="166,169,0,0"
+            Margin="204,137,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="ulica" />
         <Label
-            Margin="294,169,0,0"
+            Margin="342,138,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="broj"
             RenderTransformOrigin="0.507,-0.594" />
         <Label
             Width="36"
-            Margin="389,168,0,0"
+            Margin="416,138,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="grad" />
         <ComboBox
             x:Name="grad"
             Width="71"
-            Margin="425,169,0,0"
+            Margin="457,137,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem>Novi Sad</ComboBoxItem>
@@ -303,7 +304,7 @@
         <ComboBox
             Name="drzava"
             Width="46"
-            Margin="575,168,0,0"
+            Margin="600,137,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem>SRB</ComboBoxItem>
@@ -313,26 +314,27 @@
             <ComboBoxItem>SLO</ComboBoxItem>
         </ComboBox>
         <Label
-            Margin="525,168,0,0"
+            Margin="550,138,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="drzava" />
         <DatePicker
             Name="datum"
-            Width="120"
-            Margin="237,143,0,0"
+            Width="178"
+            Margin="245,112,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top"
+            Focusable="False" />
         <Label
-            Margin="411,229,0,0"
+            Margin="40,300,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Krvna grupa"
             FontSize="14" />
         <ComboBox
             Name="krvnaGrupa"
-            Width="74"
-            Margin="509,229,0,0"
+            Width="96"
+            Margin="246,300,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem>
@@ -349,22 +351,29 @@
             </ComboBoxItem>
         </ComboBox>
         <Label
-            Margin="411,315,0,0"
+            Margin="40,327,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Alergeni"
             FontSize="14" />
         <Button
             Width="75"
-            Margin="509,321,0,0"
+            Margin="245,327,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Click="dodajAlergene"
             Content="Dodaj"
+            Cursor="Hand"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14"
-            Click="dodajAlergene"
-            Cursor="Hand"/>
+            TextElement.FontSize="14" />
+        <Frame
+            Name="alergens"
+            Width="320"
+            Height="201"
+            Margin="357,169,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
 
     </Grid>
 </Window>

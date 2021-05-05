@@ -2,14 +2,14 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows.Controls;
 
 public class MedicalRecord : Patient
 {
     public int medicalRecordId;
     public BloodType bloodType;
-    public List<String> alergens;
-
+    public ObservableCollection<Alergens> alergens;
     public MedicalRecord(String n, String s, String j, Gender g, DateTime dr, int mid, HealthCareCategory hcc, int idhc, BloodType bt)
     {
         this.name = n;
@@ -21,7 +21,8 @@ public class MedicalRecord : Patient
         this.HealthCareCategory = hcc;
         this.IdHealthCard = idhc;
         this.bloodType = bt;
-       // this.alergens = a;
+
+        this.alergens = null;
 
 
     }
@@ -70,7 +71,7 @@ public class MedicalRecord : Patient
             }
         }
     }
-    public List<String> Alergens
+    public ObservableCollection<Alergens> Alergens
     {
         get
         {

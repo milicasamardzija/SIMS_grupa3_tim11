@@ -51,17 +51,17 @@ namespace Hospital
 
 
             //za nalog
-            imeText.SelectedText = selectedPatient.name;
-            prezimeText.SelectedText = selectedPatient.surname;
-            jmbgText.SelectedText = selectedPatient.jmbg;
-            pol.SelectedIndex = (int)selectedPatient.gender; //ovako se setuje opcija combo box-a
-            brText.SelectedText = selectedPatient.telephoneNumber;
+            imeText.SelectedText = selectedPatient.Name;
+            prezimeText.SelectedText = selectedPatient.Surname;
+            jmbgText.SelectedText = selectedPatient.Jmbg;
+            pol.SelectedIndex = (int)selectedPatient.Gender; 
+            brText.SelectedText = selectedPatient.TelephoneNumber;
 
             datum.SelectedDate = (DateTime)selectedPatient.BirthdayDate;
             brKnjText.SelectedText = Convert.ToString(selectedPatient.IdHealthCard);
             brKarText.SelectedText = Convert.ToString(selectedPatient.PatientId);
 
-            datum.SelectedDate = (DateTime)selectedPatient.birthdayDate;
+            datum.SelectedDate = (DateTime)selectedPatient.BirthdayDate;
             brKnjText.SelectedText = Convert.ToString(selectedPatient.IdHealthCard);
             brKarText.SelectedText = Convert.ToString(selectedPatient.PatientId);
             zanimanjeText.SelectedText = selectedPatient.Occupation;
@@ -72,9 +72,7 @@ namespace Hospital
             grad.SelectedIndex = (int)selectedPatient.adress.city;  
             drzava.SelectedIndex = (int)selectedPatient.adress.country;
 
-
-           //nadjene informacije i iz kartona
-           // alergeni.SelectedText = record.alergens;
+            //informacije iz kartona
             krvnaGrupa.SelectedIndex = (int)record.bloodType; 
         }
 
@@ -85,14 +83,14 @@ namespace Hospital
             Patient promeniP = pfs.FindById(Convert.ToInt16(brKarText.Text));
             Patient izbrisiP = pfs.FindById(Convert.ToInt16(brKarText.Text));
 
-            promeniP.name = imeText.Text;
-            promeniP.surname = prezimeText.Text;
-            promeniP.birthdayDate = (DateTime)datum.SelectedDate;
-            promeniP.jmbg = jmbgText.Text;
+            promeniP.Name = imeText.Text;
+            promeniP.Surname = prezimeText.Text;
+            promeniP.BirthdayDate = (DateTime)datum.SelectedDate;
+            promeniP.Jmbg = jmbgText.Text;
             promeniP.Occupation = zanimanjeText.Text;
             promeniP.Insurence = osiguraniktText.Text;
-            promeniP.gender = (Gender)pol.SelectedIndex;    //ovako ide za combo box
-            promeniP.telephoneNumber = brText.Text;
+            promeniP.Gender = (Gender)pol.SelectedIndex;    //ovako ide za combo box
+            promeniP.TelephoneNumber = brText.Text;
 
             promeniP.PatientId = Convert.ToInt16(brKarText.Text);
             
@@ -108,16 +106,16 @@ namespace Hospital
             MedicalRecord promeniM = mfs.FindById(Convert.ToInt16(brKarText.Text));
             MedicalRecord izbrisiM = mfs.FindById(Convert.ToInt16(brKarText.Text));
 
-            promeniM.name = imeText.Text;
-            promeniM.surname = prezimeText.Text;
-            promeniM.birthdayDate = (DateTime)datum.SelectedDate;
-            promeniM.jmbg = jmbgText.Text;
-            promeniM.gender = (Gender)pol.SelectedIndex;
-            promeniM.medicalRecordId= Convert.ToInt16(brKarText.Text);
+            promeniM.Name = imeText.Text;
+            promeniM.Surname = prezimeText.Text;
+            promeniM.BirthdayDate = (DateTime)datum.SelectedDate;
+            promeniM.Jmbg = jmbgText.Text;
+            promeniM.Gender = (Gender)pol.SelectedIndex;
+            promeniM.MedicalRecordId= Convert.ToInt16(brKarText.Text);
             promeniM.IdHealthCard = Convert.ToInt16(brKnjText.Text);
             promeniM.HealthCareCategory= (HealthCareCategory)zastitaText.SelectedIndex;
-            promeniM.bloodType = (BloodType)krvnaGrupa.SelectedIndex;
-           // promeniM.alergens = alergeni.Text;
+            promeniM.BloodType = (BloodType)krvnaGrupa.SelectedIndex;
+           
 
             mfs.Delete(izbrisiM);
             mfs.Save(promeniM);

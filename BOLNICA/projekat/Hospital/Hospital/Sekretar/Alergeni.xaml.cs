@@ -17,11 +17,16 @@ namespace Hospital.Sekretar
 {
     public partial class Alergeni : Window
     {
-        public Window window;
-        public MedicalRecord newRecord;
-        public Patient newPatient;
-        public ObservableCollection<Alergens> newAlergens;
-        public Alergens newAlergen;
+    
+       
+        public MedicalRecord record;
+        public Patient patient;
+        public ObservableCollection<Patient> listPatient;
+        public ObservableCollection<MedicalRecord> listRecord;
+        int index;
+       
+        public int id;
+
 
         public ObservableCollection<Alergens> listAllAlergens
         {
@@ -33,17 +38,37 @@ namespace Hospital.Sekretar
             get;
             set;
         }
-        public Alergeni(Window w)
+        public Alergeni(ObservableCollection<Patient> list, Patient selectedPatient, int sel)
         {
             InitializeComponent();
             this.DataContext = this;
-            listAllAlergens = loadJason();
-           // listAlergens = newAlergens; //selektovani se dodaju
-            window = w;
+            listAllAlergens = loadJasonAllAlergens();
+            listAlergens = loadPatientAlergens();
 
+            listPatient = list;
+
+            foreach (Patient p in listPatient)
+            {
+                if (p.Equals(selectedPatient))
+                {
+                    patient = p;
+                    break;
+                }
+            }
+
+            index = sel;
+
+
+            id = selectedPatient.PatientId;
+            MedicalRecordsFileStorage mfs = new MedicalRecordsFileStorage();
+            record = mfs.FindById(id);
+
+          
+
+           
         }
 
-        public ObservableCollection<Alergens> loadJason()
+        public ObservableCollection<Alergens> loadJasonAllAlergens()
         {
             AlergensFileStorage afs = new AlergensFileStorage();
             ObservableCollection<Alergens> ret = new ObservableCollection<Alergens>(afs.GetAll());
@@ -51,40 +76,46 @@ namespace Hospital.Sekretar
             return ret;
         }
 
+        public ObservableCollection<Alergens> loadPatientAlergens()
+        {
+           
+            ObservableCollection<Alergens> a = new ObservableCollection<Alergens>();
+            MedicalRecordsFileStorage mStorage = new MedicalRecordsFileStorage();
+            MedicalRecord prikaziAlergene = mStorage.FindById(id);
+
+            a = prikaziAlergene.Alergens;
+            return a;
+        }
+
         private void AddAlergens(object sender, RoutedEventArgs e)
         {
-            //AlergensFileStorage afs = new AlergensFileStorage();
+            AlergensFileStorage afs = new AlergensFileStorage();
 
-            //listAlergens.Add((Alergens)all.SelectedItem);
-            // listAllAlergens.Remove((Alergens)all.SelectedItem);
-            var item = listAllAlergens[all.CurrentCell.Column.DisplayIndex];
-            listAlergens.Add(item);
-            listAllAlergens.Remove(item);
-
-            all.ItemsSource = listAllAlergens;
-            selected.ItemsSource = listAlergens;
-
-            MedicalRecordsFileStorage mfs = new MedicalRecordsFileStorage();
-            PatientFileStorage pfs = new PatientFileStorage();
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
+            listAlergens.Add((Alergens)svi.SelectedItem);
+            listAllAlergens.Remove((Alergens)svi.SelectedItem);
+         
 
         }
 
-        private void Cancel(object sender, RoutedEventArgs e)
+      
+
+        private void RemoveAlergen(object sender, RoutedEventArgs e)
         {
+            AlergensFileStorage afs = new AlergensFileStorage();
+            listAlergens.Remove((Alergens)selected.SelectedItem);
+        }
+
+        private void saveAlergens(object sender, RoutedEventArgs e)
+        {
+            
+            MedicalRecordsFileStorage mStorage = new MedicalRecordsFileStorage();
+            MedicalRecord promeniM = mStorage.FindById(id);
+
+            promeniM.alergens = listAlergens;
+
+            mStorage.DeleteById(id);
+            mStorage.Save(promeniM);
+
             this.Close();
         }
     }

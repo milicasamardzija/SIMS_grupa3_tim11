@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,14 +15,32 @@ using System.Windows.Shapes;
 
 namespace Hospital.Sekretar
 {
-    /// <summary>
-    /// Interaction logic for PrioritetLekar.xaml
-    /// </summary>
+   
     public partial class PrioritetLekar : Window
     {
-        public PrioritetLekar()
+       public  ObservableCollection<Patient> listPatient
+        {
+            get; set;
+        }
+       public  ObservableCollection<Doctor> listDoctors
+        {
+            get; set;
+        }
+        public PrioritetLekar(ObservableCollection<Patient> list)
         {
             InitializeComponent();
+            this.DataContext = this;
+            listPatient = list;
+            listDoctors = loadJson();
+
+        }
+
+        private ObservableCollection<Doctor> loadJson()
+        {
+            DoctorFileStorage dfs = new DoctorFileStorage();
+             ObservableCollection<Doctor> doctors = new ObservableCollection<Doctor>(dfs.GetAll());
+            return doctors;
+
         }
     }
 }
