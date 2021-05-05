@@ -75,14 +75,14 @@ namespace Hospital
                     if (secretary.username.Equals(ime.Text) && secretary.password.Equals(lozinka.Password))
                     {
                         id = secretary.secretaryId;
-                        Nalozi s = new Nalozi(blog);
+                        
+                        Nalozi s = new Nalozi();
                         s.Show();
-                        // Sekretar s = new Sekretar();
-                        // s.Show();
-                       // this.Close();
+                  
                         return;
-                    }
+                    } 
                 }
+               
             }
             else if (uloga.SelectedIndex == 3) //upravnik
             {

@@ -18,7 +18,7 @@ using System.Text;
         return allNotices;
     }
 
-    public void saveAll(List<Notice> notices)
+   /* public void saveAll(Notice notices)
     {
         using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/notices.json"))
         {
@@ -26,9 +26,22 @@ using System.Text;
             serializer.Serialize(file, notices);
 
         }
+    } */
+    //nisam sigurna hoce li raditi
+    internal void save(Notice rs)
+    {
+        List<Notice> allNotice = GetAll();
+        allNotice.Add(rs);
+        SaveAll(allNotice);
     }
 
-  
+    public void SaveAll(List<Notice> all)
+    {
+        using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/notices.json"))
+        {
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.Serialize(file,all);
 
-
+        }
     }
+}

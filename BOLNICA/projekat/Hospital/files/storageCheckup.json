@@ -1,1 +1,52 @@
-[{"type":2,"idCh":0,"date":"2021-04-17T17:25:00","time":"12.00.00","duration":56.0,"idA":0,"patient":{"guest":false,"birthdayDate":"0001-01-01T00:00:00","PatientId":12,"IdHealthCard":54,"HealthCareCategory":1,"Occupation":"profesor","Insurence":"Olivera Atic","name":"Nevena","surname":"Atic","telephoneNumber":"","jmbg":"123456567","gender":0,"username":"aaa","password":"aaa","adress":{"street":"Vojove Misica","streetNumber":14,"city":5,"country":0},"Name":"Nevena","Surname":"Atic","Jmbg":"123456567","TelephoneNumber":"","Gender":0,"BirthdayDate":"0001-01-01T00:00:00","Username":"aaa","Password":"aaa"},"doctor":{"doctorId":15,"specialization":"pedijatrija","freeDays":25,"birthdayDate":"0001-01-01T00:00:00","name":"Bratislava","surname":"Bozilov","telephoneNumber":"064/1234455","jmbg":"0105999888654","gender":1,"username":"","password":"","adress":{"street":"Ljubisava Andrica","streetNumber":10,"city":5,"country":0}}}]
+[
+    {
+        "type": 2,
+        "idCh": 0,
+        "date": "2021-04-17T17:25:00",
+        "time": "12.00.00",
+        "duration": 56.0,
+        "idA": 0,
+        "patient": {
+            "guest": false,
+            "birthdayDate": "0001-01-01T00:00:00",
+            "PatientId": 12,
+            "IdHealthCard": 54,
+            "HealthCareCategory": 1,
+            "Occupation": "profesor",
+            "Insurence": "Olivera Atic",
+            "adress": {
+                "street": "Vojove Misica",
+                "streetNumber": 14,
+                "city": 5,
+                "country": 0
+            },
+            "Name": "Nevena",
+            "Surname": "Atic",
+            "Jmbg": "123456567",
+            "TelephoneNumber": "",
+            "Gender": 0,
+            "BirthdayDate": "0001-01-01T00:00:00",
+            "Username": "aaa",
+            "Password": "aaa"
+        },
+        "doctor": {
+            "doctorId": 15,
+            "specialization": "pedijatrija",
+            "freeDays": 25,
+            "birthdayDate": "0001-01-01T00:00:00",
+            "name": "Bratislava",
+            "surname": "Bozilov",
+            "telephoneNumber": "064/1234455",
+            "jmbg": "0105999888654",
+            "gender": 1,
+            "username": "",
+            "password": "",
+            "adress": {
+                "street": "Ljubisava Andrica",
+                "streetNumber": 10,
+                "city": 5,
+                "country": 0
+            }
+        }
+    }
+]

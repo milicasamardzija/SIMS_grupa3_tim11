@@ -23,15 +23,15 @@ public class Patient : User
     { 
         this.name=n;
         this.surname=s;
-        this.telephoneNumber=tel;
-        this.jmbg=jmb;
-        this.gender=g;
-        this.birthdayDate=b;
-        this.patientId = pId; //id pacijenta je meni isto sto i broj kartona 
-        this.healthCareCategory = hcc;
-        this.idHealthCard = idhc; //broj zdrav knjizice
-        this.occupation = oc;
-        this.insurence = ins;
+        this.TelephoneNumber=tel;
+        this.Jmbg=jmb;
+        this.Gender=g;
+        this.BirthdayDate=b;
+        this.PatientId = pId; //id pacijenta je meni isto sto i broj kartona 
+        this.HealthCareCategory = hcc;
+        this.IdHealthCard = idhc; //broj zdrav knjizice
+        this.Occupation = oc;
+        this.Insurence = ins;
         this.adress = adr;
         
 
@@ -43,13 +43,13 @@ public class Patient : User
 
     public Patient(String i, String p, String br, String jmbgG, Gender pol, DateTime datR, int idP) 
     {
-        this.name = i;
-        this.surname = p;
-        this.telephoneNumber = br;
-        this.jmbg = jmbgG;
-        this.gender = pol;
-        this.birthdayDate = datR;
-        this.patientId = idP;
+        this.Name = i;
+        this.Surname = p;
+        this.TelephoneNumber = br;
+        this.Jmbg = jmbgG;
+        this.Gender = pol;
+        this.BirthdayDate = datR;
+        this.PatientId = idP;
 
         this.guest = true;
 
