@@ -10,11 +10,9 @@
         <Label x:Name="label1" Content="Lekovi koji su odobreni od strane strucnog lica" Margin="19,10,120.8,272" FontSize="20" Foreground="#FFFF00B2"/>
         <DataGrid x:Name="ListMedicines" Margin="19,65,234,82" Grid.Column="0" Background="MistyRose" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path = MedicineList}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="SIFRA" FontSize="16"/>
                 <DataGridTextColumn Header="NAZIV" FontSize="16"/>
-                <DataGridTextColumn Header="VRSTA" FontSize="16"/>
+                <DataGridTextColumn Header="TIP" FontSize="16"/>
                 <DataGridTextColumn Header="GRAMAZA" FontSize="16"/>
-                <DataGridTextColumn Header="KOLICINA" FontSize="16"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="button1" Content="Izmeni" Margin="19,277,454.8,18" FontSize="16" Click="button1_Click"/>

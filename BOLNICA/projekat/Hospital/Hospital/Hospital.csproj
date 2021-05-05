@@ -61,6 +61,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CekajuRevizijuLekar.xaml.cs">
+      <DependentUpon>CekajuRevizijuLekar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controller\InventoryController.cs" />
     <Compile Include="Controller\RoomsController.cs" />
     <Compile Include="Model\Ingredient.cs" />
@@ -125,6 +128,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="BlogGlavni.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CekajuRevizijuLekar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

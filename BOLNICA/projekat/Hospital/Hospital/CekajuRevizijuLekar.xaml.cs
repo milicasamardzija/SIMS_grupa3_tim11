@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Hospital
 {
     /// <summary>
-    /// Interaction logic for Evidencija.xaml
+    /// Interaction logic for CekajuRevizijuLekar.xaml
     /// </summary>
-    public partial class Evidencija : Window
+    public partial class CekajuRevizijuLekar : Window
     {
-        public Evidencija()
+        public CekajuRevizijuLekar()
         {
             InitializeComponent();
         }
@@ -31,14 +31,8 @@ namespace Hospital
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            IzmenaLeka il = new IzmenaLeka();
-            il.Show();
-        }
-
-        private void button4_Click(object sender, RoutedEventArgs e)
-        {
-            CekajuRevizijuLekar crl = new CekajuRevizijuLekar();
-            crl.Show();
+            RevizijaLekaLekar rll = new RevizijaLekaLekar();
+            rll.Show();
         }
     }
 }
