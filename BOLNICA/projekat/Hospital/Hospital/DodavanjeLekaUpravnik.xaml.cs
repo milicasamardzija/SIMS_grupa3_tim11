@@ -1,5 +1,4 @@
 ﻿using Hospital.Controller;
-using Hospital.Model;
 using Hospital.Prikaz;
 using System;
 using System.Collections.Generic;
@@ -18,21 +17,25 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    public partial class BrisanjeLekaUpravnik : UserControl
+    /// <summary>
+    /// Interaction logic for DodavanjeLekaUpravnik.xaml
+    /// </summary>
+    public partial class DodavanjeLekaUpravnik : UserControl
     {
         private Frame frame = new Frame();
         private LekRevizija revision = new LekRevizija();
-        private MedicineFileStorage storage = new MedicineFileStorage();
-        public BrisanjeLekaUpravnik(Frame frameLekovi, LekRevizija selectedRevision)
+        private MedicineController controller = new MedicineController();
+      
+        public DodavanjeLekaUpravnik(Frame frameLekovi, LekRevizija selectedRevision)
         {
             InitializeComponent();
             frame = frameLekovi;
             revision = selectedRevision;
         }
 
-        private void obrisi(object sender, RoutedEventArgs e)
+        private void dodaj(object sender, RoutedEventArgs e)
         {
-            storage.DeleteById(revision.IdMedicine);
+            controller.approveMedicine(revision);
             frame.NavigationService.Navigate(new LekoviRevizijaUpravnik(frame));
         }
 

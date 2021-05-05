@@ -58,12 +58,12 @@ namespace Hospital
 
         private void dodaj(object sender, RoutedEventArgs e)
         {
-
+            LekoviRevizijaFrame.NavigationService.Navigate(new DodavanjeLekaUpravnik(frame, (LekRevizija)ListaLekovaRevizija.SelectedItem));
         }
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void izbrisi(object sender, RoutedEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using Hospital.Model;
+using Hospital.Prikaz;
 using Hospital.Service;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,11 @@ namespace Hospital.Controller
         public void sendMedicineToRevision(Medicine newMedicine, int idDoctor)
         {
             service.sendMediciToRevision(newMedicine, idDoctor);
+        }
+
+        internal void approveMedicine(LekRevizija revision)
+        {
+            service.approvedMedicine(revision);
         }
     }
 }

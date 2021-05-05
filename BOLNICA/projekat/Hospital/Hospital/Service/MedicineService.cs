@@ -1,4 +1,5 @@
 ﻿using Hospital.Model;
+using Hospital.Prikaz;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,20 @@ namespace Hospital.Service
                 }
             }
             return ret;
+        }
+
+        internal void approvedMedicine(LekRevizija revision)
+        {
+            List<Medicine> all = storageMedicine.GetAll();
+            foreach (Medicine medicine in all)
+            {
+                if (medicine.IdMedicine == revision.IdMedicine)
+                {
+                    medicine.Approved = true;
+                    storageMedicine.SaveAll(all);
+                    break;
+                }
+            }
         }
 
         public void sendMediciToRevision(Medicine newMedicine, int idDoctor)
