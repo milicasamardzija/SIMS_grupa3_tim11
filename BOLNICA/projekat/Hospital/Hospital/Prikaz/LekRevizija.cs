@@ -37,6 +37,10 @@ namespace Hospital.Prikaz
             idMedicineReviw = idR;
         }
 
+        public LekRevizija()
+        {
+        }
+
         public String Name
         {
             get

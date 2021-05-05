@@ -43,7 +43,6 @@ namespace Hospital.Service
         {
             storageMedicine.Save(newMedicine);
             storageReview.Save(new MedicineReview(generateIdMedicineReview(),newMedicine.IdMedicine,idDoctor,ReviewType.dodavanje,"",false));
-            MessageBox.Show(Convert.ToString(idDoctor));
         }
     }
 }

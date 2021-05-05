@@ -24,10 +24,10 @@
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock  FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="69,62,0,0" TextWrapping="Wrap" Text="Lekovi koji su odobreni od strane strucnog lica" VerticalAlignment="Top" Height="42" Width="650" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
-        <Frame Name="LekoviFrame" Content="" HorizontalAlignment="Left" Margin="749,94,0,0" VerticalAlignment="Top" Height="369" Width="470" BorderBrush="#FFB42412" OpacityMask="Black" Foreground="#FFA31818" NavigationUIVisibility="Hidden"/>
+        <Frame Name="LekoviFrame" Content="" HorizontalAlignment="Left" Margin="749,62,0,0" VerticalAlignment="Top" Height="401" Width="470" NavigationUIVisibility="Hidden"/>
         <Button Background="AliceBlue"  Content="Dodaj" HorizontalAlignment="Left" Margin="69,514,0,0" VerticalAlignment="Top" Width="133" Height="48" FontSize="24" FontWeight="Bold" Click="dodaj" RenderTransformOrigin="0.562,-0.422" />
         <Button Background="AliceBlue" Content="Izbrisi" HorizontalAlignment="Left" Margin="517,515,0,0" VerticalAlignment="Top" Width="129" Height="47" FontSize="24" FontWeight="Bold" Click="izbrisi" RenderTransformOrigin="0.487,0.41"/>
         <Button Background="AliceBlue" Content="Izmeni" HorizontalAlignment="Left" Margin="291,515,0,0" VerticalAlignment="Top" Width="131" Height="47" Click="izmeni" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.453,-1.384"/>
-        <Button Background="AliceBlue" Content="Lekovi koji cekaju reviziju" HorizontalAlignment="Left" Margin="897,515,0,0" VerticalAlignment="Top" Width="296" Click="prikazRevizije" Height="47" RenderTransformOrigin="0.586,0.776" FontWeight="Bold" FontSize="18"/>
+        <Button Background="AliceBlue" Content="Lekovi koji cekaju reviziju" HorizontalAlignment="Left" Margin="923,514,0,0" VerticalAlignment="Top" Width="296" Click="prikazRevizije" Height="47" RenderTransformOrigin="0.586,0.776" FontWeight="Bold" FontSize="18"/>
     </Grid>
 </UserControl>

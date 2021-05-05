@@ -61,6 +61,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BrisanjeLekaUpravnik.xaml.cs">
+      <DependentUpon>BrisanjeLekaUpravnik.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controller\InventoryController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
     <Compile Include="Controller\RoomsController.cs" />
@@ -79,6 +82,7 @@
     <Compile Include="LekoviRevizijaUpravnik.xaml.cs">
       <DependentUpon>LekoviRevizijaUpravnik.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MedicineFilestorage.cs" />
     <Compile Include="Model\Ingredient.cs" />
     <Compile Include="Model\IngredientsFileStorage.cs" />
     <Compile Include="Model\Medicine.cs" />
@@ -143,6 +147,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="BlogGlavni.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BrisanjeLekaUpravnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

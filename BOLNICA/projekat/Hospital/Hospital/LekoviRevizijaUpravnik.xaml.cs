@@ -24,12 +24,13 @@ namespace Hospital
     public partial class LekoviRevizijaUpravnik : UserControl
     {
         public ObservableCollection<LekRevizija> MedicineReviewList { get; set; }
-        
-        public LekoviRevizijaUpravnik()
+        private Frame frame = new Frame();
+        public LekoviRevizijaUpravnik(Frame frameUpravnik)
         {
             InitializeComponent();
             this.DataContext = this;
             MedicineReviewList = loadJson();
+            frame = frameUpravnik;
         }
 
         public ObservableCollection<LekRevizija> loadJson()
@@ -47,6 +48,7 @@ namespace Hospital
                         if (medicineRewiev.IdMedicine == medicine.IdMedicine)
                         {
                             ret.Add(new LekRevizija(medicine.Name,medicine.Type,medicineRewiev.TypeReview,medicineRewiev.Done, medicine.IdMedicine, medicineRewiev.IdMedicineReview));
+                            break;
                         }
                     }
                 }
@@ -66,7 +68,7 @@ namespace Hospital
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-
+            LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeLekaUpravnik(frame,(LekRevizija)ListaLekovaRevizija.SelectedItem));
         }
     }
 }

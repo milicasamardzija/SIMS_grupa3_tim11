@@ -11,12 +11,12 @@
                   Background="AliceBlue" 
                   HorizontalAlignment="Left"
                   Height="287" 
-                  Margin="69,176,0,0" 
+                  Margin="69,135,0,0" 
                   VerticalAlignment="Top" 
                   Width="577"
                   AutoGenerateColumns="False"
                   IsReadOnly="True"
-                  ItemsSource="{Binding Path = MedicineReviewList}" Grid.ColumnSpan="2">
+                  ItemsSource="{Binding Path = MedicineReviewList}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="NAZIV" Width="100" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="TIP LEKA" Width="150" Binding="{Binding MedicineType}"/>
@@ -30,8 +30,8 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock  FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="69,62,0,0" TextWrapping="Wrap" Text="Lekovi koji su cekaju reviziju od strane strucnog lica" VerticalAlignment="Top" Height="42" Width="742" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
-        <Frame Name="LekoviRevizijaFrame" Content="" HorizontalAlignment="Left" Margin="754,153,0,0" VerticalAlignment="Top" Height="369" Width="470" BorderBrush="#FFB42412" OpacityMask="Black" Foreground="#FFA31818" NavigationUIVisibility="Hidden"/>
+        <TextBlock  FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="69,42,0,0" TextWrapping="Wrap" Text="Lekovi koji su cekaju reviziju od strane strucnog lica" VerticalAlignment="Top" Height="42" Width="742" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
+        <Frame Name="LekoviRevizijaFrame" Content="" HorizontalAlignment="Left" Margin="749,135,0,0" VerticalAlignment="Top" Height="401" Width="470" BorderBrush="#FFB42412" OpacityMask="Black" Foreground="#FFA31818" NavigationUIVisibility="Hidden"/>
         <Button Background="AliceBlue"  Content="Dodaj" HorizontalAlignment="Left" Margin="69,514,0,0" VerticalAlignment="Top" Width="133" Height="48" FontSize="24" FontWeight="Bold" Click="dodaj" RenderTransformOrigin="0.562,-0.422" />
         <Button Background="AliceBlue" Content="Izbrisi" HorizontalAlignment="Left" Margin="517,515,0,0" VerticalAlignment="Top" Width="129" Height="47" FontSize="24" FontWeight="Bold" Click="izbrisi" RenderTransformOrigin="0.487,0.41"/>
         <Button Background="AliceBlue" Content="Izmeni" HorizontalAlignment="Left" Margin="291,515,0,0" VerticalAlignment="Top" Width="131" Height="47" Click="izmeni" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.453,-1.384"/>

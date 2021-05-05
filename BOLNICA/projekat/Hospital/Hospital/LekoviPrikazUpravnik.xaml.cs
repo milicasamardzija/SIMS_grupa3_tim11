@@ -66,7 +66,7 @@ namespace Hospital
 
         private void prikazRevizije(object sender, RoutedEventArgs e)
         {
-            frameUprvanik.NavigationService.Navigate(new LekoviRevizijaUpravnik());
+            frameUprvanik.NavigationService.Navigate(new LekoviRevizijaUpravnik(frameUprvanik));
         }
     }
 }
