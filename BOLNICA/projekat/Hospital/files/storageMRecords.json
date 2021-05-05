@@ -1,1 +1,293 @@
-[{"medicalRecordId":1,"bloodType":3,"alergens":[{"name":"Bactrim","code":"c7","Name":"Bactrim","Code":"c7"}],"guest":false,"name":"Zeljko","surname":"Timotijevic","telephoneNumber":null,"jmbg":"5264879526","gender":0,"birthdayDate":"1990-12-11T00:00:00","username":null,"password":null,"MedicalRecordId":1,"BloodType":3,"Alergens":[{"name":"Bactrim","code":"c7","Name":"Bactrim","Code":"c7"}],"PatientId":0,"IdHealthCard":548,"HealthCareCategory":2,"Occupation":null,"Insurence":null,"adress":null,"Name":"Zeljko","Surname":"Timotijevic","Jmbg":"5264879526","TelephoneNumber":null,"Gender":0,"BirthdayDate":"1990-12-11T00:00:00","Username":null,"Password":null},{"medicalRecordId":4,"bloodType":0,"alergens":null,"guest":false,"name":"VDSV","surname":"SVSV","telephoneNumber":null,"jmbg":"VSV","gender":0,"birthdayDate":"2021-05-06T00:00:00","username":null,"password":null,"MedicalRecordId":4,"BloodType":0,"Alergens":null,"PatientId":0,"IdHealthCard":5,"HealthCareCategory":1,"Occupation":null,"Insurence":null,"adress":null,"Name":"VDSV","Surname":"SVSV","Jmbg":"VSV","TelephoneNumber":null,"Gender":0,"BirthdayDate":"2021-05-06T00:00:00","Username":null,"Password":null},{"medicalRecordId":2,"bloodType":0,"alergens":[{"name":"Bactrim","code":"c7","Name":"Bactrim","Code":"c7"},{"name":"Diclofenac","code":"c281","Name":"Diclofenac","Code":"c281"}],"guest":false,"name":"GHKAKJNFMVA","surname":"SVJLNSV","telephoneNumber":null,"jmbg":"SVS","gender":1,"birthdayDate":"2021-05-01T00:00:00","username":null,"password":null,"MedicalRecordId":2,"BloodType":0,"Alergens":[{"name":"Bactrim","code":"c7","Name":"Bactrim","Code":"c7"},{"name":"Diclofenac","code":"c281","Name":"Diclofenac","Code":"c281"}],"PatientId":0,"IdHealthCard":5,"HealthCareCategory":1,"Occupation":null,"Insurence":null,"adress":null,"Name":"GHKAKJNFMVA","Surname":"SVJLNSV","Jmbg":"SVS","TelephoneNumber":null,"Gender":1,"BirthdayDate":"2021-05-01T00:00:00","Username":null,"Password":null},{"medicalRecordId":0,"bloodType":1,"alergens":[{"name":"Bactrim","code":"c7","Name":"Bactrim","Code":"c7"}],"guest":false,"name":"Milica","surname":"SAMARDZIJA","telephoneNumber":null,"jmbg":"0105999777586","gender":1,"birthdayDate":"1999-05-01T00:00:00","username":null,"password":null,"MedicalRecordId":0,"BloodType":1,"Alergens":[{"name":"Bactrim","code":"c7","Name":"Bactrim","Code":"c7"}],"PatientId":0,"IdHealthCard":123,"HealthCareCategory":4,"Occupation":null,"Insurence":null,"adress":null,"Name":"Milica","Surname":"SAMARDZIJA","Jmbg":"0105999777586","TelephoneNumber":null,"Gender":1,"BirthdayDate":"1999-05-01T00:00:00","Username":null,"Password":null}]
+[
+    {
+        "medicalRecordId": 1,
+        "bloodType": 3,
+        "alergens": [],
+        "guest": false,
+        "name": "Zeljko",
+        "surname": "Timotijevic",
+        "telephoneNumber": null,
+        "jmbg": "5264879526",
+        "gender": 0,
+        "birthdayDate": "1990-12-11T00:00:00",
+        "username": null,
+        "password": null,
+        "MedicalRecordId": 1,
+        "BloodType": 3,
+        "Alergens": [],
+        "PatientId": 0,
+        "IdHealthCard": 548,
+        "HealthCareCategory": 2,
+        "Occupation": null,
+        "Insurence": null,
+        "adress": null,
+        "Name": "Zeljko",
+        "Surname": "Timotijevic",
+        "Jmbg": "5264879526",
+        "TelephoneNumber": null,
+        "Gender": 0,
+        "BirthdayDate": "1990-12-11T00:00:00",
+        "Username": null,
+        "Password": null
+    },
+    {
+        "medicalRecordId": 4,
+        "bloodType": 0,
+        "alergens": [
+            {
+                "Name": "Amoxicillin",
+                "Code": "c204"
+            }
+        ],
+        "guest": false,
+        "name": "NEKO",
+        "surname": "NEKO",
+        "telephoneNumber": null,
+        "jmbg": "NEKO",
+        "gender": 1,
+        "birthdayDate": "2021-05-08T00:00:00",
+        "username": null,
+        "password": null,
+        "MedicalRecordId": 4,
+        "BloodType": 0,
+        "Alergens": [
+            {
+                "Name": "Amoxicillin",
+                "Code": "c204"
+            }
+        ],
+        "PatientId": 0,
+        "IdHealthCard": 5,
+        "HealthCareCategory": 0,
+        "Occupation": null,
+        "Insurence": null,
+        "adress": null,
+        "Name": "NEKO",
+        "Surname": "NEKO",
+        "Jmbg": "NEKO",
+        "TelephoneNumber": null,
+        "Gender": 1,
+        "BirthdayDate": "2021-05-08T00:00:00",
+        "Username": null,
+        "Password": null
+    },
+    {
+        "medicalRecordId": 5,
+        "bloodType": 1,
+        "alergens": [
+            {
+                "Name": "Lidocaine/Xylocaine",
+                "Code": "c232"
+            }
+        ],
+        "guest": false,
+        "name": "JANKO",
+        "surname": "JANKO",
+        "telephoneNumber": null,
+        "jmbg": "JANKO",
+        "gender": 0,
+        "birthdayDate": "2021-05-07T00:00:00",
+        "username": null,
+        "password": null,
+        "MedicalRecordId": 5,
+        "BloodType": 1,
+        "Alergens": [
+            {
+                "Name": "Lidocaine/Xylocaine",
+                "Code": "c232"
+            }
+        ],
+        "PatientId": 0,
+        "IdHealthCard": 6,
+        "HealthCareCategory": 1,
+        "Occupation": null,
+        "Insurence": null,
+        "adress": null,
+        "Name": "JANKO",
+        "Surname": "JANKO",
+        "Jmbg": "JANKO",
+        "TelephoneNumber": null,
+        "Gender": 0,
+        "BirthdayDate": "2021-05-07T00:00:00",
+        "Username": null,
+        "Password": null
+    },
+    {
+        "medicalRecordId": 2,
+        "bloodType": 0,
+        "alergens": [],
+        "guest": false,
+        "name": "GHKAKJNFMVA",
+        "surname": "SVJLNSV",
+        "telephoneNumber": null,
+        "jmbg": "SVS",
+        "gender": 1,
+        "birthdayDate": "2021-05-01T00:00:00",
+        "username": null,
+        "password": null,
+        "MedicalRecordId": 2,
+        "BloodType": 0,
+        "Alergens": [],
+        "PatientId": 0,
+        "IdHealthCard": 5,
+        "HealthCareCategory": 1,
+        "Occupation": null,
+        "Insurence": null,
+        "adress": null,
+        "Name": "GHKAKJNFMVA",
+        "Surname": "SVJLNSV",
+        "Jmbg": "SVS",
+        "TelephoneNumber": null,
+        "Gender": 1,
+        "BirthdayDate": "2021-05-01T00:00:00",
+        "Username": null,
+        "Password": null
+    },
+    {
+        "medicalRecordId": 4,
+        "bloodType": 1,
+        "alergens": [
+            {
+                "Name": null,
+                "Code": null
+            },
+            {
+                "Name": "Aminophyllin",
+                "Code": "c81"
+            },
+            {
+                "Name": "Amoxicillin",
+                "Code": "c204"
+            }
+        ],
+        "guest": false,
+        "name": "NEKOOOOO",
+        "surname": "NEKO",
+        "telephoneNumber": null,
+        "jmbg": "NEKO",
+        "gender": 1,
+        "birthdayDate": "2021-05-08T00:00:00",
+        "username": null,
+        "password": null,
+        "MedicalRecordId": 4,
+        "BloodType": 1,
+        "Alergens": [
+            {
+                "Name": null,
+                "Code": null
+            },
+            {
+                "Name": "Aminophyllin",
+                "Code": "c81"
+            },
+            {
+                "Name": "Amoxicillin",
+                "Code": "c204"
+            }
+        ],
+        "PatientId": 0,
+        "IdHealthCard": 5,
+        "HealthCareCategory": 0,
+        "Occupation": null,
+        "Insurence": null,
+        "adress": null,
+        "Name": "NEKOOOOO",
+        "Surname": "NEKO",
+        "Jmbg": "NEKO",
+        "TelephoneNumber": null,
+        "Gender": 1,
+        "BirthdayDate": "2021-05-08T00:00:00",
+        "Username": null,
+        "Password": null
+    },
+    {
+        "medicalRecordId": 6,
+        "bloodType": 1,
+        "alergens": [
+            {
+                "Name": "Ampicillin",
+                "Code": "c203"
+            }
+        ],
+        "guest": false,
+        "name": "PPPPPPPPPP",
+        "surname": "PPPPPP",
+        "telephoneNumber": null,
+        "jmbg": "gfd",
+        "gender": 1,
+        "birthdayDate": "2021-05-02T00:00:00",
+        "username": null,
+        "password": null,
+        "MedicalRecordId": 6,
+        "BloodType": 1,
+        "Alergens": [
+            {
+                "Name": "Ampicillin",
+                "Code": "c203"
+            }
+        ],
+        "PatientId": 0,
+        "IdHealthCard": 25,
+        "HealthCareCategory": 1,
+        "Occupation": null,
+        "Insurence": null,
+        "adress": null,
+        "Name": "PPPPPPPPPP",
+        "Surname": "PPPPPP",
+        "Jmbg": "gfd",
+        "TelephoneNumber": null,
+        "Gender": 1,
+        "BirthdayDate": "2021-05-02T00:00:00",
+        "Username": null,
+        "Password": null
+    },
+    {
+        "medicalRecordId": 0,
+        "bloodType": 1,
+        "alergens": [
+            {
+                "Name": "Amoxicillin",
+                "Code": "c204"
+            },
+            {
+                "Name": "Askorbinska kiselina",
+                "Code": "c431"
+            }
+        ],
+        "guest": false,
+        "name": "Milica",
+        "surname": "SAMARDZIJA",
+        "telephoneNumber": null,
+        "jmbg": "0105999777586",
+        "gender": 1,
+        "birthdayDate": "1999-05-01T00:00:00",
+        "username": null,
+        "password": null,
+        "MedicalRecordId": 0,
+        "BloodType": 1,
+        "Alergens": [
+            {
+                "Name": "Amoxicillin",
+                "Code": "c204"
+            },
+            {
+                "Name": "Askorbinska kiselina",
+                "Code": "c431"
+            }
+        ],
+        "PatientId": 0,
+        "IdHealthCard": 123,
+        "HealthCareCategory": 4,
+        "Occupation": null,
+        "Insurence": null,
+        "adress": null,
+        "Name": "Milica",
+        "Surname": "SAMARDZIJA",
+        "Jmbg": "0105999777586",
+        "TelephoneNumber": null,
+        "Gender": 1,
+        "BirthdayDate": "1999-05-01T00:00:00",
+        "Username": null,
+        "Password": null
+    }
+]

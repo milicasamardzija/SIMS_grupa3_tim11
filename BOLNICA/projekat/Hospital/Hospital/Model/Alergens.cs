@@ -6,13 +6,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-   public class Alergens
+   public class Alergens : INotifyPropertyChanged
     {
-    public String name;
-    public String code;
+    private String name;
+    private String code;
 
-    //nisam sigurna mora li ovako ?
     public event PropertyChangedEventHandler PropertyChanged;
+
+    public Alergens() { }
+
+    public Alergens(String n, String c) {
+        this.name = n;
+        this.code = c;
+    }
 
     protected virtual void OnPropertyChanged(string name)
     {

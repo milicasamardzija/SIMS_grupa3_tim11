@@ -33,21 +33,21 @@
             Margin="35,44,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            AutoGenerateColumns="True"
+            AutoGenerateColumns="False"
             ItemsSource="{Binding Path=listGPatient}">
 
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="100"
-                    Binding="{Binding name}"
+                    Binding="{Binding Name}"
                     Header="IME" />
                 <DataGridTextColumn
                     Width="150"
-                    Binding="{Binding surname}"
+                    Binding="{Binding Surname}"
                     Header="PREZIME" />
                 <DataGridTextColumn
                     Width="150"
-                    Binding="{Binding jmbg}"
+                    Binding="{Binding Jmbg}"
                     Header="JMBG" />
             </DataGrid.Columns>
         </DataGrid>

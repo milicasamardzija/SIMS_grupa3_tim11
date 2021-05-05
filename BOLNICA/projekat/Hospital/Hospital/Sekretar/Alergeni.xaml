@@ -31,7 +31,7 @@
             x:Name="selected"
             Width="161"
             Height="191"
-            Margin="345,46,0,0"
+            Margin="333,46,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             ItemsSource="{Binding Path=listAlergens}" />

@@ -42,6 +42,10 @@ namespace Hospital.Sekretar
         {
             InitializeComponent();
             this.DataContext = this;
+            id = selectedPatient.PatientId;
+            MedicalRecordsFileStorage mfs = new MedicalRecordsFileStorage();
+            record = mfs.FindById(id);
+          
             listAllAlergens = loadJasonAllAlergens();
             listAlergens = loadPatientAlergens();
 
@@ -59,13 +63,9 @@ namespace Hospital.Sekretar
             index = sel;
 
 
-            id = selectedPatient.PatientId;
-            MedicalRecordsFileStorage mfs = new MedicalRecordsFileStorage();
-            record = mfs.FindById(id);
+       
 
-          
 
-           
         }
 
         public ObservableCollection<Alergens> loadJasonAllAlergens()
@@ -82,9 +82,16 @@ namespace Hospital.Sekretar
             ObservableCollection<Alergens> a = new ObservableCollection<Alergens>();
             MedicalRecordsFileStorage mStorage = new MedicalRecordsFileStorage();
             MedicalRecord prikaziAlergene = mStorage.FindById(id);
+           
+            foreach (Alergens al in record.Alergens)
+            {
+            
+                a.Add(al);
+            }
+         
 
-            a = prikaziAlergene.Alergens;
             return a;
+           
         }
 
         private void AddAlergens(object sender, RoutedEventArgs e)

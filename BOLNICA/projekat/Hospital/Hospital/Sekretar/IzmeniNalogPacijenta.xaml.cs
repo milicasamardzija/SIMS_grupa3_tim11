@@ -73,7 +73,7 @@ namespace Hospital
             drzava.SelectedIndex = (int)selectedPatient.adress.country;
 
             //informacije iz kartona
-            krvnaGrupa.SelectedIndex = (int)record.bloodType; 
+            krvnaGrupa.SelectedIndex = (int)record.BloodType; 
         }
 
         private void izmenaPacijentaB(object sender, RoutedEventArgs e)
