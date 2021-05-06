@@ -52,6 +52,25 @@ namespace Hospital
             }
         }
 
+        public int generisiID()
+        {
+            int ret = 0;
+            MedicineFileStorage storage = new MedicineFileStorage();
+            List<Medicine> all = storage.GetAll();
+            foreach (Medicine medicines in all)
+            {
+                foreach (Medicine medicine in all)
+                {
+                    if (ret == medicine.IdMedicine)
+                    {
+                        ++ret;
+                        break;
+                    }
+                }
+            }
+            return ret;
+        }
+
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -63,9 +82,17 @@ namespace Hospital
             medicine.Name = Convert.ToString(nazivLText.Text);
             medicine.Quantity = Convert.ToDouble(gramazaLText.Text);
             medicine.Type = Convert.ToString(vrstaLText.Text);
+            List<int> idMed = new List<int>();
+            List<int> idIngr = new List<int>();
+            bool approvedMedicine = true;
+            int idSelectedMedicine = generisiID();
 
+            listMedicine[indexSelectedMedicine] = new Medicine(idSelectedMedicine, Convert.ToString(medicine.Name), Convert.ToDouble(medicine.Quantity),
+                Convert.ToString(medicine.Type), idIngr, idMed, approvedMedicine);
 
-            //listMedicine[indexSelectedMedicine] = new Medicine()
+            medicineStorage.DeleteById(idSelectedMedicine);
+            medicineStorage.Save(medicine);
+            this.Close();
         }
     }
 }
