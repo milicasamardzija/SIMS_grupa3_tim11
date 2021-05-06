@@ -13,7 +13,7 @@
                        Foreground= "#FF3E3ADD"
                        Grid.Row="0"
                        Grid.Column="0"
-                       Margin="67,73,516,524"
+                       Margin="237,71,346,526"
                        FontSize="20" Width="697"
                        />
         <DataGrid Name="ProstorijeRenoviranje"
@@ -27,9 +27,9 @@
                       >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="BROJ PROSTORIJE" Width="140" Binding="{Binding IdRoom}"/>
-                <DataGridTextColumn Header="DATUM POCETKA" Width="150" Binding="{Binding DateBegin}"/>
-                <DataGridTextColumn Header="DATUM ZAVRSETKA" Width="150" Binding="{Binding DateEnd}"/>
-                <DataGridTextColumn Header="OPIS" Width="370"  Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="DATUM POCETKA" Width="150" Binding="{Binding DateBegin, StringFormat='{}{0:dd.MM.yyyy.}'}"/>
+                <DataGridTextColumn Header="DATUM ZAVRSETKA" Width="150" Binding="{Binding DateEnd, StringFormat='{}{0:dd.MM.yyyy.}'}"/>
+                <DataGridTextColumn Header="OPIS" Width="362"  Binding="{Binding Description}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

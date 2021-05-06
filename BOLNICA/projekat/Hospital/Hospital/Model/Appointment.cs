@@ -51,6 +51,16 @@ public class Appointment : INotifyPropertyChanged
         this.patient = patient;
     }
 
+    public Appointment(int v, DateTime dateTime, double v2, Doctor doctor, Patient patient, int roomId)
+    {
+        this.idA = v;
+        this.dateTime = dateTime;
+
+        this.duration = v2;
+        this.doctor = doctor;
+        this.patient = patient;
+        this.idRoom = roomId;
+    }
 
     public event PropertyChangedEventHandler PropertyChanged;
 

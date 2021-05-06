@@ -1,8 +1,1 @@
-[
-  {
-    "idRoom": 0,
-    "dateBegin": "0001-01-01T00:00:00",
-    "dateEnd": "0001-01-01T00:00:00",
-    "description": "aaaa"
-  }
-]  
+[{"IdRoom":0,"DateBegin":"0001-01-01T00:00:00","DateEnd":"0001-01-01T00:00:00","Description":"aaaa"},{"IdRoom":0,"DateBegin":"2021-05-06T00:00:00","DateEnd":"2021-05-09T00:00:00","Description":"Krecenje"}]

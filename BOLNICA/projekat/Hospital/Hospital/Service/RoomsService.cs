@@ -11,16 +11,16 @@ namespace Hospital.Service
     class RoomsService
     {
         private RenovationFileStorage renovationStorage;
-        private AppointmentFileStorage appointmentsStorage;
+        private CheckupFileStorage checkupStorage;
         public RoomsService()
         {
             renovationStorage = new RenovationFileStorage();
-            appointmentsStorage = new AppointmentFileStorage();
+            checkupStorage = new CheckupFileStorage();
         }
         public void zakaziRenoviranje(RoomRenovation renovation)
         {
 
-            if (isRoomAvailable(renovation))
+            if (isRoomAvailableRenovation(renovation))
             {
                 renovationStorage.Save(renovation);
             } else
@@ -31,19 +31,44 @@ namespace Hospital.Service
             //TO DO: zakazati premestanje inventara
         }
 
-       public Boolean isRoomAvailable(RoomRenovation renovation)
+       public Boolean isRoomAvailableRenovation(RoomRenovation renovation)
        {
-            /* foreach (Appointment appointment in appointmentsStorage.GetAll())
-             {
-                 if (appointment.idRoom == renovation.idRoom)
+            foreach (Checkup checkup in checkupStorage.GetAll())
+            {
+                 if (checkup.idRoom == renovation.IdRoom)
                  {
-                     if (appointment)
+                     if (checkup.Date == renovation.DateBegin || checkup.Date == renovation.DateEnd)
                      {
-
+                        return false;
                      }
+
+                    if (checkup.Date < renovation.DateEnd && checkup.Date > renovation.DateBegin)
+                    {
+                        return false;
+                    }
                  }
-             }*/
+            }
             return true;
+       }
+
+        public Boolean isRoomTakenByRenovation(Checkup checkup)
+        {
+            foreach (RoomRenovation renovation in renovationStorage.GetAll())
+            {
+                if (renovation.IdRoom == checkup.idRoom)
+                {
+                    if (checkup.Date == renovation.DateBegin || checkup.Date == renovation.DateEnd)
+                    {
+                        return true;
+                    }
+
+                    if (checkup.Date < renovation.DateEnd && checkup.Date > renovation.DateBegin)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
     }
 }

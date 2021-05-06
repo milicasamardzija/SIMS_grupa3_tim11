@@ -13,7 +13,7 @@
                        Foreground= "#FF3E3ADD"
                        Grid.Row="0"
                        Grid.Column="0"
-                       Margin="67,11,862,586"
+                       Margin="33,11,896,586"
                        FontSize="20" Width="351"
                        />
         <DataGrid Name="ListaProstorija"
@@ -35,13 +35,6 @@
                             <Button Content="Inventar" Background="LightBlue" Click="prikazInventara" Width="140" FontWeight="Bold"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn>
-                <DataGridTemplateColumn.CellTemplate>
-                    <DataTemplate>
-                        <Button Content="Radovi" Background="LightBlue" Click="prikazRadova" FontWeight="Bold"/>
-                    </DataTemplate>
-                </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
@@ -70,7 +63,7 @@
                 <TextBox Name ="KolicinaInventarTxt" Grid.Row="0" Margin="286,3,10.8,-34" RenderTransformOrigin="0.498,1.049" FontWeight="Bold" TextChanged="KolicinaInventarTxt_TextChanged"/>
             </Grid>
         </StackPanel>
-        <Button Margin="848,517,328,73" Background = "AliceBlue" Click="zakaziRenoviranje" Content="Zakazi renoviranje" RenderTransformOrigin="-0.561,0.77" />
-        <Button Margin="1093,515,83,75" Background = "AliceBlue" Click="RenoviranjePrikaz" Content="RENOVIRANJE" RenderTransformOrigin="-0.561,0.77" />
+        <Button Margin="861,546,315,44" Background = "AliceBlue" Click="zakaziRenoviranje" Content="Zakazi renoviranje" RenderTransformOrigin="-0.561,0.77" />
+        <Button Margin="1107,546,69,44" Background = "AliceBlue" Click="RenoviranjePrikaz" Content="RENOVIRANJE" RenderTransformOrigin="-0.561,0.77" />
     </Grid>
 </UserControl>

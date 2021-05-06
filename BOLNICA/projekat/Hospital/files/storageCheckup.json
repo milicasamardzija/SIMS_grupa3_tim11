@@ -2,7 +2,7 @@
     {
         "type": 2,
         "idCh": 0,
-        "date": "2021-04-17T17:25:00",
+        "date": "2021-05-13T17:25:00",
         "time": "12.00.00",
         "duration": 56.0,
         "idA": 0,
@@ -29,24 +29,25 @@
             "Username": "aaa",
             "Password": "aaa"
         },
-        "doctor": {
-            "doctorId": 15,
-            "specialization": "pedijatrija",
-            "freeDays": 25,
-            "birthdayDate": "0001-01-01T00:00:00",
-            "name": "Bratislava",
-            "surname": "Bozilov",
-            "telephoneNumber": "064/1234455",
-            "jmbg": "0105999888654",
-            "gender": 1,
-            "username": "",
-            "password": "",
-            "adress": {
-                "street": "Ljubisava Andrica",
-                "streetNumber": 10,
-                "city": 5,
-                "country": 0
-            }
-        }
+      "doctor": {
+        "doctorId": 15,
+        "specialization": "pedijatrija",
+        "freeDays": 25,
+        "birthdayDate": "0001-01-01T00:00:00",
+        "name": "Bratislava",
+        "surname": "Bozilov",
+        "telephoneNumber": "064/1234455",
+        "jmbg": "0105999888654",
+        "gender": 1,
+        "username": "",
+        "password": "",
+        "adress": {
+          "street": "Ljubisava Andrica",
+          "streetNumber": 10,
+          "city": 5,
+          "country": 0
+        },
+        "idRoom": 0
+      }
     }
 ]

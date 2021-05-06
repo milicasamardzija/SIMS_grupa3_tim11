@@ -20,7 +20,7 @@ namespace Hospital
 {
     public partial class PrikazSobaRenoviranje : UserControl
     {
-        private ObservableCollection<RoomRenovation> Renovations
+        public ObservableCollection<RoomRenovation> Renovations
         {
             get;
             set;
@@ -32,17 +32,16 @@ namespace Hospital
             Renovations = loadJason();
             this.DataContext = this;
         }
-        private ObservableCollection<RoomRenovation> loadJason()
+        public ObservableCollection<RoomRenovation> loadJason()
         {
             RenovationFileStorage storage = new RenovationFileStorage();
             ObservableCollection<RoomRenovation> all = new ObservableCollection<RoomRenovation>(storage.GetAll());
             ObservableCollection<RoomRenovation> ret = new ObservableCollection<RoomRenovation>();
 
-           /* foreach (RoomRenovation r in all)
+            foreach (RoomRenovation r in all)
             {
-                MessageBox.Show(Convert.ToString(r.IdRoom));
                 ret.Add(r);
-            }*/
+            }
 
             return all;
         }

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -75,7 +75,6 @@
     <Compile Include="Controller\RoomsController.cs" />
     <Compile Include="Model\Alergens.cs" />
     <Compile Include="Model\AlergensFileStorage.cs" />
-
     <Compile Include="DodavanjeLekaRevizija.xaml.cs">
       <DependentUpon>DodavanjeLekaRevizija.xaml</DependentUpon>
     </Compile>
@@ -154,9 +153,6 @@
     <Compile Include="Model\RoomRenovation.cs" />
     <Compile Include="Model\StaticInventoryMovement.cs" />
     <Compile Include="Model\StaticInvnetoryMovementFileStorage.cs" />
-    <Compile Include="PrikazRadovaUSobi.xaml.cs">
-      <DependentUpon>PrikazRadovaUSobi.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PrikazSobaRenoviranje.xaml.cs">
       <DependentUpon>PrikazSobaRenoviranje.xaml</DependentUpon>
     </Compile>
@@ -635,10 +631,6 @@
     <Page Include="Sekretar\SacuvajLekara.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-</Page>
-    <Page Include="PrikazRadovaUSobi.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PrikazSobaRenoviranje.xaml">
       <SubType>Designer</SubType>

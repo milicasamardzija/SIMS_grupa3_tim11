@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model
 {
-    class RoomRenovation : INotifyPropertyChanged
+    public class RoomRenovation : INotifyPropertyChanged
     {
         private int idRoom;
         private DateTime dateBegin;

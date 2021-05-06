@@ -1,3 +1,1 @@
-
-[{"InventoryId":0,"Name":"krevet","Quantity":12,"Type":0},{"InventoryId":1,"Name":"stolica","Quantity":18,"Type":0},{"InventoryId":2,"Name":"zavoj","Quantity":1,"Type":1},{"InventoryId":3,"Name":"BOZE POMOZI","Quantity":2,"Type":1},{"InventoryId":4,"Name":"stalak","Quantity":11,"Type":0},{"InventoryId":6,"Name":"sto","Quantity":5,"Type":0}]
-
+[{"InventoryId":0,"Name":"krevet","Quantity":12,"Type":0},{"InventoryId":1,"Name":"stolica","Quantity":19,"Type":0},{"InventoryId":2,"Name":"zavoj","Quantity":1,"Type":1},{"InventoryId":3,"Name":"BOZE POMOZI","Quantity":2,"Type":1},{"InventoryId":4,"Name":"stalak","Quantity":11,"Type":0},{"InventoryId":6,"Name":"sto","Quantity":5,"Type":0}]

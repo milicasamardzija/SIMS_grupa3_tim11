@@ -11,7 +11,7 @@ namespace Hospital.Model
 {
     public class Checkup : Appointment
     {
-
+        public Checkup() { }
         public Checkup(int ida, int ch, DateTime dateTime1, String ti, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor)
         {
             this.idA = ida;
@@ -22,6 +22,19 @@ namespace Hospital.Model
             this.patient = patient;
             this.idCh = ch;
             this.type = selectedIndex;
+        }
+
+        public Checkup(int ida, int ch, DateTime dateTime1, String ti, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor, int roomId)
+        {
+            this.idA = ida;
+            this.date = dateTime1;
+            this.time = ti;
+            this.duration = v2;
+            this.doctor = doctor;
+            this.patient = patient;
+            this.idCh = ch;
+            this.type = selectedIndex;
+            this.idRoom = roomId;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
