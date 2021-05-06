@@ -1,3 +1,1 @@
-
-[{"IdMedicine":0,"Name":"analgin","Type":"analgetik","Quantity":0.5,"IdsIngredients":[0,1],"IdsMedicines":[1],"Approved":true},{"IdMedicine":1,"Name":"xyzal","Type":"antihistaminik","Quantity":0.5,"IdsIngredients":[0],"IdsMedicines":[2],"Approved":false},{"IdMedicine":2,"Name":"panklav","Type":"antibiotik","Quantity":0.5,"IdsIngredients":[1],"IdsMedicines":[0],"Approved":true},{"IdMedicine":0,"Name":"analgin","Type":"analgetik","Quantity":0.7,"IdsIngredients":[0,1],"IdsMedicines":[1],"Approved":true},{"IdMedicine":1,"Name":"xyzal","Type":"antihistaminik","Quantity":0.25,"IdsIngredients":[0],"IdsMedicines":[2],"Approved":false}]
-
+[{"IdMedicine":0,"Name":"aa","Type":"aa","Quantity":3.0,"IdsIngredients":[],"IdsMedicines":[],"Approved":true,"Delete":true}]
