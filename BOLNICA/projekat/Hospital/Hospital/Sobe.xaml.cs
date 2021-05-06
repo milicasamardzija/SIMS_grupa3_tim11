@@ -194,6 +194,21 @@ namespace Hospital
                 }
                 ListaProstorija.ItemsSource = filtratedRooms;
             }
+        } 
+
+        private void prikazRadova(object sender, RoutedEventArgs e)
+        {
+            SobeFrame.NavigationService.Navigate(new PrikazRadovaUSobi());
         }
-    }  
+
+        private void zakaziRenoviranje(object sender, RoutedEventArgs e)
+        {
+            SobeFrame.NavigationService.Navigate(new RenoviranjeSobe(SobeFrame, (Room)ListaProstorija.SelectedItem));
+        }
+
+        private void RenoviranjePrikaz(object sender, RoutedEventArgs e)
+        {
+            frameMagacin.NavigationService.Navigate(new PrikazSobaRenoviranje());
+        }
+    }
 }

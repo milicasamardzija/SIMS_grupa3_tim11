@@ -51,7 +51,10 @@ namespace Hospital
                 if (r.idRoom.Equals(room.RoomId))
                 {
                     Inventory i = inventoryStorage.FindById(r.idInventory);
-                    ret.Add(new Inventory(i.InventoryId,i.Name,r.Quantity,i.Type));
+                    if (i != null)
+                        ret.Add(new Inventory(i.InventoryId, i.Name, r.Quantity, i.Type));
+                    else
+                        break;
                 }
 
             }
