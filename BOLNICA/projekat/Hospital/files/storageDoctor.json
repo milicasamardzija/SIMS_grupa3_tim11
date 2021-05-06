@@ -16,5 +16,23 @@
     "password": "braca",
     "doctorId": 15,
     "specialization": "pedijatrija"
+  },
+  {
+    "name": "Mita",
+    "surname": "Mitic",
+    "adress": {
+      "street": "Vojove Misica",
+      "streetNumber": 14,
+      "city": 5,
+      "country": 0
+    },
+    "telephoneNumber": "064/1234455",
+    "jmbg": "0105999888654",
+    "gender": 1,
+    "birthdayDate": "2021-04-09T00:00:00",
+    "username": "mita",
+    "password": "mita",
+    "doctorId": 1,
+    "specialization": "hirurgija"
   }
 ]

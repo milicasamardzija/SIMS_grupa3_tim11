@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model
 {
-    class MedicineFileStorage
+    public class MedicineFileStorage
     {
         public List<Medicine> GetAll()
         {

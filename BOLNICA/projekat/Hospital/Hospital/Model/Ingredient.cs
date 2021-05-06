@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model
 {
-    class Ingredient : INotifyPropertyChanged
+    public class Ingredient : INotifyPropertyChanged
     {
         private int idIngredient;
         private String name;

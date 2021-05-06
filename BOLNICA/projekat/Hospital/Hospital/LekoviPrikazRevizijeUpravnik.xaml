@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Hospital.LekoviPrikazRevizijeUpravnik"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hospital"
+             mc:Ignorable="d" 
+             Height="401" Width="470" Background="AliceBlue">
+    <Grid>
+        <Label Content="Naziv leka" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="-0.217,0.573"/>
+        <Label Content="Tip zahteva" HorizontalAlignment="Left" Margin="26,113,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="-0.217,0.573"/>
+        <Label Content="Vrsta leka" HorizontalAlignment="Left" Margin="26,59,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="-0.217,0.573"/>
+        <Label Content="Lekar koji vrsi &#xD;&#xA;recenziju" HorizontalAlignment="Left" Margin="26,157,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="-0.217,0.573"/>
+        <Label Content="Recenzija" HorizontalAlignment="Left" Margin="26,220,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="-0.217,0.573"/>
+        <TextBox Name="NazivTxt" HorizontalAlignment="Left" IsEnabled="True" Height="33" Margin="192,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251"/>
+        <TextBox Name ="VrstaTxt" HorizontalAlignment="Left" IsEnabled="True" Height="34" Margin="192,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251"/>
+        <TextBox Name="TipTxt" HorizontalAlignment="Left" IsEnabled="True" Height="34" Margin="192,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251"/>
+        <TextBox Name="LekarTxt" HorizontalAlignment="Left" IsEnabled="True" Height="35" Margin="192,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" RenderTransformOrigin="0.488,0.103"/>
+        <TextBox Name="RecenzijaTxt" HorizontalAlignment="Left" IsEnabled="True" Height="141" Margin="192,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251"/>
+
+    </Grid>
+</UserControl>

@@ -67,6 +67,21 @@ namespace Hospital.Model
             SaveAll(all);
         }
 
+        public void DeleteByIdMedicine(int id)
+        {
+            List<MedicineReview> all = GetAll();
+
+            foreach (MedicineReview medicine in all)
+            {
+                if (medicine.IdMedicine == id)
+                {
+                    all.Remove(medicine);
+                    break;
+                }
+            }
+            SaveAll(all);
+        }
+
         public MedicineReview FindById(int id)
         {
             List<MedicineReview> all = GetAll();
