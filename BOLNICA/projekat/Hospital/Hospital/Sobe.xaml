@@ -13,11 +13,11 @@
                        Foreground= "#FF3E3ADD"
                        Grid.Row="0"
                        Grid.Column="0"
-                       Margin="63,27,866,570"
+                       Margin="67,11,862,586"
                        FontSize="20" Width="351"
                        />
         <DataGrid Name="ListaProstorija"
-                      Margin="67,121,577,176"
+                      Margin="33,185,542,112"
                       Grid.Column="0"
                       Background="AliceBlue"
                       AutoGenerateColumns="False"
@@ -26,22 +26,42 @@
                       ItemsSource="{Binding Path = RoomList}"
                       >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="BROJ" Width="140" Binding="{Binding RoomId}"/>
-                <DataGridTextColumn Header="NAMENA" Width="150" Binding="{Binding Purpose}"/>
-                <DataGridTextColumn Header="SPRAT" Width="70" Binding="{Binding Floor}"/>
-                <DataGridTextColumn Header="KAPACITET" Width="70"  Binding="{Binding Capacity}"/>
+                <DataGridTextColumn Header="BROJ" Width="150" Binding="{Binding RoomId}"/>
+                <DataGridTextColumn Header="NAMENA" Width="190" Binding="{Binding Purpose}"/>
+                <DataGridTextColumn Header="SPRAT" Width="150" Binding="{Binding Floor}"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Prikaz" Background="LightBlue" Click="prikazInventara" FontWeight="Bold"/>
+                            <Button Content="Inventar" Background="LightBlue" Click="prikazInventara" Width="140" FontWeight="Bold"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Margin="67,517,1110,75" Background="AliceBlue" Click="dodavanje" Content="DODAJ" RenderTransformOrigin="0.5,0.5"/>
-        <Button Margin="327,517,850,75" Background = "AliceBlue" Click="izmeni" Content="IZMENI" RenderTransformOrigin="1.07,0.564"/>
-        <Button Margin="599,515,577,75" Background = "AliceBlue" Click="obrisi" Content="IZBRISI"/>
-        <Frame Name="SobeFrame" HorizontalAlignment="Left" Margin="764,97,0,0" VerticalAlignment="Top" Height="400" Width="470" />
+        <Button Margin="33,546,1144,46" Background="AliceBlue" Click="dodavanje" Content="DODAJ" RenderTransformOrigin="0.5,0.5"/>
+        <Button Margin="329,546,848,46" Background = "AliceBlue" Click="izmeni" Content="IZMENI" RenderTransformOrigin="1.07,0.564"/>
+        <Button Margin="634,546,542,44" Background = "AliceBlue" Click="obrisi" Content="IZBRISI" RenderTransformOrigin="0.538,0.22"/>
+        <Frame Name="SobeFrame" HorizontalAlignment="Left" Margin="781,128,0,0" VerticalAlignment="Top" Height="400" Width="470" />
+        <StackPanel Background="AliceBlue" Margin="33,54,970,488">
+            <Grid>
+                <Label Content="Unesite sprat:" FontSize="14" FontWeight="Bold" Height="53"></Label>
+                <TextBox Name="PretragaTxt" FontSize="16" FontWeight="Bold" Height="36" Margin="166,8,10,9" TextChanged="PretragaSobe"></TextBox>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="160*"/>
+                    <ColumnDefinition Width="117*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Unesite&#xD;&#xA;namenu sobe:" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                <ComboBox Name="NamenaTxt" FontSize="16" FontWeight="Bold" Margin="103,0,10,10" Grid.ColumnSpan="2" SelectionChanged="NamenaTxt_SelectionChanged"  />
+            </Grid>
+        </StackPanel>
+        <StackPanel Background="AliceBlue" HorizontalAlignment="Left" Height="100" Margin="329,52,0,0" VerticalAlignment="Top" Width="409">
+            <Label Content="Filtriranje soba na osnovu inventara&#xD;&#xA; (naziv i kolicina):" FontSize="16" FontWeight="Bold" Height="51" Margin="0,0,-0.2,0"></Label>
+            <Grid>
+                <ComboBox Name = "ImeInventarTxt" Grid.Row="0" Grid.Column="0" Margin="8,3,131.8,-34" FontSize="16"/>
+                <TextBox Name ="KolicinaInventarTxt" Grid.Row="0" Margin="286,3,10.8,-34" RenderTransformOrigin="0.498,1.049" FontWeight="Bold" TextChanged="KolicinaInventarTxt_TextChanged"/>
+            </Grid>
+        </StackPanel>
     </Grid>
 </UserControl>

@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for Magacin.xaml
-    /// </summary>
     public partial class Magacin : UserControl
     {
         public ObservableCollection<Inventory> InventoryList
@@ -119,6 +116,50 @@ namespace Hospital
                 }
                 ListaInventara.ItemsSource = filteredInventory.ToList();
             }
+        }
+
+        private void filtriranjeKolicina(object sender, TextChangedEventArgs e)
+        {
+            int kolicina = -1;
+            InventoryFileStorage storage = new InventoryFileStorage();
+            List<Inventory> all = storage.GetAll();
+            if (!KolicinaFiltriranja.Text.Equals(""))
+            {
+               kolicina = Convert.ToInt32(KolicinaFiltriranja.Text);
+            }
+            filteredInventory.Clear();
+
+            if (UslovFiltriranja.SelectedIndex == 0) //>=
+            {
+                foreach (Inventory inventory in all)
+                {
+                    if (inventory.Quantity >= kolicina)
+                    {
+                        filteredInventory.Add(inventory);
+                    } 
+                }
+                ListaInventara.ItemsSource = filteredInventory.ToList();
+                if (KolicinaFiltriranja.Text.Equals(""))
+                {
+                    ListaInventara.ItemsSource = InventoryList;
+                }
+
+            } else if (UslovFiltriranja.SelectedIndex == 1) //<=
+            {
+                foreach (Inventory inventory in all)
+                {
+                    if (inventory.Quantity <= kolicina)
+                    {
+                        filteredInventory.Add(inventory);
+                    }
+                }
+                ListaInventara.ItemsSource = filteredInventory.ToList();
+                if (KolicinaFiltriranja.Text.Equals(""))
+                {
+                    ListaInventara.ItemsSource = InventoryList;
+                }
+            } 
+            
         }
     }
 }
