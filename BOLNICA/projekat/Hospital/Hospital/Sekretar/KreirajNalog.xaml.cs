@@ -25,12 +25,11 @@ namespace Hospital
 
         public KreirajNalog()
         {
-          //  Window ownedWindow = new Window();
-           // ownedWindow.Owner = this;
+         
             InitializeComponent();
 
         }
-        public System.Windows.Window Owner { get; set; }
+      
         
 
         public int generisiId()

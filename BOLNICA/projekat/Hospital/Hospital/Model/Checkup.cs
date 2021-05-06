@@ -11,17 +11,27 @@ namespace Hospital.Model
 {
     public class Checkup : Appointment
     {
+        private CheckupType type;
+        private int idCh;
+        private int idDoctor;
+        private int idPatient;
 
+        public Checkup() { }
         public Checkup(int ida, int ch, DateTime dateTime1, String ti, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor)
         {
-            this.idA = ida;
-            this.date = dateTime1;
-            this.time = ti;
-            this.duration = v2;
-            this.doctor = doctor;
-            this.patient = patient;
-            this.idCh = ch;
-            this.type = selectedIndex;
+            this.IdA = ida;
+            this.Date = dateTime1;
+            this.Time = ti;
+            this.Duration = v2;
+            this.Doctor = doctor;
+            this.Patient = patient;
+            this.IdCh = ch;
+            this.Type = selectedIndex;
+
+            this.IdDoctor = doctor.DoctorId;
+            this.IdPatient = patient.PatientId;    
+
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -34,8 +44,6 @@ namespace Hospital.Model
             }
         }
 
-        public CheckupType type;
-        public int idCh;
 
         public CheckupType Type
         {
@@ -65,6 +73,36 @@ namespace Hospital.Model
                 {
                     idCh = value;
                     OnPropertyChanged("IdCh");
+                }
+            }
+        }
+        public int IdDoctor
+        {
+            get
+            {
+                return idDoctor;
+            }
+            set
+            {
+                if (value != idDoctor)
+                {
+                    idDoctor = value;
+                    OnPropertyChanged("IdDoctor");
+                }
+            }
+        }
+        public int IdPatient
+        {
+            get
+            {
+                return idPatient;
+            }
+            set
+            {
+                if (value != idPatient)
+                {
+                    idDoctor = value;
+                    OnPropertyChanged("IdPatient");
                 }
             }
         }

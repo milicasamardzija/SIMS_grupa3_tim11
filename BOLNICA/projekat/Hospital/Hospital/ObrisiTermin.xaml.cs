@@ -27,7 +27,7 @@ namespace Hospital
         {
             InitializeComponent();
             appointmentList = list;
-            id = selectedApp.idA;
+            id = selectedApp.IdA;
             index = selectedIndex;
         }
 

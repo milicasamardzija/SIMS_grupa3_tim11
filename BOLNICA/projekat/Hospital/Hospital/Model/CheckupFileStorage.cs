@@ -39,7 +39,7 @@ public class CheckupFileStorage
         List<Checkup> allCheckups = GetAll();
         foreach(Checkup ch in allCheckups)
         {
-            if(ch.idCh == checkup.idCh)
+            if(ch.IdCh == checkup.IdCh)
             {
                 allCheckups.Remove(ch);
                 break;
@@ -53,7 +53,7 @@ public class CheckupFileStorage
         List<Checkup> allCheckups = GetAll();
         foreach(Checkup ch in allCheckups)
         {
-            if(ch.idCh == id)
+            if(ch.IdCh == id)
             {
                 allCheckups.Remove(ch);
                 break;
@@ -68,7 +68,7 @@ public class CheckupFileStorage
         Checkup ret = null;
         foreach(Checkup ch in allCheckups)
         {
-            if(ch.idCh == id)
+            if(ch.IdCh == id)
             {
                 ret = ch;
                 break;
@@ -84,7 +84,7 @@ public class CheckupFileStorage
 
         foreach(Checkup ch in allCheckups)
         {
-            if(ch.idCh == id)
+            if(ch.IdCh == id)
             {
                 ret = true;
                 break;

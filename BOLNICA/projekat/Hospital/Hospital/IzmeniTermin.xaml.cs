@@ -41,18 +41,18 @@ namespace Hospital
             index = selectedIndex;
             idPatient = idP;
 
-            idText.SelectedText = Convert.ToString(selectedApp.idA);
+            idText.SelectedText = Convert.ToString(selectedApp.IdA);
 
             // time.SelectedText = Convert.ToString(selectedApp.time);
 
            // lekar.SelectedText = Convert.ToString(selectedApp.doctor);
 
-            dateText.SelectedDate = selectedApp.dateTime;
-            timeText.SelectedValue = selectedApp.dateTime.ToString("HH:mm");
+            dateText.SelectedDate = selectedApp.DateTime;
+            timeText.SelectedValue = selectedApp.DateTime.ToString("HH:mm");
 
 
-            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, termin.dateTime.AddDays(-3));
-            CalendarDateRange kalendar1 = new CalendarDateRange(termin.dateTime.AddDays(3), DateTime.MaxValue);
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, termin.DateTime.AddDays(-3));
+            CalendarDateRange kalendar1 = new CalendarDateRange(termin.DateTime.AddDays(3), DateTime.MaxValue);
             dateText.BlackoutDates.Add(kalendar);
             dateText.BlackoutDates.Add(kalendar1);
 
@@ -105,10 +105,10 @@ namespace Hospital
 
 
 
-            termin.dateTime = dt;
-            termin.doctor = doctor;
-            termin.patient = patient;
-            termin.idA = Convert.ToInt32(idText.Text);
+            termin.DateTime = dt;
+            termin.Doctor = doctor;
+            termin.Patient = patient;
+            termin.IdA = Convert.ToInt32(idText.Text);
 
 
             //    termin.doctor = Convert.ToString(doctorText.Text);

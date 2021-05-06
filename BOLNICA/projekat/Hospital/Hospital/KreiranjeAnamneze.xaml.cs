@@ -32,7 +32,7 @@ namespace Hospital
             listCheckup = list;
             checkup = selectedCheckup;
             idx = selectedIndex;
-            textIme.SelectedText = Convert.ToString(selectedCheckup.patient);
+            textIme.SelectedText = Convert.ToString(selectedCheckup.Patient);
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

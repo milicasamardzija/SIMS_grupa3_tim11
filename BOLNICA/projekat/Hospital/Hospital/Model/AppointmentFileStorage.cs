@@ -39,7 +39,7 @@ public class AppointmentFileStorage
 
         foreach (Appointment termin in termini)
         {
-            if (termin.idA == appointment.idA)
+            if (termin.IdA == appointment.IdA)
             {
                 termini.Remove(appointment);
                 break;
@@ -54,7 +54,7 @@ public class AppointmentFileStorage
 
         foreach (Appointment termin in termini)
         {
-            if (termin.idA == id)
+            if (termin.IdA == id)
             {
                 termini.Remove(termin);
                 break;
@@ -71,7 +71,7 @@ public class AppointmentFileStorage
 
         foreach (Appointment termin in termini)
         {
-            if (termin.idA == id)
+            if (termin.IdA == id)
             {
                 app = termin;
                 break;
@@ -88,7 +88,7 @@ public class AppointmentFileStorage
 
         foreach (Appointment termin in termini)
         {
-            if (termin.idA == id)
+            if (termin.IdA == id)
             {
                 app = true;
                 break;

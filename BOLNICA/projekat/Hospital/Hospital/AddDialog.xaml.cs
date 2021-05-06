@@ -77,7 +77,7 @@ namespace Hospital
             {
                 foreach (Checkup checkup in allCheckups)
                 {
-                    if (ret == checkup.idCh)
+                    if (ret == checkup.IdCh)
                     {
                         ++ret;
                         break;

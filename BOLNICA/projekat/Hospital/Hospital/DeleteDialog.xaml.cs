@@ -30,7 +30,7 @@ namespace Hospital
         {
             InitializeComponent();
             listCheckup = list;
-            id = selectedCheckup.idCh;
+            id = selectedCheckup.IdCh;
             index = selectedIndex;
         }
 

@@ -49,7 +49,7 @@ namespace Hospital
             foreach (Doctor doctor in storage.GetAll())
             {
                 ComboBoxItem item = new ComboBoxItem();
-                item.Content = doctor.specialization;
+                item.Content = doctor.Specialization;
                 SpecijalizacijaComboBox.Items.Add(item);
             }
         }
@@ -90,7 +90,7 @@ namespace Hospital
             {
                 ComboBoxItem item = new ComboBoxItem();
                 item.Content = doctor.Name + "  " + doctor.Surname;
-                item.Tag = doctor.doctorId;
+                item.Tag = doctor.DoctorId;
                 LekarComboBox.Items.Add(item);
             }
         }

@@ -1,14 +1,13 @@
 [
     {
-        "type": 2,
-        "idCh": 0,
+        "Type": 2,
+        "IdCh": 0,
         "date": "2021-04-17T17:25:00",
         "time": "12.00.00",
         "duration": 56.0,
-        "idA": 0,
+        "IdA": 0,
         "patient": {
             "guest": false,
-            "birthdayDate": "0001-01-01T00:00:00",
             "PatientId": 12,
             "IdHealthCard": 54,
             "HealthCareCategory": 1,
@@ -30,15 +29,15 @@
             "Password": "aaa"
         },
         "doctor": {
-            "doctorId": 15,
-            "specialization": "pedijatrija",
-            "freeDays": 25,
-            "birthdayDate": "0001-01-01T00:00:00",
-            "name": "Bratislava",
-            "surname": "Bozilov",
-            "telephoneNumber": "064/1234455",
-            "jmbg": "0105999888654",
-            "gender": 1,
+            "DoctorId": 15,
+            "Specialization": "pedijatrija",
+            "FreeDays": 25,
+            "BirthdayDate": "0001-01-01T00:00:00",
+            "Name": "Bratislava",
+            "Surname": "Bozilov",
+            "TelephoneNumber": "064/1234455",
+            "Jmbg": "0105999888654",
+            "Gender": 1,
             "username": "",
             "password": "",
             "adress": {
@@ -48,5 +47,15 @@
                 "country": 0
             }
         }
+    },{"Type": 2,
+        "IdCh": 1,
+        "Date": "2021-04-17T17:25:00",
+        "Time": "12.00.00",
+        "Duration": 30,
+        "IdA": 0,
+    "IdRoom": 2,
+    "IdPatient":0,
+    "IdDoctor":15
     }
+
 ]

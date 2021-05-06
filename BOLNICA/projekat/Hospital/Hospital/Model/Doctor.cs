@@ -1,14 +1,59 @@
-// File:    Doctor.cs
-// Author:  Nevena
-// Created: Monday, March 22, 2021 3:21:07 PM
-// Purpose: Definition of Class Doctor
 
 using System;
 
 public class Doctor : User
 {
-   public int doctorId;
-   public String specialization;
-   public int freeDays = 25;
+   private int doctorId;
+   private String specialization;
+   private int freeDays = 25;
 
+
+
+    public int DoctorId
+    {
+        get
+        {
+            return doctorId;
+        }
+        set
+        {
+            if (value != doctorId)
+            {
+                doctorId = value;
+                OnProperychanged("DoctorId");
+            }
+        }
+    }
+
+    public String Specialization
+    {
+        get
+        {
+            return specialization;
+        }
+        set
+        {
+            if (value != specialization)
+            {
+                specialization = value;
+                OnProperychanged("Specialization");
+            }
+        }
+    }
+
+    public int FreeDays
+    {
+        get
+        {
+            return freeDays;
+        }
+        set
+        {
+            if (value != freeDays)
+            {
+                freeDays= value;
+                OnProperychanged("FreeDays");
+            }
+        }
+    }
 }

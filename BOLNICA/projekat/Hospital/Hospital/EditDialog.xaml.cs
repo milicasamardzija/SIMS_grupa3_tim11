@@ -32,11 +32,11 @@ namespace Hospital
             listCheckup = list;
             checkup = selectedCheckup;
             index = selectedIndex;
-            datePick.SelectedDate = Convert.ToDateTime(selectedCheckup.date);
+            datePick.SelectedDate = Convert.ToDateTime(selectedCheckup.Date);
             //datePick.DisplayDate = new DateTime(2021, 04, 17);
-            timeText.SelectedText = Convert.ToString(selectedCheckup.time);
-            durationText.SelectedText = Convert.ToString(selectedCheckup.duration);
-            comboBox.SelectedIndex = (int)selectedCheckup.type;
+            timeText.SelectedText = Convert.ToString(selectedCheckup.Time);
+            durationText.SelectedText = Convert.ToString(selectedCheckup.Duration);
+            comboBox.SelectedIndex = (int)selectedCheckup.Type;
             //patientBox.SelectedText = Convert.ToString(selectedCheckup.patient);
         }
 
@@ -54,7 +54,7 @@ namespace Hospital
             {
                 foreach (Checkup checkup in allCheckups)
                 {
-                    if (ret == checkup.idCh)
+                    if (ret == checkup.IdCh)
                     {
                         ++ret;
                         break;
@@ -67,10 +67,10 @@ namespace Hospital
         private void button_Click(object sender, RoutedEventArgs e)
         {
             CheckupFileStorage st = new CheckupFileStorage();
-            checkup.date = datePick.DisplayDate;
-            checkup.time = Convert.ToString(timeText.Text);
-            checkup.duration = Convert.ToDouble(durationText.Text);
-            checkup.type = (CheckupType)comboBox.SelectedIndex;
+            checkup.Date = datePick.DisplayDate;
+            checkup.Time = Convert.ToString(timeText.Text);
+            checkup.Duration = Convert.ToDouble(durationText.Text);
+            checkup.Type = (CheckupType)comboBox.SelectedIndex;
             // checkup.patient = patientBox.Text;
             int ida = 1;
             int idc = generisiID();

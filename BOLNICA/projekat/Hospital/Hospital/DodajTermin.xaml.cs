@@ -114,10 +114,10 @@ namespace Hospital
                 {
                     if (t.Doctor.jmbg.Equals(l.jmbg))
                     {
-                        if ((t.dateTime.Date == date.SelectedDate))
+                        if ((t.DateTime.Date == date.SelectedDate))
                         {
-                            string sat = t.dateTime.Hour.ToString();
-                            string minute = t.dateTime.Minute.ToString();
+                            string sat = t.DateTime.Hour.ToString();
+                            string minute = t.DateTime.Minute.ToString();
                             string izbaci;
                             int brojac1 = 0;
                             int brojac2 = 0;
@@ -162,8 +162,8 @@ namespace Hospital
                 List<Appointment> termini = storage.GetAll();
                 foreach (Appointment t in termini)
                 {
-                    string sat = t.dateTime.Hour.ToString();
-                    string minute = t.dateTime.Minute.ToString();
+                    string sat = t.DateTime.Hour.ToString();
+                    string minute = t.DateTime.Minute.ToString();
                     string izbaci;
                     int brojac1 = 0;
                     int brojac2 = 0;
@@ -192,7 +192,7 @@ namespace Hospital
 
                     }
 
-                    if ((t.dateTime.Date == date.SelectedDate) && (time.SelectedItem.Equals(izbaci)))
+                    if ((t.DateTime.Date == date.SelectedDate) && (time.SelectedItem.Equals(izbaci)))
                     {
                         {
 
