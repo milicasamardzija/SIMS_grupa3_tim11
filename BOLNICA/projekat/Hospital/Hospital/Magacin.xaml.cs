@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for Magacin.xaml
-    /// </summary>
     public partial class Magacin : UserControl
     {
         public ObservableCollection<Inventory> InventoryList
