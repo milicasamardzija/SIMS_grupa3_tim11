@@ -13,11 +13,11 @@
                        Foreground= "#FF3E3ADD"
                        Grid.Row="0"
                        Grid.Column="0"
-                       Margin="237,71,346,526"
+                       Margin="91,77,492,520"
                        FontSize="20" Width="697"
                        />
         <DataGrid Name="ProstorijeRenoviranje"
-                      Margin="237,157,231,140"
+                      Margin="91,171,377,126"
                       Grid.Column="0"
                       Background="AliceBlue"
                       AutoGenerateColumns="False"
@@ -32,5 +32,6 @@
                 <DataGridTextColumn Header="OPIS" Width="362"  Binding="{Binding Description}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Background="AliceBlue" Content="Otkazi renoviranje" HorizontalAlignment="Left" Margin="995,283,0,0" VerticalAlignment="Top" Width="228" Height="89" FontSize="18" FontWeight="Bold" Click="Otkazi"/>
     </Grid>
 </UserControl>

@@ -1,4 +1,5 @@
 ﻿using Hospital.Model;
+using Hospital.Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,7 +26,7 @@ namespace Hospital
             get;
             set;
         }
-      
+        private RenovationFileStorage storage = new RenovationFileStorage();
         public PrikazSobaRenoviranje()
         {
             InitializeComponent();
@@ -44,6 +45,12 @@ namespace Hospital
             }
 
             return all;
+        }
+
+        private void Otkazi(object sender, RoutedEventArgs e)
+        {
+            BrisanjeRenovacijeSIgurnost brisanje = new BrisanjeRenovacijeSIgurnost((RoomRenovation)ProstorijeRenoviranje.SelectedItem, Renovations);
+            brisanje.Show();
         }
     }
 }

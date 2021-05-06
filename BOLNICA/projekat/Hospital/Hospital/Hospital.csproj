@@ -70,6 +70,9 @@
     <Compile Include="BrisanjeRecenzijeUpravnik.xaml.cs">
       <DependentUpon>BrisanjeRecenzijeUpravnik.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BrisanjeRenovacijeSIgurnost.xaml.cs">
+      <DependentUpon>BrisanjeRenovacijeSIgurnost.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controller\InventoryController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
     <Compile Include="Controller\RoomsController.cs" />
@@ -105,6 +108,9 @@
     <Compile Include="Model\ReviewType.cs" />
     <Compile Include="Model\StaticInventoryMovement.cs" />
     <Compile Include="Model\StaticInvnetoryMovementFileStorage.cs" />
+    <Compile Include="RenoviranjeOdbijeno.xaml.cs">
+      <DependentUpon>RenoviranjeOdbijeno.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sekretar\Alergeni.xaml.cs">
       <DependentUpon>Alergeni.xaml</DependentUpon>
     </Compile>
@@ -160,7 +166,6 @@
       <DependentUpon>RenoviranjeSobe.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\InventoryService.cs" />
-    <Compile Include="Service\RoomRenovationFileStorage.cs" />
     <Compile Include="Service\RoomsService.cs" />
     <Compile Include="ZakazivanjePremestanjaStatickogInventara.xaml.cs">
       <DependentUpon>ZakazivanjePremestanjaStatickogInventara.xaml</DependentUpon>
@@ -225,6 +230,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BrisanjeRecenzijeUpravnik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BrisanjeRenovacijeSIgurnost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -393,6 +402,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="IzmenaLeka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RenoviranjeOdbijeno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -18,7 +18,8 @@ namespace Hospital.Model
         {
             idRoom = id;
             dateBegin = begin;
-            dateEnd = end;
+            dateEnd = end.AddHours(23);
+            dateEnd.AddMinutes(59);
             description = descript;
         }
 

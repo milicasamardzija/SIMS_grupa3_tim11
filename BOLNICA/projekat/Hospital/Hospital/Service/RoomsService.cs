@@ -12,10 +12,18 @@ namespace Hospital.Service
     {
         private RenovationFileStorage renovationStorage;
         private CheckupFileStorage checkupStorage;
+        private StaticInvnetoryMovementFileStorage inventoryMovementStorage;
+        private RoomInventoryFileStorage roominventoryStorage;
+        private InventoryFileStorage inventoryStorage;
+        private StaticInvnetoryMovementFileStorage staticInventoryStorage;
         public RoomsService()
         {
             renovationStorage = new RenovationFileStorage();
             checkupStorage = new CheckupFileStorage();
+            inventoryMovementStorage = new StaticInvnetoryMovementFileStorage();
+            roominventoryStorage = new RoomInventoryFileStorage();
+            inventoryStorage = new InventoryFileStorage();
+            staticInventoryStorage = new StaticInvnetoryMovementFileStorage();
         }
         public void zakaziRenoviranje(RoomRenovation renovation)
         {
@@ -23,12 +31,32 @@ namespace Hospital.Service
             if (isRoomAvailableRenovation(renovation))
             {
                 renovationStorage.Save(renovation);
+                moveInventoryForRenovation(renovation);
             } else
             {
-                MessageBox.Show("Nije moguce zakazati u ovom periodu sobu!");
+                RenoviranjeOdbijeno odbijeno = new RenoviranjeOdbijeno();
+                odbijeno.Show();
             }
+        }
 
-            //TO DO: zakazati premestanje inventara
+        public void moveInventoryForRenovation(RoomRenovation renovation)
+        {
+             foreach (RoomInventory roomInv in roominventoryStorage.GetAll())
+             {
+                 if (roomInv.idRoom == renovation.IdRoom)
+                 {
+                     foreach (Inventory inventory in inventoryStorage.GetAll())
+                     {
+                         if (roomInv.idInventory == inventory.InventoryId) {
+                             if (inventory.Type == InventoryType.staticki)
+                             {
+                                staticInventoryStorage.Save(new StaticInventoryMovement(-1, renovation.IdRoom, inventory.InventoryId, roomInv.Quantity, renovation.DateBegin));
+                                staticInventoryStorage.Save(new StaticInventoryMovement(renovation.IdRoom, -1, inventory.InventoryId, roomInv.Quantity, renovation.DateEnd));
+                            }
+                         }
+                     }
+                 }
+             } 
         }
 
        public Boolean isRoomAvailableRenovation(RoomRenovation renovation)
@@ -37,10 +65,15 @@ namespace Hospital.Service
             {
                  if (checkup.idRoom == renovation.IdRoom)
                  {
-                     if (checkup.Date == renovation.DateBegin || checkup.Date == renovation.DateEnd)
+                     if (checkup.Date == renovation.DateBegin)
                      {
                         return false;
                      }
+
+                    if (checkup.Date == renovation.DateEnd)
+                    {
+                        return false;
+                    }
 
                     if (checkup.Date < renovation.DateEnd && checkup.Date > renovation.DateBegin)
                     {
@@ -57,7 +90,12 @@ namespace Hospital.Service
             {
                 if (renovation.IdRoom == checkup.idRoom)
                 {
-                    if (checkup.Date == renovation.DateBegin || checkup.Date == renovation.DateEnd)
+                    if (checkup.Date == renovation.DateBegin)
+                    {
+                        return true;
+                    }
+
+                    if (checkup.Date == renovation.DateEnd)
                     {
                         return true;
                     }
