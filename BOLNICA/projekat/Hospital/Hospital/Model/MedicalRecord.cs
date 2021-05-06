@@ -1,29 +1,28 @@
-// File:    MedicalRecord.cs
-// Author:  Milica
-// Created: Wednesday, March 24, 2021 9:12:35 PM
-// Purpose: Definition of Class MedicalRecord
+
 
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows.Controls;
 
 public class MedicalRecord : Patient
 {
     public int medicalRecordId;
     public BloodType bloodType;
-    public String alergens;
-
-    public MedicalRecord(String n, String s, String j, Gender g, DateTime dr, int mid, HealthCareCategory hcc, int idhc, BloodType bt, String a)
+    public ObservableCollection<Alergens> alergens;
+    public MedicalRecord(String n, String s, String j, Gender g, DateTime dr, int mid, HealthCareCategory hcc, int idhc, BloodType bt)
     {
-        this.name = n;
-        this.surname = s;
-        this.jmbg = j;
-        this.gender = g;
-        this.birthdayDate = dr;
-        this.medicalRecordId=mid;   //medical record id ce biti isto sto i patientId, pa cu po tome traziti
+        this.Name = n;
+        this.Surname = s;
+        this.Jmbg = j;
+        this.Gender = g;
+        this.BirthdayDate = dr;
+        this.MedicalRecordId=mid;   //medical record id ce biti isto sto i patientId, pa cu po tome traziti
         this.HealthCareCategory = hcc;
         this.IdHealthCard = idhc;
-        this.bloodType = bt;
-        this.alergens = a;
+        this.BloodType = bt;
+
+        //this.Alergens = null;
 
 
     }
@@ -72,7 +71,7 @@ public class MedicalRecord : Patient
             }
         }
     }
-    public String Alergens
+    public ObservableCollection<Alergens> Alergens
     {
         get
         {

@@ -29,10 +29,11 @@ namespace Hospital
 
         public String loadJason()
         {
-            NoticeFileStorage pfs = new NoticeFileStorage();
-            List<Notice> rs = new List<Notice>(pfs.GetAll());
-            String ret = rs[0].notice;
-            return ret;
+             NoticeFileStorage pfs = new NoticeFileStorage();
+             List<Notice> rs = new List<Notice>(pfs.GetAll());
+             String ret = rs[0].notice;
+              return ret;
+          
         }
 
     }
