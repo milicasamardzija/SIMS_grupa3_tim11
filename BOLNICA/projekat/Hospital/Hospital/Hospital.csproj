@@ -69,6 +69,9 @@
     </Compile>
     <Compile Include="BrisanjeRecenzijeUpravnik.xaml.cs">
       <DependentUpon>BrisanjeRecenzijeUpravnik.xaml</DependentUpon>
+	</Compile>
+    <Compile Include="CekajuRevizijuLekar.xaml.cs">
+      <DependentUpon>CekajuRevizijuLekar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controller\InventoryController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
@@ -229,6 +232,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BrisanjeRecenzijeUpravnik.xaml">
+	  <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CekajuRevizijuLekar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
