@@ -22,6 +22,7 @@ namespace Hospital
     public partial class OcenjivanjeDoktora : Window
     {
         public int id { get; set; }
+
         public ObservableCollection<Appointment> termini
         {
             get;
@@ -33,9 +34,10 @@ namespace Hospital
             this.DataContext = this;
             id = idP;
             termini = loadJason();
-            bolnica.IsEnabled = false; 
+            bolnica.IsEnabled = false;
+            
 
-          
+
 
             if (termini.Count > 5)
             {
@@ -51,7 +53,7 @@ namespace Hospital
         }
         private void oceni_doktora(object sender, RoutedEventArgs e)
         {
-            DodajAnketu pp = new DodajAnketu(termini, (Appointment)ListaTermina.SelectedItem, ListaTermina.SelectedIndex, id);
+            DodajAnketu pp = new DodajAnketu(termini, (Appointment)ListaObavljenihTermina.SelectedItem, ListaObavljenihTermina.SelectedIndex, id);
             pp.Show();
 
         }
@@ -78,6 +80,16 @@ namespace Hospital
         {
             OceniteBolnicu oceni = new OceniteBolnicu();
             oceni.Show();
+        }
+
+        private void ListaObavljenihTermina_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        public void UpdateTable()
+        {
+            ListaObavljenihTermina.Items.Remove(this.ListaObavljenihTermina.SelectedItem);
         }
     }
 }

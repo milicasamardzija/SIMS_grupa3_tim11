@@ -21,12 +21,16 @@ namespace Hospital
     /// </summary>
     public partial class DodajAnketu : Window
     {
+
+        public OcenjivanjeDoktora parent;
         public ObservableCollection<Appointment> appointmentList;
         public Appointment termin;
         public int index;
         public int idPatient; //id pacijenta koji je ulogovan
         public string ime;
         public int id;
+        
+
         
        private string lekar;
 
@@ -38,6 +42,7 @@ namespace Hospital
             index = selectedIndex;
             idPatient = idP;
             id = selectedApp.idA;
+           
 
             ime = termin.Doctor.name + " " + termin.Doctor.surname;
             doktor.SelectedText = ime;
@@ -45,7 +50,7 @@ namespace Hospital
 
         }
 
-
+   
 
         private void odustani(object sender, RoutedEventArgs e)
         {
@@ -67,14 +72,16 @@ namespace Hospital
             string komentarisano = komentar.Text;
             int id = sveAnkete.GetAll().Count() + 1;
 
-            Survey novaAnketa = new Survey(id, komentarisano, ocenjeno, lekar);
+            Survey novaAnketa = new Survey(id, komentarisano, ocenjeno, lekar,termin.idA);
 
             sveAnkete.Save(novaAnketa);
-            AppointmentFileStorage storage = new AppointmentFileStorage();
-            storage.DeleteById(id);
 
+           AppointmentFileStorage storage = new AppointmentFileStorage();
+            storage.DeleteById(id);
             appointmentList.RemoveAt(index);
+
             this.Close();
+          //parent.UpdateTable();
 
         }
     }

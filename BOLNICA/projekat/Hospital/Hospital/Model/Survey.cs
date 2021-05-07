@@ -13,6 +13,7 @@ namespace Hospital.Model
         public string comment;
         public int mark;
         public string drname;
+        public int idApp;
 
 
 
@@ -29,12 +30,22 @@ namespace Hospital.Model
 
         public Survey() { }
 
+        public Survey(int id, string komentarisano, int ocenjeno, string lekar,int idA)
+        {
+            this.idSurvey = id;
+            this.comment = komentarisano;
+            this.mark = ocenjeno;
+            this.drname = lekar;
+            this.idApp = idA;
+        }
+
         public Survey(int id, string komentarisano, int ocenjeno, string lekar)
         {
             this.idSurvey = id;
             this.comment = komentarisano;
             this.mark = ocenjeno;
             this.drname = lekar;
+           
         }
 
         public int IdSurvey
@@ -80,6 +91,22 @@ namespace Hospital.Model
                 if (value != mark)
                 {
                     mark = value;
+                    OnPropertyChanged("Ocena");
+                }
+            }
+        }
+
+        public int IdApp
+        {
+            get
+            {
+                return idApp;
+            }
+            set
+            {
+                if (value != idApp)
+                {
+                    idApp = value;
                     OnPropertyChanged("Ocena");
                 }
             }

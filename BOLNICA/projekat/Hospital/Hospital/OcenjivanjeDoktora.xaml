@@ -13,14 +13,14 @@
             <ColumnDefinition Width="123*"/>
         </Grid.ColumnDefinitions>
 
-        <DataGrid Name="ListaTermina"
+        <DataGrid Name="ListaObavljenihTermina"
                       Margin="15,50,10.2,101"
                       Grid.Column="1"
                       Background="AliceBlue"
                       AutoGenerateColumns="False"
                       SelectionMode="Single"
                       IsReadOnly="True"
-                      ItemsSource="{Binding Path = termini}" 
+                      ItemsSource="{Binding Path = termini}" SelectionChanged="ListaObavljenihTermina_SelectionChanged" 
                       >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="                   OBAVLJENI PREGLEDI" Binding="{Binding DateTime}" Width="250"/>
