@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Hospital.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +21,39 @@ namespace Hospital
     /// </summary>
     public partial class OceniteBolnicu : Window
     {
+      
         public OceniteBolnicu()
         {
             InitializeComponent();
+        }
+
+       
+
+
+         
+
+        private void posalji(object sender, RoutedEventArgs e)
+        {
+            SacuvanaAnketa poslato = new SacuvanaAnketa();
+            poslato.Show();
+            this.Close();
+         
+            SurveyFileStorage sveAnkete = new SurveyFileStorage();
+
+         
+            int ocenjeno = ocena.SelectedIndex;
+            string komentarisano = komentar.Text;
+            int id = sveAnkete.GetAll().Count() + 1;
+
+            Survey novaAnketa = new Survey(id, komentarisano, ocenjeno, null);
+
+            sveAnkete.Save(novaAnketa);
+
+        }
+
+        private void odustani(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

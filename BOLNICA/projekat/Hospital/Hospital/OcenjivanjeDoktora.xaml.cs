@@ -33,6 +33,14 @@ namespace Hospital
             this.DataContext = this;
             id = idP;
             termini = loadJason();
+            bolnica.IsEnabled = false; 
+
+          
+
+            if (termini.Count > 5)
+            {
+                bolnica.IsEnabled = true;
+            }
 
         }
         private void Nazad_na_pocetnu(object sender, RoutedEventArgs e)
@@ -56,8 +64,10 @@ namespace Hospital
             foreach (Appointment appointment in rs)
             {
                 if (appointment.patient.PatientId == id)
-                {
-                    ret.Add(appointment);
+                { if (DateTime.Now > appointment.dateTime)
+                    {
+                        ret.Add(appointment);
+                    }
                 }
             }
 

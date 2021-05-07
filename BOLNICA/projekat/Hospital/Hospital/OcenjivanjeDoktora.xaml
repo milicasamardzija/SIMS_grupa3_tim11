@@ -37,7 +37,7 @@
         </DataGrid>
 
         <Button Content="Nazad" HorizontalAlignment="Left" Margin="21.8,190,0,211" Width="75" Click="Nazad_na_pocetnu" RenderTransformOrigin="0.605,0.779" Grid.Column="2"/>
-        <Button Content="   Ocenite &#xA;rad bolnice" HorizontalAlignment="Left" Margin="21.8,90,0,306" Width="75" Click="ocenite_bolnicu" RenderTransformOrigin="0.605,0.779" Grid.Column="2"/>
+        <Button Name="bolnica" Content="   Ocenite &#xA;rad bolnice" HorizontalAlignment="Left" Margin="21.8,90,0,306" Width="75" Click="ocenite_bolnicu" RenderTransformOrigin="0.605,0.779" Grid.Column="2"/>
 
     </Grid>
 </Window>

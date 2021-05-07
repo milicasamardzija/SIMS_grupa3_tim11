@@ -27,9 +27,8 @@ namespace Hospital
         public int idPatient; //id pacijenta koji je ulogovan
         public string ime;
         public int id;
-        private string komentarisano;
-        private object ocenjeno;
-        private string lekar;
+        
+       private string lekar;
 
         public DodajAnketu(ObservableCollection<Appointment> list, Appointment selectedApp, int selectedIndex, int idP)
         {
