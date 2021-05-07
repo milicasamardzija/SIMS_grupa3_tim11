@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for PremestanjeInventaraDijalog.xaml
-    /// </summary>
     public partial class PremestanjeInventaraDijalog : UserControl
     {
         public Frame frame;

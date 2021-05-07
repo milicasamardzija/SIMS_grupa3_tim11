@@ -123,7 +123,6 @@ namespace Hospital.Model
                         }
                     }
                     RoomInventory newInventory = new RoomInventory(idRoomIn, room, invent.InventoryId, invent, quantity);
-                    MessageBox.Show(Convert.ToString(newInventory.idRoom));
                     all.Add(newInventory);
                 }
             }
@@ -147,11 +146,6 @@ namespace Hospital.Model
                     if (i.InventoryId == inventory.InventoryId)
                     {
                         i.Quantity -= quantity;
-
-                        if (i.Quantity == 0)
-                        {
-                            inventories.Remove(i);
-                        }
 
                         inventoryStorage.SaveAll(inventories);
                         roomInventoryStorage.SaveAll(all);

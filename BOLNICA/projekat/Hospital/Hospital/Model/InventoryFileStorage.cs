@@ -186,11 +186,6 @@ public class InventoryFileStorage
                 {
                     i.Quantity -= quantity;
 
-                    if (i.Quantity == 0)
-                    {
-                        inventories.Remove(i);
-                    }
-
                     this.SaveAll(inventories);
                     roomInventoryStorage.SaveAll(all);
                     break;

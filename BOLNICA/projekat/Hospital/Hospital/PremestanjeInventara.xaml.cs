@@ -27,22 +27,39 @@ namespace Hospital
         public int idInventory;
         public Inventory inventory;
         private DataGrid inventarTabela;
-        public PremestanjeInventara(Frame magacinFrame, ObservableCollection<Inventory> list, DataGrid listaInventara)
+        private Boolean magacin;
+        private Room roomOut;
+        public PremestanjeInventara(Frame magacinFrame, ObservableCollection<Inventory> list, DataGrid listaInventara,Boolean IzMagacina,Room outRoom)
         {
             InitializeComponent();
             frame = magacinFrame;
             listInventory = list;
             inventarTabela = listaInventara;
+            magacin = IzMagacina;
+            roomOut = outRoom;
         }
 
         private void premestiMomentalno(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new PremestiInventarUSobu(frame, listInventory, (Inventory)inventarTabela.SelectedItem, inventarTabela.SelectedIndex));
+            if (magacin)
+            {
+                frame.NavigationService.Navigate(new PremestiInventarUSobu(frame, listInventory, (Inventory)inventarTabela.SelectedItem, inventarTabela.SelectedIndex));
+            }
+            else
+            {
+                frame.NavigationService.Navigate(new PremestanjeInventaraDijalog(frame, listInventory, (Inventory)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,roomOut));
+            }
         }
 
         private void zakaziPremestanje(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new ZakazivanjePremestanjaStatickogInventara(frame, listInventory, (Inventory)inventarTabela.SelectedItem, inventarTabela.SelectedIndex));
+            if (magacin)
+            {
+                frame.NavigationService.Navigate(new ZakazivanjePremestanjaStatickogInventara(frame, listInventory, (Inventory)inventarTabela.SelectedItem, inventarTabela.SelectedIndex));
+            } else
+            {
+                frame.NavigationService.Navigate(new ZakazivanjePremestanjaStatickogInventaraUSobu(frame, listInventory, (Inventory)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,roomOut));
+            }
         }
     }
 }
