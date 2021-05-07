@@ -42,7 +42,7 @@ namespace Hospital.Sekretar
         }
         private void SaveDoctorBtn(object sender, RoutedEventArgs e)
         {
-            PrioritetLekar doctorPriority = new PrioritetLekar(listPatients);
+            PrioritetLekar doctorPriority = new PrioritetLekar(listPatients, (Patient)sviPacijenti.SelectedItem);
             doctorPriority.Show();
 
         }

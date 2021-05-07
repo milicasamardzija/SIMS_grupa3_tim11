@@ -47,7 +47,7 @@
         <Label
             Width="200"
             Height="30"
-            Margin="20,130,0,0"
+            Margin="40,128,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Prezime i ime lica osiguranika"
@@ -92,7 +92,7 @@
         <Label
             Width="200"
             Height="30"
-            Margin="30,280,0,0"
+            Margin="40,280,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Kategorija zdravstvene zastite"
@@ -110,7 +110,7 @@
         <Label
             Width="171"
             Height="30"
-            Margin="20,340,0,0"
+            Margin="40,340,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Broj zdravstvene knjizice "
@@ -176,7 +176,7 @@
             x:Name="ulicaText"
             Width="107"
             Height="23"
-            Margin="183,190,0,0"
+            Margin="199,190,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
@@ -216,9 +216,9 @@
 
         <TextBox
             x:Name="zanimanjeText"
-            Width="150"
+            Width="120"
             Height="23"
-            Margin="220,315,0,0"
+            Margin="250,315,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
@@ -239,18 +239,18 @@
 
         <TextBox
             x:Name="brKnjText"
-            Width="150"
+            Width="120"
             Height="23"
-            Margin="220,345,0,0"
+            Margin="250,345,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
         <TextBox
             x:Name="brKarText"
-            Width="150"
+            Width="120"
             Height="23"
-            Margin="220,375,0,0"
+            Margin="250,375,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsReadOnly="True"
@@ -296,14 +296,14 @@
         <Label
             Width="34"
             Height="26"
-            Margin="144,190,0,0"
+            Margin="160,190,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="ulica" />
         <Label
             Width="30"
             Height="26"
-            Margin="311,187,0,0"
+            Margin="311,190,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="broj" />
@@ -364,14 +364,14 @@
             Margin="286,158,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            SelectedDateFormat="Short" />
+            Focusable="False" />
 
 
         <ComboBox
             Name="krvnaGrupa"
-            Width="150"
+            Width="120"
             Height="22"
-            Margin="220,409,0,0"
+            Margin="250,409,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsEditable="False">

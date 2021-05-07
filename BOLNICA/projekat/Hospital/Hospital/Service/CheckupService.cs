@@ -14,6 +14,8 @@ namespace Hospital.Service
         private PatientFileStorage patientsStorage;
         private DoctorFileStorage doctorStorage;
 
+        List<Checkup> allCheckups;
+       
 
         public CheckupService()
         {
@@ -44,7 +46,29 @@ namespace Hospital.Service
             return val; //vracam prvi koji je dostupan 
         }
 
-       
+       public  List<Checkup> getCheckupDoctors(int idD)
+        {            
+            
+            allCheckups = checkupStorage.GetAll(); //nasla sve checkupove 
 
+            List<Checkup> unavailableCheckups = new List<Checkup>();
+
+          //moze da se ekstrahuje
+            foreach(Checkup c in allCheckups)
+            {
+                if(c.IdDoctor.Equals(idD))
+                {
+                    unavailableCheckups.Add(c); 
+                   
+                }
+            }
+            return unavailableCheckups;
+
+        }
+
+        public void saveCheckup(int idD, int idP, DateTime date)
+        {
+
+        }
     }
 }

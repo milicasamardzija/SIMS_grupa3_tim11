@@ -18,6 +18,9 @@ namespace Hospital.Sekretar
    
     public partial class PrioritetLekar : Window
     {
+
+        public Patient patient;
+
        public  ObservableCollection<Patient> listPatient
         {
             get; set;
@@ -26,12 +29,13 @@ namespace Hospital.Sekretar
         {
             get; set;
         }
-        public PrioritetLekar(ObservableCollection<Patient> list)
+        public PrioritetLekar(ObservableCollection<Patient> list, Patient selectedPatient)
         {
             InitializeComponent();
             this.DataContext = this;
+            patient=selectedPatient; //imam pacijenta kome zakazujem 
             listPatient = list;
-            listDoctors = loadJson();
+            listDoctors = loadJson();// ucitava se lista svih lekara 
 
         }
 
@@ -41,6 +45,17 @@ namespace Hospital.Sekretar
              ObservableCollection<Doctor> doctors = new ObservableCollection<Doctor>(dfs.GetAll());
             return doctors;
 
+        }
+
+        private void getDoctorTerms(object sender, RoutedEventArgs e)
+        {
+            SacuvajLekara terms = new SacuvajLekara(listDoctors, (Doctor)doktori.SelectedItem, patient); //poslala sam informaciju o doktoru, moram i o ranijem pacijentu 
+            terms.Show();
+        }
+
+        private void Decline(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -74,13 +74,7 @@ namespace Hospital
             this.Close();
         }
 
-        private void dodajAlergene(object sender, RoutedEventArgs e)
-        {
-            // Alergeni a = new Alergeni();
-            //   a.Show();
-            AlergeniDodaj a2 = new AlergeniDodaj();
-            alergens.Navigate(a2);
-        }
+
 
        
     }
