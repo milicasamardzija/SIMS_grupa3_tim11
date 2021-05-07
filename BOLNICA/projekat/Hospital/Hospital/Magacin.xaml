@@ -27,7 +27,7 @@
         <Frame Name="MagacinFrame" Content="" HorizontalAlignment="Left" Margin="749,94,0,0" VerticalAlignment="Top" Height="400" Width="470" BorderBrush="#FFB42412" OpacityMask="Black" Foreground="#FFA31818" NavigationUIVisibility="Hidden"/>
         <Button Background="AliceBlue"  Content="Dodaj" HorizontalAlignment="Left" Margin="69,514,0,0" VerticalAlignment="Top" Width="133" Height="48" FontSize="24" FontWeight="Bold" Click="dodaj" RenderTransformOrigin="0.562,-0.422" />
         <Button Background="AliceBlue" Content="Izbrisi" HorizontalAlignment="Left" Margin="517,515,0,0" VerticalAlignment="Top" Width="129" Height="47" FontSize="24" FontWeight="Bold" Click="izbrisi" RenderTransformOrigin="0.487,0.41"/>
-        <Button Background="AliceBlue" Content="Prebaci" HorizontalAlignment="Left" Margin="770,515,0,0" VerticalAlignment="Top" Width="121" Height="47" FontSize="24" FontWeight="Bold" Click="premesti" RenderTransformOrigin="0.817,-0.283" />
+        <Button Background="AliceBlue" Content="Prebaci" HorizontalAlignment="Left" Margin="749,515,0,0" VerticalAlignment="Top" Width="121" Height="47" FontSize="24" FontWeight="Bold" Click="premesti" RenderTransformOrigin="0.817,-0.283" />
         <Button Background="AliceBlue" Content="Izmeni" HorizontalAlignment="Left" Margin="291,515,0,0" VerticalAlignment="Top" Width="131" Height="47" Click="izmeni" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.453,-1.384"/>
         <TextBox Name="PretragaTxt" HorizontalAlignment="Left" Height="47" Margin="69,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextChanged="PretragaTxt_TextChanged" UndoLimit="102" AutomationProperties.HelpText="Unesite zeljeni naziv/kolicinu/tip" FontSize="18" FontWeight="Bold" />
         <Label Content="Unesite kolicinu i uslov po kojima&#xD;&#xA; zelite da filtrirate inventar :" HorizontalAlignment="Left" Margin="296,75,0,0" VerticalAlignment="Top" Width="266" FontSize="16" FontWeight="Bold" Height="53"/>
@@ -37,5 +37,6 @@
             <ComboBoxItem Content="Manje ili jednako od unetog broja" ></ComboBoxItem>
         </ComboBox>
         <Label Content="Unesite naziv, vrstu ili &#xD;&#xA;kolicinu opreme:" HorizontalAlignment="Left" Margin="69,80,0,0" VerticalAlignment="Top" Width="196" FontSize="16" FontWeight="Bold"/>
+        <Button Background="AliceBlue" Content="Zakazano premestanje" HorizontalAlignment="Left" Margin="971,514,0,0" VerticalAlignment="Top" Width="278" Height="47" FontSize="24" FontWeight="Bold" Click="zakazanoPremestanje" RenderTransformOrigin="0.817,-0.283" />
     </Grid>
 </UserControl>

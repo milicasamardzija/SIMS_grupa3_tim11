@@ -29,8 +29,8 @@ namespace Hospital
             get;
             set;
         }
-
-        public Magacin(ObservableCollection<Room> roomList)
+        private Frame managerFrame = new Frame();
+        public Magacin(ObservableCollection<Room> roomList, Frame frame)
         {
             InitializeComponent();
             MagacinFrame.NavigationService.Navigate(new BelsekaMagacin());
@@ -38,6 +38,7 @@ namespace Hospital
             InventoryList = loadJason();
             ListRoom = roomList;
             ListaInventara.ItemsSource = InventoryList;
+            managerFrame = frame;
         }
 
         public ObservableCollection<Inventory> loadJason()
@@ -61,9 +62,9 @@ namespace Hospital
         {
             Inventory inventory = (Inventory)ListaInventara.SelectedItem;
             if (inventory.Type == InventoryType.staticki)
-                MagacinFrame.NavigationService.Navigate(new ZakazivanjePremestanjaStatickogInventara(MagacinFrame, InventoryList, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
+                MagacinFrame.NavigationService.Navigate(new PremestanjeInventara(MagacinFrame, InventoryList,ListaInventara));
             else
-                MagacinFrame.NavigationService.Navigate(new PremestiInventarUSobu(MagacinFrame, InventoryList, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex, ListRoom));
+                MagacinFrame.NavigationService.Navigate(new PremestiInventarUSobu(MagacinFrame, InventoryList, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
         }
 
         private void izmeni(object sender, RoutedEventArgs e)
@@ -160,6 +161,11 @@ namespace Hospital
                 }
             } 
             
+        }
+
+        private void zakazanoPremestanje(object sender, RoutedEventArgs e)
+        {
+            managerFrame.NavigationService.Navigate(new PrikazZakazanogPremestanja()) ;
         }
     }
 }

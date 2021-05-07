@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model
 {
-    class StaticInventoryMovement
+    public class StaticInventoryMovement
     {
         private int roomInId;
         private int roomOutId;

@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Hospital.PrikazZakazanogPremestanja"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hospital"
+             mc:Ignorable="d" 
+             Height="640" Width="1280"  Background="LightBlue">
+    <Grid Margin="0,0,-4,0.6" >
+        <DataGrid Name="ListaStatickogInventara" 
+                  Background="AliceBlue" 
+                  HorizontalAlignment="Left"
+                  Height="303" 
+                  Margin="69,207,0,0" 
+                  VerticalAlignment="Top" 
+                  Width="712"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  ItemsSource="{Binding Path = ListaInventara}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id sobe u koju se prebacuje" Width="200" Binding="{Binding RoomInId}"/>
+                <DataGridTextColumn Header="id sobe iz koje se prebacuje" Width="200" Binding="{Binding RoomOutId}"/>
+                <DataGridTextColumn Header="Id inventara" Width="200" Binding="{Binding InventoryId}" />
+                <DataGridTextColumn Header="Kolicina" Width="200" Binding="{Binding Quantity}" />
+                <DataGridTextColumn Header="Datum" Width="200" Binding="{Binding Date}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock  FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="69,79,0,0" TextWrapping="Wrap" Text="Prikaz zakazanog premestanja statickog inventara" VerticalAlignment="Top" Height="42" Width="801" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
+    </Grid>
+</UserControl>

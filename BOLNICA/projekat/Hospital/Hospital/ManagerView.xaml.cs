@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for ManagerView.xaml
-    /// </summary>
     public partial class ManagerView : Window
     {
         public ObservableCollection<Room> RoomList
@@ -36,7 +33,7 @@ namespace Hospital
         {
             InitializeComponent();
             RoomList = loadJason();
-            frame.NavigationService.Navigate(new Magacin(RoomList));
+            frame.NavigationService.Navigate(new Magacin(RoomList,frame));
             getTasks();
         }
 
@@ -86,7 +83,7 @@ namespace Hospital
 
         private void magacin(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new Magacin(RoomList));
+            frame.NavigationService.Navigate(new Magacin(RoomList,frame));
         }
 
         private void sobe(object sender, RoutedEventArgs e)

@@ -108,6 +108,12 @@
     <Compile Include="Model\ReviewType.cs" />
     <Compile Include="Model\StaticInventoryMovement.cs" />
     <Compile Include="Model\StaticInvnetoryMovementFileStorage.cs" />
+    <Compile Include="PremestanjeInventara.xaml.cs">
+      <DependentUpon>PremestanjeInventara.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrikazZakazanogPremestanja.xaml.cs">
+      <DependentUpon>PrikazZakazanogPremestanja.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RenoviranjeOdbijeno.xaml.cs">
       <DependentUpon>RenoviranjeOdbijeno.xaml</DependentUpon>
     </Compile>
@@ -402,6 +408,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="IzmenaLeka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PremestanjeInventara.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikazZakazanogPremestanja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

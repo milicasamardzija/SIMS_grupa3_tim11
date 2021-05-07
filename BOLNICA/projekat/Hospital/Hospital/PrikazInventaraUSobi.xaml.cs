@@ -67,7 +67,7 @@ namespace Hospital
         {
             Inventory inventory = (Inventory)ListaInventara.SelectedItem;
             if (inventory.Type == InventoryType.staticki)
-                InventarPemesti.NavigationService.Navigate(new ZakazivanjePremestanjaStatickogInventaraUSobu(InventarPemesti, listInventory, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex, room));
+                InventarPemesti.NavigationService.Navigate(new PremestanjeInventara(InventarPemesti,listInventory,ListaInventara));
             else
                 InventarPemesti.NavigationService.Navigate(new PremestanjeInventaraDijalog(InventarPemesti, listInventory, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex, room));
         }

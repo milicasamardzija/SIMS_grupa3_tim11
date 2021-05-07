@@ -33,7 +33,7 @@ namespace Hospital
         private int idRoom;
         private int quantity;
 
-        public PremestiInventarUSobu(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, ObservableCollection<Room> listRoom)
+        public PremestiInventarUSobu(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex)
         {
             InitializeComponent();
 
@@ -42,11 +42,18 @@ namespace Hospital
             index = selectedIndex;
             inventory = selecetedInventory; //selektovani inevntar
             idInventory = selecetedInventory.InventoryId; //id selektovanog inventara
-            listRooms = listRoom;
+            listRooms = loadJason() ;
 
             ImeTxt.SelectedText = inventory.Name;
             KolicinaTxt.SelectedText = Convert.ToString(inventory.Quantity);
             TypeTxt.SelectedIndex = (int)inventory.Type;
+        }
+
+        public ObservableCollection<Room> loadJason()
+        {
+            RoomFileStorage fs = new RoomFileStorage();
+            ObservableCollection<Room> rs = new ObservableCollection<Room>(fs.GetAll());
+            return rs;
         }
 
         private void odustani(object sender, RoutedEventArgs e)
