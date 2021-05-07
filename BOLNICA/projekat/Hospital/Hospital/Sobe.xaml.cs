@@ -34,7 +34,6 @@ namespace Hospital
             RoomList = roomList;
             frameMagacin = magacin;
             ListaProstorija.ItemsSource = RoomList;
-            ucitajNamene();
             ucitajInventar();
         }
 
@@ -85,6 +84,27 @@ namespace Hospital
                             filtratedRooms.Add(room);
                         }
                     }
+                    if (PretragaTxt.Text.Contains("soba"))
+                    {
+                        if (room.Purpose == Purpose.soba)
+                        {
+                            filtratedRooms.Add(room);
+                        }
+                    }
+                    else if (PretragaTxt.Text.Contains("ordinacija"))
+                    {
+                        if (room.Purpose == Purpose.ordinacija)
+                        {
+                            filtratedRooms.Add(room);
+                        }
+                    }
+                    else if (PretragaTxt.Text.Contains("sala"))
+                    {
+                        if (room.Purpose == Purpose.sala)
+                        {
+                            filtratedRooms.Add(room);
+                        }
+                    }
                 }
                 ListaProstorija.ItemsSource = filtratedRooms;
             }
@@ -101,71 +121,10 @@ namespace Hospital
                 ImeInventarTxt.Items.Add(item);
             }
         }
-        public void ucitajNamene()
-        {
-                ComboBoxItem item = new ComboBoxItem();
-                item.Content = "";
-                NamenaTxt.Items.Add(item);
-                ComboBoxItem itemSala = new ComboBoxItem();
-                itemSala.Content = "sala";
-                itemSala.Tag = "sala";
-                NamenaTxt.Items.Add(itemSala);
-                ComboBoxItem itemSoba = new ComboBoxItem();
-                itemSoba.Content = "soba";
-                itemSoba.Tag = "soba";
-                NamenaTxt.Items.Add(itemSoba);
-                ComboBoxItem itemOrdinacija= new ComboBoxItem();
-                itemOrdinacija.Content = "ordinacija";
-                itemOrdinacija.Tag = "ordinacija";
-                NamenaTxt.Items.Add(itemOrdinacija);
-        }
-
-
-        private void NamenaTxt_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            List<Room> all = storageRooms.GetAll();
-            filtratedRooms.Clear();
-
-            if (Convert.ToString(((ComboBoxItem)NamenaTxt.SelectedItem).Tag).Equals(""))
-            {
-                ListaProstorija.ItemsSource = loadJason();
-            }
-            else
-            {
-
-                foreach (Room room in all)
-                {
-                    if (Convert.ToString(((ComboBoxItem)NamenaTxt.SelectedItem).Tag).Equals("soba"))
-                    {
-                        if (room.Purpose == Purpose.soba)
-                        {
-                            filtratedRooms.Add(room);
-                        }
-
-                    }
-                    else if (Convert.ToString(((ComboBoxItem)NamenaTxt.SelectedItem).Tag).Equals("sala"))
-                    {
-                        if (room.Purpose == Purpose.sala)
-                        {
-                            filtratedRooms.Add(room);
-                        };
-                    }
-                    else if (Convert.ToString(((ComboBoxItem)NamenaTxt.SelectedItem).Tag).Equals("ordinacija"))
-                    {
-                        if (room.Purpose == Purpose.ordinacija)
-                        {
-                            filtratedRooms.Add(room);
-                        }
-                    }
-                }
-                ListaProstorija.ItemsSource = filtratedRooms;
-            }
-        }
 
         private void KolicinaInventarTxt_TextChanged(object sender, TextChangedEventArgs e)
         {
             filtratedRooms.Clear();
-            String name = (Convert.ToString(((ComboBoxItem)ImeInventarTxt.SelectedItem).Content));
             int quantity = -1;
 
             if (KolicinaInventarTxt.Text.Equals(""))
