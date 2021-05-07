@@ -70,8 +70,7 @@ namespace Hospital
 
             sveAnkete.Save(novaAnketa);
 
-            AppointmentFileStorage storage = new AppointmentFileStorage();
-            storage.DeleteById(id);
+          
             appointmentList.RemoveAt(index);
             this.Close();
 

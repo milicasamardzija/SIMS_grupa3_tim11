@@ -22,6 +22,7 @@ namespace Hospital
     public partial class WindowPacijent : Window
     {
         public int id { get; set; }
+        
         public ObservableCollection<Appointment> AppointmentList
         {
             get;
@@ -33,7 +34,7 @@ namespace Hospital
             this.DataContext = this;
             id = idP;
             AppointmentList = loadJason();
-
+           
         }
         public ObservableCollection<Appointment> loadJason()
         {
@@ -58,11 +59,14 @@ namespace Hospital
             dd.Show();
         }
 
+       
+
         private void izmeni(object sender, RoutedEventArgs e)
         {
            IzmeniTermin it = new IzmeniTermin(AppointmentList, (Appointment)ListaTermina.SelectedItem, ListaTermina.SelectedIndex,id);
             it.Show();
-        }
+        
+        }   
 
         private void obrisi(object sender, RoutedEventArgs e)
         {

@@ -70,9 +70,14 @@ namespace Hospital
             lista.Add("19:00");
             timeText.ItemsSource = lista;
 
+
+
+      
             DoctorFileStorage df = new DoctorFileStorage();
-            lekari = df.GetAll();
-            lekar.ItemsSource = lekari;
+             lekari= df.GetAll();
+            doktor.ItemsSource = lekari;
+
+
 
 
             PatientFileStorage pacijent = new PatientFileStorage();
@@ -81,7 +86,7 @@ namespace Hospital
             foreach (global::Doctor l in lekari)
             {
                 if (l.jmbg == termin.Doctor.jmbg)
-                    lekar.SelectedItem = l;
+                    doktor.SelectedItem = l;
             }
 
 
@@ -103,27 +108,26 @@ namespace Hospital
             PatientFileStorage storage = new PatientFileStorage();
             ObservableCollection<Patient> patients = storage.GetAll();
 
-            foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
+            foreach (Patient patient in patients)
             {
-                if (patient.PatientId == idPatient) //pronalazi pacijenta sa id-jem ulogovanog pacijenta
+                if (patient.PatientId == idPatient)
                 {
                     ret = patient;
-                    break; //kada ga nadje izlazi iz petlje
+                    break; 
                 }
             }
             return ret;
         }
 
-        //ova fija uvek ubacuje jednog istog doktora, kada se u tabeli prikaze doktor i kada on bude moga da se izabere onda se ova fija treba izmeniti da bi se nasao bas izabrani doktor iz fajla i ubacio u termin
-        public Doctor getDoctorFromFile()
+          public Doctor getDoctorFromFile()
         {
             Doctor ret = new Doctor();
 
-            List<Doctor> doctors = JsonConvert.DeserializeObject<List<Doctor>>(File.ReadAllText(@"./../../../../Hospital/files/storageDoctor.json")); //cita listu doktora iz fajla
-            ret = doctors[0]; //uzima prvog u listi(jedinog)
-
+            List<Doctor> doctors = JsonConvert.DeserializeObject<List<Doctor>>(File.ReadAllText(@"./../../../../Hospital/files/storageDoctor.json")); 
+            ret = doctors[0]; 
             return ret;
         }
+
 
         private void add_appointment(object sender, RoutedEventArgs e)
         {
@@ -131,7 +135,7 @@ namespace Hospital
 
             AppointmentFileStorage storage = new AppointmentFileStorage();
             Patient patient = getPatientFromFile();
-            global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
+            global::Doctor doktor1 = (global::Doctor)doktor.SelectedItem;
 
             var item = timeText.SelectedItem;
             String t = item.ToString();
@@ -143,7 +147,7 @@ namespace Hospital
 
 
             termin.dateTime = dt;
-            termin.doctor = doktor;
+            termin.doctor = doktor1;
             termin.patient = patient;
             storage.DeleteById(termin.idA);
             storage.Save(termin);
@@ -197,8 +201,8 @@ namespace Hospital
                     if (t.dateTime.Date == dateText.SelectedDate && (timeText.SelectedItem.Equals(izbaci)))
                     {
                         lekari.Remove(termin.doctor);
-                        lekar.ItemsSource = lekari;
-                        lekar.SelectedIndex = lekari.Count() - 1;
+                         doktor.ItemsSource = lekari;
+                        doktor.SelectedIndex = lekari.Count() - 1;
 
 
                     }
