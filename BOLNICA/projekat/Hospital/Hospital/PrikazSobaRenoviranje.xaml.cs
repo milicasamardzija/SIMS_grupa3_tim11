@@ -52,5 +52,10 @@ namespace Hospital
             BrisanjeRenovacijeSIgurnost brisanje = new BrisanjeRenovacijeSIgurnost((RoomRenovation)ProstorijeRenoviranje.SelectedItem, Renovations);
             brisanje.Show();
         }
+
+        private void Izmeni(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

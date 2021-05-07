@@ -33,6 +33,27 @@ namespace Hospital
             brojProstorijeTxt.SelectedText = Convert.ToString(room.RoomId);
         }
 
+        public int generisiId()
+        {
+            int ret = 0;
+
+            RenovationFileStorage storage = new RenovationFileStorage();
+            List<RoomRenovation> allRooms = storage.GetAll();
+
+            foreach (RoomRenovation roomBig in allRooms)
+            {
+                foreach (RoomRenovation room in allRooms)
+                {
+                    if (ret == room.IdRenovation)
+                    {
+                        ++ret;
+                        break;
+                    }
+                }
+            }
+            return ret;
+        }
+
         private void odustani(object sender, RoutedEventArgs e)
         {
             sobeFrame.NavigationService.Navigate(new BelsekaMagacin()); 
@@ -40,7 +61,7 @@ namespace Hospital
 
         private void renoviraj(object sender, RoutedEventArgs e)
         {
-            RoomRenovation newRenovation = new RoomRenovation(Convert.ToInt32(brojProstorijeTxt.Text),(DateTime)BeginDate.SelectedDate,(DateTime)EndDate.SelectedDate,opisRadova.Text);
+            RoomRenovation newRenovation = new RoomRenovation(generisiId(),Convert.ToInt32(brojProstorijeTxt.Text),(DateTime)BeginDate.SelectedDate,(DateTime)EndDate.SelectedDate,opisRadova.Text);
 
             controller.zakaziRenoviranje(newRenovation);
 

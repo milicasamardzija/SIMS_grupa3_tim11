@@ -43,7 +43,7 @@ namespace Hospital.Model
 
             foreach (RoomRenovation room in all)
             {
-                if (room.IdRoom == id)
+                if (room.IdRenovation == id)
                 {
                     all.Remove(room);
                     break;
@@ -59,7 +59,7 @@ namespace Hospital.Model
 
             foreach (RoomRenovation room in all)
             {
-                if (room.IdRoom == id)
+                if (room.IdRenovation == id)
                 {
                     ret = room;
                     break;

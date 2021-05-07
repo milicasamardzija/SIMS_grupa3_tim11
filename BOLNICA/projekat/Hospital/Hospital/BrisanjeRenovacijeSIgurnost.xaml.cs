@@ -30,7 +30,7 @@ namespace Hospital
 
         private void Potvrdi(object sender, RoutedEventArgs e)
         {
-            storage.DeleteById(room.IdRoom);
+            storage.DeleteById(room.IdRenovation);
             renovations.Remove(room);
             this.Close();
         }

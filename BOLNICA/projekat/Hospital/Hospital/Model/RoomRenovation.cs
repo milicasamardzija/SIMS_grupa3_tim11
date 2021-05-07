@@ -13,14 +13,15 @@ namespace Hospital.Model
         private DateTime dateBegin;
         private DateTime dateEnd;
         private String description;
-
-        public RoomRenovation(int id, DateTime begin, DateTime end, String descript)
+        private int idRenovation;
+        public RoomRenovation(int idR,int id, DateTime begin, DateTime end, String descript)
         {
             idRoom = id;
             dateBegin = begin;
             dateEnd = end.AddHours(23);
             dateEnd.AddMinutes(59);
             description = descript;
+            idRenovation = idR;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -30,6 +31,22 @@ namespace Hospital.Model
             if (PropertyChanged != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        public int IdRenovation
+        {
+            get
+            {
+                return idRenovation;
+            }
+            set
+            {
+                if (value != idRenovation)
+                {
+                    idRenovation = value;
+                    OnProperychanged("IdRenovation");
+                }
             }
         }
 
