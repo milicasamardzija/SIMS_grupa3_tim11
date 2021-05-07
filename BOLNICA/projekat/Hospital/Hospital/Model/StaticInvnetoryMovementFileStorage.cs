@@ -174,7 +174,27 @@ namespace Hospital.Model
                 {
                     if (ri.idRoom == idRoomOut && ri.idInventory == inventory.InventoryId)
                     {
-                        ri.Quantity -= quantity;
+                        if (ri.Quantity < quantity)
+                        {
+                            int inRoomQuantity = ri.Quantity;
+                            ri.Quantity -= inRoomQuantity;
+                            int storageQuantity = quantity - inRoomQuantity;
+                                foreach (Inventory i in inventories)
+                                {
+                                    if (i.InventoryId == inventory.InventoryId)
+                                    {
+                                        i.Quantity -= storageQuantity;
+
+                                        inventoryStorage.SaveAll(inventories);
+                                        break;
+                                    }
+                                }
+
+                        } else
+                        {
+                            ri.Quantity -= quantity;
+                        }
+
 
                         if (ri.Quantity == 0)
                         {
