@@ -183,6 +183,13 @@ namespace Hospital.Model
                                 {
                                     if (i.InventoryId == inventory.InventoryId)
                                     {
+                                        if (i.Quantity < storageQuantity)
+                                        {
+                                            PremestanjeOdbijenoInventar odbijeno = new PremestanjeOdbijenoInventar();
+                                            odbijeno.Show();
+                                            return;
+                                        }
+
                                         i.Quantity -= storageQuantity;
 
                                         inventoryStorage.SaveAll(inventories);

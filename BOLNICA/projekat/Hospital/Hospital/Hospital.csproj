@@ -112,6 +112,12 @@
     <Compile Include="PremestanjeInventara.xaml.cs">
       <DependentUpon>PremestanjeInventara.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PremestanjeOdbijeno.xaml.cs">
+      <DependentUpon>PremestanjeOdbijeno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PremestanjeOdbijenoInventar.xaml.cs">
+      <DependentUpon>PremestanjeOdbijenoInventar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PrikazZakazanogPremestanja.xaml.cs">
       <DependentUpon>PrikazZakazanogPremestanja.xaml</DependentUpon>
     </Compile>
@@ -413,6 +419,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PremestanjeInventara.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PremestanjeOdbijeno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PremestanjeOdbijenoInventar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

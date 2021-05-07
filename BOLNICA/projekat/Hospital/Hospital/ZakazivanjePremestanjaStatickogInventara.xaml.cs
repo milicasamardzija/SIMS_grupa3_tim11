@@ -1,5 +1,6 @@
 ﻿using Hospital.Controller;
 using Hospital.Model;
+using Hospital.Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -30,6 +31,7 @@ namespace Hospital
         private DateTime dateExecution;
         private String time;
         private DataGrid tabelaPrikaz;
+        private RoomsService serviceRoom = new RoomsService();
         public ZakazivanjePremestanjaStatickogInventara(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, DataGrid inventarTabela)
         {
             InitializeComponent();
@@ -82,7 +84,17 @@ namespace Hospital
             TimeSpan t = TimeSpan.ParseExact(time,"c",null);
             dateExecution = date.Add(t);
 
-            saveNewMovement();
+            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, -1, inventory.InventoryId, quantity, dateExecution);
+
+            if (serviceRoom.isRoomAvailableInventoryMovement(newMovement))
+            {
+                saveNewMovement();
+            }
+            else
+            {
+                PremestanjeOdbijeno odbijeno = new PremestanjeOdbijeno();
+                odbijeno.Show();
+            }
 
             doWork();
 

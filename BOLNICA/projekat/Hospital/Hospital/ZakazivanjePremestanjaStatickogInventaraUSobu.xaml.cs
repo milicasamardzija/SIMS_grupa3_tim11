@@ -1,4 +1,5 @@
 ﻿using Hospital.Model;
+using Hospital.Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -30,6 +31,7 @@ namespace Hospital
         private String time;
         private Room roomOut;
         private DataGrid tabelaPrikaz;
+        private RoomsService serviceRoom = new RoomsService();
         public ZakazivanjePremestanjaStatickogInventaraUSobu(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, Room room, DataGrid inventarTabela)
         {
             InitializeComponent();
@@ -113,7 +115,16 @@ namespace Hospital
             TimeSpan t = TimeSpan.ParseExact(time, "c", null); 
             dateExecution = date.Add(t);
 
-            saveNewMovement(); //ovde samo pravim novi objekat klase u kojoj imam sve informacije o premestanju
+            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, roomOut.RoomId, inventory.InventoryId, quantity, dateExecution);
+
+            if (serviceRoom.isRoomAvailableInventoryMovement(newMovement))
+            {
+                saveNewMovement();
+            } else
+            {
+                PremestanjeOdbijeno odbijeno = new PremestanjeOdbijeno();
+                odbijeno.Show();
+            }
 
             doWork();
 

@@ -59,7 +59,31 @@ namespace Hospital.Service
              } 
         }
 
-       public Boolean isRoomAvailableRenovation(RoomRenovation renovation)
+        public Boolean isRoomAvailableInventoryMovement(StaticInventoryMovement movement)
+        {
+            foreach (Checkup checkup in checkupStorage.GetAll())
+            {
+                if (checkup.idRoom == movement.RoomInId)
+                {
+                    if (checkup.Date == movement.Date)
+                    {
+                        return false;
+                    }
+                    if (checkup.Date.AddMinutes(checkup.Duration) == movement.Date)
+                    {
+                        return false;
+                    }
+                    if ( movement.Date > checkup.Date && movement.Date < checkup.Date.AddMinutes(checkup.Duration))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+
+        public Boolean isRoomAvailableRenovation(RoomRenovation renovation)
        {
             foreach (Checkup checkup in checkupStorage.GetAll())
             {
