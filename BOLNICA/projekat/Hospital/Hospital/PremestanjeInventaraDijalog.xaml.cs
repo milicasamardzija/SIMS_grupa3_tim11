@@ -30,8 +30,9 @@ namespace Hospital
         private int idRoom;
         private int quantity;
         private InventoryFileStorage inventoryStorage = new InventoryFileStorage();
+        private DataGrid listaInvetara;
 
-        public PremestanjeInventaraDijalog(Frame m, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, Room roomOut)
+        public PremestanjeInventaraDijalog(Frame m, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, Room roomOut, DataGrid tablaPrikaz)
         {
             InitializeComponent();
             frame = m;
@@ -40,7 +41,7 @@ namespace Hospital
             inventory = selecetedInventory;
             idInventory = selecetedInventory.InventoryId;
             roomOutId = roomOut.RoomId;
-            
+            listaInvetara = tablaPrikaz;
 
             ImeTxt.SelectedText = inventory.Name;
             KolicinaTxt.SelectedText = Convert.ToString(inventory.Quantity);
@@ -63,8 +64,33 @@ namespace Hospital
             quantity = Convert.ToInt32(KolicinaTxt.Text);
 
             inventoryStorage.moveInventory(inventory,idRoom,roomOutId,quantity);
-            frame.NavigationService.Navigate(this);
+            listaInvetara.ItemsSource = loadJasonInventory();
+            
+            frame.NavigationService.Navigate(new BelsekaMagacin());
 
+        }
+
+        public ObservableCollection<Inventory> loadJasonInventory()
+        {
+            RoomInventoryFileStorage storage = new RoomInventoryFileStorage();
+            InventoryFileStorage inventoryStorage = new InventoryFileStorage();
+
+            ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>();
+
+            foreach (RoomInventory r in storage.GetAll())
+            {
+                if (r.idRoom.Equals(roomOutId))
+                {
+                    Inventory i = inventoryStorage.FindById(r.idInventory);
+                    if (i != null)
+                        ret.Add(new Inventory(i.InventoryId, i.Name, r.Quantity, i.Type));
+                    else
+                        break;
+                }
+
+            }
+
+            return ret;
         }
     }
 }

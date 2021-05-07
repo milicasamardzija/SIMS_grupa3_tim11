@@ -19,11 +19,6 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for ZakazivanjePremestanjaStatickogInventara.xaml
-    /// </summary>
-    /// public Frame frame;
-   
     public partial class ZakazivanjePremestanjaStatickogInventara : UserControl
     {
         private ObservableCollection<Inventory> listInventory;
@@ -34,13 +29,14 @@ namespace Hospital
         private int quantity;
         private DateTime dateExecution;
         private String time;
-
-        public ZakazivanjePremestanjaStatickogInventara(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex)
+        private DataGrid tabelaPrikaz;
+        public ZakazivanjePremestanjaStatickogInventara(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, DataGrid inventarTabela)
         {
             InitializeComponent();
             frame = magacinFrame;
             listInventory = list;
-            inventory = selecetedInventory; 
+            inventory = selecetedInventory;
+            tabelaPrikaz = inventarTabela;
     
             ImeTxt.SelectedText = inventory.Name;
             KolicinaTxt.SelectedText = Convert.ToString(inventory.Quantity);
@@ -51,7 +47,12 @@ namespace Hospital
             frame.NavigationService.Navigate(new BelsekaMagacin());
         }
 
-        public void doWork()
+         public void prikaz()
+         {
+            tabelaPrikaz.ItemsSource = loadJason();
+         }
+
+        public async Task doWork()
         {
             StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
             TimeSpan t = dateExecution.Subtract(DateTime.Now);
@@ -59,15 +60,18 @@ namespace Hospital
             if (dateExecution < DateTime.Now)
             {
                 storage.moveInventoryStatic(inventory, idRoom,-1, quantity);
+                prikaz();
             }
             else
-            { 
-                Thread.Sleep(t);
-                storage.moveInventoryStatic(inventory, idRoom,-1, quantity);
+            {
+                await Task.Delay(t);
+                storage.moveInventoryStatic(inventory, idRoom, -1, quantity);
+                prikaz();
             }
         }
 
-        private void premesti(object sender, RoutedEventArgs e)
+
+        private async void premesti(object sender, RoutedEventArgs e)
         {
             //argumenti
             idRoom = Convert.ToInt32(IdSobeTxt.Text);
@@ -79,11 +83,10 @@ namespace Hospital
             dateExecution = date.Add(t);
 
             saveNewMovement();
-            
-            Task task = new Task(doWork);
-            task.Start();
-          
-            frame.NavigationService.Navigate(this);
+
+            doWork();
+
+            frame.NavigationService.Navigate(new BelsekaMagacin());
         }
 
         private void saveNewMovement()
@@ -91,6 +94,13 @@ namespace Hospital
             StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, -1, inventory.InventoryId, quantity, dateExecution);
             StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
             storage.Save(newMovement);
+        }
+
+        public ObservableCollection<Inventory> loadJason()
+        {
+            InventoryFileStorage storage = new InventoryFileStorage();
+            ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>(storage.GetAll());
+            return ret;
         }
     }
 }

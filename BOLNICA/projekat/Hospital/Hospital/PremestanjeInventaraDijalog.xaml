@@ -13,8 +13,8 @@
         <TextBox Name="ImeTxt" HorizontalAlignment="Left" Height="33" Margin="180,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244"/>
         <Button Background="LightBlue" Content="Premesti" HorizontalAlignment="Left" Margin="30,335,0,0" VerticalAlignment="Top" Width="145" FontSize="24" Height="38" FontWeight="Bold" Click="premesti"/>
         <Button Background="LightBlue" Content="Odustani" HorizontalAlignment="Left" Margin="300,335,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="1.7,10.906" FontSize="24" Height="38" FontWeight="Bold" Click="odustani"/>
-        <Label Content="Id prostorije" HorizontalAlignment="Left" Margin="17,264,0,0" VerticalAlignment="Top" Height="53" Width="158" FontSize="24" RenderTransformOrigin="0.512,0.925" FontWeight="Bold"/>
-        <TextBox Name="IdSobeTxt" HorizontalAlignment="Left" Height="38" Margin="180,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244"/>
+        <Label Content="Broj prostorije" HorizontalAlignment="Left" Margin="17,264,0,0" VerticalAlignment="Top" Height="53" Width="180" FontSize="24" RenderTransformOrigin="0.512,0.925" FontWeight="Bold"/>
+        <TextBox Name="IdSobeTxt" HorizontalAlignment="Left" Height="38" Margin="342,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82"/>
         <RadioButton Name="ProstorijaRB" Content="Prostorija" HorizontalAlignment="Left" Margin="63,226,0,0" VerticalAlignment="Top" Height="38" Width="157" FontSize="24" RenderTransformOrigin="0,0" FontWeight="Bold"/>
         <RadioButton Name="MagacinRB" Content="Magacin" HorizontalAlignment="Left" Margin="245,226,0,0" VerticalAlignment="Top" Height="38" Width="157" FontSize="24" RenderTransformOrigin="0,0" FontWeight="Bold"/>
         <ComboBox Name="TypeTxt" HorizontalAlignment="Left" Margin="180,19,0,0" VerticalAlignment="Top" Width="244" Height="41">

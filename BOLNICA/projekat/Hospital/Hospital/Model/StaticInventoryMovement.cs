@@ -1,18 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hospital.Model
+namespace Hospital.Model 
 {
-    public class StaticInventoryMovement
+    public class StaticInventoryMovement : INotifyPropertyChanged
     {
         private int roomInId;
         private int roomOutId;
         private int inventoryId;
         private int quantity;
         private DateTime date;
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnProperychanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
 
         public StaticInventoryMovement (int idIn, int idOut, int idInv, int q, DateTime d)
         {
@@ -27,10 +40,15 @@ namespace Hospital.Model
         {
             get
             { 
-                return roomInId; 
+                return roomInId;
             }
-            set {
-                roomInId = value; 
+            set
+            {
+                if (value != roomInId)
+                {
+                    roomInId = value;
+                    OnProperychanged("RoomInId");
+                }
             }
         }
 

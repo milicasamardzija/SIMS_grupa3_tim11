@@ -29,13 +29,15 @@ namespace Hospital
         private DateTime dateExecution;
         private String time;
         private Room roomOut;
-        public ZakazivanjePremestanjaStatickogInventaraUSobu(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, Room room)
+        private DataGrid tabelaPrikaz;
+        public ZakazivanjePremestanjaStatickogInventaraUSobu(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, Room room, DataGrid inventarTabela)
         {
             InitializeComponent();
             frame = magacinFrame;
             listInventory = list;
             inventory = selecetedInventory;
             roomOut = room;
+            tabelaPrikaz = inventarTabela;
 
             ImeTxt.SelectedText = inventory.Name;
             KolicinaTxt.SelectedText = Convert.ToString(inventory.Quantity);
@@ -46,7 +48,35 @@ namespace Hospital
             frame.NavigationService.Navigate(new BelsekaMagacin());
         }
 
-        public void doWork()
+        private void prikaz()
+        {
+            tabelaPrikaz.ItemsSource = loadJason();
+        }
+
+        public ObservableCollection<Inventory> loadJason()
+        {
+            RoomInventoryFileStorage storage = new RoomInventoryFileStorage();
+            InventoryFileStorage inventoryStorage = new InventoryFileStorage();
+
+            ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>();
+
+            foreach (RoomInventory r in storage.GetAll())
+            {
+                if (r.idRoom.Equals(roomOut.RoomId))
+                {
+                    Inventory i = inventoryStorage.FindById(r.idInventory);
+                    if (i != null)
+                        ret.Add(new Inventory(i.InventoryId, i.Name, r.Quantity, i.Type));
+                    else
+                        break;
+                }
+
+            }
+
+            return ret;
+        }
+
+        public async Task doWork()
         {
             StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
             TimeSpan t = dateExecution.Subtract(DateTime.Now); //ovo racuna vreme koje je potrebno da nit spava
@@ -55,15 +85,17 @@ namespace Hospital
                                               //pa cim se ukljuci dolazi do premestanja
             {
                 storage.moveInventoryStatic(inventory, idRoom, roomOut.RoomId, quantity);
+                prikaz();
             }
             else
             {
-                Thread.Sleep(t);
+                await Task.Delay(t);
                 storage.moveInventoryStatic(inventory, idRoom, roomOut.RoomId, quantity);
+                prikaz();
             }
         }
 
-        private void premesti(object sender, RoutedEventArgs e)
+        private async void premesti(object sender, RoutedEventArgs e)
         {
             //argumenti
             if (!IdSobeTxt.Text.Equals(""))
@@ -83,10 +115,9 @@ namespace Hospital
 
             saveNewMovement(); //ovde samo pravim novi objekat klase u kojoj imam sve informacije o premestanju
 
-            Task task = new Task(doWork);
-            task.Start();
+            doWork();
 
-            frame.NavigationService.Navigate(this);
+            frame.NavigationService.Navigate(new BelsekaMagacin());
         }
 
         private void saveNewMovement()

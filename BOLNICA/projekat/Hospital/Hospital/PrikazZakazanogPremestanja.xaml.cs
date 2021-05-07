@@ -19,12 +19,17 @@ namespace Hospital
 {
     public partial class PrikazZakazanogPremestanja : UserControl
     {
-        ObservableCollection<StaticInventoryMovement> ListaInventara = new ObservableCollection<StaticInventoryMovement>();
+        public ObservableCollection<StaticInventoryMovement> listaInventara = new ObservableCollection<StaticInventoryMovement>();
+        public ObservableCollection<StaticInventoryMovement> ListaInvetara
+        {
+            get { return listaInventara; }
+            set { listaInventara = value; }
+        }
         public PrikazZakazanogPremestanja()
         {
             InitializeComponent();
             this.DataContext = this;
-            ListaInventara = loadJason();
+            listaInventara = loadJason();
         }
 
         public ObservableCollection<StaticInventoryMovement> loadJason()

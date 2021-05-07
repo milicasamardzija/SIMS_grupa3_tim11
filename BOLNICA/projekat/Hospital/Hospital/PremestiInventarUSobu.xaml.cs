@@ -32,8 +32,9 @@ namespace Hospital
         private InventoryFileStorage inventoryStorage = new InventoryFileStorage();
         private int idRoom;
         private int quantity;
+        private DataGrid inventarTabela;
 
-        public PremestiInventarUSobu(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex)
+        public PremestiInventarUSobu(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, DataGrid listaInventara)
         {
             InitializeComponent();
 
@@ -42,7 +43,8 @@ namespace Hospital
             index = selectedIndex;
             inventory = selecetedInventory; //selektovani inevntar
             idInventory = selecetedInventory.InventoryId; //id selektovanog inventara
-            listRooms = loadJason() ;
+            listRooms = loadJason();
+            inventarTabela = listaInventara;
 
             ImeTxt.SelectedText = inventory.Name;
             KolicinaTxt.SelectedText = Convert.ToString(inventory.Quantity);
@@ -56,6 +58,13 @@ namespace Hospital
             return rs;
         }
 
+        public ObservableCollection<Inventory> loadJsonInventory()
+        {
+            InventoryFileStorage storage = new InventoryFileStorage();
+            ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>(storage.GetAll());
+            return ret;
+        }
+
         private void odustani(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new BelsekaMagacin());
@@ -67,7 +76,8 @@ namespace Hospital
             
             quantity = Convert.ToInt32(KolicinaTxt.Text);
             inventoryStorage.moveInventory(inventory, idRoom, -1, quantity);
-            frame.NavigationService.Navigate(this);
+            inventarTabela.ItemsSource = loadJsonInventory();
+            frame.NavigationService.Navigate(new BelsekaMagacin());
         }
     }
 }
