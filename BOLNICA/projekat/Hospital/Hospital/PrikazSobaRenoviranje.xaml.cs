@@ -53,9 +53,5 @@ namespace Hospital
             brisanje.Show();
         }
 
-        private void Izmeni(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

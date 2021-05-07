@@ -64,6 +64,21 @@ namespace Hospital.Model
             SaveAll(all);
         }
 
+        public void DeleteByRoomsAndDate(int idRoomIn, int idRoomOut, DateTime date)
+        {
+            List<StaticInventoryMovement> all = GetAll();
+
+            foreach (StaticInventoryMovement task in all)
+            {
+                if (task.RoomInId == idRoomIn && task.RoomOutId == idRoomOut && task.Date == date)
+                {
+                    all.Remove(task);
+                    break;
+                }
+            }
+            SaveAll(all);
+        }
+
         public void moveInventoryStatic(Inventory inventory, int idRoomIn, int idRoomOut, int quantity)
         {
             moveInventory(inventory,idRoomIn,idRoomOut,quantity);

@@ -20,6 +20,7 @@ namespace Hospital
     {
         private RoomRenovation room;
         private RenovationFileStorage storage = new RenovationFileStorage();
+        private StaticInvnetoryMovementFileStorage storageInventory = new StaticInvnetoryMovementFileStorage();
         private ObservableCollection<RoomRenovation> renovations = new ObservableCollection<RoomRenovation>();
         public BrisanjeRenovacijeSIgurnost(RoomRenovation selectedRoom,ObservableCollection<RoomRenovation> renovation)
         {
@@ -30,6 +31,20 @@ namespace Hospital
 
         private void Potvrdi(object sender, RoutedEventArgs e)
         {
+            foreach (StaticInventoryMovement inventory in storageInventory.GetAll()) {
+                if (inventory.RoomInId == room.IdRoom && inventory.RoomOutId == -1 && inventory.Date == room.DateEnd)
+                {
+                    storageInventory.DeleteByRoomsAndDate(room.IdRoom, -1, room.DateEnd);
+                }
+            }
+            foreach (StaticInventoryMovement inventory in storageInventory.GetAll())
+            {
+                if (inventory.RoomInId == -1 && inventory.RoomOutId == room.IdRoom && inventory.Date == room.DateBegin)
+                {
+                    storageInventory.DeleteByRoomsAndDate(-1, room.IdRoom, room.DateBegin);
+                }
+            }
+
             storage.DeleteById(room.IdRenovation);
             renovations.Remove(room);
             this.Close();
