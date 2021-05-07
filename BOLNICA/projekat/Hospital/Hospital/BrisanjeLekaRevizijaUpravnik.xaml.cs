@@ -45,13 +45,7 @@ namespace Hospital
 
         public void dodajSpecijalizacije()
         {
-            DoctorFileStorage storage = new DoctorFileStorage();
-            foreach (Doctor doctor in storage.GetAll())
-            {
-                ComboBoxItem item = new ComboBoxItem();
-                item.Content = doctor.specialization;
-                SpecijalizacijaComboBox.Items.Add(item);
-            }
+            SpecijalizacijaComboBox.ItemsSource = Enum.GetValues(typeof(SpecializationType));
         }
 
         public List<Doctor> doktoriPoSpecijalizaciji()
@@ -60,8 +54,7 @@ namespace Hospital
             List<Doctor> filtratedDoctors = new List<Doctor>();
             foreach (Doctor doctor in storage.GetAll())
             {
-                //if(doctor.specialization == SpecijalizacijaComboBox.SelectedItem)
-                if (0 == SpecijalizacijaComboBox.SelectedIndex)
+                if (doctor.specializationType == (SpecializationType)SpecijalizacijaComboBox.SelectedItem)
                 {
                     filtratedDoctors.Add(doctor);
                 }

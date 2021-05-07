@@ -14,8 +14,8 @@
     "birthdayDate": "2021-04-09T00:00:00",
     "username": "braca",
     "password": "braca",
-    "doctorId": 15,
-    "specialization": "pedijatrija"
+    "doctorId": 0,
+    "specializationType": 1
   },
   {
     "name": "Mita",
@@ -33,6 +33,60 @@
     "username": "mita",
     "password": "mita",
     "doctorId": 1,
-    "specialization": "hirurgija"
+    "specializationType": 0
+  },
+  {
+    "name": "Pera",
+    "surname": "Peric",
+    "adress": {
+      "street": "Vojove Misica",
+      "streetNumber": 14,
+      "city": 5,
+      "country": 0
+    },
+    "telephoneNumber": "064/1234455",
+    "jmbg": "0105999888654",
+    "gender": 1,
+    "birthdayDate": "2021-04-09T00:00:00",
+    "username": "mita",
+    "password": "mita",
+    "doctorId": 2,
+    "specializationType": 1
+  },
+  {
+    "name": "Marija",
+    "surname": "Maric",
+    "adress": {
+      "street": "Vojove Misica",
+      "streetNumber": 14,
+      "city": 5,
+      "country": 0
+    },
+    "telephoneNumber": "064/1234455",
+    "jmbg": "0105999888654",
+    "gender": 1,
+    "birthdayDate": "2021-04-09T00:00:00",
+    "username": "mita",
+    "password": "mita",
+    "doctorId": 3,
+    "specializationType": 3
+  },
+  {
+    "name": "Ana",
+    "surname": "Pantic",
+    "adress": {
+      "street": "Vojove Misica",
+      "streetNumber": 14,
+      "city": 5,
+      "country": 0
+    },
+    "telephoneNumber": "064/1234455",
+    "jmbg": "0105999888654",
+    "gender": 1,
+    "birthdayDate": "2021-04-09T00:00:00",
+    "username": "mita",
+    "password": "mita",
+    "doctorId": 4,
+    "specializationType": 4
   }
 ]

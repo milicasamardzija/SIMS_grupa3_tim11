@@ -106,6 +106,7 @@
     <Compile Include="Model\MedicineReview.cs" />
     <Compile Include="Model\MedicineReviewFileStorage.cs" />
     <Compile Include="Model\ReviewType.cs" />
+    <Compile Include="Model\SpecializationType.cs" />
     <Compile Include="Model\StaticInventoryMovement.cs" />
     <Compile Include="Model\StaticInvnetoryMovementFileStorage.cs" />
     <Compile Include="PremestanjeInventara.xaml.cs">
