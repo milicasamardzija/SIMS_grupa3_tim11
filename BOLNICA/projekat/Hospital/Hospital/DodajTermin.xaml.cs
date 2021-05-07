@@ -42,6 +42,8 @@ namespace Hospital
             lista.Add("13:00");
             lista.Add("13:30");
             lista.Add("14:00");
+            lista.Add("14:30");
+            lista.Add("15:00");
             lista.Add("15:30");
             lista.Add("16:00");
             lista.Add("16:30");

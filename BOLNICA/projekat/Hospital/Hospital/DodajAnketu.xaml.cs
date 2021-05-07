@@ -37,6 +37,7 @@ namespace Hospital
             termin = selectedApp;
             index = selectedIndex;
             idPatient = idP;
+            id = selectedApp.idA;
 
             ime = termin.Doctor.name + " " + termin.Doctor.surname;
             doktor.SelectedText = ime;
@@ -69,8 +70,9 @@ namespace Hospital
             Survey novaAnketa = new Survey(id, komentarisano, ocenjeno, lekar);
 
             sveAnkete.Save(novaAnketa);
+            AppointmentFileStorage storage = new AppointmentFileStorage();
+            storage.DeleteById(id);
 
-          
             appointmentList.RemoveAt(index);
             this.Close();
 
