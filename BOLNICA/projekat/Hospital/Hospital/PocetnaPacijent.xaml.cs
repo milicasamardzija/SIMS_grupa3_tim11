@@ -19,8 +19,8 @@ namespace Hospital
     /// </summary>
     public partial class PocetnaPacijent : Window
     {
-
-        public int id { get; set; }
+     
+       public int id { get; set; }
         public PocetnaPacijent(int idP)
         {
             InitializeComponent();
@@ -51,14 +51,6 @@ namespace Hospital
 
         private void klik_na_karton(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void klik_na_ocenjivanje(object sender, RoutedEventArgs e)
-        {
-            OcenjivanjeDoktora ocena = new OcenjivanjeDoktora(id);
-            ocena.Show();
-            this.Close();
 
         }
     }

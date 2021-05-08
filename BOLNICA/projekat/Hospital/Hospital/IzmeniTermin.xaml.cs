@@ -1,5 +1,4 @@
-﻿using Hospital.Model;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -29,9 +28,8 @@ namespace Hospital
         public int index;
         public int idPatient; //id pacijenta koji je ulogovan
         private List<string> lista;
-        private List<global::Doctor> lekari;
-        private List<Appointment> termini;
-        public ObservableCollection<Patient> pacijenti;
+       private List<global::Doctor> lekari;
+
 
 
         public IzmeniTermin(ObservableCollection<Appointment> list, Appointment selectedApp, int selectedIndex, int idP)
@@ -43,64 +41,21 @@ namespace Hospital
             index = selectedIndex;
             idPatient = idP;
 
+            idText.SelectedText = Convert.ToString(selectedApp.idA);
 
-            lista = new List<string>();
-            AppointmentFileStorage af = new AppointmentFileStorage();
-            termini = af.GetAll();
-            lista.Add("");
-            lista.Add("08:00");
-            lista.Add("08:30");
-            lista.Add("09:00");
-            lista.Add("09:30");
-            lista.Add("10:00");
-            lista.Add("10:30");
-            lista.Add("11:00");
-            lista.Add("11:30");
-            lista.Add("12:00");
-            lista.Add("12:30");
-            lista.Add("13:00");
-            lista.Add("13:30");
-            lista.Add("14:00");
-            lista.Add("14:30");
-            lista.Add("15:00");
-            lista.Add("15:30");
-            lista.Add("16:00");
-            lista.Add("16:30");
-            lista.Add("17:00");
-            lista.Add("17:30");
-            lista.Add("18:00");
-            lista.Add("18:30");
-            lista.Add("19:00");
-            timeText.ItemsSource = lista;
+            // time.SelectedText = Convert.ToString(selectedApp.time);
+
+           // lekar.SelectedText = Convert.ToString(selectedApp.doctor);
+
+            dateText.SelectedDate = selectedApp.dateTime;
+            timeText.SelectedValue = selectedApp.dateTime.ToString("HH:mm");
 
 
-
-      
-            DoctorFileStorage df = new DoctorFileStorage();
-             lekari= df.GetAll();
-            doktor.ItemsSource = lekari;
-
-
-
-
-            PatientFileStorage pacijent = new PatientFileStorage();
-            pacijenti = pacijent.GetAll();
-
-            foreach (global::Doctor l in lekari)
-            {
-                if (l.jmbg == termin.Doctor.jmbg)
-                    doktor.SelectedItem = l;
-            }
-
-
-
-
-            dateText.SelectedDate = selectedApp.dateTime.Date;
-            timeText.SelectedItem = selectedApp.dateTime.ToString("HH:mm");
             CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, termin.dateTime.AddDays(-3));
             CalendarDateRange kalendar1 = new CalendarDateRange(termin.dateTime.AddDays(3), DateTime.MaxValue);
             dateText.BlackoutDates.Add(kalendar);
             dateText.BlackoutDates.Add(kalendar1);
+
 
 
         }
@@ -111,26 +66,27 @@ namespace Hospital
             PatientFileStorage storage = new PatientFileStorage();
             ObservableCollection<Patient> patients = storage.GetAll();
 
-            foreach (Patient patient in patients)
+            foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
             {
-                if (patient.PatientId == idPatient)
+                if (patient.PatientId == idPatient) //pronalazi pacijenta sa id-jem ulogovanog pacijenta
                 {
                     ret = patient;
-                    break; 
+                    break; //kada ga nadje izlazi iz petlje
                 }
             }
             return ret;
         }
 
-          public Doctor getDoctorFromFile()
+        //ova fija uvek ubacuje jednog istog doktora, kada se u tabeli prikaze doktor i kada on bude moga da se izabere onda se ova fija treba izmeniti da bi se nasao bas izabrani doktor iz fajla i ubacio u termin
+        public Doctor getDoctorFromFile()
         {
             Doctor ret = new Doctor();
 
-            List<Doctor> doctors = JsonConvert.DeserializeObject<List<Doctor>>(File.ReadAllText(@"./../../../../Hospital/files/storageDoctor.json")); 
-            ret = doctors[0]; 
+            List<Doctor> doctors = JsonConvert.DeserializeObject<List<Doctor>>(File.ReadAllText(@"./../../../../Hospital/files/storageDoctor.json")); //cita listu doktora iz fajla
+            ret = doctors[0]; //uzima prvog u listi(jedinog)
+
             return ret;
         }
-
 
         private void add_appointment(object sender, RoutedEventArgs e)
         {
@@ -138,10 +94,10 @@ namespace Hospital
 
             AppointmentFileStorage storage = new AppointmentFileStorage();
             Patient patient = getPatientFromFile();
-            global::Doctor doktor1 = (global::Doctor)doktor.SelectedItem;
+            Doctor doctor = getDoctorFromFile();
 
-            var item = timeText.SelectedItem;
-            String t = item.ToString();
+            ComboBoxItem item = timeText.SelectedItem as ComboBoxItem;
+            String t = item.Content.ToString();
             String d = dateText.Text;
             DateTime dt = DateTime.Parse(d + " " + t);
 
@@ -150,15 +106,16 @@ namespace Hospital
 
 
             termin.dateTime = dt;
-            termin.doctor = doktor1;
+            termin.doctor = doctor;
             termin.patient = patient;
-            storage.DeleteById(termin.idA);
+            termin.idA = Convert.ToInt32(idText.Text);
+
+
+            //    termin.doctor = Convert.ToString(doctorText.Text);
+
+
+            storage.DeleteById(Convert.ToInt16(idText.Text));
             storage.Save(termin);
-
-            FunkcionalnostiFileStorage funkcionalnosti = new FunkcionalnostiFileStorage();
-            Koristenjefunkcionalnosti funkcionalnost = new Koristenjefunkcionalnosti(DateTime.Now, idPatient, "izmena");
-            funkcionalnosti.Save(funkcionalnost);
-
 
             this.Close();
         }
@@ -169,99 +126,9 @@ namespace Hospital
 
         }
 
-        private void slobodni_doktori(object sender, RoutedEventArgs e)
+        private void button1_Click(object sender, RoutedEventArgs e)
         {
-            foreach (Appointment t in termini)
-            {
-
-                string sat = t.dateTime.Hour.ToString();
-                string minute = t.dateTime.Minute.ToString();
-                string izbaci = "";
-                int brojac1 = 0;
-                int brojac2 = 0;
-                foreach (char s in sat)
-                {
-                    ++brojac1;
-
-                }
-                foreach (char s in minute)
-                {
-                    ++brojac2;
-                }
-                if (brojac1 == 1)
-                {
-                    izbaci = "0" + sat + ":" + minute;
-                }
-                else
-                {
-
-                    izbaci = sat + ":" + minute;
-                }
-
-                if (brojac2 == 1)
-                {
-                    izbaci = izbaci + "0";
-
-                }
-
-                if (t.Doctor.jmbg.Equals(termin.doctor.jmbg))
-                {
-                    if (t.dateTime.Date == dateText.SelectedDate && (timeText.SelectedItem.Equals(izbaci)))
-                    {
-                        lekari.Remove(termin.doctor);
-                         doktor.ItemsSource = lekari;
-                        doktor.SelectedIndex = lekari.Count() - 1;
-
-
-                    }
-                }
-            }
 
         }
-
-        private void potvrda(object sender, RoutedEventArgs e)
-        {
-            foreach (Appointment t in termini)
-            {
-                if (t.dateTime.Date == dateText.SelectedDate)
-                {
-                    string sat = t.dateTime.Hour.ToString();
-                    string minute = t.dateTime.Minute.ToString();
-                    string izbaci = "";
-                    int brojac1 = 0;
-                    int brojac2 = 0;
-                    foreach (char s in sat)
-                    {
-                        ++brojac1;
-
-                    }
-                    foreach (char s in minute)
-                    {
-                        ++brojac2;
-                    }
-                    if (brojac1 == 1)
-                    {
-                        izbaci = "0" + sat + ":" + minute;
-                    }
-                    else
-                    {
-
-                        izbaci = sat + ":" + minute;
-                    }
-
-                    if (brojac2 == 1)
-                    {
-                        izbaci = izbaci + "0";
-
-                    }
-
-                    lista.Remove(izbaci);
-                    timeText.ItemsSource = lista;
-                }
-                timeText.SelectedIndex = 0;
-            }
-        }
-
-
     }
 }

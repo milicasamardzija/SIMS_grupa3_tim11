@@ -1,5 +1,4 @@
-﻿using Hospital.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -23,12 +22,6 @@ namespace Hospital
     public partial class WindowPacijent : Window
     {
         public int id { get; set; }
-
-        public int count1 = 0;
-        public int count2 = 0;
-        public int count3 = 0;
-
-
         public ObservableCollection<Appointment> AppointmentList
         {
             get;
@@ -41,48 +34,6 @@ namespace Hospital
             id = idP;
             AppointmentList = loadJason();
 
-
-            Patient ret = new Patient();
-            PatientFileStorage storage = new PatientFileStorage();
-            ObservableCollection<Patient> patients = storage.GetAll();
-            FunkcionalnostiFileStorage funkcije = new FunkcionalnostiFileStorage();
-            List<Koristenjefunkcionalnosti> funkcionalnosti = funkcije.GetAll();
-
-
-            foreach (Patient patient in patients)
-            {
-                if (patient.PatientId == idP)
-                {
-                    foreach (Koristenjefunkcionalnosti funkcionalnost in funkcionalnosti)
-                    {
-
-                        if (patient.PatientId == funkcionalnost.idPacijenta)
-                        { 
-                            if (funkcionalnost.vrstaFunkcionalnosti == "dodavanje")
-                            {
-                                count1 = count1 + 1;
-                            }
-                            else if (funkcionalnost.vrstaFunkcionalnosti == "izmena")
-                            {
-                                count2 = count2 + 1;
-                            }
-                            else if (funkcionalnost.vrstaFunkcionalnosti == "brisanje")
-                            {
-                                count3 = count3 + 1;
-                            }
-                        }
-                    }
-
-                    if (count1 > 0 || count2>3 ||  count3>3)
-                    {
-                        patient.banovan = true;
-                        
-                    }
-
-                }   
-            }
-
-
         }
         public ObservableCollection<Appointment> loadJason()
         {
@@ -93,172 +44,30 @@ namespace Hospital
             foreach (Appointment appointment in rs) //prolazimo kroz sve termine u fajlu
             {
                 if (appointment.patient.PatientId == id) //trazimo termin koji ima pacijenta sa prosledjenim id-jem
-                { 
+                {
                     ret.Add(appointment); //dodajemo taj termin u listu koju vracamo za ispis u tabelu
                 }
             }
 
             return ret;
         }
-
-
-
-        
-
+    
         private void dodavanje(object sender, RoutedEventArgs e)
         {
-            DodajTermin dd = new DodajTermin(AppointmentList, id); //salje se i id ulogovang pacijenta
-
-
-
-            Patient ret = new Patient();
-            PatientFileStorage storage = new PatientFileStorage();
-            ObservableCollection<Patient> patients = storage.GetAll();
-            FunkcionalnostiFileStorage funkcije = new FunkcionalnostiFileStorage();
-            List<Koristenjefunkcionalnosti> funkcionalnosti = funkcije.GetAll();
-
-            
-
-            foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
-            {
-                if (patient.PatientId == id)
-                { 
-                    foreach (Koristenjefunkcionalnosti funkcionalnost in funkcionalnosti)
-                    {
-
-                        if (patient.PatientId == funkcionalnost.idPacijenta  && funkcionalnost.vrstaFunkcionalnosti == "dodavanje")
-                        {
-                            count1 = count1 + 1;
-                               
-                        }
-                    }
-
-                    if (count1 > 1)
-                    {
-                        patient.banovan = true;
-
-                       
-
-                    }
-
-                    if (patient.banovan == false)
-                    {
-                        dd.Show();
-                    }
-                    else
-                    {
-                        patient.datumBanovanja = DateTime.Now;
-                        MessageBoxResult result = MessageBox.Show("Zakazivanje je blokirano.", "Upozorenje", MessageBoxButton.OK);
-                    }
-                  
-                 
-                    if(patient.datumBanovanja.AddMinutes(2) <= DateTime.Now)
-                    {
-                        patient.banovan = false;
-                        count1 = 0;
-                    }
-                }
-
-            }
-
+            DodajTermin dd = new DodajTermin(AppointmentList,id); //salje se i id ulogovang pacijenta
+            dd.Show();
         }
-
-       
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
            IzmeniTermin it = new IzmeniTermin(AppointmentList, (Appointment)ListaTermina.SelectedItem, ListaTermina.SelectedIndex,id);
-
-
-            Patient ret = new Patient();
-            PatientFileStorage storage = new PatientFileStorage();
-            ObservableCollection<Patient> patients = storage.GetAll();
-            FunkcionalnostiFileStorage funkcije = new FunkcionalnostiFileStorage();
-            List<Koristenjefunkcionalnosti> funkcionalnosti = funkcije.GetAll();
-
-
-
-            foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
-            {
-                if (patient.PatientId == id)
-                {
-
-                    foreach (Koristenjefunkcionalnosti funkcionalnost in funkcionalnosti)
-                    {
-
-                        if (patient.PatientId == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkcionalnosti == "izmena")
-                        {
-                            count1 = count1 + 1;
-
-                        }
-                    }
-
-                    if (count2 > 3)
-                    {
-                        patient.banovan = true;
-
-                    }
-                    if (patient.banovan == false)
-                    {
-                       it.Show();
-                    }
-                    else
-                    {
-                        MessageBoxResult result = MessageBox.Show("Izmena termina je blokirana.", "Upozorenje", MessageBoxButton.OK);
-                    }
-                }
-
-            }
-
-
-        }   
+            it.Show();
+        }
 
         private void obrisi(object sender, RoutedEventArgs e)
         {
-
             ObrisiTermin ob = new ObrisiTermin(AppointmentList, (Appointment)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
-
-            Patient ret = new Patient();
-            PatientFileStorage storage = new PatientFileStorage();
-            ObservableCollection<Patient> patients = storage.GetAll();
-            FunkcionalnostiFileStorage funkcije = new FunkcionalnostiFileStorage();
-            List<Koristenjefunkcionalnosti> funkcionalnosti = funkcije.GetAll();
-
-
-            foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
-            {
-                if (patient.PatientId == id)
-                {
-                    foreach (Koristenjefunkcionalnosti funkcionalnost in funkcionalnosti)
-                    {
-
-                        if (patient.PatientId == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkcionalnosti == "brisanje")
-                        {
-                            count3 = count1 + 1;
-
-                        }
-                    }
-
-                    if (count3 > 3)
-                    {
-                        patient.banovan = true;
-
-                    }
-
-
-
-                    if (patient.banovan == false)
-                    {
-                        ob.Show();
-                    }
-                    else
-                    {
-                        MessageBoxResult result = MessageBox.Show("Brisanje termina je blokirano.", "Upozorenje", MessageBoxButton.OK);
-                    }
-                }
-
-            }
-
+            ob.Show();
         }
 
         private void Nazad_na_pocetnu(object sender, RoutedEventArgs e)

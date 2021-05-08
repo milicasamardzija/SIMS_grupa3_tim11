@@ -7,10 +7,9 @@
         mc:Ignorable="d"
         Title="PocetnaPacijent" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Content="Pregled termina&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="317,46,0,0" Height="44" Click="prikaz_termina"/>
-        <Button Content="Zdravstveni karton&#xD;&#xA;" HorizontalAlignment="Left" Margin="317,130,0,0" VerticalAlignment="Top" Width="130" Height="44" Click="klik_na_karton"/>
-        <Button Content="Obavestenja" HorizontalAlignment="Left" Margin="317,310,0,0" VerticalAlignment="Top" Width="130" Height="44" Click="klik_na_obavestenja" RenderTransformOrigin="0.486,-0.205"/>
+        <Button Content="Pregled termina&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="317,83,0,0" Height="44" Click="prikaz_termina"/>
+        <Button Content="Zdravstveni karton&#xD;&#xA;" HorizontalAlignment="Left" Margin="316,177,0,0" VerticalAlignment="Top" Width="135" Height="44" Click="klik_na_karton"/>
+        <Button Content="Obavestenja" HorizontalAlignment="Left" Margin="317,267,0,0" VerticalAlignment="Top" Width="130" Height="44" Click="klik_na_obavestenja"/>
         <Button Content="Odjava&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="13,386,0,0" Height="22" Click="Odjava"/>
-        <Button Content="Ocena lekara" HorizontalAlignment="Left" Margin="317,220,0,0" VerticalAlignment="Top" Width="130" Height="44" Click="klik_na_ocenjivanje"/>
     </Grid>
 </Window>

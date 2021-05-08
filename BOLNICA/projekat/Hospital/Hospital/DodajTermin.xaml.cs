@@ -1,13 +1,20 @@
-﻿using Hospital.Model;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace Hospital
 {
@@ -21,57 +28,20 @@ namespace Hospital
         public int idPatient; //id pacijenta koji je ulogovan
         private List<string> lista;
         private List<global::Doctor> lekari;
-        public int count1;
-       
-        public DodajTermin(ObservableCollection<Appointment> applist, int idP)
+        public DodajTermin(ObservableCollection<Appointment> lista, int idP)
         {
             InitializeComponent();
-            appointmentList = applist;
+            appointmentList = lista;
             idPatient = idP;
-
-
-            lista = new List<string>();
-            lista.Add("08:00");
-            lista.Add("08:30");
-            lista.Add("09:00");
-            lista.Add("09:30");
-            lista.Add("10:00");
-            lista.Add("10:30");
-            lista.Add("11:00");
-            lista.Add("11:30");
-            lista.Add("12:00");
-            lista.Add("12:30");
-            lista.Add("13:00");
-            lista.Add("13:30");
-            lista.Add("14:00");
-            lista.Add("14:30");
-            lista.Add("15:00");
-            lista.Add("15:30");
-            lista.Add("16:00");
-            lista.Add("16:30");
-            lista.Add("17:00");
-            lista.Add("17:30");
-            lista.Add("18:00");
-            lista.Add("18:30");
-            lista.Add("19:00");
-            time.ItemsSource = lista;
-
-
-
-
-
             CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
             date.BlackoutDates.Add(kalendar);
-            DoctorFileStorage df = new DoctorFileStorage();
-            lekari = df.GetAll();
             lekar.IsEnabled = false;
             time.IsEnabled = false;
         }
-
         public Patient getPatientFromFile()
         {
             Patient ret = new Patient();
-            PatientFileStorage storage = new PatientFileStorage();
+            PatientFileStorage storage = new PatientFileStorage(); 
             ObservableCollection<Patient> patients = storage.GetAll();
 
             foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
@@ -98,26 +68,29 @@ namespace Hospital
 
         private void add_appointment(object sender, RoutedEventArgs e)
         {
-
             AppointmentFileStorage storage = new AppointmentFileStorage();
             Patient patient = getPatientFromFile();
+            Doctor doctor = getDoctorFromFile();
 
-            global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
-            var item = time.SelectedItem;
-            String t = item.ToString();
+            ComboBoxItem item = time.SelectedItem as ComboBoxItem;
+            String t = item.Content.ToString();
             String d = date.Text;
             DateTime dt = DateTime.Parse(d + " " + t);
-            int id = storage.GetAll().Count();
-            
-            
-            Appointment newapp = new Appointment(id, dt, 30, doktor, patient);
+            int id = storage.GetAll().Count() + 1;
+
+
+
+            //tvooj
+            // Appointment newapp = new Appointment(Convert.ToInt32(idText.Text),Convert.ToString(dateText.Text), Convert.ToString(timeText.Text),Convert.ToDouble(durationText.Text),Convert.ToString(doctorText.Text));
+
+            //sa pacijentom
+            // Appointment newapp = new Appointment(Convert.ToInt32(idText.Text), Convert.ToString(dateText.Text), Convert.ToString(timeText.Text), Convert.ToDouble(durationText.Text), Convert.ToString(doctorText.Text),patient);
+
+            //mislim da treba da se napravi neka fija koja vraca idAppointmenta koji ne postoji u fajlu i da se automatski taj id ubacuje u novi Appointment
+            Appointment newapp = new Appointment(id, dt, 30, doctor, patient);
 
             storage.Save(newapp);
             appointmentList.Add(newapp);
-
-            FunkcionalnostiFileStorage funkcionalnosti = new FunkcionalnostiFileStorage();
-            Koristenjefunkcionalnosti funkcionalnost = new Koristenjefunkcionalnosti(DateTime.Now, idPatient, "dodavanje");
-            funkcionalnosti.Save(funkcionalnost);
 
             this.Close();
 
@@ -127,22 +100,19 @@ namespace Hospital
         {
             this.Close();
         }
-
         private void date_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
             if (prioritetCombo.SelectedIndex == 0)
             {
                 time.IsEnabled = true;
-
-                global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
+                global::Doctor l = (global::Doctor)lekar.SelectedItem;
 
                 AppointmentFileStorage storage = new AppointmentFileStorage();
                 List<Appointment> termini = storage.GetAll();
-
                 foreach (Appointment t in termini)
                 {
-                    if (t.Doctor.jmbg.Equals(doktor.jmbg))
+                    if (t.Doctor.jmbg.Equals(l.jmbg))
                     {
                         if ((t.dateTime.Date == date.SelectedDate))
                         {
@@ -162,7 +132,7 @@ namespace Hospital
                             }
                             if (brojac1 == 1)
                             {
-                                izbaci = "0q" + sat + ":" + minute;
+                                izbaci = "0" + sat + ":" + minute;
                             }
                             else
                             {
@@ -183,7 +153,6 @@ namespace Hospital
                     }
 
                 }
-
                 time.ItemsSource = lista;
             }
             else

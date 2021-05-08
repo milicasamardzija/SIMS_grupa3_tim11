@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
        Title="Obrisi termin" Height="250" Width="450" WindowStartupLocation="CenterScreen">
-    <Grid >
+    <Grid Background="LightBlue">
         <Grid>
             <TextBlock Text="Da li ste sigurni da zelite da obrisete termin?"
                        TextAlignment="Center"

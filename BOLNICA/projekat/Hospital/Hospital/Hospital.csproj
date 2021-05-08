@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -76,7 +76,6 @@
     <Compile Include="Controller\InventoryController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
     <Compile Include="Controller\RoomsController.cs" />
-
     <Compile Include="Model\Alergens.cs" />
     <Compile Include="Model\AlergensFileStorage.cs" />
     <Compile Include="DodavanjeLekaRevizija.xaml.cs">
@@ -100,14 +99,8 @@
     <Compile Include="LekoviRevizijaUpravnik.xaml.cs">
       <DependentUpon>LekoviRevizijaUpravnik.xaml</DependentUpon>
     </Compile>
-
-    <Compile Include="DodajAnketu.xaml.cs">
-      <DependentUpon>DodajAnketu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Model\FunkcionalnostiFileStorage.cs" />
     <Compile Include="Model\Ingredient.cs" />
     <Compile Include="Model\IngredientsFileStorage.cs" />
-    <Compile Include="Model\Koristenjefunkcionalnosti.cs" />
     <Compile Include="Model\Medicine.cs" />
     <Compile Include="Model\MedicineFileStorage.cs" />
     <Compile Include="Model\MedicineReview.cs" />
@@ -116,7 +109,6 @@
     <Compile Include="Model\SpecializationType.cs" />
     <Compile Include="Model\StaticInventoryMovement.cs" />
     <Compile Include="Model\StaticInvnetoryMovementFileStorage.cs" />
-
     <Compile Include="PremestanjeInventara.xaml.cs">
       <DependentUpon>PremestanjeInventara.xaml</DependentUpon>
     </Compile>
@@ -182,18 +174,6 @@
     </Compile>
     <Compile Include="RenoviranjeSobe.xaml.cs">
       <DependentUpon>RenoviranjeSobe.xaml</DependentUpon>
-
-    <Compile Include="Model\Survey.cs" />
-    <Compile Include="Model\SurveyFileStorage.cs" />
-    <Compile Include="OceniteBolnicu.xaml.cs">
-      <DependentUpon>OceniteBolnicu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="OcenjivanjeDoktora.xaml.cs">
-      <DependentUpon>OcenjivanjeDoktora.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SacuvanaAnketa.xaml.cs">
-      <DependentUpon>SacuvanaAnketa.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="Service\InventoryService.cs" />
     <Compile Include="Service\RoomsService.cs" />
@@ -272,10 +252,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DeleteDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="DodajAnketu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -583,14 +559,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="OceniteBolnicu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="OcenjivanjeDoktora.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="OdjaviSe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -679,7 +647,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Page Include="Sekretar\PrikaziPreglede.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -705,11 +672,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RenoviranjeSobe.xaml">
-    <SubType>Designer</SubType>
-    <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SacuvanaAnketa.xaml">
-
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
