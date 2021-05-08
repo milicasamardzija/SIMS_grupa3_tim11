@@ -114,11 +114,28 @@ namespace Hospital
             Patient ret = new Patient();
             PatientFileStorage storage = new PatientFileStorage();
             ObservableCollection<Patient> patients = storage.GetAll();
+            FunkcionalnostiFileStorage funkcije = new FunkcionalnostiFileStorage();
+            List<Koristenjefunkcionalnosti> funkcionalnosti = funkcije.GetAll();
 
             foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
             {
                 if (patient.PatientId == id)
-                {
+                { 
+                    foreach (Koristenjefunkcionalnosti funkcionalnost in funkcionalnosti)
+                    {
+
+                        if (patient.PatientId == funkcionalnost.idPacijenta  && funkcionalnost.vrstaFunkcionalnosti == "dodavanje")
+                        {
+                            count1 = count1 + 1;
+                               
+                        }
+                    }
+
+                    if (count1 > 5)
+                    {
+                        patient.banovan = true;
+
+                    }
                     if (patient.banovan == false)
                     {
                         dd.Show();
@@ -143,11 +160,32 @@ namespace Hospital
             Patient ret = new Patient();
             PatientFileStorage storage = new PatientFileStorage();
             ObservableCollection<Patient> patients = storage.GetAll();
+            FunkcionalnostiFileStorage funkcije = new FunkcionalnostiFileStorage();
+            List<Koristenjefunkcionalnosti> funkcionalnosti = funkcije.GetAll();
+
+
 
             foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
             {
                 if (patient.PatientId == id)
                 {
+
+                    foreach (Koristenjefunkcionalnosti funkcionalnost in funkcionalnosti)
+                    {
+
+                        if (patient.PatientId == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkcionalnosti == "izmena")
+                        {
+                            count1 = count1 + 1;
+
+                        }
+                    }
+
+                    if (count2 > 3)
+                    {
+                        patient.banovan = true;
+
+                    }
+
                     if (patient.banovan == false)
                     {
                        it.Show();
@@ -171,11 +209,32 @@ namespace Hospital
             Patient ret = new Patient();
             PatientFileStorage storage = new PatientFileStorage();
             ObservableCollection<Patient> patients = storage.GetAll();
+            FunkcionalnostiFileStorage funkcije = new FunkcionalnostiFileStorage();
+            List<Koristenjefunkcionalnosti> funkcionalnosti = funkcije.GetAll();
+
 
             foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
             {
                 if (patient.PatientId == id)
                 {
+                    foreach (Koristenjefunkcionalnosti funkcionalnost in funkcionalnosti)
+                    {
+
+                        if (patient.PatientId == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkcionalnosti == "brisanje")
+                        {
+                            count3 = count1 + 1;
+
+                        }
+                    }
+
+                    if (count3 > 3)
+                    {
+                        patient.banovan = true;
+
+                    }
+
+
+
                     if (patient.banovan == false)
                     {
                         ob.Show();
