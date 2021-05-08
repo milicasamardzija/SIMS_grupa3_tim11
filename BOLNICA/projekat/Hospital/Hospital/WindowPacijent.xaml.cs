@@ -151,8 +151,8 @@ namespace Hospital
                         MessageBoxResult result = MessageBox.Show("Zakazivanje je blokirano.", "Upozorenje", MessageBoxButton.OK);
                     }
                   
-                    int r = DateTime.Compare(patient.datumBanovanja.AddMinutes(2), DateTime.Now);
-                    if(r==0)
+                 
+                    if(patient.datumBanovanja.AddMinutes(2) <= DateTime.Now)
                     {
                         patient.banovan = false;
                         count1 = 0;
