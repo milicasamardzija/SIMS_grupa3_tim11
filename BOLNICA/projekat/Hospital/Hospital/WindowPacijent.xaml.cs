@@ -135,7 +135,7 @@ namespace Hospital
                     {
                         patient.banovan = true;
 
-                        patient.datumBanovanja = DateTime.Now;
+                       
 
                     }
 
@@ -145,8 +145,10 @@ namespace Hospital
                     }
                     else
                     {
+                        patient.datumBanovanja = DateTime.Now;
                         MessageBoxResult result = MessageBox.Show("Zakazivanje je blokirano.", "Upozorenje", MessageBoxButton.OK);
                     }
+                    
                 }
 
             }
