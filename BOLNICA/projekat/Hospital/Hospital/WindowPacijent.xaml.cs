@@ -117,6 +117,8 @@ namespace Hospital
             FunkcionalnostiFileStorage funkcije = new FunkcionalnostiFileStorage();
             List<Koristenjefunkcionalnosti> funkcionalnosti = funkcije.GetAll();
 
+            
+
             foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
             {
                 if (patient.PatientId == id)
@@ -131,7 +133,7 @@ namespace Hospital
                         }
                     }
 
-                    if (count1 > 5)
+                    if (count1 > 1)
                     {
                         patient.banovan = true;
 
@@ -148,7 +150,13 @@ namespace Hospital
                         patient.datumBanovanja = DateTime.Now;
                         MessageBoxResult result = MessageBox.Show("Zakazivanje je blokirano.", "Upozorenje", MessageBoxButton.OK);
                     }
-                    
+                  
+                    int r = DateTime.Compare(patient.datumBanovanja.AddMinutes(2), DateTime.Now);
+                    if(r==0)
+                    {
+                        patient.banovan = false;
+                        count1 = 0;
+                    }
                 }
 
             }
