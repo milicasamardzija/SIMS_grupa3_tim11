@@ -8,7 +8,7 @@ using System;
 
 public class Doctor : User
 {
-   public int doctorId;
+   public int doctorId { get; set; }
   // public String specialization;
    public int freeDays = 25;
    public SpecializationType specializationType { get; set; }
