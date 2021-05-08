@@ -16,10 +16,12 @@ public class Patient : User
    private String insurence;
    public Boolean guest = false;
 
-   
+    public Boolean banovan = false;
+    public DateTime datumBanovanja;
 
 
-   public Patient(String n, String s, String tel, String jmb, Gender g, DateTime b, int pId, HealthCareCategory hcc, int idhc, String oc, String ins, Adress adr) 
+
+    public Patient(String n, String s, String tel, String jmb, Gender g, DateTime b, int pId, HealthCareCategory hcc, int idhc, String oc, String ins, Adress adr) 
     { 
         this.name=n;
         this.surname=s;

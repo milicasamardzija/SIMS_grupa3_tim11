@@ -1,0 +1,33 @@
+﻿<Window x:Class="Hospital.OceniteBolnicu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+    Title="OceniteBolnicu" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Ocenite usluge naše bolnice!" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,29,0,0"/>
+        <Label Content="Izaberite ocjenu:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="220,100,0,0" Width="105"/>
+        <ComboBox Name="ocena" HorizontalAlignment="Left" VerticalAlignment="Top" Width="133" Margin="355,103,0,0">
+            <ComboBoxItem>1</ComboBoxItem>
+            <ComboBoxItem>2</ComboBoxItem>
+            <ComboBoxItem>3</ComboBoxItem>
+            <ComboBoxItem>4</ComboBoxItem>
+            <ComboBoxItem>5</ComboBoxItem>
+            <ComboBoxItem>6</ComboBoxItem>
+            <ComboBoxItem>7</ComboBoxItem>
+            <ComboBoxItem>8</ComboBoxItem>
+            <ComboBoxItem>9</ComboBoxItem>
+            <ComboBoxItem>10</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Upišite Vaš komentar:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="220,181,0,0"/>
+        <TextBox Name="komentar" HorizontalAlignment="Left" Height="95" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" Margin="225,225,0,0" Grid.RowSpan="2"/>
+        <Button Content="Pošaljite anketu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Margin="585,145,0,0" RenderTransformOrigin="1.339,0.281" Click="posalji"/>
+        <Button Content="Odustani" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Margin="585,199,0,0" Click="odustani"/>
+    </Grid>
+</Window>

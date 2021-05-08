@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
     Title="Nalog" Height="450" Width="800" WindowStartupLocation="CenterScreen">
-    <Grid Background="LightBlue" Margin="-23,0,-0.4,0">
+    <Grid Margin="-23,0,-0.4,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="283*"/>
             <ColumnDefinition Width="505*"/>
@@ -46,6 +46,6 @@
             <Button Height="30" Width="80" Margin="50,50,20,10" Background = "AliceBlue" Click="izmeni" Content="IZMENI"></Button>
             <Button Height="30" Width="80" Margin="50,50,20,10" Background = "AliceBlue" Click="obrisi" Content="IZBRISI"></Button>
         </StackPanel>
-        <Button Content="Nazad" HorizontalAlignment="Left" Margin="3,392,0,0" VerticalAlignment="Top" Width="75" Click="Nazad_na_pocetnu"/>
+        <Button Content="Nazad" HorizontalAlignment="Left" Margin="40,385,0,0" VerticalAlignment="Top" Width="75" Click="Nazad_na_pocetnu"/>
     </Grid>
 </Window>

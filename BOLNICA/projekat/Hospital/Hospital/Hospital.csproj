@@ -76,6 +76,9 @@
     <Compile Include="Controller\InventoryController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
     <Compile Include="Controller\RoomsController.cs" />
+    <Compile Include="DodajAnketu.xaml.cs">
+      <DependentUpon>DodajAnketu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\Alergens.cs" />
     <Compile Include="Model\AlergensFileStorage.cs" />
     <Compile Include="DodavanjeLekaRevizija.xaml.cs">
@@ -99,8 +102,10 @@
     <Compile Include="LekoviRevizijaUpravnik.xaml.cs">
       <DependentUpon>LekoviRevizijaUpravnik.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\FunkcionalnostiFileStorage.cs" />
     <Compile Include="Model\Ingredient.cs" />
     <Compile Include="Model\IngredientsFileStorage.cs" />
+    <Compile Include="Model\Koristenjefunkcionalnosti.cs" />
     <Compile Include="Model\Medicine.cs" />
     <Compile Include="Model\MedicineFileStorage.cs" />
     <Compile Include="Model\MedicineReview.cs" />
@@ -109,6 +114,14 @@
     <Compile Include="Model\SpecializationType.cs" />
     <Compile Include="Model\StaticInventoryMovement.cs" />
     <Compile Include="Model\StaticInvnetoryMovementFileStorage.cs" />
+    <Compile Include="Model\Survey.cs" />
+    <Compile Include="Model\SurveyFileStorage.cs" />
+    <Compile Include="OceniteBolnicu.xaml.cs">
+      <DependentUpon>OceniteBolnicu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OcenjivanjeDoktora.xaml.cs">
+      <DependentUpon>OcenjivanjeDoktora.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PremestanjeInventara.xaml.cs">
       <DependentUpon>PremestanjeInventara.xaml</DependentUpon>
     </Compile>
@@ -120,6 +133,9 @@
     </Compile>
     <Compile Include="RenoviranjeOdbijeno.xaml.cs">
       <DependentUpon>RenoviranjeOdbijeno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SacuvanaAnketa.xaml.cs">
+      <DependentUpon>SacuvanaAnketa.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sekretar\Alergeni.xaml.cs">
       <DependentUpon>Alergeni.xaml</DependentUpon>
@@ -254,6 +270,10 @@
     <Page Include="DeleteDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DodajAnketu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="DodajInventarDijalog.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -415,6 +435,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="OceniteBolnicu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OcenjivanjeDoktora.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="PremestanjeInventara.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -430,6 +458,10 @@
     <Page Include="RenoviranjeOdbijeno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SacuvanaAnketa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Sekretar\Alergeni.xaml">
       <Generator>MSBuild:Compile</Generator>
