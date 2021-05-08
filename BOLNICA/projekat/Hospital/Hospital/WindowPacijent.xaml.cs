@@ -135,7 +135,10 @@ namespace Hospital
                     {
                         patient.banovan = true;
 
+                        patient.datumBanovanja = DateTime.Now;
+
                     }
+
                     if (patient.banovan == false)
                     {
                         dd.Show();
@@ -185,7 +188,6 @@ namespace Hospital
                         patient.banovan = true;
 
                     }
-
                     if (patient.banovan == false)
                     {
                        it.Show();
