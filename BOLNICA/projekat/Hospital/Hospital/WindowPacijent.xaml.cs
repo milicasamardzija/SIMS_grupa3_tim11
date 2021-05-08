@@ -25,8 +25,10 @@ namespace Hospital
         public int id { get; set; }
 
         public int count1 = 0;
-        
-        
+        public int count2 = 0;
+        public int count3 = 0;
+
+
         public ObservableCollection<Appointment> AppointmentList
         {
             get;
@@ -45,6 +47,8 @@ namespace Hospital
             ObservableCollection<Patient> patients = storage.GetAll();
             FunkcionalnostiFileStorage funkcije = new FunkcionalnostiFileStorage();
             List<Koristenjefunkcionalnosti> funkcionalnosti = funkcije.GetAll();
+
+
             foreach (Patient patient in patients)
             {
                 if (patient.PatientId == idP)
@@ -52,16 +56,27 @@ namespace Hospital
                     foreach (Koristenjefunkcionalnosti funkcionalnost in funkcionalnosti)
                     {
 
-                        if (patient.PatientId == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkconalnosti == "dodavanje")
-                        {
-                            count1 = count1 + 1;
+                        if (patient.PatientId == funkcionalnost.idPacijenta)
+                        { 
+                            if (funkcionalnost.vrstaFunkcionalnosti == "dodavanje")
+                            {
+                                count1 = count1 + 1;
+                            }
+                            else if (funkcionalnost.vrstaFunkcionalnosti == "izmena")
+                            {
+                                count2 = count2 + 1;
+                            }
+                            else if (funkcionalnost.vrstaFunkcionalnosti == "brisanje")
+                            {
+                                count3 = count3 + 1;
+                            }
                         }
-
                     }
 
-                    if (count1 > 0)
+                    if (count1 > 0 || count2>3 ||  count3>3)
                     {
                         patient.banovan = true;
+                        
                     }
 
                 }   
@@ -104,7 +119,7 @@ namespace Hospital
             {
                 if (patient.PatientId == id)
                 {
-                    if (patient.banovan == true)
+                    if (patient.banovan == false)
                     {
                         dd.Show();
                     }
@@ -167,7 +182,7 @@ namespace Hospital
                     }
                     else
                     {
-                        MessageBoxResult result = MessageBox.Show("Brisanje termina je blokirao.", "Upozorenje", MessageBoxButton.OK);
+                        MessageBoxResult result = MessageBox.Show("Brisanje termina je blokirano.", "Upozorenje", MessageBoxButton.OK);
                     }
                 }
 

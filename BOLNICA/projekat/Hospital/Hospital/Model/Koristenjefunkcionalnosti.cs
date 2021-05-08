@@ -10,7 +10,7 @@ namespace Hospital.Model
     {
         public DateTime datumIzvrsavanja;
         public int idPacijenta;
-        public string vrstaFunkconalnosti;
+        public string vrstaFunkcionalnosti;
 
 
 
@@ -19,7 +19,7 @@ namespace Hospital.Model
 
             this.datumIzvrsavanja = date;
             this.idPacijenta = id;
-            this.vrstaFunkconalnosti = vrsta;
+            this.vrstaFunkcionalnosti = vrsta;
 
 
         }

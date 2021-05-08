@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Hospital.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -153,6 +154,11 @@ namespace Hospital
             termin.patient = patient;
             storage.DeleteById(termin.idA);
             storage.Save(termin);
+
+            FunkcionalnostiFileStorage funkcionalnosti = new FunkcionalnostiFileStorage();
+            Koristenjefunkcionalnosti funkcionalnost = new Koristenjefunkcionalnosti(DateTime.Now, idPatient, "izmena");
+            funkcionalnosti.Save(funkcionalnost);
+
 
             this.Close();
         }

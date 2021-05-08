@@ -43,7 +43,7 @@ namespace Hospital.Model
 
             foreach (Koristenjefunkcionalnosti funkcionalnost in funkcionalnosti)
             {
-                if (funkcionalnost.vrstaFunkconalnosti == id)
+                if (funkcionalnost.vrstaFunkcionalnosti == id)
                 {
                     app = funkcionalnost;
                     break;
