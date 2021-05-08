@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -36,6 +37,11 @@ namespace Hospital
             AppointmentFileStorage storage = new AppointmentFileStorage();
             storage.DeleteById(id);
             appointmentList.RemoveAt(index);
+            FunkcionalnostiFileStorage funkcionalnosti = new FunkcionalnostiFileStorage();
+            Koristenjefunkcionalnosti funkcionalnost = new Koristenjefunkcionalnosti(DateTime.Now, id, "brisanje");
+            funkcionalnosti.Save(funkcionalnost);
+
+
             this.Close();
         }
 

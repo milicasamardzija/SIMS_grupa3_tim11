@@ -16,6 +16,10 @@ public class Patient : User
    private String insurence;
    public Boolean guest = false;
 
+   public Boolean banovan = false;
+   public DateTime datumBanovanja;
+
+
    
 
 
