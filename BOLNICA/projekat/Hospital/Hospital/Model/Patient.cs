@@ -15,6 +15,7 @@ public class Patient : User
    private String occupation;
    private String insurence;
    public Boolean guest = false;
+    public Boolean banovan = false;
 
    
 

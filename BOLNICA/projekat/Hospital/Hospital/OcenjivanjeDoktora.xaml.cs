@@ -89,7 +89,7 @@ namespace Hospital
 
         public void UpdateTable()
         {
-            ListaObavljenihTermina.Items.Remove(this.ListaObavljenihTermina.SelectedItem);
+            ListaObavljenihTermina.Items.Remove(((Appointment)ListaObavljenihTermina.SelectedItem).idA);
         }
     }
 }

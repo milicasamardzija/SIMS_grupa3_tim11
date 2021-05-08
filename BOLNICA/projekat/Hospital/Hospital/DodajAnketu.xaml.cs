@@ -23,12 +23,12 @@ namespace Hospital
     {
 
         public OcenjivanjeDoktora parent;
-        public ObservableCollection<Appointment> appointmentList;
+        public ObservableCollection<Appointment> obavljeniTermini;
         public Appointment termin;
         public int index;
         public int idPatient; //id pacijenta koji je ulogovan
         public string ime;
-        public int id;
+      
         
 
         
@@ -37,11 +37,11 @@ namespace Hospital
         public DodajAnketu(ObservableCollection<Appointment> list, Appointment selectedApp, int selectedIndex, int idP)
         {
             InitializeComponent();
-            appointmentList = list;
+            obavljeniTermini = list;
             termin = selectedApp;
             index = selectedIndex;
             idPatient = idP;
-            id = selectedApp.idA;
+           
            
 
             ime = termin.Doctor.name + " " + termin.Doctor.surname;
@@ -75,13 +75,10 @@ namespace Hospital
             Survey novaAnketa = new Survey(id, komentarisano, ocenjeno, lekar,termin.idA);
 
             sveAnkete.Save(novaAnketa);
-
-           AppointmentFileStorage storage = new AppointmentFileStorage();
-            storage.DeleteById(id);
-            appointmentList.RemoveAt(index);
+            obavljeniTermini.RemoveAt(index);
 
             this.Close();
-          //parent.UpdateTable();
+         // parent.UpdateTable();
 
         }
     }

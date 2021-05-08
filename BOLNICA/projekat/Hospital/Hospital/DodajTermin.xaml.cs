@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Hospital.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,7 +21,8 @@ namespace Hospital
         public int idPatient; //id pacijenta koji je ulogovan
         private List<string> lista;
         private List<global::Doctor> lekari;
-
+        public int count1;
+       
         public DodajTermin(ObservableCollection<Appointment> applist, int idP)
         {
             InitializeComponent();
@@ -96,6 +98,7 @@ namespace Hospital
 
         private void add_appointment(object sender, RoutedEventArgs e)
         {
+
             AppointmentFileStorage storage = new AppointmentFileStorage();
             Patient patient = getPatientFromFile();
 
@@ -105,12 +108,16 @@ namespace Hospital
             String d = date.Text;
             DateTime dt = DateTime.Parse(d + " " + t);
             int id = storage.GetAll().Count();
-
-
+            
+            
             Appointment newapp = new Appointment(id, dt, 30, doktor, patient);
 
             storage.Save(newapp);
             appointmentList.Add(newapp);
+
+            FunkcionalnostiFileStorage funkcionalnosti = new FunkcionalnostiFileStorage();
+            Koristenjefunkcionalnosti funkcionalnost = new Koristenjefunkcionalnosti(DateTime.Now, idPatient, "dodavanje");
+            funkcionalnosti.Save(funkcionalnost);
 
             this.Close();
 
