@@ -144,7 +144,7 @@ namespace Hospital
                 {
                     foreach (RoomInventory ri in storage.GetAll())
                     {
-                        if (room.RoomId == ri.idRoom && ri.idInventory == idInventory && ri.Quantity == quantity)
+                        if (room.RoomId == ri.IdRoom && ri.IdInventory == idInventory && ri.Quantity == quantity)
                         {
                             filtratedRooms.Add(room);
                         }

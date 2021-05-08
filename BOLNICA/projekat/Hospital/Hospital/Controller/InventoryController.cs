@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace Hospital.Controller
 {
-    class InventoryController
+    public class InventoryController
     {
         private InventoryService service = new InventoryService();
+        public void moveInventory(RoomInventory roomInventory, int idRoomOut)
+        {
+            service.moveInventory(roomInventory, idRoomOut);
+        }
     }
 }

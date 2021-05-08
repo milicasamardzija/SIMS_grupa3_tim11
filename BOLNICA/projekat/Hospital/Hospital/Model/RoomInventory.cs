@@ -3,12 +3,11 @@ using System;
 
 public class RoomInventory
 {
-    private Room room;
-    public int idRoom { get; set; }
-    private Inventory inventory;
-    public int idInventory { get; set; }
+    private int idRoom;
+    private int idInventory;
     private int quantity;
-    public DateTime date { get; set; }
+    private Room room;
+    private Inventory inventory;
 
     [JsonIgnore]
     public Room Room
@@ -23,7 +22,31 @@ public class RoomInventory
         }
     }
 
-   [JsonIgnore]
+    public int IdRoom
+    {
+        get
+        {
+            return idRoom;
+        }
+        set
+        {
+            idRoom = value;
+        }
+    }
+
+    public int IdInventory
+    {
+        get
+        {
+            return idInventory;
+        }
+        set
+        {
+            idInventory = value;
+        }
+    }
+
+    [JsonIgnore]
     public Inventory Inventory
     {
         get
@@ -59,4 +82,10 @@ public class RoomInventory
         quantity = q;
     }
 
+    public RoomInventory(int idRoomIn, int inventoryId, int quantity)
+    {
+        this.IdRoom = idRoomIn;
+        this.IdInventory = inventoryId;
+        this.Quantity = quantity;
+    }
 }

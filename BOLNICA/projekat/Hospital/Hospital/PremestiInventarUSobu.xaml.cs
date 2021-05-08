@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.Controller;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -33,7 +34,7 @@ namespace Hospital
         private int idRoom;
         private int quantity;
         private DataGrid inventarTabela;
-
+        private InventoryController inventoryController = new InventoryController();
         public PremestiInventarUSobu(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, DataGrid listaInventara)
         {
             InitializeComponent();
@@ -73,9 +74,9 @@ namespace Hospital
         private void premesti(object sender, RoutedEventArgs e)
         {
             idRoom = Convert.ToInt32(IdSobeTxt.Text);
-            
             quantity = Convert.ToInt32(KolicinaTxt.Text);
-            inventoryStorage.moveInventory(inventory, idRoom, -1, quantity);
+
+            inventoryController.moveInventory(new RoomInventory(idRoom, inventory.InventoryId, quantity), -1);
             inventarTabela.ItemsSource = loadJsonInventory();
             frame.NavigationService.Navigate(new BelsekaMagacin());
         }

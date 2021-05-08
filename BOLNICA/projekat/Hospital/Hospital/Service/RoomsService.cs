@@ -43,11 +43,11 @@ namespace Hospital.Service
         {
              foreach (RoomInventory roomInv in roominventoryStorage.GetAll())
              {
-                 if (roomInv.idRoom == renovation.IdRoom)
+                 if (roomInv.IdRoom == renovation.IdRoom)
                  {
                      foreach (Inventory inventory in inventoryStorage.GetAll())
                      {
-                         if (roomInv.idInventory == inventory.InventoryId) {
+                         if (roomInv.IdInventory == inventory.InventoryId) {
                              if (inventory.Type == InventoryType.staticki)
                              {
                                 staticInventoryStorage.Save(new StaticInventoryMovement(-1, renovation.IdRoom, inventory.InventoryId, roomInv.Quantity, renovation.DateBegin));

@@ -48,9 +48,9 @@ namespace Hospital
 
             foreach (RoomInventory r in storage.GetAll())
             {
-                if (r.idRoom.Equals(room.RoomId))
+                if (r.IdRoom.Equals(room.RoomId))
                 {
-                    Inventory i = inventoryStorage.FindById(r.idInventory);
+                    Inventory i = inventoryStorage.FindById(r.IdInventory);
                     if (i != null)
                         ret.Add(new Inventory(i.InventoryId, i.Name, r.Quantity, i.Type));
                     else

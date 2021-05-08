@@ -62,7 +62,7 @@ namespace Hospital
                 }
             }
 
-            storage.SaveAll(allInventories);
+            storage.serialize(allInventories);
    
             frame.NavigationService.Navigate(this);
 
