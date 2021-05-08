@@ -61,6 +61,7 @@ namespace Hospital.Model
             set
             {
                 roomOutId = value;
+                OnProperychanged("RoomOutId");
             }
         }
 
@@ -73,6 +74,7 @@ namespace Hospital.Model
             set
             {
                 inventoryId = value;
+                OnProperychanged("inventoryId");
             }
         }
 
@@ -85,6 +87,7 @@ namespace Hospital.Model
             set
             {
                 quantity = value;
+                OnProperychanged("Quantity");
             }
         }
 
@@ -97,6 +100,7 @@ namespace Hospital.Model
             set
             {
                 date = value;
+                OnProperychanged("Date");
             }
         }
     }

@@ -137,5 +137,6 @@ namespace Hospital
             StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
             storage.Save(newMovement);
         }
+
     }
 }

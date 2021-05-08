@@ -164,9 +164,5 @@ namespace Hospital
             
         }
 
-        private void zakazanoPremestanje(object sender, RoutedEventArgs e)
-        {
-            managerFrame.NavigationService.Navigate(new PrikazZakazanogPremestanja()) ;
-        }
     }
 }

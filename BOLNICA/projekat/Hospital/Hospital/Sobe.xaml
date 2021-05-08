@@ -10,11 +10,12 @@
         <TextBlock TextWrapping="Wrap" Text="Postorije sa kojima bolnica raspolaze."
                        HorizontalAlignment="Center"
                        FontStyle="Italic"
-                       Foreground= "#FF3E3ADD"
+                       Foreground= "Black"
                        Grid.Row="0"
                        Grid.Column="0"
-                       Margin="33,11,896,586"
-                       FontSize="20" Width="351"
+                       Margin="33,20,622,577"
+                       FontSize="20" Width="625"
+                       FontWeight="Bold"
                        />
         <DataGrid Name="ListaProstorija"
                       Margin="33,185,542,112"
@@ -38,22 +39,22 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Margin="33,546,1144,46" Background="AliceBlue" Click="dodavanje" Content="DODAJ" RenderTransformOrigin="0.5,0.5"/>
-        <Button Margin="329,546,848,46" Background = "AliceBlue" Click="izmeni" Content="IZMENI" RenderTransformOrigin="1.07,0.564"/>
-        <Button Margin="634,546,542,44" Background = "AliceBlue" Click="obrisi" Content="IZBRISI" RenderTransformOrigin="0.538,0.22"/>
+        <Button Margin="33,546,1144,46" Background="AliceBlue" Click="dodavanje" Content="DODAJ" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontSize="16"/>
+        <Button Margin="319,546,858,46" Background = "AliceBlue" Click="izmeni" Content="IZMENI" RenderTransformOrigin="1.07,0.564" FontWeight="Bold" FontSize="16"/>
+        <Button Margin="634,546,542,44" Background = "AliceBlue" Click="obrisi" Content="IZBRISI" RenderTransformOrigin="0.538,0.22" FontWeight="Bold" FontSize="16"/>
         <Frame Name="SobeFrame" HorizontalAlignment="Left" Margin="781,128,0,0" VerticalAlignment="Top" Height="400" Width="470" />
-        <StackPanel Background="AliceBlue" Margin="33,54,968,488">
+        <StackPanel Background="AliceBlue" Margin="33,70,968,472">
             <Label Content="Unesite sprat ili  namenu prostorije:" FontSize="14" FontWeight="Bold" Height="40" Margin="20,0,10.2,0" VerticalAlignment="Top"/>
             <TextBox Name="PretragaTxt" FontSize="16" FontWeight="Bold" Width="216" TextChanged="PretragaSobe" Margin="0,0,0,31.6" Height="45" VerticalAlignment="Bottom"/>
         </StackPanel>
-        <StackPanel Background="AliceBlue" HorizontalAlignment="Left" Height="100" Margin="329,52,0,0" VerticalAlignment="Top" Width="409">
+        <StackPanel Background="AliceBlue" HorizontalAlignment="Left" Height="100" Margin="329,68,0,0" VerticalAlignment="Top" Width="409">
             <Label Content="Filtriranje soba na osnovu inventara&#xD;&#xA; (naziv i kolicina):" FontSize="16" FontWeight="Bold" Height="51" Margin="0,0,-0.2,0"></Label>
             <Grid>
                 <ComboBox Name = "ImeInventarTxt" Grid.Row="0" Grid.Column="0" Margin="8,3,131.8,-34" FontSize="16"/>
                 <TextBox Name ="KolicinaInventarTxt" Grid.Row="0" Margin="286,3,10.8,-34" RenderTransformOrigin="0.498,1.049" FontWeight="Bold" TextChanged="KolicinaInventarTxt_TextChanged"/>
             </Grid>
         </StackPanel>
-        <Button Margin="861,546,315,44" Background = "AliceBlue" Click="zakaziRenoviranje" Content="Zakazi renoviranje" RenderTransformOrigin="-0.561,0.77" />
-        <Button Margin="1107,546,69,44" Background = "AliceBlue" Click="RenoviranjePrikaz" Content="RENOVIRANJE" RenderTransformOrigin="-0.561,0.77" />
+        <Button Margin="838,546,257,44" Background = "AliceBlue" Click="zakaziRenoviranje" Content="ZAKAZI RENOVIRANJE" RenderTransformOrigin="-0.561,0.77" FontWeight="Bold" FontSize="16" />
+        <Button Margin="1107,546,42,44" Background = "AliceBlue" Click="RenoviranjePrikaz" Content="RENOVIRANJE" RenderTransformOrigin="-0.561,0.77" FontWeight="Bold" FontSize="16" />
     </Grid>
 </UserControl>
