@@ -23,7 +23,7 @@ namespace Hospital
     public partial class DodavanjeLekaUpravnik : UserControl
     {
         private Frame frame = new Frame();
-        private LekRevizija revision = new LekRevizija();
+        private LekRevizija revision;
         private MedicineController controller = new MedicineController();
       
         public DodavanjeLekaUpravnik(Frame frameLekovi, LekRevizija selectedRevision)

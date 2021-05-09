@@ -23,7 +23,7 @@ namespace Hospital
     public partial class BrisanjeRecenzijeUpravnik : UserControl
     {
         private Frame frame = new Frame();
-        private LekRevizija revizija = new LekRevizija();
+        private LekRevizija revizija;
         private MedicineReviewFileStorage reviewStorage = new MedicineReviewFileStorage();
         public BrisanjeRecenzijeUpravnik(Frame frameUpravnik, LekRevizija selectedItem)
         {

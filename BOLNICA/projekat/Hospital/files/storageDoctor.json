@@ -88,5 +88,78 @@
     "password": "mita",
     "doctorId": 4,
     "specializationType": 4
+  },
+  {
+    "name": "Marko",
+    "surname": "Markovic",
+    "adress": {
+      "street": "Vojove Misica",
+      "streetNumber": 14,
+      "city": 5,
+      "country": 0
+    },
+    "telephoneNumber": "064/1234455",
+    "jmbg": "0105999888654",
+    "gender": 1,
+    "birthdayDate": "2021-04-09T00:00:00",
+    "username": "braca",
+    "password": "braca",
+    "doctorId": 5,
+    "specializationType": 2
+  },
+  {
+    "name": "Nevena",
+    "surname": "Atic",
+    "adress": {
+      "street": "Vojove Misica",
+      "streetNumber": 14,
+      "city": 5,
+      "country": 0
+    },
+    "telephoneNumber": "064/1234455",
+    "jmbg": "0105999888654",
+    "gender": 1,
+    "birthdayDate": "2021-04-09T00:00:00",
+    "username": "braca",
+    "password": "braca",
+    "doctorId": 6,
+    "specializationType": 6
+  },
+  {
+    "name": "Vedrana",
+    "surname": "Mijatonic",
+    "adress": {
+      "street": "Vojove Misica",
+      "streetNumber": 14,
+      "city": 5,
+      "country": 0
+    },
+    "telephoneNumber": "064/1234455",
+    "jmbg": "0105999888654",
+    "gender": 1,
+    "birthdayDate": "2021-04-09T00:00:00",
+    "username": "veca",
+    "password": "veca",
+    "doctorId": 7,
+    "specializationType": 7
+  },
+
+  {
+    "name": "Nikola",
+    "surname": "Mijatonic",
+    "adress": {
+      "street": "Vojove Misica",
+      "streetNumber": 14,
+      "city": 5,
+      "country": 0
+    },
+    "telephoneNumber": "064/1234455",
+    "jmbg": "0105999888654",
+    "gender": 1,
+    "birthdayDate": "2021-04-09T00:00:00",
+    "username": "veca",
+    "password": "veca",
+    "doctorId": 7,
+    "specializationType": 6
   }
 ]

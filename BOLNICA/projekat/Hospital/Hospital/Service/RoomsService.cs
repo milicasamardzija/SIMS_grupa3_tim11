@@ -39,6 +39,26 @@ namespace Hospital.Service
             }
         }
 
+       /* public Boolean hasNoRenovationScheduled(RoomRenovation renovation)
+        {
+            foreach (RoomRenovation renov in renovationStorage.GetAll())
+            {
+                if (renovation.IdRoom == renov.IdRoom && renovation.DateBegin.Date == renov.DateBegin.Date)
+                {
+                    return false;
+                }
+                if (renovation.IdRoom == renov.IdRoom && renovation.DateEnd.Date == renov.DateEnd.Date)
+                {
+                    return false;
+                }
+                if (renovation.IdRoom == renov.IdRoom && renovation.DateBegin.Date < renov.DateEnd.Date &&)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }*/
+
         public void moveInventoryForRenovation(RoomRenovation renovation)
         {
              foreach (RoomInventory roomInv in roominventoryStorage.GetAll())

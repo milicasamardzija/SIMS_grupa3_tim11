@@ -8,16 +8,16 @@
              d:DesignHeight="400" d:DesignWidth="470" Background="AliceBlue">
     <Grid>
         <Grid Margin="-10,-10,0.4,0">
-            <Label Height="30" Width="100" Margin="35,35,335.8,335" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="0" FontWeight="Bold" RenderTransformOrigin="0.498,-0.169">Broj prostorije</Label>
-            <TextBox IsReadOnly="True" Name="brojProstorijeTxt" Width="200" Margin="202,35,78,340" Grid.Row="0" />
-            <Label Height="30" Width="100" Margin="35,104,335.8,266" Foreground="DarkBlue" FontSize="10" Grid.Column="0" FontWeight="Bold" RenderTransformOrigin="-0.119,-0.46" Content="Datum pocetka"/>
-            <Label Height="30" Width="100" Margin="35,168,335,202" Foreground="DarkBlue" FontSize="10" Grid.Column="0" FontWeight="Bold" Content="Datum zavrsetka"/>
-            <Label Height="30" Margin="40,239,242,141" Foreground="DarkBlue" FontSize="10" Grid.Column="0" FontWeight="Bold" Content="Opois radova"/>
-            <TextBox Name="opisRadova" Height="30" Width="200" Margin="197,234,73,136"/>
-            <Button Margin="95,314,295,56" Grid.Column="0" Width="80" Height="30" Background="LightBlue" Click="renoviraj">Potvrdi</Button>
-            <Button Margin="275,314,115,56"  Width="80" Height="30" Background="LightBlue"  Click="odustani">Odustani</Button>
-            <DatePicker Name="BeginDate" HorizontalAlignment="Left" Margin="202,107,0,0" VerticalAlignment="Top" Width="200" Height="32"/>
-            <DatePicker Name="EndDate" HorizontalAlignment="Left" Margin="202,171,0,0" VerticalAlignment="Top" Width="200" Height="32"/>
+            <Label Margin="10,35,332,327" Foreground="Black" FontSize="18" Grid.Column="0" Grid.Row="0" RenderTransformOrigin="0.498,-0.169" FontWeight="Bold">Broj prostorije</Label>
+            <TextBox IsReadOnly="True" Name="brojProstorijeTxt" Width="200" Margin="226,35,54,340" Grid.Row="0" />
+            <Label Margin="10,109,302,242" Foreground="Black" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" Content="Datum pocetka" FontWeight="Bold"/>
+            <Label Height="30" Margin="10,173,313,207" Foreground="Black" FontSize="18" Grid.Column="0" Content="Datum zavrsetka" FontWeight="Bold"/>
+            <Label Margin="10,258,272,102" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold" Content="Opis radova"/>
+            <TextBox Name="opisRadova" Height="30" Width="200" Margin="226,258,54,122" RenderTransformOrigin="0.531,-0.345"/>
+            <Button Margin="71,349,302,31" Grid.Column="0" Height="30" Background="LightBlue" Click="renoviraj" FontSize="18" FontWeight="Bold">Potvrdi</Button>
+            <Button Margin="272,349,99,31" Height="30" Background="LightBlue"  Click="odustani" FontSize="18" FontWeight="Bold">Odustani</Button>
+            <DatePicker Name="BeginDate" HorizontalAlignment="Left" Margin="226,109,0,0" VerticalAlignment="Top" Width="200" Height="32"/>
+            <DatePicker Name="EndDate" HorizontalAlignment="Left" Margin="226,180,0,0" VerticalAlignment="Top" Width="200" Height="32"/>
         </Grid>
     </Grid>
 </UserControl>

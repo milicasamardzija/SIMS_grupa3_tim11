@@ -28,7 +28,6 @@ namespace Hospital
             this.DataContext = this;
             MedicineReviewList = loadJson();
             frame = frameUpravnik;
-            
         }
 
         public ObservableCollection<LekRevizija> loadJson()
@@ -71,23 +70,31 @@ namespace Hospital
         }
 
         private void dodaj(object sender, RoutedEventArgs e)
-        {
-            LekoviRevizijaFrame.NavigationService.Navigate(new DodavanjeLekaUpravnik(frame, (LekRevizija)ListaLekovaRevizija.SelectedItem));
+        {   if(ListaLekovaRevizija.SelectedItem != null)
+                LekoviRevizijaFrame.NavigationService.Navigate(new DodavanjeLekaUpravnik(frame, (LekRevizija)ListaLekovaRevizija.SelectedItem));
         }
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-            LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeLekaUpravnik(frame,(LekRevizija)ListaLekovaRevizija.SelectedItem));
+            if (ListaLekovaRevizija.SelectedItem != null)
+                LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeLekaUpravnik(frame,(LekRevizija)ListaLekovaRevizija.SelectedItem));
         }
 
         private void prikaziReviziju(object sender, SelectionChangedEventArgs e)
         {
-            LekoviRevizijaFrame.Navigate(new LekoviPrikazRevizijeUpravnik((LekRevizija)ListaLekovaRevizija.SelectedItem));
+            if (ListaLekovaRevizija.SelectedItem != null)
+                LekoviRevizijaFrame.Navigate(new LekoviPrikazRevizijeUpravnik((LekRevizija)ListaLekovaRevizija.SelectedItem));
         }
 
         private void izbrisiRezenziju(object sender, RoutedEventArgs e)
         {
-            LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeRecenzijeUpravnik(frame, (LekRevizija)ListaLekovaRevizija.SelectedItem));
+            if (ListaLekovaRevizija.SelectedItem != null)
+                LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeRecenzijeUpravnik(frame, (LekRevizija)ListaLekovaRevizija.SelectedItem));
+        }
+
+        private void unazad(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));
         }
     }
 }

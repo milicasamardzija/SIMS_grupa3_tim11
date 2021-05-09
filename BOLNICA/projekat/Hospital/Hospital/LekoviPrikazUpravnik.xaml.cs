@@ -29,10 +29,6 @@ namespace Hospital
             MedicineList = loadJason();
         }
 
-        public LekoviPrikazUpravnik()
-        {
-        }
-
         public ObservableCollection<Medicine> loadJason()
         {
             MedicineFileStorage storage = new MedicineFileStorage();
@@ -51,19 +47,31 @@ namespace Hospital
 
         private void dodaj(object sender, RoutedEventArgs e)
         {
-            frameUprvanik.NavigationService.Navigate(new DodavanjeLekaRevizija(frameUprvanik));
+              frameUprvanik.NavigationService.Navigate(new DodavanjeLekaRevizija(frameUprvanik));
         }
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
-            frameUprvanik.NavigationService.Navigate(new IzmenaLekaUpravnik((Medicine)ListaLekova.SelectedItem, frameUprvanik,MedicineList));
+            if (ListaLekova.SelectedItem != null)
+            {
+                frameUprvanik.NavigationService.Navigate(new IzmenaLekaUpravnik((Medicine)ListaLekova.SelectedItem, frameUprvanik, MedicineList));
+            } else
+            {
+                frameUprvanik.NavigationService.Navigate(new LekoviPrikazUpravnik(frameUprvanik));
+            }
         }
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-            LekoviFrame.NavigationService.Navigate(new BrisanjeLekaRevizijaUpravnik((Medicine)ListaLekova.SelectedItem, frameUprvanik));
+            if (ListaLekova.SelectedItem != null)
+            {
+                LekoviFrame.NavigationService.Navigate(new BrisanjeLekaRevizijaUpravnik((Medicine)ListaLekova.SelectedItem, frameUprvanik));
+            }
+            else
+            {
+                frameUprvanik.NavigationService.Navigate(new LekoviPrikazUpravnik(frameUprvanik));
+            }
         }
-
         private void prikazRevizije(object sender, RoutedEventArgs e)
         {
             frameUprvanik.NavigationService.Navigate(new LekoviRevizijaUpravnik(frameUprvanik));

@@ -37,8 +37,8 @@
                 <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Potvrdi" Click="Potvrdi" Background="AliceBlue" HorizontalAlignment="Left" Margin="487,573,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43" RenderTransformOrigin="0.675,-0.058"/>
-        <Button Content="Odustani" Click="Odustani" Background="AliceBlue" HorizontalAlignment="Left" Margin="701,573,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43" RenderTransformOrigin="0.545,-0.198"/>
+        <Button Content="Potvrdi" Click="Potvrdi" Background="AliceBlue" HorizontalAlignment="Left" Margin="503,544,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43" RenderTransformOrigin="0.675,-0.058"/>
+        <Button Content="Odustani" Click="Odustani" Background="AliceBlue" HorizontalAlignment="Left" Margin="679,544,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43" RenderTransformOrigin="0.545,-0.198"/>
         <Label Content="Specijalizacija" HorizontalAlignment="Left" Margin="701,26,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
         <ComboBox Name="SpecijalizacijaComboBox" Background="AliceBlue" HorizontalAlignment="Left" Margin="873,26,0,0" VerticalAlignment="Top" Width="244" Height="34" SelectionChanged="getDoctors"/>
         <Label Content="Doktor" HorizontalAlignment="Left" Margin="701,82,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
