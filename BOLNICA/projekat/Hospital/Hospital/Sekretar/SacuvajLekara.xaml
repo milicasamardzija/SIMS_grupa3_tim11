@@ -122,7 +122,7 @@
             Name="listRooms"
             Width="100"
             Height="22"
-            Margin="136,99,0,0"
+            Margin="136,106,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top" />
         <Button

@@ -45,7 +45,7 @@ namespace Hospital.Sekretar
        public ObservableCollection<Checkup> loadJsonCheckups()
         {
             CheckupFileStorage cfs = new CheckupFileStorage();
-            ObservableCollection<Checkup> ch = new ObservableCollection<Checkup>(cfs.GetAll()); //nabavila sam sve i tu su mi podeseni idjevi
+            ObservableCollection<Checkup> ch = new ObservableCollection<Checkup>(cfs.GetAll()); 
                
             return ch;
 
@@ -77,8 +77,9 @@ namespace Hospital.Sekretar
 
         private void Edit(object sender, RoutedEventArgs e)
         {
-
-        }
+            IzmeniPregled edit = new IzmeniPregled(listCheckups, (Checkup)sviPregledi.SelectedItem, sviPregledi.SelectedIndex);
+        edit.Show();
+          }
         private void Exit(object sender, RoutedEventArgs e)
         {
             this.Close();

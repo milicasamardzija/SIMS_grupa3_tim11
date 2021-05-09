@@ -119,6 +119,9 @@
     <Compile Include="Sekretar\InformacijeKlinike.xaml.cs">
       <DependentUpon>InformacijeKlinike.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sekretar\IzmeniPregled.xaml.cs">
+      <DependentUpon>IzmeniPregled.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sekretar\ObrisiPregled.xaml.cs">
       <DependentUpon>ObrisiPregled.xaml</DependentUpon>
     </Compile>
@@ -144,6 +147,9 @@
       <DependentUpon>SacuvajLekara.xaml</DependentUpon>
     </Compile>
     <Compile Include="Prikaz\LekRevizija.cs" />
+    <Compile Include="Sekretar\SlobodniLekari.xaml.cs">
+      <DependentUpon>SlobodniLekari.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Service\CheckupService.cs" />
     <Compile Include="Service\InventoryService.cs" />
     <Compile Include="Service\MedicineService.cs" />
@@ -425,6 +431,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Sekretar\IzmeniPregled.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Sekretar\KreirajGuestNalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -638,6 +648,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RenoviranjeSobe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sekretar\SlobodniLekari.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
