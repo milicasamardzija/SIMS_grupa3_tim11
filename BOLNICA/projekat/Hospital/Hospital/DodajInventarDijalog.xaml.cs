@@ -64,6 +64,7 @@ namespace Hospital
 
             storage.Save(newInventory);
             listInventory.Add(newInventory);
+            frame.NavigationService.Navigate(new BelsekaMagacin());
         }
     }
 }

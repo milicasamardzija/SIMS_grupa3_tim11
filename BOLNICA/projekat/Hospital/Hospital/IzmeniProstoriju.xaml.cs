@@ -63,6 +63,7 @@ namespace Hospital
             }
 
             storage.SaveAll(allRooms); //cuvam novu izmenjenu sobu
+            frame.NavigationService.Navigate(new BelsekaMagacin());
         }
 
         private void odustani(object sender, RoutedEventArgs e)

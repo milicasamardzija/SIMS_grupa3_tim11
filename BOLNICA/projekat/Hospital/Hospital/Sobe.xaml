@@ -33,7 +33,7 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Inventar" Background="LightBlue" Click="prikazInventara" Width="140" FontWeight="Bold"/>
+                            <Button Content="Inventar" Background="LightBlue" Click="prikazInventara" Width="180" FontWeight="Bold"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -54,7 +54,7 @@
                 <TextBox Name ="KolicinaInventarTxt" Grid.Row="0" Margin="286,3,10.8,-34" RenderTransformOrigin="0.498,1.049" FontWeight="Bold" TextChanged="KolicinaInventarTxt_TextChanged"/>
             </Grid>
         </StackPanel>
-        <Button Margin="838,546,257,44" Background = "AliceBlue" Click="zakaziRenoviranje" Content="ZAKAZI RENOVIRANJE" RenderTransformOrigin="-0.561,0.77" FontWeight="Bold" FontSize="16" />
-        <Button Margin="1107,546,42,44" Background = "AliceBlue" Click="RenoviranjePrikaz" Content="RENOVIRANJE" RenderTransformOrigin="-0.561,0.77" FontWeight="Bold" FontSize="16" />
+        <Button Margin="781,546,314,44" Background = "AliceBlue" Click="zakaziRenoviranje" Content="ZAKAZI RENOVIRANJE" RenderTransformOrigin="-0.561,0.77" FontWeight="Bold" FontSize="16" />
+        <Button Margin="1120,546,29,44" Background = "AliceBlue" Click="RenoviranjePrikaz" Content="RENOVIRANJE" RenderTransformOrigin="-0.561,0.77" FontWeight="Bold" FontSize="16" />
     </Grid>
 </UserControl>

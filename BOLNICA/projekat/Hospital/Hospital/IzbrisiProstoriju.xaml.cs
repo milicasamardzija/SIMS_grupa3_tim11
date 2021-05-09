@@ -55,6 +55,7 @@ namespace Hospital
                     storageInventory.DeleteByIdRoom(id);
                 }
             }
+            frame.NavigationService.Navigate(new BelsekaMagacin());
         }
 
         private void odustani(object sender, RoutedEventArgs e)

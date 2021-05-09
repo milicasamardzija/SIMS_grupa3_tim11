@@ -63,8 +63,8 @@ namespace Hospital
             }
 
             storage.serialize(allInventories);
-   
-            frame.NavigationService.Navigate(this);
+
+            frame.NavigationService.Navigate(new BelsekaMagacin());
 
         }
     }

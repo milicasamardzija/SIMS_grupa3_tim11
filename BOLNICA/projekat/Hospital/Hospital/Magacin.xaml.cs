@@ -30,6 +30,7 @@ namespace Hospital
             set;
         }
         private Frame managerFrame = new Frame();
+   
         public Magacin(ObservableCollection<Room> roomList, Frame frame)
         {
             InitializeComponent();
@@ -55,22 +56,42 @@ namespace Hospital
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-            MagacinFrame.NavigationService.Navigate(new IzbrisiInventarDijalog(MagacinFrame,InventoryList,(Inventory)ListaInventara.SelectedItem,ListaInventara.SelectedIndex));
+            if (ListaInventara.SelectedItem == null)
+            {
+                MagacinFrame.NavigationService.Navigate(new BelsekaMagacin());
+            }
+            else
+            {
+                MagacinFrame.NavigationService.Navigate(new IzbrisiInventarDijalog(MagacinFrame, InventoryList, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
+            }
         }
 
         private void premesti(object sender, RoutedEventArgs e)
         {
-            Inventory inventory = (Inventory)ListaInventara.SelectedItem;
-            if (inventory.Type == InventoryType.staticki)
-                MagacinFrame.NavigationService.Navigate(new PremestanjeInventara(MagacinFrame, InventoryList,ListaInventara,true,null, ListaInventara));
+            if (ListaInventara.SelectedItem == null)
+            {
+                MagacinFrame.NavigationService.Navigate(new BelsekaMagacin());
+            }
             else
-                MagacinFrame.NavigationService.Navigate(new PremestiInventarUSobu(MagacinFrame, InventoryList, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex,ListaInventara));
-
+            {
+                Inventory inventory = (Inventory)ListaInventara.SelectedItem;
+                if (inventory.Type == InventoryType.staticki)
+                    MagacinFrame.NavigationService.Navigate(new PremestanjeInventara(MagacinFrame, InventoryList, ListaInventara, true, null, ListaInventara));
+                else
+                    MagacinFrame.NavigationService.Navigate(new PremestiInventarUSobu(MagacinFrame, InventoryList, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex, ListaInventara));
+            }
         }
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
-            MagacinFrame.NavigationService.Navigate(new IzmenaInventaraDijalog(MagacinFrame, InventoryList, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
+            if (ListaInventara.SelectedItem == null)
+            {
+                MagacinFrame.NavigationService.Navigate(new BelsekaMagacin());
+            }
+            else
+            {
+                MagacinFrame.NavigationService.Navigate(new IzmenaInventaraDijalog(MagacinFrame, InventoryList, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
+            }
         }
 
         private List<Inventory> filteredInventory = new List<Inventory>();
@@ -90,7 +111,7 @@ namespace Hospital
             {
                 foreach (Inventory inv in all)
                 {
-                    if (inv.Name.Contains(PretragaTxt.Text))
+                    if (inv.Name.ToUpper().Equals(PretragaTxt.Text.ToUpper()))
                     {
                         filteredInventory.Add(inv);
 
@@ -102,13 +123,13 @@ namespace Hospital
                         }
 
                     }
-                    if (PretragaTxt.Text.Equals("staticki"))
+                    if (PretragaTxt.Text.ToUpper().Equals("staticki".ToUpper()))
                     {
                         if (inv.Type == InventoryType.staticki)
                         {
                             filteredInventory.Add(inv);
                         }
-                    } else if (PretragaTxt.Text.Equals("dinamicki"))
+                    } else if (PretragaTxt.Text.ToUpper().Equals("dinamicki".ToUpper()))
                     {
                         if (inv.Type == InventoryType.dinamicki)
                         {
