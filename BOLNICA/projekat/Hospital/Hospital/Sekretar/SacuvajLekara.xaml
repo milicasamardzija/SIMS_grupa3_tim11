@@ -157,7 +157,7 @@
             Margin="259,71,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="btn"
+            Click="Btn"
             Content="nadji" />
     </Grid>
 </Window>

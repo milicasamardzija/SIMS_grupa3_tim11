@@ -23,34 +23,36 @@
             </LinearGradientBrush>
         </Grid.Background>
         <DatePicker
+            Name="date"
             Grid.ColumnSpan="2"
-            Width="120"
+            Width="100"
             Height="26"
-            Margin="192,62,0,0"
+            Margin="192,45,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top" />
         <Label
             Grid.ColumnSpan="2"
-            Margin="76,61,0,0"
+            Margin="76,44,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Unesite datum" />
         <Label
             Grid.ColumnSpan="2"
-            Margin="76,108,0,0"
+            Margin="76,124,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Unesite prostoriju" />
         <ComboBox
+            Name="listRooms"
             Grid.ColumnSpan="2"
-            Width="120"
-            Margin="192,108,0,0"
+            Width="100"
+            Margin="192,124,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top" />
         <Button
             Grid.ColumnSpan="2"
             Width="75"
-            Margin="272,189,0,0"
+            Margin="272,190,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="FindBtn"
@@ -65,6 +67,26 @@
             Click="CancelBtn"
             Content="Odustani"
             Cursor="Hand" />
-
+        <Label
+            Grid.ColumnSpan="2"
+            Margin="76,83,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Unesite vreme" />
+        <ComboBox
+            Name="selectedTime"
+            Grid.ColumnSpan="2"
+            Width="100"
+            Margin="192,86,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+            <ComboBoxItem>07:00</ComboBoxItem>
+            <ComboBoxItem>07:30</ComboBoxItem>
+            <ComboBoxItem>08:00</ComboBoxItem>
+            <ComboBoxItem>08:30</ComboBoxItem>
+            <ComboBoxItem>09:00</ComboBoxItem>
+            <ComboBoxItem>09:30</ComboBoxItem>
+        </ComboBox>
+        <Button Grid.ColumnSpan="2" Content="nadji sobu" HorizontalAlignment="Left" Margin="309,86,0,0" VerticalAlignment="Top" Width="75" Click="findAvailableRoom"/>
     </Grid>
 </Window>

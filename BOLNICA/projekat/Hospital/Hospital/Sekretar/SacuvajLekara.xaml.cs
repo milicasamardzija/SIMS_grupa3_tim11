@@ -20,24 +20,25 @@ namespace Hospital.Sekretar
   
     public partial class SacuvajLekara : Window
     {
-        Patient selectedPatient; //pacijentu kome zakazujemo termin 
-        Doctor doctor; //doktor koji je izabran
-        public int idD; //id tog lekara za checkup
-        public int idP; //id tog pacijenta za checkup
-        public int idRoom; //id sobe u koju cu da zakazem 
-        public DateTime chosenDate; //dan koji ce da izabere 
-        public String time; //vreme koje ce da podesi
+        public Patient selectedPatient; 
+        public Doctor doctor; 
+        public int idD; 
+        public int idP; 
+        public int idRoom; 
+        public DateTime chosenDate; 
+        public String time; 
         public ObservableCollection<Patient> listPatient;
         public ObservableCollection<Doctor> listDoctor;
-        public CheckupController controller = new CheckupController();
+        public CheckupController controller;
 
        
         public SacuvajLekara(ObservableCollection<Doctor> list, Doctor selectedDoctor, Patient patient)
         {
             InitializeComponent();
             this.DataContext = this;
-            selectedPatient = patient; //je l mi treba foreach bas da ga nadjem ili mogu ovako?
-            idP = patient.PatientId; //pokupio je pacijenta 
+            controller = new CheckupController();
+            selectedPatient = patient; 
+            idP = patient.PatientId;  
               
             doctor = selectedDoctor;
             idD = selectedDoctor.DoctorId;
@@ -54,30 +55,28 @@ namespace Hospital.Sekretar
         }
         public void SaveCheckup(object sender, RoutedEventArgs e)
         {
+           
             DateTime oldDate = (DateTime)date.SelectedDate;
-           
-
-            /* VOLELA BIH DA ZNAM ZASTO NE RADI...
-             * String d = selectedTime.SelectedItem.ToString();
-             DateTime newDate = Convert.ToDateTime(d);
-             MessageBox.Show(newDate.ToString());
-             DateTime time = new DateTime(oldDate.Year, oldDate.Month, oldDate.Day, newDate.Hour, newDate.Minute, newDate.Second);
-        */
-           
-             String sati = selectedTime.Text.Split(':')[0];
-             MessageBox.Show(sati.ToString());
-             String minuti = selectedTime.Text.Split(':')[1];
-             MessageBox.Show(minuti.ToString());
-             chosenDate = new DateTime(oldDate.Year, oldDate.Month, oldDate.Day, Int32.Parse(sati), Int32.Parse(minuti), 0);
-
-            
-            
-            Checkup newCheckup = new Checkup(0, idD, idP, chosenDate, 0, 0);
-            controller.createCheckup(newCheckup);
+            getDate(oldDate);
+            getRoom();
+            controller.createCheckup(new Checkup(0, idD, idP, chosenDate, idRoom, 0));
 
         }
 
-       public void Decline(object sender, RoutedEventArgs e)
+        private void getRoom()
+        {
+            ComboBoxItem item = (ComboBoxItem)listRooms.SelectedItem;
+            idRoom = Convert.ToInt32(item.Tag);
+        }
+
+        private void getDate(DateTime oldDate)
+        {
+            String sati = selectedTime.Text.Split(':')[0];
+            String minuti = selectedTime.Text.Split(':')[1];
+            chosenDate = new DateTime(oldDate.Year, oldDate.Month, oldDate.Day, Int32.Parse(sati), Int32.Parse(minuti), 0);
+        }
+
+        public void Decline(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
@@ -94,7 +93,7 @@ namespace Hospital.Sekretar
             }
         }
        
-        public void btn(object sender, RoutedEventArgs e)
+        public void Btn(object sender, RoutedEventArgs e)
         {
              getAvailableRoomsbox();
         }

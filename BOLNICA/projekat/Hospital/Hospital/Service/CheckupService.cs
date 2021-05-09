@@ -81,6 +81,20 @@ namespace Hospital.Service
 
         }
 
-
+        public List<Doctor> getAvailableDoctors(DateTime date)
+        {
+            List<Doctor> doctors = new List<Doctor>();
+            foreach (Checkup checkup in checkupStorage.GetAll()) 
+            {
+                foreach(Doctor d in doctorStorage.GetAll())
+                {
+                    if(checkup.Date != date.Date)
+                    {
+                        doctors.Add(d);
+                    }
+                }
+            }
+            return doctors;
+        }
     }
 }

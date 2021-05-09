@@ -36,8 +36,14 @@ namespace Hospital.Controller
 
         public List<Room> availableRooms(DateTime dateTime)
         {
-               List<Room> availableRoom = new List<Room>();
+             //  List<Room> availableRoom = new List<Room>();
                return roomService.availableRooms(dateTime);
+        }
+
+        public List<Doctor> availableDoctors(DateTime date)
+        {
+           
+            return service.getAvailableDoctors(date);
         }
     }
 }

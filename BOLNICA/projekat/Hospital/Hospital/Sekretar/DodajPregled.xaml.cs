@@ -53,9 +53,14 @@ namespace Hospital.Sekretar
         }
         private void SaveDateBtn(object sender, RoutedEventArgs e)
         {
-            PrioritetDatum datePriority = new PrioritetDatum(listPatients);
-            datePriority.Show();
-
+            if ((Patient)sviPacijenti.SelectedItem != null)
+            {
+                PrioritetDatum datePriority = new PrioritetDatum(listPatients, (Patient)sviPacijenti.SelectedItem);
+                datePriority.Show();
+            } else
+            {
+                MessageBox.Show("Niste izabrali pacijenta!");
+            }
         }
 
       
