@@ -31,22 +31,18 @@ namespace Hospital.Sekretar
         public ObservableCollection<Doctor> listDoctor;
         public CheckupController controller = new CheckupController();
 
-        public List<Checkup> unavailableTerms { get; set; }
+       
         public SacuvajLekara(ObservableCollection<Doctor> list, Doctor selectedDoctor, Patient patient)
         {
             InitializeComponent();
             this.DataContext = this;
             selectedPatient = patient; //je l mi treba foreach bas da ga nadjem ili mogu ovako?
-            idP = patient.PatientId; //pokupio je pacijenta
-          //  MessageBox.Show(idP.ToString());
+            idP = patient.PatientId; //pokupio je pacijenta 
+              
             doctor = selectedDoctor;
             idD = selectedDoctor.DoctorId;
-         //   MessageBox.Show(idD.ToString());
-
-          //  listDoctor = list;
-          
             doctorTerms.ItemsSource = loadCheckups(idD);
-            //MessageBox.Show(unavailableTerms[0].IdRoom.ToString());
+          
             
         }
 
@@ -59,25 +55,48 @@ namespace Hospital.Sekretar
         public void SaveCheckup(object sender, RoutedEventArgs e)
         {
             DateTime oldDate = (DateTime)date.SelectedDate;
-            MessageBox.Show(oldDate.ToString());
-            String value =selectedTime.SelectedItem.ToString();
+           
 
-            DateTime d = Convert.ToDateTime(value);
-           // TimeSpan t = TimeSpan.ParseExact(value,"HH:mm:ss", null);
+            /* VOLELA BIH DA ZNAM ZASTO NE RADI...
+             * String d = selectedTime.SelectedItem.ToString();
+             DateTime newDate = Convert.ToDateTime(d);
+             MessageBox.Show(newDate.ToString());
+             DateTime time = new DateTime(oldDate.Year, oldDate.Month, oldDate.Day, newDate.Hour, newDate.Minute, newDate.Second);
+        */
+           
+             String sati = selectedTime.Text.Split(':')[0];
+             MessageBox.Show(sati.ToString());
+             String minuti = selectedTime.Text.Split(':')[1];
+             MessageBox.Show(minuti.ToString());
+             chosenDate = new DateTime(oldDate.Year, oldDate.Month, oldDate.Day, Int32.Parse(sati), Int32.Parse(minuti), 0);
 
-
-            // DateTime time = Convert.ToDateTime(value);  DateTime newDateTime = oldDateTime.Add(TimeSpan.Parse(timeString));
-            DateTime time = new DateTime(oldDate.Year, oldDate.Month, oldDate.Day, d.Hour, d.Minute, d.Second);
-            // chosenDate = new DateTime(oldDate.Year, oldDate.Month, oldDate.Day, time.Hour, time.Minute, time.Second);
-
-            Checkup newCheckup = new Checkup(0, idD, idP, time, 0, 0);
+            
+            
+            Checkup newCheckup = new Checkup(0, idD, idP, chosenDate, 0, 0);
             controller.createCheckup(newCheckup);
 
         }
+
        public void Decline(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        private void getAvailableRoomsbox() {
+            List<Room> availableRooms = controller.availableRooms(chosenDate);
+
+            foreach (Room r in availableRooms)
+            {
+                ComboBoxItem item = new ComboBoxItem();
+                item.Content = r.RoomId + " " + r.Purpose;
+                item.Tag = r.RoomId;
+                listRooms.Items.Add(item);
+            }
+        }
+       
+        public void btn(object sender, RoutedEventArgs e)
+        {
+             getAvailableRoomsbox();
+        }
     }
 }

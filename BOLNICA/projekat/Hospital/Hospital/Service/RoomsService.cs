@@ -12,10 +12,15 @@ namespace Hospital.Service
     {
         private RenovationFileStorage renovationStorage;
         private AppointmentFileStorage appointmentsStorage;
+        private RoomFileStorage roomStorage;
+        private CheckupFileStorage checkupStorage;
+
         public RoomsService()
         {
             renovationStorage = new RenovationFileStorage();
             appointmentsStorage = new AppointmentFileStorage();
+            roomStorage = new RoomFileStorage();
+            checkupStorage = new CheckupFileStorage();
         }
         public void zakaziRenoviranje(RoomRenovation renovation)
         {
@@ -44,6 +49,30 @@ namespace Hospital.Service
                  }
              }*/
             return true;
+        }
+
+        public List<Room> availableRooms(DateTime dateTime)
+        {
+            List<Room> availableRooms = new List<Room>();
+
+            foreach(Room room in roomStorage.GetAll())
+            {
+                foreach(Checkup checkup in checkupStorage.GetAll())
+                {
+                    if(room.RoomId==checkup.IdRoom) 
+                    {
+                       if(checkup.Date!=dateTime.Date) //ovo proverava i datum i vreme
+                        {
+                            availableRooms.Add(room);
+                        }
+                       else
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+            return availableRooms;
         }
     }
 }

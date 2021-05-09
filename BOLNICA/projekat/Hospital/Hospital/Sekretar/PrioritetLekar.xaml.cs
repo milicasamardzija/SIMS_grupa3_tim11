@@ -34,6 +34,7 @@ namespace Hospital.Sekretar
             InitializeComponent();
             this.DataContext = this;
             patient=selectedPatient; //imam pacijenta kome zakazujem 
+       
             listPatient = list;
             listDoctors = loadJson();// ucitava se lista svih lekara 
 
@@ -49,8 +50,15 @@ namespace Hospital.Sekretar
 
         private void getDoctorTerms(object sender, RoutedEventArgs e)
         {
-            SacuvajLekara terms = new SacuvajLekara(listDoctors, (Doctor)doktori.SelectedItem, patient); //poslala sam informaciju o doktoru, moram i o ranijem pacijentu 
-            terms.Show();
+            if ((Doctor)doktori.SelectedItem != null)
+            {
+                SacuvajLekara terms = new SacuvajLekara(listDoctors, (Doctor)doktori.SelectedItem, patient); //poslala sam informaciju o doktoru, moram i o ranijem pacijentu 
+                terms.Show();
+
+            } else
+            {
+                MessageBoxResult result = MessageBox.Show("Niste odabrali lekara!");
+            }
         }
 
         private void Decline(object sender, RoutedEventArgs e)

@@ -22,7 +22,7 @@ namespace Hospital.Model
             this.idCh = idCh;
             this.idDoctor = idD;
             this.idPatient = idP;
-            this.DateTime = dateAndTime;
+            this.Date = dateAndTime;
             this.IdRoom = idR;
             this.Type=type ;//bice default pregled postvljeno pri kreiranju
             this.Duration = 30; //fiksno za pregled!

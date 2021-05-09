@@ -41,9 +41,14 @@ namespace Hospital.Sekretar
 
         }
         private void SaveDoctorBtn(object sender, RoutedEventArgs e)
-        {
-            PrioritetLekar doctorPriority = new PrioritetLekar(listPatients, (Patient)sviPacijenti.SelectedItem);
-            doctorPriority.Show();
+        {  if ((Patient)sviPacijenti.SelectedItem != null)
+            {
+                PrioritetLekar doctorPriority = new PrioritetLekar(listPatients, (Patient)sviPacijenti.SelectedItem);
+                doctorPriority.Show();
+            } else
+            {
+                MessageBox.Show("Niste izabrali pacijenta!");
+            }
 
         }
         private void SaveDateBtn(object sender, RoutedEventArgs e)

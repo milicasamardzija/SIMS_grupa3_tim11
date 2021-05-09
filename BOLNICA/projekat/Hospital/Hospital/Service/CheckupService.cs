@@ -73,11 +73,14 @@ namespace Hospital.Service
             return unavailableCheckups;
         }
 
+
         public void createCheckup(Checkup c)
         {
             Checkup newCheckup = new Checkup(generateIdCheckup(), c.IdDoctor, c.IdPatient, c.Date, 0, CheckupType.pregled);
             checkupStorage.Save(newCheckup);
 
         }
+
+
     }
 }

@@ -119,6 +119,9 @@
     <Compile Include="Sekretar\InformacijeKlinike.xaml.cs">
       <DependentUpon>InformacijeKlinike.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sekretar\ObrisiPregled.xaml.cs">
+      <DependentUpon>ObrisiPregled.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sekretar\OtkaziTermin.xaml.cs">
       <DependentUpon>OtkaziTermin.xaml</DependentUpon>
     </Compile>
@@ -579,6 +582,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Sekretar\Nalozi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sekretar\ObrisiPregled.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

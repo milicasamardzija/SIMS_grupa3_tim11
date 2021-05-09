@@ -33,13 +33,10 @@
                     Header="Id termina" />
 
                 <DataGridTextColumn
-                    Width="60"
+                    Width="120"
                     Binding="{Binding Date}"
                     Header="Datum" />
-                <DataGridTextColumn
-                    Width="50"
-                    Binding="{Binding Time}"
-                    Header="Vreme" />
+            
                 <DataGridTextColumn
                     Width="50"
                     Binding="{Binding Duration}"

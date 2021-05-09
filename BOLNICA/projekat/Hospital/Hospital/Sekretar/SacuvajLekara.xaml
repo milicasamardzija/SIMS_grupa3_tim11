@@ -45,7 +45,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Vreme" />
-        <ListBox
+        <!--  <ListBox
             x:Name="selectedTime"
             Width="100"
             Height="24"
@@ -75,7 +75,7 @@
             <ListBoxItem>17:00:00</ListBoxItem>
             <ListBoxItem>17:00:00</ListBoxItem>
 
-        </ListBox>
+        </ListBox>-->
         <DataGrid
             x:Name="doctorTerms"
             Width="276"
@@ -83,8 +83,7 @@
             Margin="27,188,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            AutoGenerateColumns="False"
-            ItemsSource="{Binding unavailableTerms}">
+            AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="65"
@@ -120,12 +119,12 @@
             VerticalAlignment="Top"
             Content="Svi zauzeti termini lekara:" />
         <ComboBox
+            Name="listRooms"
             Width="100"
             Height="22"
             Margin="136,99,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            ItemsSource="{Binding listRooms}" />
+            VerticalAlignment="Top" />
         <Button
             Width="75"
             Margin="228,326,0,0"
@@ -140,5 +139,25 @@
             VerticalAlignment="Top"
             Click="Decline"
             Content="Odustani" />
+        <ComboBox
+            Name="selectedTime"
+            Width="100"
+            Margin="136,68,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+            <ComboBoxItem>07:00</ComboBoxItem>
+            <ComboBoxItem>07:30</ComboBoxItem>
+            <ComboBoxItem>08:00</ComboBoxItem>
+            <ComboBoxItem>08:30</ComboBoxItem>
+            <ComboBoxItem>09:00</ComboBoxItem>
+            <ComboBoxItem>09:30</ComboBoxItem>
+        </ComboBox>
+        <Button
+            Width="75"
+            Margin="259,71,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btn"
+            Content="nadji" />
     </Grid>
 </Window>
