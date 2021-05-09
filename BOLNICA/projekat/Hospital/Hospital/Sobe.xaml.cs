@@ -39,22 +39,36 @@ namespace Hospital
 
         private void dodavanje(object sender, RoutedEventArgs e)
         {
-            SobeFrame.NavigationService.Navigate(new DodajProstoriju(RoomList, frameMagacin));
+            SobeFrame.NavigationService.Navigate(new DodajProstoriju(RoomList, SobeFrame));
         }
 
         private void obrisi(object sender, RoutedEventArgs e)
         {
-            SobeFrame.NavigationService.Navigate(new IzbrisiProstoriju(RoomList, (Room)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex, frameMagacin));
+            if (ListaProstorija.SelectedItem == null)
+            {
+                SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
+            }
+            else
+            {
+                SobeFrame.NavigationService.Navigate(new IzbrisiProstoriju(RoomList, (Room)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex, SobeFrame));
+            }
         }
-     
+
         private void izmeni(object sender, RoutedEventArgs e)
         {
-            SobeFrame.NavigationService.Navigate(new IzmeniProstoriju(RoomList, (Room)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex,frameMagacin));
+            if (ListaProstorija.SelectedItem == null)
+            {
+                SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
+            }
+            else
+            {
+                SobeFrame.NavigationService.Navigate(new IzmeniProstoriju(RoomList, (Room)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex, SobeFrame));
+            }
         }
 
         private void prikazInventara(object sender, RoutedEventArgs e)
         {
-           frameMagacin.NavigationService.Navigate(new PrikazInventaraUSobi((Room)ListaProstorija.SelectedItem));
+           frameMagacin.NavigationService.Navigate(new PrikazInventaraUSobi(RoomList,(Room)ListaProstorija.SelectedItem,frameMagacin));
         }
 
         public ObservableCollection<Room> loadJason()
@@ -84,21 +98,21 @@ namespace Hospital
                             filtratedRooms.Add(room);
                         }
                     }
-                    if (PretragaTxt.Text.Contains("soba"))
+                    if (PretragaTxt.Text.ToUpper().Contains("soba".ToUpper()))
                     {
                         if (room.Purpose == Purpose.soba)
                         {
                             filtratedRooms.Add(room);
                         }
                     }
-                    else if (PretragaTxt.Text.Contains("ordinacija"))
+                    else if (PretragaTxt.Text.ToUpper().Contains("ordinacija".ToUpper()))
                     {
                         if (room.Purpose == Purpose.ordinacija)
                         {
                             filtratedRooms.Add(room);
                         }
                     }
-                    else if (PretragaTxt.Text.Contains("sala"))
+                    else if (PretragaTxt.Text.ToUpper().Contains("sala".ToUpper()))
                     {
                         if (room.Purpose == Purpose.sala)
                         {
@@ -144,7 +158,7 @@ namespace Hospital
                 {
                     foreach (RoomInventory ri in storage.GetAll())
                     {
-                        if (room.RoomId == ri.idRoom && ri.idInventory == idInventory && ri.Quantity == quantity)
+                        if (room.RoomId == ri.IdRoom && ri.IdInventory == idInventory && ri.Quantity == quantity)
                         {
                             filtratedRooms.Add(room);
                         }
@@ -157,12 +171,17 @@ namespace Hospital
 
         private void zakaziRenoviranje(object sender, RoutedEventArgs e)
         {
-            SobeFrame.NavigationService.Navigate(new RenoviranjeSobe(SobeFrame, (Room)ListaProstorija.SelectedItem));
+            if (ListaProstorija.SelectedItem == null)
+            {
+                SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
+            } else {
+                SobeFrame.NavigationService.Navigate(new RenoviranjeSobe(SobeFrame, (Room)ListaProstorija.SelectedItem));
+            }
         }
 
         private void RenoviranjePrikaz(object sender, RoutedEventArgs e)
         {
-            frameMagacin.NavigationService.Navigate(new PrikazSobaRenoviranje());
+            frameMagacin.NavigationService.Navigate(new PrikazSobaRenoviranje(RoomList,frameMagacin));
         }
     }
 }

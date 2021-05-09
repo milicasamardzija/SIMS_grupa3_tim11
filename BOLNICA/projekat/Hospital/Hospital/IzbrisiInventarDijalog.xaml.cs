@@ -47,7 +47,7 @@ namespace Hospital
             InventoryFileStorage storage = new InventoryFileStorage();
             storage.DeleteById(id);
             listInventory.RemoveAt(index);
-            frame.NavigationService.Navigate(this);
+            frame.NavigationService.Navigate(new BelsekaMagacin());
         }
     }
 }

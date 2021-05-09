@@ -8,20 +8,20 @@
              d:DesignHeight="400" d:DesignWidth="470" Background="AliceBlue">
     <Grid>
         <Grid Margin="-10,-10,0.4,0">
-            <Label Height="30" Width="100" Margin="35,35,335.8,335" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="0" FontWeight="Bold" RenderTransformOrigin="0.498,-0.169">Broj prostorije</Label>
-            <TextBox IsReadOnly="True" Name="brojProstorijeTxt" Width="200" Margin="202,35,78,340" Grid.Row="0" />
-            <Label Height="30" Width="100" Margin="35,104,335.8,266" Foreground="DarkBlue" FontSize="10" Grid.Column="0" FontWeight="Bold" RenderTransformOrigin="-0.119,-0.46">Namena</Label>
-            <ComboBox Name="namenaTxt" Height="30" Width="200" Margin="197,104,73.8,266">
+            <Label Margin="10,40,330,325"   Foreground="Black" FontSize="18"  Grid.Column="0" Grid.Row="0" FontWeight="Bold" RenderTransformOrigin="0.498,-0.169">Broj prostorije</Label>
+            <TextBox IsReadOnly="True" Name="brojProstorijeTxt" Width="200" Margin="238,40,42,335" Grid.Row="0" RenderTransformOrigin="0.746,0.543" />
+            <Label Height="30" Width="100" Margin="10,109,370,271" Foreground="Black" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" FontWeight="Bold">Namena</Label>
+            <ComboBox Name="namenaTxt" Height="30" Width="200" Margin="238,109,42,271">
                 <ComboBoxItem>SALA</ComboBoxItem>
                 <ComboBoxItem>SOBA</ComboBoxItem>
                 <ComboBoxItem>ORDINACIJA</ComboBoxItem>
             </ComboBox>
-            <Label Height="30" Width="100" Margin="35,168,335,202" Foreground="DarkBlue" FontSize="10" Grid.Column="0" FontWeight="Bold">Sprat</Label>
-            <TextBox Name="spratTxt" Height="30" Width="200" Margin="197,168,73,202"/>
-            <Label Height="30" Margin="35,234,247,136" Foreground="DarkBlue" FontSize="10" Grid.Column="0" FontWeight="Bold">Kapacitet prostorije</Label>
-            <TextBox Name="kapacitetTxt" Height="30" Width="200" Margin="197,234,73,136"/>
-            <Button Margin="95,314,295,56" Grid.Column="0" Width="80" Height="30" Click="izmenaProstorije" Background="LightBlue">Potvrdi</Button>
-            <Button Margin="275,314,115,56"  Width="80" Height="30" Background="LightBlue" Click="odustani" RenderTransformOrigin="0.363,-0.605">Odustani</Button>
+            <Label Width="100" Margin="10,185,370,181" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold" RenderTransformOrigin="-0.075,0.585">Sprat</Label>
+            <TextBox Name="spratTxt" Width="200" Margin="238,193,42,181"/>
+            <Label Margin="10,268,272,94" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold">Kapacitet prostorije</Label>
+            <TextBox Name="kapacitetTxt" Height="30" Width="200" Margin="238,268,42,112"/>
+            <Button Margin="100,346,300,34" Grid.Column="0" Width="80" Height="30" Click="izmenaProstorije" Background="LightBlue" FontSize="18" FontWeight="Bold">Potvrdi</Button>
+            <Button Margin="290,346,93,34" Height="30" Background="LightBlue" Click="odustani" RenderTransformOrigin="0.363,-0.605" FontSize="18" FontWeight="Bold">Odustani</Button>
         </Grid>
     </Grid>
 </UserControl>

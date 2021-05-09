@@ -62,9 +62,9 @@ namespace Hospital
                 }
             }
 
-            storage.SaveAll(allInventories);
-   
-            frame.NavigationService.Navigate(this);
+            storage.serialize(allInventories);
+
+            frame.NavigationService.Navigate(new BelsekaMagacin());
 
         }
     }

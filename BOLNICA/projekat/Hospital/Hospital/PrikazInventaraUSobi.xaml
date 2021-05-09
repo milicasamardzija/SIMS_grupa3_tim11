@@ -7,25 +7,36 @@
              mc:Ignorable="d" 
              d:DesignHeight="640" d:DesignWidth="1280" Background="LightBlue">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="279*"/>
+            <RowDefinition Height="361*"/>
+        </Grid.RowDefinitions>
         <DataGrid Name="ListaInventara"
-                      Margin="86,191,612,162"
+                      Margin="86,217,612,149"
                       Grid.Column="0"
                       Background="AliceBlue"
                       AutoGenerateColumns="False"
                       SelectionMode="Single"
                       IsReadOnly="False" 
-                      ItemsSource="{Binding Path = listInventory}" 
+                      ItemsSource="{Binding Path = listInventory}" Grid.RowSpan="2" 
                       >
-        <DataGrid.Columns>
-            <DataGridTextColumn Header="TIP" Width="180" Binding="{Binding Type}"/>
-            <DataGridTextColumn Header="IME" Width="200" Binding="{Binding Name}"/>
-            <DataGridTextColumn Header="KOLICINA" Width="180" Binding="{Binding Quantity}" />
-        </DataGrid.Columns>
-    </DataGrid>
-    <TextBlock  FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="86,30,0,0" TextWrapping="Wrap" Text="Inventar jedne sobe" VerticalAlignment="Top" Height="42" Width="650" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
-    <Frame Name="InventarPemesti" HorizontalAlignment="Left" Margin="738,138,0,0" VerticalAlignment="Top" Height="400" Width="470" />
-        <Button Click="premesti" Background="AliceBlue" Content="Premesti" HorizontalAlignment="Left" Margin="309,527,0,0" VerticalAlignment="Top" Width="113" Height="65" FontWeight="Bold" FontSize="22"/>
-        <Label Content="Unesite naziv, vrstu ili &#xA;kolicinu opreme:" HorizontalAlignment="Left" Margin="86,77,0,0" VerticalAlignment="Top" Width="196" FontSize="16" FontWeight="Bold"/>
-        <TextBox x:Name="PretragaTxt" HorizontalAlignment="Left" Height="47" Margin="86,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextChanged="PretragaTxt_TextChanged" UndoLimit="102" AutomationProperties.HelpText="Unesite zeljeni naziv/kolicinu/tip" FontSize="18" FontWeight="Bold" />
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="TIP" Width="180" Binding="{Binding Type}"/>
+                <DataGridTextColumn Header="IME" Width="200" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="KOLICINA" Width="180" Binding="{Binding Quantity}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock  FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="86,30,0,0" TextWrapping="Wrap" Text="Inventar jedne sobe" VerticalAlignment="Top" Height="42" Width="650" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
+        <Frame Name="InventarPemesti" HorizontalAlignment="Left" Margin="744,91,0,0" VerticalAlignment="Top" Height="400" Width="470" Grid.RowSpan="2" />
+        <Button Click="premesti" Background="AliceBlue" Content="Premesti" HorizontalAlignment="Left" Margin="927,244.8,0,0" VerticalAlignment="Top" Width="113" Height="64" FontWeight="Bold" FontSize="22" Grid.Row="1"/>
+        <Grid Background="AliceBlue" Margin="86,91,869,79.7">
+
+        </Grid>
+        <Label Content="  Unesite naziv, vrstu ili kolicinu opreme:" HorizontalAlignment="Left" Margin="86,91,0,0" VerticalAlignment="Top" Width="325" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="PretragaTxt" HorizontalAlignment="Left" Height="54" Margin="98,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" TextChanged="PretragaTxt_TextChanged" UndoLimit="102" AutomationProperties.HelpText="Unesite zeljeni naziv/kolicinu/tip" FontSize="18" FontWeight="Bold" />
+        <Button Click="unazad" Background="AliceBlue" HorizontalAlignment="Left" Margin="86,244.3,0,0" VerticalAlignment="Top" Width="113" Height="65" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54" Grid.Row="1">
+            <Image Source="/Sekretar/Arrow-Left-icon.png">
+            </Image>
+        </Button>
     </Grid>
 </UserControl>

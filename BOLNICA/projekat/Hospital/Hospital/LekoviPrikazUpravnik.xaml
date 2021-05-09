@@ -18,9 +18,9 @@
                   IsReadOnly="True"
                   ItemsSource="{Binding Path = MedicineList}" Grid.ColumnSpan="2">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="NAZIV" Width="200" Binding="{Binding Type}"/>
-                <DataGridTextColumn Header="TIP" Width="200" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="GRAMAZA" Width="200" Binding="{Binding Quantity}" />
+                <DataGridTextColumn Header="NAZIV" Width="200" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="TIP" Width="180" Binding="{Binding Type}"/>
+                <DataGridTextColumn Header="GRAMAZA" Width="180" Binding="{Binding Quantity}" />
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock  FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="69,62,0,0" TextWrapping="Wrap" Text="Lekovi koji su odobreni od strane strucnog lica" VerticalAlignment="Top" Height="42" Width="650" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>

@@ -7,17 +7,17 @@
              mc:Ignorable="d" 
                    Height="640" Width="1280">
     <Grid Background="LightBlue">
-        <TextBlock TextWrapping="Wrap" Text="Informacije o sobama i zakazanom renoviranju"
+        <TextBlock TextWrapping="Wrap" Text="Prikaz renoviranja soba"
                        HorizontalAlignment="Center"
                        FontStyle="Italic"
-                       Foreground= "#FF3E3ADD"
+                       Foreground= "Black"
                        Grid.Row="0"
                        Grid.Column="0"
-                       Margin="34,77,549,520"
-                       FontSize="20" Width="697"
+                       Margin="34,42,549,555"
+                       FontSize="20" Width="697" FontWeight="Bold"
                        />
         <DataGrid Name="ProstorijeRenoviranje"
-                      Margin="34,172,434,125"
+                      Margin="34,108,434,189"
                       Grid.Column="0"
                       Background="AliceBlue"
                       AutoGenerateColumns="False"
@@ -32,6 +32,10 @@
                 <DataGridTextColumn Header="OPIS" Width="362"  Binding="{Binding Description}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Background="AliceBlue" Content="Otkazi renoviranje" HorizontalAlignment="Left" Margin="973,301,0,0" VerticalAlignment="Top" Width="199" Height="60" FontSize="18" FontWeight="Bold" Click="Otkazi"/>
+        <Button Background="AliceBlue" Content="Otkazi renoviranje" HorizontalAlignment="Left" Margin="983,255,0,0" VerticalAlignment="Top" Width="199" Height="60" FontSize="18" FontWeight="Bold" Click="Otkazi"/>
+        <Button Click="unazad" Background="AliceBlue" HorizontalAlignment="Left" Margin="34,507,0,0" VerticalAlignment="Top" Width="113" Height="65" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54">
+            <Image Source="/Sekretar/Arrow-Left-icon.png">
+            </Image>
+        </Button>
     </Grid>
 </UserControl>

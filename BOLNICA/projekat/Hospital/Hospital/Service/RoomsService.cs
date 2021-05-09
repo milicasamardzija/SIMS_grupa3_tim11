@@ -39,15 +39,35 @@ namespace Hospital.Service
             }
         }
 
+       /* public Boolean hasNoRenovationScheduled(RoomRenovation renovation)
+        {
+            foreach (RoomRenovation renov in renovationStorage.GetAll())
+            {
+                if (renovation.IdRoom == renov.IdRoom && renovation.DateBegin.Date == renov.DateBegin.Date)
+                {
+                    return false;
+                }
+                if (renovation.IdRoom == renov.IdRoom && renovation.DateEnd.Date == renov.DateEnd.Date)
+                {
+                    return false;
+                }
+                if (renovation.IdRoom == renov.IdRoom && renovation.DateBegin.Date < renov.DateEnd.Date &&)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }*/
+
         public void moveInventoryForRenovation(RoomRenovation renovation)
         {
              foreach (RoomInventory roomInv in roominventoryStorage.GetAll())
              {
-                 if (roomInv.idRoom == renovation.IdRoom)
+                 if (roomInv.IdRoom == renovation.IdRoom)
                  {
                      foreach (Inventory inventory in inventoryStorage.GetAll())
                      {
-                         if (roomInv.idInventory == inventory.InventoryId) {
+                         if (roomInv.IdInventory == inventory.InventoryId) {
                              if (inventory.Type == InventoryType.staticki)
                              {
                                 staticInventoryStorage.Save(new StaticInventoryMovement(-1, renovation.IdRoom, inventory.InventoryId, roomInv.Quantity, renovation.DateBegin));
@@ -89,17 +109,17 @@ namespace Hospital.Service
             {
                  if (checkup.idRoom == renovation.IdRoom)
                  {
-                     if (checkup.Date == renovation.DateBegin)
+                     if (checkup.Date.Date == renovation.DateBegin.Date)
                      {
                         return false;
                      }
 
-                    if (checkup.Date == renovation.DateEnd)
+                    if (checkup.Date.Date == renovation.DateEnd.Date)
                     {
                         return false;
                     }
 
-                    if (checkup.Date < renovation.DateEnd && checkup.Date > renovation.DateBegin)
+                    if (checkup.Date.Date < renovation.DateEnd.Date && checkup.Date.Date > renovation.DateBegin.Date)
                     {
                         return false;
                     }

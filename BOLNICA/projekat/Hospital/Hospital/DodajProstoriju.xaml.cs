@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for DodajProstoriju.xaml
-    /// </summary>
     public partial class DodajProstoriju : UserControl
     {
         public ObservableCollection<Room> listRoom;
@@ -58,7 +55,7 @@ namespace Hospital
 
             storage.Save(newRoom);
             listRoom.Add(newRoom);
-
+            frame.NavigationService.Navigate(new BelsekaMagacin());
         }
 
         private void odustani(object sender, RoutedEventArgs e)

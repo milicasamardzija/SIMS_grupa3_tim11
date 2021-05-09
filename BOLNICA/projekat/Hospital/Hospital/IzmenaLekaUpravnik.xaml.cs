@@ -74,14 +74,16 @@ namespace Hospital
         {
             MedicineFileStorage storage = new MedicineFileStorage();
             ObservableCollection<Medicine> ret = new ObservableCollection<Medicine>();
-            foreach (int id in medicine.IdsMedicines)
-            {
-                foreach (Medicine medicine in storage.GetAll())
+            if (medicine != null) {
+                foreach (int id in medicine.IdsMedicines)
                 {
-                    if (medicine.IdMedicine == id)
+                    foreach (Medicine medicine in storage.GetAll())
                     {
-                        ret.Add(medicine);
-                        break;
+                        if (medicine.IdMedicine == id)
+                        {
+                            ret.Add(medicine);
+                            break;
+                        }
                     }
                 }
             }
@@ -91,13 +93,17 @@ namespace Hospital
         {
             IngredientsFileStorage storage = new IngredientsFileStorage();
             ObservableCollection<Ingredient> ret = new ObservableCollection<Ingredient>();
-            foreach (int id in medicine.IdsIngredients) {
-                foreach (Ingredient ingredient in storage.GetAll())
+            if (medicine != null)
+            {
+                foreach (int id in medicine.IdsIngredients)
                 {
-                    if (ingredient.IdIngredient == id)
+                    foreach (Ingredient ingredient in storage.GetAll())
                     {
-                        ret.Add(ingredient);
-                        break;
+                        if (ingredient.IdIngredient == id)
+                        {
+                            ret.Add(ingredient);
+                            break;
+                        }
                     }
                 }
             }

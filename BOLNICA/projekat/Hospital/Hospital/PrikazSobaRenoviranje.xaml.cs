@@ -27,11 +27,15 @@ namespace Hospital
             set;
         }
         private RenovationFileStorage storage = new RenovationFileStorage();
-        public PrikazSobaRenoviranje()
+        private Frame back = new Frame();
+        private ObservableCollection<Room> rooms = new ObservableCollection<Room>();
+        public PrikazSobaRenoviranje(ObservableCollection<Room> roomList, Frame roomss)
         {
             InitializeComponent();
             Renovations = loadJason();
             this.DataContext = this;
+            back = roomss;
+            rooms = roomList;
         }
         public ObservableCollection<RoomRenovation> loadJason()
         {
@@ -53,5 +57,9 @@ namespace Hospital
             brisanje.Show();
         }
 
+        private void unazad(object sender, RoutedEventArgs e)
+        {
+            back.NavigationService.Navigate(new Sobe(rooms, back));
+        }
     }
 }

@@ -25,10 +25,10 @@ public class RoomInventoryFileStorage
 
         allInventories.Add(newRoomInventory);
 
-        SaveAll(allInventories);
+        serialize(allInventories);
     }
    
-   public void SaveAll(List<RoomInventory> all)
+   public void serialize(List<RoomInventory> all)
    {
         using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/storageRoomInventory.json"))
         {
@@ -43,13 +43,13 @@ public class RoomInventoryFileStorage
 
         foreach (RoomInventory temp in allInventories)
         {
-            if (temp.idInventory == roomInventory.idInventory && temp.idRoom == roomInventory.idRoom)
+            if (temp.IdInventory == roomInventory.IdInventory && temp.IdRoom == roomInventory.IdRoom)
             {
                 allInventories.Remove(temp);
                 break;
             }
         }
-        SaveAll(allInventories);
+        serialize(allInventories);
     }
    
    public void DeleteByIdInventory(int id)
@@ -64,7 +64,7 @@ public class RoomInventoryFileStorage
                 break;
             }
         }
-        SaveAll(allInventories);
+        serialize(allInventories);
    }
 
     public void DeleteByIdRoom(int id)
@@ -73,13 +73,13 @@ public class RoomInventoryFileStorage
 
         foreach (RoomInventory inventory in allInventories)
         {
-            if (inventory.idRoom == id)
+            if (inventory.IdRoom == id)
             {
                 allInventories.Remove(inventory);
                 break;
             }
         }
-        SaveAll(allInventories);
+        serialize(allInventories);
     }
 
     public RoomInventory FindByRoomId(int id)

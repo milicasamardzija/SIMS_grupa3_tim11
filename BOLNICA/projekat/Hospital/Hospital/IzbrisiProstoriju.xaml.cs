@@ -50,11 +50,12 @@ namespace Hospital
 
             foreach (RoomInventory inventory in storageInventory.GetAll())
             {
-                if (inventory.idRoom== id)
+                if (inventory.IdRoom== id)
                 {
                     storageInventory.DeleteByIdRoom(id);
                 }
             }
+            frame.NavigationService.Navigate(new BelsekaMagacin());
         }
 
         private void odustani(object sender, RoutedEventArgs e)

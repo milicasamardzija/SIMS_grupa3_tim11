@@ -8,18 +8,18 @@
               Height="400" Width="470" Background="AliceBlue">
     <Grid>
         <Grid Margin="0,0,-0.4,0">
-            <Label Height="30" Width="100" Margin="26,71,344.8,299" Foreground="DarkBlue" FontSize="10" Grid.Column="0" FontWeight="Bold">Namena</Label>
+            <Label Width="100" Margin="26,71,344.8,300" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold">Namena</Label>
             <ComboBox Name ="NamenaText" Height="30" Width="200" Margin="238,70,32.8,300" Background="AliceBlue">
                 <ComboBoxItem IsSelected="True">SALA</ComboBoxItem>
                 <ComboBoxItem >SOBA</ComboBoxItem>
                 <ComboBoxItem>ORDINACIJA</ComboBoxItem>
             </ComboBox>
-            <Label Height="30" Width="100" Margin="34,160,336.8,210" Foreground="DarkBlue" FontSize="10" Grid.Column="0" FontWeight="Bold">Sprat</Label>
+            <Label Width="100" Margin="20,160,350.8,192" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold">Sprat</Label>
             <TextBox Name="SpratText" Height="30" Width="200" Margin="239,160,31.8,210"/>
-            <Label Height="30" Margin="20,240,262.8,130" Foreground="DarkBlue" FontSize="10" Grid.Column="0" FontWeight="Bold">Kapacitet prostorije</Label>
+            <Label Margin="20,240,262.8,97" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold">Kapacitet prostorije</Label>
             <TextBox Name="KapacitetText" Height="30" Width="200" Margin="238,240,32.8,130"/>
-            <Button Margin="103,308,287.8,62" Grid.Column="0" Width="80" Height="30" Background="LightBlue" Click="dodavanjeProstorije" RenderTransformOrigin="0.505,-0.138">Potvrdi</Button>
-            <Button Margin="286,308,104.8,62"  Width="80" Height="30" Background="LightBlue" Click="odustani">Odustani</Button>
+            <Button Margin="82,322,298.8,48" Grid.Column="0" Height="30" Background="LightBlue" Click="dodavanjeProstorije" FontWeight="Bold" Foreground="Black" FontSize="18">Potvrdi</Button>
+            <Button Margin="286,322,89.8,48" Height="30" Background="LightBlue" Click="odustani" FontWeight="Bold" Foreground="Black" FontSize="18">Odustani</Button>
         </Grid>
     </Grid>
 </UserControl>

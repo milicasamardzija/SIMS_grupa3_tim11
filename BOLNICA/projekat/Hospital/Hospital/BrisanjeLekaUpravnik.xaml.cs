@@ -21,7 +21,7 @@ namespace Hospital
     public partial class BrisanjeLekaUpravnik : UserControl
     {
         private Frame frame = new Frame();
-        private LekRevizija revision = new LekRevizija();
+        private LekRevizija revision;
         private MedicineFileStorage storage = new MedicineFileStorage();
         private MedicineReviewFileStorage reviewStorage = new MedicineReviewFileStorage();
    

@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.Controller;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -31,7 +32,7 @@ namespace Hospital
         private int quantity;
         private InventoryFileStorage inventoryStorage = new InventoryFileStorage();
         private DataGrid listaInvetara;
-
+        private InventoryController inventoryController = new InventoryController();
         public PremestanjeInventaraDijalog(Frame m, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, Room roomOut, DataGrid tablaPrikaz)
         {
             InitializeComponent();
@@ -57,17 +58,17 @@ namespace Hospital
             if (IdSobeTxt.Text.Equals(""))
             {
                 idRoom = -1;
-            } else
+            }
+            else
             {
                 idRoom = Convert.ToInt32(IdSobeTxt.Text);
             }
             quantity = Convert.ToInt32(KolicinaTxt.Text);
 
-            inventoryStorage.moveInventory(inventory,idRoom,roomOutId,quantity);
+            inventoryController.moveInventory(new RoomInventory(idRoom, inventory.InventoryId, quantity), roomOutId);
             listaInvetara.ItemsSource = loadJasonInventory();
-            
-            frame.NavigationService.Navigate(new BelsekaMagacin());
 
+            frame.NavigationService.Navigate(new BelsekaMagacin());
         }
 
         public ObservableCollection<Inventory> loadJasonInventory()
@@ -79,9 +80,9 @@ namespace Hospital
 
             foreach (RoomInventory r in storage.GetAll())
             {
-                if (r.idRoom.Equals(roomOutId))
+                if (r.IdRoom.Equals(roomOutId))
                 {
-                    Inventory i = inventoryStorage.FindById(r.idInventory);
+                    Inventory i = inventoryStorage.FindById(r.IdInventory);
                     if (i != null)
                         ret.Add(new Inventory(i.InventoryId, i.Name, r.Quantity, i.Type));
                     else

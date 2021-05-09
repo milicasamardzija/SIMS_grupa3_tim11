@@ -29,7 +29,9 @@ namespace Hospital
         private List<Inventory> filteredInventory = new List<Inventory>();
         private ObservableCollection<Inventory> all = new ObservableCollection<Inventory>();
         public Room room;
-        public PrikazInventaraUSobi(Room selectedRoom)
+        private Frame back = new Frame();
+        private ObservableCollection<Room> rooms = new ObservableCollection<Room>();
+        public PrikazInventaraUSobi(ObservableCollection<Room> roomList, Room selectedRoom,Frame roomss)
         {
             InitializeComponent();
             this.DataContext = this;
@@ -37,6 +39,8 @@ namespace Hospital
             listInventory = loadJason();
             ListaInventara.ItemsSource = listInventory;
             InventarPemesti.NavigationService.Navigate(new BelsekaMagacin());
+            back = roomss;
+            rooms = roomList;
         }
 
         public ObservableCollection<Inventory> loadJason()
@@ -48,9 +52,9 @@ namespace Hospital
 
             foreach (RoomInventory r in storage.GetAll())
             {
-                if (r.idRoom.Equals(room.RoomId))
+                if (r.IdRoom.Equals(room.RoomId))
                 {
-                    Inventory i = inventoryStorage.FindById(r.idInventory);
+                    Inventory i = inventoryStorage.FindById(r.IdInventory);
                     if (i != null)
                         ret.Add(new Inventory(i.InventoryId, i.Name, r.Quantity, i.Type));
                     else
@@ -65,11 +69,18 @@ namespace Hospital
 
         private void premesti(object sender, RoutedEventArgs e)
         {
-            Inventory inventory = (Inventory)ListaInventara.SelectedItem;
-            if (inventory.Type == InventoryType.staticki)
-               InventarPemesti.NavigationService.Navigate(new PremestanjeInventara(InventarPemesti,listInventory,ListaInventara,false,room, ListaInventara));
+            if (ListaInventara.SelectedItem == null)
+            {
+                InventarPemesti.NavigationService.Navigate(new BelsekaMagacin());
+            }
             else
-                InventarPemesti.NavigationService.Navigate(new PremestanjeInventaraDijalog(InventarPemesti, listInventory, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex, room,ListaInventara));
+            {
+                Inventory inventory = (Inventory)ListaInventara.SelectedItem;
+                if (inventory.Type == InventoryType.staticki)
+                    InventarPemesti.NavigationService.Navigate(new PremestanjeInventara(InventarPemesti, listInventory, ListaInventara, false, room, ListaInventara));
+                else
+                    InventarPemesti.NavigationService.Navigate(new PremestanjeInventaraDijalog(InventarPemesti, listInventory, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex, room, ListaInventara));
+            }
         }
 
         
@@ -87,7 +98,7 @@ namespace Hospital
             {
                 foreach (Inventory inv in all)
                 {
-                    if (inv.Name.Contains(PretragaTxt.Text))
+                    if (inv.Name.ToUpper().Equals(PretragaTxt.Text.ToUpper()))
                     {
                         filteredInventory.Add(inv);
 
@@ -100,14 +111,14 @@ namespace Hospital
                         }
 
                     }
-                    if (PretragaTxt.Text.Equals("staticki"))
+                    if (PretragaTxt.Text.ToUpper().Equals("staticki".ToUpper()))
                     {
                         if (inv.Type == InventoryType.staticki)
                         {
                             filteredInventory.Add(inv);
                         }
                     }
-                    else if (PretragaTxt.Text.Equals("dinamicki"))
+                    else if (PretragaTxt.Text.ToUpper().Equals("dinamicki".ToUpper()))
                     {
                         if (inv.Type == InventoryType.dinamicki)
                         {
@@ -117,6 +128,11 @@ namespace Hospital
                 }
                 ListaInventara.ItemsSource = filteredInventory.ToList();
             }
+        }
+
+        private void unazad(object sender, RoutedEventArgs e)
+        {
+            back.NavigationService.Navigate(new Sobe(rooms,back));
         }
     }
 }

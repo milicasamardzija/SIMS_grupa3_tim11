@@ -10,7 +10,7 @@
         <DataGrid Name="ListaInventara" 
                   Background="AliceBlue" 
                   HorizontalAlignment="Left"
-                  Height="287" 
+                  Height="253" 
                   Margin="69,241,0,0" 
                   VerticalAlignment="Top" 
                   Width="593"
@@ -20,15 +20,15 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="TIP" Width="200" Binding="{Binding Type}"/>
                 <DataGridTextColumn Header="IME" Width="200" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="KOLICINA" Width="200" Binding="{Binding Quantity}" />
+                <DataGridTextColumn Header="KOLICINA" Width="185" Binding="{Binding Quantity}" />
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock  FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="69,29,0,0" TextWrapping="Wrap" Text="Inventar bolnice koji se nalazi u magacinu" VerticalAlignment="Top" Height="42" Width="650" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
         <Frame Name="MagacinFrame" Content="" HorizontalAlignment="Left" Margin="752,94,0,0" VerticalAlignment="Top" Height="400" Width="470" BorderBrush="#FFB42412" OpacityMask="Black" Foreground="#FFA31818" NavigationUIVisibility="Hidden" RenderTransformOrigin="0.508,0.644"/>
-        <Button Background="AliceBlue"  Content="Dodaj" HorizontalAlignment="Left" Margin="69,563,0,0" VerticalAlignment="Top" Width="133" Height="48" FontSize="24" FontWeight="Bold" Click="dodaj" RenderTransformOrigin="0.562,-0.422" />
-        <Button Background="AliceBlue" Content="Izbrisi" HorizontalAlignment="Left" Margin="383,564,0,0" VerticalAlignment="Top" Width="129" Height="47" FontSize="24" FontWeight="Bold" Click="izbrisi" RenderTransformOrigin="0.574,1.728"/>
-        <Button Background="AliceBlue" Content="Prebaci" HorizontalAlignment="Left" Margin="541,564,0,0" VerticalAlignment="Top" Width="121" Height="47" FontSize="24" FontWeight="Bold" Click="premesti" RenderTransformOrigin="0.817,-0.283" />
-        <Button Background="AliceBlue" Content="Izmeni" HorizontalAlignment="Left" Margin="224,564,0,0" VerticalAlignment="Top" Width="131" Height="47" Click="izmeni" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.453,-1.384"/>
+        <Button Background="AliceBlue"  Content="Dodaj" HorizontalAlignment="Left" Margin="69,530,0,0" VerticalAlignment="Top" Width="133" Height="48" FontSize="24" FontWeight="Bold" Click="dodaj" RenderTransformOrigin="0.562,-0.422" />
+        <Button Background="AliceBlue" Content="Izbrisi" HorizontalAlignment="Left" Margin="379,530,0,0" VerticalAlignment="Top" Width="129" Height="47" FontSize="24" FontWeight="Bold" Click="izbrisi" RenderTransformOrigin="0.574,1.728"/>
+        <Button Background="AliceBlue" Content="Prebaci" HorizontalAlignment="Left" Margin="541,531,0,0" VerticalAlignment="Top" Width="121" Height="47" FontSize="24" FontWeight="Bold" Click="premesti" RenderTransformOrigin="0.817,-0.283" />
+        <Button Background="AliceBlue" Content="Izmeni" HorizontalAlignment="Left" Margin="222,531,0,0" VerticalAlignment="Top" Width="131" Height="47" Click="izmeni" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.453,-1.384"/>
 
         <Grid Background="AliceBlue" Margin="304,94,622,434.4">
             <Label Grid.Row="0" Grid.Column="0" Content="Unesite kolicinu i uslov po kojima&#xD;&#xA; zelite da filtrirate inventar :" HorizontalAlignment="Left" VerticalAlignment="Top" Width="266" FontSize="16" FontWeight="Bold" Height="53"/>
