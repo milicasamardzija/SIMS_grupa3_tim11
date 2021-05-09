@@ -22,11 +22,11 @@ namespace Hospital
     public partial class DeleteDialog : Window
     {
 
-        public ObservableCollection<Checkup> listCheckup;
+        public List<Checkup> listCheckup;
         public int index;
         public int id;
 
-        public DeleteDialog(ObservableCollection<Checkup> list, Checkup selectedCheckup, int selectedIndex)
+        public DeleteDialog(List<Checkup> list, Checkup selectedCheckup, int selectedIndex)
         {
             InitializeComponent();
             listCheckup = list;

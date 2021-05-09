@@ -23,10 +23,10 @@ namespace Hospital
     /// </summary>
     public partial class AddDialog : Window
     {
-        public ObservableCollection<Checkup> listCheckup;
+        public List<Checkup> listCheckup;
         public int idD; //id ulogovanog doktora
 
-        public AddDialog(ObservableCollection<Checkup> list, int idDoctor)
+        public AddDialog(List<Checkup> list, int idDoctor)
         {
             InitializeComponent();
             listCheckup = list;

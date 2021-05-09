@@ -17,6 +17,17 @@ namespace Hospital.Model
         private int idPatient;
 
         public Checkup() { }
+        public Checkup(int idCh, int idD, int idP, DateTime dateAndTime, int idR, CheckupType type) 
+        {
+            this.idCh = idCh;
+            this.idDoctor = idD;
+            this.idPatient = idP;
+            this.DateTime = dateAndTime;
+            this.IdRoom = idR;
+            this.Type=type ;//bice default pregled postvljeno pri kreiranju
+            this.Duration = 30; //fiksno za pregled!
+
+        }
         public Checkup(int ida, int ch, DateTime dateTime1, String ti, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor)
         {
             this.IdA = ida;
@@ -101,7 +112,7 @@ namespace Hospital.Model
             {
                 if (value != idPatient)
                 {
-                    idDoctor = value;
+                    idPatient = value;
                     OnPropertyChanged("IdPatient");
                 }
             }

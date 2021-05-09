@@ -10,11 +10,11 @@ namespace Hospital.Service
 {
     class CheckupService
     {
-        private CheckupFileStorage checkupStorage; 
-        private PatientFileStorage patientsStorage;
-        private DoctorFileStorage doctorStorage;
+       public CheckupFileStorage checkupStorage; 
+        public PatientFileStorage patientsStorage;
+        public DoctorFileStorage doctorStorage;
 
-        List<Checkup> allCheckups;
+       public List<Checkup> allCheckups { get; set; }
        
 
         public CheckupService()
@@ -30,7 +30,8 @@ namespace Hospital.Service
             int val = 0;
 
             CheckupFileStorage checkupStorage = new CheckupFileStorage();
-            List<Checkup> allCheckups = checkupStorage.GetAll(); //Ivani je jos uvek lista...
+            List<Checkup> allCheckups = new List<Checkup>();
+            allCheckups= checkupStorage.GetAll(); 
 
             foreach (Checkup idCh in allCheckups)
             {
@@ -46,28 +47,36 @@ namespace Hospital.Service
             return val; //vracam prvi koji je dostupan 
         }
 
-       public  List<Checkup> getCheckupDoctors(int idD)
-        {            
-            
-            allCheckups = checkupStorage.GetAll(); //nasla sve checkupove 
+       public List<Checkup> getCheckupDoctors(int idD)
+        {
+
+            List<Checkup> checkups = checkupStorage.GetAll();
+            allCheckups = checkups;
 
             List<Checkup> unavailableCheckups = new List<Checkup>();
 
-          //moze da se ekstrahuje
-            foreach(Checkup c in allCheckups)
-            {
-                if(c.IdDoctor.Equals(idD))
-                {
-                    unavailableCheckups.Add(c); 
-                   
-                }
-            }
-            return unavailableCheckups;
+            
+            return getDoctorTerms(idD, unavailableCheckups);
 
         }
 
-        public void saveCheckup(int idD, int idP, DateTime date)
+        private List<Checkup> getDoctorTerms(int idD, List<Checkup> unavailableCheckups)
         {
+            foreach (Checkup c in allCheckups)
+            {
+                if (c.IdDoctor.Equals(idD))
+                {
+                    unavailableCheckups.Add(c);
+
+                }
+            }
+            return unavailableCheckups;
+        }
+
+        public void createCheckup(Checkup c)
+        {
+            Checkup newCheckup = new Checkup(generateIdCheckup(), c.IdDoctor, c.IdPatient, c.Date, 0, CheckupType.pregled);
+            checkupStorage.Save(newCheckup);
 
         }
     }

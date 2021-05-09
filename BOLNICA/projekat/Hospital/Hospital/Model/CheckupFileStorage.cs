@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.IO;
 using Hospital.Model;
+using System.Collections.ObjectModel;
 
 public class CheckupFileStorage
 {
@@ -93,6 +94,6 @@ public class CheckupFileStorage
         return ret;
    }
    
-   //public String fileLocation;
+   
 
 }

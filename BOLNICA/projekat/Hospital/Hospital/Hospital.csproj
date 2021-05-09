@@ -110,16 +110,8 @@
     <Compile Include="Sekretar\Alergeni.xaml.cs">
       <DependentUpon>Alergeni.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\AlergeniDodaj.xaml.cs">
-      <DependentUpon>AlergeniDodaj.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Sekretar\Blog.xaml.cs">
       <DependentUpon>Blog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sekretar\CheckupController.cs" />
-    <Compile Include="Sekretar\CheckupService.cs" />
-    <Compile Include="Sekretar\DodajAlergene.xaml.cs">
-      <DependentUpon>DodajAlergene.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sekretar\DodajPregled.xaml.cs">
       <DependentUpon>DodajPregled.xaml</DependentUpon>
@@ -406,15 +398,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Sekretar\AlergeniDodaj.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Sekretar\Blog.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Sekretar\DodajAlergene.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

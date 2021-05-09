@@ -22,11 +22,11 @@ namespace Hospital
     public partial class EditDialog : Window
     {
 
-        public ObservableCollection<Checkup> listCheckup;
+        public List<Checkup> listCheckup;
         public Checkup checkup;
         public int index;
 
-        public EditDialog(ObservableCollection<Checkup> list, Checkup selectedCheckup, int selectedIndex)
+        public EditDialog(List<Checkup> list, Checkup selectedCheckup, int selectedIndex)
         {
             InitializeComponent();
             listCheckup = list;

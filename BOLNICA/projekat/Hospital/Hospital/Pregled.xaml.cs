@@ -22,7 +22,7 @@ namespace Hospital
     /// </summary>
     public partial class Pregled : Window
     {
-        public ObservableCollection<Checkup> CheckupList
+        public List<Checkup> CheckupList
         {
             get;
             set;
@@ -39,11 +39,11 @@ namespace Hospital
             CheckupList = loadJson(id);
         }
 
-        public ObservableCollection<Checkup> loadJson(int idD)
+        public List<Checkup> loadJson(int idD)
         {
             CheckupFileStorage cs = new CheckupFileStorage();
-            ObservableCollection<Checkup> cc = new ObservableCollection<Checkup>(cs.GetAll()); //svi pregledi
-            ObservableCollection<Checkup> ret = new ObservableCollection<Checkup>(); //ovde ce biti ubaceni pregledi koje ima bas lekar sa prosledjenim id-em(odnosno id lekara koji je ulogovan na sistem)
+            List<Checkup> cc = new List<Checkup>(cs.GetAll()); //svi pregledi
+            List<Checkup> ret = new List<Checkup>(); //ovde ce biti ubaceni pregledi koje ima bas lekar sa prosledjenim id-em(odnosno id lekara koji je ulogovan na sistem)
 
             foreach (Checkup checkup in cc) //prolazimo kroz sve preglede u fajlu
             {
