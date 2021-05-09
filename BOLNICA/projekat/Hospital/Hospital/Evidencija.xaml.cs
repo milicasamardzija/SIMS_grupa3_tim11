@@ -37,8 +37,8 @@ namespace Hospital
 
         private void button4_Click(object sender, RoutedEventArgs e)
         {
-            CekajuRevizijuLekar crl = new CekajuRevizijuLekar();
-            crl.Show();
+            RevizijaLekaLekar rll = new RevizijaLekaLekar();
+            rll.Show();
         }
     }
 }
