@@ -89,17 +89,17 @@ namespace Hospital.Service
             {
                  if (checkup.idRoom == renovation.IdRoom)
                  {
-                     if (checkup.Date == renovation.DateBegin)
+                     if (checkup.Date.Date == renovation.DateBegin.Date)
                      {
                         return false;
                      }
 
-                    if (checkup.Date == renovation.DateEnd)
+                    if (checkup.Date.Date == renovation.DateEnd.Date)
                     {
                         return false;
                     }
 
-                    if (checkup.Date < renovation.DateEnd && checkup.Date > renovation.DateBegin)
+                    if (checkup.Date.Date < renovation.DateEnd.Date && checkup.Date.Date > renovation.DateBegin.Date)
                     {
                         return false;
                     }
