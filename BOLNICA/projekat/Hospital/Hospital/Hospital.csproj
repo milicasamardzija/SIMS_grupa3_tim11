@@ -73,6 +73,9 @@
     <Compile Include="BrisanjeRenovacijeSIgurnost.xaml.cs">
       <DependentUpon>BrisanjeRenovacijeSIgurnost.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CekajuRevizijuLekar.xaml.cs">
+      <DependentUpon>CekajuRevizijuLekar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controller\InventoryController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
     <Compile Include="Controller\RoomsController.cs" />
@@ -105,6 +108,8 @@
     <Compile Include="Model\FunkcionalnostiFileStorage.cs" />
     <Compile Include="Model\Ingredient.cs" />
     <Compile Include="Model\IngredientsFileStorage.cs" />
+    <Compile Include="Model\Instruction.cs" />
+    <Compile Include="Model\InstructionFileStorage.cs" />
     <Compile Include="Model\Koristenjefunkcionalnosti.cs" />
     <Compile Include="Model\Medicine.cs" />
     <Compile Include="Model\MedicineFileStorage.cs" />
@@ -183,8 +188,6 @@
     <Compile Include="Service\MedicineService.cs" />
     <Compile Include="Model\RenovationFileStorage.cs" />
     <Compile Include="Model\RoomRenovation.cs" />
-    <Compile Include="Model\StaticInventoryMovement.cs" />
-    <Compile Include="Model\StaticInvnetoryMovementFileStorage.cs" />
     <Compile Include="PrikazSobaRenoviranje.xaml.cs">
       <DependentUpon>PrikazSobaRenoviranje.xaml</DependentUpon>
     </Compile>
@@ -262,6 +265,10 @@
     <Page Include="BrisanjeRenovacijeSIgurnost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CekajuRevizijuLekar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="DavanjeUputa.xaml">
       <SubType>Designer</SubType>
