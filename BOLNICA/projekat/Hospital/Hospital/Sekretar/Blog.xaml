@@ -25,7 +25,10 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="newNotification"
-            Content="Novo obavestenje" />
+            Content="Novo obavestenje"
+            FontSize="14"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
         <Button
             Width="106"
             Height="38"
@@ -33,7 +36,10 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Button_Click"
-            Content="Blog" />
+            Content="Blog"
+            FontSize="14"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
         <DataGrid
             Name="mojaObavestenja"
             Width="521"
@@ -42,6 +48,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
+            Background="Transparent"
             ItemsSource="{Binding listNotification}"
             RowHeight="40">
             <DataGrid.Columns>
@@ -60,13 +67,16 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button
-            Width="88"
+            Width="127"
             Height="38"
-            Margin="419,56,0,0"
+            Margin="400,56,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Delete"
-            Content="Obrisi" />
+            Content="Obrisi obavestenje"
+            FontSize="14"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
         <Calendar
             Width="185"
             Height="181"

@@ -146,6 +146,24 @@
             FontSize="18"
             FontWeight="Bold"
             Foreground="#FF123EB9" />
+        <Button
+            Width="180"
+            Height="35"
+            Margin="75,325,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="urgentCheckup"
+            Content="Hitan pregled"
+            FontSize="14"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="Help-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
 
 
     </Grid>

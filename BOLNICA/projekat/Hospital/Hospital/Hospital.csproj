@@ -116,6 +116,12 @@
     <Compile Include="ObavestenjaUpravnik.xaml.cs">
       <DependentUpon>ObavestenjaUpravnik.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sekretar\DodajObavestenjeBlog.xaml.cs">
+      <DependentUpon>DodajObavestenjeBlog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sekretar\HitanPregled.xaml.cs">
+      <DependentUpon>HitanPregled.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sekretar\ObavestenjaBlog.xaml.cs">
       <DependentUpon>ObavestenjaBlog.xaml</DependentUpon>
     </Compile>
@@ -168,6 +174,9 @@
     <Compile Include="Sekretar\ObrisiObavestenje.xaml.cs">
       <DependentUpon>ObrisiObavestenje.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sekretar\ObrisiObavestenjeBlog.xaml.cs">
+      <DependentUpon>ObrisiObavestenjeBlog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sekretar\ObrisiPregled.xaml.cs">
       <DependentUpon>ObrisiPregled.xaml</DependentUpon>
     </Compile>
@@ -176,9 +185,6 @@
     </Compile>
     <Compile Include="Sekretar\Pacijenti.xaml.cs">
       <DependentUpon>Pacijenti.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sekretar\PrikaziMojaObavestenja.xaml.cs">
-      <DependentUpon>PrikaziMojaObavestenja.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sekretar\PrikaziObavestenja.xaml.cs">
       <DependentUpon>PrikaziObavestenja.xaml</DependentUpon>
@@ -463,6 +469,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Sekretar\DodajObavestenjeBlog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sekretar\HitanPregled.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Sekretar\ObavestenjaBlog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -537,9 +551,6 @@
     </Page>
     <Compile Include="Sobe.xaml.cs">
       <DependentUpon>Sobe.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sekretar\UredjivanjeBloga.xaml.cs">
-      <DependentUpon>UredjivanjeBloga.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowPacijent.xaml.cs">
       <DependentUpon>WindowPacijent.xaml</DependentUpon>
@@ -695,6 +706,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Sekretar\ObrisiObavestenjeBlog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Sekretar\ObrisiPregled.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -708,10 +723,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Sekretar\PrikaziGuestPacijente.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sekretar\PrikaziMojaObavestenja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -764,10 +775,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UputZaAmbulantnoSpecijalistickiPregled.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sekretar\UredjivanjeBloga.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -910,6 +917,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="zdravo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Sekretar\Help-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

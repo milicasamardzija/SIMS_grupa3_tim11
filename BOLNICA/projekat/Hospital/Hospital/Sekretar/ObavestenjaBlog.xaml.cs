@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Hospital.Sekretar;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,35 +21,41 @@ namespace Hospital.Model
     /// </summary>
     public partial class ObavestenjaBlog : Window
     {
-       
 
+        public ObservableCollection<Notice> listNotice { get; set; }
         public ObavestenjaBlog()
         {
             InitializeComponent();
-            textBlog.SelectedText = loadJason();
+            this.DataContext = this;
+            listNotice = loadJason();
         }
-        public String loadJason()
+        public ObservableCollection<Notice> loadJason()
         {
             NoticeFileStorage pfs = new NoticeFileStorage();
-            List<Notice> rs = new List<Notice>(pfs.GetAll());
-            String ret = rs[0].notice;
-            return ret;
+            ObservableCollection<Notice> rs = new ObservableCollection<Notice>(pfs.GetAll());
+            return rs;
 
         }
-        private void sacuvajIzmene(object sender, RoutedEventArgs e)
+
+
+    
+        private void obrisi(object sender, RoutedEventArgs e)
         {
+            if (textBlog.SelectedIndex != -1)
+            {
+                ObrisiObavestenjeBlog obrisi = new ObrisiObavestenjeBlog(listNotice, (Notice)textBlog.SelectedItem, textBlog.SelectedIndex);
+                obrisi.Show();
+            } else
+            {
+                MessageBox.Show("Niste izabrali obavestenje koje je potrebno obrisati!");
+            }
 
-             NoticeFileStorage nfs = new NoticeFileStorage();
-           List<Notice> rs = new List<Notice>(nfs.GetAll());
 
-             Notice stara = rs[0];
-             String novi = textBlog.Text;
-            Notice nova = new Notice(novi);
-
-
-            nfs.save(nova);
-            rs.Remove(stara);
-
+        }
+        private void dodaj(object sender, RoutedEventArgs e)
+        {
+            DodajObavestenjeBlog novo = new DodajObavestenjeBlog(listNotice);
+            novo.Show();
 
         }
         private void odustani(object sender, RoutedEventArgs e)

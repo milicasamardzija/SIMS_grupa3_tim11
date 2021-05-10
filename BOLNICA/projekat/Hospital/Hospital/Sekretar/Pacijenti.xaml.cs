@@ -51,5 +51,12 @@ namespace Hospital
             ch.Show();
 
         }
+
+        private void urgentCheckup(object sender, RoutedEventArgs e)
+        {
+            HitanPregled hitan = new HitanPregled();
+            hitan.Show();
+
+        }
     }
 }

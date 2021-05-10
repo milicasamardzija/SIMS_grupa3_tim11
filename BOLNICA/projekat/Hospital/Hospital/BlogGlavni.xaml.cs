@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,19 +21,20 @@ namespace Hospital
     {
 
        
-        
+        public ObservableCollection<Notice> listNotice { get; set; }
         public BlogGlavni()
         {
             InitializeComponent();
-            obavestenjaText.SelectedText = loadJason();
+            this.DataContext = this;
+            listNotice= loadJason();
         }
 
-        public String loadJason()
+        public ObservableCollection<Notice> loadJason()
         {
              NoticeFileStorage pfs = new NoticeFileStorage();
-             List<Notice> rs = new List<Notice>(pfs.GetAll());
-             String ret = rs[0].notice;
-              return ret;
+            ObservableCollection<Notice> rs = new ObservableCollection<Notice>(pfs.GetAll());
+            
+              return rs;
           
         }
 
