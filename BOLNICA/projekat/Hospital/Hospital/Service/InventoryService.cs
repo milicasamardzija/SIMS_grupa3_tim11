@@ -53,42 +53,42 @@ namespace Hospital.Service
 
         private void minusQuantityStorage(RoomInventory roomInventory)
         {
-            foreach (Inventory i in inventories)
+            foreach (Inventory inventory in inventories)
             {
-                if (i.InventoryId == roomInventory.IdInventory)
+                if (inventory.InventoryId == roomInventory.IdInventory)
                 {
-                    i.Quantity -= roomInventory.Quantity;
+                    inventory.Quantity -= roomInventory.Quantity;
                 }
             }
         }
 
         private void minusQuantityRoom(RoomInventory roomInventory, int idRoomOut)
         {
-            foreach (RoomInventory ri in allRoomInventory)
+            foreach (RoomInventory roomInv in allRoomInventory)
             {
-                if (ri.IdRoom == idRoomOut && ri.IdInventory == roomInventory.IdInventory)
+                if (roomInv.IdRoom == idRoomOut && roomInv.IdInventory == roomInventory.IdInventory)
                 {
-                    ri.Quantity -= roomInventory.Quantity;
-                    inventoryInRoomEqualsZero(ri);
+                    roomInv.Quantity -= roomInventory.Quantity;
+                    inventoryInRoomEqualsZero(roomInv);
                 }
             }
         }
 
-        private void inventoryInRoomEqualsZero(RoomInventory ri)
+        private void inventoryInRoomEqualsZero(RoomInventory roomInventory)
         {
-            if (ri.Quantity == 0)
+            if (roomInventory.Quantity == 0)
             {
-                allRoomInventory.Remove(ri);
+                allRoomInventory.Remove(roomInventory);
             }
         }
 
         private void addQunatityStorage(RoomInventory roomInventory)
         {
-            foreach (Inventory invent in inventories)
+            foreach (Inventory inventory in inventories)
             {
-                if (invent.InventoryId == roomInventory.IdInventory)
+                if (inventory.InventoryId == roomInventory.IdInventory)
                 {
-                    invent.Quantity += roomInventory.Quantity;
+                    inventory.Quantity += roomInventory.Quantity;
                 }
             }
         }
