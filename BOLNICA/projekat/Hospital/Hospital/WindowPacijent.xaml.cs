@@ -73,7 +73,7 @@ namespace Hospital
                         }
                     }
 
-                    if (count1 > 0 || count2>3 ||  count3>3)
+                    if (count1 > 5 || count2>3 ||  count3>3)
                     {
                         patient.banovan = true;
                         
