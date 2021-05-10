@@ -18,44 +18,30 @@
                 <GradientStop Offset="0.094" Color="#FF2BACC5" />
             </LinearGradientBrush>
         </Grid.Background>
-        <Label
-            Height="35"
-            Margin="30,40,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Uredjenje zvanicnih obavestenja na blogu za zaposlene "
-            FontWeight="Bold"
-            Foreground="#FF1B4C93" />
-        <TextBox
-            x:Name="textBlog"
-            Height="244"
-            Margin="30,80,485.4,0"
-            VerticalAlignment="Top"
-            Background="LightGray"
-            Text=""
-            TextWrapping="Wrap" />
         <Button
-            Width="129"
-            Height="34"
-            Margin="392,214,0,0"
+            Width="130"
+            Height="38"
+            Margin="44,56,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Sacuvaj izmene"
-            Cursor="Hand"
-            FontWeight="Bold"
-            Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            Click="newNotification"
+            Content="Novo obavestenje" />
         <Button
-            Width="129"
-            Height="25"
-            Margin="392,284,0,0"
+            Width="114"
+            Height="38"
+            Margin="235,56,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="odustani"
-            Content="Odustani"
-            Cursor="Hand"
-            FontWeight="Bold"
-            Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            Click="Button_Click"
+            Content="Blog" />
+        <DataGrid
+            Name="mojaObavestenja"
+            Width="479"
+            Height="196"
+            Margin="44,124,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            ItemsSource="{Binding listNotification}" />
+
     </Grid>
 </Page>

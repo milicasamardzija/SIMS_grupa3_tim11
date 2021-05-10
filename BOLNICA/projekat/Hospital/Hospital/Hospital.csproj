@@ -110,6 +110,11 @@
     <Compile Include="Model\MedicineFileStorage.cs" />
     <Compile Include="Model\MedicineReview.cs" />
     <Compile Include="Model\MedicineReviewFileStorage.cs" />
+    <Compile Include="Model\Notifications.cs" />
+    <Compile Include="Model\NotificationsFileStorage.cs" />
+    <Compile Include="Sekretar\ObavestenjaBlog.xaml.cs">
+      <DependentUpon>ObavestenjaBlog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\ReviewType.cs" />
     <Compile Include="Model\SpecializationType.cs" />
     <Compile Include="Model\StaticInventoryMovement.cs" />
@@ -157,11 +162,20 @@
     <Compile Include="Sekretar\InformacijeKlinike.xaml.cs">
       <DependentUpon>InformacijeKlinike.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sekretar\KreirajObavestenje.xaml.cs">
+      <DependentUpon>KreirajObavestenje.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sekretar\OtkaziTermin.xaml.cs">
       <DependentUpon>OtkaziTermin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sekretar\Pacijenti.xaml.cs">
       <DependentUpon>Pacijenti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sekretar\PrikaziMojaObavestenja.xaml.cs">
+      <DependentUpon>PrikaziMojaObavestenja.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sekretar\PrikaziObavestenja.xaml.cs">
+      <DependentUpon>PrikaziObavestenja.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sekretar\PrikaziPreglede.xaml.cs">
       <DependentUpon>PrikaziPreglede.xaml</DependentUpon>
@@ -435,6 +449,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Sekretar\ObavestenjaBlog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="OceniteBolnicu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -525,6 +543,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="KreiranjeAnamneze.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sekretar\KreirajObavestenje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -668,6 +690,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Sekretar\PrikaziGuestPacijente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sekretar\PrikaziMojaObavestenja.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sekretar\PrikaziObavestenja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

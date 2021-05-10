@@ -1,0 +1,46 @@
+﻿<Window
+    x:Class="Hospital.Model.ObavestenjaBlog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Hospital.Model"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="ObavestenjaBlog"
+    Width="400"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid Margin="0,0,-6.4,0">
+
+        <TextBox
+            x:Name="textBlog"
+            Height="187"
+            Margin="30,26,39,0"
+            VerticalAlignment="Top"
+            Background="LightGray"
+            Text=""
+            TextWrapping="Wrap" />
+        <Button
+            Width="129"
+            Height="34"
+            Margin="232,320,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Sacuvaj izmene"
+            Cursor="Hand"
+            FontWeight="Bold"
+            Foreground="#FF0852AE"
+            TextElement.FontSize="14" />
+        <Button
+            Width="129"
+            Height="25"
+            Margin="47,329,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="odustani"
+            Content="Odustani"
+            Cursor="Hand"
+            FontWeight="Bold"
+            Foreground="#FF0852AE"
+            TextElement.FontSize="14" />
+    </Grid>
+</Window>

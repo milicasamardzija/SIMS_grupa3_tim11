@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Hospital.Model;
+using Hospital.Sekretar;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,39 +21,36 @@ namespace Hospital
   
     public partial class Blog : Page
     {
+        public ObservableCollection<Notifications> listNotifications { get; set; }
         public Blog()
         {
             InitializeComponent();
-            textBlog.SelectedText = loadJason();
+            this.DataContext = this;
+            listNotifications = loadMyNotifications();
+            
         }
   
-    public String loadJason()
-    {
-        NoticeFileStorage pfs = new NoticeFileStorage();
-        List<Notice> rs = new List<Notice>(pfs.GetAll());
-        String ret = rs[0].notice;
-        return ret;
-
-    }
-    private void sacuvajIzmene(object sender, RoutedEventArgs e)
-    {
-
-        NoticeFileStorage nfs = new NoticeFileStorage();
-        List<Notice> rs = new List<Notice>(nfs.GetAll());
-
-        Notice stara = rs[0];
-        String novi = textBlog.Text;
-        Notice nova = new Notice(novi);
-
-
-        nfs.save(nova);
-        rs.Remove(stara);
-
-    
-    }
-        private void odustani(object sender, RoutedEventArgs e)
+ 
+      private ObservableCollection<Notifications> loadMyNotifications()
         {
-            
+            NotificationsFileStorage nfs = new NotificationsFileStorage();
+            ObservableCollection<Notifications> notes = new ObservableCollection<Notifications>(nfs.GetAll());
+            return notes;
+        }
+
+
+
+        private void newNotification(object sender, RoutedEventArgs e)
+        {
+            KreirajObavestenje obavestenje = new KreirajObavestenje();
+            obavestenje.Show();
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ObavestenjaBlog blog = new ObavestenjaBlog();
+            blog.Show();
         }
     }
 }
