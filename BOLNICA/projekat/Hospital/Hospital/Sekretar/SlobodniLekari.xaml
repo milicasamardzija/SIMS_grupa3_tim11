@@ -25,11 +25,26 @@
             Content="Izaberi lekara" />
         <DataGrid
             x:Name="doktori"
-            Width="204"
             Height="145"
-            Margin="38,41,51.6,0"
+            Margin="38,41,29.6,0"
             VerticalAlignment="Top"
-            ItemsSource="{Binding listDoctors}" />
+            AutoGenerateColumns="False"
+            ItemsSource="{Binding listDoctors}">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="70"
+                    Binding="{Binding Name}"
+                    Header="Ime " />
+                <DataGridTextColumn
+                    Width="70"
+                    Binding="{Binding Surname}"
+                    Header="Prezime " />
+                <DataGridTextColumn
+                    Width="85"
+                    Binding="{Binding SpecializationType}"
+                    Header="Specijalizacija" />
+            </DataGrid.Columns>
+        </DataGrid>
         <Button
             Width="75"
             Margin="189,221,0,0"

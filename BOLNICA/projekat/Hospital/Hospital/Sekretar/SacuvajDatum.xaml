@@ -8,6 +8,7 @@
     Title="SacuvajDatum"
     Width="408.815"
     Height="351.156"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -21,10 +22,53 @@
                 <GradientStop Offset="0.094" Color="#FF2BACC5" />
             </LinearGradientBrush>
         </Grid.Background>
-        <Label Content="Lista slobodnih lekara" HorizontalAlignment="Left" Margin="55,37,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <DataGrid Name="doctors" HorizontalAlignment="Left" Height="182" VerticalAlignment="Top" Width="265" Margin="55,68,0,0" Grid.ColumnSpan="2" ItemsSource="{Binding listDoctors}"/>
-        <Button Content="Sacuvaj termin" Grid.Column="1" HorizontalAlignment="Left" Margin="186.4,277,0,0" VerticalAlignment="Top" Width="75" Click="CreateCheckup"/>
-        <Button Grid.ColumnSpan="2" Content="odustani" HorizontalAlignment="Left" Margin="55,277,0,0" VerticalAlignment="Top" Width="75" Click="Decline"/>
+        <Label
+            Grid.ColumnSpan="2"
+            Margin="55,37,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Lista slobodnih lekara" />
+        <DataGrid
+            Name="doctors"
+            Grid.ColumnSpan="2"
+            Width="296"
+            Height="182"
+            Margin="55,68,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            AutoGenerateColumns="False"
+            ItemsSource="{Binding listDoctors}" >
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="80"
+                    Binding="{Binding name}"
+                    Header="Ime " />
+                <DataGridTextColumn
+                    Width="90"
+                    Binding="{Binding surname}"
+                    Header="prezime" />
+                <DataGridTextColumn
+                    Width="100"
+                    Binding="{Binding SpecializationType}"
+                    Header="Specijalizacija" />
+            </DataGrid.Columns>
+            </DataGrid>
+        <Button
+            Grid.Column="1"
+            Width="75"
+            Margin="186.4,277,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="CreateCheckup"
+            Content="Sacuvaj termin" />
+        <Button
+            Grid.ColumnSpan="2"
+            Width="75"
+            Margin="55,277,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="Decline"
+            Content="odustani" />
 
     </Grid>
 </Window>
