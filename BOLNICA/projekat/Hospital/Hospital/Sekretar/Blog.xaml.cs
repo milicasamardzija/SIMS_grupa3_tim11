@@ -26,15 +26,15 @@ namespace Hospital
         {
             InitializeComponent();
             this.DataContext = this;
-            listNotification = loadMyNotifications();
+            listNotification = loadMyNotifications("Sekretar");
           
         }
   
  
-      private ObservableCollection<Notifications> loadMyNotifications()
+      private ObservableCollection<Notifications> loadMyNotifications(String person)
         {
             NotificationsFileStorage nfs = new NotificationsFileStorage();
-            ObservableCollection<Notifications> notes = new ObservableCollection<Notifications>(nfs.GetAll());
+            ObservableCollection<Notifications> notes = new ObservableCollection<Notifications>(nfs.FindByPerson(person));
             return notes;
         }
 
@@ -42,7 +42,7 @@ namespace Hospital
 
         private void newNotification(object sender, RoutedEventArgs e)
         {
-            KreirajObavestenje obavestenje = new KreirajObavestenje();
+            KreirajObavestenje obavestenje = new KreirajObavestenje(listNotification);
             obavestenje.Show();
 
         }

@@ -89,6 +89,24 @@ namespace Hospital.Model
             return ret;
         }
 
+        //dodala da svako moze da ocita svoje 
+        public ObservableCollection<Notifications> FindByPerson(String person)
+        {
+            ObservableCollection<Notifications> allNotifications = GetAll();
+            ObservableCollection<Notifications> ret = new ObservableCollection<Notifications>();
+
+            foreach (Notifications n in allNotifications)
+            {
+                if (n.Person == person)
+                {
+                    ret.Add(n);
+                    
+                }
+            }
+
+            return ret;
+        }
+
         public Boolean ExistsById(int id)
         {
             ObservableCollection<Notifications> allPatients = GetAll();

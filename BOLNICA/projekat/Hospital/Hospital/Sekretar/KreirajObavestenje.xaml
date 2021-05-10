@@ -51,7 +51,7 @@
             Text=""
             TextWrapping="Wrap" />
         <CheckBox
-            Name="upravnikCh"
+            x:Name="upravnikCh"
             Width="73"
             Height="26"
             Margin="136,44,0,0"

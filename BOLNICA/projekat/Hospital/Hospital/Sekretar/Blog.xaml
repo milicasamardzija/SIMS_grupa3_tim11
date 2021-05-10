@@ -46,7 +46,7 @@
             RowHeight="40">
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Width="100"
+                    Width="106"
                     Binding="{Binding Date}"
                     Header="Datum prijema" />
                 <DataGridTextColumn
@@ -65,13 +65,20 @@
             Margin="419,56,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Obrisi" 
-            Click="Delete"/>
+            Click="Delete"
+            Content="Obrisi" />
         <Calendar
             Width="185"
             Height="181"
-            Margin="586,124,0,0"
+            Margin="584,158,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top" />
+        <Image
+            Width="168"
+            Height="114"
+            Margin="584,44,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Source="logo-removebg-preview.png" />
     </Grid>
 </Page>

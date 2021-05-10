@@ -25,13 +25,14 @@ namespace Hospital.Sekretar
         public String person;
         private NotificationsFileStorage storage;
         public ObservableCollection<Notifications> listNotification { get; set; }
+        public ObservableCollection<Notifications> myTableUpdate;
 
-        public KreirajObavestenje()
+        public KreirajObavestenje(ObservableCollection<Notifications> list)
         {
             InitializeComponent();
             storage = new NotificationsFileStorage();
             listNotification = loadNotifications();
-            
+            myTableUpdate = list;
         }
         public int generisiId()
         {
@@ -70,22 +71,23 @@ namespace Hospital.Sekretar
                 storage.Save(notification);
 
             }
-            if ((bool)lekarCh.IsChecked)
+           else if ((bool)lekarCh.IsChecked)
                 {
                 person = "Lekar";
                 Notifications notification = new Notifications(title.Text, content.Text, date, generisiId(), person);
                 storage.Save(notification);
             }
-            if ((bool)pacijentCh.IsChecked) {
+           else if ((bool)pacijentCh.IsChecked) {
                 person = "Pacijent";
                 Notifications notification = new Notifications(title.Text, content.Text, date, generisiId(), person);
                 storage.Save(notification);
             }
-            if ((bool)sekretarCh.IsChecked)
+           else if ((bool)sekretarCh.IsChecked)
             {
                 person = "Sekretar";
                 Notifications notification = new Notifications(title.Text, content.Text, date, generisiId(), person);
                 storage.Save(notification);
+                myTableUpdate.Add(notification);
             }
             else
             {
