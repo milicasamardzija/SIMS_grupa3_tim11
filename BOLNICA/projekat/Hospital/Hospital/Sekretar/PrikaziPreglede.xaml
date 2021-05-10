@@ -21,7 +21,7 @@
         <DataGrid
             Name="sviPregledi"
             Height="258"
-            Margin="28,51,26.6,0"
+            Margin="81,49,97.6,0"
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
             ItemsSource="{Binding listCheckups}">
@@ -29,40 +29,36 @@
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="80"
-                    Binding="{Binding Patient.Name}"
-                    Header="Ime pacijenta" />
+                    Binding="{Binding IdCh}"
+                    Header="Id termina" />
+
                 <DataGridTextColumn
-                    Width="105"
-                    Binding="{Binding Patient.Surname}"
-                    Header="Prezime pacijenta" />
-                <DataGridTextColumn
-                    Width="70"
-                    Binding="{Binding Patient.PatientId}"
-                    Header="Id pacijenta" />
-                <DataGridTextColumn
-                    Width="60"
+                    Width="120"
                     Binding="{Binding Date}"
                     Header="Datum" />
-                <DataGridTextColumn
-                    Width="50"
-                    Binding="{Binding Time}"
-                    Header="Vreme" />
+            
                 <DataGridTextColumn
                     Width="50"
                     Binding="{Binding Duration}"
                     Header="Trajanje" />
                 <DataGridTextColumn
-                    Width="70"
-                    Binding="{Binding Doctor.Name}"
-                    Header="Ime lekara" />
-                <DataGridTextColumn
-                    Width="90"
-                    Binding="{Binding Doctor.Surname}"
-                    Header="Prezime lekara" />
-                <DataGridTextColumn
                     Width="80"
-                    Binding="{Binding Doctor.DoctorId}"
-                    Header="Id lekara" />
+                    Binding="{Binding Type}"
+                    Header="Tip pregleda" />
+                <DataGridTextColumn
+                    Width="50"
+                    Binding="{Binding IdRoom}"
+                    Header="Id sobe" />
+                <DataGridTextColumn
+                    Width="65"
+                    Binding="{Binding IdDoctor}"
+                    Header="Id doktora" />
+                <DataGridTextColumn
+                    Width="70"
+                    Binding="{Binding IdPatient}"
+                    Header="Id pacijenta" />
+
+
             </DataGrid.Columns>
         </DataGrid>
         <Button
@@ -72,7 +68,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BorderBrush="#FF0E1A9F"
-            Click="Add"
+            Click="AddNewCheckup"
             Content="        Dodaj"
             Cursor="Hand"
             FontFamily="Chooper Black"

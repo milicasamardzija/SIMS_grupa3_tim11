@@ -1,7 +1,3 @@
-// File:    Appointment.cs
-// Author:  Nevena
-// Created: Monday, March 22, 2021 3:25:31 PM
-// Purpose: Definition of Class Appointment
 
 using Newtonsoft.Json;
 using System;
@@ -10,24 +6,17 @@ using System.ComponentModel;
 
 public class Appointment : INotifyPropertyChanged
 {
-    // public DateTime date { get; set; }   
-    //public DateTime time { get; set; }
-    // public double duration { get; set; }
-    // public int idA { get; set; }
 
-    // public Patient patient { get; set; }
-    // public Doctor doctor { get; set; }
+    private DateTime date;
+    private String time;
+    private double duration;
+    private int idA;
+    private Patient patient;
+    private Doctor doctor;
+    private Room room;
+    private int idRoom;
 
-    public DateTime date;
-    public String time;
-    public double duration;
-    public int idA;
-    public Patient patient;
-    public Doctor doctor;
-    public Room room;
-    public int idRoom { get; set; }
-
-    public DateTime dateTime { get; set; }
+    private DateTime dateTime;
 
     public Appointment() { }
 
@@ -49,6 +38,8 @@ public class Appointment : INotifyPropertyChanged
         this.duration = v2;
         this.doctor = doctor;
         this.patient = patient;
+        
+
     }
 
     public Appointment(int v, DateTime dateTime, double v2, Doctor doctor, Patient patient, int roomId)
@@ -182,7 +173,7 @@ public class Appointment : INotifyPropertyChanged
             }
         }
     }
-
+    [JsonIgnore]
     public Patient Patient
     {
         get
@@ -198,7 +189,7 @@ public class Appointment : INotifyPropertyChanged
             }
         }
     }
-
+    [JsonIgnore]
     public Doctor Doctor
     {
         get

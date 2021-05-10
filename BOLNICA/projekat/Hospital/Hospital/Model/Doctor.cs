@@ -1,16 +1,65 @@
-// File:    Doctor.cs
-// Author:  Nevena
-// Created: Monday, March 22, 2021 3:21:07 PM
-// Purpose: Definition of Class Doctor
 
 using Hospital.Model;
 using System;
 
 public class Doctor : User
 {
-   public int doctorId { get; set; }
+
   // public String specialization;
    public int freeDays = 25;
-   public SpecializationType specializationType { get; set; }
+   private SpecializationType specializationType;
 
+   private int doctorId;
+ 
+
+
+
+
+    public int DoctorId
+    {
+        get
+        {
+            return doctorId;
+        }
+        set
+        {
+            if (value != doctorId)
+            {
+                doctorId = value;
+                OnProperychanged("DoctorId");
+            }
+        }
+    }
+
+    public SpecializationType SpecializationType
+    {
+        get
+        {
+            return specializationType;
+        }
+        set
+        {
+            if (value != specializationType)
+            {
+                specializationType = value;
+                OnProperychanged("SpecializationType");
+            }
+        }
+    }
+
+    public int FreeDays
+    {
+        get
+        {
+            return freeDays;
+        }
+        set
+        {
+            if (value != freeDays)
+            {
+                freeDays= value;
+                OnProperychanged("FreeDays");
+            }
+        }
+    }
 }

@@ -17,9 +17,7 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for WindowPacijent.xaml
-    /// </summary>
+  
     public partial class WindowPacijent : Window
     {
         public int id { get; set; }
@@ -92,8 +90,10 @@ namespace Hospital
 
             foreach (Appointment appointment in rs) //prolazimo kroz sve termine u fajlu
             {
-                if (appointment.patient.PatientId == id) //trazimo termin koji ima pacijenta sa prosledjenim id-jem
-                { 
+
+                if (appointment.Patient.PatientId == id) //trazimo termin koji ima pacijenta sa prosledjenim id-jem
+                {
+
                     ret.Add(appointment); //dodajemo taj termin u listu koju vracamo za ispis u tabelu
                 }
             }

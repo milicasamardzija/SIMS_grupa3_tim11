@@ -11,17 +11,42 @@ namespace Hospital.Model
 {
     public class Checkup : Appointment
     {
+
+        
+
+        private CheckupType type;
+        private int idCh;
+        private int idDoctor;
+        private int idPatient;
+
         public Checkup() { }
+        public Checkup(int idCh, int idD, int idP, DateTime dateAndTime, int idR, CheckupType type) 
+        {
+            this.idCh = idCh;
+            this.idDoctor = idD;
+            this.idPatient = idP;
+            this.Date = dateAndTime;
+            this.IdRoom = idR;
+            this.Type=type ;//bice default pregled postvljeno pri kreiranju
+            this.Duration = 30; //fiksno za pregled!
+
+        }
+
         public Checkup(int ida, int ch, DateTime dateTime1, String ti, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor)
         {
-            this.idA = ida;
-            this.date = dateTime1;
-            this.time = ti;
-            this.duration = v2;
-            this.doctor = doctor;
-            this.patient = patient;
-            this.idCh = ch;
-            this.type = selectedIndex;
+            this.IdA = ida;
+            this.Date = dateTime1;
+            this.Time = ti;
+            this.Duration = v2;
+            this.Doctor = doctor;
+            this.Patient = patient;
+            this.IdCh = ch;
+            this.Type = selectedIndex;
+
+            this.IdDoctor = doctor.DoctorId;
+            this.IdPatient = patient.PatientId;    
+
+
         }
 
         public Checkup(int ida, int ch, DateTime dateTime1, String ti, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor, int roomId)
@@ -47,8 +72,6 @@ namespace Hospital.Model
             }
         }
 
-        public CheckupType type;
-        public int idCh;
 
         public CheckupType Type
         {
@@ -78,6 +101,36 @@ namespace Hospital.Model
                 {
                     idCh = value;
                     OnPropertyChanged("IdCh");
+                }
+            }
+        }
+        public int IdDoctor
+        {
+            get
+            {
+                return idDoctor;
+            }
+            set
+            {
+                if (value != idDoctor)
+                {
+                    idDoctor = value;
+                    OnPropertyChanged("IdDoctor");
+                }
+            }
+        }
+        public int IdPatient
+        {
+            get
+            {
+                return idPatient;
+            }
+            set
+            {
+                if (value != idPatient)
+                {
+                    idPatient = value;
+                    OnPropertyChanged("IdPatient");
                 }
             }
         }

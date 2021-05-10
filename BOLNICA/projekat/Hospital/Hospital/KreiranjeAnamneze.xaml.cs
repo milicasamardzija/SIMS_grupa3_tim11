@@ -22,17 +22,17 @@ namespace Hospital
     /// </summary>
     public partial class KreiranjeAnamneze : Window
     {
-        public ObservableCollection<Checkup> listCheckup;
+        public List<Checkup> listCheckup;
         public Checkup checkup;
         public int idx;
 
-        public KreiranjeAnamneze(ObservableCollection<Checkup> list, Checkup selectedCheckup, int selectedIndex)
+        public KreiranjeAnamneze(List<Checkup> list, Checkup selectedCheckup, int selectedIndex)
         {
             InitializeComponent();
             listCheckup = list;
             checkup = selectedCheckup;
             idx = selectedIndex;
-            textIme.SelectedText = Convert.ToString(selectedCheckup.patient);
+            textIme.SelectedText = Convert.ToString(selectedCheckup.Patient);
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

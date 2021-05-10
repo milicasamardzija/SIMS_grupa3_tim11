@@ -1,4 +1,4 @@
-﻿using Hospital.Model;
+using Hospital.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -42,6 +42,10 @@ namespace Hospital
             termin = selectedApp;
             index = selectedIndex;
             idPatient = idP;
+
+
+
+            idText.SelectedText = Convert.ToString(selectedApp.IdA);
 
 
             lista = new List<string>();
@@ -94,11 +98,13 @@ namespace Hospital
 
 
 
+            dateText.SelectedDate = selectedApp.DateTime;
+            timeText.SelectedValue = selectedApp.DateTime.ToString("HH:mm");
 
-            dateText.SelectedDate = selectedApp.dateTime.Date;
-            timeText.SelectedItem = selectedApp.dateTime.ToString("HH:mm");
-            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, termin.dateTime.AddDays(-3));
-            CalendarDateRange kalendar1 = new CalendarDateRange(termin.dateTime.AddDays(3), DateTime.MaxValue);
+
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, termin.DateTime.AddDays(-3));
+            CalendarDateRange kalendar1 = new CalendarDateRange(termin.DateTime.AddDays(3), DateTime.MaxValue);
+
             dateText.BlackoutDates.Add(kalendar);
             dateText.BlackoutDates.Add(kalendar1);
 
@@ -149,11 +155,13 @@ namespace Hospital
 
 
 
+
             termin.dateTime = dt;
             termin.doctor = doktor1;
             termin.patient = patient;
             storage.DeleteById(termin.idA);
             storage.Save(termin);
+
 
             FunkcionalnostiFileStorage funkcionalnosti = new FunkcionalnostiFileStorage();
             Koristenjefunkcionalnosti funkcionalnost = new Koristenjefunkcionalnosti(DateTime.Now, idPatient, "izmena");

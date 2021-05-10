@@ -20,6 +20,10 @@ namespace Hospital.Sekretar
     public partial class PrikaziPreglede : Window
     {
 
+        public Doctor doctor;  //da nadjem lekara i ispisem ga 
+        public Patient patient; //da nadjem pacijenta i ispisem i njega
+        public PatientFileStorage pfs;
+        public DoctorFileStorage dfs;
        public  ObservableCollection<Checkup> listCheckups
         { 
             get;
@@ -33,33 +37,49 @@ namespace Hospital.Sekretar
         {
             InitializeComponent();
             this.DataContext = this;
-            listCheckups = loadJson();
+            listCheckups = loadJsonCheckups();
             
 
         }
 
-        private ObservableCollection<Checkup> loadJson()
+       public ObservableCollection<Checkup> loadJsonCheckups()
         {
             CheckupFileStorage cfs = new CheckupFileStorage();
-            ObservableCollection<Checkup> ch = new ObservableCollection<Checkup>(cfs.GetAll());
+            ObservableCollection<Checkup> ch = new ObservableCollection<Checkup>(cfs.GetAll()); 
+               
             return ch;
 
         }
+        private ObservableCollection<Doctor> loadDoctors() {
+            DoctorFileStorage dfs = new DoctorFileStorage();
+            ObservableCollection<Doctor> doctors = new ObservableCollection<Doctor>(dfs.GetAll());
 
-        private void Add(object sender, RoutedEventArgs e)
+            return doctors;
+        }
+        private ObservableCollection<Patient> loadPatients()
+        {
+            PatientFileStorage pfs = new PatientFileStorage();
+            ObservableCollection<Patient> patients = new ObservableCollection<Patient>(pfs.GetAll());
+
+            return patients;
+        }
+
+        private void AddNewCheckup(object sender, RoutedEventArgs e)
         {
             DodajPregled newCheckup = new DodajPregled();
             newCheckup.Show();
         }
         private void Delete(object sender, RoutedEventArgs e)
         {
-
+            ObrisiPregled del = new ObrisiPregled(listCheckups, (Checkup)sviPregledi.SelectedItem, sviPregledi.SelectedIndex);
+            del.Show();
         }
 
         private void Edit(object sender, RoutedEventArgs e)
         {
-
-        }
+            IzmeniPregled edit = new IzmeniPregled(listCheckups, (Checkup)sviPregledi.SelectedItem, sviPregledi.SelectedIndex);
+        edit.Show();
+          }
         private void Exit(object sender, RoutedEventArgs e)
         {
             this.Close();

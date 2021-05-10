@@ -57,7 +57,7 @@ namespace Hospital
                 {
                     if (doctor.username.Equals(ime.Text) && doctor.password.Equals(lozinka.Password))
                     {
-                        id = doctor.doctorId;
+                        id = doctor.DoctorId;
                         Pregled d = new Pregled(id);
                         d.Show();
                        // this.Close();

@@ -17,46 +17,37 @@ using System.Windows.Shapes;
 
 namespace Hospital.Sekretar
 {
-    /// <summary>
-    /// Interaction logic for SacuvajDatum.xaml
-    /// </summary>
-    public partial class SacuvajDatum : Window
+   
+    public partial class SlobodniLekari : Window
     {
         public List<Doctor> listDoctors { get; set; }
-        public Patient patient;
+        public Checkup checkup;
+        public CheckupController controller;
         public int idRoom;
-        public DateTime chosenDate;
-       
-        public CheckupController controller = new CheckupController();
-
-        public SacuvajDatum(DateTime date, int idR, Patient selectedPatient)
+        public DateTime newDate;
+        public SlobodniLekari(DateTime date, int idR, Checkup old)
         {
             InitializeComponent();
             this.DataContext = this;
-            patient = selectedPatient;
+            controller = new CheckupController();
+            checkup = old;
             idRoom = idR;
-            chosenDate = date;
-            listDoctors = findAvailableDoctors(date);
-
+            listDoctors = getAvailableDoctors(date);
+            newDate = date;
         }
 
-        public List<Doctor> findAvailableDoctors(DateTime date)
+        public List<Doctor> getAvailableDoctors(DateTime date)
         {
             return controller.availableDoctors(date);
         }
-
-        private void CreateCheckup(object sender, RoutedEventArgs e)
+        private void Save(object sender, RoutedEventArgs e)
         {
-            Doctor d = (Doctor)doctors.SelectedItem;
-            int idDoctor = d.DoctorId;
-            controller.createCheckup(new Checkup(0, idDoctor, patient.PatientId, chosenDate, idRoom, 0));
-            this.Close();
+            controller.createCheckup(new Checkup(0, checkup.IdDoctor, checkup.IdPatient, newDate, idRoom, 0));
         }
-
         private void Decline(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
 
+        }
     }
 }

@@ -143,7 +143,9 @@ namespace Hospital
 
         public void dodajSpecijalizacije()
         {
+
             SpecijalizacijaComboBox.ItemsSource = Enum.GetValues(typeof(SpecializationType));  
+
         }
 
         public List<Doctor> doktoriPoSpecijalizaciji()
@@ -168,7 +170,7 @@ namespace Hospital
             {
                 ComboBoxItem item = new ComboBoxItem();
                 item.Content = doctor.Name + "  " + doctor.Surname;
-                item.Tag = doctor.doctorId;
+                item.Tag = doctor.DoctorId;
                 DoktoriIsfiltrirani.Items.Add(item);
             }
 

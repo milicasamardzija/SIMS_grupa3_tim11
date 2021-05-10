@@ -41,7 +41,7 @@ public class DoctorFileStorage
 
         foreach (Doctor temp in allDoctors)
         {
-            if (temp.doctorId == doctor.doctorId)
+            if (temp.DoctorId == doctor.DoctorId)
             {
                 allDoctors.Remove(temp);
                 break;
@@ -56,7 +56,7 @@ public class DoctorFileStorage
 
         foreach (Doctor doctor in allDoctors)
         {
-            if (doctor.doctorId == id)
+            if (doctor.DoctorId == id)
             {
                 allDoctors.Remove(doctor);
                 break;
@@ -72,7 +72,7 @@ public class DoctorFileStorage
 
         foreach (Doctor doctor in allDoctors)
         {
-            if (doctor.doctorId == id)
+            if (doctor.DoctorId == id)
             {
                 ret = doctor;
                 break;
@@ -88,7 +88,7 @@ public class DoctorFileStorage
 
         foreach (Doctor doctor in allDoctors)
         {
-            if (doctor.doctorId == id)
+            if (doctor.DoctorId == id)
             {
                 ret = true;
                 break;

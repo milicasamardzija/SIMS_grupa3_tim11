@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Hospital.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,40 +13,41 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Collections.ObjectModel;
-using Hospital.Model;
 
-namespace Hospital
+namespace Hospital.Sekretar
 {
     /// <summary>
-    /// Interaction logic for DeleteDialog.xaml
+    /// Interaction logic for ObrisiPregled.xaml
     /// </summary>
-    public partial class DeleteDialog : Window
+    public partial class ObrisiPregled : Window
     {
-
-        public List<Checkup> listCheckup;
+        public ObservableCollection<Checkup> listCheckup;
         public int index;
         public int id;
+       
+      
 
-        public DeleteDialog(List<Checkup> list, Checkup selectedCheckup, int selectedIndex)
+        public ObrisiPregled(ObservableCollection<Checkup> list, Checkup selected, int selectedIndex)
         {
             InitializeComponent();
             listCheckup = list;
-            id = selectedCheckup.IdCh;
+            id = selected.IdCh;
             index = selectedIndex;
         }
 
-        private void btnYes_Click(object sender, RoutedEventArgs e)
+   
+
+        private void yesBtn(object sender, RoutedEventArgs e)
         {
             CheckupFileStorage st = new CheckupFileStorage();
             st.DeleteById(id);
             listCheckup.RemoveAt(index);
             this.Close();
         }
-
-        private void btnNo_Click(object sender, RoutedEventArgs e)
+        private void nobtn(object sender, RoutedEventArgs e)
         {
             this.Close();
+
         }
     }
 }

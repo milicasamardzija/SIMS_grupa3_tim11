@@ -6,8 +6,8 @@
 using System;
 
 public enum CheckupType
-{
-   operation,
-   checkup,
-   controlCheckup
+{ 
+   operacija,
+   pregled,
+   kontrola
 }

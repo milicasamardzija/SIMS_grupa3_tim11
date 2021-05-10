@@ -11,11 +11,15 @@ namespace Hospital.Service
     class RoomsService
     {
         private RenovationFileStorage renovationStorage;
+
         private CheckupFileStorage checkupStorage;
         private StaticInvnetoryMovementFileStorage inventoryMovementStorage;
         private RoomInventoryFileStorage roominventoryStorage;
         private InventoryFileStorage inventoryStorage;
         private StaticInvnetoryMovementFileStorage staticInventoryStorage;
+         private AppointmentFileStorage appointmentsStorage;
+          private RoomFileStorage roomStorage;
+
         public RoomsService()
         {
             renovationStorage = new RenovationFileStorage();
@@ -24,7 +28,12 @@ namespace Hospital.Service
             roominventoryStorage = new RoomInventoryFileStorage();
             inventoryStorage = new InventoryFileStorage();
             staticInventoryStorage = new StaticInvnetoryMovementFileStorage();
+            appointmentsStorage = new AppointmentFileStorage();
+            roomStorage = new RoomFileStorage();
+
+        
         }
+    
         public void zakaziRenoviranje(RoomRenovation renovation)
         {
 
@@ -151,6 +160,30 @@ namespace Hospital.Service
                 }
             }
             return false;
+        }
+
+        public List<Room> availableRooms(DateTime dateTime)
+        {
+            List<Room> availableRooms = new List<Room>();
+
+            foreach(Room room in roomStorage.GetAll())
+            {
+                foreach(Checkup checkup in checkupStorage.GetAll())
+                {
+                    if(room.RoomId==checkup.IdRoom) 
+                    {
+                       if(checkup.Date!=dateTime.Date) //ovo proverava i datum i vreme
+                        {
+                            availableRooms.Add(room);
+                        }
+                       else
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+            return availableRooms;
         }
     }
 }

@@ -24,7 +24,6 @@ namespace Hospital.Sekretar
         public ObservableCollection<Patient> listPatient;
         public ObservableCollection<MedicalRecord> listRecord;
         int index;
-       
         public int id;
 
 
@@ -62,10 +61,6 @@ namespace Hospital.Sekretar
 
             index = sel;
 
-
-       
-
-
         }
 
         public ObservableCollection<Alergens> loadJasonAllAlergens()
@@ -88,8 +83,6 @@ namespace Hospital.Sekretar
             
                 a.Add(al);
             }
-         
-
             return a;
            
         }
