@@ -119,6 +119,9 @@
     <Compile Include="Sekretar\DodajObavestenjeBlog.xaml.cs">
       <DependentUpon>DodajObavestenjeBlog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sekretar\HitanPregled.xaml.cs">
+      <DependentUpon>HitanPregled.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sekretar\ObavestenjaBlog.xaml.cs">
       <DependentUpon>ObavestenjaBlog.xaml</DependentUpon>
     </Compile>
@@ -467,6 +470,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Sekretar\DodajObavestenjeBlog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sekretar\HitanPregled.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -910,6 +917,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="zdravo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Sekretar\Help-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
