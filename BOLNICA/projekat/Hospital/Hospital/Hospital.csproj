@@ -70,13 +70,10 @@
     <Compile Include="BrisanjeRecenzijeUpravnik.xaml.cs">
       <DependentUpon>BrisanjeRecenzijeUpravnik.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="BrisanjeRenovacijeSIgurnost.xaml.cs">
       <DependentUpon>BrisanjeRenovacijeSIgurnost.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="Controller\CheckupController.cs" />
-
     <Compile Include="Controller\InventoryController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
     <Compile Include="Controller\RoomsController.cs" />
@@ -123,7 +120,6 @@
     <Compile Include="Model\SpecializationType.cs" />
     <Compile Include="Model\StaticInventoryMovement.cs" />
     <Compile Include="Model\StaticInvnetoryMovementFileStorage.cs" />
-
     <Compile Include="Model\Survey.cs" />
     <Compile Include="Model\SurveyFileStorage.cs" />
     <Compile Include="OceniteBolnicu.xaml.cs">
@@ -147,9 +143,7 @@
     <Compile Include="SacuvanaAnketa.xaml.cs">
       <DependentUpon>SacuvanaAnketa.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="Prikaz\ZauzetiTermini.cs" />
-
     <Compile Include="Sekretar\Alergeni.xaml.cs">
       <DependentUpon>Alergeni.xaml</DependentUpon>
     </Compile>
@@ -162,7 +156,6 @@
     <Compile Include="Sekretar\InformacijeKlinike.xaml.cs">
       <DependentUpon>InformacijeKlinike.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="Sekretar\KreirajObavestenje.xaml.cs">
       <DependentUpon>KreirajObavestenje.xaml</DependentUpon>
     </Compile>
@@ -739,12 +732,6 @@
     <Page Include="Sekretar\SacuvajLekara.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-
-    </Page>
-    <Page Include="PrikazRadovaUSobi.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-
     </Page>
     <Page Include="PrikazSobaRenoviranje.xaml">
       <SubType>Designer</SubType>

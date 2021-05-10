@@ -173,7 +173,7 @@ public class Appointment : INotifyPropertyChanged
             }
         }
     }
-    [JsonIgnore]
+    
     public Patient Patient
     {
         get
@@ -189,7 +189,7 @@ public class Appointment : INotifyPropertyChanged
             }
         }
     }
-    [JsonIgnore]
+   
     public Doctor Doctor
     {
         get

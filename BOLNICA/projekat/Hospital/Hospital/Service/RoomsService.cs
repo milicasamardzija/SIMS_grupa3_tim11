@@ -92,7 +92,7 @@ namespace Hospital.Service
         {
             foreach (Checkup checkup in checkupStorage.GetAll())
             {
-                if (checkup.idRoom == movement.RoomInId)
+                if (checkup.IdRoom == movement.RoomInId)
                 {
                     if (checkup.Date == movement.Date)
                     {
@@ -116,7 +116,7 @@ namespace Hospital.Service
        {
             foreach (Checkup checkup in checkupStorage.GetAll())
             {
-                 if (checkup.idRoom == renovation.IdRoom)
+                 if (checkup.IdRoom == renovation.IdRoom)
                  {
                      if (checkup.Date.Date == renovation.DateBegin.Date)
                      {
@@ -141,7 +141,7 @@ namespace Hospital.Service
         {
             foreach (RoomRenovation renovation in renovationStorage.GetAll())
             {
-                if (renovation.IdRoom == checkup.idRoom)
+                if (renovation.IdRoom == checkup.IdRoom)
                 {
                     if (checkup.Date == renovation.DateBegin)
                     {

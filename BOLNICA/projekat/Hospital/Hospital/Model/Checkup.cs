@@ -51,15 +51,15 @@ namespace Hospital.Model
 
         public Checkup(int ida, int ch, DateTime dateTime1, String ti, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor, int roomId)
         {
-            this.idA = ida;
-            this.date = dateTime1;
-            this.time = ti;
-            this.duration = v2;
-            this.doctor = doctor;
-            this.patient = patient;
+            this.IdA = ida;
+            this.Date = dateTime1;
+            this.Time = ti;
+            this.Duration = v2;
+            this.Doctor = doctor;
+            this.Patient = patient;
             this.idCh = ch;
             this.type = selectedIndex;
-            this.idRoom = roomId;
+            this.IdRoom = roomId;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

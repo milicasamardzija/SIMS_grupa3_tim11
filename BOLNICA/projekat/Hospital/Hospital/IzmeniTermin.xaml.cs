@@ -43,11 +43,6 @@ namespace Hospital
             index = selectedIndex;
             idPatient = idP;
 
-
-
-            idText.SelectedText = Convert.ToString(selectedApp.IdA);
-
-
             lista = new List<string>();
             AppointmentFileStorage af = new AppointmentFileStorage();
             termini = af.GetAll();
@@ -156,10 +151,10 @@ namespace Hospital
 
 
 
-            termin.dateTime = dt;
-            termin.doctor = doktor1;
-            termin.patient = patient;
-            storage.DeleteById(termin.idA);
+            termin.DateTime = dt;
+            termin.Doctor = doktor1;
+            termin.Patient = patient;
+            storage.DeleteById(termin.IdA);
             storage.Save(termin);
 
 
@@ -182,8 +177,8 @@ namespace Hospital
             foreach (Appointment t in termini)
             {
 
-                string sat = t.dateTime.Hour.ToString();
-                string minute = t.dateTime.Minute.ToString();
+                string sat = t.DateTime.Hour.ToString();
+                string minute = t.DateTime.Minute.ToString();
                 string izbaci = "";
                 int brojac1 = 0;
                 int brojac2 = 0;
@@ -212,11 +207,11 @@ namespace Hospital
 
                 }
 
-                if (t.Doctor.jmbg.Equals(termin.doctor.jmbg))
+                if (t.Doctor.jmbg.Equals(termin.Doctor.jmbg))
                 {
-                    if (t.dateTime.Date == dateText.SelectedDate && (timeText.SelectedItem.Equals(izbaci)))
+                    if (t.DateTime.Date == dateText.SelectedDate && (timeText.SelectedItem.Equals(izbaci)))
                     {
-                        lekari.Remove(termin.doctor);
+                        lekari.Remove(termin.Doctor);
                          doktor.ItemsSource = lekari;
                         doktor.SelectedIndex = lekari.Count() - 1;
 
@@ -231,10 +226,10 @@ namespace Hospital
         {
             foreach (Appointment t in termini)
             {
-                if (t.dateTime.Date == dateText.SelectedDate)
+                if (t.DateTime.Date == dateText.SelectedDate)
                 {
-                    string sat = t.dateTime.Hour.ToString();
-                    string minute = t.dateTime.Minute.ToString();
+                    string sat = t.DateTime.Hour.ToString();
+                    string minute = t.DateTime.Minute.ToString();
                     string izbaci = "";
                     int brojac1 = 0;
                     int brojac2 = 0;

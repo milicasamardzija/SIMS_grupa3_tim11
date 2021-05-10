@@ -153,7 +153,7 @@ namespace Hospital
             List<Doctor> filtratedDoctors = new List<Doctor>();
             foreach (Doctor doctor in storage.GetAll())
             {  
-                if(doctor.specializationType == (SpecializationType)SpecijalizacijaComboBox.SelectedItem)
+                if(doctor.SpecializationType == (SpecializationType)SpecijalizacijaComboBox.SelectedItem)
                 {
                     filtratedDoctors.Add(doctor);
                 }

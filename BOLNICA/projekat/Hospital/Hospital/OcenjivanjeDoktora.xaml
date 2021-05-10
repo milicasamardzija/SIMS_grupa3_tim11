@@ -23,7 +23,7 @@
                       ItemsSource="{Binding Path = termini}" SelectionChanged="ListaObavljenihTermina_SelectionChanged" 
                       >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="                   OBAVLJENI PREGLEDI" Binding="{Binding DateTime}" Width="250"/>
+                <DataGridTextColumn Header="                   OBAVLJENI PREGLEDI" Binding="{Binding Date}" Width="250"/>
 
                 <DataGridTemplateColumn Header="                              ANKETA"  Width="250">
                     <DataGridTemplateColumn.CellTemplate>

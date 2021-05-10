@@ -72,7 +72,7 @@ namespace Hospital
             string komentarisano = komentar.Text;
             int id = sveAnkete.GetAll().Count() + 1;
 
-            Survey novaAnketa = new Survey(id, komentarisano, ocenjeno, lekar,termin.idA);
+            Survey novaAnketa = new Survey(id, komentarisano, ocenjeno, lekar,termin.IdA);
 
             sveAnkete.Save(novaAnketa);
             obavljeniTermini.RemoveAt(index);

@@ -65,8 +65,8 @@ namespace Hospital
 
             foreach (Appointment appointment in rs)
             {
-                if (appointment.patient.PatientId == id)
-                { if (DateTime.Now > appointment.dateTime)
+                if (appointment.Patient.PatientId == id)
+                { if (DateTime.Now > appointment.Date)
                     {
                         ret.Add(appointment);
                     }
@@ -89,7 +89,7 @@ namespace Hospital
 
         public void UpdateTable()
         {
-            ListaObavljenihTermina.Items.Remove(((Appointment)ListaObavljenihTermina.SelectedItem).idA);
+            ListaObavljenihTermina.Items.Remove(((Appointment)ListaObavljenihTermina.SelectedItem).IdA);
         }
     }
 }
