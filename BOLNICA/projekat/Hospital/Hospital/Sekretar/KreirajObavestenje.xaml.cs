@@ -93,7 +93,7 @@ namespace Hospital.Sekretar
             {
                 MessageBox.Show("Oznacite kome saljete obavestenje");
             }
-           
+            this.Close();
         }
         private void CloseBtn(object sender, RoutedEventArgs e)
         {

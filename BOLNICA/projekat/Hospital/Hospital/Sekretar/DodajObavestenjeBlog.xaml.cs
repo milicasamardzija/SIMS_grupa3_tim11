@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace Hospital.Sekretar
 {
-    /// <summary>
-    /// Interaction logic for DodajObavestenjeBlog.xaml
-    /// </summary>
+    
     public partial class DodajObavestenjeBlog : Window
     {
         public ObservableCollection<Notice> listN { get; set; }
@@ -66,6 +64,7 @@ namespace Hospital.Sekretar
             storage.save(n);
           
             myUpdate.Add(n); //da se vidi da postoji
+            this.Close();
             
         }
         private void ne(object sender, RoutedEventArgs e)

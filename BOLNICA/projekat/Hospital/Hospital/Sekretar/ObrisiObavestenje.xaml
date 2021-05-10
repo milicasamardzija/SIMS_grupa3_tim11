@@ -6,8 +6,8 @@
     xmlns:local="clr-namespace:Hospital.Sekretar"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="ObrisiObavestenje"
-    Width="400"
-    Height="300"
+    Width="360.704"
+    Height="261.972"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
@@ -19,24 +19,34 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Label
-            Margin="84,68,0,0"
+            Margin="60,65,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Da li zelite da obrisete obavestenje?" />
+            Content="Da li zelite da obrisete obavestenje?"
+            FontSize="14"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
         <Button
-            Width="75"
-            Margin="284,160,0,0"
+            Width="71"
+            Height="24"
+            Margin="234,163,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Yes"
-            Content="Da" />
+            Content="Da"
+            FontSize="14"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
         <Button
             Width="75"
-            Margin="28,165,0,0"
+            Margin="60,165,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="No"
-            Content="Ne" />
+            Content="Ne"
+            FontSize="14"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
 
     </Grid>
 </Window>

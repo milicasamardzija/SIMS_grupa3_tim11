@@ -183,9 +183,6 @@
     <Compile Include="Sekretar\Pacijenti.xaml.cs">
       <DependentUpon>Pacijenti.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\PrikaziMojaObavestenja.xaml.cs">
-      <DependentUpon>PrikaziMojaObavestenja.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Sekretar\PrikaziObavestenja.xaml.cs">
       <DependentUpon>PrikaziObavestenja.xaml</DependentUpon>
     </Compile>
@@ -548,9 +545,6 @@
     <Compile Include="Sobe.xaml.cs">
       <DependentUpon>Sobe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\UredjivanjeBloga.xaml.cs">
-      <DependentUpon>UredjivanjeBloga.xaml</DependentUpon>
-    </Compile>
     <Compile Include="WindowPacijent.xaml.cs">
       <DependentUpon>WindowPacijent.xaml</DependentUpon>
     </Compile>
@@ -725,10 +719,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sekretar\PrikaziMojaObavestenja.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Sekretar\PrikaziObavestenja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -778,10 +768,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UputZaAmbulantnoSpecijalistickiPregled.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sekretar\UredjivanjeBloga.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
