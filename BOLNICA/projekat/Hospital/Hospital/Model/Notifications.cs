@@ -14,15 +14,17 @@ namespace Hospital.Model
         private String content;
         private DateTime date;
        private int idNotification;
+        private String person;
 
         public Notifications() {}
 
-        public Notifications(String t, String c, DateTime d, int id)
+        public Notifications(String t, String c, DateTime d, int id, String p)
         {
             this.title = t;
             this.content = c;
             this.date = d;
             this.idNotification = id;
+            this.person = p;
         }
         public int IdNotification
         {
@@ -71,6 +73,21 @@ namespace Hospital.Model
                 }
             }
         }
+        public String Person
+        {
+            get
+            {
+                return person;
+            }
+            set
+            {
+                if (value != person)
+                {
+                    person = value;
+                    OnPropertyChanged("Person");
+                }
+            }
+        }
         public String Title
         {
             get
@@ -89,7 +106,10 @@ namespace Hospital.Model
 
         private void OnPropertyChanged(string v)
         {
-            throw new NotImplementedException();
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(v));
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -29,6 +29,10 @@ namespace Hospital.Controller
             
         }
 
+        public void changeCheckup(Checkup c)
+        {
+            service.changeCheckup( c);
+        }
         public void createCheckup(Checkup c)
         {
             service.createCheckup(c);

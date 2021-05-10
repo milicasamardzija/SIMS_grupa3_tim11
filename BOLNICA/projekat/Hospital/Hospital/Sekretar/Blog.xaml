@@ -27,7 +27,7 @@
             Click="newNotification"
             Content="Novo obavestenje" />
         <Button
-            Width="114"
+            Width="106"
             Height="38"
             Margin="235,56,0,0"
             HorizontalAlignment="Left"
@@ -36,12 +36,42 @@
             Content="Blog" />
         <DataGrid
             Name="mojaObavestenja"
-            Width="479"
+            Width="521"
             Height="196"
             Margin="44,124,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            ItemsSource="{Binding listNotification}" />
-
+            AutoGenerateColumns="False"
+            ItemsSource="{Binding listNotification}"
+            RowHeight="40">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="100"
+                    Binding="{Binding Date}"
+                    Header="Datum prijema" />
+                <DataGridTextColumn
+                    Width="120"
+                    Binding="{Binding Title}"
+                    Header="Naslov obavestenja" />
+                <DataGridTextColumn
+                    Width="300"
+                    Binding="{Binding Content}"
+                    Header="Sadrzaj" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button
+            Width="88"
+            Height="38"
+            Margin="419,56,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Obrisi" 
+            Click="Delete"/>
+        <Calendar
+            Width="185"
+            Height="181"
+            Margin="586,124,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
     </Grid>
 </Page>

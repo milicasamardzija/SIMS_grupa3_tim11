@@ -27,21 +27,28 @@ namespace Hospital.Sekretar
         public int idRoom;
         public String time;
         public Checkup oldDatas;
-        
+        public int index;
+        public ObservableCollection<Checkup> listCheckup;
+
+
         public IzmeniPregled(ObservableCollection<Checkup> list, Checkup selected, int sel)
         {
             InitializeComponent();
             this.DataContext = this;
             controller = new CheckupController();
             oldDatas = selected;
+            index = sel;
+            listCheckup = list;
            
 
         }
 
         private void Find(object sender, RoutedEventArgs e)
-        {
+        {  
             DateTime d = (DateTime)datum.SelectedDate;
             SlobodniLekari lekari = new SlobodniLekari(getDate(d), idRoom, oldDatas);
+            
+
             lekari.Show();
         }
         private void Decline(object sender, RoutedEventArgs e)

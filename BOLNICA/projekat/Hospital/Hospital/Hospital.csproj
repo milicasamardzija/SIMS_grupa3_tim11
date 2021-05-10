@@ -165,6 +165,9 @@
     <Compile Include="Sekretar\IzmeniPregled.xaml.cs">
       <DependentUpon>IzmeniPregled.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sekretar\ObrisiObavestenje.xaml.cs">
+      <DependentUpon>ObrisiObavestenje.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sekretar\ObrisiPregled.xaml.cs">
       <DependentUpon>ObrisiPregled.xaml</DependentUpon>
     </Compile>
@@ -685,6 +688,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Sekretar\Nalozi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sekretar\ObrisiObavestenje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

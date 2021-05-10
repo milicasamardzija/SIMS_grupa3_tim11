@@ -8,6 +8,93 @@
     Title="KreirajObavestenje"
     Width="500"
     Height="450"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid />
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="0*" />
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Offset="0" Color="Gray" />
+                <GradientStop Offset="1" Color="White" />
+                <GradientStop Offset="0.094" Color="#FF2BACC5" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label
+            Margin="45,89,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Naslov" />
+        <Label
+            Margin="43,142,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Sadrzaj" />
+        <TextBox
+            Name="content"
+            Width="317"
+            Height="118"
+            Margin="96,154,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="title"
+            Width="317"
+            Height="22"
+            Margin="96,93,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap" />
+        <CheckBox
+            Name="upravnikCh"
+            Width="73"
+            Height="26"
+            Margin="136,44,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Upravnik" />
+        <Label
+            Margin="43,38,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Odaberi clana:" />
+        <CheckBox
+            x:Name="pacijentCh"
+            Margin="214,44,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Pacijent" />
+        <CheckBox
+            x:Name="lekarCh"
+            Margin="298,44,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Lekar" />
+        <CheckBox
+            x:Name="sekretarCh"
+            Margin="361,44,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Sekretar" />
+        <Button
+            Width="75"
+            Margin="369,341,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="SendBtn"
+            Content="Posalji " />
+        <Button
+            Width="75"
+            Margin="71,341,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="CloseBtn"
+            Content="Odustani" />
+
+    </Grid>
 </Window>

@@ -25,6 +25,7 @@ namespace Hospital.Sekretar
         public CheckupController controller;
         public int idRoom;
         public DateTime newDate;
+        
         public SlobodniLekari(DateTime date, int idR, Checkup old)
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace Hospital.Sekretar
             idRoom = idR;
             listDoctors = getAvailableDoctors(date);
             newDate = date;
+           
         }
 
         public List<Doctor> getAvailableDoctors(DateTime date)
@@ -42,7 +44,7 @@ namespace Hospital.Sekretar
         }
         private void Save(object sender, RoutedEventArgs e)
         {
-            controller.createCheckup(new Checkup(0, checkup.IdDoctor, checkup.IdPatient, newDate, idRoom, 0));
+            controller.changeCheckup(new Checkup(0, checkup.IdDoctor, checkup.IdPatient, newDate, idRoom, 0));
         }
         private void Decline(object sender, RoutedEventArgs e)
         {

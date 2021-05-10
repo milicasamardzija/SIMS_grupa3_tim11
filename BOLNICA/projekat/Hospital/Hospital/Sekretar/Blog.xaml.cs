@@ -21,13 +21,13 @@ namespace Hospital
   
     public partial class Blog : Page
     {
-        public ObservableCollection<Notifications> listNotifications { get; set; }
+        public ObservableCollection<Notifications> listNotification { get; set; }
         public Blog()
         {
             InitializeComponent();
             this.DataContext = this;
-            listNotifications = loadMyNotifications();
-            
+            listNotification = loadMyNotifications();
+          
         }
   
  
@@ -51,6 +51,18 @@ namespace Hospital
         {
             ObavestenjaBlog blog = new ObavestenjaBlog();
             blog.Show();
+        }
+        private void Delete(object sender, RoutedEventArgs e)
+        {
+            if (mojaObavestenja.SelectedIndex != -1)
+            {
+                ObrisiObavestenje nepotrebno = new ObrisiObavestenje(listNotification, (Notifications)mojaObavestenja.SelectedItem, mojaObavestenja.SelectedIndex);
+                nepotrebno.Show();
+            } else
+            {
+                MessageBox.Show("Niste izabrali obavestenje koje je potrebno obrisati!");
+            }
+
         }
     }
 }

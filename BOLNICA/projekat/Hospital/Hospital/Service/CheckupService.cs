@@ -96,5 +96,13 @@ namespace Hospital.Service
             }
             return doctors;
         }
+
+        public void changeCheckup(Checkup c)
+        {
+            checkupStorage.DeleteById(c.IdCh);
+            Checkup newCheckup = new Checkup(generateIdCheckup(), c.IdDoctor, c.IdPatient, c.Date, 0, CheckupType.pregled);
+            checkupStorage.Save(newCheckup);
+
+        }
     }
 }
