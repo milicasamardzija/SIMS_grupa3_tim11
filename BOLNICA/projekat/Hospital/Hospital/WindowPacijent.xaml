@@ -36,7 +36,7 @@
                       >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding IdA}" Width="180"/>
-                <DataGridTextColumn Header="DATUM" Binding="{Binding DateTime}" Width="180"/>
+                <DataGridTextColumn Header="DATUM" Binding="{Binding Date}" Width="180"/>
                 <DataGridTextColumn Header="TRAJANJE" Binding="{Binding Duration}" Width="180"/>
 
             </DataGrid.Columns>
