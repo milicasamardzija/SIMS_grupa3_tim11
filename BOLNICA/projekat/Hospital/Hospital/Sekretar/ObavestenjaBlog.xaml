@@ -6,34 +6,27 @@
     xmlns:local="clr-namespace:Hospital.Model"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="ObavestenjaBlog"
-    Width="400"
+    Width="450"
     Height="450"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid Margin="0,0,-6.4,0">
-
-        <TextBox
-            x:Name="textBlog"
-            Height="187"
-            Margin="30,26,39,0"
-            VerticalAlignment="Top"
-            Background="LightGray"
-            Text=""
-            TextWrapping="Wrap" />
         <Button
-            Width="129"
+            Width="90"
             Height="34"
-            Margin="232,320,0,0"
+            Margin="172,320,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Sacuvaj izmene"
+            Click="obrisi"
+            Content="obrisi"
             Cursor="Hand"
             FontWeight="Bold"
             Foreground="#FF0852AE"
             TextElement.FontSize="14" />
         <Button
-            Width="129"
-            Height="25"
-            Margin="47,329,0,0"
+            Width="88"
+            Height="34"
+            Margin="45,320,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="odustani"
@@ -42,5 +35,36 @@
             FontWeight="Bold"
             Foreground="#FF0852AE"
             TextElement.FontSize="14" />
+        <DataGrid
+            Name="textBlog"
+            Width="389"
+            Height="191"
+            Margin="28,42,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            AutoGenerateColumns="False"
+            ItemsSource="{Binding listNotice}"
+            RowHeight="30">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="400"
+                    Binding="{Binding notice}"
+                    Header="Sadrzaj zvanicnih obavestenja na blogu" />
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button
+            Width="80"
+            Height="28"
+            Margin="313,320,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="dodaj"
+            Content="Dodaj"
+            FontWeight="Bold"
+            Foreground="#FF0852AE"
+            TextElement.FontSize="14" />
+
     </Grid>
 </Window>

@@ -116,6 +116,9 @@
     <Compile Include="ObavestenjaUpravnik.xaml.cs">
       <DependentUpon>ObavestenjaUpravnik.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sekretar\DodajObavestenjeBlog.xaml.cs">
+      <DependentUpon>DodajObavestenjeBlog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sekretar\ObavestenjaBlog.xaml.cs">
       <DependentUpon>ObavestenjaBlog.xaml</DependentUpon>
     </Compile>
@@ -167,6 +170,9 @@
     </Compile>
     <Compile Include="Sekretar\ObrisiObavestenje.xaml.cs">
       <DependentUpon>ObrisiObavestenje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sekretar\ObrisiObavestenjeBlog.xaml.cs">
+      <DependentUpon>ObrisiObavestenjeBlog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sekretar\ObrisiPregled.xaml.cs">
       <DependentUpon>ObrisiPregled.xaml</DependentUpon>
@@ -463,6 +469,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Sekretar\DodajObavestenjeBlog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Sekretar\ObavestenjaBlog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -692,6 +702,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Sekretar\ObrisiObavestenje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sekretar\ObrisiObavestenjeBlog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

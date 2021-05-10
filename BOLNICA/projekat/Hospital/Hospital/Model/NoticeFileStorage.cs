@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -11,31 +12,22 @@ using System.Text;
     {
  
 
-    public List<Notice> GetAll()
+    public ObservableCollection<Notice> GetAll()
     {
-        List<Notice> allNotices = new List<Notice>();
-        allNotices = JsonConvert.DeserializeObject<List<Notice>>(File.ReadAllText(@"./../../../../Hospital/files/notices.json"));
+        ObservableCollection<Notice> allNotices = new ObservableCollection<Notice>();
+        allNotices = JsonConvert.DeserializeObject<ObservableCollection<Notice>>(File.ReadAllText(@"./../../../../Hospital/files/notices.json"));
         return allNotices;
     }
 
-   /* public void saveAll(Notice notices)
-    {
-        using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/notices.json"))
-        {
-            JsonSerializer serializer = new JsonSerializer();
-            serializer.Serialize(file, notices);
 
-        }
-    } */
-    //nisam sigurna hoce li raditi
-    internal void save(Notice rs)
+    public void save(Notice rs)
     {
-        List<Notice> allNotice = GetAll();
+        ObservableCollection<Notice> allNotice = GetAll();
         allNotice.Add(rs);
         SaveAll(allNotice);
     }
 
-    public void SaveAll(List<Notice> all)
+    public void SaveAll(ObservableCollection<Notice> all)
     {
         using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/notices.json"))
         {
@@ -43,5 +35,20 @@ using System.Text;
             serializer.Serialize(file,all);
 
         }
+    }
+
+    public void Delete(Notice notes)
+    {
+        ObservableCollection<Notice> allPatients = GetAll();
+
+        foreach (Notice p in allPatients)
+        {
+            if (p.id == notes.id)
+            {
+                allPatients.Remove(p);
+                break;
+            }
+        }
+        SaveAll(allPatients);
     }
 }

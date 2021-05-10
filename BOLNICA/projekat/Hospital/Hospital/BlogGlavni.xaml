@@ -23,16 +23,16 @@
             FontFamily="Cooper Black"
             FontSize="18"
             Foreground="#FF234EB3" />
-        <TextBox
+        <!-- <TextBox
             x:Name="obavestenjaText"
             Margin="26,116,368,190.6"
             Background="{x:Null}"
             BorderBrush="{x:Null}"
             FontWeight="Bold"
             IsEnabled="False"
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap" />-->
         <Label
-            Margin="26,230,0,0"
+            Margin="26,257,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="ZANIMLJIVOSTI"
@@ -41,7 +41,7 @@
             Foreground="#FF234EB3" />
         <Label
             Width="309"
-            Margin="437,23,0,0"
+            Margin="456,25,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Uvek tu za Vas!"
@@ -51,35 +51,40 @@
             FontWeight="Bold"
             Foreground="#FF227638" />
         <Label
-            Margin="26,82,0,0"
+            Margin="26,57,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="OBAVESTENJA  "
             FontFamily="Cooper"
             FontSize="16"
             FontWeight="Bold"
-            Foreground="#FF234EB3" />
+            Foreground="#FF234EB3"
+            RenderTransformOrigin="0.481,0.142" />
         <Image
             Width="309"
             Height="166"
-            Margin="437,64,0,0"
+            Margin="456,73,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             RenderTransformOrigin="0.412,0.462"
             Source="zdravo.PNG" />
-        <TextBox
-            Width="720"
-            Height="88"
-            Margin="26,264,0,0"
-            HorizontalAlignment="Left"
+        <DataGrid
+            x:Name="blogGlavniDG"
+            Height="148"
+            Margin="26,91,369,0"
             VerticalAlignment="Top"
+            AutoGenerateColumns="False"
             Background="{x:Null}"
-            BorderBrush="{x:Null}"
-            IsEnabled="False"
-            IsReadOnly="True"
-            SelectionBrush="{x:Null}"
-            Text=""
-            TextWrapping="Wrap" />
+            ItemsSource="{Binding listNotice}"
+            RowBackground="Transparent"
+            RowHeight="25">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="400" Binding="{Binding notice}" />
+
+
+            </DataGrid.Columns>
+
+        </DataGrid>
 
     </Grid>
 </Page>
