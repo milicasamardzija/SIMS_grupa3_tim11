@@ -38,13 +38,13 @@ namespace Hospital.Model
             }
         }
 
-        public void Delete(Notifications patient)
+        public void Delete(Notifications notes)
         {
             ObservableCollection<Notifications> allPatients = GetAll();
 
             foreach (Notifications p in allPatients)
             {
-                if (p.IdNotification == patient.IdNotification)
+                if (p.IdNotification == notes.IdNotification)
                 {
                     allPatients.Remove(p);
                     break;
