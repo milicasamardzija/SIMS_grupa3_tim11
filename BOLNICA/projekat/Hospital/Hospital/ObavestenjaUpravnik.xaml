@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Hospital.ObavestenjaUpravnik"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hospital"
+             mc:Ignorable="d" 
+              Height="640" Width="1280">
+    <Grid Background="LightBlue">
+        <TextBlock TextWrapping="Wrap" Text="Prikaz obavestenja"
+                       HorizontalAlignment="Center"
+                       FontStyle="Italic"
+                       Foreground= "Black"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Margin="34,42,549,555"
+                       FontSize="20" Width="697" FontWeight="Bold"
+                       />
+        <DataGrid Name="ProstorijeRenoviranje"
+                      Margin="34,134,434,163"
+                      Grid.Column="0"
+                      Background="AliceBlue"
+                      AutoGenerateColumns="False"
+                      SelectionMode="Single"
+                      IsReadOnly="True"
+                      ItemsSource="{Binding Renovations}"
+                      >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Obavestenje" Width="300" Binding="{Binding IdRoom}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

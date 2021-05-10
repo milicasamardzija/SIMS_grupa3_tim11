@@ -102,5 +102,10 @@ namespace Hospital
         {
             frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));
         }
+
+        private void obavestenja(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new ObavestenjaUpravnik());
+        }
     }
 }

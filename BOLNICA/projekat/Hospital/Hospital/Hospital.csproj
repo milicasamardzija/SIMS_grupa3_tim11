@@ -113,6 +113,9 @@
     <Compile Include="Model\MedicineReviewFileStorage.cs" />
     <Compile Include="Model\Notifications.cs" />
     <Compile Include="Model\NotificationsFileStorage.cs" />
+    <Compile Include="ObavestenjaUpravnik.xaml.cs">
+      <DependentUpon>ObavestenjaUpravnik.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sekretar\ObavestenjaBlog.xaml.cs">
       <DependentUpon>ObavestenjaBlog.xaml</DependentUpon>
     </Compile>
@@ -450,6 +453,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="IzmenaLeka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ObavestenjaUpravnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
