@@ -16,17 +16,16 @@
                        Margin="34,42,549,555"
                        FontSize="20" Width="697" FontWeight="Bold"
                        />
-        <DataGrid Name="ProstorijeRenoviranje"
+        <DataGrid Name="Obavestenja"
                       Margin="34,134,434,163"
                       Grid.Column="0"
                       Background="AliceBlue"
                       AutoGenerateColumns="False"
                       SelectionMode="Single"
                       IsReadOnly="True"
-                      ItemsSource="{Binding Renovations}"
                       >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Obavestenje" Width="300" Binding="{Binding IdRoom}"/>
+                <DataGridTextColumn Header="Obavestenje" Width="800" Binding="{Binding Content}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

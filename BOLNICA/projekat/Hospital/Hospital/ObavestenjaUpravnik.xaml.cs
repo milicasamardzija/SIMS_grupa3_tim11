@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Hospital.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,14 +17,14 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for ObavestenjaUpravnik.xaml
-    /// </summary>
     public partial class ObavestenjaUpravnik : UserControl
     {
+        private NotificationsFileStorage storage = new NotificationsFileStorage();
         public ObavestenjaUpravnik()
         {
             InitializeComponent();
+            this.DataContext = this;
+            Obavestenja.ItemsSource = storage.FindByPerson("Upravnik");
         }
     }
 }
