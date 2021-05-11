@@ -53,11 +53,11 @@
                     Header="Prezime lekara" />
                 <DataGridTextColumn
                     Width="100"
-                    Binding="{Binding doctorId}"
+                    Binding="{Binding DoctorId}"
                     Header="Id lekara" />
                 <DataGridTextColumn
                     Width="100"
-                    Binding="{Binding specializationType}"
+                    Binding="{Binding SpecializationType}"
                     Header="Specijalizacija" />
             </DataGrid.Columns>
 

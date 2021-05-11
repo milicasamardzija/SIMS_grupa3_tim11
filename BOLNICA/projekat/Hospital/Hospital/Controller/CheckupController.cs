@@ -21,26 +21,26 @@ namespace Hospital.Controller
             roomService = new RoomsService();
         }
 
-        public List<Checkup> getCheckupDoctors(int idD) 
+        public List<Checkup> getCheckupDoctors(int idDoctor) 
         {
             List<Checkup> checkups = new List<Checkup>();
-             return checkups = service.getCheckupDoctors(idD);
+             return checkups = service.getCheckupDoctors(idDoctor);
            
             
         }
 
-        public void changeCheckup(Checkup c)
+        public void changeCheckup(Checkup checkup)
         {
-            service.changeCheckup( c);
+            service.changeCheckup( checkup);
         }
-        public void createCheckup(Checkup c)
+        public void createCheckup(Checkup checkup)
         {
-            service.createCheckup(c);
+            service.createCheckup(checkup);
         }
 
         public List<Room> availableRooms(DateTime dateTime)
         {
-             //  List<Room> availableRoom = new List<Room>();
+             
                return roomService.availableRooms(dateTime);
         }
 

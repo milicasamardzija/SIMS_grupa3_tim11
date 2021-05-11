@@ -47,7 +47,7 @@ namespace Hospital.Service
             return val; //vracam prvi koji je dostupan 
         }
 
-       public List<Checkup> getCheckupDoctors(int idD)
+       public List<Checkup> getCheckupDoctors(int idDoctor)
         {
 
             List<Checkup> checkups = checkupStorage.GetAll();
@@ -56,15 +56,15 @@ namespace Hospital.Service
             List<Checkup> unavailableCheckups = new List<Checkup>();
 
             
-            return getDoctorTerms(idD, unavailableCheckups);
+            return getDoctorTerms(idDoctor, unavailableCheckups);
 
         }
 
-        private List<Checkup> getDoctorTerms(int idD, List<Checkup> unavailableCheckups)
+        private List<Checkup> getDoctorTerms(int idDoctor, List<Checkup> unavailableCheckups)
         {
             foreach (Checkup c in allCheckups)
             {
-                if (c.IdDoctor.Equals(idD))
+                if (c.IdDoctor.Equals(idDoctor))
                 {
                     unavailableCheckups.Add(c);
 
@@ -74,9 +74,9 @@ namespace Hospital.Service
         }
 
 
-        public void createCheckup(Checkup c)
+        public void createCheckup(Checkup checkup)
         {
-            Checkup newCheckup = new Checkup(generateIdCheckup(), c.IdDoctor, c.IdPatient, c.Date, 0, CheckupType.pregled);
+            Checkup newCheckup = new Checkup(generateIdCheckup(), checkup.IdDoctor, checkup.IdPatient, checkup.Date, 0, CheckupType.pregled);
             checkupStorage.Save(newCheckup);
 
         }
@@ -97,10 +97,10 @@ namespace Hospital.Service
             return doctors;
         }
 
-        public void changeCheckup(Checkup c)
+        public void changeCheckup(Checkup checkup)
         {
-            checkupStorage.DeleteById(c.IdCh);
-            Checkup newCheckup = new Checkup(generateIdCheckup(), c.IdDoctor, c.IdPatient, c.Date, 0, CheckupType.pregled);
+            checkupStorage.DeleteById(checkup.IdCh);
+            Checkup newCheckup = new Checkup(generateIdCheckup(), checkup.IdDoctor, checkup.IdPatient, checkup.Date, 0, CheckupType.pregled);
             checkupStorage.Save(newCheckup);
 
         }

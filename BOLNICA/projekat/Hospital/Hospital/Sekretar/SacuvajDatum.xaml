@@ -37,7 +37,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
-            ItemsSource="{Binding listDoctors}" >
+            ItemsSource="{Binding listDoctors}">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="80"
@@ -52,7 +52,7 @@
                     Binding="{Binding SpecializationType}"
                     Header="Specijalizacija" />
             </DataGrid.Columns>
-            </DataGrid>
+        </DataGrid>
         <Button
             Grid.Column="1"
             Width="75"
