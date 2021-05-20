@@ -20,13 +20,19 @@ namespace Hospital.Model
         private List<int> idsMedicines;
         private Boolean approved;
         private Boolean delete;
-      /*  private int v1;
+        private int v1;
         private string v2;
         private double v3;
         private string v4;
-        private object selectedItem1;
-        private object selectedItem2;*/
-       // private bool approvedMedicine;
+        private bool v5;
+
+        /*  private int v1;
+private string v2;
+private double v3;
+private string v4;
+private object selectedItem1;
+private object selectedItem2;*/
+        // private bool approvedMedicine;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -54,16 +60,25 @@ namespace Hospital.Model
         {
         }
 
-      /*  public Medicine(int v1, string v2, double v3, string v4, object selectedItem1, object selectedItem2, bool approvedMedicine)
+        public Medicine(int v1, string v2, double v3, string v4, bool v5)
         {
             this.v1 = v1;
             this.v2 = v2;
             this.v3 = v3;
             this.v4 = v4;
-            this.selectedItem1 = selectedItem1;
-            this.selectedItem2 = selectedItem2;
-            this.approvedMedicine = approvedMedicine;
-        }*/
+            this.v5 = v5;
+        }
+
+        /*  public Medicine(int v1, string v2, double v3, string v4, object selectedItem1, object selectedItem2, bool approvedMedicine)
+          {
+              this.v1 = v1;
+              this.v2 = v2;
+              this.v3 = v3;
+              this.v4 = v4;
+              this.selectedItem1 = selectedItem1;
+              this.selectedItem2 = selectedItem2;
+              this.approvedMedicine = approvedMedicine;
+          }*/
 
         public int IdMedicine
         {

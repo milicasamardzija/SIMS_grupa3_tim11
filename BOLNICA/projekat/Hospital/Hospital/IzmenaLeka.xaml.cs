@@ -33,42 +33,41 @@ namespace Hospital
         {
             InitializeComponent();
             this.DataContext = this;
+            medicineList = list;
+            medicine = selectedMedicine;
+            indexMedicine = selectedIndex;
             DataIngredient = loadIngredient();
             DataMedicine = loadMedicine();
-            medicineList = list;
-            selectedMedicine = medicine;
-            selectedIndex = indexMedicine;
-            /*
+
             nazivLText.SelectedText = Convert.ToString(selectedMedicine.Name);
             gramazaLText.SelectedText = Convert.ToString(selectedMedicine.Quantity);
-            vrstaLText.SelectedText = Convert.ToString(selectedMedicine.Type);*/
+            vrstaLText.SelectedText = Convert.ToString(selectedMedicine.Type);
+
            
         }
 
         public ObservableCollection<Ingredient> loadIngredient()
         {
-            IngredientsFileStorage storageIngredient = new IngredientsFileStorage();
-            ObservableCollection<Ingredient> ingredient = new ObservableCollection<Ingredient>(storageIngredient.GetAll());
-            ObservableCollection<Ingredient> returnIngredient = new ObservableCollection<Ingredient>();
-
-            foreach(Ingredient ingredients in ingredient)
+            IngredientsFileStorage storage = new IngredientsFileStorage();
+            ObservableCollection<Ingredient> ingredients = new ObservableCollection<Ingredient>(storage.GetAll());
+            ObservableCollection<Ingredient> ret = new ObservableCollection<Ingredient>();
+            foreach (Ingredient ingredient in ingredients)
             {
-                returnIngredient.Add(ingredients);
+                ret.Add(ingredient);
             }
-            return returnIngredient;
+            return ret;
         }
 
         public ObservableCollection<Medicine> loadMedicine()
         {
-            MedicineFileStorage storageMedicine = new MedicineFileStorage();
-            ObservableCollection<Medicine> medicine = new ObservableCollection<Medicine>(storageMedicine.GetAll());
-            ObservableCollection<Medicine> returnMedicine = new ObservableCollection<Medicine>();
-
-            foreach (Medicine medicines in medicine)
+            MedicineFileStorage storage = new MedicineFileStorage();
+            ObservableCollection<Medicine> medicines = new ObservableCollection<Medicine>(storage.GetAll());
+            ObservableCollection<Medicine> ret = new ObservableCollection<Medicine>();
+            foreach (Medicine medicine in medicines)
             {
-                returnMedicine.Add(medicines);
+                ret.Add(medicine);
             }
-            return returnMedicine;
+            return ret;
         }
 
         public int generisiID()
@@ -97,7 +96,11 @@ namespace Hospital
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            //MedicineFileStorage storageMedicine = new MedicineFileStorage();
+            List<int> ingredients = new List<int>();
+            List<int> medicines = new List<int>();
+ 
+            medicineList[indexMedicine] = new Medicine(generisiID(), Convert.ToString(nazivLText.Text), Convert.ToDouble(gramazaLText.Text),
+                Convert.ToString(vrstaLText.Text), ingredients, medicines, true);
             this.Close();
         }
     }
