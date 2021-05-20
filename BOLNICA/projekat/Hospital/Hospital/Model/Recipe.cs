@@ -8,9 +8,6 @@ using System.ComponentModel;
 
 public class Recipe
 {
-    // public String name;
-    // public String idRecepie;
-    // public DateTime date;
     public int idRecipe;
     public String name;
     public String nameSurname;

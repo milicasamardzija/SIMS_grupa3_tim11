@@ -22,7 +22,6 @@ namespace Hospital
         public IzdavanjeRecepta()
         {
             InitializeComponent();
-            datePicker.DisplayDate = new DateTime(2021, 04, 10);
         }
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)

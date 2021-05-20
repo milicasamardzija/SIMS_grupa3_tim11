@@ -24,7 +24,7 @@ namespace Hospital
     public partial class AddDialog : Window
     {
         public List<Checkup> listCheckup;
-        public int idD; //id ulogovanog doktora
+        public int idD; 
 
         public AddDialog(List<Checkup> list, int idDoctor)
         {
@@ -39,30 +39,27 @@ namespace Hospital
             DateTime newdate = (DateTime)(((DatePicker)sender).SelectedDate);
         }
 
-        //trenutno uvek dodaje istog pacijenta
-        //kada se doda da se u tabeli prikazuje pacijent treba promeniti metodu da bi se od svih pacijenata nasao bas onaj za koji je zakazan termin
+        
         public Patient getPatientFromFile()
         {
-           // Patient ret = new Patient();
-
-            PatientFileStorage storage = new PatientFileStorage(); //cita pacijente iz fajla
-            Patient ret = storage.FindById(54); //uzima onog ciji je zdrastveni karton 54
+            PatientFileStorage storage = new PatientFileStorage(); 
+            Patient ret = storage.FindById(54); 
 
             return ret;
         }
 
-        public Doctor getDoctorFromFile() //fija koja vraca doktora koji je ulogovan na sistem i koji ce biti ubacen u termin
+        public Doctor getDoctorFromFile() 
         {
             Doctor ret = new Doctor();
-            List<Doctor> doctors = JsonConvert.DeserializeObject<List<Doctor>>(File.ReadAllText(@"./../../../../Hospital/files/storageDoctor.json")); //cita listu doktora iz fajla
+            List<Doctor> doctors = JsonConvert.DeserializeObject<List<Doctor>>(File.ReadAllText(@"./../../../../Hospital/files/storageDoctor.json")); 
            
-            foreach (Doctor doctor in doctors)  //prolaz kroz sve dokore u fajlu
+            foreach (Doctor doctor in doctors)  
             {
-               // if (doctor.doctorId == idD) //pronalazi doktora sa id-jem ulogovanog doktora
-               // {
+                if (doctor.DoctorId == idD)
+                {
                     ret = doctor;
-                    break; //kada ga nadje izlazi iz petlje
-                //}
+                    break; 
+                }
             }
 
             return ret;
@@ -92,8 +89,7 @@ namespace Hospital
             CheckupFileStorage st = new CheckupFileStorage();
             Patient patient = getPatientFromFile();
             Doctor doctor = getDoctorFromFile();
-            int ida = 1;  //ovo sam lupila id appointemnta, tu treba ispraviti da bude bas idAppointment-a koji treba
-            //int idch; //ovo sam lupila id checkup-a tu treba napraviti neku funkciju koja ce za svaki novi pregled da generise novi id koji vec ne postoji
+            int ida = 1;  
 
             Checkup newCheckup = new Checkup(ida, generateID(), dateP.DisplayDate, Convert.ToString(timeText.Text), Convert.ToDouble(durationText.Text),
                 (CheckupType)comboBox.SelectedIndex,patient,doctor);

@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-        Title="ZakaziPregledLekar" Height="407.541" Width="423.202" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
+        Title="ZakaziPregledLekar" Height="434.963" Width="444.95" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Label x:Name="label1" Content="Datum" HorizontalAlignment="Left" Margin="10,10,0,364.6" Width="91"/>
+        <Label x:Name="label2" Content="Vreme" HorizontalAlignment="Left" Margin="10,61,0,313.6" Width="91"/>
+        <Label x:Name="label3" Content="Soba" HorizontalAlignment="Left" Margin="10,110,0,264.6" Width="91"/>
+        <Label x:Name="label4" Content="Tip pregleda" HorizontalAlignment="Left" Margin="10,167,0,207.6" Width="91"/>
+        <Label x:Name="label5" Content="Pacijent" HorizontalAlignment="Left" Margin="10,223,0,151.6" Width="91"/>
+        <Label x:Name="label6" Content="Doktor" HorizontalAlignment="Left" Margin="10,273,0,101.6" Width="91"/>
+        <TextBox x:Name="textVreme" HorizontalAlignment="Left" Height="30" Margin="156,62,0,313.6" Width="243"/>
+        <TextBox x:Name="textTrajanje" HorizontalAlignment="Left" Height="30" Margin="156,111,0,264.6" Width="243"/>
+        <TextBox x:Name="textPacijent" HorizontalAlignment="Left" Height="30" Margin="156,223,0,152.6" Width="243"/>
+        <DatePicker x:Name="Date" HorizontalAlignment="Left" Height="30" Margin="156,11,0,364.6" Width="243"/>
+        <Button x:Name="button1" Content="Izadji" HorizontalAlignment="Left" Height="30" Margin="287,351,0,24.6" Width="112" Click="button1_Click"/>
+        <Button x:Name="button2" Content="Zakazi" HorizontalAlignment="Left" Height="30" Margin="10,351,0,24.6" Width="112" Click="button2_Click"/>
+        <ComboBox Margin="156,170,39.4,207.6" Height="30" x:Name="comboBox">
+            <ComboBoxItem>
+                Pregled
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Kontrolni pregled
+            </ComboBoxItem>
+        </ComboBox>
+        <ComboBox Margin="156,274,39.4,101.6" Height="30" x:Name="doctorBox">
+            <ComboBoxItem Content="0"/>
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+            <ComboBoxItem Content="6"/>
+            <ComboBoxItem Content="7"/>
+        </ComboBox>
     </Grid>
 </Window>

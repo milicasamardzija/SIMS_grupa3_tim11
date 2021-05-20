@@ -80,6 +80,9 @@
     <Compile Include="DodajAnketu.xaml.cs">
       <DependentUpon>DodajAnketu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LekoviCekajuReviziju.xaml.cs">
+      <DependentUpon>LekoviCekajuReviziju.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\Alergens.cs" />
     <Compile Include="Model\AlergensFileStorage.cs" />
     <Compile Include="DodavanjeLekaRevizija.xaml.cs">
@@ -106,6 +109,8 @@
     <Compile Include="Model\FunkcionalnostiFileStorage.cs" />
     <Compile Include="Model\Ingredient.cs" />
     <Compile Include="Model\IngredientsFileStorage.cs" />
+    <Compile Include="Model\Instruction.cs" />
+    <Compile Include="Model\InstructionFileStorage.cs" />
     <Compile Include="Model\Koristenjefunkcionalnosti.cs" />
     <Compile Include="Model\Medicine.cs" />
     <Compile Include="Model\MedicineFileStorage.cs" />
@@ -459,6 +464,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="IzmenaLeka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LekoviCekajuReviziju.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

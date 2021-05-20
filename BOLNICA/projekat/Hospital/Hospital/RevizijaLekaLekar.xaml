@@ -8,15 +8,15 @@
         Title="RevizijaLekaLekar" Height="409.28" Width="422.68" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label x:Name="label1" Content="Naziv" Margin="10,16,284,261.6"/>
-        <Label x:Name="label2" Content="Gramaza" Margin="10,59,284,218.6"/>
-        <Label x:Name="label3" Content="Vrsta" Margin="10,114,313,163.6"/>
+        <Label x:Name="label2" Content="Tip leka" Margin="10,59,284,218.6"/>
+        <Label x:Name="label3" Content="Tip revizije" Margin="10,114,313,163.6"/>
         <Label x:Name="label4" Content="Lekar koji vrsi odobravanje" Margin="10,163,246,114.6"/>
         <Label x:Name="label5" Content="Komentar" Margin="10,207,284,124"/>
         <TextBox x:Name="textNaziv" Height="30" HorizontalAlignment="Left" Margin="197,16,0,334" Width="191"/>
-        <TextBox x:Name="textNaziv_Copy" Height="30" HorizontalAlignment="Left" Margin="197,59,0,291" Width="191"/>
-        <TextBox x:Name="textNaziv_Copy1" Height="30" HorizontalAlignment="Left" Margin="197,114,0,236" Width="191"/>
-        <TextBox x:Name="textNaziv_Copy2" Height="30" HorizontalAlignment="Left" Margin="197,163,0,187" Width="191"/>
-        <TextBox x:Name="textNaziv_Copy3" HorizontalAlignment="Left" Margin="197,214,0,106" Width="191" Height="60"/>
+        <TextBox x:Name="textTipLeka" Height="30" HorizontalAlignment="Left" Margin="197,59,0,291" Width="191"/>
+        <TextBox x:Name="textTipRevizije" Height="30" HorizontalAlignment="Left" Margin="197,114,0,236" Width="191"/>
+        <TextBox x:Name="textLekar" Height="30" HorizontalAlignment="Left" Margin="197,163,0,187" Width="191"/>
+        <TextBox x:Name="textKomentar" HorizontalAlignment="Left" Margin="197,214,0,106" Width="191" Height="60"/>
         <Button x:Name="button1" Content="Potvrdi" Height="30" HorizontalAlignment="Left" Margin="19,327,0,23" Width="103" Click="button1_Click"/>
         <Button x:Name="button2" Content="Odustani" Height="30" HorizontalAlignment="Left" Margin="285,327,0,23" Width="103" Click="button2_Click"/>
     </Grid>

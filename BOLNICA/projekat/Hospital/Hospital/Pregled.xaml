@@ -16,8 +16,9 @@
                 <!--<DataGridTextColumn Header="VREME" Binding="{Binding Time}" FontSize="16"/>-->
                 <DataGridTextColumn Header="TRAJANJE" Binding="{Binding Duration}" FontSize="16"/>
                 <DataGridTextColumn Header="TIP" Binding="{Binding Type}" FontSize="16"/>
-                <DataGridTextColumn Header="PACIJENT" Binding="{Binding Patient}" FontSize="16"/>
-                <DataGridTextColumn Header="DOKTOR" Binding="{Binding Doctor}" FontSize="16"/>
+                <DataGridTextColumn Header="ID PACIJENTA" Binding="{Binding IdPatient}" FontSize="16"/>
+                <DataGridTextColumn Header="ID DOKTORA" Binding="{Binding IdDoctor}" FontSize="16"/>
+                <DataGridTextColumn Header="SOBA" Binding="{Binding IdRoom}" FontSize="16"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="edit" Content="Izmeni pregled" HorizontalAlignment="Left" Margin="672,115,0,0" VerticalAlignment="Top" Width="171" Click="edit_Click" FontSize="16"/>

@@ -7,18 +7,20 @@
         mc:Ignorable="d"
         Title="UputZaAmbulantnoSpecijalistickiPregled" Height="428.248" Width="483.333" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label x:Name="label1" Content="Upucuje se" Margin="10,10,376.8,339.4" FontSize="14"/>
+        <Label x:Name="label1" Content="Id pregleda" Margin="10,10,376.8,339.4" FontSize="14"/>
         <Label x:Name="label2" Content="JMBG" Margin="10,64,402.8,284.4" FontSize="14"/>
         <Label x:Name="label3" Content="LBO" Margin="275,63,138.8,284.4" FontSize="14"/>
-        <Label x:Name="label4" Content="Registarski broj" Margin="10,119,352.8,231.4" FontSize="14"/>
+        <Label x:Name="label4" Content="Lekar" Margin="10,119,352.8,231.4" FontSize="14"/>
         <Label x:Name="label5" Content="Upucuje se na specijalisticki pregled radi:" Margin="10,172,198.8,182.4" FontSize="14"/>
-        <TextBox x:Name="upucujeText" Height="30" HorizontalAlignment="Left" Margin="105,10,0,358.4" Width="343"/>
+        <TextBox x:Name="upucujeText" Height="30" HorizontalAlignment="Left" Margin="105,10,0,358.4" Width="155"/>
         <TextBox x:Name="jmbgUText" Height="30" HorizontalAlignment="Left" Margin="61,64,0,304.4" Width="199"/>
         <TextBox x:Name="lboUText" Height="30" HorizontalAlignment="Left" Margin="315,63,0,305.4" Width="133"/>
-        <TextBox x:Name="registarskiBrojText" Height="30" HorizontalAlignment="Left" Margin="129,114,0,254.4" Width="131"/>
+        <TextBox x:Name="registarskiBrojText" Height="30" HorizontalAlignment="Left" Margin="61,114,0,254.4" Width="199"/>
         <TextBox x:Name="razlogText" HorizontalAlignment="Left" Margin="10,216,0,65.4" Width="438"/>
         <Button x:Name="button1" Content="Izdaj uput" HorizontalAlignment="Left" Height="30" Margin="10,351,0,17.4" Width="103" FontSize="14" Click="button1_Click" />
         <Button x:Name="button2" Content="Zakazi pregled" HorizontalAlignment="Left" Height="30" Margin="186,351,0,17.4" Width="103" FontSize="14" Click="button2_Click" />
         <Button x:Name="button3" Content="Odbaci" HorizontalAlignment="Left" Height="30" Margin="345,351,0,17.4" Width="103" FontSize="14" Click="button3_Click" />
+        <Label x:Name="label6" Content="Interval:" Margin="275,114,138.8,236.4" FontSize="14"/>
+        <TextBox x:Name="intervalText" Height="30" HorizontalAlignment="Left" Margin="278,142,0,226.4" Width="170"/>
     </Grid>
 </Window>

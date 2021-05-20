@@ -23,5 +23,7 @@
         <TextBox x:Name="patientBox" HorizontalAlignment="Left" Height="32" Margin="168,243,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="207" FontSize="16"/>
         <Label x:Name="label_Copy" Content="Vreme" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" Width="91" FontSize="16"/>
         <TextBox x:Name="timeText" HorizontalAlignment="Left" Height="32" Margin="168,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="207" FontSize="16"/>
+        <Label x:Name="soba" Content="IdSobe" HorizontalAlignment="Left" Margin="10,303,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="idRoom" HorizontalAlignment="Left" Height="32" Margin="168,303,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="207" FontSize="16"/>
     </Grid>
 </Window>

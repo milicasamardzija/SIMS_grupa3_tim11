@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Hospital.Model;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace Hospital
 {
@@ -19,9 +22,67 @@ namespace Hospital
     /// </summary>
     public partial class ZakaziPregledLekar : Window
     {
-        public ZakaziPregledLekar()
+        public List<Checkup> listCheckup;
+        public int idDoctor;
+
+        public ZakaziPregledLekar(List<Checkup> list, int id)
         {
             InitializeComponent();
+            listCheckup = list;
+            idDoctor = id;
+        }
+
+        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DateTime newdate = (DateTime)(((DatePicker)sender).SelectedDate);
+        }
+
+        public int generateIdCheckup()
+        {
+            int ret = 0;
+            CheckupFileStorage storage = new CheckupFileStorage();
+            List<Checkup> allCheckups = storage.GetAll();
+            foreach (Checkup ch in allCheckups)
+            {
+                foreach (Checkup checkup in allCheckups)
+                {
+                    if (ret == checkup.IdCh)
+                    {
+                        ++ret;
+                        break;
+                    }
+                }
+            }
+            return ret;
+        }
+
+        public Patient getPatientFromFile()
+        {
+            PatientFileStorage storage = new PatientFileStorage();
+            Patient ret = storage.FindById(54);
+
+            return ret;
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            CheckupFileStorage st = new CheckupFileStorage();
+            //int idAppointment = 0;
+            //Patient patient = getPatientFromFile();
+
+            Checkup newCheckups = new Checkup(generateIdCheckup(), (int)doctorBox.SelectedIndex, Convert.ToInt16(textPacijent.Text), Date.DisplayDate,
+                Convert.ToInt16(textTrajanje.Text), (CheckupType)comboBox.SelectedIndex);
+
+            /*public Checkup(int idCh, int idD, int idP, DateTime dateAndTime, int idR, CheckupType type) */
+
+            st.Save(newCheckups);
+           // listCheckup.Add(newCheckups);
+            this.Close();
         }
     }
 }
