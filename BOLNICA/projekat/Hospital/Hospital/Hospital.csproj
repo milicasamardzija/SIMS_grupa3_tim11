@@ -80,6 +80,9 @@
     <Compile Include="DodajAnketu.xaml.cs">
       <DependentUpon>DodajAnketu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LekoviCekajuReviziju.xaml.cs">
+      <DependentUpon>LekoviCekajuReviziju.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\Alergens.cs" />
     <Compile Include="Model\AlergensFileStorage.cs" />
     <Compile Include="DodavanjeLekaRevizija.xaml.cs">
@@ -213,15 +216,12 @@
     <Compile Include="Service\MedicineService.cs" />
     <Compile Include="Model\RenovationFileStorage.cs" />
     <Compile Include="Model\RoomRenovation.cs" />
-    <Compile Include="Model\StaticInventoryMovement.cs" />
-    <Compile Include="Model\StaticInvnetoryMovementFileStorage.cs" />
     <Compile Include="PrikazSobaRenoviranje.xaml.cs">
       <DependentUpon>PrikazSobaRenoviranje.xaml</DependentUpon>
     </Compile>
     <Compile Include="RenoviranjeSobe.xaml.cs">
       <DependentUpon>RenoviranjeSobe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Service\InventoryService.cs" />
     <Compile Include="Service\RoomsService.cs" />
     <Compile Include="ZakazivanjePremestanjaStatickogInventara.xaml.cs">
       <DependentUpon>ZakazivanjePremestanjaStatickogInventara.xaml</DependentUpon>
@@ -462,6 +462,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="IzmenaLeka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LekoviCekajuReviziju.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
