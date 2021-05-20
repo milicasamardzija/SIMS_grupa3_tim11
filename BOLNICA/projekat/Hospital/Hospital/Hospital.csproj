@@ -109,6 +109,8 @@
     <Compile Include="Model\FunkcionalnostiFileStorage.cs" />
     <Compile Include="Model\Ingredient.cs" />
     <Compile Include="Model\IngredientsFileStorage.cs" />
+    <Compile Include="Model\Instruction.cs" />
+    <Compile Include="Model\InstructionFileStorage.cs" />
     <Compile Include="Model\Koristenjefunkcionalnosti.cs" />
     <Compile Include="Model\Medicine.cs" />
     <Compile Include="Model\MedicineFileStorage.cs" />
