@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Hospital.Model;
+using System.Collections.ObjectModel;
 
 namespace Hospital
 {
@@ -21,9 +22,13 @@ namespace Hospital
     public partial class UputZaAmbulantnoSpecijalistickiPregled : Window
     {
 
+        public List<Checkup> CheckupList { get; set; }
+        public int id;
+
         public UputZaAmbulantnoSpecijalistickiPregled()
         {
             InitializeComponent();
+            this.DataContext = this;
         }
 
         public int generateInstructionId()
@@ -87,7 +92,7 @@ namespace Hospital
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            ZakaziPregledLekar zpl = new ZakaziPregledLekar();
+            ZakaziPregledLekar zpl = new ZakaziPregledLekar(CheckupList, id);
             zpl.Show();
         }
     }

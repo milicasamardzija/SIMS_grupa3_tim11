@@ -42,14 +42,14 @@ namespace Hospital
         public List<Checkup> loadJson(int idD)
         {
             CheckupFileStorage cs = new CheckupFileStorage();
-            List<Checkup> cc = new List<Checkup>(cs.GetAll()); //svi pregledi
-            List<Checkup> ret = new List<Checkup>(); //ovde ce biti ubaceni pregledi koje ima bas lekar sa prosledjenim id-em(odnosno id lekara koji je ulogovan na sistem)
+            List<Checkup> cc = new List<Checkup>(cs.GetAll());
+            List<Checkup> ret = new List<Checkup>(); 
 
-            foreach (Checkup checkup in cc) //prolazimo kroz sve preglede u fajlu
+            foreach (Checkup checkup in cc) 
             {
-                //if (checkup.doctor.doctorId == idD) //trazimo pregled koji ima doktora sa prosledjenim id-jem
+                //if (checkup.doctor.doctorId == idD) 
                 //{
-                    ret.Add(checkup); //dodajemo taj pregled u listu koju vracamo za ispis u tabelu
+                    ret.Add(checkup); 
                 //}
             }
             return ret;
@@ -57,7 +57,7 @@ namespace Hospital
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            AddDialog ad = new AddDialog(CheckupList, id); //salje se i id doktora koji je ulogovan
+            AddDialog ad = new AddDialog(CheckupList, id); 
             ad.Show();
         }
 
@@ -81,8 +81,6 @@ namespace Hospital
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            // MainWindow mw = new MainWindow();
-            // mw.Show();
             this.Close();
         }
 
