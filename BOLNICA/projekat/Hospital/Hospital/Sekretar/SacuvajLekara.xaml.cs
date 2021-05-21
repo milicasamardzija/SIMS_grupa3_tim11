@@ -87,8 +87,8 @@ namespace Hospital.Sekretar
             foreach (Room r in availableRooms)
             {
                 ComboBoxItem item = new ComboBoxItem();
-                item.Content = r.RoomId + " " + r.Purpose;
-                item.Tag = r.RoomId;
+                item.Content = r.Id + " " + r.Purpose;
+                item.Tag = r.Id;
                 listRooms.Items.Add(item);
             }
         }
