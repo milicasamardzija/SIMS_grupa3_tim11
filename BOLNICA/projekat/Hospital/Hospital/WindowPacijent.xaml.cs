@@ -188,7 +188,7 @@ namespace Hospital
 
                         if (patient.PatientId == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkcionalnosti == "izmena")
                         {
-                            count1 = count1 + 1;
+                            count2 = count2+ 1;
 
                         }
                     }
@@ -234,7 +234,7 @@ namespace Hospital
 
                         if (patient.PatientId == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkcionalnosti == "brisanje")
                         {
-                            count3 = count1 + 1;
+                            count3 = count3 + 1;
 
                         }
                     }

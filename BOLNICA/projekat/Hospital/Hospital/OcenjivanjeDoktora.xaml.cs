@@ -39,7 +39,7 @@ namespace Hospital
 
 
 
-            if (termini.Count > 5)
+            if (termini.Count > 0)
             {
                 bolnica.IsEnabled = true;
             }
