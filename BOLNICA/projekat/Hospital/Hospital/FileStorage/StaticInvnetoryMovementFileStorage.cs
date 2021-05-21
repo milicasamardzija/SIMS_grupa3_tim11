@@ -18,7 +18,7 @@ namespace Hospital.Model
         public StaticInvnetoryMovementFileStorage()
         {
             inventoryStorage = new InventoryFileStorage();
-            roomStorage = new RoomFileStorage();
+            roomStorage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
             roomInventoryStorage = new RoomInventoryFileStorage();
             List<RoomInventory> all = roomInventoryStorage.GetAll();
             List<Inventory> inventories = inventoryStorage.GetAll();
@@ -118,9 +118,9 @@ namespace Hospital.Model
 
                     foreach (Room r in roomStorage.GetAll())
                     {
-                        if (r.RoomId == idRoomIn)
+                        if (r.Id == idRoomIn)
                         {
-                            room.RoomId = r.RoomId;
+                            room.Id = r.Id;
                             room.Floor = r.Floor;
                             room.Occupancy = r.Occupancy;
                             room.Purpose = r.Purpose;

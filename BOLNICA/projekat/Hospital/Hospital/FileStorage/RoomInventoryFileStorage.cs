@@ -89,7 +89,7 @@ public class RoomInventoryFileStorage
 
         foreach (RoomInventory inventory in allInventories)
         {
-            if (inventory.Room.RoomId == id)
+            if (inventory.Room.Id == id)
             {
                 ret = inventory;
                 break;

@@ -1,20 +1,19 @@
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-public class Room : INotifyPropertyChanged
+public class Room : Entity, INotifyPropertyChanged
 {
-   private int roomId;
    private int floor;
    private Boolean occupancy;
    private Purpose purpose;
    private int capacity;
  
-   public Room() { }
+    public Room() { }
 
-    public Room(int id, int f, bool o, Purpose p, int c)
+    public Room(int id, int f, bool o, Purpose p, int c) : base(id)
     {
-        roomId = id;
         floor = f;
         occupancy = o;
         purpose = p;
@@ -29,22 +28,6 @@ public class Room : INotifyPropertyChanged
         if (PropertyChanged != null)
         {
             PropertyChanged(this, new PropertyChangedEventArgs(name));
-        }
-    }
-
-    public int RoomId
-    {
-        get
-        {
-            return roomId;
-        }
-        set
-        {
-            if (value != roomId)
-            {
-                roomId = value;
-                OnProperychanged("RoomId");
-            }
         }
     }
 

@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 
 namespace Hospital.FileStorage
 {
-    public class GenericFileStorage<T> where T: Entity   //????
-
-
+    public class GenericFileStorage<T> : GenericRepository<T> where T : Entity
     {
-        private String path;
+        private string path;
 
-
+        public GenericFileStorage(string filePath)
+        {
+            this.path = filePath;
+        }
 
         public List<T> GetAll()
         {

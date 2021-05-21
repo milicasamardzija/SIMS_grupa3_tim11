@@ -6,11 +6,13 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Hospital.FileStorage;
 using Newtonsoft.Json;
 
-public class RoomFileStorage
+public class RoomFileStorage : GenericFileStorage<Room>, GenericRepository<Room>
 {
-    public List<Room> GetAll()
+    public RoomFileStorage(String filePath) : base(filePath) { }
+   /* public List<Room> GetAll()
     {
         List<Room> allRooms = new List<Room>();
 
@@ -41,7 +43,7 @@ public class RoomFileStorage
 
         foreach (Room temp in allRooms)
         {
-            if (temp.RoomId == room.RoomId)
+            if (temp.Id == room.Id)
             {
                 allRooms.Remove(temp);
                 break;
@@ -57,7 +59,7 @@ public class RoomFileStorage
 
         foreach (Room room in allRooms)
         {
-            if (room.RoomId == id)
+            if (room.Id == id)
             {
                 ret = room;
                 break;
@@ -73,7 +75,7 @@ public class RoomFileStorage
 
         foreach (Room room in allRooms)
         {
-            if (room.RoomId == id)
+            if (room.Id == id)
             {
                 allRooms.Remove(room);
                 break;
@@ -89,7 +91,7 @@ public class RoomFileStorage
 
         foreach (Room room in allRooms)
         {
-            if (room.RoomId == id)
+            if (room.Id == id)
             {
                 ret = true;
                 break;
@@ -99,5 +101,5 @@ public class RoomFileStorage
     }
 
     // public String fileLocation;
-
+   */
 }

@@ -30,7 +30,7 @@ namespace Hospital
             InitializeComponent();
             sobeFrame = frame;
             controller = new RoomsController();
-            brojProstorijeTxt.SelectedText = Convert.ToString(room.RoomId);
+            brojProstorijeTxt.SelectedText = Convert.ToString(room.Id);
         }
 
         public int generisiId()

@@ -81,7 +81,9 @@
       <DependentUpon>DodajAnketu.xaml</DependentUpon>
     </Compile>
     <Compile Include="FileStorage\GenericFileStorage.cs" />
-    <Compile Include="FileStorage\GenericRepository.cs" />
+    <Compile Include="FileStorage\Interfaces\GenericRepository.cs" />
+    <Compile Include="FileStorage\Interfaces\PatientIFileStorage.cs" />
+    <Compile Include="FileStorage\Interfaces\RoomIFileStorage.cs" />
     <Compile Include="LekoviCekajuReviziju.xaml.cs">
       <DependentUpon>LekoviCekajuReviziju.xaml</DependentUpon>
     </Compile>

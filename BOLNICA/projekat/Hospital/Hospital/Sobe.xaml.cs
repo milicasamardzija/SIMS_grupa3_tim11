@@ -25,7 +25,7 @@ namespace Hospital
         }
 
         private Frame frameMagacin { get; set; }
-        private RoomFileStorage storageRooms = new RoomFileStorage();
+        private RoomFileStorage storageRooms = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
         public Sobe(ObservableCollection<Room> roomList, Frame magacin)
         {
             InitializeComponent();
@@ -73,7 +73,7 @@ namespace Hospital
 
         public ObservableCollection<Room> loadJason()
         {
-            RoomFileStorage fs = new RoomFileStorage();
+            RoomFileStorage fs = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
             ObservableCollection<Room> rs = new ObservableCollection<Room>(fs.GetAll());
             return rs;
         }
@@ -158,7 +158,7 @@ namespace Hospital
                 {
                     foreach (RoomInventory ri in storage.GetAll())
                     {
-                        if (room.RoomId == ri.IdRoom && ri.IdInventory == idInventory && ri.Quantity == quantity)
+                        if (room.Id == ri.IdRoom && ri.IdInventory == idInventory && ri.Quantity == quantity)
                         {
                             filtratedRooms.Add(room);
                         }

@@ -29,11 +29,11 @@ namespace Hospital
         {
             InitializeComponent();
             listRoom = list;
-            id = selectedRoom.RoomId; //id sobe koja je selktovana
+            id = selectedRoom.Id; //id sobe koja je selktovana
             index = selectedIndex; //indeks u tabeli
             frame = f;
 
-            brojProstorijeTxt.SelectedText = Convert.ToString(selectedRoom.RoomId);
+            brojProstorijeTxt.SelectedText = Convert.ToString(selectedRoom.Id);
             spratTxt.SelectedText = Convert.ToString(selectedRoom.Floor);
             namenaTxt.SelectedIndex = (int)selectedRoom.Purpose;
             kapacitetTxt.SelectedText = Convert.ToString(selectedRoom.Capacity);
@@ -41,7 +41,7 @@ namespace Hospital
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-            RoomFileStorage storage = new RoomFileStorage();
+            RoomFileStorage storage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
             RoomInventoryFileStorage storageInventory = new RoomInventoryFileStorage();
             InventoryFileStorage storageOfInventories = new InventoryFileStorage();
 

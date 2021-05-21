@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.FileStorage.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -35,7 +36,7 @@ namespace Hospital
             frame = f;
 
             //ovo se popunjavaju textBox-evi da bi kada se otvori dijalog bilo uneto ono sto se nalazi u tabeli
-            brojProstorijeTxt.SelectedText = Convert.ToString(room.RoomId);
+            brojProstorijeTxt.SelectedText = Convert.ToString(room.Id);
             spratTxt.SelectedText = Convert.ToString(room.Floor);
             namenaTxt.SelectedIndex = (int)room.Purpose;
             kapacitetTxt.SelectedText = Convert.ToString(room.Capacity);
@@ -43,21 +44,21 @@ namespace Hospital
 
         private void izmenaProstorije(object sender, RoutedEventArgs e)
         {
-            RoomFileStorage storage = new RoomFileStorage();
+            RoomFileStorage storage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
             List<Room> allRooms = storage.GetAll();
 
             int id = Convert.ToInt16(brojProstorijeTxt.Text);
 
             foreach (Room r in allRooms)
             {
-                if (r.RoomId == id)
+                if (r.Id == id)
                 {
                     //menjam sobu
-                    r.RoomId = Convert.ToInt16(brojProstorijeTxt.Text);
+                    r.Id = Convert.ToInt16(brojProstorijeTxt.Text);
                     r.Floor = Convert.ToInt16(spratTxt.Text);
                     r.Purpose = (Purpose)namenaTxt.SelectedIndex;
                     r.Capacity = Convert.ToInt16(kapacitetTxt.Text);
-                    listRoom[index] = new Room(Convert.ToInt16(r.RoomId), Convert.ToInt16(r.Floor), false, (Purpose)r.Purpose, Convert.ToInt16(r.Capacity));
+                    listRoom[index] = new Room(Convert.ToInt16(r.Id), Convert.ToInt16(r.Floor), false, (Purpose)r.Purpose, Convert.ToInt16(r.Capacity));
                     break;
                 }
             }

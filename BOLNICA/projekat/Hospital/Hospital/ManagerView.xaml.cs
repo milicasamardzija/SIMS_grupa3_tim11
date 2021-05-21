@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.FileStorage.Interfaces;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -93,7 +94,8 @@ namespace Hospital
 
         public ObservableCollection<Room> loadJason()
         {
-            RoomFileStorage fs = new RoomFileStorage();
+            // RoomFileStorage fs = new RoomFileStorage();
+            RoomFileStorage fs = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
             ObservableCollection<Room> rs = new ObservableCollection<Room>(fs.GetAll());
             return rs;
         }

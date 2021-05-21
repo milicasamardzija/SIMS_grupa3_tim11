@@ -41,7 +41,7 @@ namespace Hospital
             index = selectedIndex;
             inventory = selecetedInventory;
             idInventory = selecetedInventory.InventoryId;
-            roomOutId = roomOut.RoomId;
+            roomOutId = roomOut.Id;
             listaInvetara = tablaPrikaz;
 
             ImeTxt.SelectedText = inventory.Name;

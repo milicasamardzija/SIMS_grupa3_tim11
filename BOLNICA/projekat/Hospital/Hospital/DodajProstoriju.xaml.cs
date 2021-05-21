@@ -30,14 +30,14 @@ namespace Hospital
         {
             int ret = 0;
 
-            RoomFileStorage storage = new RoomFileStorage();
+            RoomFileStorage storage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
             List<Room> allRooms = storage.GetAll();
 
             foreach (Room roomBig in allRooms)
             {
                 foreach (Room room in allRooms)
                 {
-                    if (ret == room.RoomId)
+                    if (ret == room.Id)
                     {
                         ++ret;
                         break;
@@ -49,7 +49,7 @@ namespace Hospital
 
         private void dodavanjeProstorije(object sender, RoutedEventArgs e)
         {
-            RoomFileStorage storage = new RoomFileStorage();
+            RoomFileStorage storage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
 
             Room newRoom = new Room(generisiId(), Convert.ToInt16(SpratText.Text), false, (Purpose)NamenaText.SelectedIndex, Convert.ToInt16(KapacitetText.Text));
 

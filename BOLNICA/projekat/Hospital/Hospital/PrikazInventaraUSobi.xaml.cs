@@ -52,7 +52,7 @@ namespace Hospital
 
             foreach (RoomInventory r in storage.GetAll())
             {
-                if (r.IdRoom.Equals(room.RoomId))
+                if (r.IdRoom.Equals(room.Id))
                 {
                     Inventory i = inventoryStorage.FindById(r.IdInventory);
                     if (i != null)

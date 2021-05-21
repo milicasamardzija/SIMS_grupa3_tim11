@@ -16,7 +16,7 @@ namespace Hospital.Service
 
         public InventoryService()
         {
-            roomStorage = new RoomFileStorage();
+            roomStorage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
             inventoryStorage = new InventoryFileStorage();
             roomInventoryStorage = new RoomInventoryFileStorage();
             allRoomInventory = roomInventoryStorage.GetAll();

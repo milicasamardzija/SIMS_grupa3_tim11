@@ -64,7 +64,7 @@ namespace Hospital
 
             foreach (RoomInventory r in storage.GetAll())
             {
-                if (r.IdRoom.Equals(roomOut.RoomId))
+                if (r.IdRoom.Equals(roomOut.Id))
                 {
                     Inventory i = inventoryStorage.FindById(r.IdInventory);
                     if (i != null)
@@ -86,13 +86,13 @@ namespace Hospital
             if (dateExecution < DateTime.Now) //ovo je slucaj kada je vreme premestanja proslo dok je aplikacija bila iskljucena,
                                               //pa cim se ukljuci dolazi do premestanja
             {
-                storage.moveInventoryStatic(inventory, idRoom, roomOut.RoomId, quantity);
+                storage.moveInventoryStatic(inventory, idRoom, roomOut.Id, quantity);
                 prikaz();
             }
             else
             {
                 await Task.Delay(t);
-                storage.moveInventoryStatic(inventory, idRoom, roomOut.RoomId, quantity);
+                storage.moveInventoryStatic(inventory, idRoom, roomOut.Id, quantity);
                 prikaz();
             }
         }
@@ -115,7 +115,7 @@ namespace Hospital
             TimeSpan t = TimeSpan.ParseExact(time, "c", null); 
             dateExecution = date.Add(t);
 
-            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, roomOut.RoomId, inventory.InventoryId, quantity, dateExecution);
+            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, roomOut.Id, inventory.InventoryId, quantity, dateExecution);
 
             if (serviceRoom.isRoomAvailableInventoryMovement(newMovement))
             {
@@ -133,7 +133,7 @@ namespace Hospital
 
         private void saveNewMovement()
         {
-            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, roomOut.RoomId, inventory.InventoryId, quantity, dateExecution);
+            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, roomOut.Id, inventory.InventoryId, quantity, dateExecution);
             StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
             storage.Save(newMovement);
         }

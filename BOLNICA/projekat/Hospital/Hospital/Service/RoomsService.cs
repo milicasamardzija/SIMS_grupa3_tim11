@@ -29,7 +29,7 @@ namespace Hospital.Service
             inventoryStorage = new InventoryFileStorage();
             staticInventoryStorage = new StaticInvnetoryMovementFileStorage();
             appointmentsStorage = new AppointmentFileStorage();
-            roomStorage = new RoomFileStorage();
+            roomStorage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
 
         
         }
@@ -170,7 +170,7 @@ namespace Hospital.Service
             {
                 foreach(Checkup checkup in checkupStorage.GetAll())
                 {
-                    if(room.RoomId==checkup.IdRoom) 
+                    if(room.Id == checkup.IdRoom) 
                     {
                        if(checkup.Date!=dateTime.Date) //ovo proverava i datum i vreme
                         {
