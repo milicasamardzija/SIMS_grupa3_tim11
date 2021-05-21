@@ -80,6 +80,8 @@
     <Compile Include="DodajAnketu.xaml.cs">
       <DependentUpon>DodajAnketu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FileStorage\GenericFileStorage.cs" />
+    <Compile Include="FileStorage\GenericRepository.cs" />
     <Compile Include="LekoviCekajuReviziju.xaml.cs">
       <DependentUpon>LekoviCekajuReviziju.xaml</DependentUpon>
     </Compile>
@@ -107,6 +109,7 @@
       <DependentUpon>LekoviRevizijaUpravnik.xaml</DependentUpon>
     </Compile>
     <Compile Include="FileStorage\FunkcionalnostiFileStorage.cs" />
+    <Compile Include="Model\Entity.cs" />
     <Compile Include="Model\Ingredient.cs" />
     <Compile Include="FileStorage\IngredientsFileStorage.cs" />
     <Compile Include="Model\Instruction.cs" />
