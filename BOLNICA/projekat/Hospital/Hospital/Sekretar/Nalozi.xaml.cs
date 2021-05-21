@@ -40,7 +40,7 @@ namespace Hospital
 
         private void blog(object sender, RoutedEventArgs e)
         {
-            Blog b = new Blog();
+            SvaObavestenja b = new SvaObavestenja();
             frameS.Navigate(b);
         }
        

@@ -84,7 +84,7 @@
       <DependentUpon>LekoviCekajuReviziju.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Alergens.cs" />
-    <Compile Include="Model\AlergensFileStorage.cs" />
+    <Compile Include="FileStorage\AlergensFileStorage.cs" />
     <Compile Include="DodavanjeLekaRevizija.xaml.cs">
       <DependentUpon>DodavanjeLekaRevizija.xaml</DependentUpon>
     </Compile>
@@ -106,18 +106,18 @@
     <Compile Include="LekoviRevizijaUpravnik.xaml.cs">
       <DependentUpon>LekoviRevizijaUpravnik.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\FunkcionalnostiFileStorage.cs" />
+    <Compile Include="FileStorage\FunkcionalnostiFileStorage.cs" />
     <Compile Include="Model\Ingredient.cs" />
-    <Compile Include="Model\IngredientsFileStorage.cs" />
+    <Compile Include="FileStorage\IngredientsFileStorage.cs" />
     <Compile Include="Model\Instruction.cs" />
-    <Compile Include="Model\InstructionFileStorage.cs" />
+    <Compile Include="FileStorage\InstructionFileStorage.cs" />
     <Compile Include="Model\Koristenjefunkcionalnosti.cs" />
     <Compile Include="Model\Medicine.cs" />
-    <Compile Include="Model\MedicineFileStorage.cs" />
+    <Compile Include="FileStorage\MedicineFileStorage.cs" />
     <Compile Include="Model\MedicineReview.cs" />
-    <Compile Include="Model\MedicineReviewFileStorage.cs" />
+    <Compile Include="FileStorage\MedicineReviewFileStorage.cs" />
     <Compile Include="Model\Notifications.cs" />
-    <Compile Include="Model\NotificationsFileStorage.cs" />
+    <Compile Include="FileStorage\NotificationsFileStorage.cs" />
     <Compile Include="ObavestenjaUpravnik.xaml.cs">
       <DependentUpon>ObavestenjaUpravnik.xaml</DependentUpon>
     </Compile>
@@ -133,9 +133,9 @@
     <Compile Include="Model\ReviewType.cs" />
     <Compile Include="Model\SpecializationType.cs" />
     <Compile Include="Model\StaticInventoryMovement.cs" />
-    <Compile Include="Model\StaticInvnetoryMovementFileStorage.cs" />
+    <Compile Include="FileStorage\StaticInvnetoryMovementFileStorage.cs" />
     <Compile Include="Model\Survey.cs" />
-    <Compile Include="Model\SurveyFileStorage.cs" />
+    <Compile Include="FileStorage\SurveyFileStorage.cs" />
     <Compile Include="OceniteBolnicu.xaml.cs">
       <DependentUpon>OceniteBolnicu.xaml</DependentUpon>
     </Compile>
@@ -161,8 +161,8 @@
     <Compile Include="Sekretar\Alergeni.xaml.cs">
       <DependentUpon>Alergeni.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sekretar\Blog.xaml.cs">
-      <DependentUpon>Blog.xaml</DependentUpon>
+    <Compile Include="Sekretar\SvaObavestenja.xaml.cs">
+      <DependentUpon>SvaObavestenja.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sekretar\DodajPregled.xaml.cs">
       <DependentUpon>DodajPregled.xaml</DependentUpon>
@@ -216,7 +216,7 @@
     <Compile Include="Service\CheckupService.cs" />
     <Compile Include="Service\InventoryService.cs" />
     <Compile Include="Service\MedicineService.cs" />
-    <Compile Include="Model\RenovationFileStorage.cs" />
+    <Compile Include="FileStorage\RenovationFileStorage.cs" />
     <Compile Include="Model\RoomRenovation.cs" />
     <Compile Include="PrikazSobaRenoviranje.xaml.cs">
       <DependentUpon>PrikazSobaRenoviranje.xaml</DependentUpon>
@@ -378,22 +378,21 @@
     </Compile>
     <Compile Include="Model\Adress.cs" />
     <Compile Include="Model\Anamnesis.cs" />
-    <Compile Include="Model\AnamnesisFileStorage.cs" />
+    <Compile Include="FileStorage\AnamnesisFileStorage.cs" />
     <Compile Include="Model\Appointment.cs" />
     <Compile Include="Model\City.cs" />
     <Compile Include="Model\Country.cs" />
-    <Compile Include="Model\DoctorFileStorage.cs" />
+    <Compile Include="FileStorage\DoctorFileStorage.cs" />
     <Compile Include="Model\Inventory.cs" />
-    <Compile Include="Model\InventoryFileStorage.cs" />
+    <Compile Include="FileStorage\InventoryFileStorage.cs" />
     <Compile Include="Model\InventoryType.cs" />
-    <Compile Include="Model\IzbrisiNalogPacijenta.xaml.cs" />
-    <Compile Include="Model\ManagerFileStorage.cs" />
+    <Compile Include="FileStorage\ManagerFileStorage.cs" />
     <Compile Include="Model\Notice.cs" />
-    <Compile Include="Model\NoticeFileStorage.cs" />
+    <Compile Include="FileStorage\NoticeFileStorage.cs" />
     <Compile Include="Model\Recipe.cs" />
-    <Compile Include="Model\RecipeFileStorage.cs" />
+    <Compile Include="FileStorage\RecipeFileStorage.cs" />
     <Compile Include="Model\RoomInventory.cs" />
-    <Compile Include="Model\RoomInventoryFileStorage.cs" />
+    <Compile Include="FileStorage\RoomInventoryFileStorage.cs" />
     <Compile Include="Model\SpecCheckup.cs" />
     <Compile Include="OdjaviSe.xaml.cs">
       <DependentUpon>OdjaviSe.xaml</DependentUpon>
@@ -416,8 +415,8 @@
     <Compile Include="PrikaziKartonPacijenta.xaml.cs">
       <DependentUpon>PrikaziKartonPacijenta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\MedicalRecordsFileStorage.cs" />
-    <Compile Include="Model\SecretaryFileStorage.cs" />
+    <Compile Include="FileStorage\MedicalRecordsFileStorage.cs" />
+    <Compile Include="FileStorage\SecretaryFileStorage.cs" />
     <Compile Include="Prijava.xaml.cs">
       <DependentUpon>Prijava.xaml</DependentUpon>
     </Compile>
@@ -519,7 +518,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Sekretar\Blog.xaml">
+    <Page Include="Sekretar\SvaObavestenja.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -806,10 +805,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\AppointmentFileStorage.cs" />
+    <Compile Include="FileStorage\AppointmentFileStorage.cs" />
     <Compile Include="Model\BloodType.cs" />
     <Compile Include="Model\Checkup.cs" />
-    <Compile Include="Model\CheckupFileStorage.cs" />
+    <Compile Include="FileStorage\CheckupFileStorage.cs" />
     <Compile Include="Model\CheckupType.cs" />
     <Compile Include="Model\Doctor.cs" />
     <Compile Include="Model\Gender.cs" />
@@ -817,10 +816,10 @@
     <Compile Include="Model\Manager.cs" />
     <Compile Include="Model\MedicalRecord.cs" />
     <Compile Include="Model\Patient.cs" />
-    <Compile Include="Model\PatientFileStorage.cs" />
+    <Compile Include="FileStorage\PatientFileStorage.cs" />
     <Compile Include="Model\Purpose.cs" />
     <Compile Include="Model\Room.cs" />
-    <Compile Include="Model\RoomFileStorage.cs" />
+    <Compile Include="FileStorage\RoomFileStorage.cs" />
     <Compile Include="Model\Secretary.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Pregled.xaml.cs">
@@ -927,5 +926,6 @@
   <ItemGroup>
     <Resource Include="Sekretar\Help-icon.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

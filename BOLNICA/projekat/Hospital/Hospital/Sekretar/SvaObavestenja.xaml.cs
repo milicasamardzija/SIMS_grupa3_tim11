@@ -19,10 +19,10 @@ using System.Windows.Shapes;
 namespace Hospital
 {
   
-    public partial class Blog : Page
+    public partial class SvaObavestenja : Page
     {
         public ObservableCollection<Notifications> listNotification { get; set; }
-        public Blog()
+        public SvaObavestenja()
         {
             InitializeComponent();
             this.DataContext = this;
