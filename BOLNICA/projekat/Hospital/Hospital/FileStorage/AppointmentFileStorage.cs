@@ -36,7 +36,6 @@ public class AppointmentFileStorage
    public void Delete(Appointment appointment)
    {
         List<Appointment> termini = GetAll();
-
         foreach (Appointment termin in termini)
         {
             if (termin.IdA == appointment.IdA)

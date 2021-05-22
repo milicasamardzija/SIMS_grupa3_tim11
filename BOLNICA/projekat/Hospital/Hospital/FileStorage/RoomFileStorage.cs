@@ -7,99 +7,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Hospital.FileStorage;
+using Hospital.FileStorage.Interfaces;
 using Newtonsoft.Json;
 
-public class RoomFileStorage : GenericFileStorage<Room>, GenericRepository<Room>
+public class RoomFileStorage : GenericFileStorage<Room>, RoomIFileStorage
 {
     public RoomFileStorage(String filePath) : base(filePath) { }
-   /* public List<Room> GetAll()
-    {
-        List<Room> allRooms = new List<Room>();
-
-        allRooms = JsonConvert.DeserializeObject<List<Room>>(File.ReadAllText(@"./../../../../Hospital/files/storageRooms.json"));
-
-        return allRooms;
-    }
-
-    public void SaveAll(List<Room> rooms)
-    {
-        using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/storageRooms.json"))
-        {
-            JsonSerializer serializer = new JsonSerializer();
-            serializer.Serialize(file, rooms);
-        }
-    }
-
-    public void Save(Room newRoom)
-    {
-        List<Room> allRooms = GetAll();
-        allRooms.Add(newRoom);
-        SaveAll(allRooms);
-    }
-
-    public void Delete(Room room)
-    {
-        List<Room> allRooms = GetAll();
-
-        foreach (Room temp in allRooms)
-        {
-            if (temp.Id == room.Id)
-            {
-                allRooms.Remove(temp);
-                break;
-            }
-        }
-        SaveAll(allRooms);
-    }
-
-    public Room FindById(int id)
-    {
-        List<Room> allRooms = GetAll();
-        Room ret = null;
-
-        foreach (Room room in allRooms)
-        {
-            if (room.Id == id)
-            {
-                ret = room;
-                break;
-            }
-        }
-
-        return ret;
-    }
-
-    public void DeleteById(int id)
-    {
-        List<Room> allRooms = GetAll();
-
-        foreach (Room room in allRooms)
-        {
-            if (room.Id == id)
-            {
-                allRooms.Remove(room);
-                break;
-            }
-        }
-        SaveAll(allRooms);
-    }
-
-    public Boolean ExistsById(int id)
-    {
-        List<Room> allRooms = GetAll();
-        Boolean ret = false;
-
-        foreach (Room room in allRooms)
-        {
-            if (room.Id == id)
-            {
-                ret = true;
-                break;
-            }
-        }
-        return ret;
-    }
-
-    // public String fileLocation;
-   */
 }
