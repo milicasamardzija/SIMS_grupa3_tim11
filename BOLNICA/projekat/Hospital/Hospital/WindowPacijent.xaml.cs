@@ -43,14 +43,20 @@ namespace Hospital
             Patient ret = new Patient();
             PatientFileStorage storage = new PatientFileStorage();
             ObservableCollection<Patient> patients = storage.GetAll();
+
             FunctionalityFileStorage funkcije = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
             List<Functionality> funkcionalnosti = funkcije.GetAll();
 
 
             foreach (Patient patient in patients)
-            {
+
+            { 
+                
                 if (patient.PatientId == idP)
+
                 {
+                    imePacijentaa.Text = patient.name + " " + patient.surname;
+
                     foreach (Functionality funkcionalnost in funkcionalnosti)
                     {
 
@@ -77,10 +83,12 @@ namespace Hospital
                         
                     }
 
-                }   
+                }
+                
             }
 
 
+          
         }
         public ObservableCollection<Appointment> loadJason()
         {

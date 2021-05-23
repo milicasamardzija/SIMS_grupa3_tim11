@@ -933,6 +933,11 @@
   <ItemGroup>
     <Resource Include="Sekretar\Help-icon.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="download %282%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

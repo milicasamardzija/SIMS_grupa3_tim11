@@ -21,16 +21,40 @@ namespace Hospital
     /// </summary>
     public partial class OceniteBolnicu : Window
     {
-      
-        public OceniteBolnicu()
+
+        int id;
+        public OceniteBolnicu(int idP)
         {
             InitializeComponent();
+            id = idP;
+
+            PatientFileStorage storage = new PatientFileStorage();
+            ObservableCollection<Patient> patients = storage.GetAll();
+            foreach (Patient patient in patients)
+            {
+                if (patient.PatientId == idP)
+                {
+                    imePacijenta.Text = patient.name + " " + patient.surname;
+                }
+            }
         }
 
-       
+
+        private void ProvjeritiPopunjenostPolja()
+        {
+            if (komentar.Text != null && ocena.SelectedItem != null)
+            {
+                submit.IsEnabled = true;
+            }
+        }
+
+        private void ocena_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ProvjeritiPopunjenostPolja();
+        }
 
 
-         
+
 
         private void posalji(object sender, RoutedEventArgs e)
         {
@@ -52,6 +76,11 @@ namespace Hospital
         }
 
         private void odustani(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Nazad_na_pocetnu(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

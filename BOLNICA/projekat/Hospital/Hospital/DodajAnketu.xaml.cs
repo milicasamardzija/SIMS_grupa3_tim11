@@ -30,6 +30,7 @@ namespace Hospital
         public string ime;
       
         
+        
 
         
        private string lekar;
@@ -41,11 +42,21 @@ namespace Hospital
             termin = selectedApp;
             index = selectedIndex;
             idPatient = idP;
-           
-           
+
+            submit.IsEnabled = false;
+
+            PatientFileStorage storage = new PatientFileStorage();
+            ObservableCollection<Patient> patients = storage.GetAll();
+            foreach (Patient patient in patients)
+            {
+                if (patient.PatientId == idP)
+                {
+                    imePacijenta.Text = patient.name + " " + patient.surname;
+                }
+            }
 
             ime = termin.Doctor.name + " " + termin.Doctor.surname;
-            doktor.SelectedText = ime;
+            doktor.Text = ime;
 
 
         }
@@ -67,7 +78,7 @@ namespace Hospital
 
             SurveyFileStorage sveAnkete = new SurveyFileStorage("./../../../../Hospital/files/ankete.json");
 
-            lekar = doktor.SelectedText;
+            lekar = doktor.Text;
             int ocenjeno = ocena.SelectedIndex;
             string komentarisano = komentar.Text;
             int id = sveAnkete.GetAll().Count() + 1;
@@ -77,10 +88,26 @@ namespace Hospital
             sveAnkete.Save(novaAnketa);
             obavljeniTermini.RemoveAt(index);
 
+
+
             this.Close();
          // parent.UpdateTable();
 
         }
+
+        private void ProvjeritiPopunjenostPolja()
+        {
+            if (komentar.Text != null && ocena.SelectedItem != null)
+            {
+                submit.IsEnabled = true;
+            }
+        }
+
+        private void ocena_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ProvjeritiPopunjenostPolja();
+        }
+
     }
 
 

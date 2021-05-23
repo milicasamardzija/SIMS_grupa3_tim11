@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,15 @@ namespace Hospital
             InitializeComponent();
             this.DataContext = this;
             id = idP;
+            PatientFileStorage storage = new PatientFileStorage();
+            ObservableCollection<Patient> patients = storage.GetAll();
+            foreach (Patient patient in patients)
+            {
+                if (patient.PatientId == idP)
+                {
+                    imePacijenta.Text = patient.name + " " + patient.surname;
+                }
+            }
         }
 
         private void Odjava(object sender, RoutedEventArgs e)

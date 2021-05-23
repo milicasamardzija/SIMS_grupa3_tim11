@@ -23,6 +23,7 @@ namespace Hospital
     {
         public int id { get; set; }
 
+
         public ObservableCollection<Appointment> termini
         {
             get;
@@ -35,7 +36,16 @@ namespace Hospital
             id = idP;
             termini = loadJason();
             bolnica.IsEnabled = false;
-            
+
+            PatientFileStorage storage = new PatientFileStorage();
+            ObservableCollection<Patient> patients = storage.GetAll();
+            foreach (Patient patient in patients)
+            {
+                if (patient.PatientId == idP)
+                {
+                    imePacijenta.Text = patient.name + " " + patient.surname;
+                }
+            }
 
 
 
@@ -78,7 +88,7 @@ namespace Hospital
 
         private void ocenite_bolnicu(object sender, RoutedEventArgs e)
         {
-            OceniteBolnicu oceni = new OceniteBolnicu();
+            OceniteBolnicu oceni = new OceniteBolnicu(id);
             oceni.Show();
         }
 
