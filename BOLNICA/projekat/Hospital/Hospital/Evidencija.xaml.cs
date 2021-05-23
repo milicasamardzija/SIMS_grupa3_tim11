@@ -33,7 +33,7 @@ namespace Hospital
 
         public ObservableCollection<Medicine> loadJsFile()
         {
-            MedicineFileStorage storageMedicine = new MedicineFileStorage();
+            MedicineFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             ObservableCollection<Medicine> medicines = new ObservableCollection<Medicine>(storageMedicine.GetAll());
             ObservableCollection<Medicine> returnMedicine = new ObservableCollection<Medicine>();
             

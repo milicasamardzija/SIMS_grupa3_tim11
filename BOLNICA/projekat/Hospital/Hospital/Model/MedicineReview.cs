@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model
 {
-    public class MedicineReview : INotifyPropertyChanged
+    public class MedicineReview : Entity,INotifyPropertyChanged
     {
-        private int idMedicineReview;
         private int idMedicine;
         private int idDoctor;
         private Doctor doctor;
@@ -28,30 +27,13 @@ namespace Hospital.Model
             }
         }
 
-        public MedicineReview(int id, int medicineId,int doctorId, ReviewType tReview, String reviewTxt, Boolean reviewDone)
+        public MedicineReview(int id, int medicineId,int doctorId, ReviewType tReview, String reviewTxt, Boolean reviewDone) : base(id)
         {
-            idMedicineReview = id;
             idMedicine = medicineId;
             idDoctor = doctorId;
             typeReview = tReview;
             review = reviewTxt;
             done = reviewDone;
-        }
-
-        public int IdMedicineReview
-        {
-            get
-            {
-                return idMedicineReview;
-            }
-            set
-            {
-                if (value != idMedicineReview)
-                {
-                    idMedicineReview = value;
-                    OnProperychanged("IdMedicineReview");
-                }
-            }
         }
 
         public int IdMedicine

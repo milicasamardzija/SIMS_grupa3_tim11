@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.FileStorage.Interfaces;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,7 +20,7 @@ namespace Hospital
     public partial class BrisanjeRenovacijeSIgurnost : Window
     {
         private RoomRenovation room;
-        private RenovationFileStorage storage = new RenovationFileStorage();
+        private RenovationIFileStorage storage = new RenovationFileStorage("./../../../../Hospital/files/storageRenovationRooms.json");
         private StaticInvnetoryMovementFileStorage storageInventory = new StaticInvnetoryMovementFileStorage();
         private ObservableCollection<RoomRenovation> renovations = new ObservableCollection<RoomRenovation>();
         public BrisanjeRenovacijeSIgurnost(RoomRenovation selectedRoom,ObservableCollection<RoomRenovation> renovation)
@@ -32,16 +33,16 @@ namespace Hospital
         private void Potvrdi(object sender, RoutedEventArgs e)
         {
             foreach (StaticInventoryMovement inventory in storageInventory.GetAll()) {
-                if (inventory.RoomInId == room.IdRoom && inventory.RoomOutId == -1 && inventory.Date == room.DateEnd)
+                if (inventory.RoomInId == room.Id && inventory.RoomOutId == -1 && inventory.Date == room.DateEnd)
                 {
-                    storageInventory.DeleteByRoomsAndDate(room.IdRoom, -1, room.DateEnd);
+                    storageInventory.DeleteByRoomsAndDate(room.Id, -1, room.DateEnd);
                 }
             }
             foreach (StaticInventoryMovement inventory in storageInventory.GetAll())
             {
-                if (inventory.RoomInId == -1 && inventory.RoomOutId == room.IdRoom && inventory.Date == room.DateBegin)
+                if (inventory.RoomInId == -1 && inventory.RoomOutId == room.Id && inventory.Date == room.DateBegin)
                 {
-                    storageInventory.DeleteByRoomsAndDate(-1, room.IdRoom, room.DateBegin);
+                    storageInventory.DeleteByRoomsAndDate(-1, room.Id, room.DateBegin);
                 }
             }
 

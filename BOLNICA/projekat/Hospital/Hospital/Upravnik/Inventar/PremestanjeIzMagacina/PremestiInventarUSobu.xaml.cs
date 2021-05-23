@@ -30,7 +30,7 @@ namespace Hospital
         public Inventory inventory;
         public ObservableCollection<Room> listRooms;
         private StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
-        private InventoryFileStorage inventoryStorage = new InventoryFileStorage();
+        private InventoryFileStorage inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
         private int idRoom;
         private int quantity;
         private DataGrid inventarTabela;
@@ -43,7 +43,7 @@ namespace Hospital
             listInventory = list;
             index = selectedIndex;
             inventory = selecetedInventory; //selektovani inevntar
-            idInventory = selecetedInventory.InventoryId; //id selektovanog inventara
+            idInventory = selecetedInventory.Id; //id selektovanog inventara
             listRooms = loadJason();
             inventarTabela = listaInventara;
 
@@ -61,7 +61,7 @@ namespace Hospital
 
         public ObservableCollection<Inventory> loadJsonInventory()
         {
-            InventoryFileStorage storage = new InventoryFileStorage();
+            InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>(storage.GetAll());
             return ret;
         }
@@ -76,7 +76,7 @@ namespace Hospital
             idRoom = Convert.ToInt32(IdSobeTxt.Text);
             quantity = Convert.ToInt32(KolicinaTxt.Text);
 
-            inventoryController.moveInventory(new RoomInventory(idRoom, inventory.InventoryId, quantity), -1);
+            inventoryController.moveInventory(new RoomInventory(idRoom, inventory.Id, quantity), -1);
             inventarTabela.ItemsSource = loadJsonInventory();
             frame.NavigationService.Navigate(new BelsekaMagacin());
         }

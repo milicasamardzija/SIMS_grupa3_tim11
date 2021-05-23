@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.FileStorage.Interfaces;
+using Hospital.Model;
 using Hospital.Service;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace Hospital
             get;
             set;
         }
-        private RenovationFileStorage storage = new RenovationFileStorage();
+        private RenovationIFileStorage storage = new RenovationFileStorage("./../../../../Hospital/files/storageRenovationRooms.json");
         private Frame back = new Frame();
         private ObservableCollection<Room> rooms = new ObservableCollection<Room>();
         public PrikazSobaRenoviranje(ObservableCollection<Room> roomList, Frame roomss)
@@ -39,7 +40,7 @@ namespace Hospital
         }
         public ObservableCollection<RoomRenovation> loadJason()
         {
-            RenovationFileStorage storage = new RenovationFileStorage();
+            RenovationFileStorage storage = new RenovationFileStorage("./../../../../Hospital/files/storageRenovationRooms.json");
             ObservableCollection<RoomRenovation> all = new ObservableCollection<RoomRenovation>(storage.GetAll());
             ObservableCollection<RoomRenovation> ret = new ObservableCollection<RoomRenovation>();
 

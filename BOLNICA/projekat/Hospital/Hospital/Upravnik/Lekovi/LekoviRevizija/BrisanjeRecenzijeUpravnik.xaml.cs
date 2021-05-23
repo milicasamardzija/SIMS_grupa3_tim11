@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.FileStorage.Interfaces;
+using Hospital.Model;
 using Hospital.Prikaz;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace Hospital
     {
         private Frame frame = new Frame();
         private LekRevizija revizija;
-        private MedicineReviewFileStorage reviewStorage = new MedicineReviewFileStorage();
+        private MedicineReviewIFileStorage reviewStorage = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
         public BrisanjeRecenzijeUpravnik(Frame frameUpravnik, LekRevizija selectedItem)
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace Hospital
 
         private void obrisi(object sender, RoutedEventArgs e)
         {
-            reviewStorage.DeleteByIdMedicine(revizija.IdMedicine);
+          //  reviewStorage.DeleteByIdMedicine(revizija.IdMedicine);
             frame.NavigationService.Navigate(new LekoviRevizijaUpravnik(frame));
         }
 

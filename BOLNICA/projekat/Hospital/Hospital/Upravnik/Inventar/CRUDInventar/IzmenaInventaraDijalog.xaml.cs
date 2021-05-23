@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.FileStorage.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace Hospital
             InitializeComponent();
             frame = m;
             listInventory = list;
-            id = selecetedInventory.InventoryId;
+            id = selecetedInventory.Id;
             index = selectedIndex;
             inventory = selecetedInventory;
 
@@ -48,21 +49,21 @@ namespace Hospital
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
-            InventoryFileStorage storage = new InventoryFileStorage();
+            InventoryIFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             List<Inventory> allInventories = storage.GetAll();
 
             foreach (Inventory i in allInventories) {
-                if (i.InventoryId == id)
+                if (i.Id == id)
                 {
                     i.Name = ImeTxt.Text;
                     i.Quantity = Convert.ToInt32(KolicinaTxt.Text);
                     i.Type = (InventoryType)TypeTxt.SelectedIndex;
-                    listInventory[index] = new Inventory(i.InventoryId, i.Name, i.Quantity, i.Type);
+                    listInventory[index] = new Inventory(i.Id, i.Name, i.Quantity, i.Type);
                     break;
                 }
             }
 
-            storage.serialize(allInventories);
+            storage.SaveAll(allInventories);
 
             frame.NavigationService.Navigate(new BelsekaMagacin());
 

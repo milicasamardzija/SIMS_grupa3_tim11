@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.FileStorage.Interfaces;
+using Hospital.Model;
 using Hospital.Prikaz;
 using System;
 using System.Collections.Generic;
@@ -32,8 +33,8 @@ namespace Hospital
 
         public ObservableCollection<LekRevizija> loadJson()
         {
-            MedicineFileStorage storageMedicine = new MedicineFileStorage();
-            MedicineReviewFileStorage storageMedicineReview = new MedicineReviewFileStorage();
+            MedicineIFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
+            MedicineReviewIFileStorage storageMedicineReview = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
             ObservableCollection<LekRevizija> ret = new ObservableCollection<LekRevizija>();
 
             foreach (Medicine medicine in storageMedicine.GetAll())
@@ -42,9 +43,9 @@ namespace Hospital
                 {
                     foreach (MedicineReview medicineRewiev in storageMedicineReview.GetAll()) 
                     {
-                        if (medicineRewiev.IdMedicine == medicine.IdMedicine)
+                        if (medicineRewiev.IdMedicine == medicine.Id)
                         {
-                            ret.Add(new LekRevizija(medicine.Name,medicine.Type,medicineRewiev.TypeReview,medicineRewiev.Done, medicine.IdMedicine, medicineRewiev.IdMedicineReview));
+                            ret.Add(new LekRevizija(medicine.Name,medicine.Type,medicineRewiev.TypeReview,medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
                             break;
                         }
                     }
@@ -57,9 +58,9 @@ namespace Hospital
                 {
                     foreach (MedicineReview medicineRewiev in storageMedicineReview.GetAll())
                     {
-                        if (medicineRewiev.IdMedicine == medicine.IdMedicine)
+                        if (medicineRewiev.IdMedicine == medicine.Id)
                         {
-                            ret.Add(new LekRevizija(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.IdMedicine, medicineRewiev.IdMedicineReview));
+                            ret.Add(new LekRevizija(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
                             break;
                         }
                     }

@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.FileStorage.Interfaces;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -31,7 +32,7 @@ namespace Hospital
 
         public ObservableCollection<Medicine> loadJason()
         {
-            MedicineFileStorage storage = new MedicineFileStorage();
+            MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             ObservableCollection<Medicine> ret = new ObservableCollection<Medicine>();
 
             foreach (Medicine medicine in storage.GetAll())

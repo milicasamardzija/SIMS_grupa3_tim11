@@ -1,4 +1,5 @@
 ﻿using Hospital.Controller;
+using Hospital.FileStorage.Interfaces;
 using Hospital.Model;
 using Hospital.Prikaz;
 using System;
@@ -22,8 +23,8 @@ namespace Hospital
     {
         private Frame frame = new Frame();
         private LekRevizija revision;
-        private MedicineFileStorage storage = new MedicineFileStorage();
-        private MedicineReviewFileStorage reviewStorage = new MedicineReviewFileStorage();
+        private MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
+        private MedicineReviewIFileStorage reviewStorage = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
    
         public BrisanjeLekaUpravnik(Frame frameLekovi, LekRevizija selectedRevision)
         {
@@ -35,7 +36,7 @@ namespace Hospital
         private void obrisi(object sender, RoutedEventArgs e)
         {
             storage.DeleteById(revision.IdMedicine);
-            reviewStorage.DeleteByIdMedicine(revision.IdMedicine);
+           // reviewStorage.DeleteByIdMedicine(revision.IdMedicine);
             frame.NavigationService.Navigate(new LekoviRevizijaUpravnik(frame));
         }
 

@@ -30,7 +30,7 @@ namespace Hospital
         private StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
         private int idRoom;
         private int quantity;
-        private InventoryFileStorage inventoryStorage = new InventoryFileStorage();
+        private InventoryFileStorage inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
         private DataGrid listaInvetara;
         private InventoryController inventoryController = new InventoryController();
         public PremestanjeInventaraDijalog(Frame m, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, Room roomOut, DataGrid tablaPrikaz)
@@ -40,7 +40,7 @@ namespace Hospital
             listInventory = list;
             index = selectedIndex;
             inventory = selecetedInventory;
-            idInventory = selecetedInventory.InventoryId;
+            idInventory = selecetedInventory.Id;
             roomOutId = roomOut.Id;
             listaInvetara = tablaPrikaz;
 
@@ -65,7 +65,7 @@ namespace Hospital
             }
             quantity = Convert.ToInt32(KolicinaTxt.Text);
 
-            inventoryController.moveInventory(new RoomInventory(idRoom, inventory.InventoryId, quantity), roomOutId);
+            inventoryController.moveInventory(new RoomInventory(idRoom, inventory.Id, quantity), roomOutId);
             listaInvetara.ItemsSource = loadJasonInventory();
 
             frame.NavigationService.Navigate(new BelsekaMagacin());
@@ -74,7 +74,7 @@ namespace Hospital
         public ObservableCollection<Inventory> loadJasonInventory()
         {
             RoomInventoryFileStorage storage = new RoomInventoryFileStorage();
-            InventoryFileStorage inventoryStorage = new InventoryFileStorage();
+            InventoryFileStorage inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
 
             ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>();
 
@@ -84,7 +84,7 @@ namespace Hospital
                 {
                     Inventory i = inventoryStorage.FindById(r.IdInventory);
                     if (i != null)
-                        ret.Add(new Inventory(i.InventoryId, i.Name, r.Quantity, i.Type));
+                        ret.Add(new Inventory(i.Id, i.Name, r.Quantity, i.Type));
                     else
                         break;
                 }

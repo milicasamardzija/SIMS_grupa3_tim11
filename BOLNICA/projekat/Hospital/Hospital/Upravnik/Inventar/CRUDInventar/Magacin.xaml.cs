@@ -44,7 +44,7 @@ namespace Hospital
 
         public ObservableCollection<Inventory> loadJason()
         {
-            InventoryFileStorage storage = new InventoryFileStorage();
+            InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>(storage.GetAll());
             return ret;
         }
@@ -98,7 +98,7 @@ namespace Hospital
 
         private void PretragaTxt_TextChanged(object sender, TextChangedEventArgs e)
         {
-            InventoryFileStorage storage = new InventoryFileStorage();
+            InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             List<Inventory> all = storage.GetAll();
 
             filteredInventory.Clear();
@@ -144,7 +144,7 @@ namespace Hospital
         private void filtriranjeKolicina(object sender, TextChangedEventArgs e)
         {
             int kolicina = -1;
-            InventoryFileStorage storage = new InventoryFileStorage();
+            InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             List<Inventory> all = storage.GetAll();
             if (!KolicinaFiltriranja.Text.Equals(""))
             {

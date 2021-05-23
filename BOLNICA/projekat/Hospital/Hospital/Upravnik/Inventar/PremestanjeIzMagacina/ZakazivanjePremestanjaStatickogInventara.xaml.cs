@@ -84,7 +84,7 @@ namespace Hospital
             TimeSpan t = TimeSpan.ParseExact(time,"c",null);
             dateExecution = date.Add(t);
 
-            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, -1, inventory.InventoryId, quantity, dateExecution);
+            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, -1, inventory.Id, quantity, dateExecution);
 
             if (serviceRoom.isRoomAvailableInventoryMovement(newMovement))
             {
@@ -103,14 +103,14 @@ namespace Hospital
 
         private void saveNewMovement()
         {
-            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, -1, inventory.InventoryId, quantity, dateExecution);
+            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, -1, inventory.Id, quantity, dateExecution);
             StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
             storage.Save(newMovement);
         }
 
         public ObservableCollection<Inventory> loadJason()
         {
-            InventoryFileStorage storage = new InventoryFileStorage();
+            InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>(storage.GetAll());
             return ret;
         }

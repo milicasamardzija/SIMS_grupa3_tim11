@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.FileStorage.Interfaces;
+using Hospital.Model;
 using Hospital.Prikaz;
 using System;
 using System.Collections.Generic;
@@ -11,26 +12,26 @@ namespace Hospital.Service
 {
     class MedicineService
     {
-        private MedicineFileStorage storageMedicine;
-        private MedicineReviewFileStorage storageReview;
+        private MedicineIFileStorage storageMedicine;
+        private MedicineReviewIFileStorage storageReview;
         public MedicineService()
         {
-            storageMedicine = new MedicineFileStorage();
-            storageReview = new MedicineReviewFileStorage();
+            storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
+            storageReview = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
         }
 
         public int generateIdMedicineReview()
         {
             int ret = 0;
 
-            MedicineReviewFileStorage storage = new MedicineReviewFileStorage();
+            MedicineReviewIFileStorage storage = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
             List<MedicineReview> all = storage.GetAll();
 
             foreach (MedicineReview medicineBig in all)
             {
                 foreach (MedicineReview medicine in all)
                 {
-                    if (ret == medicine.IdMedicineReview)
+                    if (ret == medicine.Id)
                     {
                         ++ret;
                         break;
@@ -42,7 +43,7 @@ namespace Hospital.Service
 
         public void deleteMedicine(Medicine medicine, int idDoctor)
         {
-            storageReview.Save(new MedicineReview(generateIdMedicineReview(), medicine.IdMedicine, idDoctor, ReviewType.brisanje, "", false));
+            storageReview.Save(new MedicineReview(generateIdMedicineReview(), medicine.Id, idDoctor, ReviewType.brisanje, "", false));
             deleteFleg(medicine);
         }
 
@@ -51,7 +52,7 @@ namespace Hospital.Service
             List<Medicine> all = storageMedicine.GetAll();
             foreach (Medicine medic in all)
             {
-                if (medic.IdMedicine == medicine.IdMedicine)
+                if (medic.Id == medicine.Id)
                 {
                     medic.Delete = true;
                     storageMedicine.SaveAll(all);
@@ -65,7 +66,7 @@ namespace Hospital.Service
             List<Medicine> all = storageMedicine.GetAll();
             foreach (Medicine medicine in all)
             {
-                if (medicine.IdMedicine == revision.IdMedicine)
+                if (medicine.Id == revision.IdMedicine)
                 {
                     medicine.Approved = true;
                     storageMedicine.SaveAll(all);
@@ -78,7 +79,7 @@ namespace Hospital.Service
         public void sendMediciToRevision(Medicine newMedicine, int idDoctor)
         {
             storageMedicine.Save(newMedicine);
-            storageReview.Save(new MedicineReview(generateIdMedicineReview(),newMedicine.IdMedicine,idDoctor,ReviewType.dodavanje,"",false));
+            storageReview.Save(new MedicineReview(generateIdMedicineReview(),newMedicine.Id,idDoctor,ReviewType.dodavanje,"",false));
         }
     }
 }

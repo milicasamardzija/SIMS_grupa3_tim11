@@ -41,7 +41,7 @@ namespace Hospital
       private void getTasks()
         {
             StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
-            InventoryFileStorage storageInventory = new InventoryFileStorage();
+            InventoryFileStorage storageInventory = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
 
             foreach (StaticInventoryMovement task in storage.GetAll())
             {
@@ -52,7 +52,7 @@ namespace Hospital
 
                 foreach (Inventory i in storageInventory.GetAll())
                 {
-                    if (i.InventoryId == task.InventoryId)
+                    if (i.Id == task.InventoryId)
                     {
                         inventory = i;
                         break;

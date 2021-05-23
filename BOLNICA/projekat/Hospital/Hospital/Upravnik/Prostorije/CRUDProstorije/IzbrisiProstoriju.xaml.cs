@@ -43,7 +43,7 @@ namespace Hospital
         {
             RoomFileStorage storage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
             RoomInventoryFileStorage storageInventory = new RoomInventoryFileStorage();
-            InventoryFileStorage storageOfInventories = new InventoryFileStorage();
+            InventoryFileStorage storageOfInventories = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
 
             storage.DeleteById(id); //brise se iz fajla na osnovu id-a
             listRoom.RemoveAt(index); //brise se iz prikaza tabele

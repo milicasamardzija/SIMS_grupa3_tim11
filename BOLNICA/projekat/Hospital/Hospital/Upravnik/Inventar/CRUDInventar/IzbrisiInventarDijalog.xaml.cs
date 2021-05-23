@@ -30,7 +30,7 @@ namespace Hospital
             InitializeComponent();
             frame = m;
             listInventory = list;
-            id = selecetdInventory.InventoryId;
+            id = selecetdInventory.Id;
             index = selectedIndex;
 
             ImeTxt.SelectedText = selecetdInventory.Name;
@@ -44,7 +44,7 @@ namespace Hospital
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-            InventoryFileStorage storage = new InventoryFileStorage();
+            InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             storage.DeleteById(id);
             listInventory.RemoveAt(index);
             frame.NavigationService.Navigate(new BelsekaMagacin());

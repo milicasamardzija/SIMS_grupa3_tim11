@@ -55,7 +55,7 @@ namespace Hospital
 
         private Frame frame = new Frame();
         private ObservableCollection<Medicine> allMedicines = new ObservableCollection<Medicine>();
-        private MedicineFileStorage storage = new MedicineFileStorage();
+        private MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
         private List<int> medicineIds = new List<int>();
         private List<int> ingredientsIds = new List<int>();
 
@@ -73,14 +73,14 @@ namespace Hospital
         }
         public ObservableCollection<Medicine> loadJsonReplacementMedicines()
         {
-            MedicineFileStorage storage = new MedicineFileStorage();
+            MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             ObservableCollection<Medicine> ret = new ObservableCollection<Medicine>();
             if (medicine != null) {
                 foreach (int id in medicine.IdsMedicines)
                 {
                     foreach (Medicine medicine in storage.GetAll())
                     {
-                        if (medicine.IdMedicine == id)
+                        if (medicine.Id == id)
                         {
                             ret.Add(medicine);
                             break;
@@ -119,7 +119,7 @@ namespace Hospital
 
         public ObservableCollection<Medicine> loadJasonMedicines()
         {
-            MedicineFileStorage storage = new MedicineFileStorage();
+            MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             ObservableCollection<Medicine> ret = new ObservableCollection<Medicine>();
             foreach (Medicine medicine in storage.GetAll())
             {
@@ -158,7 +158,7 @@ namespace Hospital
         {
             foreach (Medicine medicine in ReplacementMedicine)
             {
-                medicineIds.Add(medicine.IdMedicine);
+                medicineIds.Add(medicine.Id);
             }
             foreach (Ingredient ingredient in IngredientsMedicine)
             {

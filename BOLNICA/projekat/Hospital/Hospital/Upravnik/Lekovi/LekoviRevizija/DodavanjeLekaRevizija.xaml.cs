@@ -73,7 +73,7 @@ namespace Hospital
 
         public ObservableCollection<Medicine> loadJasonMedicines()
         {
-            MedicineFileStorage storage = new MedicineFileStorage();
+            MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             ObservableCollection<Medicine> ret = new ObservableCollection<Medicine>();
                 foreach (Medicine medicine in storage.GetAll())
                 {
@@ -89,14 +89,14 @@ namespace Hospital
         {
             int ret = 0;
 
-            MedicineFileStorage storage = new MedicineFileStorage();
+            MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             List<Medicine> all = storage.GetAll();
 
             foreach (Medicine mediicneBig in all)
             {
                 foreach (Medicine medicine in all)
                 {
-                    if (ret == medicine.IdMedicine)
+                    if (ret == medicine.Id)
                     {
                         ++ret;
                         break;
@@ -116,7 +116,7 @@ namespace Hospital
         {
             foreach (Medicine medicine in ReplacementMedicine)
             {
-                medicineIds.Add(medicine.IdMedicine);
+                medicineIds.Add(medicine.Id);
             }
             foreach (Ingredient ingredient in IngredientsMedicine)
             {

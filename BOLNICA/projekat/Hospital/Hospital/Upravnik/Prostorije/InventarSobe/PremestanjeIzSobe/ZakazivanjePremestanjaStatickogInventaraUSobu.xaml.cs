@@ -58,7 +58,7 @@ namespace Hospital
         public ObservableCollection<Inventory> loadJason()
         {
             RoomInventoryFileStorage storage = new RoomInventoryFileStorage();
-            InventoryFileStorage inventoryStorage = new InventoryFileStorage();
+            InventoryFileStorage inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
 
             ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>();
 
@@ -68,7 +68,7 @@ namespace Hospital
                 {
                     Inventory i = inventoryStorage.FindById(r.IdInventory);
                     if (i != null)
-                        ret.Add(new Inventory(i.InventoryId, i.Name, r.Quantity, i.Type));
+                        ret.Add(new Inventory(i.Id, i.Name, r.Quantity, i.Type));
                     else
                         break;
                 }
@@ -115,7 +115,7 @@ namespace Hospital
             TimeSpan t = TimeSpan.ParseExact(time, "c", null); 
             dateExecution = date.Add(t);
 
-            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, roomOut.Id, inventory.InventoryId, quantity, dateExecution);
+            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, roomOut.Id, inventory.Id, quantity, dateExecution);
 
             if (serviceRoom.isRoomAvailableInventoryMovement(newMovement))
             {
@@ -133,7 +133,7 @@ namespace Hospital
 
         private void saveNewMovement()
         {
-            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, roomOut.Id, inventory.InventoryId, quantity, dateExecution);
+            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, roomOut.Id, inventory.Id, quantity, dateExecution);
             StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
             storage.Save(newMovement);
         }

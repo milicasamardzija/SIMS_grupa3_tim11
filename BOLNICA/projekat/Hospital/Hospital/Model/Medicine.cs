@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model
 {
-    public class Medicine : INotifyPropertyChanged
+    public class Medicine : Entity,INotifyPropertyChanged
     {
-        private int idMedicine;
         private String name;
         private double quantity;
         private String type;
@@ -44,9 +43,8 @@ private object selectedItem2;*/
             }
         }
 
-        public Medicine(int id, String nameMedicine, double quantityMedicine, String typeMedicine, List<int> ingredientsMedicine, List<int> replacementMedicine, Boolean approvement)
+        public Medicine(int id, String nameMedicine, double quantityMedicine, String typeMedicine, List<int> ingredientsMedicine, List<int> replacementMedicine, Boolean approvement) : base(id)
         {
-            idMedicine = id;
             name = nameMedicine;
             quantity = quantityMedicine;
             type = typeMedicine;
@@ -79,22 +77,6 @@ private object selectedItem2;*/
               this.selectedItem2 = selectedItem2;
               this.approvedMedicine = approvedMedicine;
           }*/
-
-        public int IdMedicine
-        {
-            get
-            {
-                return idMedicine;
-            }
-            set
-            {
-                if (value != idMedicine)
-                {
-                    idMedicine = value;
-                    OnProperychanged("IdMedicine");
-                }
-            }
-        }
 
         public String Name
         {

@@ -1,19 +1,18 @@
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-public class Inventory : INotifyPropertyChanged
+public class Inventory : Entity, INotifyPropertyChanged
 {
-    private int inventoryId;
     private String name;
     private int quantity;
     private InventoryType type;
 
     public Inventory() { }
 
-    public Inventory(int id, String n, int q, InventoryType t)
+    public Inventory(int id, String n, int q, InventoryType t) : base(id)
     {
-        inventoryId = id;
         name = n;
         quantity = q;
         type = t;
@@ -26,22 +25,6 @@ public class Inventory : INotifyPropertyChanged
         if (PropertyChanged != null)
         {
             PropertyChanged(this, new PropertyChangedEventArgs(name));
-        }
-    }
-
-    public int InventoryId
-    {
-        get
-        {
-            return inventoryId;
-        }
-        set
-        {
-            if (value != inventoryId)
-            {
-                inventoryId = value;
-                OnProperychanged("InventoryId");
-            }
         }
     }
 

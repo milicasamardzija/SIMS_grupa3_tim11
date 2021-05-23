@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.FileStorage.Interfaces;
+using Hospital.Model;
 using Hospital.Prikaz;
 using System;
 using System.Collections.Generic;
@@ -42,14 +43,14 @@ namespace Hospital
 
         public int getIdDoctor()
         {
-            MedicineReviewFileStorage storage = new MedicineReviewFileStorage();
+            MedicineReviewIFileStorage storage = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
             MedicineReview review = storage.FindById(revizija.IdMedicineReview);
             return review.IdDoctor;
         }
 
         public String getRezension()
         {
-            MedicineReviewFileStorage storage = new MedicineReviewFileStorage();
+            MedicineReviewIFileStorage storage = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
             MedicineReview review = storage.FindById(revizija.IdMedicineReview);
             return review.Review;
         }

@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.FileStorage.Interfaces;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,28 +11,25 @@ namespace Hospital.Service
 {
     class RoomsService
     {
-        private RenovationFileStorage renovationStorage;
-
+        private RenovationIFileStorage renovationStorage;
         private CheckupFileStorage checkupStorage;
         private StaticInvnetoryMovementFileStorage inventoryMovementStorage;
         private RoomInventoryFileStorage roominventoryStorage;
         private InventoryFileStorage inventoryStorage;
         private StaticInvnetoryMovementFileStorage staticInventoryStorage;
-         private AppointmentFileStorage appointmentsStorage;
-          private RoomFileStorage roomStorage;
+        private AppointmentFileStorage appointmentsStorage;
+        private RoomIFileStorage roomStorage;
 
         public RoomsService()
         {
-            renovationStorage = new RenovationFileStorage();
+            renovationStorage = new RenovationFileStorage("./../../../../Hospital/files/storageRenovationRooms.json");
             checkupStorage = new CheckupFileStorage();
             inventoryMovementStorage = new StaticInvnetoryMovementFileStorage();
             roominventoryStorage = new RoomInventoryFileStorage();
-            inventoryStorage = new InventoryFileStorage();
+            inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             staticInventoryStorage = new StaticInvnetoryMovementFileStorage();
             appointmentsStorage = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
             roomStorage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
-
-        
         }
     
         public void zakaziRenoviranje(RoomRenovation renovation)
@@ -72,15 +70,15 @@ namespace Hospital.Service
         {
              foreach (RoomInventory roomInv in roominventoryStorage.GetAll())
              {
-                 if (roomInv.IdRoom == renovation.IdRoom)
+                 if (roomInv.IdRoom == renovation.Id)
                  {
                      foreach (Inventory inventory in inventoryStorage.GetAll())
                      {
-                         if (roomInv.IdInventory == inventory.InventoryId) {
+                         if (roomInv.IdInventory == inventory.Id) {
                              if (inventory.Type == InventoryType.staticki)
                              {
-                                staticInventoryStorage.Save(new StaticInventoryMovement(-1, renovation.IdRoom, inventory.InventoryId, roomInv.Quantity, renovation.DateBegin));
-                                staticInventoryStorage.Save(new StaticInventoryMovement(renovation.IdRoom, -1, inventory.InventoryId, roomInv.Quantity, renovation.DateEnd));
+                                staticInventoryStorage.Save(new StaticInventoryMovement(-1, renovation.Id, inventory.Id, roomInv.Quantity, renovation.DateBegin));
+                                staticInventoryStorage.Save(new StaticInventoryMovement(renovation.Id, -1, inventory.Id, roomInv.Quantity, renovation.DateEnd));
                             }
                          }
                      }
@@ -116,7 +114,7 @@ namespace Hospital.Service
        {
             foreach (Checkup checkup in checkupStorage.GetAll())
             {
-                 if (checkup.IdRoom == renovation.IdRoom)
+                 if (checkup.IdRoom == renovation.Id)
                  {
                      if (checkup.Date.Date == renovation.DateBegin.Date)
                      {
@@ -141,7 +139,7 @@ namespace Hospital.Service
         {
             foreach (RoomRenovation renovation in renovationStorage.GetAll())
             {
-                if (renovation.IdRoom == checkup.IdRoom)
+                if (renovation.Id == checkup.IdRoom)
                 {
                     if (checkup.Date == renovation.DateBegin)
                     {

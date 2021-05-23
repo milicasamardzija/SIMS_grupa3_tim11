@@ -1,1 +1,1 @@
-[{"IdMedicineReview":2,"IdMedicine":3,"IdDoctor":5,"TypeReview":1,"Review":"Lek nije odobren za brisanje iz baze lekova bolnice.","Done":true},{"IdMedicineReview":0,"IdMedicine":5,"IdDoctor":3,"TypeReview":0,"Review":"","Done":false}]
+[{"IdMedicine":5,"IdDoctor":3,"TypeReview":0,"Review":"","Done":false,"Id":0},{"IdMedicine":0,"IdDoctor":0,"TypeReview":1,"Review":"","Done":false,"Id":0}]

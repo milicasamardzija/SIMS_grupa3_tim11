@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.FileStorage.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace Hospital.Service
     public class InventoryService
     {
         private RoomFileStorage roomStorage;
-        private InventoryFileStorage inventoryStorage;
+        private InventoryIFileStorage inventoryStorage;
         private RoomInventoryFileStorage roomInventoryStorage;
         private List<RoomInventory> allRoomInventory;
         private List<Inventory> inventories;
@@ -17,7 +18,7 @@ namespace Hospital.Service
         public InventoryService()
         {
             roomStorage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
-            inventoryStorage = new InventoryFileStorage();
+            inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             roomInventoryStorage = new RoomInventoryFileStorage();
             allRoomInventory = roomInventoryStorage.GetAll();
             inventories = inventoryStorage.GetAll();
@@ -55,7 +56,7 @@ namespace Hospital.Service
         {
             foreach (Inventory inventory in inventories)
             {
-                if (inventory.InventoryId == roomInventory.IdInventory)
+                if (inventory.Id == roomInventory.IdInventory)
                 {
                     inventory.Quantity -= roomInventory.Quantity;
                 }
@@ -86,7 +87,7 @@ namespace Hospital.Service
         {
             foreach (Inventory inventory in inventories)
             {
-                if (inventory.InventoryId == roomInventory.IdInventory)
+                if (inventory.Id == roomInventory.IdInventory)
                 {
                     inventory.Quantity += roomInventory.Quantity;
                 }
@@ -123,7 +124,7 @@ namespace Hospital.Service
 
         private void saveChangeOfInventoryState()
         {
-            inventoryStorage.serialize(inventories);
+            inventoryStorage.SaveAll(inventories);
             roomInventoryStorage.serialize(allRoomInventory);
         }
 

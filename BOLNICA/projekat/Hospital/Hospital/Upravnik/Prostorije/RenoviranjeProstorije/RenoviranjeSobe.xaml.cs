@@ -1,4 +1,5 @@
 ﻿using Hospital.Controller;
+using Hospital.FileStorage.Interfaces;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -37,7 +38,7 @@ namespace Hospital
         {
             int ret = 0;
 
-            RenovationFileStorage storage = new RenovationFileStorage();
+            RenovationIFileStorage storage = new RenovationFileStorage("./../../../../Hospital/files/storageRenovationRooms.json");
             List<RoomRenovation> allRooms = storage.GetAll();
 
             foreach (RoomRenovation roomBig in allRooms)

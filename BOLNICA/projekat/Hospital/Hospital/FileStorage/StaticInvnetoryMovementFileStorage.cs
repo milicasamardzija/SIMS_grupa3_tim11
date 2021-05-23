@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Hospital.FileStorage.Interfaces;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,13 +12,13 @@ namespace Hospital.Model
 {
     class StaticInvnetoryMovementFileStorage
     {
-        private InventoryFileStorage inventoryStorage { get; set; }
-        private RoomFileStorage roomStorage { get; set; }
+        private InventoryIFileStorage inventoryStorage { get; set; }
+        private RoomIFileStorage roomStorage { get; set; }
         private RoomInventoryFileStorage roomInventoryStorage { get; set; }
 
         public StaticInvnetoryMovementFileStorage()
         {
-            inventoryStorage = new InventoryFileStorage();
+            inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             roomStorage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
             roomInventoryStorage = new RoomInventoryFileStorage();
             List<RoomInventory> all = roomInventoryStorage.GetAll();
@@ -84,7 +85,7 @@ namespace Hospital.Model
         public void moveInventoryStatic(Inventory inventory, int idRoomIn, int idRoomOut, int quantity)
         {
             moveInventory(inventory,idRoomIn,idRoomOut,quantity);
-            this.DeleteByIds(idRoomIn, idRoomOut, inventory.InventoryId);
+            this.DeleteByIds(idRoomIn, idRoomOut, inventory.Id);
         }
 
         public void moveInventory(Inventory inventory, int idRoomIn, int idRoomOut, int quantity)
@@ -100,7 +101,7 @@ namespace Hospital.Model
                 foreach (RoomInventory roomInv in all)
                 {
                     //ako vec postoji zeljeni inventar u unetoj sobi
-                    if (roomInv.IdInventory == inventory.InventoryId && roomInv.IdRoom == idRoomIn)
+                    if (roomInv.IdInventory == inventory.Id && roomInv.IdRoom == idRoomIn)
                     {
                         roomInv.Quantity += quantity;     //povecava se kolicina inventara u sobi
                         nadjen = false;
@@ -130,16 +131,16 @@ namespace Hospital.Model
 
                     foreach (Inventory i in inventoryStorage.GetAll())
                     {
-                        if (i.InventoryId == inventory.InventoryId)
+                        if (i.Id == inventory.Id)
                         {
-                            invent.InventoryId = i.InventoryId;
+                            invent.Id = i.Id;
                             invent.Name = i.Name;
                             invent.Quantity = i.Quantity;
                             invent.Type = i.Type;
                             break;
                         }
                     }
-                    RoomInventory newInventory = new RoomInventory(idRoomIn, room, invent.InventoryId, invent, quantity);
+                    RoomInventory newInventory = new RoomInventory(idRoomIn, room, invent.Id, invent, quantity);
                     all.Add(newInventory);
                 }
             }
@@ -147,10 +148,10 @@ namespace Hospital.Model
             {
                 foreach (Inventory invent in inventories)
                 {
-                    if (invent.InventoryId == inventory.InventoryId)
+                    if (invent.Id == inventory.Id)
                     {
                         invent.Quantity += quantity;
-                        inventoryStorage.serialize(inventories);
+                        inventoryStorage.SaveAll(inventories);
                         break;
                     }
                 }
@@ -160,11 +161,11 @@ namespace Hospital.Model
             {
                 foreach (Inventory i in inventories)
                 {
-                    if (i.InventoryId == inventory.InventoryId)
+                    if (i.Id == inventory.Id)
                     {
                         i.Quantity -= quantity;
 
-                        inventoryStorage.serialize(inventories);
+                        inventoryStorage.SaveAll(inventories);
                         roomInventoryStorage.serialize(all);
                         break;
                     }
@@ -174,7 +175,7 @@ namespace Hospital.Model
             {
                 foreach (RoomInventory ri in all)
                 {
-                    if (ri.IdRoom == idRoomOut && ri.IdInventory == inventory.InventoryId)
+                    if (ri.IdRoom == idRoomOut && ri.IdInventory == inventory.Id)
                     {
                         if (ri.Quantity < quantity)
                         {
@@ -183,7 +184,7 @@ namespace Hospital.Model
                             int storageQuantity = quantity - inRoomQuantity;
                                 foreach (Inventory i in inventories)
                                 {
-                                    if (i.InventoryId == inventory.InventoryId)
+                                    if (i.Id == inventory.Id)
                                     {
                                         if (i.Quantity < storageQuantity)
                                         {
@@ -194,7 +195,7 @@ namespace Hospital.Model
 
                                         i.Quantity -= storageQuantity;
 
-                                        inventoryStorage.serialize(inventories);
+                                        inventoryStorage.SaveAll(inventories);
                                         break;
                                     }
                                 }

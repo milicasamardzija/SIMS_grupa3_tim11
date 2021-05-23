@@ -61,7 +61,7 @@ namespace Hospital
 
         public ObservableCollection<Medicine> loadMedicine()
         {
-            MedicineFileStorage storage = new MedicineFileStorage();
+            MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             ObservableCollection<Medicine> medicines = new ObservableCollection<Medicine>(storage.GetAll());
             ObservableCollection<Medicine> ret = new ObservableCollection<Medicine>();
             foreach (Medicine medicine in medicines)
@@ -74,13 +74,13 @@ namespace Hospital
         public int generisiID()
         {
             int ret = 0;
-            MedicineFileStorage storage = new MedicineFileStorage();
+            MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             ObservableCollection<Medicine> all = new ObservableCollection<Medicine>(storage.GetAll());
             foreach (Medicine medicine in all)
             {
                 foreach (Medicine medicines in all)
                 {
-                    if (ret == medicines.IdMedicine)
+                    if (ret == medicines.Id)
                     {
                         ++ret;
                         break;

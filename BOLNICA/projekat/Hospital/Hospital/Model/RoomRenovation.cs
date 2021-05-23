@@ -7,16 +7,14 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model
 {
-    public class RoomRenovation : INotifyPropertyChanged
+    public class RoomRenovation : Entity, INotifyPropertyChanged
     {
-        private int idRoom;
         private DateTime dateBegin;
         private DateTime dateEnd;
         private String description;
         private int idRenovation;
-        public RoomRenovation(int idR,int id, DateTime begin, DateTime end, String descript)
+        public RoomRenovation(int idR,int id, DateTime begin, DateTime end, String descript) : base(id)
         {
-            idRoom = id;
             dateBegin = begin;
             dateEnd = end.AddHours(23);
             dateEnd.AddMinutes(59);
@@ -46,22 +44,6 @@ namespace Hospital.Model
                 {
                     idRenovation = value;
                     OnProperychanged("IdRenovation");
-                }
-            }
-        }
-
-        public int IdRoom
-        {
-            get
-            {
-                return idRoom;
-            }
-            set
-            {
-                if (value != idRoom)
-                {
-                    idRoom = value;
-                    OnProperychanged("IdRoom");
                 }
             }
         }

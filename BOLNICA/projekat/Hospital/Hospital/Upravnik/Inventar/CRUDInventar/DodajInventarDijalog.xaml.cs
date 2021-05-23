@@ -34,14 +34,14 @@ namespace Hospital
         {
             int ret = 0;
 
-            InventoryFileStorage storage = new InventoryFileStorage();
+            InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             List<Inventory> allInventories = storage.GetAll();
 
             foreach (Inventory inventoryBig in allInventories)
             {
                 foreach (Inventory inventory in allInventories)
                 {
-                    if (ret == inventory.InventoryId)
+                    if (ret == inventory.Id)
                     {
                         ++ret;
                         break;
@@ -58,7 +58,7 @@ namespace Hospital
 
         private void dodaj(object sender, RoutedEventArgs e)
         {
-            InventoryFileStorage storage = new InventoryFileStorage();
+            InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
 
             Inventory newInventory = new Inventory(generisiId(),NameTxt.Text,Convert.ToInt32(QuantityTxt.Text),(InventoryType)TypeTxt.SelectedIndex);
 

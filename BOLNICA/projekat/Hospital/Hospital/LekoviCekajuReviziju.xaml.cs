@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using Hospital.Model;
 using Hospital.Prikaz;
+using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -34,8 +35,8 @@ namespace Hospital
 
         public ObservableCollection<LekRevizija> loadJasFile()
         {
-            MedicineFileStorage storageMedicine = new MedicineFileStorage();
-            MedicineReviewFileStorage storageMedicineReview = new MedicineReviewFileStorage();
+            MedicineIFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
+            MedicineReviewIFileStorage storageMedicineReview = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
             ObservableCollection<LekRevizija> returnLekRevizija = new ObservableCollection<LekRevizija>();
 
             foreach (Medicine medicine in storageMedicine.GetAll())
@@ -44,9 +45,9 @@ namespace Hospital
                 {
                     foreach (MedicineReview medicineRewiev in storageMedicineReview.GetAll())
                     {
-                        if (medicineRewiev.IdMedicine == medicine.IdMedicine)
+                        if (medicineRewiev.IdMedicine == medicine.Id)
                         {
-                            returnLekRevizija.Add(new LekRevizija(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.IdMedicine, medicineRewiev.IdMedicineReview));
+                            returnLekRevizija.Add(new LekRevizija(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
                             break;
                         }
                     }
@@ -59,9 +60,9 @@ namespace Hospital
                 {
                     foreach (MedicineReview medicineRewiev in storageMedicineReview.GetAll())
                     {
-                        if (medicineRewiev.IdMedicine == medicine.IdMedicine)
+                        if (medicineRewiev.IdMedicine == medicine.Id)
                         {
-                            returnLekRevizija.Add(new LekRevizija(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.IdMedicine, medicineRewiev.IdMedicineReview));
+                            returnLekRevizija.Add(new LekRevizija(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
                             break;
                         }
                     }

@@ -15,6 +15,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using Hospital.Model;
 using Hospital.Prikaz;
+using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -52,13 +53,13 @@ namespace Hospital
         public int generisiID()
         {
             int ret = 0;
-            MedicineReviewFileStorage storage = new MedicineReviewFileStorage();
+            MedicineReviewIFileStorage storage = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
             List<MedicineReview> all = storage.GetAll();
             foreach (MedicineReview mr in all)
             {
                 foreach (MedicineReview medicineReviews in all)
                 {
-                    if (ret == medicineReviews.IdMedicineReview)
+                    if (ret == medicineReviews.Id)
                     {
                         ++ret;
                         break;
@@ -71,13 +72,13 @@ namespace Hospital
         public int generateID()
         {
             int ret = 0;
-            MedicineFileStorage storage = new MedicineFileStorage();
+            MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             List<Medicine> all = storage.GetAll();
             foreach (Medicine medicine in all)
             {
                 foreach (Medicine medicines in all)
                 {
-                    if (ret == medicines.IdMedicine)
+                    if (ret == medicines.Id)
                     {
                         ++ret;
                         break;

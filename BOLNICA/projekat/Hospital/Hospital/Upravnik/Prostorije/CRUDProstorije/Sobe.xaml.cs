@@ -126,12 +126,12 @@ namespace Hospital
 
         public void ucitajInventar()
         {
-            InventoryFileStorage storage = new InventoryFileStorage();
+            InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             foreach (Inventory inventory in storage.GetAll())
             {
                 ComboBoxItem item = new ComboBoxItem();
                 item.Content = inventory.Name;
-                item.Tag = inventory.InventoryId;
+                item.Tag = inventory.Id;
                 ImeInventarTxt.Items.Add(item);
             }
         }
