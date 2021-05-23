@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Hospital.Model
 {
-    class Koristenjefunkcionalnosti
+    class Functionality : Entity, INotifyPropertyChanged
     {
         public DateTime datumIzvrsavanja;
         public int idPacijenta;
@@ -14,7 +15,7 @@ namespace Hospital.Model
 
 
 
-        public Koristenjefunkcionalnosti(DateTime date, int id, string vrsta)
+        public Functionality(DateTime date, int id, string vrsta)
         {
 
             this.datumIzvrsavanja = date;
@@ -23,5 +24,7 @@ namespace Hospital.Model
 
 
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

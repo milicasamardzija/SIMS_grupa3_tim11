@@ -1,16 +1,19 @@
 
+using Hospital.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-public class Appointment : INotifyPropertyChanged
+public class Appointment : Entity, INotifyPropertyChanged
 {
+
+
 
     private DateTime date;
     private String time;
     private double duration;
-    private int idA;
+  
     private Patient patient;
     private Doctor doctor;
     private Room room;
@@ -20,9 +23,9 @@ public class Appointment : INotifyPropertyChanged
 
     public Appointment() { }
 
-    public Appointment(int v, DateTime dateTime, double v2, Doctor doctor, Patient patient)
+    public Appointment(int id, DateTime dateTime, double v2, Doctor doctor, Patient patient) : base(id)
     {
-        this.idA = v;
+       
         this.dateTime = dateTime;
 
         this.duration = v2;
@@ -30,9 +33,9 @@ public class Appointment : INotifyPropertyChanged
         this.patient = patient;
     }
 
-    public Appointment(int v, DateTime dateTime1, String tm, double v2, Doctor doctor, Patient patient)
+    public Appointment(int id, DateTime dateTime1, String tm, double v2, Doctor doctor, Patient patient) : base(id)
     {
-        this.idA = v;
+        
         this.date = dateTime1;
         this.time = tm;
         this.duration = v2;
@@ -42,9 +45,9 @@ public class Appointment : INotifyPropertyChanged
 
     }
 
-    public Appointment(int v, DateTime dateTime, double v2, Doctor doctor, Patient patient, int roomId)
+    public Appointment(int id, DateTime dateTime, double v2, Doctor doctor, Patient patient, int roomId) : base(id)
     {
-        this.idA = v;
+       
         this.dateTime = dateTime;
 
         this.duration = v2;
@@ -158,21 +161,7 @@ public class Appointment : INotifyPropertyChanged
         }
     }
 
-    public int IdA
-    {
-        get
-        {
-            return idA;
-        }
-        set
-        {
-            if (value != idA)
-            {
-                idA = value;
-                OnPropertyChanged("IdA");
-            }
-        }
-    }
+
     
     public Patient Patient
     {

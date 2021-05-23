@@ -28,7 +28,7 @@ namespace Hospital.Service
             roominventoryStorage = new RoomInventoryFileStorage();
             inventoryStorage = new InventoryFileStorage();
             staticInventoryStorage = new StaticInvnetoryMovementFileStorage();
-            appointmentsStorage = new AppointmentFileStorage();
+            appointmentsStorage = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
             roomStorage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
 
         

@@ -38,7 +38,7 @@ namespace Hospital
             poslato.Show();
             this.Close();
          
-            SurveyFileStorage sveAnkete = new SurveyFileStorage();
+            SurveyFileStorage sveAnkete = new SurveyFileStorage("./../../../../Hospital/files/ankete.json");
 
          
             int ocenjeno = ocena.SelectedIndex;

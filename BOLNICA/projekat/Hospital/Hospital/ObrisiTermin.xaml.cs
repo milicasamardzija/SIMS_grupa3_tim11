@@ -28,17 +28,17 @@ namespace Hospital
         {
             InitializeComponent();
             appointmentList = list;
-            id = selectedApp.IdA;
+            id = selectedApp.Id;
             index = selectedIndex;
         }
 
         private void da_Click(object sender, RoutedEventArgs e)
         {
-            AppointmentFileStorage storage = new AppointmentFileStorage();
+            AppointmentFileStorage storage = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
             storage.DeleteById(id);
             appointmentList.RemoveAt(index);
-            FunkcionalnostiFileStorage funkcionalnosti = new FunkcionalnostiFileStorage();
-            Koristenjefunkcionalnosti funkcionalnost = new Koristenjefunkcionalnosti(DateTime.Now, id, "brisanje");
+            FunctionalityFileStorage funkcionalnosti = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
+            Functionality funkcionalnost = new Functionality(DateTime.Now, id, "brisanje");
             funkcionalnosti.Save(funkcionalnost);
 
 

@@ -99,7 +99,7 @@ namespace Hospital
         private void add_appointment(object sender, RoutedEventArgs e)
         {
 
-            AppointmentFileStorage storage = new AppointmentFileStorage();
+            AppointmentFileStorage storage = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
             Patient patient = getPatientFromFile();
 
             global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
@@ -115,8 +115,8 @@ namespace Hospital
             storage.Save(newapp);
             appointmentList.Add(newapp);
 
-            FunkcionalnostiFileStorage funkcionalnosti = new FunkcionalnostiFileStorage();
-            Koristenjefunkcionalnosti funkcionalnost = new Koristenjefunkcionalnosti(DateTime.Now, idPatient, "dodavanje");
+            FunctionalityFileStorage funkcionalnosti = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
+            Functionality funkcionalnost = new Functionality(DateTime.Now, idPatient, "dodavanje");
             funkcionalnosti.Save(funkcionalnost);
 
             this.Close();
@@ -137,7 +137,8 @@ namespace Hospital
 
                 global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
 
-                AppointmentFileStorage storage = new AppointmentFileStorage();
+                AppointmentFileStorage storage = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
+
                 List<Appointment> termini = storage.GetAll();
 
                 foreach (Appointment t in termini)
@@ -189,7 +190,7 @@ namespace Hospital
             else
             {
                 lekar.IsEnabled = true;
-                AppointmentFileStorage storage = new AppointmentFileStorage();
+                AppointmentFileStorage storage = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
                 List<Appointment> termini = storage.GetAll();
                 foreach (Appointment t in termini)
                 {

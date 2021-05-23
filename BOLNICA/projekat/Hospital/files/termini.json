@@ -5,7 +5,7 @@
     "DateTime": "0001-01-01T00:00:00",
     "Time": "2021-04-05T20:15:00",
     "Duration": 30.0,
-    "IdA": 1,
+    "Id": 1,
     "Patient": {
       "guest": true,
       "banovan": false,
@@ -68,7 +68,7 @@
     "DateTime": "0001-01-01T00:00:00",
     "Time": "2021-04-05T20:15:00",
     "Duration": 30.0,
-    "IdA": 2,
+    "Id": 2,
     "Patient": {
       "guest": true,
       "banovan": false,
@@ -131,7 +131,7 @@
     "DateTime": "0001-01-01T00:00:00",
     "Time": null,
     "Duration": 30.0,
-    "IdA": 4,
+    "Id": 4,
     "Patient": {
       "guest": true,
       "banovan": false,
@@ -194,7 +194,7 @@
     "DateTime": "0001-01-01T00:00:00",
     "Time": null,
     "Duration": 30.0,
-    "IdA": 7,
+    "Id": 7,
     "Patient": {
       "guest": true,
       "banovan": false,
@@ -257,7 +257,7 @@
     "DateTime": "0001-01-01T00:00:00",
     "Time": null,
     "Duration": 30.0,
-    "IdA": 8,
+    "Id": 8,
     "Patient": {
       "guest": true,
       "banovan": false,
@@ -320,7 +320,7 @@
     "DateTime": "0001-01-01T00:00:00",
     "Time": null,
     "Duration": 30.0,
-    "IdA": 6,
+    "Id": 6,
     "Patient": {
       "guest": true,
       "banovan": false,

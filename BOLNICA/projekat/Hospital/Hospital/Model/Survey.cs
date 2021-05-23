@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model
 {
-    class Survey : INotifyPropertyChanged
+    class Survey : Entity,INotifyPropertyChanged
     {
-        public int idSurvey;
+       
         public string comment;
         public int mark;
         public string drname;
@@ -30,39 +30,25 @@ namespace Hospital.Model
 
         public Survey() { }
 
-        public Survey(int id, string komentarisano, int ocenjeno, string lekar, int idA)
+        public Survey(int id, string komentarisano, int ocenjeno, string lekar, int idA) : base(id)
         {
-            this.idSurvey = id;
+           
             this.comment = komentarisano;
             this.mark = ocenjeno;
             this.drname = lekar;
             this.idApp = idA;
         }
 
-        public Survey(int id, string komentarisano, int ocenjeno, string lekar)
+        public Survey(int id, string komentarisano, int ocenjeno, string lekar) : base(id)
         {
-            this.idSurvey = id;
+           
             this.comment = komentarisano;
             this.mark = ocenjeno;
             this.drname = lekar;
 
         }
 
-        public int IdSurvey
-        {
-            get
-            {
-                return idSurvey;
-            }
-            set
-            {
-                if (value != idSurvey)
-                {
-                    idSurvey = value;
-                    OnPropertyChanged("IdAnketa");
-                }
-            }
-        }
+
 
         public string Comment
         {

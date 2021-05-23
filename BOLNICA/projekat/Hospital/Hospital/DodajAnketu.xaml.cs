@@ -65,14 +65,14 @@ namespace Hospital
             SacuvanaAnketa poslato = new SacuvanaAnketa();
             poslato.Show();
 
-            SurveyFileStorage sveAnkete = new SurveyFileStorage();
+            SurveyFileStorage sveAnkete = new SurveyFileStorage("./../../../../Hospital/files/ankete.json");
 
             lekar = doktor.SelectedText;
             int ocenjeno = ocena.SelectedIndex;
             string komentarisano = komentar.Text;
             int id = sveAnkete.GetAll().Count() + 1;
 
-            Survey novaAnketa = new Survey(id, komentarisano, ocenjeno, lekar,termin.IdA);
+            Survey novaAnketa = new Survey(id, komentarisano, ocenjeno, lekar,termin.Id);
 
             sveAnkete.Save(novaAnketa);
             obavljeniTermini.RemoveAt(index);

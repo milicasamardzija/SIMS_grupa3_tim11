@@ -32,9 +32,9 @@ namespace Hospital.Model
 
         }
 
-        public Checkup(int ida, int ch, DateTime dateTime1, String ti, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor)
+        public Checkup(int ida,int ch, DateTime dateTime1, String ti, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor)
         {
-            this.IdA = ida;
+          
             this.Date = dateTime1;
             this.Time = ti;
             this.Duration = v2;
@@ -51,7 +51,7 @@ namespace Hospital.Model
 
         public Checkup(int ida, int ch, DateTime dateTime1, String ti, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor, int roomId)
         {
-            this.IdA = ida;
+            
             this.Date = dateTime1;
             this.Time = ti;
             this.Duration = v2;

@@ -6,55 +6,16 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 using System.IO;
+using Hospital.FileStorage;
+using Hospital.FileStorage.Interfaces;
 
 namespace Hospital.Model
 {
-    class SurveyFileStorage
+
+    // (@"./../../../../Hospital/files/ankete.json"
+    class SurveyFileStorage : GenericFileStorage<Survey>, SurveyIFileStorage
+
     {
-        public List<Survey> GetAll()
-        {
-            List<Survey> allsurvey = new List<Survey>();
-
-            allsurvey = JsonConvert.DeserializeObject<List<Survey>>(File.ReadAllText(@"./../../../../Hospital/files/ankete.json"));
-
-            return allsurvey;
-        }
-
-        public void Save(Survey newSurvey)
-        {
-            List<Survey> app = GetAll();
-            app.Add(newSurvey);
-            SaveAll(app);
-        }
-
-        public void SaveAll(List<Survey> surveys)
-        {
-            using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/ankete.json"))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, surveys);
-            }
-        }
-
-
-        public void Delete(Survey survey)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Manager FindById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Boolean ExistsById(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public SurveyFileStorage(String filePath) : base(filePath) { }
     }
 }

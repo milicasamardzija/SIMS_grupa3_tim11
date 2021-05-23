@@ -59,7 +59,7 @@ namespace Hospital
         }
         public ObservableCollection<Appointment> loadJason()
         {
-            AppointmentFileStorage fs = new AppointmentFileStorage();
+            AppointmentFileStorage fs = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
             ObservableCollection<Appointment> rs = new ObservableCollection<Appointment>(fs.GetAll());
             ObservableCollection<Appointment> ret = new ObservableCollection<Appointment>();
 
@@ -89,7 +89,7 @@ namespace Hospital
 
         public void UpdateTable()
         {
-            ListaObavljenihTermina.Items.Remove(((Appointment)ListaObavljenihTermina.SelectedItem).IdA);
+            ListaObavljenihTermina.Items.Remove(((Appointment)ListaObavljenihTermina.SelectedItem).Id);
         }
     }
 }

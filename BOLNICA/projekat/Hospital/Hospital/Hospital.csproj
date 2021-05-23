@@ -81,8 +81,11 @@
       <DependentUpon>DodajAnketu.xaml</DependentUpon>
     </Compile>
     <Compile Include="FileStorage\GenericFileStorage.cs" />
+    <Compile Include="FileStorage\Interfaces\AppointmentIFileStorage.cs" />
+    <Compile Include="FileStorage\Interfaces\FunctionalityIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\GenericRepository.cs" />
     <Compile Include="FileStorage\Interfaces\RoomIFileStorage.cs" />
+    <Compile Include="FileStorage\Interfaces\SurveyIFileStorage.cs" />
     <Compile Include="LekoviCekajuReviziju.xaml.cs">
       <DependentUpon>LekoviCekajuReviziju.xaml</DependentUpon>
     </Compile>
@@ -109,13 +112,13 @@
     <Compile Include="LekoviRevizijaUpravnik.xaml.cs">
       <DependentUpon>LekoviRevizijaUpravnik.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FileStorage\FunkcionalnostiFileStorage.cs" />
+    <Compile Include="FileStorage\FunctionalityFileStorage.cs" />
     <Compile Include="Model\Entity.cs" />
     <Compile Include="Model\Ingredient.cs" />
     <Compile Include="FileStorage\IngredientsFileStorage.cs" />
     <Compile Include="Model\Instruction.cs" />
     <Compile Include="FileStorage\InstructionFileStorage.cs" />
-    <Compile Include="Model\Koristenjefunkcionalnosti.cs" />
+    <Compile Include="Model\Functionality.cs" />
     <Compile Include="Model\Medicine.cs" />
     <Compile Include="FileStorage\MedicineFileStorage.cs" />
     <Compile Include="Model\MedicineReview.cs" />

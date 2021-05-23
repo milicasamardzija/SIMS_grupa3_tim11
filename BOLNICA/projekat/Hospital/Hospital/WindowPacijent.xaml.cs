@@ -43,15 +43,15 @@ namespace Hospital
             Patient ret = new Patient();
             PatientFileStorage storage = new PatientFileStorage();
             ObservableCollection<Patient> patients = storage.GetAll();
-            FunkcionalnostiFileStorage funkcije = new FunkcionalnostiFileStorage();
-            List<Koristenjefunkcionalnosti> funkcionalnosti = funkcije.GetAll();
+            FunctionalityFileStorage funkcije = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
+            List<Functionality> funkcionalnosti = funkcije.GetAll();
 
 
             foreach (Patient patient in patients)
             {
                 if (patient.PatientId == idP)
                 {
-                    foreach (Koristenjefunkcionalnosti funkcionalnost in funkcionalnosti)
+                    foreach (Functionality funkcionalnost in funkcionalnosti)
                     {
 
                         if (patient.PatientId == funkcionalnost.idPacijenta)
@@ -84,7 +84,7 @@ namespace Hospital
         }
         public ObservableCollection<Appointment> loadJason()
         {
-            AppointmentFileStorage fs = new AppointmentFileStorage();
+            AppointmentFileStorage fs = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
             ObservableCollection<Appointment> rs = new ObservableCollection<Appointment>(fs.GetAll()); //svi termini
             ObservableCollection<Appointment> ret = new ObservableCollection<Appointment>(); //ovde ce biti ubaceni termini za pacijenta sa prisledjenim id-jem(odnosno id pacijenta koji je ulogovan na sistem)
 
@@ -114,8 +114,8 @@ namespace Hospital
             Patient ret = new Patient();
             PatientFileStorage storage = new PatientFileStorage();
             ObservableCollection<Patient> patients = storage.GetAll();
-            FunkcionalnostiFileStorage funkcije = new FunkcionalnostiFileStorage();
-            List<Koristenjefunkcionalnosti> funkcionalnosti = funkcije.GetAll();
+            FunctionalityFileStorage funkcije = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
+            List<Functionality> funkcionalnosti = funkcije.GetAll();
 
             
 
@@ -123,7 +123,7 @@ namespace Hospital
             {
                 if (patient.PatientId == id)
                 { 
-                    foreach (Koristenjefunkcionalnosti funkcionalnost in funkcionalnosti)
+                    foreach (Functionality funkcionalnost in funkcionalnosti)
                     {
 
                         if (patient.PatientId == funkcionalnost.idPacijenta  && funkcionalnost.vrstaFunkcionalnosti == "dodavanje")
@@ -173,8 +173,8 @@ namespace Hospital
             Patient ret = new Patient();
             PatientFileStorage storage = new PatientFileStorage();
             ObservableCollection<Patient> patients = storage.GetAll();
-            FunkcionalnostiFileStorage funkcije = new FunkcionalnostiFileStorage();
-            List<Koristenjefunkcionalnosti> funkcionalnosti = funkcije.GetAll();
+            FunctionalityFileStorage funkcije = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
+            List<Functionality> funkcionalnosti = funkcije.GetAll();
 
 
 
@@ -183,7 +183,7 @@ namespace Hospital
                 if (patient.PatientId == id)
                 {
 
-                    foreach (Koristenjefunkcionalnosti funkcionalnost in funkcionalnosti)
+                    foreach (Functionality funkcionalnost in funkcionalnosti)
                     {
 
                         if (patient.PatientId == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkcionalnosti == "izmena")
@@ -221,15 +221,15 @@ namespace Hospital
             Patient ret = new Patient();
             PatientFileStorage storage = new PatientFileStorage();
             ObservableCollection<Patient> patients = storage.GetAll();
-            FunkcionalnostiFileStorage funkcije = new FunkcionalnostiFileStorage();
-            List<Koristenjefunkcionalnosti> funkcionalnosti = funkcije.GetAll();
+            FunctionalityFileStorage funkcije = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
+            List<Functionality> funkcionalnosti = funkcije.GetAll();
 
 
             foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
             {
                 if (patient.PatientId == id)
                 {
-                    foreach (Koristenjefunkcionalnosti funkcionalnost in funkcionalnosti)
+                    foreach (Functionality funkcionalnost in funkcionalnosti)
                     {
 
                         if (patient.PatientId == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkcionalnosti == "brisanje")

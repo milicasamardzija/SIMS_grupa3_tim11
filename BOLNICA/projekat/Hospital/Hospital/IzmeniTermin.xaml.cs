@@ -44,7 +44,7 @@ namespace Hospital
             idPatient = idP;
 
             lista = new List<string>();
-            AppointmentFileStorage af = new AppointmentFileStorage();
+            AppointmentFileStorage af = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
             termini = af.GetAll();
             lista.Add("");
             lista.Add("08:00");
@@ -137,7 +137,7 @@ namespace Hospital
         {
 
 
-            AppointmentFileStorage storage = new AppointmentFileStorage();
+            AppointmentFileStorage storage = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
             Patient patient = getPatientFromFile();
             global::Doctor doktor1 = (global::Doctor)doktor.SelectedItem;
 
@@ -154,12 +154,12 @@ namespace Hospital
             termin.DateTime = dt;
             termin.Doctor = doktor1;
             termin.Patient = patient;
-            storage.DeleteById(termin.IdA);
+            storage.DeleteById(termin.Id);
             storage.Save(termin);
 
 
-            FunkcionalnostiFileStorage funkcionalnosti = new FunkcionalnostiFileStorage();
-            Koristenjefunkcionalnosti funkcionalnost = new Koristenjefunkcionalnosti(DateTime.Now, idPatient, "izmena");
+            FunctionalityFileStorage funkcionalnosti = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
+            Functionality funkcionalnost = new Functionality(DateTime.Now, idPatient, "izmena");
             funkcionalnosti.Save(funkcionalnost);
 
 
