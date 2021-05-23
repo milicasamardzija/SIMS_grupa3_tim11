@@ -1,4 +1,5 @@
 ﻿using Hospital.Controller;
+using Hospital.FileStorage.Interfaces;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -65,7 +66,7 @@ namespace Hospital
 
         public ObservableCollection<Ingredient> loadJasonIngredients()
         {
-            IngredientsFileStorage storage = new IngredientsFileStorage();
+            IngredientsIFileStorage storage = new IngredientsFileStorage("./../../../../Hospital/files/storageIngredients.json");
             ObservableCollection<Ingredient> ret = new ObservableCollection<Ingredient>(storage.GetAll());
             return ret;
         }
@@ -119,7 +120,7 @@ namespace Hospital
             }
             foreach (Ingredient ingredient in IngredientsMedicine)
             {
-                ingredientsIds.Add(ingredient.IdIngredient);
+                ingredientsIds.Add(ingredient.Id);
             }
         }
         private void dodajZamenskiLek(object sender, RoutedEventArgs e)

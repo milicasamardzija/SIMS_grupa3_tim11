@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using Hospital.Model;
+using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -48,7 +49,7 @@ namespace Hospital
 
         public ObservableCollection<Ingredient> loadIngredient()
         {
-            IngredientsFileStorage storage = new IngredientsFileStorage();
+            IngredientsIFileStorage storage = new IngredientsFileStorage("./../../../../Hospital/files/storageIngredients.json");
             ObservableCollection<Ingredient> ingredients = new ObservableCollection<Ingredient>(storage.GetAll());
             ObservableCollection<Ingredient> ret = new ObservableCollection<Ingredient>();
             foreach (Ingredient ingredient in ingredients)

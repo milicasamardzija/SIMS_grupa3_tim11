@@ -61,16 +61,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BrisanjeLekaRevizijaUpravnik.xaml.cs">
+    <Compile Include="FileStorage\Interfaces\IngredientsIFileStorage.cs" />
+    <Compile Include="Upravnik\Lekovi\LekoviRevizija\BrisanjeLekaRevizijaUpravnik.xaml.cs">
       <DependentUpon>BrisanjeLekaRevizijaUpravnik.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BrisanjeLekaUpravnik.xaml.cs">
+    <Compile Include="Upravnik\Lekovi\LekoviSvi\BrisanjeLekaUpravnik.xaml.cs">
       <DependentUpon>BrisanjeLekaUpravnik.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BrisanjeRecenzijeUpravnik.xaml.cs">
+    <Compile Include="Upravnik\Lekovi\LekoviRevizija\BrisanjeRecenzijeUpravnik.xaml.cs">
       <DependentUpon>BrisanjeRecenzijeUpravnik.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BrisanjeRenovacijeSIgurnost.xaml.cs">
+    <Compile Include="Upravnik\Prostorije\RenoviranjeProstorije\BrisanjeRenovacijeSIgurnost.xaml.cs">
       <DependentUpon>BrisanjeRenovacijeSIgurnost.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controller\CheckupController.cs" />
@@ -91,25 +92,25 @@
     </Compile>
     <Compile Include="Model\Alergens.cs" />
     <Compile Include="FileStorage\AlergensFileStorage.cs" />
-    <Compile Include="DodavanjeLekaRevizija.xaml.cs">
+    <Compile Include="Upravnik\Lekovi\LekoviRevizija\DodavanjeLekaRevizija.xaml.cs">
       <DependentUpon>DodavanjeLekaRevizija.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DodavanjeLekaUpravnik.xaml.cs">
+    <Compile Include="Upravnik\Lekovi\LekoviSvi\DodavanjeLekaUpravnik.xaml.cs">
       <DependentUpon>DodavanjeLekaUpravnik.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IzmenaLekaRevizija.xaml.cs">
+    <Compile Include="Upravnik\Lekovi\LekoviRevizija\IzmenaLekaRevizija.xaml.cs">
       <DependentUpon>IzmenaLekaRevizija.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IzmenaLekaUpravnik.xaml.cs">
+    <Compile Include="Upravnik\Lekovi\LekoviSvi\IzmenaLekaUpravnik.xaml.cs">
       <DependentUpon>IzmenaLekaUpravnik.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LekoviPrikazRevizijeUpravnik.xaml.cs">
+    <Compile Include="Upravnik\Lekovi\LekoviRevizija\LekoviPrikazRevizijeUpravnik.xaml.cs">
       <DependentUpon>LekoviPrikazRevizijeUpravnik.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LekoviPrikazUpravnik.xaml.cs">
+    <Compile Include="Upravnik\Lekovi\LekoviSvi\LekoviPrikazUpravnik.xaml.cs">
       <DependentUpon>LekoviPrikazUpravnik.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LekoviRevizijaUpravnik.xaml.cs">
+    <Compile Include="Upravnik\Lekovi\LekoviRevizija\LekoviRevizijaUpravnik.xaml.cs">
       <DependentUpon>LekoviRevizijaUpravnik.xaml</DependentUpon>
     </Compile>
     <Compile Include="FileStorage\FunctionalityFileStorage.cs" />
@@ -125,7 +126,7 @@
     <Compile Include="FileStorage\MedicineReviewFileStorage.cs" />
     <Compile Include="Model\Notifications.cs" />
     <Compile Include="FileStorage\NotificationsFileStorage.cs" />
-    <Compile Include="ObavestenjaUpravnik.xaml.cs">
+    <Compile Include="Upravnik\Ostalo\ObavestenjaUpravnik.xaml.cs">
       <DependentUpon>ObavestenjaUpravnik.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sekretar\DodajObavestenjeBlog.xaml.cs">
@@ -149,16 +150,16 @@
     <Compile Include="Pacijent\OcenjivanjeDoktora.xaml.cs">
       <DependentUpon>OcenjivanjeDoktora.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PremestanjeInventara.xaml.cs">
+    <Compile Include="Upravnik\Inventar\PremestanjeInventara.xaml.cs">
       <DependentUpon>PremestanjeInventara.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PremestanjeOdbijeno.xaml.cs">
+    <Compile Include="Upravnik\Inventar\PremestanjeOdbijeno.xaml.cs">
       <DependentUpon>PremestanjeOdbijeno.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PremestanjeOdbijenoInventar.xaml.cs">
+    <Compile Include="Upravnik\Inventar\PremestanjeOdbijenoInventar.xaml.cs">
       <DependentUpon>PremestanjeOdbijenoInventar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RenoviranjeOdbijeno.xaml.cs">
+    <Compile Include="Upravnik\Prostorije\RenoviranjeProstorije\RenoviranjeOdbijeno.xaml.cs">
       <DependentUpon>RenoviranjeOdbijeno.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pacijent\SacuvanaAnketa.xaml.cs">
@@ -225,17 +226,17 @@
     <Compile Include="Service\MedicineService.cs" />
     <Compile Include="FileStorage\RenovationFileStorage.cs" />
     <Compile Include="Model\RoomRenovation.cs" />
-    <Compile Include="PrikazSobaRenoviranje.xaml.cs">
+    <Compile Include="Upravnik\Prostorije\RenoviranjeProstorije\PrikazSobaRenoviranje.xaml.cs">
       <DependentUpon>PrikazSobaRenoviranje.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RenoviranjeSobe.xaml.cs">
+    <Compile Include="Upravnik\Prostorije\RenoviranjeProstorije\RenoviranjeSobe.xaml.cs">
       <DependentUpon>RenoviranjeSobe.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\RoomsService.cs" />
-    <Compile Include="ZakazivanjePremestanjaStatickogInventara.xaml.cs">
+    <Compile Include="Upravnik\Inventar\PremestanjeIzMagacina\ZakazivanjePremestanjaStatickogInventara.xaml.cs">
       <DependentUpon>ZakazivanjePremestanjaStatickogInventara.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ZakazivanjePremestanjaStatickogInventaraUSobu.xaml.cs">
+    <Compile Include="Upravnik\Prostorije\InventarSobe\PremestanjeIzSobe\ZakazivanjePremestanjaStatickogInventaraUSobu.xaml.cs">
       <DependentUpon>ZakazivanjePremestanjaStatickogInventaraUSobu.xaml</DependentUpon>
     </Compile>
     <Compile Include="DavanjeUputa.xaml.cs">
@@ -278,7 +279,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BelsekaMagacin.xaml">
+    <Page Include="Upravnik\Ostalo\BelsekaMagacin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -286,19 +287,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BrisanjeLekaRevizijaUpravnik.xaml">
+    <Page Include="Upravnik\Lekovi\LekoviRevizija\BrisanjeLekaRevizijaUpravnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BrisanjeLekaUpravnik.xaml">
+    <Page Include="Upravnik\Lekovi\LekoviSvi\BrisanjeLekaUpravnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BrisanjeRecenzijeUpravnik.xaml">
+    <Page Include="Upravnik\Lekovi\LekoviRevizija\BrisanjeRecenzijeUpravnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BrisanjeRenovacijeSIgurnost.xaml">
+    <Page Include="Upravnik\Prostorije\RenoviranjeProstorije\BrisanjeRenovacijeSIgurnost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -314,11 +315,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="DodajInventarDijalog.xaml">
+    <Page Include="Upravnik\Inventar\CRUDInventar\DodajInventarDijalog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="DodajProstoriju.xaml">
+    <Page Include="Upravnik\Prostorije\CRUDProstorije\DodajProstoriju.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -326,11 +327,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DodavanjeLekaRevizija.xaml">
+    <Page Include="Upravnik\Lekovi\LekoviRevizija\DodavanjeLekaRevizija.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DodavanjeLekaUpravnik.xaml">
+    <Page Include="Upravnik\Lekovi\LekoviSvi\DodavanjeLekaUpravnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -338,34 +339,34 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="BelsekaMagacin.xaml.cs">
+    <Compile Include="Upravnik\Ostalo\BelsekaMagacin.xaml.cs">
       <DependentUpon>BelsekaMagacin.xaml</DependentUpon>
     </Compile>
     <Compile Include="BlogGlavni.xaml.cs">
       <DependentUpon>BlogGlavni.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DodajInventarDijalog.xaml.cs">
+    <Compile Include="Upravnik\Inventar\CRUDInventar\DodajInventarDijalog.xaml.cs">
       <DependentUpon>DodajInventarDijalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DodajProstoriju.xaml.cs">
+    <Compile Include="Upravnik\Prostorije\CRUDProstorije\DodajProstoriju.xaml.cs">
       <DependentUpon>DodajProstoriju.xaml</DependentUpon>
     </Compile>
     <Compile Include="Evidencija.xaml.cs">
       <DependentUpon>Evidencija.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IzbrisiInventarDijalog.xaml.cs">
+    <Compile Include="Upravnik\Inventar\CRUDInventar\IzbrisiInventarDijalog.xaml.cs">
       <DependentUpon>IzbrisiInventarDijalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IzbrisiProstoriju.xaml.cs">
+    <Compile Include="Upravnik\Prostorije\CRUDProstorije\IzbrisiProstoriju.xaml.cs">
       <DependentUpon>IzbrisiProstoriju.xaml</DependentUpon>
     </Compile>
     <Compile Include="IzdavanjeRecepta.xaml.cs">
       <DependentUpon>IzdavanjeRecepta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IzmenaInventaraDijalog.xaml.cs">
+    <Compile Include="Upravnik\Inventar\CRUDInventar\IzmenaInventaraDijalog.xaml.cs">
       <DependentUpon>IzmenaInventaraDijalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IzmeniProstoriju.xaml.cs">
+    <Compile Include="Upravnik\Prostorije\CRUDProstorije\IzmeniProstoriju.xaml.cs">
       <DependentUpon>IzmeniProstoriju.xaml</DependentUpon>
     </Compile>
     <Compile Include="IzmenaLeka.xaml.cs">
@@ -377,10 +378,10 @@
     <Compile Include="Sekretar\KreirajStalniNalog.xaml.cs">
       <DependentUpon>KreirajStalniNalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Magacin.xaml.cs">
+    <Compile Include="Upravnik\Inventar\CRUDInventar\Magacin.xaml.cs">
       <DependentUpon>Magacin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ManagerView.xaml.cs">
+    <Compile Include="Upravnik\Ostalo\ManagerView.xaml.cs">
       <DependentUpon>ManagerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Adress.cs" />
@@ -413,10 +414,10 @@
     <Compile Include="Pacijent\PregledPacijenata.xaml.cs">
       <DependentUpon>PregledPacijenata.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PremestanjeInventaraDijalog.xaml.cs">
+    <Compile Include="Upravnik\Prostorije\InventarSobe\PremestanjeIzSobe\PremestanjeInventaraDijalog.xaml.cs">
       <DependentUpon>PremestanjeInventaraDijalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PremestiInventarUSobu.xaml.cs">
+    <Compile Include="Upravnik\Inventar\PremestanjeIzMagacina\PremestiInventarUSobu.xaml.cs">
       <DependentUpon>PremestiInventarUSobu.xaml</DependentUpon>
     </Compile>
     <Compile Include="PrikaziKartonPacijenta.xaml.cs">
@@ -427,7 +428,7 @@
     <Compile Include="Prijava.xaml.cs">
       <DependentUpon>Prijava.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PrikazInventaraUSobi.xaml.cs">
+    <Compile Include="Upravnik\Prostorije\InventarSobe\PrikazInventaraUSobi.xaml.cs">
       <DependentUpon>PrikazInventaraUSobi.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pacijent\PrikazObavestenja.xaml.cs">
@@ -441,11 +442,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IzbrisiInventarDijalog.xaml">
+    <Page Include="Upravnik\Inventar\CRUDInventar\IzbrisiInventarDijalog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="IzbrisiProstoriju.xaml">
+    <Page Include="Upravnik\Prostorije\CRUDProstorije\IzbrisiProstoriju.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -453,19 +454,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IzmenaInventaraDijalog.xaml">
+    <Page Include="Upravnik\Inventar\CRUDInventar\IzmenaInventaraDijalog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="IzmenaLekaRevizija.xaml">
+    <Page Include="Upravnik\Lekovi\LekoviRevizija\IzmenaLekaRevizija.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IzmenaLekaUpravnik.xaml">
+    <Page Include="Upravnik\Lekovi\LekoviSvi\IzmenaLekaUpravnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IzmeniProstoriju.xaml">
+    <Page Include="Upravnik\Prostorije\CRUDProstorije\IzmeniProstoriju.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -477,7 +478,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ObavestenjaUpravnik.xaml">
+    <Page Include="Upravnik\Ostalo\ObavestenjaUpravnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -501,19 +502,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PremestanjeInventara.xaml">
+    <Page Include="Upravnik\Inventar\PremestanjeInventara.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PremestanjeOdbijeno.xaml">
+    <Page Include="Upravnik\Inventar\PremestanjeOdbijeno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PremestanjeOdbijenoInventar.xaml">
+    <Page Include="Upravnik\Inventar\PremestanjeOdbijenoInventar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RenoviranjeOdbijeno.xaml">
+    <Page Include="Upravnik\Prostorije\RenoviranjeProstorije\RenoviranjeOdbijeno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -561,7 +562,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="Sobe.xaml.cs">
+    <Compile Include="Upravnik\Prostorije\CRUDProstorije\Sobe.xaml.cs">
       <DependentUpon>Sobe.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pacijent\WindowPacijent.xaml.cs">
@@ -587,19 +588,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LekoviPrikazRevizijeUpravnik.xaml">
+    <Page Include="Upravnik\Lekovi\LekoviRevizija\LekoviPrikazRevizijeUpravnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LekoviPrikazUpravnik.xaml">
+    <Page Include="Upravnik\Lekovi\LekoviSvi\LekoviPrikazUpravnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LekoviRevizijaUpravnik.xaml">
+    <Page Include="Upravnik\Lekovi\LekoviRevizija\LekoviRevizijaUpravnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Magacin.xaml">
+    <Page Include="Upravnik\Inventar\CRUDInventar\Magacin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -642,7 +643,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ManagerView.xaml">
+    <Page Include="Upravnik\Ostalo\ManagerView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -670,11 +671,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PremestanjeInventaraDijalog.xaml">
+    <Page Include="Upravnik\Prostorije\InventarSobe\PremestanjeIzSobe\PremestanjeInventaraDijalog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PremestiInventarUSobu.xaml">
+    <Page Include="Upravnik\Inventar\PremestanjeIzMagacina\PremestiInventarUSobu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -690,7 +691,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PrikazInventaraUSobi.xaml">
+    <Page Include="Upravnik\Prostorije\InventarSobe\PrikazInventaraUSobi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -770,11 +771,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PrikazSobaRenoviranje.xaml">
+    <Page Include="Upravnik\Prostorije\RenoviranjeProstorije\PrikazSobaRenoviranje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RenoviranjeSobe.xaml">
+    <Page Include="Upravnik\Prostorije\RenoviranjeProstorije\RenoviranjeSobe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -782,7 +783,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sobe.xaml">
+    <Page Include="Upravnik\Prostorije\CRUDProstorije\Sobe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -794,11 +795,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ZakazivanjePremestanjaStatickogInventara.xaml">
+    <Page Include="Upravnik\Inventar\PremestanjeIzMagacina\ZakazivanjePremestanjaStatickogInventara.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ZakazivanjePremestanjaStatickogInventaraUSobu.xaml">
+    <Page Include="Upravnik\Prostorije\InventarSobe\PremestanjeIzSobe\ZakazivanjePremestanjaStatickogInventaraUSobu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -939,5 +940,6 @@
   <ItemGroup>
     <Resource Include="Pacijent\download %282%29.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

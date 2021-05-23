@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.FileStorage.Interfaces;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -91,7 +92,7 @@ namespace Hospital
         }
         public ObservableCollection<Ingredient> loadJsonMedicineIngredients()
         {
-            IngredientsFileStorage storage = new IngredientsFileStorage();
+            IngredientsIFileStorage storage = new IngredientsFileStorage("./../../../../Hospital/files/storageIngredients.json");
             ObservableCollection<Ingredient> ret = new ObservableCollection<Ingredient>();
             if (medicine != null)
             {
@@ -99,7 +100,7 @@ namespace Hospital
                 {
                     foreach (Ingredient ingredient in storage.GetAll())
                     {
-                        if (ingredient.IdIngredient == id)
+                        if (ingredient.Id == id)
                         {
                             ret.Add(ingredient);
                             break;
@@ -111,7 +112,7 @@ namespace Hospital
         }
         public ObservableCollection<Ingredient> loadJasonIngredients()
         {
-            IngredientsFileStorage storage = new IngredientsFileStorage();
+            IngredientsIFileStorage storage = new IngredientsFileStorage("./../../../../Hospital/files/storageIngredients.json");
             ObservableCollection<Ingredient> ret = new ObservableCollection<Ingredient>(storage.GetAll());
             return ret;
         }
@@ -161,7 +162,7 @@ namespace Hospital
             }
             foreach (Ingredient ingredient in IngredientsMedicine)
             {
-                ingredientsIds.Add(ingredient.IdIngredient);
+                ingredientsIds.Add(ingredient.Id);
             }
         }
         private void Potvrdi(object sender, RoutedEventArgs e)

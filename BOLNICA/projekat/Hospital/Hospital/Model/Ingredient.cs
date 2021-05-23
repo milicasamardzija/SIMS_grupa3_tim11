@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model
 {
-    public class Ingredient : INotifyPropertyChanged
+    public class Ingredient : Entity,INotifyPropertyChanged
     {
-        private int idIngredient;
         private String name;
         private double quantity;
 
@@ -22,27 +21,10 @@ namespace Hospital.Model
             }
         }
 
-        public Ingredient(int id, String nameIngerdient, double quantityIngredient)
+        public Ingredient(int id, String nameIngerdient, double quantityIngredient) : base(id)
         {
-            idIngredient = id;
             name = nameIngerdient;
             quantity = quantityIngredient;
-        }
-
-        public int IdIngredient
-        {
-            get
-            {
-                return idIngredient;
-            }
-            set
-            {
-                if (value != idIngredient)
-                {
-                    idIngredient = value;
-                    OnProperychanged("IdIngerdient");
-                }
-            }
         }
 
         public String Name
