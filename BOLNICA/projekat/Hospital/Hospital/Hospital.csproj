@@ -77,7 +77,7 @@
     <Compile Include="Controller\InventoryController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
     <Compile Include="Controller\RoomsController.cs" />
-    <Compile Include="DodajAnketu.xaml.cs">
+    <Compile Include="Pacijent\DodajAnketu.xaml.cs">
       <DependentUpon>DodajAnketu.xaml</DependentUpon>
     </Compile>
     <Compile Include="FileStorage\GenericFileStorage.cs" />
@@ -143,10 +143,10 @@
     <Compile Include="FileStorage\StaticInvnetoryMovementFileStorage.cs" />
     <Compile Include="Model\Survey.cs" />
     <Compile Include="FileStorage\SurveyFileStorage.cs" />
-    <Compile Include="OceniteBolnicu.xaml.cs">
+    <Compile Include="Pacijent\OceniteBolnicu.xaml.cs">
       <DependentUpon>OceniteBolnicu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OcenjivanjeDoktora.xaml.cs">
+    <Compile Include="Pacijent\OcenjivanjeDoktora.xaml.cs">
       <DependentUpon>OcenjivanjeDoktora.xaml</DependentUpon>
     </Compile>
     <Compile Include="PremestanjeInventara.xaml.cs">
@@ -161,7 +161,7 @@
     <Compile Include="RenoviranjeOdbijeno.xaml.cs">
       <DependentUpon>RenoviranjeOdbijeno.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SacuvanaAnketa.xaml.cs">
+    <Compile Include="Pacijent\SacuvanaAnketa.xaml.cs">
       <DependentUpon>SacuvanaAnketa.xaml</DependentUpon>
     </Compile>
     <Compile Include="Prikaz\ZauzetiTermini.cs" />
@@ -310,7 +310,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DodajAnketu.xaml">
+    <Page Include="Pacijent\DodajAnketu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -404,13 +404,13 @@
     <Compile Include="OdjaviSe.xaml.cs">
       <DependentUpon>OdjaviSe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PocetnaPacijent.xaml.cs">
+    <Compile Include="Pacijent\PocetnaPacijent.xaml.cs">
       <DependentUpon>PocetnaPacijent.xaml</DependentUpon>
     </Compile>
     <Compile Include="PostojeceAnamneze.xaml.cs">
       <DependentUpon>PostojeceAnamneze.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PregledPacijenata.xaml.cs">
+    <Compile Include="Pacijent\PregledPacijenata.xaml.cs">
       <DependentUpon>PregledPacijenata.xaml</DependentUpon>
     </Compile>
     <Compile Include="PremestanjeInventaraDijalog.xaml.cs">
@@ -430,7 +430,7 @@
     <Compile Include="PrikazInventaraUSobi.xaml.cs">
       <DependentUpon>PrikazInventaraUSobi.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PrikazObavestenja.xaml.cs">
+    <Compile Include="Pacijent\PrikazObavestenja.xaml.cs">
       <DependentUpon>PrikazObavestenja.xaml</DependentUpon>
     </Compile>
     <Page Include="Evidencija.xaml">
@@ -493,11 +493,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="OceniteBolnicu.xaml">
+    <Page Include="Pacijent\OceniteBolnicu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="OcenjivanjeDoktora.xaml">
+    <Page Include="Pacijent\OcenjivanjeDoktora.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -517,7 +517,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SacuvanaAnketa.xaml">
+    <Page Include="Pacijent\SacuvanaAnketa.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -564,14 +564,14 @@
     <Compile Include="Sobe.xaml.cs">
       <DependentUpon>Sobe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowPacijent.xaml.cs">
+    <Compile Include="Pacijent\WindowPacijent.xaml.cs">
       <DependentUpon>WindowPacijent.xaml</DependentUpon>
     </Compile>
-    <Page Include="DodajTermin.xaml">
+    <Page Include="Pacijent\DodajTermin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IzmeniTermin.xaml">
+    <Page Include="Pacijent\IzmeniTermin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -632,10 +632,10 @@
     <Compile Include="Sekretar\KreirajNalog.xaml.cs">
       <DependentUpon>KreirajNalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DodajTermin.xaml.cs">
+    <Compile Include="Pacijent\DodajTermin.xaml.cs">
       <DependentUpon>DodajTermin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IzmeniTermin.xaml.cs">
+    <Compile Include="Pacijent\IzmeniTermin.xaml.cs">
       <DependentUpon>IzmeniTermin.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
@@ -650,7 +650,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PocetnaPacijent.xaml">
+    <Page Include="Pacijent\PocetnaPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -666,7 +666,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PregledPacijenata.xaml">
+    <Page Include="Pacijent\PregledPacijenata.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -694,7 +694,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PrikazObavestenja.xaml">
+    <Page Include="Pacijent\PrikazObavestenja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -746,7 +746,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ObrisiTermin.xaml">
+    <Page Include="Pacijent\ObrisiTermin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -790,7 +790,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WindowPacijent.xaml">
+    <Page Include="Pacijent\WindowPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -841,7 +841,7 @@
     <Compile Include="Sekretar\PrikaziPacijente.xaml.cs">
       <DependentUpon>PrikaziPacijente.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ObrisiTermin.xaml.cs">
+    <Compile Include="Pacijent\ObrisiTermin.xaml.cs">
       <DependentUpon>ObrisiTermin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -934,10 +934,10 @@
     <Resource Include="Sekretar\Help-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="arrow.png" />
+    <Resource Include="Pacijent\arrow.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="download %282%29.png" />
+    <Resource Include="Pacijent\download %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
