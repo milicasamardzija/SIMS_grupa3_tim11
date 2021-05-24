@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for DodavanjeLekaUpravnik.xaml
-    /// </summary>
     public partial class DodavanjeLekaUpravnik : UserControl
     {
         private Frame frame = new Frame();

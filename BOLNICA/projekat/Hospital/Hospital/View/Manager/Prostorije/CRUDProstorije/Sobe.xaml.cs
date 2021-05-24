@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -18,28 +20,22 @@ namespace Hospital
 {
     public partial class Sobe : UserControl
     {
-        public ObservableCollection<Room> RoomList
-        {
-            get;
-            set;
-        }
-
+        public ObservableCollection<RoomDTO> Rooms { get; set; }
         private Frame frameMagacin { get; set; }
-        private RoomFileStorage storageRooms = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
-        public Sobe(ObservableCollection<Room> roomList, Frame magacin)
+        private RoomsController roomController = new RoomsController();
+        public Sobe(Frame magacin)
         {
             InitializeComponent();
             this.DataContext = this;
-            SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
-            RoomList = roomList;
             frameMagacin = magacin;
-            ListaProstorija.ItemsSource = RoomList;
+            Rooms = new ObservableCollection<RoomDTO>(roomController.getAll());
             ucitajInventar();
+            SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
         }
 
         private void dodavanje(object sender, RoutedEventArgs e)
         {
-            SobeFrame.NavigationService.Navigate(new DodajProstoriju(RoomList, SobeFrame));
+            SobeFrame.NavigationService.Navigate(new DodajProstoriju(Rooms, (RoomDTO)ListaProstorija.SelectedItem, SobeFrame));
         }
 
         private void obrisi(object sender, RoutedEventArgs e)
@@ -50,7 +46,7 @@ namespace Hospital
             }
             else
             {
-                SobeFrame.NavigationService.Navigate(new IzbrisiProstoriju(RoomList, (Room)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex, SobeFrame));
+                SobeFrame.NavigationService.Navigate(new IzbrisiProstoriju(Rooms, (RoomDTO)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex, SobeFrame));
             }
         }
 
@@ -62,26 +58,19 @@ namespace Hospital
             }
             else
             {
-                SobeFrame.NavigationService.Navigate(new IzmeniProstoriju(RoomList, (Room)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex, SobeFrame));
+                SobeFrame.NavigationService.Navigate(new IzmeniProstoriju(Rooms, (RoomDTO)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex, SobeFrame));
             }
         }
 
         private void prikazInventara(object sender, RoutedEventArgs e)
         {
-           frameMagacin.NavigationService.Navigate(new PrikazInventaraUSobi(RoomList,(Room)ListaProstorija.SelectedItem,frameMagacin));
+  //         frameMagacin.NavigationService.Navigate(new PrikazInventaraUSobi(rooms, (RoomDTO)ListaProstorija.SelectedItem,frameMagacin));
         }
-
-        public ObservableCollection<Room> loadJason()
-        {
-            RoomFileStorage fs = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
-            ObservableCollection<Room> rs = new ObservableCollection<Room>(fs.GetAll());
-            return rs;
-        }
-
+      
         private List<Room> filtratedRooms = new List<Room>();
         private void PretragaSobe(object sender, TextChangedEventArgs e)
         {
-            List<Room> all = storageRooms.GetAll();
+           /* List<Room> all = storageRooms.GetAll();
             filtratedRooms.Clear();
 
             if (PretragaTxt.Text.Equals(""))
@@ -121,7 +110,7 @@ namespace Hospital
                     }
                 }
                 ListaProstorija.ItemsSource = filtratedRooms;
-            }
+            }*/
         }
 
         public void ucitajInventar()
@@ -135,10 +124,9 @@ namespace Hospital
                 ImeInventarTxt.Items.Add(item);
             }
         }
-
         private void KolicinaInventarTxt_TextChanged(object sender, TextChangedEventArgs e)
         {
-            filtratedRooms.Clear();
+          /*  filtratedRooms.Clear();
             int quantity = -1;
 
             if (KolicinaInventarTxt.Text.Equals(""))
@@ -166,7 +154,7 @@ namespace Hospital
                     }
                 }
                 ListaProstorija.ItemsSource = filtratedRooms;
-            }
+            }*/
         } 
 
         private void zakaziRenoviranje(object sender, RoutedEventArgs e)
@@ -181,7 +169,7 @@ namespace Hospital
 
         private void RenoviranjePrikaz(object sender, RoutedEventArgs e)
         {
-            frameMagacin.NavigationService.Navigate(new PrikazSobaRenoviranje(RoomList,frameMagacin));
+            frameMagacin.NavigationService.Navigate(new PrikazSobaRenoviranje(Rooms,frameMagacin));
         }
     }
 }

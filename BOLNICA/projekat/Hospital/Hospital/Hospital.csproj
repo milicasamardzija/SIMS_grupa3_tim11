@@ -61,6 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DTO\RoomDTO.cs" />
     <Compile Include="FileStorage\Interfaces\IngredientsIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\INotificationsFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\InventoryIFileStorage.cs" />

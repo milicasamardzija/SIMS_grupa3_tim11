@@ -31,7 +31,7 @@ namespace Hospital.Service
             appointmentsStorage = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
             roomStorage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
         }
-    
+
         public void zakaziRenoviranje(RoomRenovation renovation)
         {
 
@@ -46,25 +46,25 @@ namespace Hospital.Service
             }
         }
 
-       /* public Boolean hasNoRenovationScheduled(RoomRenovation renovation)
-        {
-            foreach (RoomRenovation renov in renovationStorage.GetAll())
-            {
-                if (renovation.IdRoom == renov.IdRoom && renovation.DateBegin.Date == renov.DateBegin.Date)
-                {
-                    return false;
-                }
-                if (renovation.IdRoom == renov.IdRoom && renovation.DateEnd.Date == renov.DateEnd.Date)
-                {
-                    return false;
-                }
-                if (renovation.IdRoom == renov.IdRoom && renovation.DateBegin.Date < renov.DateEnd.Date &&)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }*/
+        /* public Boolean hasNoRenovationScheduled(RoomRenovation renovation)
+         {
+             foreach (RoomRenovation renov in renovationStorage.GetAll())
+             {
+                 if (renovation.IdRoom == renov.IdRoom && renovation.DateBegin.Date == renov.DateBegin.Date)
+                 {
+                     return false;
+                 }
+                 if (renovation.IdRoom == renov.IdRoom && renovation.DateEnd.Date == renov.DateEnd.Date)
+                 {
+                     return false;
+                 }
+                 if (renovation.IdRoom == renov.IdRoom && renovation.DateBegin.Date < renov.DateEnd.Date &&)
+                 {
+                     return false;
+                 }
+             }
+             return true;
+         }*/
 
         public void moveInventoryForRenovation(RoomRenovation renovation)
         {
@@ -182,6 +182,66 @@ namespace Hospital.Service
                 }
             }
             return availableRooms;
+        }
+
+        public List<Room> getAll()
+        {
+            return roomStorage.GetAll();
+        }
+
+        public void save(Room newRoom)
+        {
+            roomStorage.Save(newRoom);
+        }
+        public void deleteById(int id)
+        {
+            this.deleteRoomInventory(id);
+            roomStorage.DeleteById(id);
+        }
+
+        private void deleteRoomInventory(int id)
+        {
+            foreach (RoomInventory inventory in roominventoryStorage.GetAll())
+            {
+                if (inventory.IdRoom == id)
+                {
+                    roominventoryStorage.DeleteByIdRoom(id);
+                }
+            }
+        }
+
+        public int generateId()
+        {
+            int ret = 0;
+            foreach (Room roomBig in roomStorage.GetAll())
+            {
+                foreach (Room room in roomStorage.GetAll())
+                {
+                    if (ret == room.Id)
+                    {
+                        ++ret;
+                        break;
+                    }
+                }
+            }
+            return ret;
+        }
+
+        public void update(Room updatedRoom)
+        {
+            List<Room> rooms = roomStorage.GetAll();
+            foreach (Room room in rooms)
+            {
+                if (room.Id == updatedRoom.Id)
+                {
+                    room.Floor = updatedRoom.Floor;
+                    room.Capacity = updatedRoom.Capacity;
+                    room.Occupancy = updatedRoom.Occupancy;
+                    room.Purpose = updatedRoom.Purpose;
+                    break;
+                }
+            }
+            roomStorage.SaveAll(rooms);
         }
     }
 }

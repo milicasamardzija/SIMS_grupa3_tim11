@@ -9,17 +9,17 @@
     <Grid>
         <Grid Margin="-10,-10,0.4,0">
             <Label Margin="10,45,323,317" Foreground="Black" FontSize="18" Grid.Column="0" Grid.Row="0" FontWeight="Bold" RenderTransformOrigin="0.498,-0.169">Broj prostorije</Label>
-            <TextBox IsReadOnly="True" Name="brojProstorijeTxt" Width="200" Margin="244,45,36,330" Grid.Row="0" />
+            <TextBox IsReadOnly="True" Text="{Binding Room.Id}" Name="brojProstorijeTxt" Width="200" Margin="244,45,36,330" Grid.Row="0" />
             <Label Height="30" Width="100" Margin="10,124,370,256" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold" RenderTransformOrigin="-0.119,-0.46">Namena</Label>
-            <ComboBox Name="namenaTxt" Width="200" Margin="244,124,36,248">
+            <ComboBox Name="namenaTxt" SelectedValue="{Binding Path = Room.Purpose}" SelectedValuePath="Purpose" Width="200" Margin="244,124,36,248">
                 <ComboBoxItem>SALA</ComboBoxItem>
                 <ComboBoxItem>SOBA</ComboBoxItem>
                 <ComboBoxItem>ORDINACIJA</ComboBoxItem>
             </ComboBox>
             <Label Height="30" Width="100" Margin="10,204,370,176" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold">Sprat</Label>
-            <TextBox Name="spratTxt" Width="200" Margin="244,198,36,176"/>
+            <TextBox Name="spratTxt" Width="200" Text="{Binding Room.Floor}" Margin="244,198,36,176"/>
             <Label Margin="10,269,272,71" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold">Kapacitet prostorije</Label>
-            <TextBox Name="kapacitetTxt" Width="200" Margin="244,269,36,107"/>
+            <TextBox Name="kapacitetTxt" Text="{Binding Room.Capacity}" Width="200" Margin="244,269,36,107"/>
             <Button Margin="86,346,300,34" Grid.Column="0" Height="30" Click="izbrisi" Background="LightBlue" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.545,1.596">Potvrdi</Button>
             <Button Margin="283,346,99,34" Height="30" Background="LightBlue" Click="odustani" RenderTransformOrigin="0.363,-0.605" FontSize="18" FontWeight="Bold">Odustani</Button>
         </Grid>

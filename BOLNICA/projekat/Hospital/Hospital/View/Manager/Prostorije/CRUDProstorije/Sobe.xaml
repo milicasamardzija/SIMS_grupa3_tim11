@@ -24,10 +24,10 @@
                       AutoGenerateColumns="False"
                       SelectionMode="Single"
                       IsReadOnly="True"
-                      ItemsSource="{Binding Path = RoomList}"
+                      ItemsSource="{Binding Path = Rooms}"
                       >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="BROJ" Width="150" Binding="{Binding RoomId}"/>
+                <DataGridTextColumn Header="BROJ" Width="150" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="NAMENA" Width="190" Binding="{Binding Purpose}"/>
                 <DataGridTextColumn Header="SPRAT" Width="150" Binding="{Binding Floor}"/>
                 <DataGridTemplateColumn>
