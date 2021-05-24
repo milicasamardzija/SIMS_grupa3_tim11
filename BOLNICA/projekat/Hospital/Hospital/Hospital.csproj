@@ -91,7 +91,7 @@
     <Compile Include="FileStorage\Interfaces\GenericRepository.cs" />
     <Compile Include="FileStorage\Interfaces\RoomIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\SurveyIFileStorage.cs" />
-    <Compile Include="LekoviCekajuReviziju.xaml.cs">
+    <Compile Include="Lekar\LekoviCekajuReviziju.xaml.cs">
       <DependentUpon>LekoviCekajuReviziju.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Alergens.cs" />
@@ -243,43 +243,43 @@
     <Compile Include="Upravnik\Prostorije\InventarSobe\PremestanjeIzSobe\ZakazivanjePremestanjaStatickogInventaraUSobu.xaml.cs">
       <DependentUpon>ZakazivanjePremestanjaStatickogInventaraUSobu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DavanjeUputa.xaml.cs">
+    <Compile Include="Lekar\DavanjeUputa.xaml.cs">
       <DependentUpon>DavanjeUputa.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DodajPotroseniMaterijal.xaml.cs">
+    <Compile Include="Lekar\DodajPotroseniMaterijal.xaml.cs">
       <DependentUpon>DodajPotroseniMaterijal.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EvidencijaLekar.xaml.cs">
+    <Compile Include="Lekar\EvidencijaLekar.xaml.cs">
       <DependentUpon>EvidencijaLekar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IzvestajLekara.xaml.cs">
+    <Compile Include="Lekar\IzvestajLekara.xaml.cs">
       <DependentUpon>IzvestajLekara.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PotroseniMaterijal.xaml.cs">
+    <Compile Include="Lekar\PotroseniMaterijal.xaml.cs">
       <DependentUpon>PotroseniMaterijal.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PrikaziIzvestajLekara.xaml.cs">
+    <Compile Include="Lekar\PrikaziIzvestajLekara.xaml.cs">
       <DependentUpon>PrikaziIzvestajLekara.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Profil.xaml.cs">
+    <Compile Include="Lekar\Profil.xaml.cs">
       <DependentUpon>Profil.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ProfilLekara.xaml.cs">
+    <Compile Include="Lekar\ProfilLekara.xaml.cs">
       <DependentUpon>ProfilLekara.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RevizijaLekaLekar.xaml.cs">
+    <Compile Include="Lekar\RevizijaLekaLekar.xaml.cs">
       <DependentUpon>RevizijaLekaLekar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UputZaAmbulantnoSpecijalistickiPregled.xaml.cs">
+    <Compile Include="Lekar\UputZaAmbulantnoSpecijalistickiPregled.xaml.cs">
       <DependentUpon>UputZaAmbulantnoSpecijalistickiPregled.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ZakaziPregledLekar.xaml.cs">
+    <Compile Include="Lekar\ZakaziPregledLekar.xaml.cs">
       <DependentUpon>ZakaziPregledLekar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ZamenaLekova.xaml.cs">
+    <Compile Include="Lekar\ZamenaLekova.xaml.cs">
       <DependentUpon>ZamenaLekova.xaml</DependentUpon>
     </Compile>
-    <Page Include="AddDialog.xaml">
+    <Page Include="Lekar\AddDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -307,11 +307,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DavanjeUputa.xaml">
+    <Page Include="Lekar\DavanjeUputa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DeleteDialog.xaml">
+    <Page Include="Lekar\DeleteDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -327,7 +327,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="DodajPotroseniMaterijal.xaml">
+    <Page Include="Lekar\DodajPotroseniMaterijal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -339,7 +339,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditDialog.xaml">
+    <Page Include="Lekar\EditDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -355,7 +355,7 @@
     <Compile Include="Upravnik\Prostorije\CRUDProstorije\DodajProstoriju.xaml.cs">
       <DependentUpon>DodajProstoriju.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Evidencija.xaml.cs">
+    <Compile Include="Lekar\Evidencija.xaml.cs">
       <DependentUpon>Evidencija.xaml</DependentUpon>
     </Compile>
     <Compile Include="Upravnik\Inventar\CRUDInventar\IzbrisiInventarDijalog.xaml.cs">
@@ -364,7 +364,7 @@
     <Compile Include="Upravnik\Prostorije\CRUDProstorije\IzbrisiProstoriju.xaml.cs">
       <DependentUpon>IzbrisiProstoriju.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IzdavanjeRecepta.xaml.cs">
+    <Compile Include="Lekar\IzdavanjeRecepta.xaml.cs">
       <DependentUpon>IzdavanjeRecepta.xaml</DependentUpon>
     </Compile>
     <Compile Include="Upravnik\Inventar\CRUDInventar\IzmenaInventaraDijalog.xaml.cs">
@@ -373,10 +373,10 @@
     <Compile Include="Upravnik\Prostorije\CRUDProstorije\IzmeniProstoriju.xaml.cs">
       <DependentUpon>IzmeniProstoriju.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IzmenaLeka.xaml.cs">
+    <Compile Include="Lekar\IzmenaLeka.xaml.cs">
       <DependentUpon>IzmenaLeka.xaml</DependentUpon>
     </Compile>
-    <Compile Include="KreiranjeAnamneze.xaml.cs">
+    <Compile Include="Lekar\KreiranjeAnamneze.xaml.cs">
       <DependentUpon>KreiranjeAnamneze.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sekretar\KreirajStalniNalog.xaml.cs">
@@ -406,13 +406,13 @@
     <Compile Include="Model\RoomInventory.cs" />
     <Compile Include="FileStorage\RoomInventoryFileStorage.cs" />
     <Compile Include="Model\SpecCheckup.cs" />
-    <Compile Include="OdjaviSe.xaml.cs">
+    <Compile Include="Lekar\OdjaviSe.xaml.cs">
       <DependentUpon>OdjaviSe.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pacijent\PocetnaPacijent.xaml.cs">
       <DependentUpon>PocetnaPacijent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PostojeceAnamneze.xaml.cs">
+    <Compile Include="Lekar\PostojeceAnamneze.xaml.cs">
       <DependentUpon>PostojeceAnamneze.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pacijent\PregledPacijenata.xaml.cs">
@@ -424,7 +424,7 @@
     <Compile Include="Upravnik\Inventar\PremestanjeIzMagacina\PremestiInventarUSobu.xaml.cs">
       <DependentUpon>PremestiInventarUSobu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PrikaziKartonPacijenta.xaml.cs">
+    <Compile Include="Lekar\PrikaziKartonPacijenta.xaml.cs">
       <DependentUpon>PrikaziKartonPacijenta.xaml</DependentUpon>
     </Compile>
     <Compile Include="FileStorage\MedicalRecordsFileStorage.cs" />
@@ -438,11 +438,11 @@
     <Compile Include="Pacijent\PrikazObavestenja.xaml.cs">
       <DependentUpon>PrikazObavestenja.xaml</DependentUpon>
     </Compile>
-    <Page Include="Evidencija.xaml">
+    <Page Include="Lekar\Evidencija.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EvidencijaLekar.xaml">
+    <Page Include="Lekar\EvidencijaLekar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -454,7 +454,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IzdavanjeRecepta.xaml">
+    <Page Include="Lekar\IzdavanjeRecepta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -474,11 +474,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="IzmenaLeka.xaml">
+    <Page Include="Lekar\IzmenaLeka.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LekoviCekajuReviziju.xaml">
+    <Page Include="Lekar\LekoviCekajuReviziju.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -550,7 +550,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IzvestajLekara.xaml">
+    <Page Include="Lekar\IzvestajLekara.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -580,7 +580,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="KreiranjeAnamneze.xaml">
+    <Page Include="Lekar\KreiranjeAnamneze.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -612,17 +612,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AddDialog.xaml.cs">
+    <Compile Include="Lekar\AddDialog.xaml.cs">
       <DependentUpon>AddDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DeleteDialog.xaml.cs">
+    <Compile Include="Lekar\DeleteDialog.xaml.cs">
       <DependentUpon>DeleteDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditDialog.xaml.cs">
+    <Compile Include="Lekar\EditDialog.xaml.cs">
       <DependentUpon>EditDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sekretar\IzbrisiPacijenta.xaml.cs">
@@ -651,7 +651,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="OdjaviSe.xaml">
+    <Page Include="Lekar\OdjaviSe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -659,15 +659,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PostojeceAnamneze.xaml">
+    <Page Include="Lekar\PostojeceAnamneze.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PotroseniMaterijal.xaml">
+    <Page Include="Lekar\PotroseniMaterijal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pregled.xaml">
+    <Page Include="Lekar\Pregled.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -683,11 +683,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PrikaziIzvestajLekara.xaml">
+    <Page Include="Lekar\PrikaziIzvestajLekara.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PrikaziKartonPacijenta.xaml">
+    <Page Include="Lekar\PrikaziKartonPacijenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -703,15 +703,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Profil.xaml">
+    <Page Include="Lekar\Profil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ProfilLekara.xaml">
+    <Page Include="Lekar\ProfilLekara.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RevizijaLekaLekar.xaml">
+    <Page Include="Lekar\RevizijaLekaLekar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -791,7 +791,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UputZaAmbulantnoSpecijalistickiPregled.xaml">
+    <Page Include="Lekar\UputZaAmbulantnoSpecijalistickiPregled.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -807,11 +807,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ZakaziPregledLekar.xaml">
+    <Page Include="Lekar\ZakaziPregledLekar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ZamenaLekova.xaml">
+    <Page Include="Lekar\ZamenaLekova.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -834,7 +834,7 @@
     <Compile Include="FileStorage\RoomFileStorage.cs" />
     <Compile Include="Model\Secretary.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Pregled.xaml.cs">
+    <Compile Include="Lekar\Pregled.xaml.cs">
       <DependentUpon>Pregled.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sekretar\Nalozi.xaml.cs">
