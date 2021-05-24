@@ -1,6 +1,4 @@
 ﻿using Hospital.Controller;
-using Hospital.FileStorage.Interfaces;
-using Hospital.Model;
 using Hospital.Prikaz;
 using System;
 using System.Collections.Generic;
@@ -19,24 +17,25 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    public partial class BrisanjeLekaUpravnik : UserControl
+    /// <summary>
+    /// Interaction logic for DodavanjeLekaUpravnik.xaml
+    /// </summary>
+    public partial class DodavanjeLekaUpravnik : UserControl
     {
         private Frame frame = new Frame();
-        private LekRevizija revision;
-        private MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
-        private MedicineReviewIFileStorage reviewStorage = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
-   
-        public BrisanjeLekaUpravnik(Frame frameLekovi, LekRevizija selectedRevision)
+        private Review revision;
+        private MedicineController controller = new MedicineController();
+      
+        public DodavanjeLekaUpravnik(Frame frameLekovi, Review selectedRevision)
         {
             InitializeComponent();
             frame = frameLekovi;
             revision = selectedRevision;
         }
 
-        private void obrisi(object sender, RoutedEventArgs e)
+        private void dodaj(object sender, RoutedEventArgs e)
         {
-            storage.DeleteById(revision.IdMedicine);
-           // reviewStorage.DeleteByIdMedicine(revision.IdMedicine);
+            controller.approveMedicine(revision);
             frame.NavigationService.Navigate(new LekoviRevizijaUpravnik(frame));
         }
 

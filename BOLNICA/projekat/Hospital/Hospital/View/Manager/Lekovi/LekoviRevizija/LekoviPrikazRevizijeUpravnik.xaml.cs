@@ -20,8 +20,8 @@ namespace Hospital
 {
     public partial class LekoviPrikazRevizijeUpravnik : UserControl
     {
-        private LekRevizija revizija;
-        public LekoviPrikazRevizijeUpravnik(LekRevizija selected)
+        private Review revizija;
+        public LekoviPrikazRevizijeUpravnik(Review selected)
         {
             InitializeComponent();
             revizija = selected;

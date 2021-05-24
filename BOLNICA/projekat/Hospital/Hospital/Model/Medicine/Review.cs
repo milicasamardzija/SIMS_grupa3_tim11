@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.Prikaz
 {
-    public class LekRevizija : INotifyPropertyChanged
+    public class Review : INotifyPropertyChanged
     {
         private String name;
         private String medicineType;
@@ -27,7 +27,7 @@ namespace Hospital.Prikaz
             }
         }
 
-        public LekRevizija(String n, String typeMedicine, ReviewType typeReview, Boolean d, int idM, int idR)
+        public Review(String n, String typeMedicine, ReviewType typeReview, Boolean d, int idM, int idR)
         {
             name = n;
             reviewType = typeReview;

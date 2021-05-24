@@ -21,7 +21,7 @@ namespace Hospital
 {
     public partial class LekoviRevizijaUpravnik : UserControl
     {
-        public ObservableCollection<LekRevizija> MedicineReviewList { get; set; }
+        public ObservableCollection<Review> MedicineReviewList { get; set; }
         private Frame frame = new Frame();
         public LekoviRevizijaUpravnik(Frame frameUpravnik)
         {
@@ -31,11 +31,11 @@ namespace Hospital
             frame = frameUpravnik;
         }
 
-        public ObservableCollection<LekRevizija> loadJson()
+        public ObservableCollection<Review> loadJson()
         {
             MedicineIFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             MedicineReviewIFileStorage storageMedicineReview = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
-            ObservableCollection<LekRevizija> ret = new ObservableCollection<LekRevizija>();
+            ObservableCollection<Review> ret = new ObservableCollection<Review>();
 
             foreach (Medicine medicine in storageMedicine.GetAll())
             {
@@ -45,7 +45,7 @@ namespace Hospital
                     {
                         if (medicineRewiev.IdMedicine == medicine.Id)
                         {
-                            ret.Add(new LekRevizija(medicine.Name,medicine.Type,medicineRewiev.TypeReview,medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
+                            ret.Add(new Review(medicine.Name,medicine.Type,medicineRewiev.TypeReview,medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
                             break;
                         }
                     }
@@ -60,7 +60,7 @@ namespace Hospital
                     {
                         if (medicineRewiev.IdMedicine == medicine.Id)
                         {
-                            ret.Add(new LekRevizija(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
+                            ret.Add(new Review(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
                             break;
                         }
                     }
@@ -72,25 +72,25 @@ namespace Hospital
 
         private void dodaj(object sender, RoutedEventArgs e)
         {   if(ListaLekovaRevizija.SelectedItem != null)
-                LekoviRevizijaFrame.NavigationService.Navigate(new DodavanjeLekaUpravnik(frame, (LekRevizija)ListaLekovaRevizija.SelectedItem));
+                LekoviRevizijaFrame.NavigationService.Navigate(new DodavanjeLekaUpravnik(frame, (Review)ListaLekovaRevizija.SelectedItem));
         }
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
             if (ListaLekovaRevizija.SelectedItem != null)
-                LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeLekaUpravnik(frame,(LekRevizija)ListaLekovaRevizija.SelectedItem));
+                LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeLekaUpravnik(frame,(Review)ListaLekovaRevizija.SelectedItem));
         }
 
         private void prikaziReviziju(object sender, SelectionChangedEventArgs e)
         {
             if (ListaLekovaRevizija.SelectedItem != null)
-                LekoviRevizijaFrame.Navigate(new LekoviPrikazRevizijeUpravnik((LekRevizija)ListaLekovaRevizija.SelectedItem));
+                LekoviRevizijaFrame.Navigate(new LekoviPrikazRevizijeUpravnik((Review)ListaLekovaRevizija.SelectedItem));
         }
 
         private void izbrisiRezenziju(object sender, RoutedEventArgs e)
         {
             if (ListaLekovaRevizija.SelectedItem != null)
-                LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeRecenzijeUpravnik(frame, (LekRevizija)ListaLekovaRevizija.SelectedItem));
+                LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeRecenzijeUpravnik(frame, (Review)ListaLekovaRevizija.SelectedItem));
         }
 
         private void unazad(object sender, RoutedEventArgs e)

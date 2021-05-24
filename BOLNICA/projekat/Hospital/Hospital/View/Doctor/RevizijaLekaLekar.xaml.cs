@@ -25,11 +25,11 @@ namespace Hospital
     public partial class RevizijaLekaLekar : Window
     {
 
-        public ObservableCollection<LekRevizija> reviewList;
-        public LekRevizija lekRevizija;
+        public ObservableCollection<Review> reviewList;
+        public Review lekRevizija;
         public int indexReview;
 
-        public RevizijaLekaLekar(ObservableCollection<LekRevizija> list, LekRevizija selectedReview, int selectedIndex)
+        public RevizijaLekaLekar(ObservableCollection<Review> list, Review selectedReview, int selectedIndex)
         {
             InitializeComponent();
             this.DataContext = this;
@@ -90,7 +90,7 @@ namespace Hospital
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            reviewList[indexReview] = new LekRevizija(lekRevizija.Name, lekRevizija.MedicineType, lekRevizija.ReviewType, true, generateID(), generisiID());
+            reviewList[indexReview] = new Review(lekRevizija.Name, lekRevizija.MedicineType, lekRevizija.ReviewType, true, generateID(), generisiID());
             this.Close();
         }
     }

@@ -61,7 +61,7 @@ namespace Hospital.Service
             }
         }
 
-        internal void approvedMedicine(LekRevizija revision)
+        internal void approvedMedicine(Review revision)
         {
             List<Medicine> all = storageMedicine.GetAll();
             foreach (Medicine medicine in all)

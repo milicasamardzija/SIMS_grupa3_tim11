@@ -22,7 +22,7 @@ namespace Hospital.Controller
             service.sendMediciToRevision(newMedicine, idDoctor);
         }
 
-        internal void approveMedicine(LekRevizija revision)
+        internal void approveMedicine(Review revision)
         {
             service.approvedMedicine(revision);
         }
