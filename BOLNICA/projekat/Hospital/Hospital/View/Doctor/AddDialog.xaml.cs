@@ -24,13 +24,14 @@ namespace Hospital
     public partial class AddDialog : Window
     {
         public List<Checkup> listCheckup;
-        public int idD; 
+        public int id;
+        public Checkup checkup;
 
         public AddDialog(List<Checkup> list, int idDoctor)
         {
             InitializeComponent();
             listCheckup = list;
-            idD = idDoctor;
+            id = idDoctor;
             dateP.DisplayDate = new DateTime(2021, 04, 17);
         }
 
@@ -55,7 +56,7 @@ namespace Hospital
            
             foreach (Doctor doctor in doctors)  
             {
-                if (doctor.DoctorId == idD)
+                if (doctor.DoctorId == id)
                 {
                     ret = doctor;
                     break; 
@@ -63,6 +64,13 @@ namespace Hospital
             }
 
             return ret;
+        }
+
+        public int getIdDoctor()
+        {
+            CheckupFileStorage storage = new CheckupFileStorage();
+            Checkup checkups = storage.FindById(checkup.IdCh);
+            return checkups.IdDoctor;
         }
 
         public int generateID()
@@ -93,6 +101,7 @@ namespace Hospital
 
             Checkup newCheckup = new Checkup(ida, generateID(), dateP.DisplayDate, Convert.ToString(timeText.Text), Convert.ToDouble(durationText.Text),
                 (CheckupType)comboBox.SelectedIndex,patient,doctor);
+
             st.Save(newCheckup);
             listCheckup.Add(newCheckup);
             this.Close();

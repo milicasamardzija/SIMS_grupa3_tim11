@@ -23,7 +23,7 @@ namespace Hospital
     {
 
         public List<Checkup> CheckupList { get; set; }
-        public int id;
+        public int idInstruction;
 
         public UputZaAmbulantnoSpecijalistickiPregled()
         {
@@ -34,11 +34,11 @@ namespace Hospital
         public int generateInstructionId()
         {
             int ret = 0;
-            InstructionFileStorage storage = new InstructionFileStorage(@"./../../../../Hospital/files/instructions.json");
-            List<Instruction> all = storage.GetAll();
-            foreach (Instruction instruction in all)
+            InstructionFileStorage storageInstruction = new InstructionFileStorage(@"./../../../../Hospital/files/instructions.json");
+            List<Instruction> allInstructions = storageInstruction.GetAll();
+            foreach (Instruction instruction in allInstructions)
             {
-                foreach (Instruction instructions in all)
+                foreach (Instruction instructions in allInstructions)
                 {
                     if (ret == instructions.Id)
                     {
@@ -92,8 +92,8 @@ namespace Hospital
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            ZakaziPregledLekar zpl = new ZakaziPregledLekar(CheckupList, id);
-            zpl.Show();
+            ZakaziPregledLekar newCheckupInstruction = new ZakaziPregledLekar(CheckupList, idInstruction);
+            newCheckupInstruction.Show();
         }
     }
 }

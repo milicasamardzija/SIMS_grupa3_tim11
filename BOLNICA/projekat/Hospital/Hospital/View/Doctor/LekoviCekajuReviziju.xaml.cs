@@ -79,8 +79,8 @@ namespace Hospital
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            RevizijaLekaLekar rll = new RevizijaLekaLekar(ListMedicineReview, (Review)ReviewMedicineList.SelectedItem, ReviewMedicineList.SelectedIndex);
-            rll.Show();
+            RevizijaLekaLekar doctorMedicineReview = new RevizijaLekaLekar(ListMedicineReview, (Review)ReviewMedicineList.SelectedItem, ReviewMedicineList.SelectedIndex);
+            doctorMedicineReview.Show();
         }
     }
 }

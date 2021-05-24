@@ -61,8 +61,8 @@ namespace Hospital
 
         public ObservableCollection<Medicine> loadMedicine()
         {
-            MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
-            ObservableCollection<Medicine> medicines = new ObservableCollection<Medicine>(storage.GetAll());
+            MedicineIFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
+            ObservableCollection<Medicine> medicines = new ObservableCollection<Medicine>(storageMedicine.GetAll());
             ObservableCollection<Medicine> ret = new ObservableCollection<Medicine>();
             foreach (Medicine medicine in medicines)
             {
@@ -102,6 +102,7 @@ namespace Hospital
  
             medicineList[indexMedicine] = new Medicine(generisiID(), Convert.ToString(nazivLText.Text), Convert.ToDouble(gramazaLText.Text),
                 Convert.ToString(vrstaLText.Text), ingredients, medicines, true);
+
             this.Close();
         }
     }

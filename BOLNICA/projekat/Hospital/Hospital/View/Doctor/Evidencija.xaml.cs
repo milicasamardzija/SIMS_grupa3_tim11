@@ -22,8 +22,7 @@ namespace Hospital
     public partial class Evidencija : Window
     {
         public ObservableCollection<Medicine> MedicineList { get; set; }
-
-
+        
         public Evidencija()
         {
             InitializeComponent();
@@ -51,14 +50,14 @@ namespace Hospital
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            IzmenaLeka il = new IzmenaLeka(MedicineList, (Medicine)ListMedicines.SelectedItem, ListMedicines.SelectedIndex);
-            il.Show();
+            IzmenaLeka changeMedicine = new IzmenaLeka(MedicineList, (Medicine)ListMedicines.SelectedItem, ListMedicines.SelectedIndex);
+            changeMedicine.Show();
         }
 
         private void button4_Click(object sender, RoutedEventArgs e)
         {
-            LekoviCekajuReviziju lcr = new LekoviCekajuReviziju();
-            lcr.Show();
+            LekoviCekajuReviziju reviewForMedicine = new LekoviCekajuReviziju();
+            reviewForMedicine.Show();
         }
     }
 }

@@ -27,7 +27,6 @@ namespace Hospital.Model
             interval = intervalInstruction;
             commentInstruction = comment;
         }
-
-
+        
     }
 }

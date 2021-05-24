@@ -23,22 +23,22 @@ namespace Hospital
     {
 
         public List<Checkup> listCheckup;
-        public int index;
-        public int id;
+        public int indexCheckup;
+        public int idCheckup;
 
         public DeleteDialog(List<Checkup> list, Checkup selectedCheckup, int selectedIndex)
         {
             InitializeComponent();
             listCheckup = list;
-            id = selectedCheckup.IdCh;
-            index = selectedIndex;
+            idCheckup = selectedCheckup.IdCh;
+            indexCheckup = selectedIndex;
         }
 
         private void btnYes_Click(object sender, RoutedEventArgs e)
         {
             CheckupFileStorage st = new CheckupFileStorage();
-            st.DeleteById(id);
-            listCheckup.RemoveAt(index);
+            st.DeleteById(idCheckup);
+            listCheckup.RemoveAt(indexCheckup);
             this.Close();
         }
 

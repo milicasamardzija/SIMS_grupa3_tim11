@@ -72,16 +72,11 @@ namespace Hospital
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             CheckupFileStorage st = new CheckupFileStorage();
-            //int idAppointment = 0;
-            //Patient patient = getPatientFromFile();
-
+            
             Checkup newCheckups = new Checkup(generateIdCheckup(), (int)doctorBox.SelectedIndex, Convert.ToInt16(textPacijent.Text), Date.DisplayDate,
                 Convert.ToInt16(textTrajanje.Text), (CheckupType)comboBox.SelectedIndex);
 
-            /*public Checkup(int idCh, int idD, int idP, DateTime dateAndTime, int idR, CheckupType type) */
-
             st.Save(newCheckups);
-           // listCheckup.Add(newCheckups);
             this.Close();
         }
     }

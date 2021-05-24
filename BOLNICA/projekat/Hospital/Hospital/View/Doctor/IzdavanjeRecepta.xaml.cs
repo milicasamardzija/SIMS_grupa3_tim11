@@ -58,9 +58,9 @@ namespace Hospital
                 Convert.ToInt16(textBox6.Text), Convert.ToInt16(textBox7.Text), Convert.ToString(textBox8.Text), Convert.ToString(textBox9.Text),
                 Convert.ToString(textBox10.Text), Convert.ToDateTime(textBox11.Text), Convert.ToDateTime(textBox12.Text),
                 Convert.ToInt16(textBox13.Text));
+
             storageRecipe.Save(r);
             recipeList.Add(r);
-            //this.Close();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

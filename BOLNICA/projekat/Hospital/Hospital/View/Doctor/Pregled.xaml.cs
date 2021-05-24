@@ -41,42 +41,39 @@ namespace Hospital
 
         public List<Checkup> loadJson(int idD)
         {
-            CheckupFileStorage cs = new CheckupFileStorage();
-            List<Checkup> cc = new List<Checkup>(cs.GetAll());
-            List<Checkup> ret = new List<Checkup>(); 
+            CheckupFileStorage storageCheckup = new CheckupFileStorage();
+            List<Checkup> allCheckups = new List<Checkup>(storageCheckup.GetAll());
+            List<Checkup> returnCheckup = new List<Checkup>(); 
 
-            foreach (Checkup checkup in cc) 
+            foreach (Checkup checkup in allCheckups) 
             {
-                //if (checkup.doctor.doctorId == idD) 
-                //{
-                    ret.Add(checkup); 
-                //}
+                returnCheckup.Add(checkup); 
             }
-            return ret;
+            return returnCheckup;
         }
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            AddDialog ad = new AddDialog(CheckupList, id); 
-            ad.Show();
+            AddDialog addDialog = new AddDialog(CheckupList, id);
+            addDialog.Show();
         }
 
         private void edit_Click(object sender, RoutedEventArgs e)
         {
-            EditDialog ed = new EditDialog(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
-            ed.Show();
+            EditDialog editDialog = new EditDialog(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
+            editDialog.Show();
         }
 
         private void delete_Click(object sender, RoutedEventArgs e)
         {
-            DeleteDialog dd = new DeleteDialog(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
-            dd.Show();
+            DeleteDialog deleteDialog = new DeleteDialog(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
+            deleteDialog.Show();
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            PregledPacijenata pp = new PregledPacijenata();
-            pp.Show();
+            PregledPacijenata showPatients = new PregledPacijenata();
+            showPatients.Show();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -86,38 +83,38 @@ namespace Hospital
 
         private void button4_Click(object sender, RoutedEventArgs e)
         {
-            IzdavanjeRecepta ir = new IzdavanjeRecepta();
-            ir.Show();
+            IzdavanjeRecepta giveRecipe = new IzdavanjeRecepta();
+            giveRecipe.Show();
         }
 
         private void button9_Click(object sender, RoutedEventArgs e)
         {
-            KreiranjeAnamneze ka = new KreiranjeAnamneze(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
-            ka.Show();
+            KreiranjeAnamneze makeAnamnesis = new KreiranjeAnamneze(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
+            makeAnamnesis.Show();
         }
 
         private void button12_Click(object sender, RoutedEventArgs e)
         {
-            EvidencijaLekar el = new EvidencijaLekar();
-            el.Show();
+            EvidencijaLekar recordDoctor = new EvidencijaLekar();
+            recordDoctor.Show();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            IzvestajLekara il = new IzvestajLekara();
-            il.Show();
+            IzvestajLekara doctorReport = new IzvestajLekara();
+            doctorReport.Show();
         }
 
         private void button8_Click(object sender, RoutedEventArgs e)
         {
-            ProfilLekara pl = new ProfilLekara();
-            pl.Show();
+            ProfilLekara profileDoctor = new ProfilLekara();
+            profileDoctor.Show();
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            DavanjeUputa du = new DavanjeUputa();
-            du.Show();
+            DavanjeUputa giveInstructions = new DavanjeUputa();
+            giveInstructions.Show();
         }
     }
 }
