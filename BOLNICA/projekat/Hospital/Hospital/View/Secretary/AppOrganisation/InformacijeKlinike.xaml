@@ -25,7 +25,7 @@
         <Image
             Margin="10,44,412,255"
             IsEnabled="False"
-            Source="logo-removebg-preview.png"
+            Source="/Hospital;component/View/Images/logo-removebg-preview.png"
             Stretch="Fill"
             StretchDirection="DownOnly" />
         <Label
@@ -54,7 +54,7 @@
             Foreground="#FF234EB3" />
         <Image
             Margin="350,40,103,245"
-            Source="kvalitet-removebg-preview.png"
+            Source="/Hospital;component/View/Images/kvalitet-removebg-preview.png"
             Stretch="Fill" />
         <Image
             Width="100"
@@ -64,7 +64,7 @@
             VerticalAlignment="Top" />
         <Image
             Margin="303,160,29,24"
-            Source="mapa.PNG"
+            Source="/Hospital;component/View/Images/mapa.PNG"
             Stretch="Fill" />
         <Label
             Margin="25,287,0,0"

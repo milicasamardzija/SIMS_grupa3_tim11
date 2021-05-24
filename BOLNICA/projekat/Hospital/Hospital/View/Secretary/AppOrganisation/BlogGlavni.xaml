@@ -67,7 +67,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             RenderTransformOrigin="0.412,0.462"
-            Source="zdravo.PNG" />
+            Source="Images/zdravo.PNG" />
         <DataGrid
             x:Name="blogGlavniDG"
             Height="148"

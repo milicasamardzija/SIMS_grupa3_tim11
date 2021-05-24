@@ -46,7 +46,7 @@
                 <MenuItem.Background>
                     <ImageBrush
                         AlignmentX="Left"
-                        ImageSource="Chart-Bar-icon.png"
+                        ImageSource="/Hospital;component/View/Images/Chart-Bar-icon.png"
                         Stretch="None" />
                 </MenuItem.Background>
             </MenuItem>
@@ -59,7 +59,7 @@
                 <MenuItem.Background>
                     <ImageBrush
                         AlignmentX="Left"
-                        ImageSource="bell-icon.png"
+                        ImageSource="/Hospital;component/View/Images/bell-icon.png"
                         Stretch="None" />
                 </MenuItem.Background>
             </MenuItem>
@@ -71,7 +71,7 @@
                 <MenuItem.Background>
                     <ImageBrush
                         AlignmentX="Left"
-                        ImageSource="User-icon.png"
+                        ImageSource="/Hospital;component/View/Images/User-icon.png"
                         Stretch="None" />
                 </MenuItem.Background>
             </MenuItem>
@@ -84,7 +84,7 @@
                 <MenuItem.Background>
                     <ImageBrush
                         AlignmentX="Left"
-                        ImageSource="Patients-icon.png"
+                        ImageSource="/Hospital;component/View/Images/Patients-icon.png"
                         Stretch="None" />
                 </MenuItem.Background>
             </MenuItem>
@@ -97,7 +97,7 @@
                 <MenuItem.Background>
                     <ImageBrush
                         AlignmentX="Left"
-                        ImageSource="Transfer-icon.png"
+                        ImageSource="/Hospital;component/View/Images/Transfer-icon.png"
                         Stretch="None" />
                 </MenuItem.Background>
             </MenuItem>

@@ -134,13 +134,13 @@
     <Compile Include="View\Manager\Ostalo\ObavestenjaUpravnik.xaml.cs">
       <DependentUpon>ObavestenjaUpravnik.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\DodajObavestenjeBlog.xaml.cs">
+    <Compile Include="View\Secretary\Notifications\Blog\DodajObavestenjeBlog.xaml.cs">
       <DependentUpon>DodajObavestenjeBlog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\HitanPregled.xaml.cs">
+    <Compile Include="View\Secretary\UrgentCheckup\HitanPregled.xaml.cs">
       <DependentUpon>HitanPregled.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\ObavestenjaBlog.xaml.cs">
+    <Compile Include="View\Secretary\Notifications\Blog\ObavestenjaBlog.xaml.cs">
       <DependentUpon>ObavestenjaBlog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Medicine\ReviewType.cs" />
@@ -170,60 +170,57 @@
     <Compile Include="View\Patient\SacuvanaAnketa.xaml.cs">
       <DependentUpon>SacuvanaAnketa.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ZauzetiTermini.cs" />
-    <Compile Include="View\Secretary\Alergeni.xaml.cs">
+    <Compile Include="View\Secretary\CRUDCheckup\ZauzetiTermini.cs" />
+    <Compile Include="View\Secretary\Alergens\Alergeni.xaml.cs">
       <DependentUpon>Alergeni.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\SvaObavestenja.xaml.cs">
+    <Compile Include="View\Secretary\Notifications\SvaObavestenja.xaml.cs">
       <DependentUpon>SvaObavestenja.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\DodajPregled.xaml.cs">
+    <Compile Include="View\Secretary\CRUDCheckup\DodajPregled.xaml.cs">
       <DependentUpon>DodajPregled.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\InformacijeKlinike.xaml.cs">
+    <Compile Include="View\Secretary\AppOrganisation\InformacijeKlinike.xaml.cs">
       <DependentUpon>InformacijeKlinike.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\KreirajObavestenje.xaml.cs">
+    <Compile Include="View\Secretary\Notifications\UserNotifications\KreirajObavestenje.xaml.cs">
       <DependentUpon>KreirajObavestenje.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\IzmeniPregled.xaml.cs">
+    <Compile Include="View\Secretary\CRUDCheckup\IzmeniPregled.xaml.cs">
       <DependentUpon>IzmeniPregled.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\ObrisiObavestenje.xaml.cs">
+    <Compile Include="View\Secretary\Notifications\UserNotifications\ObrisiObavestenje.xaml.cs">
       <DependentUpon>ObrisiObavestenje.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\ObrisiObavestenjeBlog.xaml.cs">
+    <Compile Include="View\Secretary\Notifications\Blog\ObrisiObavestenjeBlog.xaml.cs">
       <DependentUpon>ObrisiObavestenjeBlog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\ObrisiPregled.xaml.cs">
+    <Compile Include="View\Secretary\CRUDCheckup\ObrisiPregled.xaml.cs">
       <DependentUpon>ObrisiPregled.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\OtkaziTermin.xaml.cs">
+    <Compile Include="View\Secretary\CRUDCheckup\OtkaziTermin.xaml.cs">
       <DependentUpon>OtkaziTermin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\Pacijenti.xaml.cs">
+    <Compile Include="View\Secretary\AppOrganisation\Pacijenti.xaml.cs">
       <DependentUpon>Pacijenti.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\PrikaziObavestenja.xaml.cs">
-      <DependentUpon>PrikaziObavestenja.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Secretary\PrikaziPreglede.xaml.cs">
+    <Compile Include="View\Secretary\CRUDCheckup\PrikaziPreglede.xaml.cs">
       <DependentUpon>PrikaziPreglede.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\PrioritetDatum.xaml.cs">
+    <Compile Include="View\Secretary\CRUDCheckup\PrioritetDatum.xaml.cs">
       <DependentUpon>PrioritetDatum.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\PrioritetLekar.xaml.cs">
+    <Compile Include="View\Secretary\CRUDCheckup\PrioritetLekar.xaml.cs">
       <DependentUpon>PrioritetLekar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\SacuvajDatum.xaml.cs">
+    <Compile Include="View\Secretary\CRUDCheckup\SacuvajDatum.xaml.cs">
       <DependentUpon>SacuvajDatum.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\SacuvajLekara.xaml.cs">
+    <Compile Include="View\Secretary\CRUDCheckup\SacuvajLekara.xaml.cs">
       <DependentUpon>SacuvajLekara.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Medicine\Review.cs" />
-    <Compile Include="View\Secretary\SlobodniLekari.xaml.cs">
+    <Compile Include="View\Secretary\CRUDCheckup\SlobodniLekari.xaml.cs">
       <DependentUpon>SlobodniLekari.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\CheckupService.cs" />
@@ -288,7 +285,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\BlogGlavni.xaml">
+    <Page Include="View\Secretary\AppOrganisation\BlogGlavni.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -347,7 +344,7 @@
     <Compile Include="View\Manager\Ostalo\BelsekaMagacin.xaml.cs">
       <DependentUpon>BelsekaMagacin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\BlogGlavni.xaml.cs">
+    <Compile Include="View\Secretary\AppOrganisation\BlogGlavni.xaml.cs">
       <DependentUpon>BlogGlavni.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Inventar\CRUDInventar\DodajInventarDijalog.xaml.cs">
@@ -380,7 +377,7 @@
     <Compile Include="View\Doctor\KreiranjeAnamneze.xaml.cs">
       <DependentUpon>KreiranjeAnamneze.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\KreirajStalniNalog.xaml.cs">
+    <Compile Include="View\Secretary\CRUDPatient\Guest\KreirajStalniNalog.xaml.cs">
       <DependentUpon>KreirajStalniNalog.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Inventar\CRUDInventar\Magacin.xaml.cs">
@@ -430,7 +427,7 @@
     </Compile>
     <Compile Include="FileStorage\MedicalRecordsFileStorage.cs" />
     <Compile Include="FileStorage\SecretaryFileStorage.cs" />
-    <Compile Include="View\Prijava.xaml.cs">
+    <Compile Include="View\Secretary\AppOrganisation\Prijava.xaml.cs">
       <DependentUpon>Prijava.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Prostorije\InventarSobe\PrikazInventaraUSobi.xaml.cs">
@@ -487,15 +484,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\DodajObavestenjeBlog.xaml">
+    <Page Include="View\Secretary\Notifications\Blog\DodajObavestenjeBlog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\HitanPregled.xaml">
+    <Page Include="View\Secretary\UrgentCheckup\HitanPregled.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\ObavestenjaBlog.xaml">
+    <Page Include="View\Secretary\Notifications\Blog\ObavestenjaBlog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -527,27 +524,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Secretary\Alergeni.xaml">
+    <Page Include="View\Secretary\Alergens\Alergeni.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Secretary\SvaObavestenja.xaml">
+    <Page Include="View\Secretary\Notifications\SvaObavestenja.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Secretary\DodajPregled.xaml">
+    <Page Include="View\Secretary\CRUDCheckup\DodajPregled.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Secretary\InformacijeKlinike.xaml">
+    <Page Include="View\Secretary\AppOrganisation\InformacijeKlinike.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Secretary\IzbrisiPacijenta.xaml">
+    <Page Include="View\Secretary\CRUDPatient\RegistredPatient\IzbrisiPacijenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\IzmeniNalogPacijenta.xaml">
+    <Page Include="View\Secretary\CRUDPatient\RegistredPatient\IzmeniNalogPacijenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -555,15 +552,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\IzmeniPregled.xaml">
+    <Page Include="View\Secretary\CRUDCheckup\IzmeniPregled.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\KreirajGuestNalog.xaml">
+    <Page Include="View\Secretary\CRUDPatient\Guest\KreirajGuestNalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\KreirajNalog.xaml">
+    <Page Include="View\Secretary\CRUDPatient\RegistredPatient\KreirajNalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -585,11 +582,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\KreirajObavestenje.xaml">
+    <Page Include="View\Secretary\Notifications\UserNotifications\KreirajObavestenje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\KreirajStalniNalog.xaml">
+    <Page Include="View\Secretary\CRUDPatient\Guest\KreirajStalniNalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -626,16 +623,16 @@
     <Compile Include="View\Doctor\EditDialog.xaml.cs">
       <DependentUpon>EditDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\IzbrisiPacijenta.xaml.cs">
+    <Compile Include="View\Secretary\CRUDPatient\RegistredPatient\IzbrisiPacijenta.xaml.cs">
       <DependentUpon>IzbrisiPacijenta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\IzmeniNalogPacijenta.xaml.cs">
+    <Compile Include="View\Secretary\CRUDPatient\RegistredPatient\IzmeniNalogPacijenta.xaml.cs">
       <DependentUpon>IzmeniNalogPacijenta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\KreirajGuestNalog.xaml.cs">
+    <Compile Include="View\Secretary\CRUDPatient\Guest\KreirajGuestNalog.xaml.cs">
       <DependentUpon>KreirajGuestNalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\KreirajNalog.xaml.cs">
+    <Compile Include="View\Secretary\CRUDPatient\RegistredPatient\KreirajNalog.xaml.cs">
       <DependentUpon>KreirajNalog.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Patient\DodajTermin.xaml.cs">
@@ -692,7 +689,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Prijava.xaml">
+    <Page Include="View\Secretary\AppOrganisation\Prijava.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -716,39 +713,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\Nalozi.xaml">
+    <Page Include="View\Secretary\AppOrganisation\Nalozi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\ObrisiObavestenje.xaml">
+    <Page Include="View\Secretary\Notifications\UserNotifications\ObrisiObavestenje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\ObrisiObavestenjeBlog.xaml">
+    <Page Include="View\Secretary\Notifications\Blog\ObrisiObavestenjeBlog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\ObrisiPregled.xaml">
+    <Page Include="View\Secretary\CRUDCheckup\ObrisiPregled.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\OtkaziTermin.xaml">
+    <Page Include="View\Secretary\CRUDCheckup\OtkaziTermin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Secretary\Pacijenti.xaml">
+    <Page Include="View\Secretary\AppOrganisation\Pacijenti.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Secretary\PrikaziGuestPacijente.xaml">
+    <Page Include="View\Secretary\CRUDPatient\Guest\PrikaziGuestPacijente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\PrikaziObavestenja.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Secretary\PrikaziPacijente.xaml">
+    <Page Include="View\Secretary\CRUDCheckup\PrikaziPacijente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -756,23 +749,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\PrikaziPreglede.xaml">
+    <Page Include="View\Secretary\CRUDCheckup\PrikaziPreglede.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Secretary\PrioritetDatum.xaml">
+    <Page Include="View\Secretary\CRUDCheckup\PrioritetDatum.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Secretary\PrioritetLekar.xaml">
+    <Page Include="View\Secretary\CRUDCheckup\PrioritetLekar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Secretary\SacuvajDatum.xaml">
+    <Page Include="View\Secretary\CRUDCheckup\SacuvajDatum.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Secretary\SacuvajLekara.xaml">
+    <Page Include="View\Secretary\CRUDCheckup\SacuvajLekara.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -784,7 +777,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\SlobodniLekari.xaml">
+    <Page Include="View\Secretary\CRUDCheckup\SlobodniLekari.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -838,13 +831,13 @@
     <Compile Include="View\Doctor\Pregled.xaml.cs">
       <DependentUpon>Pregled.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\Nalozi.xaml.cs">
+    <Compile Include="View\Secretary\AppOrganisation\Nalozi.xaml.cs">
       <DependentUpon>Nalozi.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\PrikaziGuestPacijente.xaml.cs">
+    <Compile Include="View\Secretary\CRUDPatient\Guest\PrikaziGuestPacijente.xaml.cs">
       <DependentUpon>PrikaziGuestPacijente.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\PrikaziPacijente.xaml.cs">
+    <Compile Include="View\Secretary\CRUDCheckup\PrikaziPacijente.xaml.cs">
       <DependentUpon>PrikaziPacijente.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Patient\ObrisiTermin.xaml.cs">
@@ -877,67 +870,64 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\Transfer-icon.png" />
+    <Resource Include="View\Images\Transfer-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\Patients-icon.png" />
+    <Resource Include="View\Images\Patients-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\User-icon.png" />
+    <Resource Include="View\Images\User-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\bell-icon.png" />
+    <Resource Include="View\Images\bell-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\Chart-Bar-icon.png" />
+    <Resource Include="View\Images\Chart-Bar-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\Button-White-Add-icon.png" />
+    <Resource Include="View\Images\Button-White-Add-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\User-Files-icon.png" />
+    <Resource Include="View\Images\User-Files-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\Folder-Sync-icon.png" />
+    <Resource Include="View\Images\Folder-Sync-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\Add-icon.png" />
+    <Resource Include="View\Images\Add-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\Search-icon.png" />
+    <Resource Include="View\Images\Search-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\Credit-Card-icon.png" />
+    <Resource Include="View\Images\Credit-Card-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\Glyph-Add-icon.png" />
+    <Resource Include="View\Images\Glyph-Add-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\Pencil-icon.png" />
+    <Resource Include="View\Images\Pencil-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\Stop-icon.png" />
+    <Resource Include="View\Images\Stop-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\Arrow-Left-icon.png" />
+    <Resource Include="View\Images\Arrow-Left-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\kvalitet-removebg-preview.png" />
+    <Resource Include="View\Images\kvalitet-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\logo-removebg-preview.png" />
+    <Resource Include="View\Images\logo-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Secretary\mapa.PNG" />
+    <Resource Include="View\Images\mapa.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\logo-removebg-preview.png" />
+    <Resource Include="View\Images\zdravo.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\zdravo.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Secretary\Help-icon.png" />
+    <Resource Include="View\Images\Help-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="View\Patient\arrow.png" />
@@ -945,49 +935,6 @@
   <ItemGroup>
     <Resource Include="View\Patient\download %282%29.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Images\Add-icon.png" />
-    <Resource Include="View\Images\Arrow-Left-icon.png" />
-    <Resource Include="View\Images\bell-icon.png" />
-    <Resource Include="View\Images\Button-Info-icon.png" />
-    <Resource Include="View\Images\Button-White-Add-icon.png" />
-    <Resource Include="View\Images\Button-White-Check-icon.png" />
-    <Resource Include="View\Images\Button-White-Remove-icon.png" />
-    <Resource Include="View\Images\Calendar-2-icon.png" />
-    <Resource Include="View\Images\Chart-Bar-icon.png" />
-    <Resource Include="View\Images\Chart-icon.png" />
-    <Resource Include="View\Images\Checkbox-Full-icon.png" />
-    <Resource Include="View\Images\Comment-Add-icon.png" />
-    <Resource Include="View\Images\Comment-Edit-icon.png" />
-    <Resource Include="View\Images\Comment-icon.png" />
-    <Resource Include="View\Images\Contacts-Sync-icon.png" />
-    <Resource Include="View\Images\Credit-Card-icon.png" />
-    <Resource Include="View\Images\File-Add-icon.png" />
-    <Resource Include="View\Images\Folder-Add-icon.png" />
-    <Resource Include="View\Images\Folder-icon.png" />
-    <Resource Include="View\Images\Folder-Remove-icon.png" />
-    <Resource Include="View\Images\Folder-Sync-icon.png" />
-    <Resource Include="View\Images\Globe-Active-icon.png" />
-    <Resource Include="View\Images\Glyph-Add-icon.png" />
-    <Resource Include="View\Images\Glyph-Check-icon.png" />
-    <Resource Include="View\Images\Help-icon.png" />
-    <Resource Include="View\Images\kvalitet-removebg-preview.png" />
-    <Resource Include="View\Images\logo-removebg-preview.png" />
-    <Resource Include="View\Images\mapa.PNG" />
-    <Resource Include="View\Images\Patients-icon.png" />
-    <Resource Include="View\Images\Pencil-icon.png" />
-    <Resource Include="View\Images\Printer-icon.png" />
-    <Resource Include="View\Images\Search-Add-icon.png" />
-    <Resource Include="View\Images\Search-icon.png" />
-    <Resource Include="View\Images\Search-Remove-icon.png" />
-    <Resource Include="View\Images\Stop-icon.png" />
-    <Resource Include="View\Images\Transfer-icon.png" />
-    <Resource Include="View\Images\Trash-Full-icon.png" />
-    <Resource Include="View\Images\User-Files-icon.png" />
-    <Resource Include="View\Images\User-icon.png" />
-    <Resource Include="View\Images\Users-icon.png" />
-    <Resource Include="View\Images\vector.png" />
-    <Resource Include="View\Images\zdravo.PNG" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -24,7 +24,7 @@
             Margin="552,33,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Source="logo-removebg-preview.png" />
+            Source="/Hospital;component/View/Images/logo-removebg-preview.png" />
 
         <Button
             Width="180"
@@ -41,7 +41,7 @@
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"
-                    ImageSource="User-Files-icon.png"
+                    ImageSource="/Hospital;component/View/Images/User-Files-icon.png"
                     Stretch="None" />
             </Button.Background>
         </Button>
@@ -60,7 +60,7 @@
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"
-                    ImageSource="Folder-Sync-icon.png"
+                    ImageSource="/Hospital;component/View/Images/Folder-Sync-icon.png"
                     Stretch="None" />
             </Button.Background>
         </Button>
@@ -78,7 +78,7 @@
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"
-                    ImageSource="Button-White-Add-icon.png"
+                    ImageSource="/Hospital;component/View/Images/Button-White-Add-icon.png"
                     Stretch="None" />
             </Button.Background>
         </Button>
@@ -97,7 +97,7 @@
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"
-                    ImageSource="Add-icon.png"
+                    ImageSource="/Hospital;component/View/Images/Add-icon.png"
                     Opacity="0.8"
                     Stretch="None" />
             </Button.Background>
@@ -116,7 +116,7 @@
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"
-                    ImageSource="Search-icon.png"
+                    ImageSource="/Hospital;component/View/Images/Search-icon.png"
                     Stretch="None" />
             </Button.Background>
         </Button>
@@ -133,7 +133,7 @@
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"
-                    ImageSource="Credit-Card-icon.png"
+                    ImageSource="/Hospital;component/View/Images/Credit-Card-icon.png"
                     Stretch="None" />
             </Button.Background>
         </Button>
@@ -160,7 +160,7 @@
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"
-                    ImageSource="Help-icon.png"
+                    ImageSource="/Hospital;component/View/Images/Help-icon.png"
                     Stretch="None" />
             </Button.Background>
         </Button>
