@@ -7,26 +7,26 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model
 {
-   public class Notifications  : INotifyPropertyChanged
+   public class Notifications  : Entity, INotifyPropertyChanged
     {
     
         private String title;
         private String content;
         private DateTime date;
-       private int idNotification;
+      // private int idNotification;
         private String person;
 
         public Notifications() {}
 
-        public Notifications(String t, String c, DateTime d, int id, String p)
+        public Notifications(String t, String c, DateTime d, int id, String p) : base(id)
         {
             this.title = t;
             this.content = c;
             this.date = d;
-            this.idNotification = id;
+           // this.idNotification = id;
             this.person = p;
         }
-        public int IdNotification
+      /*  public int IdNotification
         {
             get
             {
@@ -40,7 +40,7 @@ namespace Hospital.Model
                     OnPropertyChanged("IdNotification");
                 }
             }
-        }
+        } */
         public DateTime Date
         {
             get

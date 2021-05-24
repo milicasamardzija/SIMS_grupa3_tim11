@@ -19,7 +19,7 @@ namespace Hospital
 {
     public partial class ObavestenjaUpravnik : UserControl
     {
-        private NotificationsFileStorage storage = new NotificationsFileStorage();
+        private NotificationsFileStorage storage = new NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
         public ObavestenjaUpravnik()
         {
             InitializeComponent();

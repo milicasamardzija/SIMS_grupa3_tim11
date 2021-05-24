@@ -33,7 +33,7 @@ namespace Hospital
  
       private ObservableCollection<Notifications> loadMyNotifications(String person)
         {
-            NotificationsFileStorage nfs = new NotificationsFileStorage();
+            NotificationsFileStorage nfs = new NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
             ObservableCollection<Notifications> notes = new ObservableCollection<Notifications>(nfs.FindByPerson(person));
             return notes;
         }

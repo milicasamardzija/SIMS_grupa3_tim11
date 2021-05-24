@@ -36,7 +36,7 @@ namespace Hospital.Sekretar
 
         private void Yes(object sender, RoutedEventArgs e)
         {
-            NotificationsFileStorage nfs = new NotificationsFileStorage();
+            NotificationsFileStorage nfs = new NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
             nfs.Delete(delete);
             listN.RemoveAt(index);
             this.Close();

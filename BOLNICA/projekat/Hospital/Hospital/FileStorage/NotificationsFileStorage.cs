@@ -6,120 +6,31 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.IO;
 using Newtonsoft.Json;
+using Hospital.FileStorage;
+using Hospital.FileStorage.Interfaces;
 
 namespace Hospital.Model
 {
-   public  class NotificationsFileStorage
+   public  class NotificationsFileStorage : GenericFileStorage<Notifications>, INotificationsFileStorage
     {
-
-        public ObservableCollection<Notifications> GetAll()
-        {
-            ObservableCollection<Notifications> notifications = new ObservableCollection<Notifications>();
-
-            notifications = JsonConvert.DeserializeObject<ObservableCollection<Notifications>>(File.ReadAllText(@"./../../../../Hospital/files/notifications.json"));
-            return notifications;
-        }
-
-        public void Save(Notifications newPatient)
-        {
-            ObservableCollection<Notifications> sviPacijenti = GetAll();
-            sviPacijenti.Add(newPatient);
-            SaveAll(sviPacijenti);
-
-        }
-
-        public void SaveAll(ObservableCollection<Notifications> patients)
-        {
-            using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/notifications.json"))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, patients);
-
-            }
-        }
-
-        public void Delete(Notifications notes)
-        {
-            ObservableCollection<Notifications> allPatients = GetAll();
-
-            foreach (Notifications p in allPatients)
-            {
-                if (p.IdNotification == notes.IdNotification)
-                {
-                    allPatients.Remove(p);
-                    break;
-                }
-            }
-            SaveAll(allPatients);
-        }
-
-        public void DeleteById(int id)
-
-
-        {
-            ObservableCollection<Notifications> allPatients = GetAll();
-
-            foreach (Notifications patient in allPatients)
-            {
-
-                if (patient.IdNotification == id)
-                {
-
-                    allPatients.Remove(patient);
-                    break;
-                }
-            }
-            SaveAll(allPatients);
-        }
-
-        public Notifications FindById(int id)
-        {
-            ObservableCollection<Notifications> allPatients = GetAll();
-            Notifications ret = null;
-
-            foreach (Notifications patient in allPatients)
-            {
-                if (patient.IdNotification == id)
-                {
-                    ret = patient;
-                    break;
-                }
-            }
-
-            return ret;
-        }
+        public NotificationsFileStorage(String filePath) : base(filePath) { }
 
         //dodala da svako moze da ocita svoje 
         public ObservableCollection<Notifications> FindByPerson(String person)
         {
-            ObservableCollection<Notifications> allNotifications = GetAll();
+            List<Notifications> allNotifications = GetAll();
+            ObservableCollection<Notifications> all = new ObservableCollection<Notifications>(allNotifications);
             ObservableCollection<Notifications> ret = new ObservableCollection<Notifications>();
 
-            foreach (Notifications n in allNotifications)
+            foreach (Notifications n in all)
             {
                 if (n.Person == person)
                 {
                     ret.Add(n);
-                    
+
                 }
             }
 
-            return ret;
-        }
-
-        public Boolean ExistsById(int id)
-        {
-            ObservableCollection<Notifications> allPatients = GetAll();
-            Boolean ret = false;
-
-            foreach (Notifications patient in allPatients)
-            {
-                if (patient.IdNotification == id)
-                {
-                    ret = true;
-                    break;
-                }
-            }
             return ret;
         }
     }

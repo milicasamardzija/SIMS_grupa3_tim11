@@ -30,7 +30,7 @@ namespace Hospital.Sekretar
         public KreirajObavestenje(ObservableCollection<Notifications> list)
         {
             InitializeComponent();
-            storage = new NotificationsFileStorage();
+            storage = new NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
             listNotification = loadNotifications();
             myTableUpdate = list;
         }
@@ -38,14 +38,16 @@ namespace Hospital.Sekretar
         {
             int ret = 0;
 
-            NotificationsFileStorage pfs = new NotificationsFileStorage();
-            ObservableCollection<Notifications> all = pfs.GetAll();
+            NotificationsFileStorage pfs = new NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
+            List<Notifications> allNotifications = pfs.GetAll();
+
+            ObservableCollection<Notifications> all = new ObservableCollection<Notifications>(allNotifications);
 
             foreach (Notifications nId in all)
             {
                 foreach (Notifications n in all)
                 {
-                    if (ret == n.IdNotification)
+                    if (ret == n.Id)
                     {
                         ++ret;
                         break;
@@ -56,7 +58,7 @@ namespace Hospital.Sekretar
         }
         public ObservableCollection<Notifications> loadNotifications()
         {
-            NotificationsFileStorage nf = new NotificationsFileStorage();
+            NotificationsFileStorage nf = new NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
             ObservableCollection<Notifications> n = new ObservableCollection<Notifications>(nf.GetAll());
 
             return n;

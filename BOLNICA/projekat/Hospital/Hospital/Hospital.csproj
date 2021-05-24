@@ -62,6 +62,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="FileStorage\Interfaces\IngredientsIFileStorage.cs" />
+    <Compile Include="FileStorage\Interfaces\INotificationsFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\InventoryIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
