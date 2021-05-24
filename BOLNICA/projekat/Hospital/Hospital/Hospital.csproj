@@ -61,11 +61,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FileStorage\Interfaces\AnamnesisIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IngredientsIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\INotificationsFileStorage.cs" />
+    <Compile Include="FileStorage\Interfaces\InstructionIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\InventoryIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
+    <Compile Include="FileStorage\Interfaces\RecipeIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
     <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeLekaRevizijaUpravnik.xaml.cs">
       <DependentUpon>BrisanjeLekaRevizijaUpravnik.xaml</DependentUpon>

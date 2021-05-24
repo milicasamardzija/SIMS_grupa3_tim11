@@ -36,7 +36,7 @@ namespace Hospital
 
         public ObservableCollection<Anamnesis> loadJ()
         {
-            AnamnesisFileStorage ast = new AnamnesisFileStorage();
+            AnamnesisFileStorage ast = new AnamnesisFileStorage(@"./../../../../Hospital/files/anamnesis.json");
             ObservableCollection<Anamnesis> aa = new ObservableCollection<Anamnesis>(ast.GetAll());
             ObservableCollection<Anamnesis> ret = new ObservableCollection<Anamnesis>();
             foreach(Anamnesis a in aa)

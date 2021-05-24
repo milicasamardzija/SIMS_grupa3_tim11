@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model
 {
-    public class Instruction
+    public class Instruction : Entity
     {
-        public int idInstruction { get; set; }
         public int idCheckup { get; set; }
         public String instructionType { get; set; }
         public Boolean given { get; set; }
@@ -17,10 +16,9 @@ namespace Hospital.Model
         public String interval { get; set; }
         public String commentInstruction { get; set; }
 
-        public Instruction(int instructionId, int checkupId, String typeOfInstruction, Boolean givenInstruction, String jmbgPatient, String lboPatient,
-            String intervalInstruction, String comment)
+        public Instruction(int id, int checkupId, String typeOfInstruction, Boolean givenInstruction, String jmbgPatient, String lboPatient,
+            String intervalInstruction, String comment) : base(id)
         {
-            idInstruction = instructionId;
             idCheckup = checkupId;
             instructionType = typeOfInstruction;
             given = givenInstruction;
