@@ -44,10 +44,24 @@ namespace Hospital
         public Patient getPatientFromFile()
         {
             PatientFileStorage storage = new PatientFileStorage(); 
-            Patient ret = storage.FindById(54); 
+            Patient ret = storage.FindById(15); 
 
             return ret;
         }
+
+        public Room getRoomFromFile()
+        {
+            RoomFileStorage storage = new RoomFileStorage(@"./../../../../Hospital/files/storageRooms.json");
+            Room ret = storage.FindById(0);
+            return ret;
+        }
+
+        /*public int getIdPatient()
+        {
+            CheckupFileStorage storage = new CheckupFileStorage();
+            Checkup allCheckups = storage.FindById(checkup.IdCh);
+            return allCheckups.IdPatient;
+        }*/
 
         public Doctor getDoctorFromFile() 
         {
@@ -66,12 +80,26 @@ namespace Hospital
             return ret;
         }
 
-        public int getIdDoctor()
+       /* public int getIdDoctor()
         {
             CheckupFileStorage storage = new CheckupFileStorage();
             Checkup checkups = storage.FindById(checkup.IdCh);
             return checkups.IdDoctor;
         }
+
+        public int getIdRoom()
+        {
+            CheckupFileStorage storage = new CheckupFileStorage();
+            Checkup checkups = storage.FindById(checkup.IdCh);
+            return checkups.IdRoom;
+        }*/
+
+       /* public int getIdPatient()
+        {
+            CheckupFileStorage storagePatients = new CheckupFileStorage();
+            Checkup checkups = storagePatients.FindById(checkup.IdCh);
+            return checkups.IdPatient;
+        }*/
 
         public int generateID()
         {
@@ -97,10 +125,10 @@ namespace Hospital
             CheckupFileStorage st = new CheckupFileStorage();
             Patient patient = getPatientFromFile();
             Doctor doctor = getDoctorFromFile();
-            int ida = 1;  
+            Room room = getRoomFromFile();
 
-            Checkup newCheckup = new Checkup(ida, generateID(), dateP.DisplayDate, Convert.ToString(timeText.Text), Convert.ToDouble(durationText.Text),
-                (CheckupType)comboBox.SelectedIndex,patient,doctor);
+            Checkup newCheckup = new Checkup(generateID(), doctor.DoctorId, patient.PatientId, dateP.DisplayDate, room.Id, 
+                (CheckupType)comboBox.SelectedIndex);
 
             st.Save(newCheckup);
             listCheckup.Add(newCheckup);

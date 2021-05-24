@@ -11,9 +11,6 @@ namespace Hospital.Model
 {
     public class Checkup : Appointment
     {
-
-        
-
         private CheckupType type;
         private int idCh;
         private int idDoctor;

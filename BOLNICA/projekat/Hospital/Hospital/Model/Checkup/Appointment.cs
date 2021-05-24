@@ -178,7 +178,7 @@ public class Appointment : Entity, INotifyPropertyChanged
             }
         }
     }
-   
+  
     public Doctor Doctor
     {
         get
