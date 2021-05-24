@@ -61,6 +61,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FileStorage\Interfaces\IAlergensFileStorage.cs" />
+    <Compile Include="FileStorage\Interfaces\IMedicalRecordFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IngredientsIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\INoticeFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\INotificationsFileStorage.cs" />
@@ -743,7 +745,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Secretary\CRUDCheckup\PrikaziPacijente.xaml">
+    <Page Include="View\Secretary\CRUDPatient\RegistredPatient\PrikaziPacijente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -839,7 +841,7 @@
     <Compile Include="View\Secretary\CRUDPatient\Guest\PrikaziGuestPacijente.xaml.cs">
       <DependentUpon>PrikaziGuestPacijente.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\CRUDCheckup\PrikaziPacijente.xaml.cs">
+    <Compile Include="View\Secretary\CRUDPatient\RegistredPatient\PrikaziPacijente.xaml.cs">
       <DependentUpon>PrikaziPacijente.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Patient\ObrisiTermin.xaml.cs">

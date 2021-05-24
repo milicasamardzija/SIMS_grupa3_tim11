@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using Hospital.FileStorage;
+using Hospital.FileStorage.Interfaces;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,24 +9,25 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-    public class AlergensFileStorage
+    public class AlergensFileStorage : GenericFileStorage<Alergens>, IAlergensFileStorage
     {
-    public List<Alergens> GetAll()
-    {
-        List<Alergens> svi = new List<Alergens>();
+    public AlergensFileStorage(String filePath) : base(filePath) { }
+    /* public List<Alergens> GetAll()
+     {
+         List<Alergens> svi = new List<Alergens>();
 
-        svi = JsonConvert.DeserializeObject<List<Alergens>>(File.ReadAllText(@"./../../../../Hospital/files/alergens.json"));
-        return svi;
-    }
-    public void SaveAll(List<Alergens> alergens)
-    {
-        using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/alergens.json"))
+         svi = JsonConvert.DeserializeObject<List<Alergens>>(File.ReadAllText(@"./../../../../Hospital/files/alergens.json"));
+         return svi;
+     }
+     public void SaveAll(List<Alergens> alergens)
+     {
+         using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/alergens.json"))
 
-        {
-            JsonSerializer serializer = new JsonSerializer();
-            serializer.Serialize(file, alergens);
+         {
+             JsonSerializer serializer = new JsonSerializer();
+             serializer.Serialize(file, alergens);
 
-        }
-    }
+         }
+} */
 }
 

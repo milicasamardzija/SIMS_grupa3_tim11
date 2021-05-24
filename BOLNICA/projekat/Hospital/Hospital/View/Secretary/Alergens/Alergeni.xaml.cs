@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.FileStorage.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -42,7 +43,7 @@ namespace Hospital.Sekretar
             InitializeComponent();
             this.DataContext = this;
             id = selectedPatient.Id;
-            MedicalRecordsFileStorage mfs = new MedicalRecordsFileStorage();
+            IMedicalRecordFileStorage mfs = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
             record = mfs.FindById(id);
           
             listAllAlergens = loadJasonAllAlergens();
@@ -65,7 +66,7 @@ namespace Hospital.Sekretar
 
         public ObservableCollection<Alergens> loadJasonAllAlergens()
         {
-            AlergensFileStorage afs = new AlergensFileStorage();
+            AlergensFileStorage afs = new AlergensFileStorage("./../../../../Hospital/files/alergens.json");
             ObservableCollection<Alergens> ret = new ObservableCollection<Alergens>(afs.GetAll());
 
             return ret;
@@ -75,7 +76,7 @@ namespace Hospital.Sekretar
         {
            
             ObservableCollection<Alergens> a = new ObservableCollection<Alergens>();
-            MedicalRecordsFileStorage mStorage = new MedicalRecordsFileStorage();
+            IMedicalRecordFileStorage mStorage = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
             MedicalRecord prikaziAlergene = mStorage.FindById(id);
            
             foreach (Alergens al in record.Alergens)
@@ -89,7 +90,7 @@ namespace Hospital.Sekretar
 
         private void AddAlergens(object sender, RoutedEventArgs e)
         {
-            AlergensFileStorage afs = new AlergensFileStorage();
+            AlergensFileStorage afs = new AlergensFileStorage("./../../../../Hospital/files/alergens.json");
 
             listAlergens.Add((Alergens)svi.SelectedItem);
             listAllAlergens.Remove((Alergens)svi.SelectedItem);
@@ -101,14 +102,14 @@ namespace Hospital.Sekretar
 
         private void RemoveAlergen(object sender, RoutedEventArgs e)
         {
-            AlergensFileStorage afs = new AlergensFileStorage();
+            AlergensFileStorage afs = new AlergensFileStorage("./../../../../Hospital/files/alergens.json");
             listAlergens.Remove((Alergens)selected.SelectedItem);
         }
 
         private void saveAlergens(object sender, RoutedEventArgs e)
         {
             
-            MedicalRecordsFileStorage mStorage = new MedicalRecordsFileStorage();
+            IMedicalRecordFileStorage mStorage = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
             MedicalRecord promeniM = mStorage.FindById(id);
 
             promeniM.alergens = listAlergens;

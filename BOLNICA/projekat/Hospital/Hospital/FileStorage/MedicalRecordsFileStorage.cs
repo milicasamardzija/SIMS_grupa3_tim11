@@ -6,11 +6,14 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Hospital.FileStorage;
+using Hospital.FileStorage.Interfaces;
 using Newtonsoft.Json;
 
-public class MedicalRecordsFileStorage
+public class MedicalRecordsFileStorage : GenericFileStorage<MedicalRecord>, IMedicalRecordFileStorage
 {
-   public List<MedicalRecord> GetAll()
+    public MedicalRecordsFileStorage(String filePath) : base(filePath) { }
+   /* public List<MedicalRecord> GetAll()
    {
         List<MedicalRecord> sviKartoni = new List<MedicalRecord>();
 
@@ -100,6 +103,6 @@ public class MedicalRecordsFileStorage
             }
         }
         return ret;
-    }
+    } */
 
 }

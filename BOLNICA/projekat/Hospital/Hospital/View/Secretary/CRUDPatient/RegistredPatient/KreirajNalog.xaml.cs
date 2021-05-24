@@ -1,4 +1,5 @@
-﻿using Hospital.Sekretar;
+﻿using Hospital.FileStorage.Interfaces;
+using Hospital.Sekretar;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -59,7 +60,7 @@ namespace Hospital
 
             Patient newPatient = new Patient(imeText.Text, prezimeText.Text, brTelText.Text, jmbgText.Text, (Gender)pol.SelectedIndex, (DateTime)datum.SelectedDate,generisiId(), (HealthCareCategory)zastita.SelectedIndex,Convert.ToInt16(brKnjiziceText.Text), zanimanjeText.Text, imePrzOsText.Text, new Adress(ulText.Text, Convert.ToInt16(broj.Text), (City)grad.SelectedIndex, (Country)drzava.SelectedIndex));
            
-            MedicalRecordsFileStorage mStorage = new MedicalRecordsFileStorage();
+            IMedicalRecordFileStorage mStorage = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
             MedicalRecord newRecord = new MedicalRecord(imeText.Text, prezimeText.Text, jmbgText.Text, (Gender)pol.SelectedIndex, (DateTime)datum.SelectedDate, generisiId(), (HealthCareCategory)zastita.SelectedIndex, Convert.ToInt16(brKnjiziceText.Text), (BloodType)krvnaGrupa.SelectedIndex);
 
             pStorage.Save(newPatient);

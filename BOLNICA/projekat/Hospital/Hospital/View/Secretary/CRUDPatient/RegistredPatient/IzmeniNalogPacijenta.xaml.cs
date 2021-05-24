@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
+using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -46,7 +47,7 @@ namespace Hospital
 
             //da bih nasla odgovarajuci karton pacijenta
             id = selectedPatient.Id;
-            MedicalRecordsFileStorage mfs = new MedicalRecordsFileStorage();
+            IMedicalRecordFileStorage mfs = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
             record = mfs.FindById(id);
 
 
@@ -102,7 +103,7 @@ namespace Hospital
             promeniP.adress.streetNumber = Convert.ToInt16(broj.Text);
 
 
-            MedicalRecordsFileStorage mfs = new MedicalRecordsFileStorage();
+            IMedicalRecordFileStorage mfs = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
             MedicalRecord promeniM = mfs.FindById(Convert.ToInt16(brKarText.Text));
             MedicalRecord izbrisiM = mfs.FindById(Convert.ToInt16(brKarText.Text));
 

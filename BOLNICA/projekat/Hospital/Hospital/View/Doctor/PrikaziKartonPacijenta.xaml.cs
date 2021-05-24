@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using System.IO;
+using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -44,7 +45,7 @@ namespace Hospital
 
         public ObservableCollection<MedicalRecord> loadFileJ(int id)
         {
-            MedicalRecordsFileStorage mst = new MedicalRecordsFileStorage();
+            IMedicalRecordFileStorage mst = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
             ObservableCollection<MedicalRecord> mr = new ObservableCollection<MedicalRecord>(mst.GetAll());
             ObservableCollection<MedicalRecord> mrr = new ObservableCollection<MedicalRecord>();
             foreach(MedicalRecord m in mr)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-   public class Alergens : INotifyPropertyChanged
+   public class Alergens : Entity, INotifyPropertyChanged
     {
     private String name;
     private String code;
@@ -15,7 +16,7 @@ using System.Threading.Tasks;
 
     public Alergens() { }
 
-    public Alergens(String n, String c) {
+    public Alergens(String n, String c)  {
         this.name = n;
         this.code = c;
     }
