@@ -49,7 +49,7 @@ namespace Hospital
             ObservableCollection<MedicalRecord> mrr = new ObservableCollection<MedicalRecord>();
             foreach(MedicalRecord m in mr)
             {
-                if(m.PatientId == id)
+                if(m.Id == id)
                 {
                     mrr.Add(m);
                 }

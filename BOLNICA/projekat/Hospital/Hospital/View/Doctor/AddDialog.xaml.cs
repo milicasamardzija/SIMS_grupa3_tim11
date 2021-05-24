@@ -42,7 +42,7 @@ namespace Hospital
         
         public Patient getPatientFromFile()
         {
-            PatientFileStorage storage = new PatientFileStorage(); 
+            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json"); 
             Patient ret = storage.FindById(54); 
 
             return ret;

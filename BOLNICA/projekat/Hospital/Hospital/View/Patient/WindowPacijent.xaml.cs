@@ -41,18 +41,19 @@ namespace Hospital
 
 
             Patient ret = new Patient();
-            PatientFileStorage storage = new PatientFileStorage();
-            ObservableCollection<Patient> patients = storage.GetAll();
+            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storageDoctor.json");
+            List<Patient> patients = storage.GetAll();
+            ObservableCollection<Patient> allPatients = new ObservableCollection<Patient>(patients);
 
             FunctionalityFileStorage funkcije = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
             List<Functionality> funkcionalnosti = funkcije.GetAll();
 
 
-            foreach (Patient patient in patients)
+            foreach (Patient patient in allPatients)
 
             { 
                 
-                if (patient.PatientId == idP)
+                if (patient.Id == idP)
 
                 {
                     imePacijentaa.Text = patient.name + " " + patient.surname;
@@ -60,7 +61,7 @@ namespace Hospital
                     foreach (Functionality funkcionalnost in funkcionalnosti)
                     {
 
-                        if (patient.PatientId == funkcionalnost.idPacijenta)
+                        if (patient.Id == funkcionalnost.idPacijenta)
                         { 
                             if (funkcionalnost.vrstaFunkcionalnosti == "dodavanje")
                             {
@@ -99,7 +100,7 @@ namespace Hospital
             foreach (Appointment appointment in rs) //prolazimo kroz sve termine u fajlu
             {
 
-                if (appointment.Patient.PatientId == id) //trazimo termin koji ima pacijenta sa prosledjenim id-jem
+                if (appointment.Patient.Id == id) //trazimo termin koji ima pacijenta sa prosledjenim id-jem
                 {
 
                     ret.Add(appointment); //dodajemo taj termin u listu koju vracamo za ispis u tabelu
@@ -120,21 +121,22 @@ namespace Hospital
 
 
             Patient ret = new Patient();
-            PatientFileStorage storage = new PatientFileStorage();
-            ObservableCollection<Patient> patients = storage.GetAll();
+            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storageDoctor.json");
+           List<Patient> patients = storage.GetAll();
+            ObservableCollection<Patient> allPatients = new ObservableCollection<Patient>(patients);
             FunctionalityFileStorage funkcije = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
             List<Functionality> funkcionalnosti = funkcije.GetAll();
 
             
 
-            foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
+            foreach (Patient patient in allPatients) //prolaz kroz sve pacijente u fajlu
             {
-                if (patient.PatientId == id)
+                if (patient.Id == id)
                 { 
                     foreach (Functionality funkcionalnost in funkcionalnosti)
                     {
 
-                        if (patient.PatientId == funkcionalnost.idPacijenta  && funkcionalnost.vrstaFunkcionalnosti == "dodavanje")
+                        if (patient.Id == funkcionalnost.idPacijenta  && funkcionalnost.vrstaFunkcionalnosti == "dodavanje")
                         {
                             count1 = count1 + 1;
                                
@@ -179,22 +181,23 @@ namespace Hospital
 
 
             Patient ret = new Patient();
-            PatientFileStorage storage = new PatientFileStorage();
-            ObservableCollection<Patient> patients = storage.GetAll();
+            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storageDoctor.json");
+            List<Patient> patients = storage.GetAll();
+            ObservableCollection<Patient> allPatients = new ObservableCollection<Patient>(patients);
             FunctionalityFileStorage funkcije = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
             List<Functionality> funkcionalnosti = funkcije.GetAll();
 
 
 
-            foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
+            foreach (Patient patient in allPatients) //prolaz kroz sve pacijente u fajlu
             {
-                if (patient.PatientId == id)
+                if (patient.Id == id)
                 {
 
                     foreach (Functionality funkcionalnost in funkcionalnosti)
                     {
 
-                        if (patient.PatientId == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkcionalnosti == "izmena")
+                        if (patient.Id == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkcionalnosti == "izmena")
                         {
                             count1 = count1 + 1;
 
@@ -227,20 +230,22 @@ namespace Hospital
             ObrisiTermin ob = new ObrisiTermin(AppointmentList, (Appointment)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
 
             Patient ret = new Patient();
-            PatientFileStorage storage = new PatientFileStorage();
-            ObservableCollection<Patient> patients = storage.GetAll();
+            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
+            List<Patient> patients = storage.GetAll();
+
+            ObservableCollection<Patient> allPatients = new ObservableCollection<Patient>(patients);
             FunctionalityFileStorage funkcije = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
             List<Functionality> funkcionalnosti = funkcije.GetAll();
 
 
-            foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
+            foreach (Patient patient in allPatients) //prolaz kroz sve pacijente u fajlu
             {
-                if (patient.PatientId == id)
+                if (patient.Id == id)
                 {
                     foreach (Functionality funkcionalnost in funkcionalnosti)
                     {
 
-                        if (patient.PatientId == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkcionalnosti == "brisanje")
+                        if (patient.Id == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkcionalnosti == "brisanje")
                         {
                             count3 = count1 + 1;
 

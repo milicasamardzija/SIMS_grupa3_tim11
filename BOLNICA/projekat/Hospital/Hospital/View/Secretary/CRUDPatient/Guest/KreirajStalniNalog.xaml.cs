@@ -67,7 +67,7 @@ namespace Hospital
 
         private void sacuvajButton(object sender, RoutedEventArgs e)
         {
-            PatientFileStorage pfs = new PatientFileStorage();
+            PatientFileStorage pfs = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
 
 
         }

@@ -44,7 +44,7 @@ namespace Hospital.Model
             this.Type = selectedIndex;
 
             this.IdDoctor = doctor.DoctorId;
-            this.IdPatient = patient.PatientId;    
+            this.IdPatient = patient.Id;    
 
 
         }

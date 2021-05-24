@@ -28,11 +28,12 @@ namespace Hospital
             InitializeComponent();
             id = idP;
 
-            PatientFileStorage storage = new PatientFileStorage();
-            ObservableCollection<Patient> patients = storage.GetAll();
+            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
+            List<Patient> allPatients = storage.GetAll();
+            ObservableCollection<Patient> patients = new ObservableCollection<Patient>(allPatients);
             foreach (Patient patient in patients)
             {
-                if (patient.PatientId == idP)
+                if (patient.Id == idP)
                 {
                     imePacijenta.Text = patient.name + " " + patient.surname;
                 }

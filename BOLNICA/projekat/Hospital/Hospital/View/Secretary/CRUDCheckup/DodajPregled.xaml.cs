@@ -35,7 +35,7 @@ namespace Hospital.Sekretar
 
         private ObservableCollection<Patient> loadJson()
         {
-            PatientFileStorage pfs = new PatientFileStorage();
+            PatientFileStorage pfs = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
             ObservableCollection<Patient> patient = new ObservableCollection<Patient>(pfs.GetAll());
             return patient;
 

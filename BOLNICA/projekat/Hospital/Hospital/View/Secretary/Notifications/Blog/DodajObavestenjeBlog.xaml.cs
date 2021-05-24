@@ -20,7 +20,7 @@ namespace Hospital.Sekretar
     {
         public ObservableCollection<Notice> listN { get; set; }
 
-        public NoticeFileStorage storage = new NoticeFileStorage();
+        public NoticeFileStorage storage = new NoticeFileStorage(@"./../../../../Hospital/files/notices.json");
         public ObservableCollection<Notice> myUpdate;
         public DodajObavestenjeBlog(ObservableCollection<Notice> list)
         {
@@ -34,14 +34,15 @@ namespace Hospital.Sekretar
         {
             int ret = 1;
 
-            NoticeFileStorage pfs = new NoticeFileStorage();
-            ObservableCollection<Notice> all = pfs.GetAll();
+            NoticeFileStorage pfs = new NoticeFileStorage(@"./../../../../Hospital/files/notices.json");
+            List<Notice> all = pfs.GetAll();
+            ObservableCollection<Notice> allNotices = new ObservableCollection<Notice>(all);
 
             foreach (Notice nId in all)
             {
-                foreach (Notice n in all)
+                foreach (Notice n in allNotices)
                 {
-                    if (ret == n.id)
+                    if (ret == n.Id)
                     {
                         ++ret;
                         break;
@@ -52,7 +53,7 @@ namespace Hospital.Sekretar
         }
         public ObservableCollection<Notice> loadNotifications()
         {
-            NoticeFileStorage nf = new NoticeFileStorage();
+            NoticeFileStorage nf = new NoticeFileStorage(@"./../../../../Hospital/files/notices.json");
             ObservableCollection<Notice> n = new ObservableCollection<Notice>(nf.GetAll());
 
             return n;
@@ -61,13 +62,13 @@ namespace Hospital.Sekretar
         private void da(object sender, RoutedEventArgs e)
         {
             Notice n = new Notice(sadrzaj.Text, generisiId());
-            storage.save(n);
+            storage.Save(n);
           
             myUpdate.Add(n); //da se vidi da postoji
             this.Close();
             
         }
-        private void ne(object sender, RoutedEventArgs e)
+        private void Ne(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

@@ -36,14 +36,15 @@ namespace Hospital
         {
             int ret = 0;
 
-            PatientFileStorage pfs = new PatientFileStorage();
-            ObservableCollection<Patient> allPatients = pfs.GetAll();
+            PatientFileStorage pfs = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
+            List<Patient> all = pfs.GetAll();
+            ObservableCollection<Patient> allPatients = new ObservableCollection<Patient>(all);
 
             foreach (Patient pId in allPatients)
             {
                 foreach (Patient p in allPatients)
                 {
-                    if (ret == p.PatientId)
+                    if (ret == p.Id)
                     {
                         ++ret;
                         break;
@@ -54,7 +55,7 @@ namespace Hospital
         }
         private void kreirajNalogB(object sender, RoutedEventArgs e)
         {
-            PatientFileStorage pStorage = new PatientFileStorage();
+            PatientFileStorage pStorage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
 
             Patient newPatient = new Patient(imeText.Text, prezimeText.Text, brTelText.Text, jmbgText.Text, (Gender)pol.SelectedIndex, (DateTime)datum.SelectedDate,generisiId(), (HealthCareCategory)zastita.SelectedIndex,Convert.ToInt16(brKnjiziceText.Text), zanimanjeText.Text, imePrzOsText.Text, new Adress(ulText.Text, Convert.ToInt16(broj.Text), (City)grad.SelectedIndex, (Country)drzava.SelectedIndex));
            

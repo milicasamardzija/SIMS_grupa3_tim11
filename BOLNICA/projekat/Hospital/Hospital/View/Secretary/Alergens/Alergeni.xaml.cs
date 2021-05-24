@@ -41,7 +41,7 @@ namespace Hospital.Sekretar
         {
             InitializeComponent();
             this.DataContext = this;
-            id = selectedPatient.PatientId;
+            id = selectedPatient.Id;
             MedicalRecordsFileStorage mfs = new MedicalRecordsFileStorage();
             record = mfs.FindById(id);
           

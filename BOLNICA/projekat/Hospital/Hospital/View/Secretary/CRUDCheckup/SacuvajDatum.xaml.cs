@@ -49,7 +49,7 @@ namespace Hospital.Sekretar
         {
             Doctor d = (Doctor)doctors.SelectedItem;
             int idDoctor = d.DoctorId;
-            controller.createCheckup(new Checkup(0, idDoctor, patient.PatientId, chosenDate, idRoom, 0));
+            controller.createCheckup(new Checkup(0, idDoctor, patient.Id, chosenDate, idRoom, 0));
             this.Close();
         }
 

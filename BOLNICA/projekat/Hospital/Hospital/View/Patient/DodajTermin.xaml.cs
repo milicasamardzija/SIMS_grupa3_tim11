@@ -71,12 +71,13 @@ namespace Hospital
         public Patient getPatientFromFile()
         {
             Patient ret = new Patient();
-            PatientFileStorage storage = new PatientFileStorage();
-            ObservableCollection<Patient> patients = storage.GetAll();
+            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
+            List<Patient> patients = storage.GetAll();
+            ObservableCollection<Patient> allPatients = new ObservableCollection<Patient>(patients);
 
-            foreach (Patient patient in patients) //prolaz kroz sve pacijente u fajlu
+            foreach (Patient patient in allPatients) //prolaz kroz sve pacijente u fajlu
             {
-                if (patient.PatientId == idPatient) //pronalazi pacijenta sa id-jem ulogovanog pacijenta
+                if (patient.Id == idPatient) //pronalazi pacijenta sa id-jem ulogovanog pacijenta
                 {
                     ret = patient;
                     break; //kada ga nadje izlazi iz petlje

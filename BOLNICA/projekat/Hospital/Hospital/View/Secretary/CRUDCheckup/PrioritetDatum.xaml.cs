@@ -32,7 +32,7 @@ namespace Hospital.Sekretar
             this.DataContext = this;
             listPatients = list;
             patient = selectedPatient;
-            idP = patient.PatientId;
+            idP = patient.Id;
 
         }
         public DateTime createDate(DateTime date, String time)

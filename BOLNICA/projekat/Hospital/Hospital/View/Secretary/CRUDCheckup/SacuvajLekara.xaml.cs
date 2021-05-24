@@ -38,7 +38,7 @@ namespace Hospital.Sekretar
             this.DataContext = this;
             controller = new CheckupController();
             selectedPatient = patient; 
-            idP = patient.PatientId;  
+            idP = patient.Id;  
               
             doctor = selectedDoctor;
             idD = selectedDoctor.DoctorId;

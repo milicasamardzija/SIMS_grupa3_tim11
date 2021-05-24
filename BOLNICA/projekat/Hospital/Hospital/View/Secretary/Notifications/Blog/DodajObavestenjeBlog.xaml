@@ -50,7 +50,7 @@
             Margin="40,206,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="ne"
+            Click="Ne"
             Content="Odustani"
             FontSize="14"
             FontWeight="Bold"

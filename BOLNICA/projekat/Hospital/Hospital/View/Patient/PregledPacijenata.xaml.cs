@@ -42,7 +42,7 @@ namespace Hospital
 
         public ObservableCollection<Patient> loadJ()
         {
-            PatientFileStorage storage = new PatientFileStorage();
+            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
             ObservableCollection<Patient> ppp = new ObservableCollection<Patient>(storage.GetAll());
             ObservableCollection<Patient> pat = new ObservableCollection<Patient>();
             foreach(Patient patient in ppp)

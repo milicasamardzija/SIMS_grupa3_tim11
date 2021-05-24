@@ -26,13 +26,13 @@ namespace Hospital
         {
             InitializeComponent();
             listPatient = list;
-            id = selectedPatient.PatientId;
+            id = selectedPatient.Id;
             index = selectedIndex;
         }
 
         private void potvrdiB(object sender, RoutedEventArgs e)
         {
-            PatientFileStorage storage = new PatientFileStorage();
+            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
             storage.DeleteById(id);
             listPatient.RemoveAt(index);
             this.Close();

@@ -82,8 +82,9 @@ namespace Hospital
 
 
 
-            PatientFileStorage pacijent = new PatientFileStorage();
-            pacijenti = pacijent.GetAll();
+            PatientFileStorage pacijent = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
+            List<Patient> sviPacijenti = pacijent.GetAll();
+            ObservableCollection<Patient> pacijenti = new ObservableCollection<Patient>(sviPacijenti);
 
             foreach (global::Doctor l in lekari)
             {
@@ -109,12 +110,12 @@ namespace Hospital
         public Patient getPatientFromFile()
         {
             Patient ret = new Patient();
-            PatientFileStorage storage = new PatientFileStorage();
-            ObservableCollection<Patient> patients = storage.GetAll();
+            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
+            ObservableCollection<Patient> patients = new ObservableCollection<Patient>(storage.GetAll());
 
             foreach (Patient patient in patients)
             {
-                if (patient.PatientId == idPatient)
+                if (patient.Id == idPatient)
                 {
                     ret = patient;
                     break; 

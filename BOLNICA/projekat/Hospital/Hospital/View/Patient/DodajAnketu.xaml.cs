@@ -45,11 +45,12 @@ namespace Hospital
 
             submit.IsEnabled = false;
 
-            PatientFileStorage storage = new PatientFileStorage();
-            ObservableCollection<Patient> patients = storage.GetAll();
-            foreach (Patient patient in patients)
+            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
+            List<Patient> patients = storage.GetAll();
+            ObservableCollection<Patient> allPatients =new  ObservableCollection<Patient>(patients);
+            foreach (Patient patient in allPatients)
             {
-                if (patient.PatientId == idP)
+                if (patient.Id == idP)
                 {
                     imePacijenta.Text = patient.name + " " + patient.surname;
                 }

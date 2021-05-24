@@ -31,7 +31,7 @@ namespace Hospital
 
         public ObservableCollection<Notice> loadJason()
         {
-             NoticeFileStorage pfs = new NoticeFileStorage();
+             NoticeFileStorage pfs = new NoticeFileStorage(@"./../../../../Hospital/files/notices.json");
             ObservableCollection<Notice> rs = new ObservableCollection<Notice>(pfs.GetAll());
             
               return rs;

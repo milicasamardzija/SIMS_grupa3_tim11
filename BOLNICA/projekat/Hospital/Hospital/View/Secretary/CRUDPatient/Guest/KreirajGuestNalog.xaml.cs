@@ -30,14 +30,15 @@ namespace Hospital
         {
             int ret = 100;
 
-            PatientFileStorage pfs = new PatientFileStorage();
-            ObservableCollection<Patient> allPatients = pfs.GetAll();
-
+            PatientFileStorage pfs = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
+            List<Patient> patients = pfs.GetAll();
+            ObservableCollection<Patient> allPatients = new ObservableCollection<Patient>(patients);
+                
             foreach (Patient pId in allPatients)
             {
                 foreach (Patient p in allPatients)
                 {
-                    if (ret == p.PatientId)
+                    if (ret == p.Id)
                     {
                         ++ret;
                         break;
@@ -48,7 +49,7 @@ namespace Hospital
         }
         private void kreirajGuest(object sender, RoutedEventArgs e)
         {
-            PatientFileStorage pStorage = new PatientFileStorage();
+            PatientFileStorage pStorage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
             Patient newPatient = new Patient(imeText.Text, prezimeText.Text, brojTelText.Text, jmbgText.Text, (Gender)pol.SelectedIndex,
                 (DateTime)datum.SelectedDate,
               generisiIdG());

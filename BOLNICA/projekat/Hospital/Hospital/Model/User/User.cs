@@ -3,10 +3,11 @@
 // Created: Wednesday, March 24, 2021 9:17:46 PM
 // Purpose: Definition of Class User
 
+using Hospital.Model;
 using System;
 using System.ComponentModel;
 
-public class User : INotifyPropertyChanged
+public class User : Entity, INotifyPropertyChanged
 {
    public void LogIn(String password, String username)
    {

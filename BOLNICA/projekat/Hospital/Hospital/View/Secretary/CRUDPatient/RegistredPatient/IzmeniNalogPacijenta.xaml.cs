@@ -45,7 +45,7 @@ namespace Hospital
             index = sel;
 
             //da bih nasla odgovarajuci karton pacijenta
-            id = selectedPatient.PatientId;
+            id = selectedPatient.Id;
             MedicalRecordsFileStorage mfs = new MedicalRecordsFileStorage();
             record = mfs.FindById(id);
 
@@ -59,11 +59,11 @@ namespace Hospital
 
             datum.SelectedDate = (DateTime)selectedPatient.BirthdayDate;
             brKnjText.SelectedText = Convert.ToString(selectedPatient.IdHealthCard);
-            brKarText.SelectedText = Convert.ToString(selectedPatient.PatientId);
+            brKarText.SelectedText = Convert.ToString(selectedPatient.Id);
 
             datum.SelectedDate = (DateTime)selectedPatient.BirthdayDate;
             brKnjText.SelectedText = Convert.ToString(selectedPatient.IdHealthCard);
-            brKarText.SelectedText = Convert.ToString(selectedPatient.PatientId);
+            brKarText.SelectedText = Convert.ToString(selectedPatient.Id);
             zanimanjeText.SelectedText = selectedPatient.Occupation;
             zastitaText.SelectedIndex = (int)selectedPatient.HealthCareCategory;
             osiguraniktText.SelectedText = selectedPatient.Insurence;
@@ -79,7 +79,7 @@ namespace Hospital
         private void izmenaPacijentaB(object sender, RoutedEventArgs e)
         {
 
-            PatientFileStorage pfs = new PatientFileStorage();
+            PatientFileStorage pfs = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
             Patient promeniP = pfs.FindById(Convert.ToInt16(brKarText.Text));
             Patient izbrisiP = pfs.FindById(Convert.ToInt16(brKarText.Text));
 
@@ -92,7 +92,7 @@ namespace Hospital
             promeniP.Gender = (Gender)pol.SelectedIndex;    //ovako ide za combo box
             promeniP.TelephoneNumber = brText.Text;
 
-            promeniP.PatientId = Convert.ToInt16(brKarText.Text);
+            promeniP.Id = Convert.ToInt16(brKarText.Text);
             
             promeniP.IdHealthCard = Convert.ToInt16(brKnjText.Text);
             promeniP.HealthCareCategory = (HealthCareCategory)zastitaText.SelectedIndex;

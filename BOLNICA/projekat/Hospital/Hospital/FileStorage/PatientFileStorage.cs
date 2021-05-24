@@ -7,10 +7,14 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using Hospital.FileStorage;
+using Hospital.FileStorage.Interfaces;
 using Newtonsoft.Json;
 
-public class PatientFileStorage
+public class PatientFileStorage : GenericFileStorage<Patient>, IPatientFileStorage 
 {
+    public PatientFileStorage(String filePath) : base(filePath) { }
+    /*
    public ObservableCollection<Patient> GetAll()
    {
       ObservableCollection<Patient> sviPacijenti= new ObservableCollection<Patient>();
@@ -101,7 +105,7 @@ public class PatientFileStorage
         }
         return ret;
    }
-   
+   */
 
 
 }

@@ -20,7 +20,7 @@ namespace Hospital.Service
         public CheckupService()
         {
             checkupStorage = new CheckupFileStorage();
-            patientsStorage = new PatientFileStorage();
+            patientsStorage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
             doctorStorage = new DoctorFileStorage();
 
         }

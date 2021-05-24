@@ -33,7 +33,7 @@ namespace Hospital.Sekretar
 
         private void da(object sender, RoutedEventArgs e)
         {
-            NoticeFileStorage nfs = new NoticeFileStorage();
+            NoticeFileStorage nfs = new NoticeFileStorage(@"./../../../../Hospital/files/notices.json");
             nfs.Delete(notice);
             listNotice.RemoveAt(index);
             this.Close();

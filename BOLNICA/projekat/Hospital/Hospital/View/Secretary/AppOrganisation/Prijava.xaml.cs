@@ -33,14 +33,14 @@ namespace Hospital
         {
             if (uloga.SelectedIndex == 0) //pacijent
             {
-                PatientFileStorage pf = new PatientFileStorage();
-                ObservableCollection<Patient> patients = pf.GetAll(); //svi pacijenti iz fajla
+                PatientFileStorage pf = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
+                ObservableCollection<Patient> patients = new ObservableCollection<Patient>(pf.GetAll()); //svi pacijenti iz fajla
 
                 foreach (Patient patient in patients)
                 {
                     if (patient.username.Equals(ime.Text) && patient.password.Equals(lozinka.Password)) //ako su sifra i korisnicko ime nadjeni u fajlu
                     {
-                        id = patient.PatientId; //preuzimamo id pacijenta koji dalje prosledjujemo prozoru koji se prvi otvara, pa dalje ostalim prozorima da bismo uvek prikazivali podatke na osnovu ovog id-ja(odnosno bas sa korisnika koji je ulogovan)
+                        id = patient.Id; //preuzimamo id pacijenta koji dalje prosledjujemo prozoru koji se prvi otvara, pa dalje ostalim prozorima da bismo uvek prikazivali podatke na osnovu ovog id-ja(odnosno bas sa korisnika koji je ulogovan)
                         PocetnaPacijent p = new PocetnaPacijent(id); //otvara se prozor i prosledjuje id
                         p.Show();
                        // this.Close();

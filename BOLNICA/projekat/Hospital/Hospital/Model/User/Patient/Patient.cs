@@ -9,7 +9,7 @@ using System.ComponentModel;
 public class Patient : User
 {
 
-   private int patientId;
+  // private int patientId;
    private HealthCareCategory healthCareCategory;
    private int idHealthCard;
    private String occupation;
@@ -21,7 +21,7 @@ public class Patient : User
 
 
 
-    public Patient(String n, String s, String tel, String jmb, Gender g, DateTime b, int pId, HealthCareCategory hcc, int idhc, String oc, String ins, Adress adr) 
+    public Patient(String n, String s, String tel, String jmb, Gender g, DateTime b, int pId, HealthCareCategory hcc, int idhc, String oc, String ins, Adress adr) : base()
     { 
         this.name=n;
         this.surname=s;
@@ -29,7 +29,8 @@ public class Patient : User
         this.jmbg=jmb;
         this.gender=g;
         this.birthdayDate=b;
-        this.patientId = pId; //id pacijenta je meni isto sto i broj kartona 
+        //  this.patientId = pId; //id pacijenta je meni isto sto i broj kartona 
+        this.Id = pId;
         this.healthCareCategory = hcc;
         this.idHealthCard = idhc; //broj zdrav knjizice
         this.occupation = oc;
@@ -43,7 +44,7 @@ public class Patient : User
     {
     }
 
-    public Patient(String i, String p, String br, String jmbgG, Gender pol, DateTime datR, int idP) 
+    public Patient(String i, String p, String br, String jmbgG, Gender pol, DateTime datR, int id) 
     {
         this.name = i;
         this.surname = p;
@@ -51,14 +52,16 @@ public class Patient : User
         this.jmbg = jmbgG;
         this.gender = pol;
         this.birthdayDate = datR;
-        this.patientId = idP;
+        //   this.patientId = idP;
+        this.Id = id;
+
 
         this.guest = true;
 
     }
 
 
-    public int PatientId
+   /* public int PatientId
     {
         get
         {
@@ -72,7 +75,7 @@ public class Patient : User
                 OnProperychanged("PatientId");
             }
         }
-    }
+    } */
 
     public int IdHealthCard
     {
