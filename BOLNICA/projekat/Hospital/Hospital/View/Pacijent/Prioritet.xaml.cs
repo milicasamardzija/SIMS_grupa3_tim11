@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,11 @@ namespace Hospital.View.Pacijent
     public partial class Prioritet : Window
     {
         int id;
-        public Prioritet(int idP)
+        public ObservableCollection<Appointment> appointmentList;
+        public Prioritet(ObservableCollection<Appointment> applist,int idP)
         {
             InitializeComponent();
+            appointmentList = applist;
             id = idP;
         }
 
@@ -33,7 +36,7 @@ namespace Hospital.View.Pacijent
 
         private void doktor(object sender, RoutedEventArgs e)
         {
-            PrioritetDoktor doktor = new PrioritetDoktor(id);
+            PrioritetDoktor doktor = new PrioritetDoktor(appointmentList,id);
             doktor.Show();
             this.Close();
 

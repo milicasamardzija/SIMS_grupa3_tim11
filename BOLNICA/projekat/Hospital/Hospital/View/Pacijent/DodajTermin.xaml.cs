@@ -285,7 +285,7 @@ namespace Hospital
         private void izaberi_prioritet(object sender, RoutedEventArgs e)
         {
 
-            Prioritet prioritet = new Prioritet(idPatient);
+            Prioritet prioritet = new Prioritet(appointmentList,idPatient);
             prioritet.Show();
          
 

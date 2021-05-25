@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -21,10 +22,14 @@ namespace Hospital.View.Pacijent
         int id;
         private List<global::Doctor> lekari;
         private List<string> availableTimes;
-        public PrioritetDoktor(int idP)
+        private List<Appointment> termini;
+        public ObservableCollection<Appointment> appointmentList;
+        public PrioritetDoktor(ObservableCollection<Appointment> applist,int idP)
         {
             InitializeComponent();
             id = idP;
+            appointmentList = applist;
+            
 
             PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
             List<Patient> allPatients = storage.GetAll();
@@ -45,43 +50,150 @@ namespace Hospital.View.Pacijent
             date.IsEnabled = false;
 
             timelabel.Visibility = Visibility.Hidden;
+            BlackOutDates();
             times.Visibility = Visibility.Hidden;
             availableTimes = new List<string>();
         }
 
 
+        private void BlackOutDates()
+        {
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
+            date.BlackoutDates.Add(kalendar);
+
+        }
+
+
         private void potvrdi(object sender, RoutedEventArgs e)
         {
-
+            ZakaziTermin();
         }
 
         private void odustani(object sender, RoutedEventArgs e)
         {
 
-            Prioritet prioritet = new Prioritet(id);
+            Prioritet prioritet = new Prioritet(appointmentList,id);
             prioritet.Show();
             this.Close();
         }
 
         private void Nazad_na_pocetnu(object sender, RoutedEventArgs e)
         {
-            Prioritet prioritet = new Prioritet(id);
+            Prioritet prioritet = new Prioritet(appointmentList, id);
             prioritet.Show();
             this.Close();
         }
 
         private void ljekari_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            date.IsEnabled = true;
 
         }
 
         private void times_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            potvrdii.IsEnabled = true;
+        }
 
+        private void pretraziTermine()
+        {
+            times.Items.Clear();
+            availableTimes.Clear();
+            termini.Clear();
+            AppointmentFileStorage app = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
+            PatientFileStorage patients = new PatientFileStorage("./../../../../Hospital/files/storagepatient.json");
+            global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
+
+            foreach (Appointment t in app.GetAll())
+            {
+                if (t.Doctor.jmbg.Equals(doktor.jmbg))
+                {
+                    if (t.Date.Date.Equals(date.SelectedDate))
+                    {
+                        termini.Add(t);
+                    }
+                }
+
+                if (id == t.Patient.Id && t.Date.Date.Equals(date.SelectedDate))
+                {
+
+
+                    termini.Add(t);
+
+
+                }
+            }
+
+            List<Appointment> terminiBezDuplikata = termini.Distinct().ToList();
+            DateTime danas = DateTime.Today;
+
+            for (DateTime tm = danas.AddHours(8); tm < danas.AddHours(20); tm = tm.AddMinutes(15))
+            {
+                bool slobodno = true;
+                foreach (Appointment termin in terminiBezDuplikata)
+                {
+                    DateTime start = DateTime.Parse(termin.Date.ToString("HH:mm"));
+                    DateTime end = DateTime.Parse(termin.Date.AddMinutes(termin.Duration).ToString("HH:mm"));
+                    if (tm >= start && tm < end)
+                    {
+                        slobodno = false;
+                    }
+                }
+                if (slobodno)
+                    availableTimes.Add(tm.ToString("HH:mm"));
+
+                if (date.SelectedDate == danas)
+                {
+                    if (tm < DateTime.Now.AddMinutes(30))
+                    {
+                        availableTimes.Remove(tm.ToString("HH:mm"));
+                    }
+                }
+
+            }
+            foreach (string time in availableTimes)
+            {
+                times.Items.Add(time);
+            }
+
+
+        }
+
+        private void ZakaziTermin()
+        {
+
+
+
+            AppointmentFileStorage app = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
+
+            global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
+            if (times.SelectedIndex != -1)
+            {
+                var item = times.SelectedItem;
+                String t = item.ToString();
+                String d = date.Text;
+                DateTime dt = DateTime.Parse(d + " " + t);
+                int id = app.GetAll().Count();
+
+
+                Appointment newapp = new Appointment(id, dt, 30, doktor, null);
+
+                app.Save(newapp);
+                appointmentList.Add(newapp);
+
+                FunctionalityFileStorage funkcionalnosti = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
+                Functionality funkcionalnost = new Functionality(DateTime.Now, id, "dodavanje");
+                funkcionalnosti.Save(funkcionalnost);
+
+                this.Close();
+
+            }
         }
         private void date_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            timelabel.Visibility = Visibility.Visible;
+            times.Visibility = Visibility.Visible;
+            pretraziTermine();
         }
     }
 }

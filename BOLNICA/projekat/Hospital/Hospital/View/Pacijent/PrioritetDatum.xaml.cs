@@ -43,8 +43,8 @@ namespace Hospital.View.Pacijent
 
         private void Nazad_na_pocetnu(object sender, RoutedEventArgs e)
         {
-            Prioritet prioritet = new Prioritet(id);
-            prioritet.Show();
+          //  Prioritet prioritet = new Prioritet(id);
+           // prioritet.Show();
             this.Close();
         }
     }
