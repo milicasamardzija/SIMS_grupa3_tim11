@@ -11,9 +11,8 @@
 
                 <DataGrid x:Name="ListCheckups" Margin="31,71,274.6,103.2" Grid.Column="0" Background="MistyRose" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path = CheckupList}" ToolTip="Za izmenu i brisanje pregleda potrebno je oznaciti zeljeni pregled">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding IdCh}" FontSize="16"/>
+                <!--<DataGridTextColumn Header="ID" Binding="{Binding IdCh}" FontSize="16"/>-->
                 <DataGridTextColumn Header="DATUM I VREME" Binding="{Binding Date}" FontSize="16"/>
-                <!--<DataGridTextColumn Header="VREME" Binding="{Binding Time}" FontSize="16"/>-->
                 <DataGridTextColumn Header="TRAJANJE" Binding="{Binding Duration}" FontSize="16"/>
                 <DataGridTextColumn Header="TIP" Binding="{Binding Type}" FontSize="16"/>
                 <DataGridTextColumn Header="ID PACIJENTA" Binding="{Binding IdPatient}" FontSize="16"/>

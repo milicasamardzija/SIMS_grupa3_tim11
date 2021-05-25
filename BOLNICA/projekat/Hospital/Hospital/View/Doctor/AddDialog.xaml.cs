@@ -15,6 +15,7 @@ using System.Collections.ObjectModel;
 using Newtonsoft.Json;
 using System.IO;
 using Hospital.Model;
+using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -42,8 +43,8 @@ namespace Hospital
         
         public Patient getPatientFromFile()
         {
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json"); 
-            Patient ret = storage.FindById(54); 
+            IPatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json"); 
+            Patient ret = storage.FindById(2); 
 
             return ret;
         }
@@ -68,7 +69,7 @@ namespace Hospital
         public int generateID()
         {
             int ret = 0;
-            CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            ICheckFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             List<Checkup> allCheckups = storage.GetAll();
             foreach (Checkup ch in allCheckups)
             {
@@ -86,17 +87,16 @@ namespace Hospital
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            CheckupFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            ICheckFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             Patient patient = getPatientFromFile();
             Doctor doctor = getDoctorFromFile();
-         
-          /*  Checkup newCheckup = new Checkup( generateID(), dateP.DisplayDate, Convert.ToString(timeText.Text), Convert.ToDouble(durationText.Text),
-                (CheckupType)comboBox.SelectedIndex,patient.Id,doctor.Id);
+
+            Checkup newCheckup = new Checkup(generateID(), doctor.Id, patient.Id, dateP.DisplayDate, 1, (CheckupType)comboBox.SelectedIndex);
 
             st.Save(newCheckup);
             listCheckup.Add(newCheckup);
             this.Close();
-          */
+          
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

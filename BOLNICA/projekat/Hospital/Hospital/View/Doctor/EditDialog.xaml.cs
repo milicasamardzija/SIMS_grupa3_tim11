@@ -15,6 +15,7 @@ using System.Collections.ObjectModel;
 using Hospital.Model;
 using Newtonsoft.Json;
 using System.IO;
+using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -35,9 +36,8 @@ namespace Hospital
             listCheckup = list;
             checkup = selectedCheckup;
             index = selectedIndex;
+
             datePick.SelectedDate = Convert.ToDateTime(selectedCheckup.Date);
-            //datePick.DisplayDate = new DateTime(2021, 04, 17);
-           // timeText.SelectedText = Convert.ToString(selectedCheckup.Time);
             durationText.SelectedText = Convert.ToString(selectedCheckup.Duration);
             comboBox.SelectedIndex = (int)selectedCheckup.Type;
             patientBox.SelectedText = Convert.ToString(selectedCheckup.IdPatient);
@@ -52,7 +52,7 @@ namespace Hospital
         public int generisiID()
         {
             int ret = 0;
-            CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            ICheckFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             List<Checkup> allCheckups = storage.GetAll();
             foreach (Checkup ch in allCheckups)
             {
@@ -68,35 +68,37 @@ namespace Hospital
             return ret;
         }
 
-        public int getDoctorFromFile() //fija koja vraca doktora koji je ulogovan na sistem i koji ce biti ubacen u termin
+        public int getDoctorFromFile() 
         {
             int ret = 0;
-            List<Doctor> doctors = JsonConvert.DeserializeObject<List<Doctor>>(File.ReadAllText(@"./../../../../Hospital/files/storageDoctor.json")); //cita listu doktora iz fajla
+            List<Doctor> doctors = JsonConvert.DeserializeObject<List<Doctor>>(File.ReadAllText(@"./../../../../Hospital/files/storageDoctor.json")); 
 
-            foreach (Doctor doctor in doctors)  //prolaz kroz sve dokore u fajlu
+            foreach (Doctor doctor in doctors)  
             {
-                 if (doctor.Id == idD) //pronalazi doktora sa id-jem ulogovanog doktora
+                 if (doctor.Id == idD) 
                  {
                 ret = idD;
-                break; //kada ga nadje izlazi iz petlje
+                break;
                 }
             }
 
             return ret;
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        public void components()
         {
-            CheckupFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             checkup.Date = datePick.DisplayDate;
-            //checkup.Time = Convert.ToString(timeText.Text);
             checkup.Duration = Convert.ToDouble(durationText.Text);
             checkup.Type = (CheckupType)comboBox.SelectedIndex;
             checkup.IdPatient = Convert.ToInt16(patientBox.Text);
             checkup.IdRoom = Convert.ToInt16(idRoom.Text);
-            int doctorId = getDoctorFromFile();
-           // int ida = 1;
+        }
 
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            ICheckFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            components();
+            int doctorId = getDoctorFromFile();
             int idCheckup = generisiID();
 
             listCheckup[index] = new Checkup(idCheckup, doctorId, Convert.ToInt16(checkup.IdPatient), Convert.ToDateTime(checkup.Date),
