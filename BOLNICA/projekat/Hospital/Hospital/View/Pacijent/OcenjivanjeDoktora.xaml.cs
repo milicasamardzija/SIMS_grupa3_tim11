@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -24,7 +25,7 @@ namespace Hospital
         public int id { get; set; }
 
 
-        public ObservableCollection<Appointment> termini
+        public ObservableCollection<Checkup> termini
         {
             get;
             set;
@@ -64,17 +65,17 @@ namespace Hospital
         }
         private void oceni_doktora(object sender, RoutedEventArgs e)
         {
-            DodajAnketu pp = new DodajAnketu(termini, (Appointment)ListaObavljenihTermina.SelectedItem, ListaObavljenihTermina.SelectedIndex, id);
+            DodajAnketu pp = new DodajAnketu(termini, (Checkup)ListaObavljenihTermina.SelectedItem, ListaObavljenihTermina.SelectedIndex, id);
             pp.Show();
 
         }
-        public ObservableCollection<Appointment> loadJason()
+        public ObservableCollection<Checkup> loadJason()
         {
-            AppointmentFileStorage fs = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
-            ObservableCollection<Appointment> rs = new ObservableCollection<Appointment>(fs.GetAll());
-            ObservableCollection<Appointment> ret = new ObservableCollection<Appointment>();
+            CheckupFileStorage fs = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            ObservableCollection<Checkup> rs = new ObservableCollection<Checkup>(fs.GetAll());
+            ObservableCollection<Checkup> ret = new ObservableCollection<Checkup>();
 
-            foreach (Appointment appointment in rs)
+            foreach (Checkup appointment in rs)
             {
                 if (appointment.Patient.Id == id)
                 { if (DateTime.Now > appointment.Date)
@@ -100,7 +101,7 @@ namespace Hospital
 
         public void UpdateTable()
         {
-            ListaObavljenihTermina.Items.Remove(((Appointment)ListaObavljenihTermina.SelectedItem).Id);
+            ListaObavljenihTermina.Items.Remove(((Checkup)ListaObavljenihTermina.SelectedItem).Id);
         }
     }
 }

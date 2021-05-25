@@ -41,7 +41,7 @@ namespace Hospital
 
         public List<Checkup> loadJson(int idD)
         {
-            CheckupFileStorage cs = new CheckupFileStorage();
+            CheckupFileStorage cs = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             List<Checkup> cc = new List<Checkup>(cs.GetAll());
             List<Checkup> ret = new List<Checkup>(); 
 

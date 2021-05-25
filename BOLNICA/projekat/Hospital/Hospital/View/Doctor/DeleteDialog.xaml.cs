@@ -30,13 +30,13 @@ namespace Hospital
         {
             InitializeComponent();
             listCheckup = list;
-            id = selectedCheckup.IdCh;
+            id = selectedCheckup.Id;
             index = selectedIndex;
         }
 
         private void btnYes_Click(object sender, RoutedEventArgs e)
         {
-            CheckupFileStorage st = new CheckupFileStorage();
+            CheckupFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             st.DeleteById(id);
             listCheckup.RemoveAt(index);
             this.Close();

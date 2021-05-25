@@ -19,9 +19,9 @@ namespace Hospital.Service
 
         public CheckupService()
         {
-            checkupStorage = new CheckupFileStorage();
+            checkupStorage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             patientsStorage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            doctorStorage = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
+            doctorStorage = new DoctorFileStorage("./../../../../Hospital/files/storageDoctor.json");
 
         }
 
@@ -29,7 +29,7 @@ namespace Hospital.Service
         {
             int val = 0;
 
-            CheckupFileStorage checkupStorage = new CheckupFileStorage();
+            CheckupFileStorage checkupStorage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             List<Checkup> allCheckups = new List<Checkup>();
             allCheckups= checkupStorage.GetAll(); 
 
@@ -37,7 +37,7 @@ namespace Hospital.Service
             {
                 foreach (Checkup c in allCheckups)
                 {
-                    if (val == c.IdCh)
+                    if (val == c.Id)
                     {
                         ++val; //proveravam sledeci slobodan broj
                         break;
@@ -99,7 +99,7 @@ namespace Hospital.Service
 
         public void changeCheckup(Checkup checkup)
         {
-            checkupStorage.DeleteById(checkup.IdCh);
+            checkupStorage.DeleteById(checkup.Id);
             Checkup newCheckup = new Checkup(generateIdCheckup(), checkup.IdDoctor, checkup.IdPatient, checkup.Date, 0, CheckupType.pregled);
             checkupStorage.Save(newCheckup);
 

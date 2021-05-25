@@ -21,10 +21,10 @@ namespace Hospital
     /// </summary>
     public partial class ObrisiTermin : Window
     {
-        public ObservableCollection<Appointment> appointmentList;
+        public ObservableCollection<Checkup> appointmentList;
         public int index;
         public int id;
-        public ObrisiTermin(ObservableCollection<Appointment> list, Appointment selectedApp, int selectedIndex)
+        public ObrisiTermin(ObservableCollection<Checkup> list, Checkup selectedApp, int selectedIndex)
         {
             InitializeComponent();
             appointmentList = list;
@@ -34,7 +34,7 @@ namespace Hospital
 
         private void da_Click(object sender, RoutedEventArgs e)
         {
-            AppointmentFileStorage storage = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
+            CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             storage.DeleteById(id);
             appointmentList.RemoveAt(index);
             FunctionalityFileStorage funkcionalnosti = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");

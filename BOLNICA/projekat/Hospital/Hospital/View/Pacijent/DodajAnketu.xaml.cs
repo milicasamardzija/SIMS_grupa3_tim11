@@ -23,8 +23,8 @@ namespace Hospital
     {
 
         public OcenjivanjeDoktora parent;
-        public ObservableCollection<Appointment> obavljeniTermini;
-        public Appointment termin;
+        public ObservableCollection<Checkup> obavljeniTermini;
+        public Checkup termin;
         public int index;
         public int idPatient; //id pacijenta koji je ulogovan
         public string ime;
@@ -35,7 +35,7 @@ namespace Hospital
         
        private string lekar;
 
-        public DodajAnketu(ObservableCollection<Appointment> list, Appointment selectedApp, int selectedIndex, int idP)
+        public DodajAnketu(ObservableCollection<Checkup> list, Checkup selectedApp, int selectedIndex, int idP)
         {
             InitializeComponent();
             obavljeniTermini = list;

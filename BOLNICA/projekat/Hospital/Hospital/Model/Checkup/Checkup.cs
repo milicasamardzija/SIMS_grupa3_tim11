@@ -10,10 +10,10 @@ using System.ComponentModel;
 
 namespace Hospital.Model
 {
-    public class Checkup 
+    public class Checkup : Entity
     {
 
-        private int idCh;
+       
         private DateTime date;
       
         private double duration;
@@ -31,9 +31,9 @@ namespace Hospital.Model
        
 
         public Checkup() { }
-        public Checkup(int idCh, int idD, int idP, DateTime dateAndTime, int idR, CheckupType type)
+        public Checkup(int idCh, int idD, int idP, DateTime dateAndTime, int idR, CheckupType type) : base(idCh)
         {
-            this.idCh = idCh;
+           
             this.idDoctor = idD;
             this.idPatient = idP;
             this.Date = dateAndTime;
@@ -177,21 +177,7 @@ namespace Hospital.Model
             }
         }
 
-        public int IdCh
-        {
-            get
-            {
-                return idCh;
-            }
-            set
-            {
-                if (value != idCh)
-                {
-                    idCh = value;
-                    OnPropertyChanged("IdCh");
-                }
-            }
-        }
+        
         public int IdDoctor
         {
             get

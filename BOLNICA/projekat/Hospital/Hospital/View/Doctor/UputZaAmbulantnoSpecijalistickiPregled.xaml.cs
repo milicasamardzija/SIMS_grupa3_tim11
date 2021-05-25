@@ -53,13 +53,13 @@ namespace Hospital
         public int getCheckupFromFile()
         {
             int ret = 0;
-            CheckupFileStorage storage = new CheckupFileStorage();
+            CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             List<Checkup> all = storage.GetAll();
             foreach (Checkup checkup in all)
             {
                 foreach (Checkup checkups in all)
                 {
-                    if (ret == checkups.IdCh)
+                    if (ret == checkups.Id)
                     {
                         ++ret;
                         break;

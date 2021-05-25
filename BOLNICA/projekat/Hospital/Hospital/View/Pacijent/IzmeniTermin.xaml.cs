@@ -24,17 +24,17 @@ namespace Hospital
     /// </summary>
     public partial class IzmeniTermin : Window
     {
-        public ObservableCollection<Appointment> appointmentList;
-        public Appointment termin;
+        public ObservableCollection<Checkup> appointmentList;
+        public Checkup termin;
         public int index;
         public int idPatient; //id pacijenta koji je ulogovan
         private List<string> lista;
         private List<global::Doctor> lekari;
-        private List<Appointment> termini;
+        private List<Checkup> termini;
         public ObservableCollection<Patient> pacijenti;
 
 
-        public IzmeniTermin(ObservableCollection<Appointment> list, Appointment selectedApp, int selectedIndex, int idP)
+        public IzmeniTermin(ObservableCollection<Checkup> list, Checkup selectedApp, int selectedIndex, int idP)
         {
             InitializeComponent();
 
@@ -44,7 +44,7 @@ namespace Hospital
             idPatient = idP;
 
             lista = new List<string>();
-            AppointmentFileStorage af = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
+            CheckupFileStorage af = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             termini = af.GetAll();
             lista.Add("");
             lista.Add("08:00");
@@ -94,12 +94,12 @@ namespace Hospital
 
 
 
-            dateText.SelectedDate = selectedApp.DateTime;
-            timeText.SelectedValue = selectedApp.DateTime.ToString("HH:mm");
+            dateText.SelectedDate = selectedApp.Date;
+            timeText.SelectedValue = selectedApp.Date.ToString("HH:mm");
 
 
-            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, termin.DateTime.AddDays(-3));
-            CalendarDateRange kalendar1 = new CalendarDateRange(termin.DateTime.AddDays(3), DateTime.MaxValue);
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, termin.Date.AddDays(-3));
+            CalendarDateRange kalendar1 = new CalendarDateRange(termin.Date.AddDays(3), DateTime.MaxValue);
 
             dateText.BlackoutDates.Add(kalendar);
             dateText.BlackoutDates.Add(kalendar1);
@@ -138,7 +138,7 @@ namespace Hospital
         {
 
 
-            AppointmentFileStorage storage = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
+            CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             Patient patient = getPatientFromFile();
             global::Doctor doktor1 = (global::Doctor)doktor.SelectedItem;
 
@@ -152,7 +152,7 @@ namespace Hospital
 
 
 
-            termin.DateTime = dt;
+            termin.Date = dt;
             termin.Doctor = doktor1;
             termin.Patient = patient;
             storage.DeleteById(termin.Id);
@@ -175,11 +175,11 @@ namespace Hospital
 
         private void slobodni_doktori(object sender, RoutedEventArgs e)
         {
-            foreach (Appointment t in termini)
+            foreach (Checkup t in termini)
             {
 
-                string sat = t.DateTime.Hour.ToString();
-                string minute = t.DateTime.Minute.ToString();
+                string sat = t.Date.Hour.ToString();
+                string minute = t.Date.Minute.ToString();
                 string izbaci = "";
                 int brojac1 = 0;
                 int brojac2 = 0;
@@ -210,7 +210,7 @@ namespace Hospital
 
                 if (t.Doctor.jmbg.Equals(termin.Doctor.jmbg))
                 {
-                    if (t.DateTime.Date == dateText.SelectedDate && (timeText.SelectedItem.Equals(izbaci)))
+                    if (t.Date.Date == dateText.SelectedDate && (timeText.SelectedItem.Equals(izbaci)))
                     {
                         lekari.Remove(termin.Doctor);
                          doktor.ItemsSource = lekari;
@@ -225,12 +225,12 @@ namespace Hospital
 
         private void potvrda(object sender, RoutedEventArgs e)
         {
-            foreach (Appointment t in termini)
+            foreach (Checkup t in termini)
             {
-                if (t.DateTime.Date == dateText.SelectedDate)
+                if (t.Date.Date == dateText.SelectedDate)
                 {
-                    string sat = t.DateTime.Hour.ToString();
-                    string minute = t.DateTime.Minute.ToString();
+                    string sat = t.Date.Hour.ToString();
+                    string minute = t.Date.Minute.ToString();
                     string izbaci = "";
                     int brojac1 = 0;
                     int brojac2 = 0;

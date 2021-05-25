@@ -17,18 +17,18 @@ namespace Hospital.Service
         private RoomInventoryFileStorage roominventoryStorage;
         private InventoryFileStorage inventoryStorage;
         private StaticInvnetoryMovementFileStorage staticInventoryStorage;
-        private AppointmentFileStorage appointmentsStorage;
+      
         private RoomIFileStorage roomStorage;
 
         public RoomsService()
         {
             renovationStorage = new RenovationFileStorage("./../../../../Hospital/files/storageRenovationRooms.json");
-            checkupStorage = new CheckupFileStorage();
+            checkupStorage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             inventoryMovementStorage = new StaticInvnetoryMovementFileStorage();
             roominventoryStorage = new RoomInventoryFileStorage();
             inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             staticInventoryStorage = new StaticInvnetoryMovementFileStorage();
-            appointmentsStorage = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
+          
             roomStorage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
         }
 

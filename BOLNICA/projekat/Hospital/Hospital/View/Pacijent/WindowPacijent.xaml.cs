@@ -27,7 +27,7 @@ namespace Hospital
         public int count3 = 0;
 
 
-        public ObservableCollection<Appointment> AppointmentList
+        public ObservableCollection<Checkup> AppointmentList
         {
             get;
             set;
@@ -91,16 +91,16 @@ namespace Hospital
 
           
         }
-        public ObservableCollection<Appointment> loadJason()
+        public ObservableCollection<Checkup> loadJason()
         {
-            AppointmentFileStorage fs = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
-            ObservableCollection<Appointment> rs = new ObservableCollection<Appointment>(fs.GetAll()); //svi termini
-            ObservableCollection<Appointment> ret = new ObservableCollection<Appointment>(); //ovde ce biti ubaceni termini za pacijenta sa prisledjenim id-jem(odnosno id pacijenta koji je ulogovan na sistem)
+            CheckupFileStorage fs = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            ObservableCollection<Checkup> rs = new ObservableCollection<Checkup>(fs.GetAll()); //svi termini
+            ObservableCollection<Checkup> ret = new ObservableCollection<Checkup>(); //ovde ce biti ubaceni termini za pacijenta sa prisledjenim id-jem(odnosno id pacijenta koji je ulogovan na sistem)
 
-            foreach (Appointment appointment in rs) //prolazimo kroz sve termine u fajlu
+            foreach (Checkup appointment in rs) //prolazimo kroz sve termine u fajlu
             {
 
-                if (appointment.Patient.Id == id) //trazimo termin koji ima pacijenta sa prosledjenim id-jem
+                if (appointment.IdPatient == id) //trazimo termin koji ima pacijenta sa prosledjenim id-jem
                 {
 
                     ret.Add(appointment); //dodajemo taj termin u listu koju vracamo za ispis u tabelu
@@ -177,7 +177,7 @@ namespace Hospital
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
-           IzmeniTermin it = new IzmeniTermin(AppointmentList, (Appointment)ListaTermina.SelectedItem, ListaTermina.SelectedIndex,id);
+           IzmeniTermin it = new IzmeniTermin(AppointmentList, (Checkup)ListaTermina.SelectedItem, ListaTermina.SelectedIndex,id);
 
 
             Patient ret = new Patient();
@@ -227,7 +227,7 @@ namespace Hospital
         private void obrisi(object sender, RoutedEventArgs e)
         {
 
-            ObrisiTermin ob = new ObrisiTermin(AppointmentList, (Appointment)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
+            ObrisiTermin ob = new ObrisiTermin(AppointmentList, (Checkup)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
 
             Patient ret = new Patient();
             PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");

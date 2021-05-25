@@ -17,13 +17,13 @@ namespace Hospital
     public partial class DodajTermin : Window
     {
 
-        public ObservableCollection<Appointment> appointmentList;
+        public ObservableCollection<Checkup> appointmentList;
         public int idPatient; //id pacijenta koji je ulogovan
         private List<string> lista;
         private List<global::Doctor> lekari;
         public int count1;
        
-        public DodajTermin(ObservableCollection<Appointment> applist, int idP)
+        public DodajTermin(ObservableCollection<Checkup> applist, int idP)
         {
             InitializeComponent();
             appointmentList = applist;
@@ -100,7 +100,7 @@ namespace Hospital
         private void add_appointment(object sender, RoutedEventArgs e)
         {
 
-            AppointmentFileStorage storage = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
+            CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             Patient patient = getPatientFromFile();
 
             global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
@@ -111,7 +111,7 @@ namespace Hospital
             int id = storage.GetAll().Count();
             
             
-            Appointment newapp = new Appointment(id, dt, 30, doktor, patient);
+            Checkup newapp = new Checkup(id,doktor.Id,patient.Id,dt,1,0);
 
             storage.Save(newapp);
             appointmentList.Add(newapp);
@@ -138,18 +138,18 @@ namespace Hospital
 
                 global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
 
-                AppointmentFileStorage storage = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
+                CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
 
-                List<Appointment> termini = storage.GetAll();
+                List<Checkup> termini = storage.GetAll();
 
-                foreach (Appointment t in termini)
+                foreach (Checkup t in termini)
                 {
                     if (t.Doctor.jmbg.Equals(doktor.jmbg))
                     {
-                        if ((t.DateTime.Date == date.SelectedDate))
+                        if ((t.Date.Date == date.SelectedDate))
                         {
-                            string sat = t.DateTime.Hour.ToString();
-                            string minute = t.DateTime.Minute.ToString();
+                            string sat = t.Date.Hour.ToString();
+                            string minute = t.Date.Minute.ToString();
                             string izbaci;
                             int brojac1 = 0;
                             int brojac2 = 0;
@@ -191,12 +191,12 @@ namespace Hospital
             else
             {
                 lekar.IsEnabled = true;
-                AppointmentFileStorage storage = new AppointmentFileStorage("./../../../../Hospital/files/termini.json");
-                List<Appointment> termini = storage.GetAll();
-                foreach (Appointment t in termini)
+                CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+                List<Checkup> termini = storage.GetAll();
+                foreach (Checkup t in termini)
                 {
-                    string sat = t.DateTime.Hour.ToString();
-                    string minute = t.DateTime.Minute.ToString();
+                    string sat = t.Date.Hour.ToString();
+                    string minute = t.Date.Minute.ToString();
                     string izbaci;
                     int brojac1 = 0;
                     int brojac2 = 0;
@@ -225,7 +225,7 @@ namespace Hospital
 
                     }
 
-                    if ((t.DateTime.Date == date.SelectedDate) && (time.SelectedItem.Equals(izbaci)))
+                    if ((t.Date.Date == date.SelectedDate) && (time.SelectedItem.Equals(izbaci)))
                     {
                         {
 

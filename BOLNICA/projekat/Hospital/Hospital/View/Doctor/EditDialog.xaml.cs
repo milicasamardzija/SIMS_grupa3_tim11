@@ -52,13 +52,13 @@ namespace Hospital
         public int generisiID()
         {
             int ret = 0;
-            CheckupFileStorage storage = new CheckupFileStorage();
+            CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             List<Checkup> allCheckups = storage.GetAll();
             foreach (Checkup ch in allCheckups)
             {
                 foreach (Checkup checkup in allCheckups)
                 {
-                    if (ret == checkup.IdCh)
+                    if (ret == checkup.Id)
                     {
                         ++ret;
                         break;
@@ -87,7 +87,7 @@ namespace Hospital
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            CheckupFileStorage st = new CheckupFileStorage();
+            CheckupFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             checkup.Date = datePick.DisplayDate;
             //checkup.Time = Convert.ToString(timeText.Text);
             checkup.Duration = Convert.ToDouble(durationText.Text);

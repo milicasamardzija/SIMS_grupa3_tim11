@@ -44,7 +44,7 @@ namespace Hospital.Sekretar
 
        public ObservableCollection<Checkup> loadJsonCheckups()
         {
-            CheckupFileStorage cfs = new CheckupFileStorage();
+            CheckupFileStorage cfs = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             ObservableCollection<Checkup> ch = new ObservableCollection<Checkup>(cfs.GetAll()); 
                
             return ch;

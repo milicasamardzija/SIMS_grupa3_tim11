@@ -40,13 +40,13 @@ namespace Hospital
         public int generateIdCheckup()
         {
             int ret = 0;
-            CheckupFileStorage storage = new CheckupFileStorage();
+            CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             List<Checkup> allCheckups = storage.GetAll();
             foreach (Checkup ch in allCheckups)
             {
                 foreach (Checkup checkup in allCheckups)
                 {
-                    if (ret == checkup.IdCh)
+                    if (ret == checkup.Id)
                     {
                         ++ret;
                         break;
@@ -71,7 +71,7 @@ namespace Hospital
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            CheckupFileStorage st = new CheckupFileStorage();
+            CheckupFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             //int idAppointment = 0;
             //Patient patient = getPatientFromFile();
 

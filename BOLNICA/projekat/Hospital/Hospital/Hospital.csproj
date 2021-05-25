@@ -63,6 +63,7 @@
     </ApplicationDefinition>
     <Compile Include="FileStorage\Interfaces\IAlergensFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IAnamnesisFileStorage.cs" />
+    <Compile Include="FileStorage\Interfaces\ICheckFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IDoctorFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IInstructionFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IMedicalRecordFileStorage.cs" />
@@ -96,7 +97,6 @@
       <DependentUpon>DodajAnketu.xaml</DependentUpon>
     </Compile>
     <Compile Include="FileStorage\GenericFileStorage.cs" />
-    <Compile Include="FileStorage\Interfaces\AppointmentIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\FunctionalityIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\GenericRepository.cs" />
     <Compile Include="FileStorage\Interfaces\RoomIFileStorage.cs" />
@@ -405,7 +405,6 @@
     <Compile Include="Model\Adress\Adress.cs" />
     <Compile Include="Model\Checkup\Anamnesis.cs" />
     <Compile Include="FileStorage\AnamnesisFileStorage.cs" />
-    <Compile Include="Model\Checkup\Appointment.cs" />
     <Compile Include="Model\Adress\City.cs" />
     <Compile Include="Model\Adress\Country.cs" />
     <Compile Include="FileStorage\DoctorFileStorage.cs" />
@@ -827,7 +826,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileStorage\AppointmentFileStorage.cs" />
     <Compile Include="Model\MedicalRecord\BloodType.cs" />
     <Compile Include="Model\Checkup\Checkup.cs" />
     <Compile Include="FileStorage\CheckupFileStorage.cs" />

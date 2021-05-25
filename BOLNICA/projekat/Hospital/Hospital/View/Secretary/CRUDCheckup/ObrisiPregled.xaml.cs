@@ -31,7 +31,7 @@ namespace Hospital.Sekretar
         {
             InitializeComponent();
             listCheckup = list;
-            id = selected.IdCh;
+            id = selected.Id;
             index = selectedIndex;
         }
 
@@ -39,7 +39,7 @@ namespace Hospital.Sekretar
 
         private void yesBtn(object sender, RoutedEventArgs e)
         {
-            CheckupFileStorage st = new CheckupFileStorage();
+            CheckupFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             st.DeleteById(id);
             listCheckup.RemoveAt(index);
             this.Close();
