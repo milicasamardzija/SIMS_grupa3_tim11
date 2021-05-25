@@ -25,6 +25,7 @@ namespace Hospital
     public partial class AddDialog : Window
     {
         public List<Checkup> listCheckup;
+        public Room rooms;
         public int idD; 
 
         public AddDialog(List<Checkup> list, int idDoctor)
@@ -43,8 +44,16 @@ namespace Hospital
         
         public Patient getPatientFromFile()
         {
-            IPatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json"); 
-            Patient ret = storage.FindById(2); 
+            IPatientFileStorage storagePatient = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json"); 
+            Patient ret = storagePatient.FindById(2); 
+
+            return ret;
+        }
+
+        public Room getRoomFromFile()
+        {
+            RoomIFileStorage storageRoom = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
+            Room ret = storageRoom.FindById(rooms.Id);
 
             return ret;
         }
@@ -69,8 +78,8 @@ namespace Hospital
         public int generateID()
         {
             int ret = 0;
-            ICheckFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            List<Checkup> allCheckups = storage.GetAll();
+            ICheckFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            List<Checkup> allCheckups = storageCheckup.GetAll();
             foreach (Checkup ch in allCheckups)
             {
                 foreach (Checkup checkup in allCheckups)
@@ -87,13 +96,14 @@ namespace Hospital
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            ICheckFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            Patient patient = getPatientFromFile();
-            Doctor doctor = getDoctorFromFile();
+            ICheckFileStorage storageCheckups = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+             Patient patient = getPatientFromFile();
+             Doctor doctor = getDoctorFromFile();
+             Room room = getRoomFromFile();
 
-            Checkup newCheckup = new Checkup(generateID(), doctor.Id, patient.Id, dateP.DisplayDate, 1, (CheckupType)comboBox.SelectedIndex);
+            Checkup newCheckup = new Checkup(generateID(), doctor.Id, patient.Id, dateP.DisplayDate, room.Id, (CheckupType)comboBox.SelectedIndex);
 
-            st.Save(newCheckup);
+            storageCheckups.Save(newCheckup);
             listCheckup.Add(newCheckup);
             this.Close();
           

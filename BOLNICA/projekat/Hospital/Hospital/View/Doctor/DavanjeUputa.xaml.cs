@@ -31,8 +31,8 @@ namespace Hospital
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            UputZaAmbulantnoSpecijalistickiPregled uasp = new UputZaAmbulantnoSpecijalistickiPregled();
-            uasp.Show();
+            UputZaAmbulantnoSpecijalistickiPregled instruction = new UputZaAmbulantnoSpecijalistickiPregled();
+            instruction.Show();
         }
     }
 }

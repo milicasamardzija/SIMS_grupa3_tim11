@@ -24,10 +24,9 @@ namespace Hospital
     /// </summary>
     public partial class EditDialog : Window
     {
-
         public List<Checkup> listCheckup;
         public Checkup checkup;
-        public int index;
+        public int indexCheckup;
         public int idD;
 
         public EditDialog(List<Checkup> list, Checkup selectedCheckup, int selectedIndex)
@@ -35,7 +34,7 @@ namespace Hospital
             InitializeComponent();
             listCheckup = list;
             checkup = selectedCheckup;
-            index = selectedIndex;
+            indexCheckup = selectedIndex;
 
             datePick.SelectedDate = Convert.ToDateTime(selectedCheckup.Date);
             durationText.SelectedText = Convert.ToString(selectedCheckup.Duration);
@@ -54,7 +53,7 @@ namespace Hospital
             int ret = 0;
             ICheckFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             List<Checkup> allCheckups = storage.GetAll();
-            foreach (Checkup ch in allCheckups)
+            foreach (Checkup checkups in allCheckups)
             {
                 foreach (Checkup checkup in allCheckups)
                 {
@@ -101,7 +100,7 @@ namespace Hospital
             int doctorId = getDoctorFromFile();
             int idCheckup = generisiID();
 
-            listCheckup[index] = new Checkup(idCheckup, doctorId, Convert.ToInt16(checkup.IdPatient), Convert.ToDateTime(checkup.Date),
+            listCheckup[indexCheckup] = new Checkup(idCheckup, doctorId, Convert.ToInt16(checkup.IdPatient), Convert.ToDateTime(checkup.Date),
                 Convert.ToInt16(checkup.IdRoom), (CheckupType)comboBox.SelectedIndex);
 
             st.DeleteById(Convert.ToInt16(durationText.Text));

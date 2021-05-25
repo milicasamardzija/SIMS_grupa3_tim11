@@ -22,7 +22,6 @@ namespace Hospital
     /// </summary>
     public partial class PrikaziKartonPacijenta : Window
     {
-        
         public ObservableCollection<MedicalRecord> MedicalList
         {
             get;
@@ -45,17 +44,17 @@ namespace Hospital
 
         public ObservableCollection<MedicalRecord> loadFileJ(int id)
         {
-            IMedicalRecordFileStorage mst = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
-            ObservableCollection<MedicalRecord> mr = new ObservableCollection<MedicalRecord>(mst.GetAll());
-            ObservableCollection<MedicalRecord> mrr = new ObservableCollection<MedicalRecord>();
-            foreach(MedicalRecord m in mr)
+            IMedicalRecordFileStorage storageMedicalRecord = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
+            ObservableCollection<MedicalRecord> allMedicalRecords = new ObservableCollection<MedicalRecord>(storageMedicalRecord.GetAll());
+            ObservableCollection<MedicalRecord> returnMedicalRecord = new ObservableCollection<MedicalRecord>();
+            foreach(MedicalRecord medicalRecord in allMedicalRecords)
             {
-                if(m.Id == id)
+                if(medicalRecord.Id == id)
                 {
-                    mrr.Add(m);
+                    returnMedicalRecord.Add(medicalRecord);
                 }
             }
-            return mrr;
+            return returnMedicalRecord;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

@@ -31,8 +31,8 @@ namespace Hospital
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            PrikaziIzvestajLekara pil = new PrikaziIzvestajLekara();
-            pil.Show();
+            PrikaziIzvestajLekara showReport = new PrikaziIzvestajLekara();
+            showReport.Show();
         }
     }
 }

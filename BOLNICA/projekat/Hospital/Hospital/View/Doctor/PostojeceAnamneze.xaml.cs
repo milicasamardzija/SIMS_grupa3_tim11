@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using System.IO;
+using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -36,14 +37,14 @@ namespace Hospital
 
         public ObservableCollection<Anamnesis> loadJ()
         {
-            AnamnesisFileStorage ast = new AnamnesisFileStorage(@"./../../../../Hospital/files/anamnesis.json");
-            ObservableCollection<Anamnesis> aa = new ObservableCollection<Anamnesis>(ast.GetAll());
-            ObservableCollection<Anamnesis> ret = new ObservableCollection<Anamnesis>();
-            foreach(Anamnesis a in aa)
+            IAnamnesisFileStorage storageAnamnesis = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
+            ObservableCollection<Anamnesis> allAnamnesis = new ObservableCollection<Anamnesis>(storageAnamnesis.GetAll());
+            ObservableCollection<Anamnesis> returnAnamnesis = new ObservableCollection<Anamnesis>();
+            foreach(Anamnesis anamnesis in allAnamnesis)
             {
-                ret.Add(a);
+                returnAnamnesis.Add(anamnesis);
             }
-            return ret;
+            return returnAnamnesis;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

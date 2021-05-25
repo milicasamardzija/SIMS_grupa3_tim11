@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Hospital.Model;
 using System.Collections.ObjectModel;
+using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -21,9 +22,8 @@ namespace Hospital
     /// </summary>
     public partial class UputZaAmbulantnoSpecijalistickiPregled : Window
     {
-
         public List<Checkup> CheckupList { get; set; }
-        public int id;
+        public int idDoctor;
 
         public UputZaAmbulantnoSpecijalistickiPregled()
         {
@@ -34,11 +34,11 @@ namespace Hospital
         public int generateInstructionId()
         {
             int ret = 0;
-            InstructionFileStorage storage = new InstructionFileStorage(@"./../../../../Hospital/files/instructions.json");
-            List<Instruction> all = storage.GetAll();
-            foreach (Instruction instruction in all)
+            IInstructionFileStorage storageInstruction = new InstructionFileStorage("./../../../../Hospital/files/instructions.json");
+            List<Instruction> allInstructions = storageInstruction.GetAll();
+            foreach (Instruction instruction in allInstructions)
             {
-                foreach (Instruction instructions in all)
+                foreach (Instruction instructions in allInstructions)
                 {
                     if (ret == instructions.Id)
                     {
@@ -53,11 +53,11 @@ namespace Hospital
         public int getCheckupFromFile()
         {
             int ret = 0;
-            CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            List<Checkup> all = storage.GetAll();
-            foreach (Checkup checkup in all)
+            ICheckFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            List<Checkup> allCheckups = storageCheckup.GetAll();
+            foreach (Checkup checkup in allCheckups)
             {
-                foreach (Checkup checkups in all)
+                foreach (Checkup checkups in allCheckups)
                 {
                     if (ret == checkups.Id)
                     {
@@ -76,7 +76,7 @@ namespace Hospital
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            InstructionFileStorage storageInstruction = new InstructionFileStorage(@"./../../../../Hospital/files/instructions.json");
+            IInstructionFileStorage storageInstruction = new InstructionFileStorage("./../../../../Hospital/files/instructions.json");
             String typeInstruction = "ambulantno-specijalisticki pregled";
             bool instructionIsGiven = true;
             List<Instruction> instructionList = new List<Instruction>();
@@ -92,8 +92,8 @@ namespace Hospital
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            ZakaziPregledLekar zpl = new ZakaziPregledLekar(CheckupList, id);
-            zpl.Show();
+            ZakaziPregledLekar newCheckupInstruction = new ZakaziPregledLekar(CheckupList, idDoctor);
+            newCheckupInstruction.Show();
         }
     }
 }

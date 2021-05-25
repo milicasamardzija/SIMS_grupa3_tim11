@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using Hospital.Model;
 using Newtonsoft.Json;
 using System.IO;
+using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -40,9 +41,9 @@ namespace Hospital
         public int generateIdCheckup()
         {
             int ret = 0;
-            CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            List<Checkup> allCheckups = storage.GetAll();
-            foreach (Checkup ch in allCheckups)
+            ICheckFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            List<Checkup> allCheckups = storageCheckup.GetAll();
+            foreach (Checkup checkups in allCheckups)
             {
                 foreach (Checkup checkup in allCheckups)
                 {
@@ -58,8 +59,8 @@ namespace Hospital
 
         public Patient getPatientFromFile()
         {
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            Patient ret = storage.FindById(54);
+            IPatientFileStorage storagePatient = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
+            Patient ret = storagePatient.FindById(2);
 
             return ret;
         }
@@ -72,13 +73,9 @@ namespace Hospital
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             CheckupFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            //int idAppointment = 0;
-            //Patient patient = getPatientFromFile();
 
             Checkup newCheckups = new Checkup(generateIdCheckup(), (int)doctorBox.SelectedIndex, Convert.ToInt16(textPacijent.Text), Date.DisplayDate,
                 Convert.ToInt16(textTrajanje.Text), (CheckupType)comboBox.SelectedIndex);
-
-            /*public Checkup(int idCh, int idD, int idP, DateTime dateAndTime, int idR, CheckupType type) */
 
             st.Save(newCheckups);
            // listCheckup.Add(newCheckups);

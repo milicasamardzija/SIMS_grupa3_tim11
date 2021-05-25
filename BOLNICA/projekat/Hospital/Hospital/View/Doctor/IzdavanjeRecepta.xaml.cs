@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.FileStorage.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,7 +33,7 @@ namespace Hospital
         public int generateID()
         {
             int ret = 0;
-            RecipeFileStorage storage = new RecipeFileStorage(@"./../../../../Hospital/files/recepti.json");
+            IRecipeFileStorage storage = new RecipeFileStorage(@"./../../../../Hospital/files/recepti.json");
             List<Recipe> allRecipe = storage.GetAll();
             foreach (Recipe recipes in allRecipe)
             {
@@ -53,14 +54,14 @@ namespace Hospital
             RecipeFileStorage storageRecipe = new RecipeFileStorage(@"./../../../../Hospital/files/recepti.json");
             List<Recipe> recipeList = new List<Recipe>();
             
-            Recipe r = new Recipe(generateID(), Convert.ToString(textBox.Text), Convert.ToString(textBox1.Text), Convert.ToString(textBox2.Text),
+            Recipe newRecipe = new Recipe(generateID(), Convert.ToString(textBox.Text), Convert.ToString(textBox1.Text), Convert.ToString(textBox2.Text),
                 Convert.ToString(textBox3.Text), datePicker.DisplayDate, Convert.ToString(textBox5.Text),
                 Convert.ToInt16(textBox6.Text), Convert.ToInt16(textBox7.Text), Convert.ToString(textBox8.Text), Convert.ToString(textBox9.Text),
                 Convert.ToString(textBox10.Text), Convert.ToDateTime(textBox11.Text), Convert.ToDateTime(textBox12.Text),
                 Convert.ToInt16(textBox13.Text));
-            storageRecipe.Save(r);
-            recipeList.Add(r);
-            //this.Close();
+
+            storageRecipe.Save(newRecipe);
+            recipeList.Add(newRecipe);
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

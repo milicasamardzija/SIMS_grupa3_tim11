@@ -22,7 +22,6 @@ namespace Hospital
     /// </summary>
     public partial class IzmenaLeka : Window
     {
-
         public ObservableCollection<Ingredient> DataIngredient { get; set; }
         public ObservableCollection<Medicine> DataMedicine { get; set; }
 
@@ -43,8 +42,6 @@ namespace Hospital
             nazivLText.SelectedText = Convert.ToString(selectedMedicine.Name);
             gramazaLText.SelectedText = Convert.ToString(selectedMedicine.Quantity);
             vrstaLText.SelectedText = Convert.ToString(selectedMedicine.Type);
-
-           
         }
 
         public ObservableCollection<Ingredient> loadIngredient()
@@ -102,6 +99,7 @@ namespace Hospital
  
             medicineList[indexMedicine] = new Medicine(generisiID(), Convert.ToString(nazivLText.Text), Convert.ToDouble(gramazaLText.Text),
                 Convert.ToString(vrstaLText.Text), ingredients, medicines, true);
+
             this.Close();
         }
     }

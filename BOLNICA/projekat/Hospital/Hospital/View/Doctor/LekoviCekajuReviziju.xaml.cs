@@ -23,7 +23,6 @@ namespace Hospital
     /// </summary>
     public partial class LekoviCekajuReviziju : Window
     {
-
         public ObservableCollection<Review> ListMedicineReview { get; set; }
 
         public LekoviCekajuReviziju()
@@ -79,8 +78,8 @@ namespace Hospital
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            RevizijaLekaLekar rll = new RevizijaLekaLekar(ListMedicineReview, (Review)ReviewMedicineList.SelectedItem, ReviewMedicineList.SelectedIndex);
-            rll.Show();
+            RevizijaLekaLekar reviewMedicine = new RevizijaLekaLekar(ListMedicineReview, (Review)ReviewMedicineList.SelectedItem, ReviewMedicineList.SelectedIndex);
+            reviewMedicine.Show();
         }
     }
 }

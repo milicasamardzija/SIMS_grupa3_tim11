@@ -31,8 +31,8 @@ namespace Hospital
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            DodajPotroseniMaterijal dmat = new DodajPotroseniMaterijal();
-            dmat.Show();
+            DodajPotroseniMaterijal newSpentMaterial = new DodajPotroseniMaterijal();
+            newSpentMaterial.Show();
         }
     }
 }

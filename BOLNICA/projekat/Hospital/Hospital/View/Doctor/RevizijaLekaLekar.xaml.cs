@@ -24,9 +24,8 @@ namespace Hospital
     /// </summary>
     public partial class RevizijaLekaLekar : Window
     {
-
         public ObservableCollection<Review> reviewList;
-        public Review lekRevizija;
+        public Review medicineReview;
         public int indexReview;
 
         public RevizijaLekaLekar(ObservableCollection<Review> list, Review selectedReview, int selectedIndex)
@@ -34,15 +33,12 @@ namespace Hospital
             InitializeComponent();
             this.DataContext = this;
             reviewList = list;
-            lekRevizija = selectedReview;
+            medicineReview = selectedReview;
             indexReview = selectedIndex;
 
-            textNaziv.SelectedText = Convert.ToString(lekRevizija.Name);
-            textTipLeka.SelectedText = Convert.ToString(lekRevizija.MedicineType);
-            textTipRevizije.SelectedText = Convert.ToString(lekRevizija.ReviewType);
-            //textLekar.SelectedText = getDoctor();
-            //textKomentar.SelectedText = Convert.ToString(lekRevizija.)
-
+            textNaziv.SelectedText = Convert.ToString(medicineReview.Name);
+            textTipLeka.SelectedText = Convert.ToString(medicineReview.MedicineType);
+            textTipRevizije.SelectedText = Convert.ToString(medicineReview.ReviewType);
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
@@ -50,14 +46,14 @@ namespace Hospital
             this.Close();
         }
 
-        public int generisiID()
+        public int generateIdMedicineReview()
         {
             int ret = 0;
-            MedicineReviewIFileStorage storage = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
-            List<MedicineReview> all = storage.GetAll();
-            foreach (MedicineReview mr in all)
+            MedicineReviewIFileStorage storageMedicineReview = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
+            List<MedicineReview> allMedicineReview = storageMedicineReview.GetAll();
+            foreach (MedicineReview medicineReview in allMedicineReview)
             {
-                foreach (MedicineReview medicineReviews in all)
+                foreach (MedicineReview medicineReviews in allMedicineReview)
                 {
                     if (ret == medicineReviews.Id)
                     {
@@ -69,14 +65,14 @@ namespace Hospital
             return ret;
         }
 
-        public int generateID()
+        public int generateIdMedicine()
         {
             int ret = 0;
-            MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
-            List<Medicine> all = storage.GetAll();
-            foreach (Medicine medicine in all)
+            MedicineIFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
+            List<Medicine> allMedicine = storageMedicine.GetAll();
+            foreach (Medicine medicine in allMedicine)
             {
-                foreach (Medicine medicines in all)
+                foreach (Medicine medicines in allMedicine)
                 {
                     if (ret == medicines.Id)
                     {
@@ -90,7 +86,9 @@ namespace Hospital
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            reviewList[indexReview] = new Review(lekRevizija.Name, lekRevizija.MedicineType, lekRevizija.ReviewType, true, generateID(), generisiID());
+            reviewList[indexReview] = new Review(medicineReview.Name, medicineReview.MedicineType, medicineReview.ReviewType, true, 
+                generateIdMedicine(), generateIdMedicineReview());
+
             this.Close();
         }
     }

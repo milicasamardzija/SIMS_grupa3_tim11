@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using Hospital.Model;
+using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -22,8 +23,7 @@ namespace Hospital
     public partial class Evidencija : Window
     {
         public ObservableCollection<Medicine> MedicineList { get; set; }
-
-
+        
         public Evidencija()
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace Hospital
 
         public ObservableCollection<Medicine> loadJsFile()
         {
-            MedicineFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
+            MedicineIFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             ObservableCollection<Medicine> medicines = new ObservableCollection<Medicine>(storageMedicine.GetAll());
             ObservableCollection<Medicine> returnMedicine = new ObservableCollection<Medicine>();
             
@@ -51,14 +51,14 @@ namespace Hospital
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            IzmenaLeka il = new IzmenaLeka(MedicineList, (Medicine)ListMedicines.SelectedItem, ListMedicines.SelectedIndex);
-            il.Show();
+            IzmenaLeka medicineEdit = new IzmenaLeka(MedicineList, (Medicine)ListMedicines.SelectedItem, ListMedicines.SelectedIndex);
+            medicineEdit.Show();
         }
 
         private void button4_Click(object sender, RoutedEventArgs e)
         {
-            LekoviCekajuReviziju lcr = new LekoviCekajuReviziju();
-            lcr.Show();
+            LekoviCekajuReviziju medicineForReview = new LekoviCekajuReviziju();
+            medicineForReview.Show();
         }
     }
 }

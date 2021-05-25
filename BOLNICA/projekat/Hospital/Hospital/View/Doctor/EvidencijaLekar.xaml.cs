@@ -26,8 +26,8 @@ namespace Hospital
 
         private void button4_Click(object sender, RoutedEventArgs e)
         {
-            Evidencija ee = new Evidencija();
-            ee.Show();
+            Evidencija record = new Evidencija();
+            record.Show();
         }
 
         private void button5_Click(object sender, RoutedEventArgs e)
@@ -37,8 +37,8 @@ namespace Hospital
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            PotroseniMaterijal potr = new PotroseniMaterijal();
-            potr.Show();
+            PotroseniMaterijal spentMaterial = new PotroseniMaterijal();
+            spentMaterial.Show();
         }
     }
 }
