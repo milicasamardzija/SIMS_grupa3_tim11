@@ -88,7 +88,7 @@
     <Compile Include="Controller\InventoryController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
     <Compile Include="Controller\RoomsController.cs" />
-    <Compile Include="View\Pacijent\DodajAnketu.xaml.cs">
+    <Compile Include="View\Patient\DodajAnketu.xaml.cs">
       <DependentUpon>DodajAnketu.xaml</DependentUpon>
     </Compile>
     <Compile Include="FileStorage\GenericFileStorage.cs" />
@@ -139,12 +139,6 @@
     <Compile Include="View\Manager\Ostalo\ObavestenjaUpravnik.xaml.cs">
       <DependentUpon>ObavestenjaUpravnik.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\Obolnici.xaml.cs">
-      <DependentUpon>Obolnici.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pacijent\ZdravstveniKarton.xaml.cs">
-      <DependentUpon>ZdravstveniKarton.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Secretary\Notifications\Blog\DodajObavestenjeBlog.xaml.cs">
       <DependentUpon>DodajObavestenjeBlog.xaml</DependentUpon>
     </Compile>
@@ -160,10 +154,10 @@
     <Compile Include="FileStorage\StaticInvnetoryMovementFileStorage.cs" />
     <Compile Include="Model\Checkup\Survey.cs" />
     <Compile Include="FileStorage\SurveyFileStorage.cs" />
-    <Compile Include="View\Pacijent\OceniteBolnicu.xaml.cs">
+    <Compile Include="View\Patient\OceniteBolnicu.xaml.cs">
       <DependentUpon>OceniteBolnicu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\OcenjivanjeDoktora.xaml.cs">
+    <Compile Include="View\Patient\OcenjivanjeDoktora.xaml.cs">
       <DependentUpon>OcenjivanjeDoktora.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Inventar\PremestanjeInventara.xaml.cs">
@@ -178,7 +172,7 @@
     <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeOdbijeno.xaml.cs">
       <DependentUpon>RenoviranjeOdbijeno.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\SacuvanaAnketa.xaml.cs">
+    <Compile Include="View\Patient\SacuvanaAnketa.xaml.cs">
       <DependentUpon>SacuvanaAnketa.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Secretary\CRUDCheckup\ZauzetiTermini.cs" />
@@ -296,14 +290,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Pacijent\Obolnici.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\ZdravstveniKarton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Secretary\AppOrganisation\BlogGlavni.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -332,7 +318,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pacijent\DodajAnketu.xaml">
+    <Page Include="View\Patient\DodajAnketu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -426,13 +412,13 @@
     <Compile Include="View\Doctor\OdjaviSe.xaml.cs">
       <DependentUpon>OdjaviSe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\PocetnaPacijent.xaml.cs">
+    <Compile Include="View\Patient\PocetnaPacijent.xaml.cs">
       <DependentUpon>PocetnaPacijent.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Doctor\PostojeceAnamneze.xaml.cs">
       <DependentUpon>PostojeceAnamneze.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\PregledPacijenata.xaml.cs">
+    <Compile Include="View\Patient\PregledPacijenata.xaml.cs">
       <DependentUpon>PregledPacijenata.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Prostorije\InventarSobe\PremestanjeIzSobe\PremestanjeInventaraDijalog.xaml.cs">
@@ -452,7 +438,7 @@
     <Compile Include="View\Manager\Prostorije\InventarSobe\PrikazInventaraUSobi.xaml.cs">
       <DependentUpon>PrikazInventaraUSobi.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\PrikazObavestenja.xaml.cs">
+    <Compile Include="View\Patient\PrikazObavestenja.xaml.cs">
       <DependentUpon>PrikazObavestenja.xaml</DependentUpon>
     </Compile>
     <Page Include="View\Doctor\Evidencija.xaml">
@@ -515,11 +501,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pacijent\OceniteBolnicu.xaml">
+    <Page Include="View\Patient\OceniteBolnicu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Pacijent\OcenjivanjeDoktora.xaml">
+    <Page Include="View\Patient\OcenjivanjeDoktora.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -539,7 +525,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pacijent\SacuvanaAnketa.xaml">
+    <Page Include="View\Patient\SacuvanaAnketa.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -586,14 +572,14 @@
     <Compile Include="View\Manager\Prostorije\CRUDProstorije\Sobe.xaml.cs">
       <DependentUpon>Sobe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\WindowPacijent.xaml.cs">
+    <Compile Include="View\Patient\WindowPacijent.xaml.cs">
       <DependentUpon>WindowPacijent.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\Pacijent\DodajTermin.xaml">
+    <Page Include="View\Patient\DodajTermin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pacijent\IzmeniTermin.xaml">
+    <Page Include="View\Patient\IzmeniTermin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -654,10 +640,10 @@
     <Compile Include="View\Secretary\CRUDPatient\RegistredPatient\KreirajNalog.xaml.cs">
       <DependentUpon>KreirajNalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\DodajTermin.xaml.cs">
+    <Compile Include="View\Patient\DodajTermin.xaml.cs">
       <DependentUpon>DodajTermin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\IzmeniTermin.xaml.cs">
+    <Compile Include="View\Patient\IzmeniTermin.xaml.cs">
       <DependentUpon>IzmeniTermin.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
@@ -672,7 +658,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pacijent\PocetnaPacijent.xaml">
+    <Page Include="View\Patient\PocetnaPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -688,7 +674,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pacijent\PregledPacijenata.xaml">
+    <Page Include="View\Patient\PregledPacijenata.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -716,7 +702,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pacijent\PrikazObavestenja.xaml">
+    <Page Include="View\Patient\PrikazObavestenja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -764,7 +750,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pacijent\ObrisiTermin.xaml">
+    <Page Include="View\Patient\ObrisiTermin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -808,7 +794,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pacijent\WindowPacijent.xaml">
+    <Page Include="View\Patient\WindowPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -859,7 +845,7 @@
     <Compile Include="View\Secretary\CRUDPatient\RegistredPatient\PrikaziPacijente.xaml.cs">
       <DependentUpon>PrikaziPacijente.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\ObrisiTermin.xaml.cs">
+    <Compile Include="View\Patient\ObrisiTermin.xaml.cs">
       <DependentUpon>ObrisiTermin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -949,13 +935,11 @@
     <Resource Include="View\Images\Help-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Pacijent\arrow.png" />
+    <Resource Include="View\Patient\arrow.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\Pacijent\download %282%29.png" />
+    <Resource Include="View\Patient\download %282%29.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\hospital.jpg" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

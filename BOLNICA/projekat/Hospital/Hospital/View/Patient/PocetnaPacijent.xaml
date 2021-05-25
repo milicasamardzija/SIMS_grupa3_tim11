@@ -27,9 +27,9 @@
         <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="145,20,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Grid.RowSpan="2" Width="171" Height="38" Foreground="LightBlue"/>
         <Button Content="Moji pregledi" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="117" Margin="102,102,0,0" Height="40" Click="prikaz_termina" Foreground="#FF0E0000" Background="#FFE8DEDE" BorderBrush="#FFF7F1F1" FontFamily="Goudy Old Style" FontSize="14"/>
         <Button Content="Terapija" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="117" Margin="102,162,0,0" Height="40" BorderBrush="#FFFDF7F7" Cursor="Arrow" FontFamily="Goudy Old Style" FontSize="14"/>
-        <Button Content="O klinici" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="117" Margin="102,342,0,0" Height="40"  Click="o_bolnici" RenderTransformOrigin="0.722,0.604" BorderBrush="#FFFDF5F5" FontFamily="Goudy Old Style" FontSize="14"/>
+        <Button Content="O klinici" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="117" Margin="102,342,0,0" Height="40" RenderTransformOrigin="0.722,0.604" BorderBrush="#FFFDF5F5" FontFamily="Goudy Old Style" FontSize="14"/>
         <Button Content="Ocena pregleda" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="117" Margin="102,282,0,0" Height="40" BorderBrush="#FFF6F3F3" FontFamily="Goudy Old Style" FontSize="14" Click="klik_na_ocenjivanje"/>
-        <Button Content="Zdravstveni karton" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="117" Margin="102,222,0,0" Height="40" BorderBrush="#FFFAF4F4" FontFamily="Goudy Old Style" FontSize="14" Click="klik_na_karton"/>
+        <Button Content="Zdravstveni karton" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="117" Margin="102,222,0,0" Height="40" BorderBrush="#FFFAF4F4" FontFamily="Goudy Old Style" FontSize="14"/>
         <Button Content="" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="71" Margin="252,392,0,0" Height="38" BorderBrush="#FFEEEDED" Foreground="#FFFDF4F4" RenderTransformOrigin="0.401,0.502" Click="Odjava">
             <Button.Background>
                 <ImageBrush ImageSource="download (2).png" Stretch="Uniform"/>
