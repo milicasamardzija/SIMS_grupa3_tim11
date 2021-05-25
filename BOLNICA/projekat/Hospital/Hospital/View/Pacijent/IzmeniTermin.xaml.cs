@@ -75,7 +75,7 @@ namespace Hospital
 
 
       
-            DoctorFileStorage df = new DoctorFileStorage();
+            DoctorFileStorage df = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
              lekari= df.GetAll();
             doktor.ItemsSource = lekari;
 

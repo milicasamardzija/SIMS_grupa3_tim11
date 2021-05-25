@@ -9,12 +9,12 @@ public class Doctor : User
    public int freeDays = 25;
    private SpecializationType specializationType;
 
-   private int doctorId;
+  // private int doctorId;
  
 
 
 
-
+/*
     public int DoctorId
     {
         get
@@ -29,7 +29,7 @@ public class Doctor : User
                 OnProperychanged("DoctorId");
             }
         }
-    }
+    }*/
 
     public SpecializationType SpecializationType
     {

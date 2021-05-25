@@ -36,7 +36,7 @@ namespace Hospital
 
         public String getDoctor()
         {
-            DoctorFileStorage storage = new DoctorFileStorage();
+            DoctorFileStorage storage = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
             Doctor doctor = storage.FindById(getIdDoctor());
             return doctor.Name + " " + doctor.Surname;
         }

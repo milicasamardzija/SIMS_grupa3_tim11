@@ -34,13 +34,13 @@ namespace Hospital
         public int generateInstructionId()
         {
             int ret = 0;
-            InstructionFileStorage storage = new InstructionFileStorage();
+            InstructionFileStorage storage = new InstructionFileStorage(@"./../../../../Hospital/files/instructions.json");
             List<Instruction> all = storage.GetAll();
             foreach (Instruction instruction in all)
             {
                 foreach (Instruction instructions in all)
                 {
-                    if (ret == instructions.idInstruction)
+                    if (ret == instructions.Id)
                     {
                         ++ret;
                         break;
@@ -76,7 +76,7 @@ namespace Hospital
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            InstructionFileStorage storageInstruction = new InstructionFileStorage();
+            InstructionFileStorage storageInstruction = new InstructionFileStorage(@"./../../../../Hospital/files/instructions.json");
             String typeInstruction = "ambulantno-specijalisticki pregled";
             bool instructionIsGiven = true;
             List<Instruction> instructionList = new List<Instruction>();

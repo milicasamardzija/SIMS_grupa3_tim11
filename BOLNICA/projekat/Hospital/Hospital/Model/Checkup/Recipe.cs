@@ -3,12 +3,12 @@
 // Created: četvrtak, 25. mart 2021. 17:11:24
 // Purpose: Definition of Class Recipe
 
+using Hospital.Model;
 using System;
 using System.ComponentModel;
 
-public class Recipe
+public class Recipe : Entity
 {
-    public int idRecipe;
     public String name;
     public String nameSurname;
     public String dateBirthPatient;
@@ -24,9 +24,8 @@ public class Recipe
     public DateTime end;
     public int number;
 
-    public Recipe(int id, String n, String s, String dateB, String idH, DateTime d, String mr, int idd, int idm, String q, String di, String des, DateTime b, DateTime e, int num)
+    public Recipe(int id, String n, String s, String dateB, String idH, DateTime d, String mr, int idd, int idm, String q, String di, String des, DateTime b, DateTime e, int num) : base(id)
     {
-        idRecipe = id;
         name = n;
         nameSurname = s;
         dateBirthPatient = dateB;
@@ -53,21 +52,7 @@ public class Recipe
         }
     }
 
-    public int IdRecipe
-    {
-        get
-        {
-            return idRecipe;
-        }
-        set
-        {
-            if(value != idRecipe)
-            {
-                idRecipe = value;
-                OnPropertyChanged("IdRecipe");
-            }
-        }
-    }
+    
     public String Name
     {
         get

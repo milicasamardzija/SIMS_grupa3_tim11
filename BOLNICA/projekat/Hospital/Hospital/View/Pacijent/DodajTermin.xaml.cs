@@ -62,7 +62,7 @@ namespace Hospital
 
             CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
             date.BlackoutDates.Add(kalendar);
-            DoctorFileStorage df = new DoctorFileStorage();
+            DoctorFileStorage df = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
             lekari = df.GetAll();
             lekar.IsEnabled = false;
             time.IsEnabled = false;

@@ -51,7 +51,7 @@ namespace Hospital.Sekretar
 
         }
         private ObservableCollection<Doctor> loadDoctors() {
-            DoctorFileStorage dfs = new DoctorFileStorage();
+            DoctorFileStorage dfs = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
             ObservableCollection<Doctor> doctors = new ObservableCollection<Doctor>(dfs.GetAll());
 
             return doctors;

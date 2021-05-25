@@ -50,14 +50,14 @@ namespace Hospital
             }
             else if (uloga.SelectedIndex == 1) //lekar
             {
-                DoctorFileStorage df = new DoctorFileStorage();
+                DoctorFileStorage df = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
                 List<Doctor> doctors = df.GetAll();
 
                 foreach (Doctor doctor in doctors)
                 {
                     if (doctor.username.Equals(ime.Text) && doctor.password.Equals(lozinka.Password))
                     {
-                        id = doctor.DoctorId;
+                        id = doctor.Id;
                         Pregled d = new Pregled(id);
                         d.Show();
                        // this.Close();

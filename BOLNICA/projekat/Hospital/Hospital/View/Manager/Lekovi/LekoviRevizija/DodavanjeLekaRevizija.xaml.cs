@@ -60,7 +60,7 @@ namespace Hospital
             controller = new MedicineController();
             medicineIds = new List<int>();
             ingredientsIds = new List<int>();
-            storage = new DoctorFileStorage();
+            storage = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
             dodajSpecijalizacije();
         }
 
@@ -171,7 +171,7 @@ namespace Hospital
             {
                 ComboBoxItem item = new ComboBoxItem();
                 item.Content = doctor.Name + "  " + doctor.Surname;
-                item.Tag = doctor.DoctorId;
+                item.Tag = doctor.Id;
                 DoktoriIsfiltrirani.Items.Add(item);
             }
 

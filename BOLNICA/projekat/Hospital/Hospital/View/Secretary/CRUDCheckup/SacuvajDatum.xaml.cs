@@ -48,7 +48,7 @@ namespace Hospital.Sekretar
         private void CreateCheckup(object sender, RoutedEventArgs e)
         {
             Doctor d = (Doctor)doctors.SelectedItem;
-            int idDoctor = d.DoctorId;
+            int idDoctor = d.Id;
             controller.createCheckup(new Checkup(0, idDoctor, patient.Id, chosenDate, idRoom, 0));
             this.Close();
         }

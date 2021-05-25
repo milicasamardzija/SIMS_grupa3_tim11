@@ -41,7 +41,7 @@ namespace Hospital.Sekretar
             idP = patient.Id;  
               
             doctor = selectedDoctor;
-            idD = selectedDoctor.DoctorId;
+            idD = selectedDoctor.Id;
             doctorTerms.ItemsSource = loadCheckups(idD);
           
             

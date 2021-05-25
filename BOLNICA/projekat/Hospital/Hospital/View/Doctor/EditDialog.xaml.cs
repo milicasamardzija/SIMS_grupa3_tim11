@@ -75,7 +75,7 @@ namespace Hospital
 
             foreach (Doctor doctor in doctors)  //prolaz kroz sve dokore u fajlu
             {
-                 if (doctor.DoctorId == idD) //pronalazi doktora sa id-jem ulogovanog doktora
+                 if (doctor.Id == idD) //pronalazi doktora sa id-jem ulogovanog doktora
                  {
                 ret = idD;
                 break; //kada ga nadje izlazi iz petlje

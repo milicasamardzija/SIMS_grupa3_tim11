@@ -52,7 +52,7 @@ namespace Hospital
 
         public List<Doctor> doktoriPoSpecijalizaciji()
         {
-            DoctorFileStorage storage = new DoctorFileStorage();
+            DoctorFileStorage storage = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
             List<Doctor> filtratedDoctors = new List<Doctor>();
             foreach (Doctor doctor in storage.GetAll())
             {
@@ -85,7 +85,7 @@ namespace Hospital
             {
                 ComboBoxItem item = new ComboBoxItem();
                 item.Content = doctor.Name + "  " + doctor.Surname;
-                item.Tag = doctor.DoctorId;
+                item.Tag = doctor.Id;
                 LekarComboBox.Items.Add(item);
             }
         }

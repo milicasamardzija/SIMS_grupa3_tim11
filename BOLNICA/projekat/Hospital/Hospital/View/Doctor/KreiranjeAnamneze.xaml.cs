@@ -37,7 +37,7 @@ namespace Hospital
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            AnamnesisFileStorage st = new AnamnesisFileStorage();
+            AnamnesisFileStorage st = new AnamnesisFileStorage(@"./../../../../Hospital/files/anamnesis.json");
             List<Anamnesis> listAna = new List<Anamnesis>();
             int id = 1;
             Anamnesis a = new Anamnesis(id, Convert.ToString(textIme), Convert.ToString(textPol.Text), Convert.ToString(textDatum.Text),
@@ -50,8 +50,6 @@ namespace Hospital
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            //AnamnesisFileStorage storage = new AnamnesisFileStorage();
-           // ObservableCollection<Anamnesis> aa = new ObservableCollection<Anamnesis>(storage.GetAll());
             PostojeceAnamneze pa = new PostojeceAnamneze();
             pa.Show();
             this.Close();

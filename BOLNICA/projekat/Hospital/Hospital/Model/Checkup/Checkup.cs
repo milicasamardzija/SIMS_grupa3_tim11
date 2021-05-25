@@ -20,7 +20,7 @@ namespace Hospital.Model
         private int idPatient;
 
         public Checkup() { }
-        public Checkup(int idCh, int idD, int idP, DateTime dateAndTime, int idR, CheckupType type) 
+        public Checkup(int idCh, int idD, int idP, DateTime dateAndTime, int idR, CheckupType type)
         {
             this.idCh = idCh;
             this.idDoctor = idD;
@@ -32,7 +32,7 @@ namespace Hospital.Model
 
         }
 
-        public Checkup(int ida,int ch, DateTime dateTime1, String ti, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor)
+        public Checkup(int ida,int ch, DateTime dateTime1, String ti, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor) 
         {
           
             this.Date = dateTime1;
@@ -43,13 +43,13 @@ namespace Hospital.Model
             this.IdCh = ch;
             this.Type = selectedIndex;
 
-            this.IdDoctor = doctor.DoctorId;
+            this.IdDoctor = doctor.Id;
             this.IdPatient = patient.Id;    
 
 
         }
 
-        public Checkup(int ida, int ch, DateTime dateTime1, String ti, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor, int roomId)
+        public Checkup(int ida, int ch, DateTime dateTime1, String ti, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor, int roomId)  
         {
             
             this.Date = dateTime1;

@@ -32,13 +32,13 @@ namespace Hospital
         public int generateID()
         {
             int ret = 0;
-            RecipeFileStorage storage = new RecipeFileStorage();
+            RecipeFileStorage storage = new RecipeFileStorage(@"./../../../../Hospital/files/recepti.json");
             List<Recipe> allRecipe = storage.GetAll();
             foreach (Recipe recipes in allRecipe)
             {
                 foreach (Recipe recipe in allRecipe)
                 {
-                    if (ret == recipe.idRecipe)
+                    if (ret == recipe.Id)
                     {
                         ++ret;
                         break;
@@ -50,7 +50,7 @@ namespace Hospital
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            RecipeFileStorage storageRecipe = new RecipeFileStorage();
+            RecipeFileStorage storageRecipe = new RecipeFileStorage(@"./../../../../Hospital/files/recepti.json");
             List<Recipe> recipeList = new List<Recipe>();
             
             Recipe r = new Recipe(generateID(), Convert.ToString(textBox.Text), Convert.ToString(textBox1.Text), Convert.ToString(textBox2.Text),

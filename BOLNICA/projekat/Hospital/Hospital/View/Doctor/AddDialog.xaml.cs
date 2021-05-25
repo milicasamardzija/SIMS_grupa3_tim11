@@ -55,7 +55,7 @@ namespace Hospital
            
             foreach (Doctor doctor in doctors)  
             {
-                if (doctor.DoctorId == idD)
+                if (doctor.Id == idD)
                 {
                     ret = doctor;
                     break; 
