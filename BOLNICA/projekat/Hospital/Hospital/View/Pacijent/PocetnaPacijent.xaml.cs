@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.View.Pacijent;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -62,7 +63,9 @@ namespace Hospital
 
         private void klik_na_karton(object sender, RoutedEventArgs e)
         {
-
+            ZdravstveniKarton karton = new ZdravstveniKarton(id);
+            karton.Show();
+            this.Close();
         }
 
         private void klik_na_ocenjivanje(object sender, RoutedEventArgs e)
