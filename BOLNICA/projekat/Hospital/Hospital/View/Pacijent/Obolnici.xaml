@@ -19,6 +19,21 @@
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
+        <Label Content="Zdravo bolnica" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.562,4.297" Margin="10,78,0,0" Width="150" FontSize="22" FontFamily="Goudy Old Style"/>
 
+        <Image Margin="15,100,70.2,159.6" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.986"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-2.452"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+            <Image.Source>
+                <BitmapImage  UriSource="hospital.jpg" />
+            </Image.Source>
+        </Image>
+        <ScrollBar HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,58,0,-0.4" Width="17" Height="392"/>
     </Grid>
 </Window>

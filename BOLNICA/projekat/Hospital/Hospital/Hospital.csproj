@@ -949,6 +949,8 @@
   <ItemGroup>
     <Resource Include="View\Pacijent\download %282%29.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="View\Pacijent\hospital.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
