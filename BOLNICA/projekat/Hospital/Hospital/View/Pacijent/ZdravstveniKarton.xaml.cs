@@ -21,7 +21,7 @@ namespace Hospital.View.Pacijent
     {
 
         int id;
-        String date;
+        DateTime date;
 
         public ZdravstveniKarton(int idP)
         {
@@ -41,14 +41,14 @@ namespace Hospital.View.Pacijent
                         imePacijenta.Text = patient.name + " " + patient.surname;
                         ime.Text = patient.name;
                         prezime.Text = patient.surname;
-                        //  datum.Text = patient.birthdayDate;
+                    
                         jmbg.Text = patient.jmbg;
 
                         broj.Text = record.IdHealthCard.ToString();
                         grupa.Text = record.bloodType.ToString();
-                        datum.Text = patient.birthdayDate.ToString();
-                        date = "05/10/1998";
-                        datum.Text = date;
+                        date = record.birthdayDate.Date;
+
+                        datum.Text = date.ToString();
                         nzo.Text = record.HealthCareCategory.ToString();
 
 

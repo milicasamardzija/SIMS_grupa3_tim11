@@ -98,8 +98,8 @@ namespace Hospital
             timeText.SelectedValue = selectedApp.DateTime.ToString("HH:mm");
 
 
-            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, termin.DateTime.AddDays(-3));
-            CalendarDateRange kalendar1 = new CalendarDateRange(termin.DateTime.AddDays(3), DateTime.MaxValue);
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, termin.Date.AddDays(-3));
+            CalendarDateRange kalendar1 = new CalendarDateRange(termin.Date.AddDays(3), DateTime.MaxValue);
 
             dateText.BlackoutDates.Add(kalendar);
             dateText.BlackoutDates.Add(kalendar1);

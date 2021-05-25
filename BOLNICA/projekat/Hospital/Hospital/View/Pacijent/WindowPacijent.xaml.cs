@@ -117,6 +117,7 @@ namespace Hospital
         private void dodavanje(object sender, RoutedEventArgs e)
         {
             DodajTermin dd = new DodajTermin(AppointmentList, id); //salje se i id ulogovang pacijenta
+            dd.Show();
 
 
 
