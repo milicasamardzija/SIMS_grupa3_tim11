@@ -3,21 +3,32 @@
 // Created: Monday, March 22, 2021 3:29:16 PM
 // Purpose: Definition of Class Checkup
 
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace Hospital.Model
 {
-    public class Checkup : Appointment
+    public class Checkup 
     {
 
-        
-
-        private CheckupType type;
         private int idCh;
-        private int idDoctor;
+        private DateTime date;
+      
+        private double duration;
+
+        private Patient patient;
         private int idPatient;
+        private Doctor doctor;
+        private int idDoctor;
+        private Room room;
+        private int idRoom;
+
+       
+        private CheckupType type;
+       
+       
 
         public Checkup() { }
         public Checkup(int idCh, int idD, int idP, DateTime dateAndTime, int idR, CheckupType type)
@@ -32,36 +43,11 @@ namespace Hospital.Model
 
         }
 
-        public Checkup(int ida,int ch, DateTime dateTime1, String ti, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor) 
-        {
-          
-            this.Date = dateTime1;
-            this.Time = ti;
-            this.Duration = v2;
-            this.Doctor = doctor;
-            this.Patient = patient;
-            this.IdCh = ch;
-            this.Type = selectedIndex;
+      
+        
+      
 
-            this.IdDoctor = doctor.Id;
-            this.IdPatient = patient.Id;    
-
-
-        }
-
-        public Checkup(int ida, int ch, DateTime dateTime1, String ti, double v2, CheckupType selectedIndex, Patient patient, Doctor doctor, int roomId)  
-        {
-            
-            this.Date = dateTime1;
-            this.Time = ti;
-            this.Duration = v2;
-            this.Doctor = doctor;
-            this.Patient = patient;
-            this.idCh = ch;
-            this.type = selectedIndex;
-            this.IdRoom = roomId;
-        }
-
+        
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string name)
@@ -69,6 +55,108 @@ namespace Hospital.Model
             if (PropertyChanged != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+       
+
+        [JsonIgnore]
+        public Room Room
+        {
+            get
+            {
+                return room;
+            }
+            set
+            {
+                if (value != room)
+                {
+                    room = value;
+                    OnPropertyChanged("Date");
+                }
+            }
+        }
+
+        public double Duration
+        {
+            get
+            {
+                return duration;
+            }
+            set
+            {
+                if (value != duration)
+                {
+                    duration = value;
+                    OnPropertyChanged("Duration");
+                }
+            }
+        }
+
+
+        [JsonIgnore]
+        public Patient Patient
+        {
+            get
+            {
+                return patient;
+            }
+            set
+            {
+                if (value != patient)
+                {
+                    patient = value;
+                    OnPropertyChanged("Patient");
+                }
+            }
+        }
+
+        [JsonIgnore]
+        public Doctor Doctor
+        {
+            get
+            {
+                return doctor;
+            }
+            set
+            {
+                if (value != doctor)
+                {
+                    doctor = value;
+                    OnPropertyChanged("Doctor");
+                }
+            }
+        }
+
+       
+        public int IdRoom
+        {
+            get
+            {
+                return idRoom;
+            }
+            set
+            {
+                if (value != idRoom)
+                {
+                    idRoom = value;
+                    OnPropertyChanged("Date");
+                }
+            }
+        }
+        public DateTime Date
+        {
+            get
+            {
+                return date;
+            }
+            set
+            {
+                if (value != date)
+                {
+                    date = value;
+                    OnPropertyChanged("Date");
+                }
             }
         }
 

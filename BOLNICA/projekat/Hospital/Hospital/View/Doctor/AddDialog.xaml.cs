@@ -89,13 +89,14 @@ namespace Hospital
             CheckupFileStorage st = new CheckupFileStorage();
             Patient patient = getPatientFromFile();
             Doctor doctor = getDoctorFromFile();
-            int ida = 1;  
+         
+          /*  Checkup newCheckup = new Checkup( generateID(), dateP.DisplayDate, Convert.ToString(timeText.Text), Convert.ToDouble(durationText.Text),
+                (CheckupType)comboBox.SelectedIndex,patient.Id,doctor.Id);
 
-            Checkup newCheckup = new Checkup(ida, generateID(), dateP.DisplayDate, Convert.ToString(timeText.Text), Convert.ToDouble(durationText.Text),
-                (CheckupType)comboBox.SelectedIndex,patient,doctor);
             st.Save(newCheckup);
             listCheckup.Add(newCheckup);
             this.Close();
+          */
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
