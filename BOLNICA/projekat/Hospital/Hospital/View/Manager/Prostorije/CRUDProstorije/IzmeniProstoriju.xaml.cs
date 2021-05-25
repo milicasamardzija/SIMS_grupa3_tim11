@@ -1,4 +1,6 @@
-﻿using Hospital.FileStorage.Interfaces;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using Hospital.FileStorage.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,53 +19,32 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for IzmeniProstoriju.xaml
-    /// </summary>
     public partial class IzmeniProstoriju : UserControl
     {
-        public ObservableCollection<Room> listRoom; //tabela
-        public Room room; //soba koja je selektovana u tabeli
-        public int index; //index selekovanog reda u tablei
-        public Frame frame;
-        public IzmeniProstoriju(ObservableCollection<Room> list, Room selectedRoom, int selectedIndex, Frame f)
+        private ObservableCollection<RoomDTO> rooms = new ObservableCollection<RoomDTO>();
+        private int index;
+        private Frame frame = new Frame();
+        private RoomsController controller = new RoomsController();
+        private RoomDTO room = new RoomDTO();
+        public RoomDTO Room
+        {
+            get { return room; }
+            set { room = value; }
+        }
+        public IzmeniProstoriju(ObservableCollection<RoomDTO> rooms, RoomDTO room, int index, Frame frame)
         {
             InitializeComponent();
-
-            listRoom = list;
-            index = selectedIndex;
-            room = selectedRoom;
-            frame = f;
-
-            //ovo se popunjavaju textBox-evi da bi kada se otvori dijalog bilo uneto ono sto se nalazi u tabeli
-            brojProstorijeTxt.SelectedText = Convert.ToString(room.Id);
-            spratTxt.SelectedText = Convert.ToString(room.Floor);
-            namenaTxt.SelectedIndex = (int)room.Purpose;
-            kapacitetTxt.SelectedText = Convert.ToString(room.Capacity);
+            this.DataContext = this;
+            this.rooms = rooms;
+            this.room = room;
+            this.index = index;
+            this.frame = frame;
         }
 
         private void izmenaProstorije(object sender, RoutedEventArgs e)
         {
-            RoomFileStorage storage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
-            List<Room> allRooms = storage.GetAll();
-
-            int id = Convert.ToInt16(brojProstorijeTxt.Text);
-
-            foreach (Room r in allRooms)
-            {
-                if (r.Id == id)
-                {
-                    //menjam sobu
-                    r.Id = Convert.ToInt16(brojProstorijeTxt.Text);
-                    r.Floor = Convert.ToInt16(spratTxt.Text);
-                    r.Purpose = (Purpose)namenaTxt.SelectedIndex;
-                    r.Capacity = Convert.ToInt16(kapacitetTxt.Text);
-                    listRoom[index] = new Room(Convert.ToInt16(r.Id), Convert.ToInt16(r.Floor), false, (Purpose)r.Purpose, Convert.ToInt16(r.Capacity));
-                    break;
-                }
-            }
-
-            storage.SaveAll(allRooms); //cuvam novu izmenjenu sobu
+            controller.update(room);
+            rooms[index] = room;
             frame.NavigationService.Navigate(new BelsekaMagacin());
         }
 

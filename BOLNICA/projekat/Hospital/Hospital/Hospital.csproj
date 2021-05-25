@@ -63,6 +63,7 @@
     </ApplicationDefinition>
     <Compile Include="FileStorage\Interfaces\IAlergensFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IMedicalRecordFileStorage.cs" />
+    <Compile Include="DTO\RoomDTO.cs" />
     <Compile Include="FileStorage\Interfaces\IngredientsIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\INoticeFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\INotificationsFileStorage.cs" />

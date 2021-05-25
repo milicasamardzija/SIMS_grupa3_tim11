@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.FileStorage.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -31,15 +32,22 @@ namespace Hospital
         }
         private Frame managerFrame = new Frame();
    
-        public Magacin(ObservableCollection<Room> roomList, Frame frame)
+        public Magacin( Frame frame)
         {
             InitializeComponent();
             MagacinFrame.NavigationService.Navigate(new BelsekaMagacin());
             this.DataContext = this;
             InventoryList = loadJason();
-            ListRoom = roomList;
+            ListRoom = loadJasonR();
             ListaInventara.ItemsSource = InventoryList;
             managerFrame = frame;
+        }
+        public ObservableCollection<Room> loadJasonR()
+        {
+            // RoomFileStorage fs = new RoomFileStorage();
+            RoomIFileStorage fs = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
+            ObservableCollection<Room> rs = new ObservableCollection<Room>(fs.GetAll());
+            return rs;
         }
 
         public ObservableCollection<Inventory> loadJason()

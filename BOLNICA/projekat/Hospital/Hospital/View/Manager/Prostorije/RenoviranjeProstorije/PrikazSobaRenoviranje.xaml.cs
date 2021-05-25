@@ -1,4 +1,5 @@
-﻿using Hospital.FileStorage.Interfaces;
+﻿using Hospital.DTO;
+using Hospital.FileStorage.Interfaces;
 using Hospital.Model;
 using Hospital.Service;
 using System;
@@ -29,8 +30,8 @@ namespace Hospital
         }
         private RenovationIFileStorage storage = new RenovationFileStorage("./../../../../Hospital/files/storageRenovationRooms.json");
         private Frame back = new Frame();
-        private ObservableCollection<Room> rooms = new ObservableCollection<Room>();
-        public PrikazSobaRenoviranje(ObservableCollection<Room> roomList, Frame roomss)
+        private ObservableCollection<RoomDTO> rooms = new ObservableCollection<RoomDTO>();
+        public PrikazSobaRenoviranje(ObservableCollection<RoomDTO> roomList, Frame roomss)
         {
             InitializeComponent();
             Renovations = loadJason();
@@ -60,7 +61,7 @@ namespace Hospital
 
         private void unazad(object sender, RoutedEventArgs e)
         {
-            back.NavigationService.Navigate(new Sobe(rooms, back));
+            back.NavigationService.Navigate(new Sobe(back));
         }
     }
 }

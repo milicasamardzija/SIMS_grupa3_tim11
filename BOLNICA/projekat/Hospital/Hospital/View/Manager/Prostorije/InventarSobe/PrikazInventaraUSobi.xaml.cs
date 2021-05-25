@@ -132,7 +132,7 @@ namespace Hospital
 
         private void unazad(object sender, RoutedEventArgs e)
         {
-            back.NavigationService.Navigate(new Sobe(rooms,back));
+            back.NavigationService.Navigate(new Sobe(back));
         }
     }
 }

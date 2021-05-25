@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -16,45 +18,32 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for IzbrisiProstoriju.xaml
-    /// </summary>
     public partial class IzbrisiProstoriju : UserControl
     {
-        public ObservableCollection<Room> listRoom;
-        public int index;
-        public int id;
-        public Frame frame;
-        public IzbrisiProstoriju(ObservableCollection<Room> list, Room selectedRoom, int selectedIndex,Frame f)
+        private ObservableCollection<RoomDTO> rooms = new ObservableCollection<RoomDTO>();
+        private int index;
+        private Frame frame = new Frame();
+        private RoomsController controller = new RoomsController();
+        private RoomDTO room = new RoomDTO();
+        public RoomDTO Room
+        {
+            get { return room; }
+            set { room = value; }
+        }
+        public IzbrisiProstoriju(ObservableCollection<RoomDTO> rooms, RoomDTO room, int index,Frame frame)
         {
             InitializeComponent();
-            listRoom = list;
-            id = selectedRoom.Id; //id sobe koja je selktovana
-            index = selectedIndex; //indeks u tabeli
-            frame = f;
-
-            brojProstorijeTxt.SelectedText = Convert.ToString(selectedRoom.Id);
-            spratTxt.SelectedText = Convert.ToString(selectedRoom.Floor);
-            namenaTxt.SelectedIndex = (int)selectedRoom.Purpose;
-            kapacitetTxt.SelectedText = Convert.ToString(selectedRoom.Capacity);
+            this.DataContext = this;
+            this.rooms = rooms;
+            this.room = room;
+            this.index = index;
+            this.frame = frame;
         }
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-            RoomFileStorage storage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
-            RoomInventoryFileStorage storageInventory = new RoomInventoryFileStorage();
-            InventoryFileStorage storageOfInventories = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
-
-            storage.DeleteById(id); //brise se iz fajla na osnovu id-a
-            listRoom.RemoveAt(index); //brise se iz prikaza tabele
-
-            foreach (RoomInventory inventory in storageInventory.GetAll())
-            {
-                if (inventory.IdRoom== id)
-                {
-                    storageInventory.DeleteByIdRoom(id);
-                }
-            }
+            controller.deleteById(room.Id);
+            rooms.RemoveAt(index);
             frame.NavigationService.Navigate(new BelsekaMagacin());
         }
 
