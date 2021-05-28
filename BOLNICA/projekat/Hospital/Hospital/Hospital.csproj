@@ -80,6 +80,15 @@
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
     <Compile Include="FileStorage\NoticeInterestingFileStorage.cs" />
     <Compile Include="Model\Notification\NoticeInteresting.cs" />
+    <Compile Include="View\Doctor\BolnickoLecenje.xaml.cs">
+      <DependentUpon>BolnickoLecenje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Doctor\UvidUSobe.xaml.cs">
+      <DependentUpon>UvidUSobe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Doctor\ZauzmiSobu.xaml.cs">
+      <DependentUpon>ZauzmiSobu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeLekaRevizijaUpravnik.xaml.cs">
       <DependentUpon>BrisanjeLekaRevizijaUpravnik.xaml</DependentUpon>
     </Compile>
@@ -293,6 +302,18 @@
       <DependentUpon>ZamenaLekova.xaml</DependentUpon>
     </Compile>
     <Page Include="View\Doctor\AddDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Doctor\BolnickoLecenje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Doctor\UvidUSobe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Doctor\ZauzmiSobu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

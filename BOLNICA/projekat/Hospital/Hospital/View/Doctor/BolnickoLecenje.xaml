@@ -1,0 +1,28 @@
+﻿<Window x:Class="Hospital.View.Doctor.BolnickoLecenje"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital.View.Doctor"
+        mc:Ignorable="d"
+        Title="BolnickoLecenje" Height="306.961" Width="551.972" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label x:Name="label1" Content="Sobe" HorizontalAlignment="Left" FontSize="16" Margin="10,0,0,228.6" Width="91" Foreground="#FFFF008D"/>
+        <DataGrid Margin="10,38,137,33.6" x:Name="listRooms" ItemsSource="{Binding Path=LookInRooms}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="SPRAT" Width="150" Binding="{Binding Floor}"/>
+                <DataGridTextColumn Header="VRSTA" Width="190" Binding="{Binding Purpose}"/>
+                <DataGridTextColumn Header="KAPACITET" Width="190" Binding="{Binding Capacity}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox Width="150" IsChecked ="{Binding Occupancy}" IsEnabled="False"></CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="button1" Content="Izadji" HorizontalAlignment="Left" Height="30" Margin="425,214,0,33.6" Width="100" Click="button1_Click" />
+        <Button x:Name="button2" Content="Zauzmi" HorizontalAlignment="Left" Height="30" Margin="425,61,0,186.6" Width="100" Click="button2_Click" />
+    </Grid>
+</Window>

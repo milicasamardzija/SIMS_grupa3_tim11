@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.View.Doctor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,12 @@ namespace Hospital
         {
             UputZaAmbulantnoSpecijalistickiPregled instruction = new UputZaAmbulantnoSpecijalistickiPregled();
             instruction.Show();
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            BolnickoLecenje medicalCare = new BolnickoLecenje();
+            medicalCare.Show();
         }
     }
 }

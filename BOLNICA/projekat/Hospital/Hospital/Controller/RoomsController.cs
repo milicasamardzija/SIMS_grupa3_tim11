@@ -40,5 +40,10 @@ namespace Hospital.Controller
         {
             service.update(new Room(room.Id,room.Floor,room.Occupancy,room.Purpose,room.Capacity));
         }
+
+        public void takenRoom()
+        {
+            service.takenRooms();
+        }
     }
 }

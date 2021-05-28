@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.View.Doctor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,6 +40,12 @@ namespace Hospital
         {
             PotroseniMaterijal spentMaterial = new PotroseniMaterijal();
             spentMaterial.Show();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            UvidUSobe roomLook = new UvidUSobe();
+            roomLook.Show();
         }
     }
 }
