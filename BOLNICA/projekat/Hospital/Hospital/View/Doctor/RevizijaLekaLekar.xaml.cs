@@ -41,47 +41,42 @@ namespace Hospital
             textTipRevizije.SelectedText = Convert.ToString(medicineReview.ReviewType);
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
         public int generateIdMedicineReview()
         {
-            int ret = 0;
+            int retMedicineReview = 0;
             MedicineReviewIFileStorage storageMedicineReview = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
             List<MedicineReview> allMedicineReview = storageMedicineReview.GetAll();
             foreach (MedicineReview medicineReview in allMedicineReview)
             {
                 foreach (MedicineReview medicineReviews in allMedicineReview)
                 {
-                    if (ret == medicineReviews.Id)
+                    if (retMedicineReview == medicineReviews.Id)
                     {
-                        ++ret;
+                        ++retMedicineReview;
                         break;
                     }
                 }
             }
-            return ret;
+            return retMedicineReview;
         }
 
         public int generateIdMedicine()
         {
-            int ret = 0;
+            int retMedicine = 0;
             MedicineIFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             List<Medicine> allMedicine = storageMedicine.GetAll();
             foreach (Medicine medicine in allMedicine)
             {
                 foreach (Medicine medicines in allMedicine)
                 {
-                    if (ret == medicines.Id)
+                    if (retMedicine == medicines.Id)
                     {
-                        ++ret;
+                        ++retMedicine;
                         break;
                     }
                 }
             }
-            return ret;
+            return retMedicine;
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -89,6 +84,11 @@ namespace Hospital
             reviewList[indexReview] = new Review(medicineReview.Name, medicineReview.MedicineType, medicineReview.ReviewType, true, 
                 generateIdMedicine(), generateIdMedicineReview());
 
+            this.Close();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
     }

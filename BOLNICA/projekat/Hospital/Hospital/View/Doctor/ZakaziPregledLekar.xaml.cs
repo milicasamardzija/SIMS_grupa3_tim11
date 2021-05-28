@@ -40,36 +40,31 @@ namespace Hospital
 
         public int generateIdCheckup()
         {
-            int ret = 0;
+            int returnCheckupId = 0;
             ICheckFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             List<Checkup> allCheckups = storageCheckup.GetAll();
             foreach (Checkup checkups in allCheckups)
             {
                 foreach (Checkup checkup in allCheckups)
                 {
-                    if (ret == checkup.Id)
+                    if (returnCheckupId == checkup.Id)
                     {
-                        ++ret;
+                        ++returnCheckupId;
                         break;
                     }
                 }
             }
-            return ret;
+            return returnCheckupId;
         }
 
         public Patient getPatientFromFile()
         {
             IPatientFileStorage storagePatient = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            Patient ret = storagePatient.FindById(2);
+            Patient returnPatient = storagePatient.FindById(2);
 
-            return ret;
+            return returnPatient;
         }
-
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
+        
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             CheckupFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
@@ -78,7 +73,11 @@ namespace Hospital
                 Convert.ToInt16(textTrajanje.Text), (CheckupType)comboBox.SelectedIndex);
 
             st.Save(newCheckups);
-           // listCheckup.Add(newCheckups);
+            this.Close();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
     }

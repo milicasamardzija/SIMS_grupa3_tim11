@@ -32,21 +32,21 @@ namespace Hospital
 
         public int generateID()
         {
-            int ret = 0;
-            IRecipeFileStorage storage = new RecipeFileStorage(@"./../../../../Hospital/files/recepti.json");
+            int returnRecipe = 0;
+            IRecipeFileStorage storage = new RecipeFileStorage("./../../../../Hospital/files/recepti.json");
             List<Recipe> allRecipe = storage.GetAll();
             foreach (Recipe recipes in allRecipe)
             {
                 foreach (Recipe recipe in allRecipe)
                 {
-                    if (ret == recipe.Id)
+                    if (returnRecipe == recipe.Id)
                     {
-                        ++ret;
+                        ++returnRecipe;
                         break;
                     }
                 }
             }
-            return ret;
+            return returnRecipe;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

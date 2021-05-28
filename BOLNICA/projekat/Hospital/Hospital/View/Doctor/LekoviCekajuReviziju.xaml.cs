@@ -36,7 +36,7 @@ namespace Hospital
         {
             MedicineIFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             MedicineReviewIFileStorage storageMedicineReview = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
-            ObservableCollection<Review> returnLekRevizija = new ObservableCollection<Review>();
+            ObservableCollection<Review> returnMedicineReview = new ObservableCollection<Review>();
 
             foreach (Medicine medicine in storageMedicine.GetAll())
             {
@@ -46,7 +46,7 @@ namespace Hospital
                     {
                         if (medicineRewiev.IdMedicine == medicine.Id)
                         {
-                            returnLekRevizija.Add(new Review(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
+                            returnMedicineReview.Add(new Review(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
                             break;
                         }
                     }
@@ -61,14 +61,14 @@ namespace Hospital
                     {
                         if (medicineRewiev.IdMedicine == medicine.Id)
                         {
-                            returnLekRevizija.Add(new Review(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
+                            returnMedicineReview.Add(new Review(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
                             break;
                         }
                     }
                 }
             }
 
-            return returnLekRevizija;
+            return returnMedicineReview;
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

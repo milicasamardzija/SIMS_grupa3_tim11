@@ -29,18 +29,18 @@ namespace Hospital
             set;
         }
 
-        public int id;
+        public int idSignedDoctor;
         public int idPatient = 1;
 
         public Pregled(int idDoctor)
         {
             InitializeComponent();
             this.DataContext = this;
-            id = idDoctor;
-            CheckupList = loadJson(id);
+            idSignedDoctor = idDoctor;
+            CheckupList = loadJson(idSignedDoctor);
         }
 
-        public List<Checkup> loadJson(int idD)
+        public List<Checkup> loadJson(int idDoctorSigned)
         {
             ICheckFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             List<Checkup> allCheckups = new List<Checkup>(storageCheckup.GetAll());
@@ -55,7 +55,7 @@ namespace Hospital
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            AddDialog addDialog = new AddDialog(CheckupList, id);
+            AddDialog addDialog = new AddDialog(CheckupList, idSignedDoctor);
             addDialog.Show();
         }
 

@@ -30,12 +30,7 @@ namespace Hospital
             Evidencija record = new Evidencija();
             record.Show();
         }
-
-        private void button5_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
+        
         private void button3_Click(object sender, RoutedEventArgs e)
         {
             PotroseniMaterijal spentMaterial = new PotroseniMaterijal();
@@ -46,6 +41,11 @@ namespace Hospital
         {
             UvidUSobe roomLook = new UvidUSobe();
             roomLook.Show();
+        }
+
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

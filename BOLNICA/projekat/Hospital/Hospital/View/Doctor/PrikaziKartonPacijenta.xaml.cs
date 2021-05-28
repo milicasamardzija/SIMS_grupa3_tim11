@@ -30,7 +30,7 @@ namespace Hospital
         
         public ObservableCollection<Patient> Pacijenti;
         public Patient patient;
-        public int idP;
+        public int idPatient;
 
         public PrikaziKartonPacijenta(ObservableCollection<Patient> list, Patient selectedPatient,int selectedIndex)
         {
@@ -38,18 +38,18 @@ namespace Hospital
             this.DataContext = this;
             Pacijenti = list;
             patient = selectedPatient;
-            idP = selectedIndex;
-            MedicalList = loadFileJ(idP);
+            idPatient = selectedIndex;
+            MedicalList = loadFileJ(idPatient);
         }
 
-        public ObservableCollection<MedicalRecord> loadFileJ(int id)
+        public ObservableCollection<MedicalRecord> loadFileJ(int idPatients)
         {
             IMedicalRecordFileStorage storageMedicalRecord = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
             ObservableCollection<MedicalRecord> allMedicalRecords = new ObservableCollection<MedicalRecord>(storageMedicalRecord.GetAll());
             ObservableCollection<MedicalRecord> returnMedicalRecord = new ObservableCollection<MedicalRecord>();
             foreach(MedicalRecord medicalRecord in allMedicalRecords)
             {
-                if(medicalRecord.Id == id)
+                if(medicalRecord.Id == idPatients)
                 {
                     returnMedicalRecord.Add(medicalRecord);
                 }

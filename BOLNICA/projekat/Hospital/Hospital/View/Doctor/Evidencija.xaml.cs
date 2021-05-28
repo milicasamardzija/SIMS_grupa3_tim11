@@ -36,17 +36,12 @@ namespace Hospital
             MedicineIFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             ObservableCollection<Medicine> medicines = new ObservableCollection<Medicine>(storageMedicine.GetAll());
             ObservableCollection<Medicine> returnMedicine = new ObservableCollection<Medicine>();
-            
-            foreach(Medicine medicine in medicines)
+
+            foreach (Medicine medicine in medicines)
             {
                 returnMedicine.Add(medicine);
             }
             return returnMedicine;
-        }
-
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -59,6 +54,11 @@ namespace Hospital
         {
             LekoviCekajuReviziju medicineForReview = new LekoviCekajuReviziju();
             medicineForReview.Show();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

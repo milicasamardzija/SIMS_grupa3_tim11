@@ -50,41 +50,41 @@ namespace Hospital
 
         public int generisiID()
         {
-            int ret = 0;
+            int returnCheckup = 0;
             ICheckFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             List<Checkup> allCheckups = storage.GetAll();
             foreach (Checkup checkups in allCheckups)
             {
                 foreach (Checkup checkup in allCheckups)
                 {
-                    if (ret == checkup.Id)
+                    if (returnCheckup == checkup.Id)
                     {
-                        ++ret;
+                        ++returnCheckup;
                         break;
                     }
                 }
             }
-            return ret;
+            return returnCheckup;
         }
 
         public int getDoctorFromFile() 
         {
-            int ret = 0;
+            int returnDoctor = 0;
             List<Doctor> doctors = JsonConvert.DeserializeObject<List<Doctor>>(File.ReadAllText(@"./../../../../Hospital/files/storageDoctor.json")); 
 
             foreach (Doctor doctor in doctors)  
             {
                  if (doctor.Id == idD) 
                  {
-                ret = idD;
+                    returnDoctor = idD;
                 break;
                 }
             }
 
-            return ret;
+            return returnDoctor;
         }
 
-        public void components()
+        public void componentsEditDialog()
         {
             checkup.Date = datePick.DisplayDate;
             checkup.Duration = Convert.ToDouble(durationText.Text);
@@ -96,11 +96,9 @@ namespace Hospital
         private void button_Click(object sender, RoutedEventArgs e)
         {
             ICheckFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            components();
-            int doctorId = getDoctorFromFile();
-            int idCheckup = generisiID();
+            componentsEditDialog();
 
-            listCheckup[indexCheckup] = new Checkup(idCheckup, doctorId, Convert.ToInt16(checkup.IdPatient), Convert.ToDateTime(checkup.Date),
+            listCheckup[indexCheckup] = new Checkup(generisiID(), getDoctorFromFile(), Convert.ToInt16(checkup.IdPatient), Convert.ToDateTime(checkup.Date),
                 Convert.ToInt16(checkup.IdRoom), (CheckupType)comboBox.SelectedIndex);
 
             st.DeleteById(Convert.ToInt16(durationText.Text));

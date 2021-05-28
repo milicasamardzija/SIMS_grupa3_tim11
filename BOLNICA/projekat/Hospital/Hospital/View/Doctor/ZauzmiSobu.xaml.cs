@@ -40,16 +40,16 @@ namespace Hospital.View.Doctor
             room = selectedRoom;
             indexRoom = selectedIndex;
         }
-
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
+        
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             controller.takenRoom();
             LookInRooms[indexRoom] = room;
+            this.Close();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
     }
