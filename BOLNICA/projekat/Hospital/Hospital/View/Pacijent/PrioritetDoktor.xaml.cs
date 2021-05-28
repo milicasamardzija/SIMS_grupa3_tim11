@@ -31,6 +31,7 @@ namespace Hospital.View.Pacijent
             InitializeComponent();
             id = idP;
             appointmentList = applist;
+            termini = new List<Checkup>();
 
 
             PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
@@ -104,19 +105,24 @@ namespace Hospital.View.Pacijent
             termini.Clear();
             CheckupFileStorage app = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             PatientFileStorage patients = new PatientFileStorage("./../../../../Hospital/files/storagepatient.json");
+            DoctorFileStorage doctors = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
             global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
 
             foreach (Checkup t in app.GetAll())
-            {
-                if (t.Doctor.jmbg.Equals(doktor.jmbg))
+            { foreach (Doctor d in doctors.GetAll())
                 {
-                    if (t.Date.Date.Equals(date.SelectedDate))
+                    if (t.IdDoctor == d.Id)
                     {
-                        termini.Add(t);
+                        if (d.jmbg.Equals(doktor.jmbg))
+                        {
+                            if (t.Date.Date.Equals(date.SelectedDate))
+                            {
+                                termini.Add(t);
+                            }
+                        }
                     }
                 }
-
-                if (id == t.Patient.Id && t.Date.Date.Equals(date.SelectedDate))
+                if (id == t.IdPatient && t.Date.Date.Equals(date.SelectedDate))
                 {
 
 
@@ -187,6 +193,8 @@ namespace Hospital.View.Pacijent
                 funkcionalnosti.Save(funkcionalnost);
 
                 this.Close();
+                WindowPacijent wp = new WindowPacijent(id);
+                wp.Show();
 
             }
         }

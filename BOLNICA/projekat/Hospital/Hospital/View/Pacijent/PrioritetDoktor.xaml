@@ -7,7 +7,7 @@
         mc:Ignorable="d"
        Title="Prioritet-Doktor" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
     <Grid>
-        <ListBox x:Name="times" HorizontalAlignment="Left" Width="230" Margin="40,265,0,119.6" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="times_SelectionChanged" />
+        <ListBox x:Name="times" HorizontalAlignment="Left" FontFamily="Goudy Old Style"  Width="230" Margin="40,265,0,119.6" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="times_SelectionChanged" />
 
         <Line  
             X1="500" Y1="0"  
@@ -20,8 +20,8 @@
             </Button.Background>
         </Button>
         <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="145,20,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="171" Height="38" Foreground="LightBlue"/>
-        <Label Content="    Izaberite lekara opšte prakse:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,84,0,0" RenderTransformOrigin="0.316,0.617"/>
-        <ComboBox x:Name="lekar" ItemsSource="{Binding Path=Lekar}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="230" Margin="40,110,0,0" Height="22" IsSynchronizedWithCurrentItem="False" FontSize="14">
+        <Label Content="    Izaberite lekara opšte prakse:" HorizontalAlignment="Left" FontFamily="Goudy Old Style" VerticalAlignment="Top" Margin="22,84,0,0" RenderTransformOrigin="0.316,0.617"/>
+        <ComboBox x:Name="lekar" ItemsSource="{Binding Path=Lekar}" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Width="230" Margin="40,110,0,0" SelectionChanged="ljekari_SelectionChanged"  Height="22" IsSynchronizedWithCurrentItem="False" FontSize="14">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock>
@@ -35,11 +35,11 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Label Content=" Izaberite datum:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,154,0,0"/>
-        <DatePicker Name="date" SelectedDateChanged="date_SelectedDateChanged" HorizontalAlignment="Left" Height="24" Margin="40,180,0,0" VerticalAlignment="Top" Width="230"/>
-        <Label Name="timelabel" Content=" Slobodni termini kod izabranog doktora su:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.953,7.812" Margin="34,239,0,0"/>
-        <Button Content="Odustani" Name="odustanii" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="170,381,0,0" Click="odustani"/>
-        <Button Content="Potvrdi" Name="potvrdii" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="58,381,0,0" Click="potvrdi"/>
+        <Label Content=" Izaberite datum:" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Goudy Old Style" Margin="34,154,0,0"/>
+        <DatePicker Name="date" SelectedDateChanged="date_SelectedDateChanged" HorizontalAlignment="Left" Height="24" Margin="40,180,0,0" FontFamily="Goudy Old Style" VerticalAlignment="Top" Width="230"/>
+        <Label Name="timelabel" FontFamily="Goudy Old Style" Content=" Slobodni termini kod izabranog doktora su:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.953,7.812" Margin="34,239,0,0"/>
+        <Button Content="Odustani" BorderBrush="#FFF9F3F3"   Name="odustanii" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="170,370,0,0" Click="odustani" Height="29"/>
+        <Button Content="Potvrdi"  BorderBrush="#FFF9F3F3"   FontFamily="Goudy Old Style" Name="potvrdii" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="58,370,0,0" Click="potvrdi" Height="29"/>
 
     </Grid>
 </Window>

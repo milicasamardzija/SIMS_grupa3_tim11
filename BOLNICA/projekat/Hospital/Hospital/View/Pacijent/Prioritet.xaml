@@ -13,13 +13,13 @@
     X2="20" Y2="0"  
     Stroke="SteelBlue"  
     StrokeThickness="4" Margin="-19,58,-1.8,197.6" Grid.ColumnSpan="3" />
-        <Button Content="Lekar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Margin="109,194,0,0" Height="42" RenderTransformOrigin="0.582,0.547" Foreground="#FFF3DCDC" Click="doktor" BorderBrush="#FFFAF7F7" Background="#FF848C9D"  />
+        <Button Content="Lekar" HorizontalAlignment="Left" FontFamily="Goudy Old Style"  VerticalAlignment="Top" Width="88" Margin="109,194,0,0" Height="42" RenderTransformOrigin="0.582,0.547" Foreground="#FFF3DCDC" Click="doktor" BorderBrush="#FFFAF7F7" Background="#FF848C9D"  />
         <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="10,25,0,0" FontSize="22" Height="19" Click="Nazad_na_pocetnu" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6">
             <Button.Background>
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Button Content="Datum" HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Click="datum" RenderTransformOrigin="1.585,10.79" Margin="109,294,0,0" Height="40" BorderBrush="#FFF1EBEB" Background="#FF1684A5" Foreground="#FFF6E7E7" />
+        <Button Content="Datum" FontFamily="Goudy Old Style"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Click="datum" RenderTransformOrigin="1.585,10.79" Margin="109,294,0,0" Height="40" BorderBrush="#FFF1EBEB" Background="#FF1684A5" Foreground="#FFF6E7E7" />
     </Grid>
 </Window>
 
