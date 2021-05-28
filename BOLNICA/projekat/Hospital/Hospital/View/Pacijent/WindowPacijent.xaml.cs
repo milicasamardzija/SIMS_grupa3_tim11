@@ -95,15 +95,15 @@ namespace Hospital
         {
             CheckupFileStorage fs = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             ObservableCollection<Checkup> rs = new ObservableCollection<Checkup>(fs.GetAll()); //svi termini
-            ObservableCollection<Checkup> ret = new ObservableCollection<Checkup>(); //ovde ce biti ubaceni termini za pacijenta sa prisledjenim id-jem(odnosno id pacijenta koji je ulogovan na sistem)
+            ObservableCollection<Checkup> ret = new ObservableCollection<Checkup>(); 
 
-            foreach (Checkup appointment in rs) //prolazimo kroz sve termine u fajlu
+            foreach (Checkup appointment in rs) 
             {
 
-                if (appointment.IdPatient == id) //trazimo termin koji ima pacijenta sa prosledjenim id-jem
+                if (appointment.IdPatient == id) 
                 {
 
-                    ret.Add(appointment); //dodajemo taj termin u listu koju vracamo za ispis u tabelu
+                    ret.Add(appointment);
                 }
             }
 
@@ -111,14 +111,27 @@ namespace Hospital
         }
 
 
+        public void updateTable()
+        {
+            ListaTermina.Items.Clear();
+            CheckupFileStorage app = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            List<Checkup> termini = app.GetAll();
+            foreach (Checkup termin in termini)
+            {
+                if (id == termin.Patient.Id)
+                {
+                    if  (termin.Date > DateTime.Now)
+                        ListaTermina.Items.Add(termin);
+                }
+            }
+        }
 
-        
 
         private void dodavanje(object sender, RoutedEventArgs e)
         {
             DodajTermin dd = new DodajTermin(AppointmentList, id); //salje se i id ulogovang pacijenta
 
-
+            dd.Show();
 
             Patient ret = new Patient();
             PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storageDoctor.json");

@@ -5,41 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-       Title="Dodaj termin" Height="500" Width="430" WindowStartupLocation="CenterScreen">
+      Title="Dodaj termin" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
     <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Grid Margin="0,0,0,0.4">
+        <Grid Margin="0,0,0.2,44.6">
             <Grid.RowDefinitions>
-                <RowDefinition Height="42*"/>
-                <RowDefinition Height="5*"/>
+                <RowDefinition Height="71*"/>
+                <RowDefinition Height="10*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="315*"/>
+                <ColumnDefinition Width="8*"/>
                 <ColumnDefinition Width="0*"/>
             </Grid.ColumnDefinitions>
-            <Label Margin="50,83,106,47" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="0" FontWeight="Bold">
-
+            <Label Margin="-28,45,-8.8,287.2" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="0" FontWeight="Bold" Grid.ColumnSpan="3" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-1.001"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="2.707"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+                <Line  
+                    X1="500" Y1="0"  
+                    X2="20" Y2="0"  
+                    Stroke="SteelBlue"  
+                    StrokeThickness="4" Height="10" Width="344" />
             </Label>
-            <ComboBox x:Name="prioritetCombo" HorizontalAlignment="Left" Margin="171,55,0,0" VerticalAlignment="Top" Width="193" Height="32" SelectionChanged="prioritetCombo_SelectionChanged">
-                <ComboBoxItem>
-                    Lekar
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    Vreme
-                </ComboBoxItem>
-            </ComboBox>
-            <Label Margin="48,278,290,-79.6" Foreground="DarkBlue" FontSize="10" FontWeight="Bold" Grid.RowSpan="2">Doktor</Label>
-            <Button Margin="84,369,260,19" Grid.Column="0" Background="AliceBlue" Click="add_appointment">Dodaj</Button>
-            <Button Margin="211,369,133,19" Background="AliceBlue" Click="odustani">Odustani</Button>
-            <ComboBox Name="time"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="193" Margin="171,190,0,0" Height="32" SelectionChanged="time_SelectionChanged" >
-
-            </ComboBox>
-            <Label  Content="Datum" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="53,118,0,0" Foreground="DarkBlue" FontSize="10" FontWeight="Bold" RenderTransformOrigin="0.646,1.134" Height="24" Width="42"/>
-            <Label  Content="Vreme&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,195,0,0" Foreground="DarkBlue" FontSize="10"  FontWeight="Bold" Height="37" Width="40"/>
-            <ComboBox x:Name="lekar" ItemsSource="{Binding Path=Lekar}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="197" Margin="170,270,0,0" Height="32" IsSynchronizedWithCurrentItem="False" FontSize="14">
+            <Label Content="Zakazivanje termina" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="74,78,0,0" FontFamily="Goudy Old Style" Width="166" Height="37" FontSize="20"/>
+            <Button Margin="8.8,3.8,-8.8,35.8" Background="AliceBlue" Click="odustani" Grid.Column="2" Grid.Row="1">Odustani</Button>
+            <ComboBox Name="time"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="38,205,0,0" Height="22" SelectionChanged="time_SelectionChanged" />
+            <ComboBox x:Name="lekar" ItemsSource="{Binding Path=Lekar}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="38,269,0,0" Height="22" IsSynchronizedWithCurrentItem="False" FontSize="14">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock>
@@ -53,10 +53,22 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
+            <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="145,20,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Width="171" Height="38" Foreground="LightBlue" Grid.ColumnSpan="2"/>
+
+            <Label Content="Datum:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,120,0,0" RenderTransformOrigin="0.747,0.358" FontFamily="Goudy Old Style" FontSize="14" Height="27" Width="53"/>
+            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="19">
+                <Label Content=""/>
+            </Label>
+            <Label Content="Vreme:&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,181,0,0" Height="24" FontFamily="Goudy Old Style" FontSize="14" Width="59"/>
+            <Label Content="Doktor:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,245,0,0" Width="59" FontFamily="Goudy Old Style" Height="24"/>
+
+            <Button Content="Izaberi prioritet" HorizontalAlignment="Left" VerticalAlignment="Top" Width="96" Margin="95,321,0,0" Background="#FFFFF7F7" Foreground="Black" BorderBrush="White" FontStyle="Italic" Click="izaberi_prioritet" Height="19"/>
+            <Button Content="Odustani" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="165,12.8,0,0" Height="30" FontFamily="Goudy Old Style" FontSize="14" Foreground="#FF0F0D0D" BorderBrush="#FFF9F3F3"  Click="odustani" Grid.Row="1"/>
+            <Button x:Name="potvrdi" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="55,12.8,0,0" Height="30" FontFamily="Goudy Old Style" FontSize="14" Foreground="#FF0F0D0D" BorderBrush="#FFF9F3F3"  Click="add_appointment" Grid.Row="1"/>
+
 
         </Grid>
-        <DatePicker Name="date" SelectedDateChanged="date_SelectionChanged" HorizontalAlignment="Left" Height="32" Margin="173,118,0,0" VerticalAlignment="Top" Width="192"  />
-        <Label Content="Prioritet&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="52,58,0,0" RenderTransformOrigin="0.308,0.477" Foreground="DarkBlue" FontSize="10" FontWeight="Bold"/>
+        <DatePicker Name="date"  HorizontalAlignment="Left" Height="22" Margin="38,145,0,0" VerticalAlignment="Top" Width="230" SelectedDateChanged="date_SelectedDateChanged" />
 
 
     </Grid>

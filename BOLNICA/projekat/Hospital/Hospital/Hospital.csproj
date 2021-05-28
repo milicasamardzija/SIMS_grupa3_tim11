@@ -143,6 +143,15 @@
     <Compile Include="View\Manager\Ostalo\ObavestenjaUpravnik.xaml.cs">
       <DependentUpon>ObavestenjaUpravnik.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pacijent\Prioritet.xaml.cs">
+      <DependentUpon>Prioritet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pacijent\PrioritetDatum.xaml.cs">
+      <DependentUpon>PrioritetDatum.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pacijent\PrioritetDoktor.xaml.cs">
+      <DependentUpon>PrioritetDoktor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pacijent\ZdravstveniKarton.xaml.cs">
       <DependentUpon>ZdravstveniKarton.xaml</DependentUpon>
     </Compile>
@@ -296,6 +305,18 @@
     <Page Include="View\Manager\Ostalo\BelsekaMagacin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pacijent\Prioritet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pacijent\PrioritetDatum.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pacijent\PrioritetDoktor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pacijent\ZdravstveniKarton.xaml">
       <SubType>Designer</SubType>
