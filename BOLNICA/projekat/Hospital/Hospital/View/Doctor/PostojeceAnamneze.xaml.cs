@@ -22,20 +22,16 @@ namespace Hospital
     /// </summary>
     public partial class PostojeceAnamneze : Window
     {
-        public ObservableCollection<Anamnesis> AnamnesisList
-        {
-            get;
-            set;
-        }
+        public ObservableCollection<Anamnesis> AnamnesisList { get; set; }
 
         public PostojeceAnamneze()
         {
             InitializeComponent();
             this.DataContext = this;
-            AnamnesisList = loadJ();
+            AnamnesisList = loadJsonFileAnamnesis();
         }
 
-        public ObservableCollection<Anamnesis> loadJ()
+        public ObservableCollection<Anamnesis> loadJsonFileAnamnesis()
         {
             IAnamnesisFileStorage storageAnamnesis = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
             ObservableCollection<Anamnesis> allAnamnesis = new ObservableCollection<Anamnesis>(storageAnamnesis.GetAll());

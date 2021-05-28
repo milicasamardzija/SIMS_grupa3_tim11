@@ -22,11 +22,7 @@ namespace Hospital
     /// </summary>
     public partial class PrikaziKartonPacijenta : Window
     {
-        public ObservableCollection<MedicalRecord> MedicalList
-        {
-            get;
-            set;
-        }
+        public ObservableCollection<MedicalRecord> MedicalList { get; set; }
         
         public ObservableCollection<Patient> Pacijenti;
         public Patient patient;
@@ -39,10 +35,10 @@ namespace Hospital
             Pacijenti = list;
             patient = selectedPatient;
             idPatient = selectedIndex;
-            MedicalList = loadFileJ(idPatient);
+            MedicalList = loadMedicalRecordFile(idPatient);
         }
 
-        public ObservableCollection<MedicalRecord> loadFileJ(int idPatients)
+        public ObservableCollection<MedicalRecord> loadMedicalRecordFile(int idPatients)
         {
             IMedicalRecordFileStorage storageMedicalRecord = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
             ObservableCollection<MedicalRecord> allMedicalRecords = new ObservableCollection<MedicalRecord>(storageMedicalRecord.GetAll());

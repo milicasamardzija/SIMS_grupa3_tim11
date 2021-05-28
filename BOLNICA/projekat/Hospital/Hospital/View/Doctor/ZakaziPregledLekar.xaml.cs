@@ -67,12 +67,12 @@ namespace Hospital
         
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            CheckupFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            CheckupFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
 
             Checkup newCheckups = new Checkup(generateIdCheckup(), (int)doctorBox.SelectedIndex, Convert.ToInt16(textPacijent.Text), Date.DisplayDate,
                 Convert.ToInt16(textTrajanje.Text), (CheckupType)comboBox.SelectedIndex);
 
-            st.Save(newCheckups);
+            storageCheckup.Save(newCheckups);
             this.Close();
         }
 

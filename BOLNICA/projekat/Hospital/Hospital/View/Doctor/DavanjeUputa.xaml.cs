@@ -24,12 +24,7 @@ namespace Hospital
         {
             InitializeComponent();
         }
-
-        private void button4_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
+        
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             UputZaAmbulantnoSpecijalistickiPregled instruction = new UputZaAmbulantnoSpecijalistickiPregled();
@@ -40,6 +35,11 @@ namespace Hospital
         {
             BolnickoLecenje medicalCare = new BolnickoLecenje();
             medicalCare.Show();
+        }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

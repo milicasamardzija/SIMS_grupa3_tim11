@@ -29,10 +29,10 @@ namespace Hospital
         {
             InitializeComponent();
             this.DataContext = this;
-            ListMedicineReview = loadJasFile();
+            ListMedicineReview = loadMedicineReview();
         }
-
-        public ObservableCollection<Review> loadJasFile()
+        
+        public ObservableCollection<Review> loadMedicineReview()
         {
             MedicineIFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             MedicineReviewIFileStorage storageMedicineReview = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
@@ -52,7 +52,6 @@ namespace Hospital
                     }
                 }
             }
-
             foreach (Medicine medicine in storageMedicine.GetAll())
             {
                 if (medicine.Delete)

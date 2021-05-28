@@ -28,10 +28,10 @@ namespace Hospital
         {
             InitializeComponent();
             this.DataContext = this;
-            MedicineList = loadJsFile();
+            MedicineList = loadJsonFileMedicine();
         }
 
-        public ObservableCollection<Medicine> loadJsFile()
+        public ObservableCollection<Medicine> loadJsonFileMedicine()
         {
             MedicineIFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             ObservableCollection<Medicine> medicines = new ObservableCollection<Medicine>(storageMedicine.GetAll());

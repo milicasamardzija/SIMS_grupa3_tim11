@@ -24,7 +24,6 @@ namespace Hospital
     {
         public ObservableCollection<Ingredient> DataIngredient { get; set; }
         public ObservableCollection<Medicine> DataMedicine { get; set; }
-        public Evidencija medicineRecord;
 
         public ObservableCollection<Medicine> medicineList;
         public Medicine medicine;
@@ -69,7 +68,7 @@ namespace Hospital
             return ret;
         }
 
-        public int generisiID()
+        public int generateIdMedicine()
         {
             int returnMedicine = 0;
             MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
@@ -93,7 +92,7 @@ namespace Hospital
             List<int> ingredients = new List<int>();
             List<int> medicines = new List<int>();
  
-            medicineList[indexMedicine] = new Medicine(generisiID(), Convert.ToString(nazivLText.Text), Convert.ToDouble(gramazaLText.Text),
+            medicineList[indexMedicine] = new Medicine(generateIdMedicine(), Convert.ToString(nazivLText.Text), Convert.ToDouble(gramazaLText.Text),
                 Convert.ToString(vrstaLText.Text), ingredients, medicines, true);
 
             this.Close();

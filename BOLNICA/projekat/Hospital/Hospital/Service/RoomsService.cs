@@ -244,14 +244,6 @@ namespace Hospital.Service
             roomStorage.SaveAll(rooms);
         }
 
-        public void takenRooms()
-        {
-            Room room = new Room();
-            room.Capacity = room.Capacity - 1;
-            if(room.Capacity == 0)
-            {
-                room.Occupancy = true;
-            }
-        }
+        
     }
 }

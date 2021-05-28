@@ -43,7 +43,11 @@ namespace Hospital.View.Doctor
         
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            controller.takenRoom();
+            room.Capacity = room.Capacity - 1;
+            if(room.Capacity == 0)
+            {
+                room.Occupancy = true;
+            }
             LookInRooms[indexRoom] = room;
             this.Close();
         }

@@ -23,24 +23,18 @@ namespace Hospital
     /// </summary>
     public partial class Pregled : Window
     {
-        public List<Checkup> CheckupList
-        {
-            get;
-            set;
-        }
-
+        public List<Checkup> CheckupList {get; set; }
         public int idSignedDoctor;
-        public int idPatient = 1;
 
         public Pregled(int idDoctor)
         {
             InitializeComponent();
             this.DataContext = this;
             idSignedDoctor = idDoctor;
-            CheckupList = loadJson(idSignedDoctor);
+            CheckupList = loadJsonFile(idSignedDoctor);
         }
 
-        public List<Checkup> loadJson(int idDoctorSigned)
+        public List<Checkup> loadJsonFile(int idDoctorSigned)
         {
             ICheckFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             List<Checkup> allCheckups = new List<Checkup>(storageCheckup.GetAll());
