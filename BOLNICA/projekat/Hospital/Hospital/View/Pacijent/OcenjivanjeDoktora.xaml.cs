@@ -77,7 +77,7 @@ namespace Hospital
 
             foreach (Checkup appointment in rs)
             {
-                if (appointment.Patient.Id == id)
+                if (appointment.IdPatient == id)
                 { if (DateTime.Now > appointment.Date)
                     {
                         ret.Add(appointment);

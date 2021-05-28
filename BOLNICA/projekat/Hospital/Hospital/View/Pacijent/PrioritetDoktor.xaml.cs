@@ -135,7 +135,7 @@ namespace Hospital.View.Pacijent
             List<Checkup> terminiBezDuplikata = termini.Distinct().ToList();
             DateTime danas = DateTime.Today;
 
-            for (DateTime tm = danas.AddHours(8); tm < danas.AddHours(20); tm = tm.AddMinutes(15))
+            for (DateTime tm = danas.AddHours(8); tm < danas.AddHours(20); tm = tm.AddMinutes(30))
             {
                 bool slobodno = true;
                 foreach (Checkup termin in terminiBezDuplikata)

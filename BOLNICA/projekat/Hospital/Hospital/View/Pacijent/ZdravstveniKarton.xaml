@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital.View.Pacijent"
-        mc:Ignorable="d"
+       
+       mc:Ignorable="d"
       Title="Zdravstveni karton"  Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
     <Grid>
         <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="119,24,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Width="171" Height="29" Foreground="LightBlue"/>

@@ -1,0 +1,28 @@
+﻿<Window x:Class="Hospital.View.Pacijent.Obolnici"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital.View.Pacijent"
+    
+        mc:Ignorable="d"
+      Title="O bolnici"  Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="119,24,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Width="171" Height="29" Foreground="LightBlue" Grid.RowSpan="2"/>
+        <Line  
+            X1="500" Y1="0"  
+            X2="20" Y2="0"  
+            Stroke="SteelBlue"  
+            StrokeThickness="4" Margin="-19,58,-1.8,169.6" Grid.RowSpan="2" />
+        <Button  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="10,25,0,0" FontSize="22" Height="19" Click="odustani" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6" Grid.RowSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>

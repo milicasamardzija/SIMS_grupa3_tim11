@@ -5,35 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-       Title="Obrisi termin" Height="250" Width="450" WindowStartupLocation="CenterScreen">
+      Title="Obrisi termin" Height="250" Width="200" WindowStartupLocation="CenterScreen">
     <Grid >
         <Grid>
-            <TextBlock Text="Da li ste sigurni da zelite da obrisete termin?"
+            <TextBlock  FontFamily="Goudy Old Style" Text="Da li ste sigurni da želite da obrišete termin?"
                        TextAlignment="Center"
-                       Width="300"
-                       Margin="50,30,45,135"
+                       Margin="25,40,28.6,80"
                        Foreground="DarkBlue"
                        FontSize="20"
                        TextWrapping="Wrap"
                        Grid.Column="0"
-                       Grid.Row="0"
-                       Grid.ColumnSpan="2"/>
-            <Button Grid.Column="0"
-                    Margin="75,113,268.2,57"
+                       Grid.Row="0"/>
+            <Button  FontFamily="Goudy Old Style" Grid.Column="0"
+                    Margin="25,157,109.6,38"
                     Content="DA"
-                    Height="50"
-                    Width="100"
                     Foreground="DarkBlue"
                     Background="AliceBlue" Click="da_Click"
                 />
-            <Button Grid.Column="0"
-                    Margin="265,110,78.2,60"
+            <Button  FontFamily="Goudy Old Style"
+                Grid.Column="0"
+                    Margin="105,157,28.6,38"
                     Content="NE"
-                    Height="50"
-                    Width="100"
                     Foreground="DarkBlue"
                     Background="AliceBlue" Click="ne_Click"
                 />
         </Grid>
     </Grid>
 </Window>
+

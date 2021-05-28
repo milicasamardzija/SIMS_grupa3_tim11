@@ -56,13 +56,24 @@ namespace Hospital
                 }
             }
 
-            ime = termin.Doctor.name + " " + termin.Doctor.surname;
-            doktor.Text = ime;
+            DoctorFileStorage dstorage = new DoctorFileStorage("./../../../../Hospital/files/storageDoctor.json");
+            List<Doctor> doctors = dstorage.GetAll();
+            foreach(Doctor d in doctors)
+            {
+                if(d.Id == termin.IdDoctor)
+                {
+
+                    ime = d.Name + " " + d.Surname;
+                    doktor.Text = ime;
+
+                }
+            }
 
 
+          
         }
 
-   
+
 
         private void odustani(object sender, RoutedEventArgs e)
         {
