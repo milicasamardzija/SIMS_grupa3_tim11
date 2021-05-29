@@ -51,5 +51,15 @@ namespace Hospital.Controller
         {
             service.save(new Inventory(inventory.Id,inventory.Name,inventory.Quantity,inventory.Type));
         }
+
+        public void delete(int idInventory)
+        {
+            service.delete(idInventory);
+        }
+
+        public void update(InventoryDTO inventory)
+        {
+            service.update(new Inventory(inventory.Id, inventory.Name, inventory.Quantity, inventory.Type));
+        }
     }
 }

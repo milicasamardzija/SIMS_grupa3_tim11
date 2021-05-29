@@ -14,29 +14,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.Controller;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for IzbrisiInventarDijalog.xaml
-    /// </summary>
     public partial class IzbrisiInventarDijalog : UserControl
     {
-        public Frame frame;
-        public ObservableCollection<InventoryDTO> listInventory;
-        public int index;
-        public int id;
-        public IzbrisiInventarDijalog(Frame m,ObservableCollection<InventoryDTO> list,Inventory selecetdInventory, int selectedIndex)
+        private Frame frame;
+        private ObservableCollection<InventoryDTO> inventories;
+        private int index;
+        private InventoryController controller;
+        private InventoryDTO inventory;
+        public IzbrisiInventarDijalog(Frame frame,ObservableCollection<InventoryDTO> inventories, InventoryDTO inventory, int index)
         {
             InitializeComponent();
-            frame = m;
-            listInventory = list;
-            id = selecetdInventory.Id;
-            index = selectedIndex;
-
-            ImeTxt.SelectedText = selecetdInventory.Name;
-            KolicinaTxt.SelectedText = Convert.ToString(selecetdInventory.Quantity);
-            TypeTxt.SelectedIndex = (int)selecetdInventory.Type;
+            this.frame = frame;
+            this.inventories = inventories;
+            this.index = index;
+            this.controller = new InventoryController();
+            this.inventory = inventory;
         }
         private void odustani(object sender, RoutedEventArgs e)
         {
@@ -45,9 +41,8 @@ namespace Hospital
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-            InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
-            storage.DeleteById(id);
-            listInventory.RemoveAt(index);
+            controller.delete(inventory.Id);
+            inventories.RemoveAt(index);
             frame.NavigationService.Navigate(new BelsekaMagacin());
         }
     }

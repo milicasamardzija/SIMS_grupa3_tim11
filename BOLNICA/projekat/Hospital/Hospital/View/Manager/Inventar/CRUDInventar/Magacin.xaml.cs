@@ -59,7 +59,7 @@ namespace Hospital
             }
             else
             {
-                MagacinFrame.NavigationService.Navigate(new IzbrisiInventarDijalog(MagacinFrame, inventories, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
+                MagacinFrame.NavigationService.Navigate(new IzbrisiInventarDijalog(MagacinFrame, inventories, (InventoryDTO)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
             }
         }
 
@@ -87,7 +87,7 @@ namespace Hospital
             }
             else
             {
-                MagacinFrame.NavigationService.Navigate(new IzmenaInventaraDijalog(MagacinFrame, inventories, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
+                MagacinFrame.NavigationService.Navigate(new IzmenaInventaraDijalog(MagacinFrame, inventories, (InventoryDTO)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
             }
         }
 

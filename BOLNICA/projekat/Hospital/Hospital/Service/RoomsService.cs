@@ -79,7 +79,7 @@ namespace Hospital.Service
                              {
                                 staticInventoryStorage.Save(new StaticInventoryMovement(-1, renovation.Id, inventory.Id, roomInv.Quantity, renovation.DateBegin));
                                 staticInventoryStorage.Save(new StaticInventoryMovement(renovation.Id, -1, inventory.Id, roomInv.Quantity, renovation.DateEnd));
-                            }
+                             }
                          }
                      }
                  }
@@ -120,16 +120,16 @@ namespace Hospital.Service
                      {
                         return false;
                      }
-
-                    if (checkup.Date.Date == renovation.DateEnd.Date)
-                    {
+                     
+                     if (checkup.Date.Date == renovation.DateEnd.Date) 
+                     {
                         return false;
-                    }
+                     }
 
-                    if (checkup.Date.Date < renovation.DateEnd.Date && checkup.Date.Date > renovation.DateBegin.Date)
-                    {
+                     if (checkup.Date.Date < renovation.DateEnd.Date && checkup.Date.Date > renovation.DateBegin.Date)
+                     {
                         return false;
-                    }
+                     }
                  }
             }
             return true;
@@ -171,13 +171,13 @@ namespace Hospital.Service
                     if(room.Id == checkup.IdRoom) 
                     {
                        if(checkup.Date!=dateTime.Date) //ovo proverava i datum i vreme
-                        {
+                       {
                             availableRooms.Add(room);
-                        }
+                       }
                        else
-                        {
+                       {
                             break;
-                        }
+                       }
                     }
                 }
             }

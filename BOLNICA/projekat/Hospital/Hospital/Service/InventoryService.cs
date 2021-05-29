@@ -51,6 +51,27 @@ namespace Hospital.Service
             return inventoryStorage.GetAll();
         }
 
+        public void delete(int id)
+        {
+            inventoryStorage.DeleteById(id);
+        }
+
+        public void update(Inventory updatedInventory)
+        {
+            List<Inventory> inventories = inventoryStorage.GetAll();
+            foreach (Inventory inventory in inventories)
+            { 
+                if (inventory.Id == updatedInventory.Id)
+                {
+                    inventory.Name = updatedInventory.Name;
+                    inventory.Quantity = updatedInventory.Quantity;
+                    inventory.Type = updatedInventory.Type;
+                    break;
+                }
+            }
+            inventoryStorage.SaveAll(inventories);
+        }
+
         public void moveInventory(RoomInventory roomInventory, int idRoomOut)
         {
             if (moveStorage(roomInventory, idRoomOut))

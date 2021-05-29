@@ -14,7 +14,7 @@
         <TextBox Name="NameTxt" Text="{Binding Path=Inventory.Name, UpdateSourceTrigger=PropertyChanged }" HorizontalAlignment="Left" Height="50" Margin="180,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244"/>
         <Button Background="LightBlue" Content="Dodaj" HorizontalAlignment="Left" Margin="30,319,0,0" VerticalAlignment="Top" Width="150" FontSize="36" Height="55" FontWeight="Bold" Click="dodaj"/>
         <Button Background="LightBlue" Content="Odustani" HorizontalAlignment="Left" Margin="267,319,0,0" VerticalAlignment="Top" Width="157" RenderTransformOrigin="1.7,10.906" FontSize="36" Height="55" FontWeight="Bold" Click="odustani"/>
-        <ComboBox Name="TypeTxt"  HorizontalAlignment="Left" Margin="180,41,0,0" VerticalAlignment="Top" Width="244" Height="41">
+        <ComboBox Name="TypeTxt" SelectedValue="{Binding Path=Inventory.Type, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Margin="180,41,0,0" VerticalAlignment="Top" Width="244" Height="41">
             <ComboBoxItem IsSelected="True">STATICKI</ComboBoxItem>
             <ComboBoxItem IsSelected="True">DINAMICKI</ComboBoxItem>
         </ComboBox>
