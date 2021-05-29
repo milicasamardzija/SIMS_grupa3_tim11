@@ -23,9 +23,9 @@ namespace Hospital
     {
         private ObservableCollection<RoomDTO> rooms = new ObservableCollection<RoomDTO>();
         private int index;
-        private Frame frame = new Frame();
-        private RoomsController controller = new RoomsController();
-        private RoomDTO room = new RoomDTO();
+        private Frame frame;
+        private RoomsController controller;
+        private RoomDTO room ;
         public RoomDTO Room
         {
             get { return room; }
@@ -39,6 +39,7 @@ namespace Hospital
             this.room = room;
             this.index = index;
             this.frame = frame;
+            this.controller = new RoomsController();
         }
 
         private void izmenaProstorije(object sender, RoutedEventArgs e)

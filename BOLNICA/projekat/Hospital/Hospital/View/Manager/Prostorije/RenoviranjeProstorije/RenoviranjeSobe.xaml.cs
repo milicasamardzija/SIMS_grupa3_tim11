@@ -15,55 +15,41 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.DTO;
 
 namespace Hospital
 {
     public partial class RenoviranjeSobe : UserControl
     {
-        private Frame sobeFrame;
+        private Frame frame;
         private RoomsController controller;
-     
-        public RenoviranjeSobe(Frame frame, Room room)
+        private RoomRenovationDTO roomRenovation = new RoomRenovationDTO();
+        private RoomDTO room;
+        public RoomRenovationDTO RoomRenovation
+        {
+            get { return roomRenovation; }
+            set { roomRenovation = value; }
+        }
+        public RenoviranjeSobe(Frame frame, RoomDTO room)
         {
             InitializeComponent();
-            sobeFrame = frame;
+            this.DataContext = this;
+            this.frame = frame;
+            this.room = room;
             controller = new RoomsController();
             brojProstorijeTxt.SelectedText = Convert.ToString(room.Id);
         }
 
-        public int generisiId()
-        {
-            int ret = 0;
-
-            RenovationIFileStorage storage = new RenovationFileStorage("./../../../../Hospital/files/storageRenovationRooms.json");
-            List<RoomRenovation> allRooms = storage.GetAll();
-
-            foreach (RoomRenovation roomBig in allRooms)
-            {
-                foreach (RoomRenovation room in allRooms)
-                {
-                    if (ret == room.IdRenovation)
-                    {
-                        ++ret;
-                        break;
-                    }
-                }
-            }
-            return ret;
-        }
-
         private void odustani(object sender, RoutedEventArgs e)
         {
-            sobeFrame.NavigationService.Navigate(new BelsekaMagacin()); 
+            frame.NavigationService.Navigate(new BelsekaMagacin()); 
         }
 
         private void renoviraj(object sender, RoutedEventArgs e)
         {
-            RoomRenovation newRenovation = new RoomRenovation(generisiId(),Convert.ToInt32(brojProstorijeTxt.Text),(DateTime)BeginDate.SelectedDate,(DateTime)EndDate.SelectedDate,opisRadova.Text);
-
-            controller.zakaziRenoviranje(newRenovation);
-
-            sobeFrame.NavigationService.Navigate(new BelsekaMagacin());
+            RoomRenovation.IdRoom = room.Id;
+            controller.scheduleRenovation(RoomRenovation);
+            frame.NavigationService.Navigate(new BelsekaMagacin());
         }
     }
 }

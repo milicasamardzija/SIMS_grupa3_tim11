@@ -25,20 +25,16 @@ namespace Hospital
             get;
             set;
         }
-        private List<Inventory> filteredInventory = new List<Inventory>();
-        private ObservableCollection<InventoryDTO> all = new ObservableCollection<InventoryDTO>();
         public RoomDTO room;
-        private Frame back = new Frame();
-        private ObservableCollection<RoomDTO> rooms = new ObservableCollection<RoomDTO>();
+        private Frame frame;
         private InventoryController inventoryController = new InventoryController();
-        public PrikazInventaraUSobi(ObservableCollection<RoomDTO> rooms, RoomDTO selectedRoom,Frame frame)
+        public PrikazInventaraUSobi(ObservableCollection<RoomDTO> rooms, RoomDTO room,Frame frame)
         {
             InitializeComponent();
             this.DataContext = this;
-            this.back = frame;
-            this.rooms = rooms;
-            room = selectedRoom;
-            inventories = new ObservableCollection<InventoryDTO>(inventoryController.getInventoryForRoom(selectedRoom.Id));
+            this.frame = frame;
+            this.room = room;
+            inventories = new ObservableCollection<InventoryDTO>(inventoryController.getInventoryForRoom(room.Id));
             InventarPemesti.NavigationService.Navigate(new BelsekaMagacin());
         }
 
@@ -50,7 +46,7 @@ namespace Hospital
             }
             else
             {
-                Inventory inventory = (Inventory)ListaInventara.SelectedItem;
+               // Inventory inventory = (Inventory)ListaInventara.SelectedItem;
                 //if (inventory.Type == InventoryType.staticki)
                  //   InventarPemesti.NavigationService.Navigate(new PremestanjeInventara(InventarPemesti, listInventory, ListaInventara, false, room, ListaInventara));
                // else
@@ -72,7 +68,7 @@ namespace Hospital
 
         private void unazad(object sender, RoutedEventArgs e)
         {
-            back.NavigationService.Navigate(new Sobe(back));
+            frame.NavigationService.Navigate(new Sobe(frame));
         }
     }
 }

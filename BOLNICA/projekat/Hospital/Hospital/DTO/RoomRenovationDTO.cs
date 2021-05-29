@@ -14,6 +14,7 @@ namespace Hospital.DTO
         private String description;
         private int idRenovation;
         private int idRoom;
+        public RoomRenovationDTO() {}
         public RoomRenovationDTO(int id, int idRoom, DateTime dateBegin, DateTime dateEnd, String description)
         {
             this.dateBegin = dateBegin;

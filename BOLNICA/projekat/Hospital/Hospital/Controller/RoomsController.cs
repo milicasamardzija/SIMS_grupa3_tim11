@@ -12,9 +12,9 @@ namespace Hospital.Controller
     class RoomsController
     {
         private RoomsService service = new RoomsService();
-        public void zakaziRenoviranje(RoomRenovation renovation)
+        public void scheduleRenovation(RoomRenovationDTO renovation)
         {
-            service.zakaziRenoviranje(renovation);
+            service.zakaziRenoviranje(new RoomRenovation(renovation.IdRenovation,renovation.IdRoom,renovation.DateBegin,renovation.DateEnd,renovation.Description));
         }
 
         public List<RoomDTO> getAll()

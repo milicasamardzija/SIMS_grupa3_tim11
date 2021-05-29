@@ -36,7 +36,7 @@ namespace Hospital
 
         private void dodavanje(object sender, RoutedEventArgs e)
         {
-            SobeFrame.NavigationService.Navigate(new DodajProstoriju(ListaProstorija,Rooms, (RoomDTO)ListaProstorija.SelectedItem, SobeFrame));
+            SobeFrame.NavigationService.Navigate(new DodajProstoriju(ListaProstorija,Rooms, SobeFrame));
         }
 
         private void obrisi(object sender, RoutedEventArgs e)
@@ -98,7 +98,7 @@ namespace Hospital
             {
                 SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
             } else {
-                SobeFrame.NavigationService.Navigate(new RenoviranjeSobe(SobeFrame, (Room)ListaProstorija.SelectedItem));
+                SobeFrame.NavigationService.Navigate(new RenoviranjeSobe(SobeFrame, (RoomDTO)ListaProstorija.SelectedItem));
             }
         }
 

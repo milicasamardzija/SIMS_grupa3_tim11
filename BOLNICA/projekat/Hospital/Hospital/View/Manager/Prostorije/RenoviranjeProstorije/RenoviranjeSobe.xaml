@@ -9,15 +9,15 @@
     <Grid>
         <Grid Margin="-10,-10,0.4,0">
             <Label Margin="10,35,332,327" Foreground="Black" FontSize="18" Grid.Column="0" Grid.Row="0" RenderTransformOrigin="0.498,-0.169" FontWeight="Bold">Broj prostorije</Label>
-            <TextBox IsReadOnly="True" Name="brojProstorijeTxt" Width="200" Margin="226,35,54,340" Grid.Row="0" />
+            <TextBox IsReadOnly="True" Name="brojProstorijeTxt"  Width="200" Margin="226,35,54,340" Grid.Row="0" />
             <Label Margin="10,109,302,242" Foreground="Black" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" Content="Datum pocetka" FontWeight="Bold"/>
             <Label Height="30" Margin="10,173,313,207" Foreground="Black" FontSize="18" Grid.Column="0" Content="Datum zavrsetka" FontWeight="Bold"/>
             <Label Margin="10,258,272,102" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold" Content="Opis radova"/>
-            <TextBox Name="opisRadova" Height="30" Width="200" Margin="226,258,54,122" RenderTransformOrigin="0.531,-0.345"/>
+            <TextBox Name="opisRadova" Text="{Binding Path =RoomRenovation.Description, UpdateSourceTrigger=PropertyChanged}" Height="30" Width="200" Margin="226,258,54,122" RenderTransformOrigin="0.531,-0.345"/>
             <Button Margin="71,349,302,31" Grid.Column="0" Height="30" Background="LightBlue" Click="renoviraj" FontSize="18" FontWeight="Bold">Potvrdi</Button>
             <Button Margin="272,349,99,31" Height="30" Background="LightBlue"  Click="odustani" FontSize="18" FontWeight="Bold">Odustani</Button>
-            <DatePicker Name="BeginDate" HorizontalAlignment="Left" Margin="226,109,0,0" VerticalAlignment="Top" Width="200" Height="32"/>
-            <DatePicker Name="EndDate" HorizontalAlignment="Left" Margin="226,180,0,0" VerticalAlignment="Top" Width="200" Height="32"/>
+            <DatePicker Name="BeginDate" SelectedDate="{Binding Path = RoomRenovation.DateBegin, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="226,109,0,0" VerticalAlignment="Top" Width="200" Height="32"/>
+            <DatePicker Name="EndDate" SelectedDate="{Binding Path =RoomRenovation.DateEnd, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="226,180,0,0" VerticalAlignment="Top" Width="200" Height="32"/>
         </Grid>
     </Grid>
 </UserControl>

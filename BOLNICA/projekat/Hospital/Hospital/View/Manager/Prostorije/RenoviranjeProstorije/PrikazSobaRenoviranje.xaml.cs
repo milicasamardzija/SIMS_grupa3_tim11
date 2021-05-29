@@ -29,11 +29,12 @@ namespace Hospital
             get;
             set;
         }
-        private Frame frame = new Frame();
-        private RoomRenovationController controller = new RoomRenovationController();
+        private Frame frame;
+        private RoomRenovationController controller;
         public PrikazSobaRenoviranje(Frame frame)
         {
             InitializeComponent();
+            this.controller = new RoomRenovationController();
             Renovations = new ObservableCollection<RoomRenovationDTO>(controller.getAll());
             this.DataContext = this;
             this.frame = frame;

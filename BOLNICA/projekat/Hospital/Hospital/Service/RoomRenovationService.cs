@@ -39,5 +39,25 @@ namespace Hospital.Service
         {
             return storage.GetAll();
         }
+        public int genrateId()
+        {
+            int ret = 0;
+
+            RenovationIFileStorage storage = new RenovationFileStorage("./../../../../Hospital/files/storageRenovationRooms.json");
+            List<RoomRenovation> allRooms = storage.GetAll();
+
+            foreach (RoomRenovation roomBig in allRooms)
+            {
+                foreach (RoomRenovation room in allRooms)
+                {
+                    if (ret == room.IdRenovation)
+                    {
+                        ++ret;
+                        break;
+                    }
+                }
+            }
+            return ret;
+        }
     }
 }

@@ -22,13 +22,14 @@ namespace Hospital
     public partial class BrisanjeRenovacijeSIgurnost : Window
     {
         private RoomRenovationDTO renovation;
-        private ObservableCollection<RoomRenovationDTO> renovations = new ObservableCollection<RoomRenovationDTO>();
-        private RoomRenovationController controller = new RoomRenovationController();
+        private ObservableCollection<RoomRenovationDTO> renovations;
+        private RoomRenovationController controller;
         public BrisanjeRenovacijeSIgurnost(RoomRenovationDTO renovation, ObservableCollection<RoomRenovationDTO> renovations)
         {
             InitializeComponent();
             this.renovation = renovation;
             this.renovations = renovations;
+            this.controller = new RoomRenovationController();
         }
 
         private void Potvrdi(object sender, RoutedEventArgs e)

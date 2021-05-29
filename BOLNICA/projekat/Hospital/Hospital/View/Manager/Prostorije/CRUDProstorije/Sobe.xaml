@@ -24,13 +24,19 @@
                       AutoGenerateColumns="False"
                       SelectionMode="Single"
                       IsReadOnly="True"
-                      ItemsSource="{Binding Path = Rooms}"  HorizontalGridLinesBrush="#ffc800" VerticalGridLinesBrush="#ffc800" RowBackground="#ffc800"
+                      ItemsSource="{Binding Path = Rooms}"  HorizontalGridLinesBrush="#ffc800" VerticalGridLinesBrush="#ffc800" Foreground="#FF373434" GridLinesVisibility="None"
                       >
-            <DataGrid.BorderBrush>
+            <DataGrid.OpacityMask>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF373434" Offset="1"/>
                 </LinearGradientBrush>
+            </DataGrid.OpacityMask>
+            <DataGrid.BorderBrush>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF373434"/>
+                </RadialGradientBrush>
             </DataGrid.BorderBrush>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="BROJ" Width="150" Binding="{Binding Id}"/>
@@ -45,7 +51,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Margin="33,546,1144,46" Background="#ffc800" Click="dodavanje" Content="DODAJ" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontSize="16"/>
+        <Button Margin="33,546,1144,46" Background="#ffc800" Click="dodavanje" Content="DODAJ" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontSize="16" Foreground="#FF373434"/>
         <Button Margin="319,546,858,46" Background = "#ffc800" Click="izmeni" Content="IZMENI" RenderTransformOrigin="1.07,0.564" FontWeight="Bold" FontSize="16" Foreground="#FF373434">
             <Button.Effect>
                 <DropShadowEffect/>
