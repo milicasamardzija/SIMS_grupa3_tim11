@@ -1,4 +1,5 @@
-﻿using Hospital.FileStorage.Interfaces;
+﻿using Hospital.DTO;
+using Hospital.FileStorage.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,32 +15,32 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.Controller;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for IzmenaInventaraDijalog.xaml
-    /// </summary>
     public partial class IzmenaInventaraDijalog : UserControl
     {
-        public Frame frame;
-        public ObservableCollection<Inventory> listInventory;
-        public int index;
-        public int id;
-        public Inventory inventory;
-        public IzmenaInventaraDijalog(Frame m, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex)
+        private Frame frame;
+        private ObservableCollection<InventoryDTO> inventories;
+        private int index;
+        private InventoryDTO inventory = new InventoryDTO();
+        public InventoryDTO Inventory
+        {
+            get { return inventory;}
+            set { inventory = value; }
+        }
+
+        private InventoryController controller;
+        public IzmenaInventaraDijalog(Frame frame, ObservableCollection<InventoryDTO> inventories,InventoryDTO inventory, int index)
         {
             InitializeComponent();
-            frame = m;
-            listInventory = list;
-            id = selecetedInventory.Id;
-            index = selectedIndex;
-            inventory = selecetedInventory;
-
-            ImeTxt.SelectedText = inventory.Name;
-            KolicinaTxt.SelectedText = Convert.ToString(inventory.Quantity);
-            TypeTxt.SelectedIndex = (int)inventory.Type;
-
+            this.DataContext = this;
+            this.frame = frame;
+            this.inventories = inventories;
+            this.index = index;
+            this.inventory = inventory;
+            this.controller = new InventoryController();
         }
 
         private void odustani(object sender, RoutedEventArgs e)
@@ -49,24 +50,9 @@ namespace Hospital
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
-            InventoryIFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
-            List<Inventory> allInventories = storage.GetAll();
-
-            foreach (Inventory i in allInventories) {
-                if (i.Id == id)
-                {
-                    i.Name = ImeTxt.Text;
-                    i.Quantity = Convert.ToInt32(KolicinaTxt.Text);
-                    i.Type = (InventoryType)TypeTxt.SelectedIndex;
-                    listInventory[index] = new Inventory(i.Id, i.Name, i.Quantity, i.Type);
-                    break;
-                }
-            }
-
-            storage.SaveAll(allInventories);
-
+            controller.update(Inventory);
+            inventories[index] = Inventory;
             frame.NavigationService.Navigate(new BelsekaMagacin());
-
         }
     }
 }

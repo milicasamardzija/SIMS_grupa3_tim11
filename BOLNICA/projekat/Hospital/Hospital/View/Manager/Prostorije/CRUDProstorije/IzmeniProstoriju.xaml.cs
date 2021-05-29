@@ -21,24 +21,25 @@ namespace Hospital
 {
     public partial class IzmeniProstoriju : UserControl
     {
-        private ObservableCollection<RoomDTO> rooms = new ObservableCollection<RoomDTO>();
+        private ObservableCollection<RoomDTO> rooms;
         private int index;
-        private Frame frame = new Frame();
-        private RoomsController controller = new RoomsController();
-        private RoomDTO room = new RoomDTO();
+        private Frame frame;
+        private RoomsController controller;
+        private RoomDTO room;
         public RoomDTO Room
         {
             get { return room; }
             set { room = value; }
         }
-        public IzmeniProstoriju(ObservableCollection<RoomDTO> rooms, RoomDTO room, int index, Frame frame)
+        public IzmeniProstoriju(ObservableCollection<RoomDTO> rooms, RoomDTO selectedItem, int index, Frame frame)
         {
             InitializeComponent();
             this.DataContext = this;
             this.rooms = rooms;
-            this.room = room;
             this.index = index;
             this.frame = frame;
+            this.room = selectedItem;
+            this.controller = new RoomsController();
         }
 
         private void izmenaProstorije(object sender, RoutedEventArgs e)

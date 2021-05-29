@@ -22,25 +22,27 @@ namespace Hospital
     {
         private ObservableCollection<RoomDTO> rooms;
         private Frame frame;
-        private RoomsController controller = new RoomsController();
+        private RoomsController controller;
         private RoomDTO room = new RoomDTO();
+        private DataGrid roomsView;
         public RoomDTO Room
         {
             get { return room; }
             set { room = value; }
         }
-        public DodajProstoriju(ObservableCollection<RoomDTO> rooms,RoomDTO room, Frame frame)
+        public DodajProstoriju(DataGrid listaProstorija, ObservableCollection<RoomDTO> rooms, Frame frame)
         {
             InitializeComponent();
             this.DataContext = this;
             this.rooms = rooms;
-            this.room = room;
             this.frame = frame;
+            this.roomsView = listaProstorija;
+            controller = new RoomsController();
         }
         private void dodavanjeProstorije(object sender, RoutedEventArgs e)
         {
-            controller.save(room);
-            rooms.Add(room);
+            controller.save(Room);
+            roomsView.ItemsSource = controller.getAll();
             frame.NavigationService.Navigate(new BelsekaMagacin());
         }
         private void odustani(object sender, RoutedEventArgs e)

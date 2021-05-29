@@ -14,7 +14,7 @@ namespace Hospital.Service
         private RoomInventoryFileStorage roomInventoryStorage;
         private List<RoomInventory> allRoomInventory;
         private List<Inventory> inventories;
-
+        private RoomInventoryService roomInventoryService;
         public InventoryService()
         {
             roomStorage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
@@ -22,7 +22,56 @@ namespace Hospital.Service
             roomInventoryStorage = new RoomInventoryFileStorage();
             allRoomInventory = roomInventoryStorage.GetAll();
             inventories = inventoryStorage.GetAll();
+            roomInventoryService = new RoomInventoryService();
         }
+
+        public List<Inventory> getInventoryForRoom(int idRoom)
+        {
+            List<Inventory> ret = new List<Inventory>();
+            foreach (RoomInventory roomInventory in roomInventoryService.getAll())
+            {
+                if (roomInventory.IdRoom.Equals(idRoom))
+                {
+                    Inventory inventory = inventoryStorage.FindById(roomInventory.IdInventory);
+                    if (inventory != null)
+                        ret.Add(new Inventory(inventory.Id, inventory.Name, roomInventory.Quantity, inventory.Type));
+                    else
+                        break;
+                }
+
+            }
+            return ret;
+        }
+        public Inventory FindById(int id)
+        {
+            return inventoryStorage.FindById(id);
+        }
+        public List<Inventory> getAll()
+        {
+            return inventoryStorage.GetAll();
+        }
+
+        public void delete(int id)
+        {
+            inventoryStorage.DeleteById(id);
+        }
+
+        public void update(Inventory updatedInventory)
+        {
+            List<Inventory> inventories = inventoryStorage.GetAll();
+            foreach (Inventory inventory in inventories)
+            { 
+                if (inventory.Id == updatedInventory.Id)
+                {
+                    inventory.Name = updatedInventory.Name;
+                    inventory.Quantity = updatedInventory.Quantity;
+                    inventory.Type = updatedInventory.Type;
+                    break;
+                }
+            }
+            inventoryStorage.SaveAll(inventories);
+        }
+
         public void moveInventory(RoomInventory roomInventory, int idRoomOut)
         {
             if (moveStorage(roomInventory, idRoomOut))
@@ -167,6 +216,40 @@ namespace Hospital.Service
                 return true;
             }
             return false;
+        }
+        public List<Inventory> inventoryByName(string name)
+        {
+            return inventoryStorage.inventoryByName(name);
+        }
+        public List<Inventory> inventoryByType(string type)
+        {
+            return inventoryStorage.inventoryByType(type);
+        }
+        public List<Inventory> inventoryByQuantity(int quantity)
+        {
+            return inventoryStorage.inventoryByQuantity(quantity);
+        }
+        public int generateId()
+        {
+            int ret = 0;
+            foreach (Inventory inventoryBig in inventoryStorage.GetAll())
+            {
+                foreach (Inventory inventory in inventoryStorage.GetAll())
+                {
+                    if (ret == inventory.Id)
+                    {
+                        ++ret;
+                        break;
+                    }
+                }
+            }
+            return ret;
+        }
+
+        public void save(Inventory inventory)
+        {
+            inventory.Id = generateId();
+            inventoryStorage.Save(inventory);
         }
     }
 }

@@ -5,24 +5,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hospital.Model
+namespace Hospital.DTO
 {
-    public class RoomRenovation : Entity
+    public class RoomRenovationDTO : INotifyPropertyChanged
     {
         private DateTime dateBegin;
         private DateTime dateEnd;
         private String description;
+        private int idRenovation;
         private int idRoom;
-        public RoomRenovation(int id, int idRoom, DateTime dateBegin, DateTime dateEnd, String description) : base(id)
+        public RoomRenovationDTO() {}
+        public RoomRenovationDTO(int id, int idRoom, DateTime dateBegin, DateTime dateEnd, String description)
         {
             this.dateBegin = dateBegin;
             this.dateEnd = dateEnd.AddHours(23);
             this.dateEnd.AddMinutes(59);
             this.description = description;
             this.idRoom = idRoom;
+            this.idRenovation = id;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnProperychanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
         }
 
         public int IdRenovation
+        {
+            get
+            {
+                return idRenovation;
+            }
+            set
+            {
+                if (value != idRenovation)
+                {
+                    idRenovation = value;
+                    OnProperychanged("IdRenovation");
+                }
+            }
+        }
+        public int IdRoom
         {
             get
             {
@@ -33,6 +61,7 @@ namespace Hospital.Model
                 if (value != idRoom)
                 {
                     idRoom = value;
+                    OnProperychanged("IdRoom");
                 }
             }
         }
@@ -47,10 +76,10 @@ namespace Hospital.Model
                 if (value != dateBegin)
                 {
                     dateBegin = value;
+                    OnProperychanged("DateBegin");
                 }
             }
         }
-
         public DateTime DateEnd
         {
             get
@@ -62,10 +91,10 @@ namespace Hospital.Model
                 if (value != dateEnd)
                 {
                     dateEnd = value;
+                    OnProperychanged("DateEnd");
                 }
             }
         }
-
         public String Description
         {
             get
@@ -76,10 +105,10 @@ namespace Hospital.Model
             {
                 if (value != description)
                 {
-                    description = value;;
+                    description = value;
+                    OnProperychanged("Description");
                 }
             }
         }
-
     }
 }

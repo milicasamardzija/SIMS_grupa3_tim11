@@ -18,7 +18,7 @@
                       AutoGenerateColumns="False"
                       SelectionMode="Single"
                       IsReadOnly="False" 
-                      ItemsSource="{Binding Path = listInventory}" Grid.RowSpan="2" 
+                      ItemsSource="{Binding Path = inventories}" Grid.RowSpan="2" 
                       >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="TIP" Width="180" Binding="{Binding Type}"/>

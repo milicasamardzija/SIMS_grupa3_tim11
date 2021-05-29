@@ -21,21 +21,19 @@ namespace Hospital
 {
     public partial class BrisanjeLekaUpravnik : UserControl
     {
-        private Frame frame = new Frame();
+        private Frame frame;
         private Review revision;
-        private MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
-        private MedicineReviewIFileStorage reviewStorage = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
-   
-        public BrisanjeLekaUpravnik(Frame frameLekovi, Review selectedRevision)
+
+        public BrisanjeLekaUpravnik(Frame frame, Review revision)
         {
             InitializeComponent();
-            frame = frameLekovi;
-            revision = selectedRevision;
+            this.frame = frame;
+            this.revision = revision;
         }
 
         private void obrisi(object sender, RoutedEventArgs e)
         {
-            storage.DeleteById(revision.IdMedicine);
+            //storage.DeleteById(revision.IdMedicine);
            // reviewStorage.DeleteByIdMedicine(revision.IdMedicine);
             frame.NavigationService.Navigate(new LekoviRevizijaUpravnik(frame));
         }

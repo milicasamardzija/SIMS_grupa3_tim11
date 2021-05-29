@@ -1,4 +1,6 @@
-﻿using Hospital.FileStorage.Interfaces;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using Hospital.FileStorage.Interfaces;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -19,35 +21,21 @@ namespace Hospital
 {
     public partial class BrisanjeRenovacijeSIgurnost : Window
     {
-        private RoomRenovation room;
-        private RenovationIFileStorage storage = new RenovationFileStorage("./../../../../Hospital/files/storageRenovationRooms.json");
-        private StaticInvnetoryMovementFileStorage storageInventory = new StaticInvnetoryMovementFileStorage();
-        private ObservableCollection<RoomRenovation> renovations = new ObservableCollection<RoomRenovation>();
-        public BrisanjeRenovacijeSIgurnost(RoomRenovation selectedRoom,ObservableCollection<RoomRenovation> renovation)
+        private RoomRenovationDTO renovation;
+        private ObservableCollection<RoomRenovationDTO> renovations;
+        private RoomRenovationController controller;
+        public BrisanjeRenovacijeSIgurnost(RoomRenovationDTO renovation, ObservableCollection<RoomRenovationDTO> renovations)
         {
             InitializeComponent();
-            room = selectedRoom;
-            renovations = renovation;
+            this.renovation = renovation;
+            this.renovations = renovations;
+            this.controller = new RoomRenovationController();
         }
 
         private void Potvrdi(object sender, RoutedEventArgs e)
         {
-            foreach (StaticInventoryMovement inventory in storageInventory.GetAll()) {
-                if (inventory.RoomInId == room.Id && inventory.RoomOutId == -1 && inventory.Date == room.DateEnd)
-                {
-                    storageInventory.DeleteByRoomsAndDate(room.Id, -1, room.DateEnd);
-                }
-            }
-            foreach (StaticInventoryMovement inventory in storageInventory.GetAll())
-            {
-                if (inventory.RoomInId == -1 && inventory.RoomOutId == room.Id && inventory.Date == room.DateBegin)
-                {
-                    storageInventory.DeleteByRoomsAndDate(-1, room.Id, room.DateBegin);
-                }
-            }
-
-            storage.DeleteById(room.IdRenovation);
-            renovations.Remove(room);
+            controller.deleteRenovation(renovation);
+            renovations.Remove(renovation);
             this.Close();
         }
 

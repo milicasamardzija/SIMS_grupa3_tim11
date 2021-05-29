@@ -9,15 +9,15 @@
     <Grid>
         <Grid Margin="0,0,-0.4,0">
             <Label Width="100" Margin="26,71,344.8,300" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold">Namena</Label>
-            <ComboBox Name ="NamenaText" Height="30" Width="200" Margin="238,70,32.8,300" Background="AliceBlue">
+            <ComboBox Name ="NamenaText"  Height="30" Width="200" Margin="238,70,32.8,300" Background="AliceBlue">
                 <ComboBoxItem IsSelected="True">SALA</ComboBoxItem>
                 <ComboBoxItem >SOBA</ComboBoxItem>
                 <ComboBoxItem>ORDINACIJA</ComboBoxItem>
             </ComboBox>
             <Label Width="100" Margin="20,160,350.8,192" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold">Sprat</Label>
-            <TextBox Name="SpratText" Height="30" Width="200" Margin="239,160,31.8,210"/>
+            <TextBox Name="SpratText" Text="{Binding Path=Room.Floor , UpdateSourceTrigger=PropertyChanged}" Height="30" Width="200" Margin="239,160,31.8,210"/>
             <Label Margin="20,240,262.8,97" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold">Kapacitet prostorije</Label>
-            <TextBox Name="KapacitetText" Height="30" Width="200" Margin="238,240,32.8,130"/>
+            <TextBox Name="KapacitetText" Text="{Binding Path =Room.Capacity, UpdateSourceTrigger=PropertyChanged}" Height="30" Width="200" Margin="238,240,32.8,130"/>
             <Button Margin="82,322,298.8,48" Grid.Column="0" Height="30" Background="LightBlue" Click="dodavanjeProstorije" FontWeight="Bold" Foreground="Black" FontSize="18">Potvrdi</Button>
             <Button Margin="286,322,89.8,48" Height="30" Background="LightBlue" Click="odustani" FontWeight="Bold" Foreground="Black" FontSize="18">Odustani</Button>
         </Grid>
