@@ -55,7 +55,7 @@
   },
   {
     "guest": false,
-    "banovan": false,
+    "banovan": true,
     "datumBanovanja": "0001-01-01T00:00:00",
     "birthdayDate": "1990-12-11T00:00:00",
     "IdHealthCard": 548,
@@ -111,38 +111,6 @@
     "Username": null,
     "Password": null,
     "Id": 101
-  },
-  {
-    "guest": false,
-    "banovan": false,
-    "datumBanovanja": "0001-01-01T00:00:00",
-    "birthdayDate": "2021-05-07T00:00:00",
-    "IdHealthCard": 6,
-    "HealthCareCategory": 1,
-    "Occupation": "JANKO",
-    "Insurence": "JANKO",
-    "name": "JANKO",
-    "surname": "JANKO",
-    "telephoneNumber": "JANKO",
-    "jmbg": "JANKO",
-    "gender": 0,
-    "username": null,
-    "password": null,
-    "adress": {
-      "street": "JANKO",
-      "streetNumber": 4,
-      "city": 2,
-      "country": 1
-    },
-    "Name": "JANKO",
-    "Surname": "JANKO",
-    "Jmbg": "JANKO",
-    "TelephoneNumber": "JANKO",
-    "Gender": 0,
-    "BirthdayDate": "2021-05-07T00:00:00",
-    "Username": null,
-    "Password": null,
-    "Id": 5
   },
   {
     "guest": false,
@@ -257,10 +225,10 @@
     "username": "ccc",
     "password": "ccc",
     "adress": {
-      "city": 3,
-      "country": 0,
       "street": "Vojvode Misica",
-      "streetNumber": 1
+      "streetNumber": 1,
+      "city": 3,
+      "country": 0
     },
     "Name": "Mil",
     "Surname": "Samarh",
@@ -271,5 +239,38 @@
     "Username": "ccc",
     "Password": "ccc",
     "Id": 0
+  },
+  {
+    "guest": false,
+    "banovan": false,
+    "datumBanovanja": "0001-01-01T00:00:00",
+    "birthdayDate": "2021-05-07T00:00:00",
+    "IdHealthCard": 6,
+    "HealthCareCategory": 1,
+    "Occupation": "JANKO",
+    "Insurence": "JANKO",
+    "name": "JANKO",
+    "surname": "JANKO",
+    "telephoneNumber": "JANKO",
+    "jmbg": "JANKO",
+    "gender": 0,
+    "username": null,
+    "password": null,
+    "adress": {
+      "street": "JANKO",
+      "streetNumber": 4,
+      "city": 2,
+      "country": 1
+    },
+    "Name": "JANKO",
+    "Surname": "JANKO",
+    "Jmbg": "JANKO",
+    "TelephoneNumber": "JANKO",
+    "Gender": 0,
+    "BirthdayDate": "2021-05-07T00:00:00",
+    "Username": null,
+    "Password": null,
+    "Id": 5
   }
 ]
+

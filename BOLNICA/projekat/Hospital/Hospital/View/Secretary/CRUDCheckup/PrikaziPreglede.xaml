@@ -5,9 +5,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Hospital.Sekretar"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="PrikaziPreglede"
-    Width="700"
+    Title="Prikazi sve preglede"
+    Width="550"
     Height="450"
+    TextElement.FontSize="14"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
@@ -21,40 +22,38 @@
         <DataGrid
             Name="sviPregledi"
             Height="258"
-            Margin="81,49,97.6,0"
+            Margin="28,67,35,0"
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
-            ItemsSource="{Binding listCheckups}">
+            ItemsSource="{Binding listCheckups}"
+            TextElement.Foreground="#FF0852AE">
 
             <DataGrid.Columns>
-                <DataGridTextColumn
-                    Width="80"
-                    Binding="{Binding IdCh}"
-                    Header="Id termina" />
+
 
                 <DataGridTextColumn
-                    Width="120"
+                    Width="115"
                     Binding="{Binding Date}"
                     Header="Datum" />
 
                 <DataGridTextColumn
-                    Width="50"
+                    Width="56"
                     Binding="{Binding Duration}"
                     Header="Trajanje" />
                 <DataGridTextColumn
-                    Width="80"
+                    Width="90"
                     Binding="{Binding Type}"
                     Header="Tip pregleda" />
                 <DataGridTextColumn
-                    Width="50"
+                    Width="55"
                     Binding="{Binding IdRoom}"
                     Header="Id sobe" />
                 <DataGridTextColumn
-                    Width="65"
+                    Width="75"
                     Binding="{Binding IdDoctor}"
                     Header="Id doktora" />
                 <DataGridTextColumn
-                    Width="70"
+                    Width="90"
                     Binding="{Binding IdPatient}"
                     Header="Id pacijenta" />
 
@@ -63,8 +62,8 @@
         </DataGrid>
         <Button
             Width="89"
-            Height="50"
-            Margin="526,336,0,0"
+            Height="36"
+            Margin="420,350,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BorderBrush="#FF0E1A9F"
@@ -86,8 +85,8 @@
         </Button>
         <Button
             Width="92"
-            Height="50"
-            Margin="385,336,0,0"
+            Height="36"
+            Margin="288,350,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BorderBrush="#FF111D9D"
@@ -97,7 +96,8 @@
             FontFamily="Chooper black"
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF0E18E7">
+            Foreground="#FF0E18E7"
+            RenderTransformOrigin="0.388,0.425">
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"
@@ -107,8 +107,8 @@
         </Button>
         <Button
             Width="90"
-            Height="50"
-            Margin="235,336,0,0"
+            Height="36"
+            Margin="160,350,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BorderBrush="#FF111D9D"
@@ -128,8 +128,8 @@
         </Button>
         <Button
             Width="88"
-            Height="50"
-            Margin="81,336,0,0"
+            Height="36"
+            Margin="28,350,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BorderBrush="#FF111D9D"

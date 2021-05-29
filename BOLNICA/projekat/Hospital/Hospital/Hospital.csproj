@@ -61,6 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+
     <Compile Include="Controller\DoctorController.cs" />
     <Compile Include="Controller\FunctionalityController.cs" />
     <Compile Include="Controller\MedicalRecordController.cs" />
@@ -75,6 +76,10 @@
     <Compile Include="DTO\MedicineReviewDTO.cs" />
     <Compile Include="DTO\RoomInventoryDTO.cs" />
     <Compile Include="DTO\RoomRenovationDTO.cs" />
+
+    <Compile Include="Controller\PatientController.cs" />
+    <Compile Include="DTO\PatientDTO.cs" />
+
     <Compile Include="FileStorage\Interfaces\IAlergensFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IAnamnesisFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\ICheckFileStorage.cs" />
@@ -91,6 +96,7 @@
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
+
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\FunctionalityService.cs" />
     <Compile Include="Service\MedicalRecordService.cs" />
@@ -100,6 +106,9 @@
     <Compile Include="Service\RoomInventoryService.cs" />
     <Compile Include="Service\RoomRenovationService.cs" />
     <Compile Include="Service\StaticInventoryMovemenetService.cs" />
+
+    <Compile Include="Service\PatientService.cs" />
+
     <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeLekaRevizijaUpravnik.xaml.cs">
       <DependentUpon>BrisanjeLekaRevizijaUpravnik.xaml</DependentUpon>
     </Compile>
@@ -180,6 +189,12 @@
     </Compile>
     <Compile Include="View\Pacijent\ZdravstveniKarton.xaml.cs">
       <DependentUpon>ZdravstveniKarton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Secretary\CRUDPatient\RegistredPatient\BlokiraniPacijenti.xaml.cs">
+      <DependentUpon>BlokiraniPacijenti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Secretary\CRUDPatient\RegistredPatient\OdblokirajPacijenta.xaml.cs">
+      <DependentUpon>OdblokirajPacijenta.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Secretary\Notifications\Blog\DodajObavestenjeBlog.xaml.cs">
       <DependentUpon>DodajObavestenjeBlog.xaml</DependentUpon>
@@ -547,6 +562,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Ostalo\ObavestenjaUpravnik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Secretary\CRUDPatient\RegistredPatient\BlokiraniPacijenti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Secretary\CRUDPatient\RegistredPatient\OdblokirajPacijenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1000,6 +1023,11 @@
   <ItemGroup>
     <Resource Include="View\Pacijent\download %282%29.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="View\Images\vector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\Button-White-Remove-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

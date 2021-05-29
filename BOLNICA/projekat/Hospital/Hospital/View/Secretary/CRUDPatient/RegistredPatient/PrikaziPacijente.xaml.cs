@@ -74,5 +74,16 @@ namespace Hospital
             Alergeni a = new Alergeni(listPatient, (Patient)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
             a.Show();
         }
+
+        private void CancelBtn(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void PrikazPacijenata_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+       
     }
 }
