@@ -6,6 +6,41 @@
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
      Title="Anketa"  Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="MyButtonDesign">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="MyContentPresenter" 
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Foreground" Value="Transparent"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="True">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Foreground" Value="Transparent"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="0.25"/>
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+    </Window.Resources>
     <Grid>
         <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="111,17,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Grid.RowSpan="2" Width="171" Height="38" Foreground="LightBlue" Grid.ColumnSpan="2"/>
 
@@ -27,17 +62,28 @@
         </ComboBox>
         <Label Content="     Upišite Vaš komentar:" HorizontalAlignment="Left" FontFamily="Goudy Old Style" VerticalAlignment="Top" Margin="10,249,0,0" Width="145"/>
         <TextBox  Name="komentar" HorizontalAlignment="Left" Height="95" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="31,275,0,0"/>
-        <Button  Name="submit" Content="Pošaljite anketu" HorizontalAlignment="Left" FontFamily="Goudy Old Style" VerticalAlignment="Top" Width="105" Margin="95,401,0,0" RenderTransformOrigin="1.339,0.281" Click="posalji"/>
+        <Button  Style="{ StaticResource MyButtonDesign}" Foreground="#FF0F0D0D" BorderBrush="Gray" Name="submit" Content="Pošaljite anketu" HorizontalAlignment="Left" FontFamily="Goudy Old Style" VerticalAlignment="Top" Width="105" Margin="95,390,0,0" RenderTransformOrigin="1.339,0.281" Click="posalji" Height="29" Background="#FF868585"/>
 
         <Line  
             X1="500" Y1="0"  
             X2="20" Y2="0"  
             Stroke="SteelBlue"  
             StrokeThickness="4" Margin="-19,58,-1.8,169.6" />
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="10,25,0,0" FontSize="22" Height="19" Click="odustani" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6">
-            <Button.Background>
-                <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
-            </Button.Background>
+        <Button  Style="{ StaticResource MyButtonDesign}" Click="odustani" FontSize="10" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" Width="55" Height="36" Command ="{Binding UpdateStorageCommand}" >
+            <StackPanel>
+                <Image Source="arrow.png" Height="30" Width="55" >
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Style.Triggers>
+                                <Trigger Property="IsEnabled" Value="False">
+
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
         </Button>
+
     </Grid>
 </Window>
