@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -18,35 +20,25 @@ namespace Hospital
 {
     public partial class DodajInventarDijalog : UserControl
     {
-        public Frame frame;
-        public ObservableCollection<Inventory> listInventory;
-        public DodajInventarDijalog(Frame m,ObservableCollection<Inventory> list)
+        private Frame frame;
+        private ObservableCollection<InventoryDTO> inventories;
+        private InventoryController inventoryController;
+        private InventoryDTO inventory = new InventoryDTO();
+
+        public InventoryDTO Inventory
+        {
+            get { return inventory; }
+            set { inventory = value; }
+        }
+        public DodajInventarDijalog(Frame frame,ObservableCollection<InventoryDTO> inventories)
         {
             InitializeComponent();
-            frame = m;
-            listInventory = list;
+            this.DataContext = this;
+            this.frame = frame;
+            this.inventories = inventories;
+            this.inventoryController = new InventoryController();
         }
 
-        public int generisiId()
-        {
-            int ret = 0;
-
-            InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
-            List<Inventory> allInventories = storage.GetAll();
-
-            foreach (Inventory inventoryBig in allInventories)
-            {
-                foreach (Inventory inventory in allInventories)
-                {
-                    if (ret == inventory.Id)
-                    {
-                        ++ret;
-                        break;
-                    }
-                }
-            }
-            return ret;
-        }
 
         private void odustani(object sender, RoutedEventArgs e)
         {
@@ -55,12 +47,8 @@ namespace Hospital
 
         private void dodaj(object sender, RoutedEventArgs e)
         {
-            InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
-
-            Inventory newInventory = new Inventory(generisiId(),NameTxt.Text,Convert.ToInt32(QuantityTxt.Text),(InventoryType)TypeTxt.SelectedIndex);
-
-            storage.Save(newInventory);
-            listInventory.Add(newInventory);
+            inventoryController.save(inventory);
+            inventories.Add(inventory);
             frame.NavigationService.Navigate(new BelsekaMagacin());
         }
     }

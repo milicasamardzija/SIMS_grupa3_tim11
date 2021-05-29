@@ -41,7 +41,7 @@ namespace Hospital
         }
         private void dodavanjeProstorije(object sender, RoutedEventArgs e)
         {
-            controller.save(room);
+            controller.save(Room);
             roomsView.ItemsSource = controller.getAll();
             frame.NavigationService.Navigate(new BelsekaMagacin());
         }

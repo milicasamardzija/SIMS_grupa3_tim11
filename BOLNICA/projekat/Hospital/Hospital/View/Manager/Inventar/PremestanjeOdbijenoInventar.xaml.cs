@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for PremestanjeOdbijenoInventar.xaml
-    /// </summary>
     public partial class PremestanjeOdbijenoInventar : Window
     {
         public PremestanjeOdbijenoInventar()

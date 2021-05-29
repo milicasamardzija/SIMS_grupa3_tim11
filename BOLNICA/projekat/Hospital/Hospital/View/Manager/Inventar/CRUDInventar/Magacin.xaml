@@ -16,7 +16,7 @@
                   Width="593"
                   AutoGenerateColumns="False"
                   IsReadOnly="True"
-                  ItemsSource="{Binding Path = InventoryList}">
+                  ItemsSource="{Binding Path = inventories}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="TIP" Width="200" Binding="{Binding Type}"/>
                 <DataGridTextColumn Header="IME" Width="200" Binding="{Binding Name}"/>

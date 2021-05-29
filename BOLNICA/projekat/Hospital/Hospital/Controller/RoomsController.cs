@@ -16,7 +16,6 @@ namespace Hospital.Controller
         {
             service.zakaziRenoviranje(new RoomRenovation(renovation.IdRenovation,renovation.IdRoom,renovation.DateBegin,renovation.DateEnd,renovation.Description));
         }
-
         public List<RoomDTO> getAll()
         {
             List<RoomDTO> rooms = new List<RoomDTO>();

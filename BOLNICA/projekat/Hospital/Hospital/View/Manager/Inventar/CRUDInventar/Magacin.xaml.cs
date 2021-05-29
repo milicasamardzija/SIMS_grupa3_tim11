@@ -1,4 +1,5 @@
-﻿using Hospital.FileStorage.Interfaces;
+﻿using Hospital.DTO;
+using Hospital.FileStorage.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,52 +15,40 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.Controller;
 
 namespace Hospital
 {
     public partial class Magacin : UserControl
     {
-        public ObservableCollection<Inventory> InventoryList
+        public ObservableCollection<InventoryDTO> inventories
         {
             get;
             set;
         }
 
-        public ObservableCollection<Room> ListRoom
+        public ObservableCollection<RoomDTO> rooms
         {
             get;
             set;
         }
-        private Frame managerFrame = new Frame();
-   
-        public Magacin( Frame frame)
+        private Frame frame;
+        private RoomsController roomController;
+        private InventoryController inventoryController;
+        public Magacin(Frame frame)
         {
             InitializeComponent();
             MagacinFrame.NavigationService.Navigate(new BelsekaMagacin());
             this.DataContext = this;
-            InventoryList = loadJason();
-            ListRoom = loadJasonR();
-            ListaInventara.ItemsSource = InventoryList;
-            managerFrame = frame;
+            this.frame = frame;
+            this.roomController = new RoomsController();
+            this.inventoryController = new InventoryController();
+            this.inventories = new ObservableCollection<InventoryDTO>(inventoryController.getAll());
+           // this.rooms = new ObservableCollection<RoomDTO>(roomController.getAll());
         }
-        public ObservableCollection<Room> loadJasonR()
-        {
-            // RoomFileStorage fs = new RoomFileStorage();
-            RoomIFileStorage fs = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
-            ObservableCollection<Room> rs = new ObservableCollection<Room>(fs.GetAll());
-            return rs;
-        }
-
-        public ObservableCollection<Inventory> loadJason()
-        {
-            InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
-            ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>(storage.GetAll());
-            return ret;
-        }
-
         private void dodaj(object sender, RoutedEventArgs e)
         {
-            MagacinFrame.NavigationService.Navigate(new DodajInventarDijalog(MagacinFrame,InventoryList));
+            MagacinFrame.NavigationService.Navigate(new DodajInventarDijalog(MagacinFrame,inventories));
         }
 
         private void izbrisi(object sender, RoutedEventArgs e)
@@ -70,7 +59,7 @@ namespace Hospital
             }
             else
             {
-                MagacinFrame.NavigationService.Navigate(new IzbrisiInventarDijalog(MagacinFrame, InventoryList, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
+                MagacinFrame.NavigationService.Navigate(new IzbrisiInventarDijalog(MagacinFrame, inventories, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
             }
         }
 
@@ -82,11 +71,11 @@ namespace Hospital
             }
             else
             {
-                Inventory inventory = (Inventory)ListaInventara.SelectedItem;
+              /*  Inventory inventory = (Inventory)ListaInventara.SelectedItem;
                 if (inventory.Type == InventoryType.staticki)
-                    MagacinFrame.NavigationService.Navigate(new PremestanjeInventara(MagacinFrame, InventoryList, ListaInventara, true, null, ListaInventara));
-                else
-                    MagacinFrame.NavigationService.Navigate(new PremestiInventarUSobu(MagacinFrame, InventoryList, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex, ListaInventara));
+                    MagacinFrame.NavigationService.Navigate(new PremestanjeInventara(MagacinFrame, inventories, ListaInventara, true, null, ListaInventara));
+                else*
+                    MagacinFrame.NavigationService.Navigate(new PremestiInventarUSobu(MagacinFrame, inventories, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex, ListaInventara));*/
             }
         }
 
@@ -98,7 +87,7 @@ namespace Hospital
             }
             else
             {
-                MagacinFrame.NavigationService.Navigate(new IzmenaInventaraDijalog(MagacinFrame, InventoryList, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
+                MagacinFrame.NavigationService.Navigate(new IzmenaInventaraDijalog(MagacinFrame, inventories, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
             }
         }
 
@@ -106,7 +95,7 @@ namespace Hospital
 
         private void PretragaTxt_TextChanged(object sender, TextChangedEventArgs e)
         {
-            InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
+           /* InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             List<Inventory> all = storage.GetAll();
 
             filteredInventory.Clear();
@@ -146,12 +135,12 @@ namespace Hospital
                     }
                 }
                 ListaInventara.ItemsSource = filteredInventory.ToList();
-            }
+            }*/
         }
 
         private void filtriranjeKolicina(object sender, TextChangedEventArgs e)
         {
-            int kolicina = -1;
+           /* int kolicina = -1;
             InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             List<Inventory> all = storage.GetAll();
             if (!KolicinaFiltriranja.Text.Equals(""))
@@ -172,7 +161,7 @@ namespace Hospital
                 ListaInventara.ItemsSource = filteredInventory.ToList();
                 if (KolicinaFiltriranja.Text.Equals(""))
                 {
-                    ListaInventara.ItemsSource = InventoryList;
+                    ListaInventara.ItemsSource = inventories;
                 }
 
             } else if (UslovFiltriranja.SelectedIndex == 1) //<=
@@ -187,9 +176,9 @@ namespace Hospital
                 ListaInventara.ItemsSource = filteredInventory.ToList();
                 if (KolicinaFiltriranja.Text.Equals(""))
                 {
-                    ListaInventara.ItemsSource = InventoryList;
+                    ListaInventara.ItemsSource = inventories;
                 }
-            } 
+            } */
             
         }
 

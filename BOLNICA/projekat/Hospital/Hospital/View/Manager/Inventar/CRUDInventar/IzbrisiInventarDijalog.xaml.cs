@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.DTO;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -22,10 +23,10 @@ namespace Hospital
     public partial class IzbrisiInventarDijalog : UserControl
     {
         public Frame frame;
-        public ObservableCollection<Inventory> listInventory;
+        public ObservableCollection<InventoryDTO> listInventory;
         public int index;
         public int id;
-        public IzbrisiInventarDijalog(Frame m,ObservableCollection<Inventory> list,Inventory selecetdInventory, int selectedIndex)
+        public IzbrisiInventarDijalog(Frame m,ObservableCollection<InventoryDTO> list,Inventory selecetdInventory, int selectedIndex)
         {
             InitializeComponent();
             frame = m;

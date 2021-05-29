@@ -46,5 +46,10 @@ namespace Hospital.Controller
         {
             return service.inventoryByQuantity(quantity);
         }
+
+        public void save(InventoryDTO inventory)
+        {
+            service.save(new Inventory(inventory.Id,inventory.Name,inventory.Quantity,inventory.Type));
+        }
     }
 }

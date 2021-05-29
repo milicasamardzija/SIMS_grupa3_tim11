@@ -208,5 +208,27 @@ namespace Hospital.Service
         {
             return inventoryStorage.inventoryByQuantity(quantity);
         }
+        public int generateId()
+        {
+            int ret = 0;
+            foreach (Inventory inventoryBig in inventoryStorage.GetAll())
+            {
+                foreach (Inventory inventory in inventoryStorage.GetAll())
+                {
+                    if (ret == inventory.Id)
+                    {
+                        ++ret;
+                        break;
+                    }
+                }
+            }
+            return ret;
+        }
+
+        public void save(Inventory inventory)
+        {
+            inventory.Id = generateId();
+            inventoryStorage.Save(inventory);
+        }
     }
 }

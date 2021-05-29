@@ -1,4 +1,5 @@
-﻿using Hospital.FileStorage.Interfaces;
+﻿using Hospital.DTO;
+using Hospital.FileStorage.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,17 +18,14 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for IzmenaInventaraDijalog.xaml
-    /// </summary>
     public partial class IzmenaInventaraDijalog : UserControl
     {
         public Frame frame;
-        public ObservableCollection<Inventory> listInventory;
+        public ObservableCollection<InventoryDTO> listInventory;
         public int index;
         public int id;
         public Inventory inventory;
-        public IzmenaInventaraDijalog(Frame m, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex)
+        public IzmenaInventaraDijalog(Frame m, ObservableCollection<InventoryDTO> list, Inventory selecetedInventory, int selectedIndex)
         {
             InitializeComponent();
             frame = m;
@@ -58,7 +56,7 @@ namespace Hospital
                     i.Name = ImeTxt.Text;
                     i.Quantity = Convert.ToInt32(KolicinaTxt.Text);
                     i.Type = (InventoryType)TypeTxt.SelectedIndex;
-                    listInventory[index] = new Inventory(i.Id, i.Name, i.Quantity, i.Type);
+                    listInventory[index] = new InventoryDTO(i.Id, i.Name, i.Quantity, i.Type);
                     break;
                 }
             }
