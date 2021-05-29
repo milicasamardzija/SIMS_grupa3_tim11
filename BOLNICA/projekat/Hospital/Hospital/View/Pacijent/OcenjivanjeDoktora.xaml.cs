@@ -94,14 +94,16 @@ namespace Hospital
             oceni.Show();
         }
 
-        private void ListaObavljenihTermina_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
+       
 
         public void UpdateTable()
         {
             ListaObavljenihTermina.Items.Remove(((Checkup)ListaObavljenihTermina.SelectedItem).Id);
+        }
+
+        private void ListaObavljenihTermina_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

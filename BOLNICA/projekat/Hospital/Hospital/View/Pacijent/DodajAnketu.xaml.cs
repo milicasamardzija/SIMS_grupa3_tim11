@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.Controller;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -28,12 +29,8 @@ namespace Hospital
         public int index;
         public int idPatient; //id pacijenta koji je ulogovan
         public string ime;
-      
-        
-        
-
-        
-       private string lekar;
+        private string lekar;
+        SurveyController surveycontroler = new SurveyController();
 
         public DodajAnketu(ObservableCollection<Checkup> list, Checkup selectedApp, int selectedIndex, int idP)
         {
@@ -88,22 +85,18 @@ namespace Hospital
             SacuvanaAnketa poslato = new SacuvanaAnketa();
             poslato.Show();
 
-            SurveyFileStorage sveAnkete = new SurveyFileStorage("./../../../../Hospital/files/ankete.json");
+          
 
             lekar = doktor.Text;
             int ocenjeno = ocena.SelectedIndex;
             string komentarisano = komentar.Text;
-            int id = sveAnkete.GetAll().Count() + 1;
+            int id = surveycontroler.getAll().Count() + 1;
+            Survey survey = new Survey(id, komentarisano, ocenjeno, null);
 
-            Survey novaAnketa = new Survey(id, komentarisano, ocenjeno, lekar,termin.Id);
-
-            sveAnkete.Save(novaAnketa);
+            surveycontroler.save(survey);
             obavljeniTermini.RemoveAt(index);
-
-
-
             this.Close();
-         // parent.UpdateTable();
+        
 
         }
 

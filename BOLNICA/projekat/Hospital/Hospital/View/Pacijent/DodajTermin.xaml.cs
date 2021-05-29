@@ -21,6 +21,7 @@ namespace Hospital
 
         private CheckupController checkupcontroller = new CheckupController();
         private FunctionalityController funkcionalitycontroller = new FunctionalityController();
+        private PatientController1 patientcontroller = new PatientController1();
 
         public ObservableCollection<Checkup> appointmentList;
         public int idPatient; //id pacijenta koji je ulogovan
@@ -36,11 +37,8 @@ namespace Hospital
             appointmentList = applist;
             idPatient = idP;
 
-            
-
            
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagepatient.json");
-            List<Patient> patients = storage.GetAll();
+            List<Patient> patients = patientcontroller.getAll();
             foreach (Patient patient in patients)
             {
                 if (patient.Id == idP)
