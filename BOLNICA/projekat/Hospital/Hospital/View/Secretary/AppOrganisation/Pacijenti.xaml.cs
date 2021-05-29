@@ -1,4 +1,5 @@
 ﻿using Hospital.Sekretar;
+using Hospital.View.Secretary.CRUDPatient.RegistredPatient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +58,12 @@ namespace Hospital
             HitanPregled hitan = new HitanPregled();
             hitan.Show();
 
+        }
+
+        private void BlockedPatientsBtn(object sender, RoutedEventArgs e)
+        {
+            BlokiraniPacijenti blokirani = new BlokiraniPacijenti();
+            blokirani.Show();
         }
     }
 }

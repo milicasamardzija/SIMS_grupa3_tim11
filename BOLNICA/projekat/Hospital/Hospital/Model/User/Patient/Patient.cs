@@ -36,7 +36,8 @@ public class Patient : User
         this.occupation = oc;
         this.insurence = ins;
         this.adress = adr;
-        
+        this.guest = false;
+       
 
     }
 

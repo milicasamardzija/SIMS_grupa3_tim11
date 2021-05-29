@@ -123,7 +123,7 @@
         <Button
             Width="168"
             Height="32"
-            Margin="375,266,0,0"
+            Margin="375,328,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="    Placanje termina"
@@ -162,6 +162,13 @@
                     AlignmentX="Left"
                     ImageSource="/Hospital;component/View/Images/Help-icon.png"
                     Stretch="None" />
+            </Button.Background>
+        </Button>
+        <Button Content="      Blokirani pacijenti" HorizontalAlignment="Left" Margin="375,266,0,0" VerticalAlignment="Top" FontSize="14"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" Width="168" Height="32" Click="BlockedPatientsBtn">
+            <Button.Background>
+                <ImageBrush ImageSource="/Hospital;component/View/Images/Button-White-Remove-icon.png" Stretch="None" AlignmentX="Left"/>
             </Button.Background>
         </Button>
 
