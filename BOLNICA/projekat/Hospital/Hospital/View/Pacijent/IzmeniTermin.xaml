@@ -4,55 +4,69 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
-        mc:Ignorable="d"
-      Title="Izmeni termin" Height="500" Width="430" WindowStartupLocation="CenterScreen">
+            Title="Dodaj termin" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
     <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Grid Margin="0,0,0,0.4">
+        <Grid Margin="0,0,0.2,44.6">
             <Grid.RowDefinitions>
-                <RowDefinition Height="44*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="71*"/>
+                <RowDefinition Height="10*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="315*"/>
+                <ColumnDefinition Width="8*"/>
                 <ColumnDefinition Width="0*"/>
             </Grid.ColumnDefinitions>
-            <Label  x:Name="date" Margin="64,75,92,325" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="0" FontWeight="Bold" Content="Datum"/>
-            <Label Margin="64,295,274,0.4" Foreground="DarkBlue" FontSize="10" FontWeight="Bold" Grid.RowSpan="2">Doktor</Label>
-
-            <Button Margin="87,367,257,38" Grid.Column="0" Background="AliceBlue" Click="add_appointment">Izmeni</Button>
-            <Button Margin="232,366,112,39" Background="AliceBlue" Click="odustani_click">Odustani</Button>
-            <Button x:Name="button1" Content="Slobodni doktori&#xD;&#xA;" HorizontalAlignment="Left" Margin="127,249,0,0" VerticalAlignment="Top" Width="150" Click="slobodni_doktori" Height="22"/>
-
-            <ComboBox Name="timeText" SelectedValuePath="Content" HorizontalAlignment="Left" VerticalAlignment="Top" Width="182" Margin="188,162,0,0"  Height="28">
-
-
+            <Label Margin="-28,45,-8.8,287.2" Foreground="DarkBlue" FontSize="10" Grid.Column="0" Grid.Row="0" FontWeight="Bold" Grid.ColumnSpan="3" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-1.001"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="2.707"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+                <Line  
+                    X1="500" Y1="0"  
+                    X2="20" Y2="0"  
+                    Stroke="SteelBlue"  
+                    StrokeThickness="4" Height="10" Width="344" />
+            </Label>
+            <Label Content="Pomeranje termina" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="74,78,0,0" FontFamily="Goudy Old Style" Width="166" Height="37" FontSize="20"/>
+            <ComboBox Name="time"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="38,205,0,0" Height="22" SelectionChanged="time_SelectionChanged" />
+            <ComboBox x:Name="lekar" ItemsSource="{Binding Path=Lekar}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="38,274,0,0" Height="22" IsSynchronizedWithCurrentItem="False" FontSize="14">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0} {1}">
+                                    <Binding Path="name"/>
+                                    <Binding Path="surname"/>
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
             </ComboBox>
-            <Label Content="Vreme"   FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="DarkBlue" FontSize="10" x:Name="time" Margin="64,166,0,0" RenderTransformOrigin="0.43,-0.681" Height="24" Width="40"/>
-            <DatePicker x:Name="dateText" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="188,82,0,0" Width="128" Height="23"/>
-            <Button Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Margin="334,80,0,0" Height="25" Click="potvrda" RenderTransformOrigin="0.589,-0.344"/>
+            <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="145,20,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Width="171" Height="38" Foreground="LightBlue" Grid.ColumnSpan="2"/>
+
+            <Label Content="Datum:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,120,0,0" RenderTransformOrigin="0.747,0.358" FontFamily="Goudy Old Style" FontSize="14" Height="27" Width="53"/>
+            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="19">
+                <Label Content=""/>
+            </Label>
+            <Label Content="Vreme:&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,181,0,0" Height="24" FontFamily="Goudy Old Style" FontSize="14" Width="59"/>
+            <Label Content="Doktor:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,250,0,0" Width="59" FontFamily="Goudy Old Style" Height="24" RenderTransformOrigin="0.532,1.258"/>
+            <Button x:Name="odustanii" Content="Odustani" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="165,3.8,0,0" Height="30" FontFamily="Goudy Old Style" FontSize="14" Foreground="#FF0F0D0D" BorderBrush="#FFF9F3F3"  Click="odustani" Grid.Row="1"/>
+            <Button x:Name="potvrdi" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="55,3.8,0,0" Height="30" FontFamily="Goudy Old Style" FontSize="14" Foreground="#FF0F0D0D" BorderBrush="#FFF9F3F3"  Click="add_appointment" Grid.Row="1"/>
 
 
         </Grid>
-        <ComboBox x:Name="doktor" ItemsSource="{Binding Path=Lekar}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180" Margin="190,293,0,0" Height="32" IsSynchronizedWithCurrentItem="False" FontSize="14">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock>
-                        <TextBlock.Text>
-                            <MultiBinding StringFormat="{}{0} {1}">
-                                <Binding Path="name"/>
-                                <Binding Path="surname"/>
-                            </MultiBinding>
-                        </TextBlock.Text>
-                    </TextBlock>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
-
+        <DatePicker Name="date"  HorizontalAlignment="Left" Height="22" Margin="38,145,0,0" VerticalAlignment="Top" Width="230" SelectedDateChanged="date_SelectedDateChanged" />
 
 
     </Grid>
 </Window>
+
