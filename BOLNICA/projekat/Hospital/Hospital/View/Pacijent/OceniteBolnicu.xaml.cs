@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.Controller;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,6 +24,7 @@ namespace Hospital
     {
 
         int id;
+        SurveyController surveycontroler = new SurveyController();
         public OceniteBolnicu(int idP)
         {
             InitializeComponent();
@@ -59,20 +61,19 @@ namespace Hospital
 
         private void posalji(object sender, RoutedEventArgs e)
         {
-            SacuvanaAnketa poslato = new SacuvanaAnketa();
-            poslato.Show();
+            SacuvanaAnketa surveys = new SacuvanaAnketa();
+            surveys.Show();
             this.Close();
          
-            SurveyFileStorage sveAnkete = new SurveyFileStorage("./../../../../Hospital/files/ankete.json");
-
+           
          
             int ocenjeno = ocena.SelectedIndex;
             string komentarisano = komentar.Text;
-            int id = sveAnkete.GetAll().Count() + 1;
+            int id = surveycontroler.getAll().Count() + 1;
 
-            Survey novaAnketa = new Survey(id, komentarisano, ocenjeno, null);
+            Survey survey = new Survey(id, komentarisano, ocenjeno, null);
 
-            sveAnkete.Save(novaAnketa);
+            surveycontroler.save(survey);
 
         }
 

@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.Controller;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -26,6 +27,8 @@ namespace Hospital.View.Pacijent
         private List<string> availableTimes;
         private List<Checkup> termini;
         public ObservableCollection<Checkup> appointmentList;
+        CheckupController checkupController = new CheckupController();
+        FunctionalityController functionalityController = new FunctionalityController();
         public PrioritetDoktor(ObservableCollection<Checkup> applist, int idP)
         {
             InitializeComponent();
@@ -172,8 +175,7 @@ namespace Hospital.View.Pacijent
 
 
 
-            CheckupFileStorage app = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-
+         
             global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
             if (times.SelectedIndex != -1)
             {
@@ -181,16 +183,16 @@ namespace Hospital.View.Pacijent
                 String t = item.ToString();
                 String d = date.Text;
                 DateTime dt = DateTime.Parse(d + " " + t);
-                int idG = app.GetAll().Count();
+                int idG = checkupController.getAll().Count();
 
-                Checkup newapp = new Checkup(idG, doktor.Id, id, dt, 1, 0);
+                Checkup checkup = new Checkup(idG, doktor.Id, id, dt, 1, 0);
 
-                app.Save(newapp);
-                appointmentList.Add(newapp);
+                checkupController.save(checkup);
+                appointmentList.Add(checkup);
 
-                FunctionalityFileStorage funkcionalnosti = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
+               
                 Functionality funkcionalnost = new Functionality(DateTime.Now, id, "dodavanje");
-                funkcionalnosti.Save(funkcionalnost);
+                functionalityController.save(funkcionalnost);
 
                 this.Close();
                 WindowPacijent wp = new WindowPacijent(id);

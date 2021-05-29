@@ -28,6 +28,28 @@ namespace Hospital.Controller
            
             
         }
+        public List<Checkup> getAll()
+        {
+            List<Checkup> checkups = new List<Checkup>();
+            foreach (Checkup checkup in service.getAll())
+            {
+                checkups.Add(new Checkup(checkup.Id,checkup.IdDoctor, checkup.IdPatient, checkup.Date, checkup.IdRoom,checkup.Type));
+            }
+            return checkups;
+        }
+
+
+        public void save(Checkup checkup)
+        {
+            service.save(checkup);
+        }
+
+
+      
+        public void DeleteById(int id)
+        {
+            service.deleteById(id);
+        }
 
         public void changeCheckup(Checkup checkup)
         {

@@ -47,7 +47,9 @@ namespace Hospital.Service
             return val; //vracam prvi koji je dostupan 
         }
 
-       public List<Checkup> getCheckupDoctors(int idDoctor)
+       
+
+        public List<Checkup> getCheckupDoctors(int idDoctor)
         {
 
             List<Checkup> checkups = checkupStorage.GetAll();
@@ -59,6 +61,7 @@ namespace Hospital.Service
             return getDoctorTerms(idDoctor, unavailableCheckups);
 
         }
+
 
         private List<Checkup> getDoctorTerms(int idDoctor, List<Checkup> unavailableCheckups)
         {
@@ -103,6 +106,22 @@ namespace Hospital.Service
             Checkup newCheckup = new Checkup(generateIdCheckup(), checkup.IdDoctor, checkup.IdPatient, checkup.Date, 0, CheckupType.pregled);
             checkupStorage.Save(newCheckup);
 
+        }
+
+        public List<Checkup> getAll()
+        {
+            return checkupStorage.GetAll();
+        }
+
+        public void deleteById(int id)
+        {
+            
+            checkupStorage.DeleteById(id);
+        }
+
+        public void save(Checkup checkup)
+        {
+            checkupStorage.Save(checkup);
         }
     }
 }

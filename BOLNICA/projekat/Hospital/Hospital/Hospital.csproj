@@ -61,6 +61,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller\FunctionalityController.cs" />
+    <Compile Include="Controller\SurveyController.cs" />
     <Compile Include="FileStorage\Interfaces\IAlergensFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IAnamnesisFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\ICheckFileStorage.cs" />
@@ -77,6 +79,8 @@
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
+    <Compile Include="Service\FunctionalityService.cs" />
+    <Compile Include="Service\SurveyService.cs" />
     <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeLekaRevizijaUpravnik.xaml.cs">
       <DependentUpon>BrisanjeLekaRevizijaUpravnik.xaml</DependentUpon>
     </Compile>

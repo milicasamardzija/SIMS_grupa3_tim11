@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.Controller;
+using Hospital.Model;
 using Hospital.View.Pacijent;
 using Newtonsoft.Json;
 using System;
@@ -18,7 +19,9 @@ namespace Hospital
     public partial class DodajTermin : Window
     {
 
-        private WindowPacijent parent;
+        private CheckupController checkupcontroller = new CheckupController();
+        private FunctionalityController funkcionalitycontroller = new FunctionalityController();
+
         public ObservableCollection<Checkup> appointmentList;
         public int idPatient; //id pacijenta koji je ulogovan
         private List<string> lista;
@@ -45,9 +48,6 @@ namespace Hospital
                     imePacijenta.Text = patient.name + " " + patient.surname;
                 }
             }
-
-
-
 
             lista = new List<string>();
             lista.Add("08:00");
@@ -89,58 +89,30 @@ namespace Hospital
 
         }
 
-        public Patient getPatientFromFile()
-        {
-            Patient ret = new Patient();
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagepatient.json");
-            List<Patient> patients = storage.GetAll();
-
-            foreach (Patient patient in patients) 
-            {
-                if (patient.Id == idPatient) 
-                {
-                    ret = patient;
-                    break; 
-                }
-            }
-            return ret;
-        }
-
-         public Doctor getDoctorFromFile()
-        {
-            Doctor ret = new Doctor();
-
-            List<Doctor> doctors = JsonConvert.DeserializeObject<List<Doctor>>(File.ReadAllText(@"./../../../../Hospital/files/storageDoctor.json")); //cita listu doktora iz fajla
-            ret = doctors[0]; 
-
-            return ret;
-        }
+        
+      
 
         private void add_appointment(object sender, RoutedEventArgs e)
         {
 
-            CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            Patient patient = getPatientFromFile();
-
-            global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
+          
+         global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
             if (time.SelectedIndex != -1)
             {
                 var item = time.SelectedItem;
                 String t = item.ToString();
                 String d = date.Text;
                 DateTime dt = DateTime.Parse(d + " " + t);
-                int id = storage.GetAll().Count();
+                int id = checkupcontroller.getAll().Count();
 
 
-                Checkup newapp = new Checkup(id, doktor.Id, patient.Id, dt, 1, 0);
+                Checkup checkup = new Checkup(id, doktor.Id, idPatient, dt, 1, 0);
+                checkupcontroller.save(checkup);
+                appointmentList.Add(checkup);
 
-
-                storage.Save(newapp);
-             //   parent.updateTable();
-
-                FunctionalityFileStorage funkcionalnosti = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
+              
                 Functionality funkcionalnost = new Functionality(DateTime.Now, idPatient, "dodavanje");
-                funkcionalnosti.Save(funkcionalnost);
+                funkcionalitycontroller.save(funkcionalnost);
 
                 this.Close();
             }
@@ -205,14 +177,14 @@ namespace Hospital
 
             dostupnoVrijeme = new List<string>();
             List<Checkup> termini = new List<Checkup>();
-            CheckupFileStorage app = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+           CheckupFileStorage app = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             PatientFileStorage patients = new PatientFileStorage("./../../../../Hospital/files/storagepatient.json");
 
             if (lekar.SelectedItem != null && date.SelectedDate != null)
             {
                 foreach (Patient patient in patients.GetAll())
                 {
-                    foreach (Checkup termin in app.GetAll())
+                    foreach (Checkup termin in  checkupcontroller.getAll())
                     {
                         if (l.jmbg == termin.Doctor.jmbg)
                         {
@@ -234,6 +206,8 @@ namespace Hospital
                     }
                 }
             }
+
+
             DateTime danas = DateTime.Today;
 
             for (DateTime tm = danas.AddHours(8); tm < danas.AddHours(20); tm = tm.AddMinutes(15))

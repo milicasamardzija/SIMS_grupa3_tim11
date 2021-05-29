@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.Controller;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,6 +25,9 @@ namespace Hospital
         public ObservableCollection<Checkup> appointmentList;
         public int index;
         public int id;
+
+        CheckupController checkupController = new CheckupController();
+        FunctionalityController functionalityController = new FunctionalityController();
         public ObrisiTermin(ObservableCollection<Checkup> list, Checkup selectedApp, int selectedIndex)
         {
             InitializeComponent();
@@ -34,8 +38,8 @@ namespace Hospital
 
         private void da_Click(object sender, RoutedEventArgs e)
         {
-            CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            storage.DeleteById(id);
+            
+            checkupController.DeleteById(id);
             appointmentList.RemoveAt(index);
             FunctionalityFileStorage funkcionalnosti = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
             Functionality funkcionalnost = new Functionality(DateTime.Now, id, "brisanje");

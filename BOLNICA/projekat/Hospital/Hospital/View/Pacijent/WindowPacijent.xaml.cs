@@ -111,21 +111,7 @@ namespace Hospital
         }
 
 
-        public void updateTable()
-        {
-            ListaTermina.Items.Clear();
-            CheckupFileStorage app = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            List<Checkup> termini = app.GetAll();
-            foreach (Checkup termin in termini)
-            {
-                if (id == termin.Patient.Id)
-                {
-                    if  (termin.Date > DateTime.Now)
-                        ListaTermina.Items.Add(termin);
-                }
-            }
-        }
-
+       
 
         private void dodavanje(object sender, RoutedEventArgs e)
         {
@@ -137,6 +123,7 @@ namespace Hospital
             PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storageDoctor.json");
            List<Patient> patients = storage.GetAll();
             ObservableCollection<Patient> allPatients = new ObservableCollection<Patient>(patients);
+
             FunctionalityFileStorage funkcije = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
             List<Functionality> funkcionalnosti = funkcije.GetAll();
 
