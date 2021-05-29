@@ -61,10 +61,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller\MedicineReviewController.cs" />
     <Compile Include="Controller\RoomInventoryController.cs" />
     <Compile Include="Controller\RoomRenovationController.cs" />
     <Compile Include="Controller\StaticInventoryMovementController.cs" />
     <Compile Include="DTO\InventoryDTO.cs" />
+    <Compile Include="DTO\MedicineDTO.cs" />
+    <Compile Include="DTO\MedicineReviewDTO.cs" />
     <Compile Include="DTO\RoomInventoryDTO.cs" />
     <Compile Include="DTO\RoomRenovationDTO.cs" />
     <Compile Include="FileStorage\Interfaces\IAlergensFileStorage.cs" />
@@ -83,6 +86,7 @@
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
+    <Compile Include="Service\MedicineReviewService.cs" />
     <Compile Include="Service\RoomInventoryService.cs" />
     <Compile Include="Service\RoomRenovationService.cs" />
     <Compile Include="Service\StaticInventoryMovemenetService.cs" />

@@ -1,37 +1,22 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hospital.Model
+namespace Hospital.DTO
 {
-    public class Medicine : Entity,INotifyPropertyChanged
+    public class MedicineDTO : INotifyPropertyChanged
     {
+        private int id;
         private String name;
         private double quantity;
         private String type;
-        private List<Ingredient> ingredients;
-        private List<Medicine> replacementMedicines;
         private List<int> idsIngredients;
         private List<int> idsMedicines;
         private Boolean approved;
         private Boolean delete;
-        /*private int v1;
-        private string v2;
-        private double v3;
-        private string v4;
-        private bool v5;*/
-
-        /*  private int v1;
-private string v2;
-private double v3;
-private string v4;
-private object selectedItem1;
-private object selectedItem2;*/
-        // private bool approvedMedicine;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -43,8 +28,9 @@ private object selectedItem2;*/
             }
         }
 
-        public Medicine(int id, String nameMedicine, double quantityMedicine, String typeMedicine, List<int> ingredientsMedicine, List<int> replacementMedicine, Boolean approvement) : base(id)
+        public MedicineDTO(int id, String nameMedicine, double quantityMedicine, String typeMedicine, List<int> ingredientsMedicine, List<int> replacementMedicine, Boolean approvement)
         {
+            this.id = id;
             name = nameMedicine;
             quantity = quantityMedicine;
             type = typeMedicine;
@@ -54,29 +40,9 @@ private object selectedItem2;*/
             delete = false;
         }
 
-        public Medicine()
+        public MedicineDTO()
         {
         }
-
-       /* public Medicine(int v1, string v2, double v3, string v4, bool v5)
-        {
-            this.v1 = v1;
-            this.v2 = v2;
-            this.v3 = v3;
-            this.v4 = v4;
-            this.v5 = v5;
-        }*/
-
-        /*  public Medicine(int v1, string v2, double v3, string v4, object selectedItem1, object selectedItem2, bool approvedMedicine)
-          {
-              this.v1 = v1;
-              this.v2 = v2;
-              this.v3 = v3;
-              this.v4 = v4;
-              this.selectedItem1 = selectedItem1;
-              this.selectedItem2 = selectedItem2;
-              this.approvedMedicine = approvedMedicine;
-          }*/
 
         public String Name
         {
@@ -125,41 +91,6 @@ private object selectedItem2;*/
                 }
             }
         }
-
-        [JsonIgnore]
-        public List<Ingredient> Ingredients
-        {
-            get
-            {
-                return ingredients;
-            }
-            set
-            {
-                if (value != ingredients)
-                {
-                    ingredients = value;
-                    OnProperychanged("Ingredients");
-                }
-            }
-        }
-
-        [JsonIgnore]
-        public List<Medicine> ReplacementMedicines
-        {
-            get
-            {
-                return replacementMedicines;
-            }
-            set
-            {
-                if (value != replacementMedicines)
-                {
-                    replacementMedicines = value;
-                    OnProperychanged("ReplacementMedicines");
-                }
-            }
-        }
-
         public List<int> IdsIngredients
         {
             get
