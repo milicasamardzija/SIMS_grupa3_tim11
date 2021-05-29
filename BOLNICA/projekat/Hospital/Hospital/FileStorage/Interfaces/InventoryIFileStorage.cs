@@ -8,5 +8,8 @@ namespace Hospital.FileStorage.Interfaces
 {
     public interface InventoryIFileStorage : GenericRepository<Inventory>
     {
+        List<Inventory> inventoryByName(string name);
+        List<Inventory> inventoryByType(string type);
+        List<Inventory> inventoryByQuantity(int quantity);
     }
 }

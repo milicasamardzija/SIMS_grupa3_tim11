@@ -1,4 +1,5 @@
-﻿using Hospital.DTO;
+﻿using Hospital.Controller;
+using Hospital.DTO;
 using Hospital.FileStorage.Interfaces;
 using Hospital.Model;
 using Hospital.Service;
@@ -23,45 +24,30 @@ namespace Hospital
 {
     public partial class PrikazSobaRenoviranje : UserControl
     {
-        public ObservableCollection<RoomRenovation> Renovations
+        public ObservableCollection<RoomRenovationDTO> Renovations
         {
             get;
             set;
         }
-        private RenovationIFileStorage storage = new RenovationFileStorage("./../../../../Hospital/files/storageRenovationRooms.json");
-        private Frame back = new Frame();
-        private ObservableCollection<RoomDTO> rooms = new ObservableCollection<RoomDTO>();
-        public PrikazSobaRenoviranje(ObservableCollection<RoomDTO> roomList, Frame roomss)
+        private Frame frame = new Frame();
+        private RoomRenovationController controller = new RoomRenovationController();
+        public PrikazSobaRenoviranje(Frame frame)
         {
             InitializeComponent();
-            Renovations = loadJason();
+            Renovations = new ObservableCollection<RoomRenovationDTO>(controller.getAll());
             this.DataContext = this;
-            back = roomss;
-            rooms = roomList;
+            this.frame = frame;
         }
-        public ObservableCollection<RoomRenovation> loadJason()
-        {
-            RenovationFileStorage storage = new RenovationFileStorage("./../../../../Hospital/files/storageRenovationRooms.json");
-            ObservableCollection<RoomRenovation> all = new ObservableCollection<RoomRenovation>(storage.GetAll());
-            ObservableCollection<RoomRenovation> ret = new ObservableCollection<RoomRenovation>();
-
-            foreach (RoomRenovation r in all)
-            {
-                ret.Add(r);
-            }
-
-            return all;
-        }
-
+     
         private void Otkazi(object sender, RoutedEventArgs e)
         {
-            BrisanjeRenovacijeSIgurnost brisanje = new BrisanjeRenovacijeSIgurnost((RoomRenovation)ProstorijeRenoviranje.SelectedItem, Renovations);
+            BrisanjeRenovacijeSIgurnost brisanje = new BrisanjeRenovacijeSIgurnost((RoomRenovationDTO)ProstorijeRenoviranje.SelectedItem, Renovations);
             brisanje.Show();
         }
 
         private void unazad(object sender, RoutedEventArgs e)
         {
-            back.NavigationService.Navigate(new Sobe(back));
+            frame.NavigationService.Navigate(new Sobe(frame));
         }
     }
 }

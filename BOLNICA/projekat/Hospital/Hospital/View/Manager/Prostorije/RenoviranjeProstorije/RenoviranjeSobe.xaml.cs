@@ -18,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for RenoviranjeSobe.xaml
-    /// </summary>
     public partial class RenoviranjeSobe : UserControl
     {
         private Frame sobeFrame;

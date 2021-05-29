@@ -8,5 +8,7 @@ namespace Hospital.FileStorage.Interfaces
 {
     public interface RoomIFileStorage : GenericRepository<Room>
     {
+        List<Room> roomByFloor(string floor);
+        List<Room> roomsByType(String type);
     }
 }

@@ -14,4 +14,42 @@ using System.IO;
 public class InventoryFileStorage : GenericFileStorage<Inventory>,InventoryIFileStorage
 {
     public InventoryFileStorage(String filePath) : base(filePath) { }
+    public List<Inventory> inventoryByName(string name)
+    {
+        List<Inventory> filtratedInventory = new List<Inventory>();
+        foreach(Inventory inventory in GetAll())
+        {
+            if (inventory.Name.Equals(name))
+            {
+                filtratedInventory.Add(inventory);
+            }
+        }
+        return filtratedInventory;
+    }
+
+    public List<Inventory> inventoryByQuantity(int quantty)
+    {
+        List<Inventory> filtratedInventory = new List<Inventory>();
+        foreach (Inventory inventory in GetAll())
+        {
+            if (inventory.Quantity.Equals(quantty))
+            {
+                filtratedInventory.Add(inventory);
+            }
+        }
+        return filtratedInventory;
+    }
+
+    public List<Inventory> inventoryByType(string type)
+    {
+        List<Inventory> filtratedInventory = new List<Inventory>();
+        foreach (Inventory inventory in GetAll())
+        {
+            if (Convert.ToString(inventory.Type).Equals(type))
+            {
+                filtratedInventory.Add(inventory);
+            }
+        }
+        return filtratedInventory;
+    }
 }

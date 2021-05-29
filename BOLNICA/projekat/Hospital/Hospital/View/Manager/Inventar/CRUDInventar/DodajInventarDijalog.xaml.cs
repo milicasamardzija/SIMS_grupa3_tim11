@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for DodajInventarDijalog.xaml
-    /// </summary>
     public partial class DodajInventarDijalog : UserControl
     {
         public Frame frame;

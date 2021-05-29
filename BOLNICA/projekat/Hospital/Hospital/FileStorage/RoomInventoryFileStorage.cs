@@ -10,6 +10,7 @@ using System.IO;
 
 public class RoomInventoryFileStorage
 {
+   public RoomInventoryFileStorage() { }
    public List<RoomInventory> GetAll()
    {
         List<RoomInventory> all = new List<RoomInventory>();
