@@ -1,4 +1,5 @@
 using Hospital.Controller;
+using Hospital.DTO;
 using Hospital.Model;
 using Newtonsoft.Json;
 using System;
@@ -35,7 +36,7 @@ namespace Hospital
         private List<Checkup> termini;
         public ObservableCollection<Patient> pacijenti;
         private List<string> availableTimes;
-        PatientController1 patientcontroller = new PatientController1();
+        PatientController patientcontroller;
 
 
         public IzmeniTermin(ObservableCollection<Checkup> list, Checkup selectedApp, int selectedIndex, int idP)
@@ -46,18 +47,19 @@ namespace Hospital
             termin = selectedApp;
             index = selectedIndex;
             idPatient = idP;
+            patientcontroller = new PatientController();
 
             lista = new List<string>();
             CheckupFileStorage af = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             termini = af.GetAll();
 
 
-            List<Patient> patients = patientcontroller.getAll();
-            foreach (Patient patient in patients)
+            List<PatientDTO> patients = patientcontroller.getAll();
+            foreach (PatientDTO patient in patients)
             {
                 if (patient.Id == idP)
                 {
-                    imePacijenta.Text = patient.name + " " + patient.surname;
+                    imePacijenta.Text = patient.Name + " " + patient.Surname;
                 }
             }
 

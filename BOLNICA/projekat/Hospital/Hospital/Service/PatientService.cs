@@ -20,6 +20,16 @@ namespace Hospital.Service
 
         }
 
+        public void save(Patient patient)
+        {
+            patientStorage.Save(patient);
+        }
+
+        public List<Patient> getAll()
+        {
+            return patientStorage.GetAll();
+        }
+
         public ObservableCollection<PatientDTO> loadBlockedPatients()
         {
             ObservableCollection<PatientDTO> blockedPatients = new ObservableCollection<PatientDTO>();

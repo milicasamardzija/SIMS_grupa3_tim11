@@ -26,14 +26,16 @@ namespace Hospital
         public int index;
         public int id;
 
-        CheckupController checkupController = new CheckupController();
-        FunctionalityController functionalityController = new FunctionalityController();
+        CheckupController checkupController;
+        FunctionalityController functionalityController;
         public ObrisiTermin(ObservableCollection<Checkup> list, Checkup selectedApp, int selectedIndex)
         {
             InitializeComponent();
             appointmentList = list;
             id = selectedApp.Id;
             index = selectedIndex;
+            checkupController = new CheckupController();
+            functionalityController = new FunctionalityController();
         }
 
         private void da_Click(object sender, RoutedEventArgs e)
@@ -41,9 +43,9 @@ namespace Hospital
             
             checkupController.DeleteById(id);
             appointmentList.RemoveAt(index);
-            FunctionalityFileStorage funkcionalnosti = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
+
             Functionality funkcionalnost = new Functionality(DateTime.Now, id, "brisanje");
-            funkcionalnosti.Save(funkcionalnost);
+            functionalityController.save(funkcionalnost);
 
 
             this.Close();
