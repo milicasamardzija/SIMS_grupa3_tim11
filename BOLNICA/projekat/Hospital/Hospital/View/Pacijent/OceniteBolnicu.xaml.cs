@@ -1,4 +1,5 @@
 ﻿using Hospital.Controller;
+using Hospital.DTO;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -24,11 +25,21 @@ namespace Hospital
     {
 
         int id;
-        SurveyController surveycontroler = new SurveyController();
+        SurveyController surveycontroler;
+        private SurveyDTO survey = new SurveyDTO();
+
+        public SurveyDTO Survey
+        {
+            get { return survey; }
+            set { survey = value; }
+        }
+
         public OceniteBolnicu(int idP)
+
         {
             InitializeComponent();
             id = idP;
+            surveycontroler = new SurveyController();
 
             PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
             List<Patient> allPatients = storage.GetAll();
@@ -64,17 +75,13 @@ namespace Hospital
             SacuvanaAnketa surveys = new SacuvanaAnketa();
             surveys.Show();
             this.Close();
-         
-           
-         
-            int ocenjeno = ocena.SelectedIndex;
-            string komentarisano = komentar.Text;
-            int id = surveycontroler.getAll().Count() + 1;
 
-            Survey survey = new Survey(id, komentarisano, ocenjeno, null);
 
-            surveycontroler.save(survey);
+            // int ocenjeno = ocena.SelectedIndex;
+            // string komentarisano = komentar.Text;
+            /// int id = surveycontroler.getAll().Count() + 1;
 
+            surveycontroler.save(Survey);
         }
 
         private void odustani(object sender, RoutedEventArgs e)

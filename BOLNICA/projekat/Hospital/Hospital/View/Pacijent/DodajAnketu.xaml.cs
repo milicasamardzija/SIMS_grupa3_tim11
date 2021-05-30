@@ -1,4 +1,5 @@
 ﻿using Hospital.Controller;
+using Hospital.DTO;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,15 @@ namespace Hospital
         public int idPatient; //id pacijenta koji je ulogovan
         public string ime;
         private string lekar;
-        SurveyController surveycontroler = new SurveyController();
+        SurveyController surveycontroler;
+        PatientController patientcontroler;
+        private SurveyDTO survey = new SurveyDTO();
+      
+        public SurveyDTO Survey
+        {
+            get { return survey; }
+            set { survey = value; }
+        }
 
         public DodajAnketu(ObservableCollection<Checkup> list, Checkup selectedApp, int selectedIndex, int idP)
         {
@@ -39,17 +48,21 @@ namespace Hospital
             termin = selectedApp;
             index = selectedIndex;
             idPatient = idP;
-
             submit.IsEnabled = false;
 
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            List<Patient> patients = storage.GetAll();
-            ObservableCollection<Patient> allPatients =new  ObservableCollection<Patient>(patients);
-            foreach (Patient patient in allPatients)
+
+            surveycontroler = new SurveyController();
+            patientcontroler = new PatientController();
+           
+           
+
+            List<PatientDTO> patients = patientcontroler.getAll();
+         
+            foreach (PatientDTO patient in patients)
             {
                 if (patient.Id == idP)
                 {
-                    imePacijenta.Text = patient.name + " " + patient.surname;
+                    imePacijenta.Text = patient.Name + " " + patient.Surname;
                 }
             }
 
@@ -91,9 +104,9 @@ namespace Hospital
             int ocenjeno = ocena.SelectedIndex;
             string komentarisano = komentar.Text;
             int id = surveycontroler.getAll().Count() + 1;
-            Survey survey = new Survey(id, komentarisano, ocenjeno, null);
+           // Survey survey = new Survey(id, komentarisano, ocenjeno, null);
 
-            surveycontroler.save(survey);
+            surveycontroler.save(Survey);
             obavljeniTermini.RemoveAt(index);
             this.Close();
         

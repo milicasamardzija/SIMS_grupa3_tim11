@@ -1,4 +1,5 @@
 ﻿using Hospital.Controller;
+using Hospital.DTO;
 using Hospital.Model;
 using Hospital.View.Pacijent;
 using Newtonsoft.Json;
@@ -19,9 +20,9 @@ namespace Hospital
     public partial class DodajTermin : Window
     {
 
-        private CheckupController checkupcontroller = new CheckupController();
-        private FunctionalityController funkcionalitycontroller = new FunctionalityController();
-        private PatientController1 patientcontroller = new PatientController1();
+        private CheckupController checkupcontroller;
+        private FunctionalityController funkcionalitycontroller;
+        private PatientController patientcontroller;
 
         public ObservableCollection<Checkup> appointmentList;
         public int idPatient; //id pacijenta koji je ulogovan
@@ -36,14 +37,17 @@ namespace Hospital
             InitializeComponent();
             appointmentList = applist;
             idPatient = idP;
+            checkupcontroller = new CheckupController();
+            funkcionalitycontroller = new FunctionalityController();
+            patientcontroller = new PatientController();
 
-           
-            List<Patient> patients = patientcontroller.getAll();
-            foreach (Patient patient in patients)
+
+        List<PatientDTO> patients = patientcontroller.getAll();
+            foreach (PatientDTO patient in patients)
             {
                 if (patient.Id == idP)
                 {
-                    imePacijenta.Text = patient.name + " " + patient.surname;
+                    imePacijenta.Text = patient.Name + " " + patient.Surname;
                 }
             }
 

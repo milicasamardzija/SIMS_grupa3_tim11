@@ -1,14 +1,14 @@
- [
+[
   {
     "comment": "Odlicno.",
-    "mark": 3,
-    "drname": "Bratislava Bozilov",
-    "idApp": 0,
     "Comment": "Odlicno.",
-    "Mark": 3,
-    "IdApp": 0,
+    "drname": "Bratislava Bozilov",
     "Drname": "Bratislava Bozilov",
-    "Id": 0
+    "Id": 0,
+    "idApp": 0,
+    "IdApp": 0,
+    "mark": 3,
+    "Mark": 3
   },
   {
     "comment": "Ljubazni.",
@@ -221,14 +221,14 @@
   },
   {
     "comment": "",
-    "Comment": "",
-    "drname": "Bratislava Bozilov",
-    "Drname": "Bratislava Bozilov",
-    "Id": 21,
-    "idApp": 1,
-    "IdApp": 1,
     "mark": -1,
-    "Mark": -1
+    "drname": "Bratislava Bozilov",
+    "idApp": 1,
+    "Comment": "",
+    "Mark": -1,
+    "IdApp": 1,
+    "Drname": "Bratislava Bozilov",
+    "Id": 21
   },
   {
     "comment": "OK.",
