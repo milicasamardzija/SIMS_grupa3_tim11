@@ -53,7 +53,7 @@ namespace Hospital
             funkcionalitycontroller = new FunctionalityController();
             checkupcontroller = new CheckupController();
 
-
+           
 
             lista = new List<string>();
             termini = checkupcontroller.getAll();
@@ -145,32 +145,21 @@ namespace Hospital
                 datum = DateTime.Now;
             }
 
-            CheckupFileStorage cfs = new CheckupFileStorage("./ .. / .. / .. / .. / Hospital / files / storageCheckup.json") ;
+        
             availableTimes = new List<string>();
             List<Checkup> termini = new List<Checkup>();
             if (lekar.SelectedItem != null && date.SelectedDate != null)
 
             {
-                foreach (Checkup termin in cfs.GetAll())
-                {
-                    if (l.Id == termin.IdDoctor)
-                    {
-                        if (termin.Date.Date.Equals(date.SelectedDate))
-                        {
-                            termini.Add(termin);
-                        }
-                    }
 
-                    if (idPatient == termin.IdPatient)
-                    {
-                        if (termin.Date.Date.Equals(date.SelectedDate))
-                        {
-                            termini.Add(termin);
-                        }
-                    }
+                var item = time.SelectedItem;
+                String t = item.ToString();
+                String d = date.Text;
+                DateTime dt = DateTime.Parse(d + " " + t);
+                checkupcontroller.getAvailableTimes(dt, l);
 
 
-                }
+
             }
 
             DateTime danas = DateTime.Today;
@@ -260,55 +249,7 @@ namespace Hospital
 
       
 
-        private void slobodni_doktori(object sender, RoutedEventArgs e)
-        {
-            foreach (Checkup t in termini)
-            {
-
-                string sat = t.Date.Hour.ToString();
-                string minute = t.Date.Minute.ToString();
-                string izbaci = "";
-                int brojac1 = 0;
-                int brojac2 = 0;
-                foreach (char s in sat)
-                {
-                    ++brojac1;
-
-                }
-                foreach (char s in minute)
-                {
-                    ++brojac2;
-                }
-                if (brojac1 == 1)
-                {
-                    izbaci = "0" + sat + ":" + minute;
-                }
-                else
-                {
-
-                    izbaci = sat + ":" + minute;
-                }
-
-                if (brojac2 == 1)
-                {
-                    izbaci = izbaci + "0";
-
-                }
-
-                if (t.Doctor.jmbg.Equals(termin.Doctor.jmbg))
-                {
-                    if (t.Date.Date == date.SelectedDate && (time.SelectedItem.Equals(izbaci)))
-                    {
-                        lekari.Remove(termin.Doctor);
-                        lekar.ItemsSource = lekari;
-                        lekar.SelectedIndex = lekari.Count() - 1;
-
-
-                    }
-                }
-            }
-
-        }
+     
 
         private void potvrda(object sender, RoutedEventArgs e)
         {

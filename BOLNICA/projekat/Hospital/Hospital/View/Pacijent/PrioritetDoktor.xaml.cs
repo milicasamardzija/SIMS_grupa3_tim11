@@ -1,4 +1,5 @@
 ﻿using Hospital.Controller;
+using Hospital.DTO;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -27,8 +28,10 @@ namespace Hospital.View.Pacijent
         private List<string> availableTimes;
         private List<Checkup> termini;
         public ObservableCollection<Checkup> appointmentList;
-        CheckupController checkupController = new CheckupController();
-        FunctionalityController functionalityController = new FunctionalityController();
+        CheckupController checkupController;
+        FunctionalityController functionalityController;
+        PatientController patientController;
+
         public PrioritetDoktor(ObservableCollection<Checkup> applist, int idP)
         {
             InitializeComponent();
@@ -36,15 +39,17 @@ namespace Hospital.View.Pacijent
             appointmentList = applist;
             termini = new List<Checkup>();
 
+            checkupController = new CheckupController();
+            functionalityController = new FunctionalityController();
+            patientController = new PatientController();
 
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            List<Patient> allPatients = storage.GetAll();
-            ObservableCollection<Patient> patients = new ObservableCollection<Patient>(allPatients);
-            foreach (Patient patient in patients)
+
+            List<PatientDTO> patients = patientController.getAll();
+            foreach (PatientDTO patient in patients)
             {
                 if (patient.Id == idP)
                 {
-                    imePacijenta.Text = patient.name + " " + patient.surname;
+                    imePacijenta.Text = patient.Name + " " + patient.Surname;
                 }
             }
 

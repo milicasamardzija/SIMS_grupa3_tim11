@@ -1,4 +1,6 @@
-﻿using Hospital.Model;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,6 +27,8 @@ namespace Hospital.View.Pacijent
         int id;
         private List<string> listStart;
         private List<string> listEnd;
+        PatientController patientController;
+        CheckupController checkupController;
         public PrioritetDatum(int idP)
         {
             InitializeComponent();
@@ -35,20 +39,19 @@ namespace Hospital.View.Pacijent
              BlackOutDates();
             potvrdii.IsEnabled = false;
             date.IsEnabled = false;
-            
+            patientController = new PatientController();
+            checkupController = new CheckupController();
           
             PrikazSlobodnihTermina.Visibility = Visibility.Hidden;
             InitializeStartTimes();
             endTime.IsEnabled = false;
 
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            List<Patient> allPatients = storage.GetAll();
-            ObservableCollection<Patient> patients = new ObservableCollection<Patient>(allPatients);
-            foreach (Patient patient in patients)
+            List<PatientDTO> patients = patientController.getAll();
+            foreach (PatientDTO patient in patients)
             {
                 if (patient.Id == idP)
                 {
-                    imePacijenta.Text = patient.name + " " + patient.surname;
+                    imePacijenta.Text = patient.Name + " " + patient.Surname;
                 }
             }
         }
@@ -139,8 +142,8 @@ namespace Hospital.View.Pacijent
         public bool DoctorIsAvailable(DateTime pocetak, DateTime kraj) // proverava da li je lekar slobodan izmedju neka dva trenutka u vremenu
         {
             bool retVal = true;
-            CheckupFileStorage cf = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            List<Checkup> termini = cf.GetAll();
+           
+            List<Checkup> termini = checkupController.getAll();
             foreach (Checkup termin in termini)
             {
                 if (termin.IdDoctor.Equals(this))
@@ -168,8 +171,8 @@ namespace Hospital.View.Pacijent
         public bool PatientIsAvailable(DateTime pocetak, DateTime kraj) // proverava da li je lekar slobodan izmedju neka dva trenutka u vremenu
         {
             bool retVal = true;
-            CheckupFileStorage cf = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            List<Checkup> termini = cf.GetAll();
+           
+            List<Checkup> termini = checkupController.getAll();
             foreach (Checkup termin in termini)
             {
                 if (termin.IdPatient.Equals(id))

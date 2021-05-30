@@ -22,5 +22,10 @@ namespace Hospital.Service
         {
             functionalitystorage.Save(functionality);
         }
+
+        public List<Functionality> getAll()
+        {
+            return functionalitystorage.GetAll();
+        }
     }
 }

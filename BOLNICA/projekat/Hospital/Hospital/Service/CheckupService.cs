@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.DTO;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -99,6 +100,36 @@ namespace Hospital.Service
             }
             return doctors;
         }
+
+        public List<Checkup> getAvailableTimes(DateTime date,Doctor doctor)
+
+        {
+            List<Checkup> termini = new List<Checkup>();
+            
+            foreach (Patient patient in patientsStorage.GetAll())
+            {
+                foreach (Checkup termin in checkupStorage.GetAll())
+                {
+                   if (doctor.Id == termin.IdDoctor)
+                    {
+                        if (termin.Date.Date.Equals(date))
+                        {
+                            termini.Add(termin);
+                        }
+                    }
+                  
+                    if (patient.Id == termin.Patient.Id)
+                    {
+                        if (termin.Date.Date.Equals(date))
+                        {
+                            termini.Add(termin);
+                        }
+                    }
+                }
+
+            }
+            return termini;
+        }     
 
         public void changeCheckup(Checkup checkup)
         {

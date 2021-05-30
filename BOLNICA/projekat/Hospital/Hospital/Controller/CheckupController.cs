@@ -38,6 +38,11 @@ namespace Hospital.Controller
             return checkups;
         }
 
+        public List<Checkup> getAvailableTimes(DateTime date, Doctor doctor)
+        {
+            List<Checkup> checkups = new List<Checkup>();
+            return checkups = service.getAvailableTimes(date,doctor);
+        }
 
         public void save(Checkup checkup)
         {

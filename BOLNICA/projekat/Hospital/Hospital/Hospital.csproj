@@ -69,6 +69,7 @@
     <Compile Include="Controller\RoomInventoryController.cs" />
     <Compile Include="Controller\RoomRenovationController.cs" />
     <Compile Include="Controller\StaticInventoryMovementController.cs" />
+    <Compile Include="DTO\FunkcionalityDTO.cs" />
     <Compile Include="DTO\InventoryDTO.cs" />
     <Compile Include="DTO\MedicineDTO.cs" />
     <Compile Include="DTO\MedicineReviewDTO.cs" />

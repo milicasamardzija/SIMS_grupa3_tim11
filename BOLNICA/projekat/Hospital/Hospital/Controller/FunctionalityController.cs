@@ -18,6 +18,17 @@ namespace Hospital.Controller
         {
             service.save(funkcionalnost);
         }
+
+
+        public List<FunctionalityDTO> getAll()
+        {
+            List<FunctionalityDTO> rooms = new List<FunctionalityDTO>();
+            foreach (Functionality functionality in service.getAll())
+            {
+                rooms.Add(new FunctionalityDTO(functionality.Id, functionality.datumIzvrsavanja, functionality.idPacijenta, functionality.vrstaFunkcionalnosti));
+            }
+            return rooms;
+        }
     }
 
 }
