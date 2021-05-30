@@ -31,7 +31,7 @@ namespace Hospital
             frameMagacin = magacin;
             Rooms = new ObservableCollection<RoomDTO>(roomController.getAll());
             ucitajInventar();
-            //SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
+            SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
         }
 
         private void dodavanje(object sender, RoutedEventArgs e)
