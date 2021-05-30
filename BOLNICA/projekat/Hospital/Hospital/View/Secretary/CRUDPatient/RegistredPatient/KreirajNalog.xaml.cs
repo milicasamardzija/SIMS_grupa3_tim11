@@ -1,4 +1,6 @@
-﻿using Hospital.FileStorage.Interfaces;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using Hospital.FileStorage.Interfaces;
 using Hospital.Sekretar;
 using System;
 using System.Collections.Generic;
@@ -18,53 +20,39 @@ using System.Windows.Shapes;
 namespace Hospital
 {
 
-    /// Interaction logic for KreirajNalog.xaml
-
     public partial class KreirajNalog : Window
     {
-      
+
+        private PatientController patientController;
+        public PatientDTO patient = new PatientDTO();
+        public PatientDTO Patient
+        {
+            get { return patient; }
+            set { patient = value; }
+        }
+
 
         public KreirajNalog()
         {
          
             InitializeComponent();
+            this.DataContext = this;
+            patientController = new PatientController();
+
 
         }
       
         
 
-        public int generisiId()
-        {
-            int ret = 0;
-
-            PatientFileStorage pfs = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            List<Patient> all = pfs.GetAll();
-            ObservableCollection<Patient> allPatients = new ObservableCollection<Patient>(all);
-
-            foreach (Patient pId in allPatients)
-            {
-                foreach (Patient p in allPatients)
-                {
-                    if (ret == p.Id)
-                    {
-                        ++ret;
-                        break;
-                    }
-                }
-            }
-            return ret;
-        }
+     
         private void kreirajNalogB(object sender, RoutedEventArgs e)
         {
-            PatientFileStorage pStorage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
+            
+            Adress adresa = new Adress(ulText.Text, Convert.ToInt16(broj.Text), (City)grad.SelectedIndex, (Country)drzava.SelectedIndex);
+            patient.BirthdayDate = (DateTime)datum.SelectedDate;
 
-            Patient newPatient = new Patient(imeText.Text, prezimeText.Text, brTelText.Text, jmbgText.Text, (Gender)pol.SelectedIndex, (DateTime)datum.SelectedDate,generisiId(), (HealthCareCategory)zastita.SelectedIndex,Convert.ToInt16(brKnjiziceText.Text), zanimanjeText.Text, imePrzOsText.Text, new Adress(ulText.Text, Convert.ToInt16(broj.Text), (City)grad.SelectedIndex, (Country)drzava.SelectedIndex));
-           
-            IMedicalRecordFileStorage mStorage = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
-            MedicalRecord newRecord = new MedicalRecord(imeText.Text, prezimeText.Text, jmbgText.Text, (Gender)pol.SelectedIndex, (DateTime)datum.SelectedDate, generisiId(), (HealthCareCategory)zastita.SelectedIndex, Convert.ToInt16(brKnjiziceText.Text), (BloodType)krvnaGrupa.SelectedIndex);
-
-            pStorage.Save(newPatient);
-            mStorage.Save(newRecord);
+            patient.Adress = adresa;
+            patientController.save(Patient);
           
             this.Close();
 
@@ -75,8 +63,6 @@ namespace Hospital
         {
             this.Close();
         }
-
-
 
        
     }

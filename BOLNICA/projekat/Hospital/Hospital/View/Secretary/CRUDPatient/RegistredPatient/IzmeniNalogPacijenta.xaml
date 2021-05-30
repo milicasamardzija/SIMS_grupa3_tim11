@@ -116,7 +116,7 @@
         <Label
             Width="210"
             Height="30"
-            Margin="40,260,0,0"
+            Margin="39,260,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Kategorija zdravstvene zastite"
@@ -164,73 +164,64 @@
 
         <TextBox
             x:Name="imeText"
-            Width="120"
+            Width="180"
             Height="23"
-            Margin="200,20,0,0"
+            Margin="241,20,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding Selected.Name}"
             TextWrapping="Wrap" />
         <TextBox
             x:Name="prezimeText"
-            Width="120"
+            Width="180"
             Height="23"
-            Margin="200,50,0,0"
+            Margin="241,50,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding Selected.Surname}"
             TextWrapping="Wrap" />
         <TextBox
             x:Name="jmbgText"
-            Width="120"
+            Width="180"
             Height="23"
-            Margin="200,80,0,0"
+            Margin="241,80,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding Selected.Jmbg}"
             TextWrapping="Wrap" />
         <TextBox
             x:Name="osiguraniktText"
-            Width="120"
+            Width="180"
             Height="23"
-            Margin="286,110,0,0"
+            Margin="241,110,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding Selected.Insurence}"
             TextWrapping="Wrap" />
-        <!--<TextBox
-            x:Name="datumText"
-            Grid.ColumnSpan="2"
-            Width="120"
-            Height="23"
-            Margin="286,160,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap" />-->
+
         <TextBox
             x:Name="ulicaText"
-            Width="107"
+            Width="106"
             Height="23"
-            Margin="199,170,0,0"
+            Margin="241,169,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding Selected.Adress.street}"
             TextWrapping="Wrap" />
         <TextBox
             x:Name="brText"
-            Width="106"
+            Width="180"
             Height="23"
-            Margin="200,200,0,0"
+            Margin="241,200,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding Selected.Adress.streetNumber}"
             TextWrapping="Wrap" />
         <ComboBox
             x:Name="zastitaText"
-            Width="120"
+            Width="180"
             Height="22"
-            Margin="250,260,0,0"
+            Margin="241,260,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             SelectedIndex="{Binding Selected.HealthCareCategory}">
@@ -253,9 +244,9 @@
 
         <TextBox
             x:Name="zanimanjeText"
-            Width="120"
+            Width="180"
             Height="23"
-            Margin="250,290,0,0"
+            Margin="241,290,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding Selected.Occupation}"
@@ -276,18 +267,18 @@
 
         <TextBox
             x:Name="brKnjText"
-            Width="120"
+            Width="180"
             Height="23"
-            Margin="250,320,0,0"
+            Margin="241,320,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding Selected.IdHealthCard}"
             TextWrapping="Wrap" />
         <TextBox
             x:Name="brKarText"
-            Width="120"
+            Width="180"
             Height="23"
-            Margin="250,350,0,0"
+            Margin="241,350,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsReadOnly="True"
@@ -310,9 +301,9 @@
             TextElement.FontSize="14" />
         <ComboBox
             x:Name="pol"
-            Width="120"
+            Width="180"
             Height="22"
-            Margin="250,230,0,0"
+            Margin="241,230,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             SelectedItem="{Binding Selected.Gender.SelectedItem}">
@@ -325,9 +316,9 @@
         </ComboBox>
         <TextBox
             x:Name="broj"
-            Width="40"
+            Width="39"
             Height="23"
-            Margin="346,170,0,0"
+            Margin="382,168,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding Selected.Adress.streetNumber}"
@@ -335,7 +326,7 @@
         <Label
             Width="34"
             Height="26"
-            Margin="160,170,0,0"
+            Margin="202,168,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="ulica"
@@ -343,24 +334,25 @@
         <Label
             Width="30"
             Height="26"
-            Margin="311,170,0,0"
+            Margin="352,169,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="broj"
-            Foreground="#FF164783" />
+            Foreground="#FF164783"
+            RenderTransformOrigin="1.087,0.485" />
         <Label
             Width="36"
             Height="26"
-            Margin="399,170,0,0"
+            Margin="432,170,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="grad"
             Foreground="#FF164783" />
         <ComboBox
             x:Name="grad"
-            Width="85"
+            Width="72"
             Height="22"
-            Margin="440,170,0,0"
+            Margin="468,172,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             SelectedIndex="{Binding Selected.Adress.city}">
@@ -397,16 +389,16 @@
         <Label
             Width="44"
             Height="26"
-            Margin="540,170,0,0"
+            Margin="545,170,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="drzava"
             Foreground="#FF164783" />
         <DatePicker
             Name="datum"
-            Width="120"
+            Width="180"
             Height="23"
-            Margin="286,140,0,0"
+            Margin="241,140,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Focusable="False" />
@@ -414,9 +406,9 @@
 
         <ComboBox
             Name="krvnaGrupa"
-            Width="120"
+            Width="180"
             Height="22"
-            Margin="250,380,0,0"
+            Margin="241,380,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsEditable="False">

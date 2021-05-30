@@ -55,5 +55,10 @@ namespace Hospital.Controller
         {
             patientService.obrisiPacijenta(patient);
         }
+        
+        public void save(PatientDTO newPatient)
+        {
+            patientService.save(newPatient);
+        }
     }
 }

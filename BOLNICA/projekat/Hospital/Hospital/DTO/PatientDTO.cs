@@ -60,6 +60,10 @@ namespace Hospital.DTO
 
         }
 
+        public PatientDTO()
+        {
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnProperychanged(string name)
