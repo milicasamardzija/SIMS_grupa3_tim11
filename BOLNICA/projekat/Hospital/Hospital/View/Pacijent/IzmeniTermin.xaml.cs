@@ -37,7 +37,8 @@ namespace Hospital
         public ObservableCollection<Patient> pacijenti;
         private List<string> availableTimes;
         PatientController patientcontroller;
-
+        CheckupController checkupcontroller;
+        FunctionalityController funkcionalitycontroller;
 
         public IzmeniTermin(ObservableCollection<Checkup> list, Checkup selectedApp, int selectedIndex, int idP)
         {
@@ -47,11 +48,15 @@ namespace Hospital
             termin = selectedApp;
             index = selectedIndex;
             idPatient = idP;
+          
             patientcontroller = new PatientController();
+            funkcionalitycontroller = new FunctionalityController();
+            checkupcontroller = new CheckupController();
+
+
 
             lista = new List<string>();
-            CheckupFileStorage af = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            termini = af.GetAll();
+            termini = checkupcontroller.getAll();
 
 
             List<PatientDTO> patients = patientcontroller.getAll();
@@ -95,13 +100,9 @@ namespace Hospital
             DoctorFileStorage df = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
             lekari = df.GetAll();
             lekar.ItemsSource = lekari;
-
-
-
-
-            PatientFileStorage pacijent = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            List<Patient> sviPacijenti = pacijent.GetAll();
-            ObservableCollection<Patient> pacijenti = new ObservableCollection<Patient>(sviPacijenti);
+  
+            List<PatientDTO> sviPacijenti = patientcontroller.getAll();
+            ObservableCollection<PatientDTO> pacijenti = new ObservableCollection<PatientDTO>(sviPacijenti);
 
             foreach (global::Doctor l in lekari)
             {
@@ -221,13 +222,12 @@ namespace Hospital
                 termin.IdDoctor = doktor1.Id;
                 termin.IdPatient = idPatient;
                 termin.Date = dt;
-                storage.DeleteById(termin.Id);
-                storage.Save(termin);
+                checkupcontroller.DeleteById(termin.Id);
+                checkupcontroller.save(termin);
 
 
-                FunctionalityFileStorage funkcionalnosti = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
                 Functionality funkcionalnost = new Functionality(DateTime.Now, idPatient, "izmena");
-                funkcionalnosti.Save(funkcionalnost);
+                funkcionalitycontroller.save(funkcionalnost);
 
 
                 this.Close();

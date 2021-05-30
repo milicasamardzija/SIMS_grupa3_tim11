@@ -20,9 +20,9 @@ namespace Hospital
     public partial class DodajTermin : Window
     {
 
-        private CheckupController checkupcontroller = new CheckupController();
-        private FunctionalityController funkcionalitycontroller = new FunctionalityController();
-        private PatientController patientcontroller = new PatientController();
+        private CheckupController checkupcontroller;
+        private FunctionalityController funkcionalitycontroller;
+        private PatientController patientcontroller;
 
         public ObservableCollection<Checkup> appointmentList;
         public int idPatient; //id pacijenta koji je ulogovan
@@ -37,8 +37,11 @@ namespace Hospital
             InitializeComponent();
             appointmentList = applist;
             idPatient = idP;
+            patientcontroller = new PatientController();
+            funkcionalitycontroller = new FunctionalityController();
+            checkupcontroller = new CheckupController();
 
-           
+
             List<PatientDTO> patients = patientcontroller.getAll();
             foreach (PatientDTO patient in patients)
             {

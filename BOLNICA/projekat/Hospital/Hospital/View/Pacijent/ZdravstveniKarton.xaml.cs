@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,14 +23,19 @@ namespace Hospital.View.Pacijent
 
         int id;
         DateTime date;
+        MedicalRecordController mrcontroller;
 
         public ZdravstveniKarton(int idP)
         {
             InitializeComponent();
             id = idP;
+            mrcontroller = new MedicalRecordController();
+
+
+
 
             MedicalRecordsFileStorage storage2 = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
-            List<MedicalRecord> records = storage2.GetAll();
+            List<MedicalRecord> records = mrcontroller.getAll();
             PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
             List<Patient> patients = storage.GetAll();
             foreach (MedicalRecord record in records)

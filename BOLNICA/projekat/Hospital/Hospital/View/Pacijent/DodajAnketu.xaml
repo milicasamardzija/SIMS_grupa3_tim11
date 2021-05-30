@@ -61,7 +61,7 @@
             <ComboBoxItem>10</ComboBoxItem>
         </ComboBox>
         <Label Content="     Upišite Vaš komentar:" HorizontalAlignment="Left" FontFamily="Goudy Old Style" VerticalAlignment="Top" Margin="10,249,0,0" Width="145"/>
-        <TextBox  Name="komentar" HorizontalAlignment="Left" Height="95" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="31,275,0,0"/>
+        <TextBox  Name="komentar" HorizontalAlignment="Left" Text="{Binding Path =Survey.comment, UpdateSourceTrigger=PropertyChanged}" Height="95" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="31,275,0,0"/>
         <Button  Style="{ StaticResource MyButtonDesign}" Foreground="#FF0F0D0D" BorderBrush="Gray" Name="submit" Content="Pošaljite anketu" HorizontalAlignment="Left" FontFamily="Goudy Old Style" VerticalAlignment="Top" Width="105" Margin="95,390,0,0" RenderTransformOrigin="1.339,0.281" Click="posalji" Height="29" Background="#FF868585"/>
 
         <Line  

@@ -1,4 +1,5 @@
 ﻿using Hospital.Controller;
+using Hospital.DTO;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,17 @@ namespace Hospital
         public int idPatient; //id pacijenta koji je ulogovan
         public string ime;
         private string lekar;
-        SurveyController surveycontroler = new SurveyController();
+        SurveyController surveycontroler;
+        PatientController patientcontroller;
+        private SurveyDTO survey = new SurveyDTO();
+    
+        public SurveyDTO Survey
+        {
+            get { return survey; }
+            set { survey = value; }
+        }
+
+
 
         public DodajAnketu(ObservableCollection<Checkup> list, Checkup selectedApp, int selectedIndex, int idP)
         {
@@ -39,25 +50,26 @@ namespace Hospital
             termin = selectedApp;
             index = selectedIndex;
             idPatient = idP;
+            surveycontroler = new SurveyController();
+            patientcontroller = new PatientController();
 
             submit.IsEnabled = false;
 
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            List<Patient> patients = storage.GetAll();
-            ObservableCollection<Patient> allPatients =new  ObservableCollection<Patient>(patients);
-            foreach (Patient patient in allPatients)
+
+            List<PatientDTO> patients = patientcontroller.getAll();
+            foreach (PatientDTO patient in patients)
             {
                 if (patient.Id == idP)
                 {
-                    imePacijenta.Text = patient.name + " " + patient.surname;
+                    imePacijenta.Text = patient.Name + " " + patient.Surname;
                 }
             }
 
             DoctorFileStorage dstorage = new DoctorFileStorage("./../../../../Hospital/files/storageDoctor.json");
             List<Doctor> doctors = dstorage.GetAll();
-            foreach(Doctor d in doctors)
+            foreach (Doctor d in doctors)
             {
-                if(d.Id == termin.IdDoctor)
+                if (d.Id == termin.IdDoctor)
                 {
 
                     ime = d.Name + " " + d.Surname;
@@ -67,7 +79,7 @@ namespace Hospital
             }
 
 
-          
+
         }
 
 
@@ -85,7 +97,7 @@ namespace Hospital
             SacuvanaAnketa poslato = new SacuvanaAnketa();
             poslato.Show();
 
-          
+
 
             lekar = doktor.Text;
             int ocenjeno = ocena.SelectedIndex;
@@ -93,10 +105,10 @@ namespace Hospital
             int id = surveycontroler.getAll().Count() + 1;
             Survey survey = new Survey(id, komentarisano, ocenjeno, null);
 
-            surveycontroler.save(survey);
+            surveycontroler.save(Survey);
             obavljeniTermini.RemoveAt(index);
             this.Close();
-        
+
 
         }
 

@@ -1,4 +1,5 @@
 ﻿using Hospital.Controller;
+using Hospital.DTO;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -24,20 +25,31 @@ namespace Hospital
     {
 
         int id;
-        SurveyController surveycontroler = new SurveyController();
+      
+
+        SurveyController surveycontroler;
+        PatientController patientcontroller;
+        private SurveyDTO survey = new SurveyDTO();
+    
+        public SurveyDTO Survey
+        {
+            get { return survey; }
+            set { survey = value; }
+        }
         public OceniteBolnicu(int idP)
         {
             InitializeComponent();
             id = idP;
+            surveycontroler = new SurveyController();
+            patientcontroller = new PatientController();
 
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            List<Patient> allPatients = storage.GetAll();
-            ObservableCollection<Patient> patients = new ObservableCollection<Patient>(allPatients);
-            foreach (Patient patient in patients)
+
+            List<PatientDTO> patients = patientcontroller.getAll();
+            foreach (PatientDTO patient in patients)
             {
                 if (patient.Id == idP)
                 {
-                    imePacijenta.Text = patient.name + " " + patient.surname;
+                    imePacijenta.Text = patient.Name + " " + patient.Surname;
                 }
             }
         }
@@ -71,9 +83,9 @@ namespace Hospital
             string komentarisano = komentar.Text;
             int id = surveycontroler.getAll().Count() + 1;
 
-            Survey survey = new Survey(id, komentarisano, ocenjeno, null);
+          //  Survey survey = new Survey(id, komentarisano, ocenjeno, null);
 
-            surveycontroler.save(survey);
+            surveycontroler.save(Survey);
 
         }
 

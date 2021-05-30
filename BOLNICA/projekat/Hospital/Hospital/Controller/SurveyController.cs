@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.DTO;
+using Hospital.Model;
 using Hospital.Service;
 using System;
 using System.Collections.Generic;
@@ -15,20 +16,22 @@ namespace Hospital.Controller
 
 
 
-        public List<Survey> getAll()
+        public List<SurveyDTO> getAll()
         {
-            List<Survey> surveys = new List<Survey>();
+            List<SurveyDTO> surveys = new List<SurveyDTO>();
             foreach (Survey survey in service.getAll())
             {
-                surveys.Add(new Survey(survey.mark, survey.comment, survey.idApp, survey.drname));
+                surveys.Add(new SurveyDTO(survey.mark, survey.comment, survey.idApp, survey.drname));
             }
             return surveys;
         }
 
-        public void save(Survey survey)
+        public void save(SurveyDTO survey)
         {
-            service.save(survey);
+            service.save(new Survey(survey.Mark,survey.Comment,survey.IdApp,survey.Drname));
         }
     }
 
+
+   
 }
