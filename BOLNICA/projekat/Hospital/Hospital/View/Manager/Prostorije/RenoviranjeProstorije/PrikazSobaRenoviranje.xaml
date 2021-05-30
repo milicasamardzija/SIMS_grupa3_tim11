@@ -26,7 +26,7 @@
                       ItemsSource="{Binding Renovations}"
                       >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="BROJ PROSTORIJE" Width="140" Binding="{Binding IdRoom}"/>
+                <DataGridTextColumn Header="BROJ PROSTORIJE" Width="140" Binding="{Binding Path = IdRoom}"/>
                 <DataGridTextColumn Header="DATUM POCETKA" Width="150" Binding="{Binding DateBegin, StringFormat='{}{0:dd.MM.yyyy.}'}"/>
                 <DataGridTextColumn Header="DATUM ZAVRSETKA" Width="150" Binding="{Binding DateEnd, StringFormat='{}{0:dd.MM.yyyy.}'}"/>
                 <DataGridTextColumn Header="OPIS" Width="362"  Binding="{Binding Description}"/>

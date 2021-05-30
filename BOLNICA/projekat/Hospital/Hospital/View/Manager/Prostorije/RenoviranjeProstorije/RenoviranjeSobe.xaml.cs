@@ -47,7 +47,10 @@ namespace Hospital
 
         private void renoviraj(object sender, RoutedEventArgs e)
         {
-            RoomRenovation.IdRoom = room.Id;
+            RoomRenovation.IdRoom = Convert.ToInt32(brojProstorijeTxt.Text);
+            MessageBox.Show(Convert.ToString(RoomRenovation.IdRoom));
+            RoomRenovation.DateBegin = (DateTime)BeginDate.SelectedDate;
+            RoomRenovation.DateEnd = (DateTime)EndDate.SelectedDate;
             controller.scheduleRenovation(RoomRenovation);
             frame.NavigationService.Navigate(new BelsekaMagacin());
         }

@@ -16,8 +16,8 @@
             <TextBox Name="opisRadova" Text="{Binding Path =RoomRenovation.Description, UpdateSourceTrigger=PropertyChanged}" Height="30" Width="200" Margin="226,258,54,122" RenderTransformOrigin="0.531,-0.345"/>
             <Button Margin="71,349,302,31" Grid.Column="0" Height="30" Background="LightBlue" Click="renoviraj" FontSize="18" FontWeight="Bold">Potvrdi</Button>
             <Button Margin="272,349,99,31" Height="30" Background="LightBlue"  Click="odustani" FontSize="18" FontWeight="Bold">Odustani</Button>
-            <DatePicker Name="BeginDate" SelectedDate="{Binding Path = RoomRenovation.DateBegin, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="226,109,0,0" VerticalAlignment="Top" Width="200" Height="32"/>
-            <DatePicker Name="EndDate" SelectedDate="{Binding Path =RoomRenovation.DateEnd, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="226,180,0,0" VerticalAlignment="Top" Width="200" Height="32"/>
+            <DatePicker Name="BeginDate"  HorizontalAlignment="Left" Margin="226,109,0,0" VerticalAlignment="Top" Width="200" Height="32"/>
+            <DatePicker Name="EndDate"  HorizontalAlignment="Left" Margin="226,180,0,0" VerticalAlignment="Top" Width="200" Height="32"/>
         </Grid>
     </Grid>
 </UserControl>

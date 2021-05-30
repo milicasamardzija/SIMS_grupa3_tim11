@@ -33,7 +33,7 @@ namespace Hospital.Service
                     movementService.DeleteByRoomsAndDate(-1, renovation.Id, renovation.DateBegin);
                 }
             }
-            storage.DeleteById(renovation.IdRenovation);
+            storage.DeleteById(renovation.Id);
         }
         public List<RoomRenovation> getAll()
         {
@@ -50,7 +50,7 @@ namespace Hospital.Service
             {
                 foreach (RoomRenovation room in allRooms)
                 {
-                    if (ret == room.IdRenovation)
+                    if (ret == room.Id)
                     {
                         ++ret;
                         break;

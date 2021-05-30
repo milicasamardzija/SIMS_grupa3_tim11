@@ -22,7 +22,7 @@ namespace Hospital.Model
             this.idRoom = idRoom;
         }
 
-        public int IdRenovation
+        public int IdRoom
         {
             get
             {
