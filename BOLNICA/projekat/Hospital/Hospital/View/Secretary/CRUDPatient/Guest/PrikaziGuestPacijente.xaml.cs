@@ -62,8 +62,8 @@ namespace Hospital
         }
         private void izbrisiGuest(object sender, RoutedEventArgs e)
         {
-            IzbrisiPacijenta p = new IzbrisiPacijenta(listGPatient, (Patient)PrikaziGPacijente.SelectedItem, PrikaziGPacijente.SelectedIndex);
-            p.Show();
+            //IzbrisiPacijenta p = new IzbrisiPacijenta(listGPatient, (Patient)PrikaziGPacijente.SelectedItem, PrikaziGPacijente.SelectedIndex);
+           // p.Show();
         }
        
     }

@@ -103,9 +103,7 @@ namespace Hospital.Service
                     p.Insurence = patient.Insurence;
                     p.Gender = patient.Gender;   
                     p.TelephoneNumber = patient.TelephoneNumber;
-
                     p.Id = patient.Id;
-
                     p.IdHealthCard = patient.IdHealthCard;
                     p.HealthCareCategory = patient.HealthCareCategory;
                     p.adress = patient.Adress;
@@ -116,5 +114,16 @@ namespace Hospital.Service
             patientStorage.SaveAll(allPatients);
         }
 
+        public void obrisiPacijenta(PatientDTO patient)
+        {
+            foreach (Patient p in patientStorage.GetAll())
+            {
+                if (p.Id == patient.Id)
+                {
+                    int idPatient = p.Id;
+                    patientStorage.DeleteById(idPatient);
+                }
+            }
+        }
     }
 }

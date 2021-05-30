@@ -50,5 +50,10 @@ namespace Hospital.Controller
         {
             patientService.izmeniPacijenta(patient);
         }
+
+        public void obrisiPacijenta(PatientDTO patient)
+        {
+            patientService.obrisiPacijenta(patient);
+        }
     }
 }

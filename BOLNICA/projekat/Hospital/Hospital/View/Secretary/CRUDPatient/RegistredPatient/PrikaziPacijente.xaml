@@ -28,8 +28,13 @@
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
             Background="#FFF0F0F0"
+            Foreground="#FF114C9F"
             ItemsSource="{Binding Path=listPatient}"
-            SelectionChanged="PrikazPacijenata_SelectionChanged">
+            SelectionChanged="PrikazPacijenata_SelectionChanged"
+            TextElement.FontFamily="Chooper Black"
+            TextElement.FontSize="12"
+            TextElement.FontWeight="Bold"
+            TextElement.Foreground="#FF08316B">
 
             <DataGrid.Columns>
                 <DataGridTextColumn
@@ -44,11 +49,6 @@
                     Width="160"
                     Binding="{Binding Jmbg}"
                     Header="JMBG" />
-
-                <DataGridTextColumn
-                    Width="120"
-                    Binding="{Binding banovan}"
-                    Header="STATUS PACIJENTA" />
             </DataGrid.Columns>
         </DataGrid>
         <Button

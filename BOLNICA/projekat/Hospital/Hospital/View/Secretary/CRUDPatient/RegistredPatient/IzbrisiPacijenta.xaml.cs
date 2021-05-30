@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -18,24 +20,28 @@ namespace Hospital
 
     public partial class IzbrisiPacijenta : Window
     {
-        public ObservableCollection<Patient> listPatient;
+        public ObservableCollection<PatientDTO> listPatient;
+        public PatientDTO selectedPatient;
         public int index;
-        public int id;
-    
-        public IzbrisiPacijenta(ObservableCollection<Patient> list, Patient selectedPatient, int selectedIndex)
+        
+        public PatientController patientController;
+        public IzbrisiPacijenta(ObservableCollection<PatientDTO> list, PatientDTO patient, int selectedIndex)
         {
             InitializeComponent();
+            this.DataContext = this;
             listPatient = list;
-            id = selectedPatient.Id;
+            selectedPatient = patient;
             index = selectedIndex;
+            patientController = new PatientController();
         }
 
         private void potvrdiB(object sender, RoutedEventArgs e)
         {
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            storage.DeleteById(id);
+           
+            patientController.obrisiPacijenta(selectedPatient);
             listPatient.RemoveAt(index);
             this.Close();
+           
         }
         private void odustaniB(object sender, RoutedEventArgs e)
         {

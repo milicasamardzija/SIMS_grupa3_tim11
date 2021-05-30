@@ -61,8 +61,15 @@ namespace Hospital
 
         private void izbrisiNalogPacijenta(object sender, RoutedEventArgs e)
         {
-           // IzbrisiPacijenta ip = new IzbrisiPacijenta(listPatient, (Patient)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
-          //  ip.Show();
+            if (PrikazPacijenata.SelectedItem != null)
+            {
+                IzbrisiPacijenta ip = new IzbrisiPacijenta(listPatient, (PatientDTO)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
+                ip.Show();
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Niste odabrali pacijenta!");
+            }
         }
 
         private void addAlergents(object sender, RoutedEventArgs e)
