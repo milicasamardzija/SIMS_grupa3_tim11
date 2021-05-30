@@ -24,11 +24,26 @@ namespace Hospital.Controller
         {
             return patientService.loadBlockedPatients();
         }
+
         public void odblokirajPacijenta(PatientDTO patient)
         {
             patientService.odblokirajPacijenta(patient);
 
         }
 
+        public ObservableCollection<PatientDTO> loadGuests()
+        {
+            return patientService.loadGuests();
+        }
+
+        public ObservableCollection<PatientDTO> loadAllPatients()
+        {
+            return patientService.loadAllPatients();
+        }
+
+        public ObservableCollection<PatientDTO> loadRegistred()
+        {
+            return patientService.loadRegistred();
+        }
     }
 }

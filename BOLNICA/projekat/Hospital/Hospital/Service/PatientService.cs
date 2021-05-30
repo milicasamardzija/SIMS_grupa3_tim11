@@ -51,5 +51,41 @@ namespace Hospital.Service
             }
            
         }
+
+        public ObservableCollection<PatientDTO> loadAllPatients()
+        {
+            ObservableCollection<PatientDTO> allPatients= new ObservableCollection<PatientDTO>((IEnumerable<PatientDTO>)patientStorage.GetAll());
+            return allPatients;
+        }
+
+        public ObservableCollection<PatientDTO> loadGuests()
+        {
+            List<Patient> allPatients = patientStorage.GetAll();
+            ObservableCollection<PatientDTO> guests = new ObservableCollection<PatientDTO>();
+            foreach(Patient p in allPatients)
+            {
+                if(p.guest == true)
+                {
+
+                    guests.Add(new PatientDTO(p.Name,  p.Surname, p.TelephoneNumber, p.Jmbg, p.Gender, p.BirthdayDate, p.Id));
+                }
+            }
+            return guests; 
+        }
+
+        public ObservableCollection<PatientDTO> loadRegistred()
+        {
+            List<Patient> allPatients = patientStorage.GetAll();
+            ObservableCollection<PatientDTO> registred = new ObservableCollection<PatientDTO>();
+            foreach (Patient p in allPatients)
+            {
+                if (p.guest == false)
+                {
+
+                    registred.Add(new PatientDTO(p.Name, p.Surname, p.TelephoneNumber, p.Jmbg, p.Gender, p.BirthdayDate, p.Id, p.HealthCareCategory, p.IdHealthCard, p.Occupation, p.Insurence, p.adress, p.banovan));
+                }
+            }
+            return registred;
+        }
     }
 }
