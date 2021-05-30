@@ -21,18 +21,20 @@
         </Grid.Background>
         <DataGrid
             Name="sviPregledi"
-            Height="258"
-            Margin="28,67,35,0"
+            Height="260"
+            Margin="28,67,31,0"
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
             ItemsSource="{Binding listCheckups}"
-            TextElement.Foreground="#FF0852AE">
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden"
+            TextElement.Foreground="#FF08316B">
 
             <DataGrid.Columns>
 
 
                 <DataGridTextColumn
-                    Width="115"
+                    Width="100"
                     Binding="{Binding Date}"
                     Header="Datum" />
 
@@ -53,7 +55,7 @@
                     Binding="{Binding IdDoctor}"
                     Header="Id doktora" />
                 <DataGridTextColumn
-                    Width="90"
+                    Width="80"
                     Binding="{Binding IdPatient}"
                     Header="Id pacijenta" />
 

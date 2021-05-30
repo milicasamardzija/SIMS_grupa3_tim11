@@ -1,4 +1,6 @@
-﻿using Hospital.FileStorage.Interfaces;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using Hospital.FileStorage.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,38 +22,39 @@ namespace Hospital.Sekretar
     {
     
        
-        public MedicalRecord record;
-        public Patient patient;
-        public ObservableCollection<Patient> listPatient;
-        public ObservableCollection<MedicalRecord> listRecord;
+        public MedicalRecordDTO record;
+        public PatientDTO patient;
+        public ObservableCollection<PatientDTO> listPatient;
+        public ObservableCollection<MedicalRecordDTO> listRecord;
+        public MedicalRecordController controller;
         int index;
         public int id;
 
 
-        public ObservableCollection<Alergens> listAllAlergens
+        public ObservableCollection<AlergensDTO> listAllAlergens
         {
             get;
             set;
         }
-        public ObservableCollection<Alergens> listAlergens
+        public ObservableCollection<AlergensDTO> listAlergens
         {
             get;
             set;
         }
-        public Alergeni(ObservableCollection<Patient> list, Patient selectedPatient, int sel)
+        public Alergeni(ObservableCollection<PatientDTO> list, PatientDTO selectedPatient, int sel)
         {
             InitializeComponent();
             this.DataContext = this;
+            controller = new MedicalRecordController();
             id = selectedPatient.Id;
-            IMedicalRecordFileStorage mfs = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
-            record = mfs.FindById(id);
+            record = controller.findRecordById(id);
           
             listAllAlergens = loadJasonAllAlergens();
-            listAlergens = loadPatientAlergens();
+            listAlergens = loadPatientAlergens(id);
 
-            listPatient = list;
+          /*  listPatient = list;
 
-            foreach (Patient p in listPatient)
+            foreach (PatientDTO p in listPatient)
             {
                 if (p.Equals(selectedPatient))
                 {
@@ -60,62 +63,45 @@ namespace Hospital.Sekretar
                 }
             }
 
-            index = sel;
+            index = sel;*/
 
         }
 
-        public ObservableCollection<Alergens> loadJasonAllAlergens()
+        public ObservableCollection<AlergensDTO> loadJasonAllAlergens()
         {
-            AlergensFileStorage afs = new AlergensFileStorage("./../../../../Hospital/files/alergens.json");
-            ObservableCollection<Alergens> ret = new ObservableCollection<Alergens>(afs.GetAll());
-
-            return ret;
+            return controller.getAllAlergens();
         }
 
-        public ObservableCollection<Alergens> loadPatientAlergens()
+        public ObservableCollection<AlergensDTO> loadPatientAlergens(int idPatient)
         {
-           
-            ObservableCollection<Alergens> a = new ObservableCollection<Alergens>();
-            IMedicalRecordFileStorage mStorage = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
-            MedicalRecord prikaziAlergene = mStorage.FindById(id);
-           
-            foreach (Alergens al in record.Alergens)
-            {
-            
-                a.Add(al);
-            }
-            return a;
-           
+            return controller.loadPatientAlergens(idPatient);
         }
 
         private void AddAlergens(object sender, RoutedEventArgs e)
         {
-            AlergensFileStorage afs = new AlergensFileStorage("./../../../../Hospital/files/alergens.json");
-
-            listAlergens.Add((Alergens)svi.SelectedItem);
-            listAllAlergens.Remove((Alergens)svi.SelectedItem);
+            listAlergens.Add((AlergensDTO)svi.SelectedItem);
+            listAllAlergens.Remove((AlergensDTO)svi.SelectedItem);
          
-
         }
 
       
 
         private void RemoveAlergen(object sender, RoutedEventArgs e)
         {
-            AlergensFileStorage afs = new AlergensFileStorage("./../../../../Hospital/files/alergens.json");
-            listAlergens.Remove((Alergens)selected.SelectedItem);
+          
+            listAlergens.Remove((AlergensDTO)selected.SelectedItem);
         }
 
         private void saveAlergens(object sender, RoutedEventArgs e)
         {
             
-            IMedicalRecordFileStorage mStorage = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
-            MedicalRecord promeniM = mStorage.FindById(id);
+            
+            MedicalRecordDTO promeniM = controller.findRecordById(id);
 
-            promeniM.alergens = listAlergens;
+            promeniM.Alergens = listAlergens;
 
-            mStorage.DeleteById(id);
-            mStorage.Save(promeniM);
+            controller.deleteRecordById(id);
+            controller.saveMedicalRecord(promeniM);
 
             this.Close();
         }

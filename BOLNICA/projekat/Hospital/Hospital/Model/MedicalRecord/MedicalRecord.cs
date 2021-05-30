@@ -7,9 +7,12 @@ using System.Windows.Controls;
 
 public class MedicalRecord : Patient
 {
-    public int medicalRecordId;
-    public BloodType bloodType;
-    public ObservableCollection<Alergens> alergens;
+    private int medicalRecordId;
+    private BloodType bloodType;
+    private ObservableCollection<Alergens> alergens;
+
+
+    public MedicalRecord() { }
     public MedicalRecord(String n, String s, String j, Gender g, DateTime dr, int mid, HealthCareCategory hcc, int idhc, BloodType bt)
     {
         this.Name = n;
@@ -26,20 +29,21 @@ public class MedicalRecord : Patient
 
 
     }
-  /*  public MedicalRecord(String ime, String prezime, String jmbgg, Gender pol, DateTime drodj, int id, BloodType kg, String alergeni)
+    public MedicalRecord(String ime, String prezime, String jmbgg, Gender pol, DateTime drodj, int id, HealthCareCategory hcc, int idhc, BloodType kg, ObservableCollection<Alergens> alergeni)
     {
         this.name = ime;
         this.surname = prezime;
         this.jmbg = jmbgg;
         this.gender = pol;
         this.birthdayDate = drodj;
+        this.HealthCareCategory = hcc;
         this.medicalRecordId = id;   //medical record id ce biti isto sto i patientId, pa cu po tome traziti
-
+        this.IdHealthCard = idhc;
         this.bloodType = kg;
         this.alergens = alergeni;
 
 
-    }   */
+    }   
     public int MedicalRecordId
     {
         get

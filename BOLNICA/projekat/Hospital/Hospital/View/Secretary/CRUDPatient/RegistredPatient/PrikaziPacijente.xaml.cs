@@ -74,8 +74,8 @@ namespace Hospital
 
         private void addAlergents(object sender, RoutedEventArgs e)
         {
-           //Alergeni a = new Alergeni(listPatient, (Patient)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
-           // a.Show();
+           Alergeni a = new Alergeni(listPatient, (PatientDTO)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
+            a.Show();
         }
 
         private void CancelBtn(object sender, RoutedEventArgs e)

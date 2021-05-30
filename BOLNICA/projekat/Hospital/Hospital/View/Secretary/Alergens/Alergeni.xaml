@@ -72,7 +72,7 @@
             Margin="247,46,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Source="vector.png" />
+            Source="/Hospital;component/View/Images/vector.png" />
         <Button
             Width="60"
             Height="21"

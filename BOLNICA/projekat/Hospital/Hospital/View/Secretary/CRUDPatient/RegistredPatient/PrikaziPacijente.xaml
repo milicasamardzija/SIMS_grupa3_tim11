@@ -33,7 +33,6 @@
             SelectionChanged="PrikazPacijenata_SelectionChanged"
             TextElement.FontFamily="Chooper Black"
             TextElement.FontSize="12"
-            TextElement.FontWeight="Bold"
             TextElement.Foreground="#FF08316B">
 
             <DataGrid.Columns>

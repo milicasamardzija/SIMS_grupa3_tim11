@@ -50,7 +50,6 @@ namespace Hospital
             
             Adress adresa = new Adress(ulText.Text, Convert.ToInt16(broj.Text), (City)grad.SelectedIndex, (Country)drzava.SelectedIndex);
             patient.BirthdayDate = (DateTime)datum.SelectedDate;
-
             patient.Adress = adresa;
             patientController.save(Patient);
           

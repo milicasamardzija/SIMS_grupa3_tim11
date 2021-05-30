@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:Hospital.Sekretar"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Dodaj pregled"
-    Width="600"
+    Width="500"
     Height="450"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
@@ -96,7 +96,7 @@
             Grid.Column="1"
             Width="96"
             Height="33"
-            Margin="309.2,365,0,0"
+            Margin="240.6,365,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#FFEDE4E4"
@@ -110,34 +110,32 @@
         <DataGrid
             x:Name="sviPacijenti"
             Grid.ColumnSpan="2"
-            Width="498"
+            Width="407"
             Height="239"
             Margin="40,74,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
-            ItemsSource="{Binding listPatients}">
+            ItemsSource="{Binding listPatients}"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden"
+            TextElement.FontSize="14"
+            TextElement.Foreground="#FF0C0D8B">
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Width="90"
+                    Width="100"
                     Binding="{Binding Name}"
                     Header="Ime pacijenta" />
                 <DataGridTextColumn
-                    Width="105"
+                    Width="150"
                     Binding="{Binding Surname}"
                     Header="Prezime pacijenta" />
+
                 <DataGridTextColumn
-                    Width="70"
-                    Binding="{Binding PatientId}"
-                    Header="Id pacijenta" />
-                <DataGridTextColumn
-                    Width="100"
+                    Width="150"
                     Binding="{Binding Jmbg}"
                     Header="JMBG" />
-                <DataGridTextColumn
-                    Width="100"
-                    Binding="{Binding BirthdayDate}"
-                    Header="Datum rodjenja" />
+
             </DataGrid.Columns>
         </DataGrid>
         <Label

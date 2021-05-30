@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -61,7 +61,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-
     <Compile Include="Controller\DoctorController.cs" />
     <Compile Include="Controller\FunctionalityController.cs" />
     <Compile Include="Controller\MedicalRecordController.cs" />
@@ -71,15 +70,15 @@
     <Compile Include="Controller\RoomInventoryController.cs" />
     <Compile Include="Controller\RoomRenovationController.cs" />
     <Compile Include="Controller\StaticInventoryMovementController.cs" />
+    <Compile Include="DTO\AlergensDTO.cs" />
     <Compile Include="DTO\InventoryDTO.cs" />
+    <Compile Include="DTO\MedicalRecordDTO.cs" />
     <Compile Include="DTO\MedicineDTO.cs" />
     <Compile Include="DTO\MedicineReviewDTO.cs" />
     <Compile Include="DTO\RoomInventoryDTO.cs" />
     <Compile Include="DTO\RoomRenovationDTO.cs" />
-
     <Compile Include="Controller\PatientController.cs" />
     <Compile Include="DTO\PatientDTO.cs" />
-
     <Compile Include="FileStorage\Interfaces\IAlergensFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IAnamnesisFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\ICheckFileStorage.cs" />
@@ -96,7 +95,6 @@
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
-
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\FunctionalityService.cs" />
     <Compile Include="Service\MedicalRecordService.cs" />
@@ -106,9 +104,7 @@
     <Compile Include="Service\RoomInventoryService.cs" />
     <Compile Include="Service\RoomRenovationService.cs" />
     <Compile Include="Service\StaticInventoryMovemenetService.cs" />
-
     <Compile Include="Service\PatientService.cs" />
-
     <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeLekaRevizijaUpravnik.xaml.cs">
       <DependentUpon>BrisanjeLekaRevizijaUpravnik.xaml</DependentUpon>
     </Compile>

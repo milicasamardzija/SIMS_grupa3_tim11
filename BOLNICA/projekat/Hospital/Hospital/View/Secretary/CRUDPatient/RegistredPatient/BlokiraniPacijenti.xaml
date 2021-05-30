@@ -27,8 +27,7 @@
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
             ItemsSource="{Binding Path=listBlocked}"
-            
-            TextElement.Foreground="#FF0852AE">
+            TextElement.Foreground="#FF08316B">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="100"
@@ -67,8 +66,7 @@
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" 
-            />
+            TextElement.FontSize="14" />
         <Label
             Margin="37,30,0,0"
             HorizontalAlignment="Left"
@@ -93,7 +91,7 @@
             <TextBox
                 Height="27"
                 Background="Transparent"
-                BorderBrush="#FF0852AE"
+                BorderBrush="#FF08316B"
                 Text=""
                 TextChanged="TextBox_TextChanged"
                 TextElement.FontSize="14"
