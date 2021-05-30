@@ -168,6 +168,12 @@
     <Compile Include="View\Manager\Ostalo\ObavestenjaUpravnik.xaml.cs">
       <DependentUpon>ObavestenjaUpravnik.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pacijent\DodajBelesku.xaml.cs">
+      <DependentUpon>DodajBelesku.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pacijent\ObavljeniPregledi.xaml.cs">
+      <DependentUpon>ObavljeniPregledi.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pacijent\Obolnici.xaml.cs">
       <DependentUpon>Obolnici.xaml</DependentUpon>
     </Compile>
@@ -339,6 +345,14 @@
     <Page Include="View\Manager\Ostalo\BelsekaMagacin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pacijent\DodajBelesku.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pacijent\ObavljeniPregledi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pacijent\Obolnici.xaml">
       <SubType>Designer</SubType>

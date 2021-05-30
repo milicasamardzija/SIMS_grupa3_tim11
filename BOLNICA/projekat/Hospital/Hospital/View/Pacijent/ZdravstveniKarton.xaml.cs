@@ -70,7 +70,9 @@ namespace Hospital.View.Pacijent
 
         private void obavljeni_pregledi(object sender, RoutedEventArgs e)
         {
-
+            ObavljeniPregledi pregledi = new ObavljeniPregledi(id);
+            pregledi.Show();
+            this.Close();
         }
 
         private void odustani(object sender, RoutedEventArgs e)

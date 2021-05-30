@@ -34,7 +34,7 @@
         <TextBox x:Name="jmbg" FontFamily="Goudy Old Style" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,199,0,0" BorderBrush="White" FontWeight="Bold" IsEnabled="False"/>
         <TextBox Name="nzo" HorizontalAlignment="Left"  Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,275,0,0" RenderTransformOrigin="0.5,2.111" BorderBrush="White" IsEnabled="False" FontWeight="Bold" FontFamily="Goudy Old Style"/>
         <GroupBox FontFamily="Goudy Old Style" Header="Lični podaci" HorizontalAlignment="Left" Height="280" VerticalAlignment="Top" Width="262" Margin="28,80,0,0" BorderBrush="#FF208ED0"/>
-        <Button Content="Istorija obavljenih pregleda" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="25" Margin="70,390,0,0" Click="obavljeni_pregledi" Foreground="#FF0F0D0D" BorderBrush="#FFFAF5F5"/>
+        <Button Content="Istorija obavljenih pregleda" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="25" Margin="70,390,0,0"  Foreground="#FF0F0D0D" BorderBrush="#FFFAF5F5" Click="obavljeni_pregledi"/>
 
 
 
