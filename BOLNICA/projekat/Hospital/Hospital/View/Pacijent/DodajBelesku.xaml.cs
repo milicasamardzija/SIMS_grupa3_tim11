@@ -24,13 +24,13 @@ namespace Hospital.View.Pacijent
         int id;
         private Anamnesis selectedAnamnesis;
         private Boolean OnReminder;
-       // private Model.Checkup.Note note;
+        private Note note;
         public DodajBelesku(int idP, Anamnesis selected)
         {
             InitializeComponent();
             id = idP;
             selectedAnamnesis = selected;
-          //  note = new Model.Checkup.Note();
+            note = new Note();
             BlackOutDates();
             startDatePicker.Visibility = Visibility.Hidden;
             endDatePicker.Visibility = Visibility.Hidden;
@@ -56,11 +56,11 @@ namespace Hospital.View.Pacijent
             String textOfNote = textBox.Text;
             if (OnReminder == false)
             {
-                /*note.DescriptionOfNote = textOfNote;
+                note.description = textOfNote;
                 note.StartDate = DateTime.MinValue;
                 note.EndDate = DateTime.MinValue;
 
-             /*   if (selectedAnamnesis.NotesForAnamnesis != null)
+                if (selectedAnamnesis.NotesForAnamnesis != null)
                 {
                     selectedAnamnesis.NotesForAnamnesis.Add(note);
                 }
@@ -71,28 +71,28 @@ namespace Hospital.View.Pacijent
                     selectedAnamnesis.NotesForAnamnesis = notes;
                 }
 
-                */
+                
 
 
             }
             else
             {
-             /*   note.DescriptionOfNote = textOfNote;
+                note.description = textOfNote;
                 note.StartDate = (DateTime)startDatePicker.SelectedDate;
                 note.EndDate = (DateTime)endDatePicker.SelectedDate;
                 note.IsSetReminder = true;
-/*
+
                 if (selectedAnamnesis.NotesForAnamnesis != null)
                 {
                     selectedAnamnesis.NotesForAnamnesis.Add(note);
                 }
                 else
                 {
-                    List<Model.Checkup.Note> notes = new List<Model.Checkup.Note>();
+                    List<Note> notes = new List<Note>();
                     notes.Add(note);
                     selectedAnamnesis.NotesForAnamnesis = notes;
                 }
-*/
+
 
 
             }
