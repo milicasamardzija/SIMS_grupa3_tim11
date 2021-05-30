@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using Hospital.Model;
+using Hospital.FileStorage.Interfaces;
+using Hospital.Controller;
+using Hospital.DTO;
 
 namespace Hospital
 {
@@ -21,44 +24,31 @@ namespace Hospital
     /// </summary>
     public partial class Evidencija : Window
     {
-        public ObservableCollection<Medicine> MedicineList { get; set; }
-
+        public ObservableCollection<MedicineDTO> MedicineList { get; set; }
+        public MedicineController1 controllerMedicine = new MedicineController1();
 
         public Evidencija()
         {
             InitializeComponent();
             this.DataContext = this;
-            MedicineList = loadJsFile();
+            MedicineList = new ObservableCollection<MedicineDTO>(controllerMedicine.getAll());
+        }
+        
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            IzmenaLeka medicineEdit = new IzmenaLeka(MedicineList, (MedicineDTO)ListMedicines.SelectedItem, ListMedicines.SelectedIndex);
+            medicineEdit.Show();
         }
 
-        public ObservableCollection<Medicine> loadJsFile()
+        private void button4_Click(object sender, RoutedEventArgs e)
         {
-            MedicineFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
-            ObservableCollection<Medicine> medicines = new ObservableCollection<Medicine>(storageMedicine.GetAll());
-            ObservableCollection<Medicine> returnMedicine = new ObservableCollection<Medicine>();
-            
-            foreach(Medicine medicine in medicines)
-            {
-                returnMedicine.Add(medicine);
-            }
-            return returnMedicine;
+            LekoviCekajuReviziju medicineForReview = new LekoviCekajuReviziju();
+            medicineForReview.Show();
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
-
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            IzmenaLeka il = new IzmenaLeka(MedicineList, (Medicine)ListMedicines.SelectedItem, ListMedicines.SelectedIndex);
-            il.Show();
-        }
-
-        private void button4_Click(object sender, RoutedEventArgs e)
-        {
-            LekoviCekajuReviziju lcr = new LekoviCekajuReviziju();
-            lcr.Show();
         }
     }
 }

@@ -150,7 +150,7 @@ namespace Hospital
 
           //  EnabledDugme();
 
-            CheckAvailableTimes();
+            //CheckAvailableTimes();
 
 
 
@@ -159,7 +159,7 @@ namespace Hospital
         }
 
 
-        private void CheckAvailableTimes()
+       /* private void CheckAvailableTimes()
         {
 
             DateTime datum;
@@ -234,7 +234,7 @@ namespace Hospital
             }
             time.ItemsSource = dostupnoVrijeme;
         }
-
+        */
         //  CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
         //   Checkup newapp = new Checkup(id,doktor.Id,patient.Id,dt,1,0);
 

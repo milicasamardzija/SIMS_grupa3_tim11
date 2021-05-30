@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using System.IO;
 using Hospital.Model;
+using Hospital.FileStorage.Interfaces;
+using Hospital.DTO;
 
 namespace Hospital
 {
@@ -22,36 +24,55 @@ namespace Hospital
     /// </summary>
     public partial class KreiranjeAnamneze : Window
     {
-        public List<Checkup> listCheckup;
+        public ObservableCollection<CheckupDTO> listCheckup;
         public Checkup checkup;
-        public int idx;
+        public int index;
 
-        public KreiranjeAnamneze(List<Checkup> list, Checkup selectedCheckup, int selectedIndex)
+        public KreiranjeAnamneze(ObservableCollection<CheckupDTO> list, Checkup selectedCheckup, int selectedIndex)
         {
             InitializeComponent();
             listCheckup = list;
             checkup = selectedCheckup;
-            idx = selectedIndex;
-            textIme.SelectedText = Convert.ToString(selectedCheckup.Patient);
+            index = selectedIndex;
+        }
+
+        public int generateIdAnamnesis()
+        {
+            int returnAnamnesis = 0;
+            IAnamnesisFileStorage storageAnamnesis = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
+            List<Anamnesis> allAnamnesis = storageAnamnesis.GetAll();
+            foreach (Anamnesis anamnesisAll in allAnamnesis)
+            {
+                foreach (Anamnesis anamnesis in allAnamnesis)
+                {
+                    if (returnAnamnesis == anamnesis.Id)
+                    {
+                        ++returnAnamnesis;
+                        break;
+                    }
+                }
+            }
+            return returnAnamnesis;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            AnamnesisFileStorage st = new AnamnesisFileStorage(@"./../../../../Hospital/files/anamnesis.json");
-            List<Anamnesis> listAna = new List<Anamnesis>();
-            int id = 1;
-            Anamnesis a = new Anamnesis(id, Convert.ToString(textIme), Convert.ToString(textPol.Text), Convert.ToString(textDatum.Text),
-                Convert.ToString(textAdresa.Text), Convert.ToString(textBrak.Text), Convert.ToString(textZanimanje.Text),
-                Convert.ToString(textZakljucak.Text));
-            st.Save(a);
-            listAna.Add(a);
+            IAnamnesisFileStorage storageAnamnesis = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
+            ObservableCollection<Anamnesis> listAnamnesis = new ObservableCollection<Anamnesis>();
+
+            Anamnesis newAnamnesis = new Anamnesis(generateIdAnamnesis(), Convert.ToString(textIme), Convert.ToString(textPol.Text),
+                Convert.ToString(textDatum.Text), Convert.ToString(textAdresa.Text), Convert.ToString(textBrak.Text),
+                Convert.ToString(textZanimanje.Text), Convert.ToString(textZakljucak.Text));
+
+            storageAnamnesis.Save(newAnamnesis);
+            listAnamnesis.Add(newAnamnesis);
             this.Close();
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            PostojeceAnamneze pa = new PostojeceAnamneze();
-            pa.Show();
+            PostojeceAnamneze existingAnamnesis = new PostojeceAnamneze();
+            existingAnamnesis.Show();
             this.Close();
         }
 

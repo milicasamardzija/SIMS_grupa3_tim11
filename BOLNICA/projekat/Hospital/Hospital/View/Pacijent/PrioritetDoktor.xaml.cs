@@ -101,7 +101,7 @@ namespace Hospital.View.Pacijent
             potvrdii.IsEnabled = true;
         }
 
-        private void pretraziTermine()
+       /* private void pretraziTermine()
         {
             times.Items.Clear();
             availableTimes.Clear();
@@ -110,7 +110,7 @@ namespace Hospital.View.Pacijent
             PatientFileStorage patients = new PatientFileStorage("./../../../../Hospital/files/storagepatient.json");
             DoctorFileStorage doctors = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
             global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
-
+            
             foreach (Checkup t in app.GetAll())
             { foreach (Doctor d in doctors.GetAll())
                 {
@@ -168,7 +168,7 @@ namespace Hospital.View.Pacijent
             }
 
 
-        }
+        }*/
 
         private void ZakaziTermin()
         {
@@ -204,7 +204,7 @@ namespace Hospital.View.Pacijent
         {
             timelabel.Visibility = Visibility.Visible;
             times.Visibility = Visibility.Visible;
-            pretraziTermine();
+            //pretraziTermine();
         }
     }
 }

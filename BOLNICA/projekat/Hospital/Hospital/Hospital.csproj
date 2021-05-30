@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -61,25 +61,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-
+    <Compile Include="Controller\AnamnesisController.cs" />
     <Compile Include="Controller\DoctorController.cs" />
     <Compile Include="Controller\FunctionalityController.cs" />
+    <Compile Include="Controller\InstructionController.cs" />
     <Compile Include="Controller\MedicalRecordController.cs" />
+    <Compile Include="Controller\MedicineController1.cs" />
     <Compile Include="Controller\PatientController1.cs" />
+    <Compile Include="Controller\RecipeController.cs" />
     <Compile Include="Controller\SurveyController.cs" />
     <Compile Include="Controller\MedicineReviewController.cs" />
     <Compile Include="Controller\RoomInventoryController.cs" />
     <Compile Include="Controller\RoomRenovationController.cs" />
     <Compile Include="Controller\StaticInventoryMovementController.cs" />
+    <Compile Include="DTO\CheckupDTO.cs" />
     <Compile Include="DTO\InventoryDTO.cs" />
     <Compile Include="DTO\MedicineDTO.cs" />
     <Compile Include="DTO\MedicineReviewDTO.cs" />
     <Compile Include="DTO\RoomInventoryDTO.cs" />
     <Compile Include="DTO\RoomRenovationDTO.cs" />
-
     <Compile Include="Controller\PatientController.cs" />
     <Compile Include="DTO\PatientDTO.cs" />
-
     <Compile Include="FileStorage\Interfaces\IAlergensFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IAnamnesisFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\ICheckFileStorage.cs" />
@@ -96,19 +98,29 @@
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
-
+    <Compile Include="Service\AnamnesisService.cs" />
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\FunctionalityService.cs" />
+    <Compile Include="Service\InstructionService.cs" />
     <Compile Include="Service\MedicalRecordService.cs" />
+    <Compile Include="Service\MedicineService1.cs" />
     <Compile Include="Service\PatientService1.cs" />
+    <Compile Include="Service\RecipeService.cs" />
     <Compile Include="Service\SurveyService.cs" />
     <Compile Include="Service\MedicineReviewService.cs" />
     <Compile Include="Service\RoomInventoryService.cs" />
     <Compile Include="Service\RoomRenovationService.cs" />
     <Compile Include="Service\StaticInventoryMovemenetService.cs" />
-
     <Compile Include="Service\PatientService.cs" />
-
+    <Compile Include="View\Doctor\BolnickoLecenje.xaml.cs">
+      <DependentUpon>BolnickoLecenje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Doctor\UvidUSobe.xaml.cs">
+      <DependentUpon>UvidUSobe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Doctor\ZauzmiSobu.xaml.cs">
+      <DependentUpon>ZauzmiSobu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeLekaRevizijaUpravnik.xaml.cs">
       <DependentUpon>BrisanjeLekaRevizijaUpravnik.xaml</DependentUpon>
     </Compile>
@@ -342,6 +354,18 @@
     <Page Include="View\Doctor\AddDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Doctor\BolnickoLecenje.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Doctor\UvidUSobe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Doctor\ZauzmiSobu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Manager\Ostalo\BelsekaMagacin.xaml">
       <Generator>MSBuild:Compile</Generator>

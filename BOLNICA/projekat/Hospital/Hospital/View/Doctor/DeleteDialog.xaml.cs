@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using Hospital.Model;
+using Hospital.Controller;
+using Hospital.DTO;
 
 namespace Hospital
 {
@@ -22,23 +24,23 @@ namespace Hospital
     public partial class DeleteDialog : Window
     {
 
-        public List<Checkup> listCheckup;
-        public int index;
-        public int id;
+        public ObservableCollection<CheckupDTO> listCheckup;
+        public int indexCheckup;
+        public int idCheckup;
+        public CheckupController controller = new CheckupController();
 
-        public DeleteDialog(List<Checkup> list, Checkup selectedCheckup, int selectedIndex)
+        public DeleteDialog(ObservableCollection<CheckupDTO> list, Checkup selectedCheckup, int selectedIndex)
         {
             InitializeComponent();
             listCheckup = list;
-            id = selectedCheckup.Id;
-            index = selectedIndex;
+            idCheckup = selectedCheckup.Id;
+            indexCheckup = selectedIndex;
         }
 
         private void btnYes_Click(object sender, RoutedEventArgs e)
         {
-            CheckupFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            st.DeleteById(id);
-            listCheckup.RemoveAt(index);
+            controller.DeleteById(idCheckup);
+            listCheckup.RemoveAt(indexCheckup);
             this.Close();
         }
 

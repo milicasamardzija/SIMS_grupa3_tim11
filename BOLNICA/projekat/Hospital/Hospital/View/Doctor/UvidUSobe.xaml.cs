@@ -11,27 +11,28 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
+using Hospital.DTO;
+using Hospital.Controller;
 
-namespace Hospital
+namespace Hospital.View.Doctor
 {
     /// <summary>
-    /// Interaction logic for IzvestajLekara.xaml
+    /// Interaction logic for UvidUSobe.xaml
     /// </summary>
-    public partial class IzvestajLekara : Window
+    public partial class UvidUSobe : Window
     {
-        public IzvestajLekara()
+        public ObservableCollection<RoomDTO> RoomsLook { get; set; }
+        private RoomsController roomsController = new RoomsController();
+
+        public UvidUSobe()
         {
             InitializeComponent();
+            this.DataContext = this;
+            RoomsLook = new ObservableCollection<RoomDTO>(roomsController.getAll());
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            PrikaziIzvestajLekara showReport = new PrikaziIzvestajLekara();
-            showReport.Show();
-            this.Close();
-        }
-
-        private void button2_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

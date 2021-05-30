@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 using Hospital.Model;
 using Newtonsoft.Json;
 using System.IO;
+using Hospital.Controller;
+using Hospital.DTO;
 
 namespace Hospital
 {
@@ -22,66 +24,26 @@ namespace Hospital
     /// </summary>
     public partial class ZakaziPregledLekar : Window
     {
-        public List<Checkup> listCheckup;
+        public List<CheckupDTO> listCheckup;
+        public CheckupDTO checkup = new CheckupDTO();
         public int idDoctor;
+        public InstructionController controllerInstruction = new InstructionController();
 
-        public ZakaziPregledLekar(List<Checkup> list, int id)
+        public ZakaziPregledLekar(List<CheckupDTO> list, int id)
         {
             InitializeComponent();
             listCheckup = list;
             idDoctor = id;
         }
 
-        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        private void button2_Click(object sender, RoutedEventArgs e)
         {
-            DateTime newdate = (DateTime)(((DatePicker)sender).SelectedDate);
-        }
-
-        public int generateIdCheckup()
-        {
-            int ret = 0;
-            CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            List<Checkup> allCheckups = storage.GetAll();
-            foreach (Checkup ch in allCheckups)
-            {
-                foreach (Checkup checkup in allCheckups)
-                {
-                    if (ret == checkup.Id)
-                    {
-                        ++ret;
-                        break;
-                    }
-                }
-            }
-            return ret;
-        }
-
-        public Patient getPatientFromFile()
-        {
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            Patient ret = storage.FindById(54);
-
-            return ret;
+            controllerInstruction.newCheckup(checkup);
+            this.Close();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-        }
-
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            CheckupFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            //int idAppointment = 0;
-            //Patient patient = getPatientFromFile();
-
-            Checkup newCheckups = new Checkup(generateIdCheckup(), (int)doctorBox.SelectedIndex, Convert.ToInt16(textPacijent.Text), Date.DisplayDate,
-                Convert.ToInt16(textTrajanje.Text), (CheckupType)comboBox.SelectedIndex);
-
-            /*public Checkup(int idCh, int idD, int idP, DateTime dateAndTime, int idR, CheckupType type) */
-
-            st.Save(newCheckups);
-           // listCheckup.Add(newCheckups);
             this.Close();
         }
     }
