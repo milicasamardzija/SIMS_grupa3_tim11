@@ -13,121 +13,44 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using Hospital.FileStorage.Interfaces;
+using Hospital.DTO;
+using Hospital.Controller;
 
 namespace Hospital
 {
 
     public partial class IzmeniNalogPacijenta : Window { 
 
-       public ObservableCollection<Patient> listPatient;
-        public ObservableCollection<MedicalRecord> listRecord;
-        public Patient patient;
+        public ObservableCollection<PatientDTO> listPatient;
+        public PatientController patientContoller;
+        //public ObservableCollection<MedicalRecord> listRecord;
+        public PatientDTO patient;
+        public PatientDTO Selected 
+        { get { return patient; }
+            set { patient = value; } 
+        }
         public int index;
-        public MedicalRecord record;
+       // public MedicalRecord record;
 
         public int id;
-        public IzmeniNalogPacijenta(ObservableCollection<Patient> list, Patient selectedPatient, int sel)
+        public IzmeniNalogPacijenta(ObservableCollection<PatientDTO> list, PatientDTO selectedPatient, int sel)
         {
            InitializeComponent();
+            this.DataContext = this;
             listPatient = list;
-
-            foreach (Patient p in listPatient)
-            {
-                if (p.Equals(selectedPatient))
-                {
-                    patient = p;
-                    break;
-                }
-            }
-
-         
-
-            listPatient=list;
+            patient = selectedPatient;
+            patientContoller = new PatientController();
             index = sel;
 
-            //da bih nasla odgovarajuci karton pacijenta
-            id = selectedPatient.Id;
-            IMedicalRecordFileStorage mfs = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
-            record = mfs.FindById(id);
-
-
-            //za nalog
-            imeText.SelectedText = selectedPatient.Name;
-            prezimeText.SelectedText = selectedPatient.Surname;
-            jmbgText.SelectedText = selectedPatient.Jmbg;
-            pol.SelectedIndex = (int)selectedPatient.Gender; 
-            brText.SelectedText = selectedPatient.TelephoneNumber;
-
-            datum.SelectedDate = (DateTime)selectedPatient.BirthdayDate;
-            brKnjText.SelectedText = Convert.ToString(selectedPatient.IdHealthCard);
-            brKarText.SelectedText = Convert.ToString(selectedPatient.Id);
-
-            datum.SelectedDate = (DateTime)selectedPatient.BirthdayDate;
-            brKnjText.SelectedText = Convert.ToString(selectedPatient.IdHealthCard);
-            brKarText.SelectedText = Convert.ToString(selectedPatient.Id);
-            zanimanjeText.SelectedText = selectedPatient.Occupation;
-            zastitaText.SelectedIndex = (int)selectedPatient.HealthCareCategory;
-            osiguraniktText.SelectedText = selectedPatient.Insurence;
-            ulicaText.SelectedText = Convert.ToString(selectedPatient.adress.street);
-            broj.SelectedText = Convert.ToString(selectedPatient.adress.streetNumber);
-            grad.SelectedIndex = (int)selectedPatient.adress.city;  
-            drzava.SelectedIndex = (int)selectedPatient.adress.country;
-
-            //informacije iz kartona
-            krvnaGrupa.SelectedIndex = (int)record.BloodType; 
+    
         }
 
         private void izmenaPacijentaB(object sender, RoutedEventArgs e)
         {
-
-            PatientFileStorage pfs = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            Patient promeniP = pfs.FindById(Convert.ToInt16(brKarText.Text));
-            Patient izbrisiP = pfs.FindById(Convert.ToInt16(brKarText.Text));
-
-            promeniP.Name = imeText.Text;
-            promeniP.Surname = prezimeText.Text;
-            promeniP.BirthdayDate = (DateTime)datum.SelectedDate;
-            promeniP.Jmbg = jmbgText.Text;
-            promeniP.Occupation = zanimanjeText.Text;
-            promeniP.Insurence = osiguraniktText.Text;
-            promeniP.Gender = (Gender)pol.SelectedIndex;    //ovako ide za combo box
-            promeniP.TelephoneNumber = brText.Text;
-
-            promeniP.Id = Convert.ToInt16(brKarText.Text);
-            
-            promeniP.IdHealthCard = Convert.ToInt16(brKnjText.Text);
-            promeniP.HealthCareCategory = (HealthCareCategory)zastitaText.SelectedIndex;
-            promeniP.adress.city =((City)grad.SelectedIndex);
-            promeniP.adress.country =(Country)drzava.SelectedIndex;
-            promeniP.adress.street = ulicaText.Text;
-            promeniP.adress.streetNumber = Convert.ToInt16(broj.Text);
-
-
-            IMedicalRecordFileStorage mfs = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
-            MedicalRecord promeniM = mfs.FindById(Convert.ToInt16(brKarText.Text));
-            MedicalRecord izbrisiM = mfs.FindById(Convert.ToInt16(brKarText.Text));
-
-            promeniM.Name = imeText.Text;
-            promeniM.Surname = prezimeText.Text;
-            promeniM.BirthdayDate = (DateTime)datum.SelectedDate;
-            promeniM.Jmbg = jmbgText.Text;
-            promeniM.Gender = (Gender)pol.SelectedIndex;
-            promeniM.MedicalRecordId= Convert.ToInt16(brKarText.Text);
-            promeniM.IdHealthCard = Convert.ToInt16(brKnjText.Text);
-            promeniM.HealthCareCategory= (HealthCareCategory)zastitaText.SelectedIndex;
-            promeniM.BloodType = (BloodType)krvnaGrupa.SelectedIndex;
-           
-
-            mfs.Delete(izbrisiM);
-            mfs.Save(promeniM);
-
-
-            pfs.Delete(izbrisiP);
-            pfs.Save(promeniP);
-
-
-
+            patientContoller.izmeniPacijenta(patient);
             this.Close();
+            
+         
 
         }
         private void odustaniB(object sender, RoutedEventArgs e)

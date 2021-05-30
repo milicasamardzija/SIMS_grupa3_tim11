@@ -111,7 +111,7 @@
 
         <StackPanel
             Width="254"
-            Height="29"
+            Height="27"
             Margin="0,10,32,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top">

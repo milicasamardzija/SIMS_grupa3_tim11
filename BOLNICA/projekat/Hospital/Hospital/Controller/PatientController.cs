@@ -45,5 +45,10 @@ namespace Hospital.Controller
         {
             return patientService.loadRegistred();
         }
+
+        public void izmeniPacijenta(PatientDTO patient)
+        {
+            patientService.izmeniPacijenta(patient);
+        }
     }
 }

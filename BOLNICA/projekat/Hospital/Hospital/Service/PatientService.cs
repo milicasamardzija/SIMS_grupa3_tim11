@@ -87,5 +87,34 @@ namespace Hospital.Service
             }
             return registred;
         }
+
+        public void izmeniPacijenta(PatientDTO patient)
+        {
+            List<Patient> allPatients = patientStorage.GetAll();
+            foreach (Patient p in allPatients)
+            {
+                if (p.Id == patient.Id)
+                {
+                    p.Name = patient.Name;
+                    p.Surname = patient.Surname;
+                    p.BirthdayDate = patient.BirthdayDate;
+                    p.Jmbg = patient.Jmbg;
+                    p.Occupation = patient.Occupation;
+                    p.Insurence = patient.Insurence;
+                    p.Gender = patient.Gender;   
+                    p.TelephoneNumber = patient.TelephoneNumber;
+
+                    p.Id = patient.Id;
+
+                    p.IdHealthCard = patient.IdHealthCard;
+                    p.HealthCareCategory = patient.HealthCareCategory;
+                    p.adress = patient.Adress;
+                   
+                    break;
+                }
+            }
+            patientStorage.SaveAll(allPatients);
+        }
+
     }
 }

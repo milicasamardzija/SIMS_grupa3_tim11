@@ -13,6 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Hospital.Controller;
+using Hospital.DTO;
 using Hospital.Sekretar;
 
 namespace Hospital
@@ -20,59 +22,53 @@ namespace Hospital
     
     public partial class PrikaziPacijente : Window
     {
-        public ObservableCollection<Patient> listPatient
+        public ObservableCollection<PatientDTO> listPatient
         {
             get;
             set;
         }
        
-
+        public PatientController patientController;
 
         public PrikaziPacijente()
         {
             InitializeComponent();
             this.DataContext = this;
-            listPatient = loadJason();
+            patientController = new PatientController();
+            listPatient = loadRegistredPatients();
            
         }
 
 
-        public ObservableCollection<Patient> loadJason()
+        public ObservableCollection<PatientDTO> loadRegistredPatients()
         {
-            PatientFileStorage pfs = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            ObservableCollection<Patient> rs = new ObservableCollection<Patient>(pfs.GetAll());
-            ObservableCollection<Patient> ret = new ObservableCollection<Patient>();
-
-            foreach (Patient p in rs)
-            {
-                if (p.guest == false)
-                {
-                    ret.Add(p);
-                }
-            }
-
-            return ret;
+            return patientController.loadRegistred();
         }
 
    
 
         private void izmeniNalogPacijenta(object sender, RoutedEventArgs e)
         {
-
-          IzmeniNalogPacijenta izmenaNaloga = new IzmeniNalogPacijenta(listPatient, (Patient)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
-          izmenaNaloga.ShowDialog();
+            if (PrikazPacijenata.SelectedItem != null)
+            {
+                IzmeniNalogPacijenta izmenaNaloga = new IzmeniNalogPacijenta(listPatient, (PatientDTO)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
+                izmenaNaloga.ShowDialog();
+            } else
+            {
+                MessageBoxResult result = MessageBox.Show("Niste odabrali pacijenta!");
+            }
         }
 
         private void izbrisiNalogPacijenta(object sender, RoutedEventArgs e)
         {
-            IzbrisiPacijenta ip = new IzbrisiPacijenta(listPatient, (Patient)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
-            ip.Show();
+           // IzbrisiPacijenta ip = new IzbrisiPacijenta(listPatient, (Patient)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
+          //  ip.Show();
         }
 
         private void addAlergents(object sender, RoutedEventArgs e)
         {
-            Alergeni a = new Alergeni(listPatient, (Patient)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
-            a.Show();
+           //Alergeni a = new Alergeni(listPatient, (Patient)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
+           // a.Show();
         }
 
         private void CancelBtn(object sender, RoutedEventArgs e)
