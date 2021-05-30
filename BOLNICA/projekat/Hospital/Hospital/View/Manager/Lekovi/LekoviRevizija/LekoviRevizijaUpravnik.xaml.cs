@@ -16,81 +16,46 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.Controller;
+using Hospital.DTO;
 
 namespace Hospital
 {
     public partial class LekoviRevizijaUpravnik : UserControl
     {
-        public ObservableCollection<Review> MedicineReviewList { get; set; }
-        private Frame frame = new Frame();
-        public LekoviRevizijaUpravnik(Frame frameUpravnik)
+        public ObservableCollection<ReviewDTO>MedicineReviewList { get; set; }
+        private Frame frame;
+        private MedicineReviewController medicineController;
+        public LekoviRevizijaUpravnik(Frame frame)
         {
             InitializeComponent();
             this.DataContext = this;
-            MedicineReviewList = loadJson();
-            frame = frameUpravnik;
-        }
-
-        public ObservableCollection<Review> loadJson()
-        {
-            MedicineIFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
-            MedicineReviewIFileStorage storageMedicineReview = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
-            ObservableCollection<Review> ret = new ObservableCollection<Review>();
-
-            foreach (Medicine medicine in storageMedicine.GetAll())
-            {
-                if (!medicine.Approved)
-                {
-                    foreach (MedicineReview medicineRewiev in storageMedicineReview.GetAll()) 
-                    {
-                        if (medicineRewiev.IdMedicine == medicine.Id)
-                        {
-                            ret.Add(new Review(medicine.Name,medicine.Type,medicineRewiev.TypeReview,medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
-                            break;
-                        }
-                    }
-                }
-            }
-
-            foreach (Medicine medicine in storageMedicine.GetAll())
-            {
-                if (medicine.Delete)
-                {
-                    foreach (MedicineReview medicineRewiev in storageMedicineReview.GetAll())
-                    {
-                        if (medicineRewiev.IdMedicine == medicine.Id)
-                        {
-                            ret.Add(new Review(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
-                            break;
-                        }
-                    }
-                }
-            }
-
-            return ret;
+            this.frame = frame;
+            medicineController = new MedicineReviewController();
+            MedicineReviewList = new ObservableCollection<ReviewDTO>(medicineController.getAll());
         }
 
         private void dodaj(object sender, RoutedEventArgs e)
-        {   //if(ListaLekovaRevizija.SelectedItem != null)
-              // LekoviRevizijaFrame.NavigationService.Navigate(new DodavanjeLekaUpravnik(frame, (Review)ListaLekovaRevizija.SelectedItem));
+        {   if(ListaLekovaRevizija.SelectedItem != null)
+               LekoviRevizijaFrame.NavigationService.Navigate(new DodavanjeLekaUpravnik(frame, (ReviewDTO)ListaLekovaRevizija.SelectedItem));
         }
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-            //if (ListaLekovaRevizija.SelectedItem != null)
-                //LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeLekaUpravnik(frame,(Review)ListaLekovaRevizija.SelectedItem));
+            if (ListaLekovaRevizija.SelectedItem != null)
+                LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeLekaUpravnik(frame,(ReviewDTO)ListaLekovaRevizija.SelectedItem));
         }
 
         private void prikaziReviziju(object sender, SelectionChangedEventArgs e)
         {
             if (ListaLekovaRevizija.SelectedItem != null)
-                LekoviRevizijaFrame.Navigate(new LekoviPrikazRevizijeUpravnik((Review)ListaLekovaRevizija.SelectedItem));
+                LekoviRevizijaFrame.Navigate(new LekoviPrikazRevizijeUpravnik((ReviewDTO)ListaLekovaRevizija.SelectedItem));
         }
 
         private void izbrisiRezenziju(object sender, RoutedEventArgs e)
         {
             if (ListaLekovaRevizija.SelectedItem != null)
-                LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeRecenzijeUpravnik(frame, (Review)ListaLekovaRevizija.SelectedItem));
+                LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeRecenzijeUpravnik(frame, (ReviewDTO)ListaLekovaRevizija.SelectedItem));
         }
 
         private void unazad(object sender, RoutedEventArgs e)

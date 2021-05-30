@@ -15,24 +15,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.Controller;
+using Hospital.DTO;
 
 namespace Hospital
 {
     public partial class BrisanjeRecenzijeUpravnik : UserControl
     {
-        private Frame frame = new Frame();
-        private Review revizija;
-        private MedicineReviewIFileStorage reviewStorage = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
-        public BrisanjeRecenzijeUpravnik(Frame frameUpravnik, Review selectedItem)
+        private Frame frame;
+        private ReviewDTO revision;
+        private MedicineReviewController controller;
+        public BrisanjeRecenzijeUpravnik(Frame frame, ReviewDTO revision)
         {
             InitializeComponent();
-            frame = frameUpravnik;
-            revizija = selectedItem;
+            this.frame = frame;
+            this.revision = revision;
+            this.controller = new MedicineReviewController();
         }
 
         private void obrisi(object sender, RoutedEventArgs e)
         {
-          //  reviewStorage.DeleteByIdMedicine(revizija.IdMedicine);
+            controller.deleteByIdMedicine(revision.IdMedicine);
             frame.NavigationService.Navigate(new LekoviRevizijaUpravnik(frame));
         }
 

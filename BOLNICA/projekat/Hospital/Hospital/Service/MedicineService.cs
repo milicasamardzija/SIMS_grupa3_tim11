@@ -1,12 +1,7 @@
 ﻿using Hospital.FileStorage.Interfaces;
 using Hospital.Model;
 using Hospital.Prikaz;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace Hospital.Service
 {
@@ -39,7 +34,27 @@ namespace Hospital.Service
 
         public List<Medicine> getAll()
         {
-            return storageMedicine.GetAll();
+            List<Medicine> medicines = new List<Medicine>();
+            foreach (Medicine medicine in storageMedicine.GetAll())
+            {
+                if (medicine.Approved)
+                {
+                    medicines.Add(medicine);
+                } 
+            }
+            return medicines;
+        }
+        public List<Medicine> getAllNotApprovedMedicines()
+        {
+            List<Medicine> medicines = new List<Medicine>();
+            foreach (Medicine medicine in storageMedicine.GetAll())
+            {
+                if (!medicine.Approved)
+                {
+                    medicines.Add(medicine);
+                }
+            }
+            return medicines;
         }
 
         internal void deleteMedicineReview(int idMedicine)
@@ -82,9 +97,25 @@ namespace Hospital.Service
                 }
             }
         }
-
+        private int generateMedicineId()
+        {
+            int ret = 0;
+            foreach (Medicine medicineBig in storageMedicine.GetAll())
+            {
+                foreach (Medicine medicine in storageMedicine.GetAll())
+                {
+                    if (ret == medicine.Id)
+                    {
+                        ++ret;
+                        break;
+                    }
+                }
+            }
+            return ret;
+        }
         public void sendMediciToRevision(Medicine newMedicine, int idDoctor)
         {
+            newMedicine.Id = generateMedicineId();
             storageMedicine.Save(newMedicine);
             storageReview.Save(new MedicineReview(generateIdMedicineReview(),newMedicine.Id,idDoctor,ReviewType.dodavanje,"",false));
         }

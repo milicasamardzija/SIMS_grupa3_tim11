@@ -1,4 +1,5 @@
 ﻿using Hospital.Controller;
+using Hospital.DTO;
 using Hospital.Prikaz;
 using System;
 using System.Collections.Generic;
@@ -20,14 +21,14 @@ namespace Hospital
     public partial class DodavanjeLekaUpravnik : UserControl
     {
         private Frame frame = new Frame();
-        private Review revision;
+        private ReviewDTO revision;
         private MedicineController controller = new MedicineController();
       
-        public DodavanjeLekaUpravnik(Frame frameLekovi, Review selectedRevision)
+        public DodavanjeLekaUpravnik(Frame frameLekovi, ReviewDTO revision)
         {
             InitializeComponent();
             frame = frameLekovi;
-            revision = selectedRevision;
+            this.revision = revision;
         }
 
         private void dodaj(object sender, RoutedEventArgs e)

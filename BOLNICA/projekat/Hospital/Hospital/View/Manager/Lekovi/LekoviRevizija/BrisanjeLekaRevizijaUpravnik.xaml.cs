@@ -29,27 +29,35 @@ namespace Hospital
         }
 
         private MedicineController controller;
-        public BrisanjeLekaRevizijaUpravnik(MedicineDTO selectedMedicine, Frame upravnikFrame)
+        public BrisanjeLekaRevizijaUpravnik(MedicineDTO medicine, Frame frame)
         {
             InitializeComponent();
             this.DataContext = this;
-            medicine = selectedMedicine;
-            frame = upravnikFrame;
+            this.medicine = medicine;
+            this.frame = frame;
             controller = new MedicineController();
 
             NazivTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             TipTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-
             dodajSpecijalizacije();
         }
 
         public void dodajSpecijalizacije()
         {
-
             SpecijalizacijaComboBox.ItemsSource = Enum.GetValues(typeof(SpecializationType));
-
         }
 
+        private void potvrdi(object sender, RoutedEventArgs e)
+        {
+            ComboBoxItem item = (ComboBoxItem)LekarComboBox.SelectedItem;
+            controller.deleteMedicine(medicine,Convert.ToInt32(item.Tag));
+            frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));
+        }
+
+        private void odustani(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));
+        }
         public List<Doctor> doktoriPoSpecijalizaciji()
         {
             DoctorFileStorage storage = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
@@ -64,19 +72,6 @@ namespace Hospital
 
             return filtratedDoctors;
         }
-
-        private void potvrdi(object sender, RoutedEventArgs e)
-        {
-            ComboBoxItem item = (ComboBoxItem)LekarComboBox.SelectedItem;
-            controller.deleteMedicine(medicine,Convert.ToInt32(item.Tag));
-            frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));
-        }
-
-        private void odustani(object sender, RoutedEventArgs e)
-        {
-            frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));
-        }
-
         private void getDoctors(object sender, SelectionChangedEventArgs e)
         {
             LekarComboBox.Items.Clear();

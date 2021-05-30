@@ -23,10 +23,10 @@ namespace Hospital
     public partial class BrisanjeLekaUpravnik : UserControl
     {
         private Frame frame;
-        private MedicineReviewDTO revision;
+        private ReviewDTO revision;
         private MedicineController controller;
 
-        public BrisanjeLekaUpravnik(Frame frame, MedicineReviewDTO revision)
+        public BrisanjeLekaUpravnik(Frame frame, ReviewDTO revision)
         {
             InitializeComponent();
             this.frame = frame;

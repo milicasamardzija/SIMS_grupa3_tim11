@@ -18,14 +18,14 @@ namespace Hospital.Controller
             service = new MedicineService();
         }
 
-        public void sendMedicineToRevision(Medicine newMedicine, int idDoctor)
+        public void sendMedicineToRevision(MedicineDTO newMedicine, int idDoctor)
         {
-            service.sendMediciToRevision(newMedicine, idDoctor);
+            service.sendMediciToRevision(new Medicine(newMedicine.Id,newMedicine.Name,newMedicine.Quantity,newMedicine.Type,newMedicine.IdsIngredients,newMedicine.IdsMedicines,newMedicine.Approved), idDoctor);
         }
 
-        internal void approveMedicine(Review revision)
+        internal void approveMedicine(ReviewDTO revision)
         {
-            service.approvedMedicine(revision);
+            service.approvedMedicine(new Review(revision.Name,revision.MedicineType,revision.ReviewType,revision.Done,revision.IdMedicine,revision.IdMedicineReview));
         }
 
         internal void deleteMedicine(MedicineDTO medicine, int tag)
@@ -76,6 +76,11 @@ namespace Hospital.Controller
                 replacementMedicines.Add(new Medicine(medicine.Id, medicine.Name, medicine.Quantity, medicine.Type, medicine.IdsIngredients, medicine.IdsMedicines, medicine.Approved));
             }
             return service.convertReplacementMedicinesIntoIds(replacementMedicines);
+        }
+
+        public List<Medicine> getAllNotApprovedMedicines()
+        {
+            return service.getAllNotApprovedMedicines();
         }
 
         public void update(MedicineDTO medicine)

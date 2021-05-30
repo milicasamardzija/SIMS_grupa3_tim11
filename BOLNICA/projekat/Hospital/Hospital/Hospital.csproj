@@ -74,7 +74,7 @@
     <Compile Include="DTO\IngredientDTO.cs" />
     <Compile Include="DTO\InventoryDTO.cs" />
     <Compile Include="DTO\MedicineDTO.cs" />
-    <Compile Include="DTO\MedicineReviewDTO.cs" />
+    <Compile Include="DTO\ReviewDTO.cs" />
     <Compile Include="DTO\RoomInventoryDTO.cs" />
     <Compile Include="DTO\RoomRenovationDTO.cs" />
     <Compile Include="FileStorage\Interfaces\IAlergensFileStorage.cs" />
@@ -93,6 +93,7 @@
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
+    <Compile Include="Model\Medicine\Review.cs" />
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\FunctionalityService.cs" />
     <Compile Include="Service\IngredientService.cs" />
@@ -137,9 +138,6 @@
     </Compile>
     <Compile Include="View\Manager\Lekovi\LekoviSvi\DodavanjeLekaUpravnik.xaml.cs">
       <DependentUpon>DodavanjeLekaUpravnik.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Manager\Lekovi\LekoviRevizija\IzmenaLekaRevizija.xaml.cs">
-      <DependentUpon>IzmenaLekaRevizija.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Lekovi\LekoviSvi\IzmenaLekaUpravnik.xaml.cs">
       <DependentUpon>IzmenaLekaUpravnik.xaml</DependentUpon>
@@ -269,7 +267,6 @@
     <Compile Include="View\Secretary\CRUDCheckup\SacuvajLekara.xaml.cs">
       <DependentUpon>SacuvajLekara.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Medicine\Review.cs" />
     <Compile Include="View\Secretary\CRUDCheckup\SlobodniLekari.xaml.cs">
       <DependentUpon>SlobodniLekari.xaml</DependentUpon>
     </Compile>
@@ -528,10 +525,6 @@
     <Page Include="View\Manager\Inventar\CRUDInventar\IzmenaInventaraDijalog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\Manager\Lekovi\LekoviRevizija\IzmenaLekaRevizija.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Lekovi\LekoviSvi\IzmenaLekaUpravnik.xaml">
       <SubType>Designer</SubType>
