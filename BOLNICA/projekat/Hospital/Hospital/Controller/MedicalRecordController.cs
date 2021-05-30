@@ -39,7 +39,7 @@ namespace Hospital.Controller
             ObservableCollection<AlergensDTO> alergens = new ObservableCollection<AlergensDTO>();
 
             MedicalRecord record = new MedicalRecord();
-            record=servis.findById(id);
+            record=servis.findMedicalRecordById(id);
 
             foreach (Alergens a in record.Alergens)
             {
@@ -52,13 +52,14 @@ namespace Hospital.Controller
         public MedicalRecordDTO findRecordById(int id)
         {
             MedicalRecord record = new MedicalRecord();
-            record=servis.findById(id);
+            record = servis.findMedicalRecordById(id);
             ObservableCollection<AlergensDTO> alergens = new ObservableCollection<AlergensDTO>();
+
             foreach (Alergens a in record.Alergens)
             {
                 alergens.Add(new AlergensDTO(a.Name, a.Code));
             }
-            MedicalRecordDTO foundRecord = new MedicalRecordDTO(record.Name, record.Surname, record.Jmbg, record.Gender, record.BirthdayDate, record.Id, record.HealthCareCategory, record.IdHealthCard, record.BloodType, alergens);
+            MedicalRecordDTO foundRecord = new MedicalRecordDTO(record.Name, record.Surname, record.Jmbg, record.Gender, record.BirthdayDate, record.MedicalRecordId, record.HealthCareCategory, record.IdHealthCard, record.BloodType, alergens);
 
             return foundRecord;
         }
@@ -74,7 +75,7 @@ namespace Hospital.Controller
                 alergeni.Add(new Alergens(a.Name, a.Code));
             }
 
-            MedicalRecord medicalRecord = new MedicalRecord(record.Name, record.Surname, record.Jmbg, record.Gender, record.BirthdayDate, record.Id, record.HealthCareCategory, record.IdHealthCard, record.BloodType, alergeni);
+            MedicalRecord medicalRecord = new MedicalRecord(record.Name, record.Surname, record.Jmbg, record.Gender, record.BirthdayDate, record.MedicalRecordId, record.HealthCareCategory, record.IdHealthCard, record.BloodType, alergeni);
             servis.saveMedicalRecord(medicalRecord);
         }
     }

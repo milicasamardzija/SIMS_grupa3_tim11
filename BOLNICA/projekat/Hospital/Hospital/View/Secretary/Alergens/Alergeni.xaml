@@ -25,8 +25,22 @@
             Margin="24,41,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            ItemsSource="{Binding Path=listAllAlergens}" />
-
+            AutoGenerateColumns="False"
+            Foreground="#FF1B4C93"
+            ItemsSource="{Binding Path=listAllAlergens}"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="130"
+                    Binding="{Binding Name}"
+                    Header="Naziv" />
+                <DataGridTextColumn
+                    Width="40"
+                    Binding="{Binding Code}"
+                    Header="Kod" />
+            </DataGrid.Columns>
+        </DataGrid>
         <DataGrid
             x:Name="selected"
             Width="183"
@@ -34,8 +48,25 @@
             Margin="333,46,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            ItemsSource="{Binding Path=listAlergens}" />
+            AutoGenerateColumns="False"
+            Foreground="#FF1B4C93"
+            ItemsSource="{Binding Path=listAlergens}"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="130"
+                    Binding="{Binding Name}"
+                    Header="Naziv" />
 
+                <DataGridTextColumn
+                    Width="40"
+                    Binding="{Binding Code}"
+                    Header="Kod" />
+
+
+            </DataGrid.Columns>
+        </DataGrid>
         <Label
             Name="sviAlergeni"
             Margin="24,10,0,0"

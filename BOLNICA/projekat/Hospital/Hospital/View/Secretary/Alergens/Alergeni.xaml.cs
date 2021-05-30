@@ -48,7 +48,8 @@ namespace Hospital.Sekretar
             controller = new MedicalRecordController();
             id = selectedPatient.Id;
             record = controller.findRecordById(id);
-          
+            
+
             listAllAlergens = loadJasonAllAlergens();
             listAlergens = loadPatientAlergens(id);
 

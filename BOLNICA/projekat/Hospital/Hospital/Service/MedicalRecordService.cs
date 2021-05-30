@@ -30,7 +30,7 @@ namespace Hospital.Service
             alergensFileStorage.SaveAll(alergens);
         }
 
-        public MedicalRecord findById(int id)
+        public MedicalRecord findMedicalRecordById(int id)
         {
             return mrStorage.FindById(id);
         }
