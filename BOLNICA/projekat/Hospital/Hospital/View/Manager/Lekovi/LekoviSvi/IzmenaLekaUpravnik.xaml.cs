@@ -103,8 +103,8 @@ namespace Hospital
             NazivTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             TipTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             GramazaTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-            medicine.IdsMedicines = medicineController.convertReplacementMedicinesIntoIds(ReplacementMedicine.ToList());
-            medicine.IdsIngredients = ingredientController.convertReplacementMedicinesIntoIds(IngredientsMedicine.ToList());
+            medicine.IdsMedicines = medicineController.convertReplacementMedicinesIntoIds(replacementMedicine.ToList());
+            medicine.IdsIngredients = ingredientController.convertReplacementMedicinesIntoIds(ingredientsMedicine.ToList());
 
             medicineController.update(medicine);
             frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));

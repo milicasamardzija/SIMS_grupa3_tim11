@@ -19,7 +19,6 @@ using System.Windows.Shapes;
 using Hospital.Controller;
 using Hospital.DTO;
 using Hospital.View.Manager.Lekovi.LekoviRevizija;
-using AddingNewItemEventArgs = System.Windows.Controls.AddingNewItemEventArgs;
 
 namespace Hospital
 {
