@@ -24,9 +24,8 @@ namespace Hospital
     /// </summary>
     public partial class RevizijaLekaLekar : Window
     {
-
         public ObservableCollection<Review> reviewList;
-        public Review lekRevizija;
+        public Review medicineReview;
         public int indexReview;
 
         public RevizijaLekaLekar(ObservableCollection<Review> list, Review selectedReview, int selectedIndex)
@@ -34,63 +33,62 @@ namespace Hospital
             InitializeComponent();
             this.DataContext = this;
             reviewList = list;
-            lekRevizija = selectedReview;
+            medicineReview = selectedReview;
             indexReview = selectedIndex;
 
-            textNaziv.SelectedText = Convert.ToString(lekRevizija.Name);
-            textTipLeka.SelectedText = Convert.ToString(lekRevizija.MedicineType);
-            textTipRevizije.SelectedText = Convert.ToString(lekRevizija.ReviewType);
-            //textLekar.SelectedText = getDoctor();
-            //textKomentar.SelectedText = Convert.ToString(lekRevizija.)
-
+            textNaziv.SelectedText = Convert.ToString(medicineReview.Name);
+            textTipLeka.SelectedText = Convert.ToString(medicineReview.MedicineType);
+            textTipRevizije.SelectedText = Convert.ToString(medicineReview.ReviewType);
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        public int generateIdMedicineReview()
         {
-            this.Close();
-        }
-
-        public int generisiID()
-        {
-            int ret = 0;
-            MedicineReviewIFileStorage storage = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
-            List<MedicineReview> all = storage.GetAll();
-            foreach (MedicineReview mr in all)
+            int retMedicineReview = 0;
+            MedicineReviewIFileStorage storageMedicineReview = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
+            List<MedicineReview> allMedicineReview = storageMedicineReview.GetAll();
+            foreach (MedicineReview medicineReview in allMedicineReview)
             {
-                foreach (MedicineReview medicineReviews in all)
+                foreach (MedicineReview medicineReviews in allMedicineReview)
                 {
-                    if (ret == medicineReviews.Id)
+                    if (retMedicineReview == medicineReviews.Id)
                     {
-                        ++ret;
+                        ++retMedicineReview;
                         break;
                     }
                 }
             }
-            return ret;
+            return retMedicineReview;
         }
 
-        public int generateID()
+        public int generateIdMedicine()
         {
-            int ret = 0;
-            MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
-            List<Medicine> all = storage.GetAll();
-            foreach (Medicine medicine in all)
+            int retMedicine = 0;
+            MedicineIFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
+            List<Medicine> allMedicine = storageMedicine.GetAll();
+            foreach (Medicine medicine in allMedicine)
             {
-                foreach (Medicine medicines in all)
+                foreach (Medicine medicines in allMedicine)
                 {
-                    if (ret == medicines.Id)
+                    if (retMedicine == medicines.Id)
                     {
-                        ++ret;
+                        ++retMedicine;
                         break;
                     }
                 }
             }
-            return ret;
+            return retMedicine;
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            reviewList[indexReview] = new Review(lekRevizija.Name, lekRevizija.MedicineType, lekRevizija.ReviewType, true, generateID(), generisiID());
+            reviewList[indexReview] = new Review(medicineReview.Name, medicineReview.MedicineType, medicineReview.ReviewType, true, 
+                generateIdMedicine(), generateIdMedicineReview());
+
+            this.Close();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
     }

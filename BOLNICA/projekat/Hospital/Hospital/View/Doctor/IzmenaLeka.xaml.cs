@@ -22,7 +22,6 @@ namespace Hospital
     /// </summary>
     public partial class IzmenaLeka : Window
     {
-
         public ObservableCollection<Ingredient> DataIngredient { get; set; }
         public ObservableCollection<Medicine> DataMedicine { get; set; }
 
@@ -43,8 +42,6 @@ namespace Hospital
             nazivLText.SelectedText = Convert.ToString(selectedMedicine.Name);
             gramazaLText.SelectedText = Convert.ToString(selectedMedicine.Quantity);
             vrstaLText.SelectedText = Convert.ToString(selectedMedicine.Type);
-
-           
         }
 
         public ObservableCollection<Ingredient> loadIngredient()
@@ -71,37 +68,38 @@ namespace Hospital
             return ret;
         }
 
-        public int generisiID()
+        public int generateIdMedicine()
         {
-            int ret = 0;
+            int returnMedicine = 0;
             MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             ObservableCollection<Medicine> all = new ObservableCollection<Medicine>(storage.GetAll());
             foreach (Medicine medicine in all)
             {
                 foreach (Medicine medicines in all)
                 {
-                    if (ret == medicines.Id)
+                    if (returnMedicine == medicines.Id)
                     {
-                        ++ret;
+                        ++returnMedicine;
                         break;
                     }
                 }
             }
-            return ret;
+            return returnMedicine;
         }
-
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
+        
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             List<int> ingredients = new List<int>();
             List<int> medicines = new List<int>();
  
-            medicineList[indexMedicine] = new Medicine(generisiID(), Convert.ToString(nazivLText.Text), Convert.ToDouble(gramazaLText.Text),
+            medicineList[indexMedicine] = new Medicine(generateIdMedicine(), Convert.ToString(nazivLText.Text), Convert.ToDouble(gramazaLText.Text),
                 Convert.ToString(vrstaLText.Text), ingredients, medicines, true);
+
+            this.Close();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
     }

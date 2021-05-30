@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Hospital.Model;
 using System.Collections.ObjectModel;
+using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -21,10 +22,9 @@ namespace Hospital
     /// </summary>
     public partial class UputZaAmbulantnoSpecijalistickiPregled : Window
     {
-
         public List<Checkup> CheckupList { get; set; }
-        public int id;
-
+        public int idDoctor;
+        
         public UputZaAmbulantnoSpecijalistickiPregled()
         {
             InitializeComponent();
@@ -33,55 +33,48 @@ namespace Hospital
 
         public int generateInstructionId()
         {
-            int ret = 0;
-            InstructionFileStorage storage = new InstructionFileStorage(@"./../../../../Hospital/files/instructions.json");
-            List<Instruction> all = storage.GetAll();
-            foreach (Instruction instruction in all)
+            int retInstructionId = 0;
+            IInstructionFileStorage storageInstruction = new InstructionFileStorage("./../../../../Hospital/files/instructions.json");
+            List<Instruction> allInstructions = storageInstruction.GetAll();
+            foreach (Instruction instruction in allInstructions)
             {
-                foreach (Instruction instructions in all)
+                foreach (Instruction instructions in allInstructions)
                 {
-                    if (ret == instructions.Id)
+                    if (retInstructionId == instructions.Id)
                     {
-                        ++ret;
+                        ++retInstructionId;
                         break;
                     }
                 }
             }
-            return ret;
+            return retInstructionId;
         }
 
-        public int getCheckupFromFile()
+        public int getCheckupId()
         {
-            int ret = 0;
-            CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            List<Checkup> all = storage.GetAll();
-            foreach (Checkup checkup in all)
+            int retCheckupId = 0;
+            ICheckFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            List<Checkup> allCheckups = storageCheckup.GetAll();
+            foreach (Checkup checkup in allCheckups)
             {
-                foreach (Checkup checkups in all)
+                foreach (Checkup checkups in allCheckups)
                 {
-                    if (ret == checkups.Id)
+                    if (retCheckupId == checkups.Id)
                     {
-                        ++ret;
+                        ++retCheckupId;
                         break;
                     }
                 }
             }
-            return ret;
+            return retCheckupId;
         }
-
-        private void button3_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
+        
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            InstructionFileStorage storageInstruction = new InstructionFileStorage(@"./../../../../Hospital/files/instructions.json");
-            String typeInstruction = "ambulantno-specijalisticki pregled";
-            bool instructionIsGiven = true;
+            IInstructionFileStorage storageInstruction = new InstructionFileStorage("./../../../../Hospital/files/instructions.json");
             List<Instruction> instructionList = new List<Instruction>();
 
-            Instruction newInstruction = new Instruction(generateInstructionId(), getCheckupFromFile(), typeInstruction, instructionIsGiven,
+            Instruction newInstruction = new Instruction(generateInstructionId(), getCheckupId(), "ambulantno-specijalisticki pregled", true,
                 Convert.ToString(jmbgUText.Text), Convert.ToString(lboUText.Text), Convert.ToString(intervalText.Text),
                 Convert.ToString(razlogText.Text));
 
@@ -92,8 +85,13 @@ namespace Hospital
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            ZakaziPregledLekar zpl = new ZakaziPregledLekar(CheckupList, id);
-            zpl.Show();
+            ZakaziPregledLekar newCheckupInstruction = new ZakaziPregledLekar(CheckupList, idDoctor);
+            newCheckupInstruction.Show();
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

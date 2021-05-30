@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Hospital.FileStorage;
+using Hospital.FileStorage.Interfaces;
+using Hospital.Model.Notification;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -22,11 +25,14 @@ namespace Hospital
 
        
         public ObservableCollection<Notice> listNotice { get; set; }
+
+        public ObservableCollection<NoticeInteresting> listInteresting { get; set; }
         public BlogGlavni()
         {
             InitializeComponent();
             this.DataContext = this;
             listNotice= loadJason();
+            listInteresting = loadJasonFileInteresting();
         }
 
         public ObservableCollection<Notice> loadJason()
@@ -36,6 +42,13 @@ namespace Hospital
             
               return rs;
           
+        }
+
+        public ObservableCollection<NoticeInteresting> loadJasonFileInteresting()
+        {
+            INoticeInterestingFileStorage storage = new NoticeInterestingFileStorage("./../../../../Hospital/files/noticesInteresting.json");
+            ObservableCollection<NoticeInteresting> ni = new ObservableCollection<NoticeInteresting>(storage.GetAll());
+            return ni;
         }
 
     }
