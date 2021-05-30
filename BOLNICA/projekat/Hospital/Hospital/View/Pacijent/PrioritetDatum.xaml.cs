@@ -35,6 +35,7 @@ namespace Hospital.View.Pacijent
              BlackOutDates();
             potvrdii.IsEnabled = false;
             date.IsEnabled = false;
+            
           
             PrikazSlobodnihTermina.Visibility = Visibility.Hidden;
             InitializeStartTimes();
@@ -131,7 +132,7 @@ namespace Hospital.View.Pacijent
         {
           
             PrikazSlobodnihTermina.Visibility = Visibility.Visible;
-           // pretraziTermine();
+            pretraziTermine();
         }
 
 
@@ -204,20 +205,17 @@ namespace Hospital.View.Pacijent
 
             DoctorFileStorage doctors = new DoctorFileStorage("./../../../../Hospital/files/storageDoctor.json");
             List<global::Doctor> ljekari = doctors.GetAll();
-            foreach (global::Doctor lekar in ljekari)
-            {
-                for (DateTime tm = pocetniDatum; tm < krajnjiDatum; tm = tm.AddMinutes(15))
+          
+                for (DateTime tm = pocetniDatum; tm < krajnjiDatum; tm = tm.AddMinutes(30))
                 {
-                    DateTime end = tm.AddMinutes(15);
-                  
-                        if (DoctorIsAvailable(tm, end.AddMinutes(-1)) &&   PatientIsAvailable(tm, end.AddMinutes(-1)))
-                        {
-                            PrikazSlobodnihTermina.Items.Add(new SlobodniTermini(lekar, tm.ToString("HH:mm")));
-                        }
-                    
 
+                    foreach (global::Doctor ljekar in ljekari)
+                    {
+                        DateTime end = tm.AddMinutes(30);
+                        PrikazSlobodnihTermina.Items.Add(new SlobodniTermini(ljekar, tm.ToString("HH:mm")));
+                    }  
                 }
-            }
+            
 
 
 

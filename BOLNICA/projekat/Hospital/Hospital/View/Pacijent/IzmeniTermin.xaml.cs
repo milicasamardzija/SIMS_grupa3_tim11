@@ -1,8 +1,10 @@
+using Hospital.Controller;
 using Hospital.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -32,6 +34,8 @@ namespace Hospital
         private List<global::Doctor> lekari;
         private List<Checkup> termini;
         public ObservableCollection<Patient> pacijenti;
+        private List<string> availableTimes;
+        PatientController1 patientcontroller = new PatientController1();
 
 
         public IzmeniTermin(ObservableCollection<Checkup> list, Checkup selectedApp, int selectedIndex, int idP)
@@ -46,6 +50,17 @@ namespace Hospital
             lista = new List<string>();
             CheckupFileStorage af = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             termini = af.GetAll();
+
+
+            List<Patient> patients = patientcontroller.getAll();
+            foreach (Patient patient in patients)
+            {
+                if (patient.Id == idP)
+                {
+                    imePacijenta.Text = patient.name + " " + patient.surname;
+                }
+            }
+
             lista.Add("");
             lista.Add("08:00");
             lista.Add("08:30");
@@ -70,14 +85,14 @@ namespace Hospital
             lista.Add("18:00");
             lista.Add("18:30");
             lista.Add("19:00");
-            timeText.ItemsSource = lista;
+            time.ItemsSource = lista;
 
 
 
-      
+
             DoctorFileStorage df = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
-             lekari= df.GetAll();
-            doktor.ItemsSource = lekari;
+            lekari = df.GetAll();
+            lekar.ItemsSource = lekari;
 
 
 
@@ -88,49 +103,101 @@ namespace Hospital
 
             foreach (global::Doctor l in lekari)
             {
-                if (l.jmbg == termin.Doctor.jmbg)
-                    doktor.SelectedItem = l;
+                if (l.Id == termin.IdDoctor)
+                {
+                  
+                      lekar.SelectedItem = l;
+                }
             }
 
 
 
-            dateText.SelectedDate = selectedApp.Date;
-            timeText.SelectedValue = selectedApp.Date.ToString("HH:mm");
-
+            date.SelectedDate = selectedApp.Date;
+            time.SelectedValue = selectedApp.Date.ToString("HH:mm");
+            time.SelectedItem = time.SelectedValue;
 
             CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, termin.Date.AddDays(-3));
             CalendarDateRange kalendar1 = new CalendarDateRange(termin.Date.AddDays(3), DateTime.MaxValue);
 
-            dateText.BlackoutDates.Add(kalendar);
-            dateText.BlackoutDates.Add(kalendar1);
+            date.BlackoutDates.Add(kalendar);
+            date.BlackoutDates.Add(kalendar1);
 
 
         }
 
-        public Patient getPatientFromFile()
-        {
-            Patient ret = new Patient();
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            ObservableCollection<Patient> patients = new ObservableCollection<Patient>(storage.GetAll());
 
-            foreach (Patient patient in patients)
+      
+
+        private void CheckAvailableTimes()
+        {
+
+            DateTime datum;
+            global::Doctor l = (global::Doctor)lekar.SelectedItem;
+            if (date.SelectedDate != null)
             {
-                if (patient.Id == idPatient)
+                datum = DateTime.Parse(date.Text);
+            }
+            else
+            {
+                datum = DateTime.Now;
+            }
+
+            CheckupFileStorage cfs = new CheckupFileStorage("./ .. / .. / .. / .. / Hospital / files / storageCheckup.json") ;
+            availableTimes = new List<string>();
+            List<Checkup> termini = new List<Checkup>();
+            if (lekar.SelectedItem != null && date.SelectedDate != null)
+
+            {
+                foreach (Checkup termin in cfs.GetAll())
                 {
-                    ret = patient;
-                    break; 
+                    if (l.Id == termin.IdDoctor)
+                    {
+                        if (termin.Date.Date.Equals(date.SelectedDate))
+                        {
+                            termini.Add(termin);
+                        }
+                    }
+
+                    if (idPatient == termin.IdPatient)
+                    {
+                        if (termin.Date.Date.Equals(date.SelectedDate))
+                        {
+                            termini.Add(termin);
+                        }
+                    }
+
+
                 }
             }
-            return ret;
-        }
 
-          public Doctor getDoctorFromFile()
-        {
-            Doctor ret = new Doctor();
+            DateTime danas = DateTime.Today;
 
-            List<Doctor> doctors = JsonConvert.DeserializeObject<List<Doctor>>(File.ReadAllText(@"./../../../../Hospital/files/storageDoctor.json")); 
-            ret = doctors[0]; 
-            return ret;
+            for (DateTime tm = danas.AddHours(8); tm < danas.AddHours(20); tm = tm.AddMinutes(15))
+            {
+                bool slobodno = true;
+                foreach (Checkup termin in termini)
+                {
+                    DateTime start = DateTime.Parse(termin.Date.ToString("HH:mm"));
+                    DateTime end = DateTime.Parse(termin.Date.AddMinutes(termin.Duration).ToString("HH:mm"));
+                    if (tm >= start && tm < end)
+                    {
+                        slobodno = false;
+                    }
+
+                }
+                if (slobodno)
+                    availableTimes.Add(tm.ToString("HH:mm"));
+
+
+            }
+
+            time.ItemsSource = availableTimes;
+            if (availableTimes.Contains(termin.Date.ToString("HH:mm")))
+            {
+                time.SelectedItem = termin.Date.ToString("HH:mm");
+            }
+
+
         }
 
 
@@ -139,32 +206,43 @@ namespace Hospital
 
 
             CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            Patient patient = getPatientFromFile();
-            global::Doctor doktor1 = (global::Doctor)doktor.SelectedItem;
+            global::Doctor doktor1 = (global::Doctor)lekar.SelectedItem;
 
-            var item = timeText.SelectedItem;
-            String t = item.ToString();
-            String d = dateText.Text;
-            DateTime dt = DateTime.Parse(d + " " + t);
+            if (time.SelectedIndex != -1)
+            {
+                var item = time.SelectedItem;
+                String t = item.ToString();
+                String d = date.Text;
+                DateTime dt = DateTime.Parse(d + " " + t);
 
-
-
-
-
-
-            termin.Date = dt;
-            termin.Doctor = doktor1;
-            termin.Patient = patient;
-            storage.DeleteById(termin.Id);
-            storage.Save(termin);
+                termin.Room = null;
+                termin.IdDoctor = doktor1.Id;
+                termin.IdPatient = idPatient;
+                termin.Date = dt;
+                storage.DeleteById(termin.Id);
+                storage.Save(termin);
 
 
-            FunctionalityFileStorage funkcionalnosti = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
-            Functionality funkcionalnost = new Functionality(DateTime.Now, idPatient, "izmena");
-            funkcionalnosti.Save(funkcionalnost);
+                FunctionalityFileStorage funkcionalnosti = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
+                Functionality funkcionalnost = new Functionality(DateTime.Now, idPatient, "izmena");
+                funkcionalnosti.Save(funkcionalnost);
 
 
-            this.Close();
+                this.Close();
+            }
+        }
+
+
+        private void setEnabledButtonSubmit()
+        {
+            if (lekar.SelectedItem != null && date.SelectedDate != null && time.SelectedItem != null)
+            {
+                potvrdi.IsEnabled = true;
+            }
+            else
+            {
+                odustanii.IsEnabled = false;
+            }
         }
 
         private void odustani_click(object sender, RoutedEventArgs e)
@@ -172,6 +250,13 @@ namespace Hospital
             this.Close();
 
         }
+
+        private void time_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+      
 
         private void slobodni_doktori(object sender, RoutedEventArgs e)
         {
@@ -210,11 +295,11 @@ namespace Hospital
 
                 if (t.Doctor.jmbg.Equals(termin.Doctor.jmbg))
                 {
-                    if (t.Date.Date == dateText.SelectedDate && (timeText.SelectedItem.Equals(izbaci)))
+                    if (t.Date.Date == date.SelectedDate && (time.SelectedItem.Equals(izbaci)))
                     {
                         lekari.Remove(termin.Doctor);
-                         doktor.ItemsSource = lekari;
-                        doktor.SelectedIndex = lekari.Count() - 1;
+                        lekar.ItemsSource = lekari;
+                        lekar.SelectedIndex = lekari.Count() - 1;
 
 
                     }
@@ -227,7 +312,7 @@ namespace Hospital
         {
             foreach (Checkup t in termini)
             {
-                if (t.Date.Date == dateText.SelectedDate)
+                if (t.Date.Date == date.SelectedDate)
                 {
                     string sat = t.Date.Hour.ToString();
                     string minute = t.Date.Minute.ToString();
@@ -260,12 +345,29 @@ namespace Hospital
                     }
 
                     lista.Remove(izbaci);
-                    timeText.ItemsSource = lista;
+                    time.ItemsSource = lista;
                 }
-                timeText.SelectedIndex = 0;
+                time.SelectedIndex = 0;
             }
         }
 
+     
 
+        private void lekar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+
+        private void date_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+
+        }
+
+        private void odustani(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

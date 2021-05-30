@@ -179,7 +179,7 @@ namespace Hospital
         {
            IzmeniTermin it = new IzmeniTermin(AppointmentList, (Checkup)ListaTermina.SelectedItem, ListaTermina.SelectedIndex,id);
 
-
+            it.Show();
             Patient ret = new Patient();
             PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storageDoctor.json");
             List<Patient> patients = storage.GetAll();
