@@ -28,6 +28,11 @@ namespace Hospital.Model
             commentInstruction = comment;
         }
 
+        public Instruction()
+        {
+
+        }
+
 
     }
 }

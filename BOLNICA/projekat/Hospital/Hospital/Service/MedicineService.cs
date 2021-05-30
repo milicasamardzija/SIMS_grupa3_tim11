@@ -41,6 +41,8 @@ namespace Hospital.Service
             return ret;
         }
 
+        
+
         public void deleteMedicine(Medicine medicine, int idDoctor)
         {
             storageReview.Save(new MedicineReview(generateIdMedicineReview(), medicine.Id, idDoctor, ReviewType.brisanje, "", false));

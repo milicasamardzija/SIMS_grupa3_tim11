@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using Hospital.Model;
 using Hospital.FileStorage.Interfaces;
+using Hospital.Controller;
 
 namespace Hospital
 {
@@ -24,6 +25,7 @@ namespace Hospital
     {
         public ObservableCollection<Ingredient> DataIngredient { get; set; }
         public ObservableCollection<Medicine> DataMedicine { get; set; }
+        public MedicineController controller = new MedicineController();
 
         public ObservableCollection<Medicine> medicineList;
         public Medicine medicine;

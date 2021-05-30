@@ -48,10 +48,10 @@ namespace Hospital
             }
             return returnRecipe;
         }
-
+        
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            RecipeFileStorage storageRecipe = new RecipeFileStorage(@"./../../../../Hospital/files/recepti.json");
+           RecipeFileStorage storageRecipe = new RecipeFileStorage(@"./../../../../Hospital/files/recepti.json");
             List<Recipe> recipeList = new List<Recipe>();
             
             Recipe newRecipe = new Recipe(generateID(), Convert.ToString(textBox.Text), Convert.ToString(textBox1.Text), Convert.ToString(textBox2.Text),
@@ -62,6 +62,7 @@ namespace Hospital
 
             storageRecipe.Save(newRecipe);
             recipeList.Add(newRecipe);
+      
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

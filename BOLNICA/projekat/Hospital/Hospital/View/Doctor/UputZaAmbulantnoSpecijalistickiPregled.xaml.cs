@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using Hospital.Model;
 using System.Collections.ObjectModel;
 using Hospital.FileStorage.Interfaces;
+using Hospital.Controller;
 
 namespace Hospital
 {
@@ -24,62 +25,18 @@ namespace Hospital
     {
         public List<Checkup> CheckupList { get; set; }
         public int idDoctor;
+        public InstructionController controller = new InstructionController();
+        public Instruction instruction = new Instruction();
         
         public UputZaAmbulantnoSpecijalistickiPregled()
         {
             InitializeComponent();
             this.DataContext = this;
         }
-
-        public int generateInstructionId()
-        {
-            int retInstructionId = 0;
-            IInstructionFileStorage storageInstruction = new InstructionFileStorage("./../../../../Hospital/files/instructions.json");
-            List<Instruction> allInstructions = storageInstruction.GetAll();
-            foreach (Instruction instruction in allInstructions)
-            {
-                foreach (Instruction instructions in allInstructions)
-                {
-                    if (retInstructionId == instructions.Id)
-                    {
-                        ++retInstructionId;
-                        break;
-                    }
-                }
-            }
-            return retInstructionId;
-        }
-
-        public int getCheckupId()
-        {
-            int retCheckupId = 0;
-            ICheckFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            List<Checkup> allCheckups = storageCheckup.GetAll();
-            foreach (Checkup checkup in allCheckups)
-            {
-                foreach (Checkup checkups in allCheckups)
-                {
-                    if (retCheckupId == checkups.Id)
-                    {
-                        ++retCheckupId;
-                        break;
-                    }
-                }
-            }
-            return retCheckupId;
-        }
         
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            IInstructionFileStorage storageInstruction = new InstructionFileStorage("./../../../../Hospital/files/instructions.json");
-            List<Instruction> instructionList = new List<Instruction>();
-
-            Instruction newInstruction = new Instruction(generateInstructionId(), getCheckupId(), "ambulantno-specijalisticki pregled", true,
-                Convert.ToString(jmbgUText.Text), Convert.ToString(lboUText.Text), Convert.ToString(intervalText.Text),
-                Convert.ToString(razlogText.Text));
-
-            storageInstruction.Save(newInstruction);
-            instructionList.Add(newInstruction);
+            controller.createInstruction(instruction);
             this.Close();
         }
 

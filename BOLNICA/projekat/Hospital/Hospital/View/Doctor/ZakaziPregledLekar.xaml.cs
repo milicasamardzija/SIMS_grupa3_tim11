@@ -15,6 +15,7 @@ using Hospital.Model;
 using Newtonsoft.Json;
 using System.IO;
 using Hospital.FileStorage.Interfaces;
+using Hospital.Controller;
 
 namespace Hospital
 {
@@ -24,7 +25,9 @@ namespace Hospital
     public partial class ZakaziPregledLekar : Window
     {
         public List<Checkup> listCheckup;
+        public Checkup checkup = new Checkup();
         public int idDoctor;
+        public InstructionController controllerInstruction = new InstructionController();
 
         public ZakaziPregledLekar(List<Checkup> list, int id)
         {
@@ -32,47 +35,10 @@ namespace Hospital
             listCheckup = list;
             idDoctor = id;
         }
-
-        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
-        {
-            DateTime newdate = (DateTime)(((DatePicker)sender).SelectedDate);
-        }
-
-        public int generateIdCheckup()
-        {
-            int returnCheckupId = 0;
-            ICheckFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            List<Checkup> allCheckups = storageCheckup.GetAll();
-            foreach (Checkup checkups in allCheckups)
-            {
-                foreach (Checkup checkup in allCheckups)
-                {
-                    if (returnCheckupId == checkup.Id)
-                    {
-                        ++returnCheckupId;
-                        break;
-                    }
-                }
-            }
-            return returnCheckupId;
-        }
-
-        public Patient getPatientFromFile()
-        {
-            IPatientFileStorage storagePatient = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            Patient returnPatient = storagePatient.FindById(2);
-
-            return returnPatient;
-        }
         
         private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            CheckupFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-
-            Checkup newCheckups = new Checkup(generateIdCheckup(), (int)doctorBox.SelectedIndex, Convert.ToInt16(textPacijent.Text), Date.DisplayDate,
-                Convert.ToInt16(textTrajanje.Text), (CheckupType)comboBox.SelectedIndex);
-
-            storageCheckup.Save(newCheckups);
+        { 
+            controllerInstruction.newCheckup(checkup);
             this.Close();
         }
 

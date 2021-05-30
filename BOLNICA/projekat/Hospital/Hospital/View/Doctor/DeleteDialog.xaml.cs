@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using Hospital.Model;
 using Hospital.FileStorage.Interfaces;
+using Hospital.Controller;
 
 namespace Hospital
 {
@@ -25,6 +26,7 @@ namespace Hospital
         public List<Checkup> listCheckup;
         public int indexCheckup;
         public int idCheckup;
+        public CheckupController controller = new CheckupController(); 
 
         public DeleteDialog(List<Checkup> list, Checkup selectedCheckup, int selectedIndex)
         {
@@ -36,9 +38,7 @@ namespace Hospital
 
         private void btnYes_Click(object sender, RoutedEventArgs e)
         {
-            ICheckFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-
-            storageCheckup.DeleteById(idCheckup);
+            controller.DeleteById(idCheckup);
             listCheckup.RemoveAt(indexCheckup);
             this.Close();
         }

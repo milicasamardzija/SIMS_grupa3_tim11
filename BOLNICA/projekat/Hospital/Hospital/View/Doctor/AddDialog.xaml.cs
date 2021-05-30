@@ -16,6 +16,7 @@ using Newtonsoft.Json;
 using System.IO;
 using Hospital.Model;
 using Hospital.FileStorage.Interfaces;
+using Hospital.Controller;
 
 namespace Hospital
 {
@@ -25,12 +26,9 @@ namespace Hospital
     public partial class AddDialog : Window
     {
         public List<Checkup> listCheckup;
-        public Room rooms;
         public int idD;
-
-        public Patient patient;
-        public Doctor doctor;
-        public Room room;
+        public Checkup checkup = new Checkup();
+        public CheckupController controller = new CheckupController();
 
         public AddDialog(List<Checkup> list, int idDoctor)
         {
@@ -44,7 +42,7 @@ namespace Hospital
             DateTime newdate = (DateTime)(((DatePicker)sender).SelectedDate);
         }
         
-        public Patient getPatientFromFile()
+       /* public Patient getPatientFromFile()
         {
             IPatientFileStorage storagePatient = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json"); 
             Patient returnPatient = storagePatient.FindById(patient.Id); 
@@ -101,17 +99,11 @@ namespace Hospital
             p = getPatientFromFile();
             d = getDoctorFromFile();
             r = getRoomFromFile();
-        }
+        }*/
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            ICheckFileStorage storageCheckups = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            components(patient, doctor, room);
-
-            Checkup newCheckup = new Checkup(generateID(), doctor.Id, patient.Id, dateP.DisplayDate, room.Id, (CheckupType)comboBox.SelectedIndex);
-
-            storageCheckups.Save(newCheckup);
-            listCheckup.Add(newCheckup);
+            controller.createCheckup(checkup);
             this.Close();
         }
 

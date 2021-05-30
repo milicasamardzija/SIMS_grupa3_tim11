@@ -95,14 +95,14 @@ namespace Hospital
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            ICheckFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            ICheckFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             componentsEditDialog();
 
             listCheckup[indexCheckup] = new Checkup(generisiID(), getDoctorFromFile(), Convert.ToInt16(checkup.IdPatient), Convert.ToDateTime(checkup.Date),
                 Convert.ToInt16(checkup.IdRoom), (CheckupType)comboBox.SelectedIndex);
 
-            st.DeleteById(Convert.ToInt16(durationText.Text));
-            st.Save(checkup);
+            storageCheckup.DeleteById(Convert.ToInt16(durationText.Text));
+            storageCheckup.Save(checkup);
             this.Close();
         }
 

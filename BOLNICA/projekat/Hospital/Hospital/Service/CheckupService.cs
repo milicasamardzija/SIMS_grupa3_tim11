@@ -1,10 +1,14 @@
-﻿using Hospital.Model;
+﻿using Hospital.FileStorage.Interfaces;
+using Hospital.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Hospital.Service
 {
@@ -16,7 +20,6 @@ namespace Hospital.Service
 
        public List<Checkup> allCheckups { get; set; }
        
-
         public CheckupService()
         {
             checkupStorage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
@@ -46,9 +49,7 @@ namespace Hospital.Service
             }
             return val; //vracam prvi koji je dostupan 
         }
-
-       
-
+        
         public List<Checkup> getCheckupDoctors(int idDoctor)
         {
 
@@ -123,5 +124,14 @@ namespace Hospital.Service
         {
             checkupStorage.Save(checkup);
         }
+        
+        public void addCheckup(Checkup checkup)
+        {
+            Checkup newCheckup = new Checkup(generateIdCheckup(), checkup.IdPatient, checkup.IdDoctor, checkup.Date, checkup.IdRoom, checkup.Type);
+            checkupStorage.Save(newCheckup);
+        }
+
+       
+
     }
 }
