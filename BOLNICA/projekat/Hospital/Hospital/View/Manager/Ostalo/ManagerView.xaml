@@ -7,16 +7,31 @@
         mc:Ignorable="d"
         Title="ManagerView" WindowStartupLocation="CenterScreen" Height="695.118" Width="1280" Background="AliceBlue">
     <Grid>
-        <Menu HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="1280" Background="AliceBlue" Margin="0,0,-6.4,0" Grid.ColumnSpan="3">
-            <MenuItem Header="Magacin" FontSize="30" Click="magacin"></MenuItem>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="648*"/>
+            <ColumnDefinition Width="625*"/>
+        </Grid.ColumnDefinitions>
+        <Menu HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="1280" Background="#ffc800" Margin="0,0,-6.4,0" Grid.ColumnSpan="2">
+            <MenuItem
+                FontSize="22"
+                FontWeight="Bold"
+                Header="     MAGACIN"
+                TextElement.Foreground="#FF373434" Click="magacin" Width="150">
+                <MenuItem.Background>
+                    <ImageBrush
+                        AlignmentX="Left"
+                        ImageSource="/Hospital;component/View/Images/Manager/box-24.png" Stretch="None" TileMode="FlipXY" />
+                </MenuItem.Background>
+
+            </MenuItem>
             <GridSplitter Background="Black" Height="42" Width="1"/>
-            <MenuItem Header="Sobe" FontSize="30" Click="sobe"></MenuItem>
+            <MenuItem Header="Sobe" FontSize="30" Click="sobe"/>
             <GridSplitter Background="Black" Height="42" Width="1"/>
-            <MenuItem Header="Lekovi" FontSize="30" Click="lekovi"></MenuItem>
+            <MenuItem Header="Lekovi" FontSize="30" Click="lekovi"/>
             <GridSplitter Background="Black" Height="42" Width="1"/>
-            <MenuItem Header="Obavestenja" FontSize="30" Click="obavestenja"></MenuItem>
+            <MenuItem Header="Obavestenja" FontSize="30" Click="obavestenja"/>
             <GridSplitter Background="Black" Height="42" Width="1"/>
         </Menu>
-        <Frame Name="frame" HorizontalAlignment="Left" Margin="0,40,-6.4,-0.4" VerticalAlignment="Top" Height="626" Width="1280" NavigationUIVisibility="Hidden" RenderTransformOrigin="0.5,0.5" />
+        <Frame Name="frame" HorizontalAlignment="Left" Margin="0,40,-6.4,-0.4" VerticalAlignment="Top" Height="626" Width="1280" NavigationUIVisibility="Hidden" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" />
     </Grid>
 </Window>

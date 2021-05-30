@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -63,6 +63,7 @@
     </ApplicationDefinition>
     <Compile Include="Controller\DoctorController.cs" />
     <Compile Include="Controller\FunctionalityController.cs" />
+    <Compile Include="Controller\IngredientController.cs" />
     <Compile Include="Controller\MedicalRecordController.cs" />
     <Compile Include="Controller\PatientController1.cs" />
     <Compile Include="Controller\SurveyController.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Controller\RoomInventoryController.cs" />
     <Compile Include="Controller\RoomRenovationController.cs" />
     <Compile Include="Controller\StaticInventoryMovementController.cs" />
+    <Compile Include="DTO\IngredientDTO.cs" />
     <Compile Include="DTO\InventoryDTO.cs" />
     <Compile Include="DTO\MedicineDTO.cs" />
     <Compile Include="DTO\MedicineReviewDTO.cs" />
@@ -93,6 +95,7 @@
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\FunctionalityService.cs" />
+    <Compile Include="Service\IngredientService.cs" />
     <Compile Include="Service\MedicalRecordService.cs" />
     <Compile Include="Service\PatientService1.cs" />
     <Compile Include="Service\SurveyService.cs" />
@@ -1001,5 +1004,8 @@
     <Resource Include="View\Pacijent\download %282%29.png" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Resource Include="View\Images\Manager\box-24.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

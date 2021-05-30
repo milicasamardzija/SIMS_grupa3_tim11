@@ -14,28 +14,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.DTO;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for BrisanjeLekaRevizijaUpravnik.xaml
-    /// </summary>
     public partial class BrisanjeLekaRevizijaUpravnik : UserControl
     {
-        private Frame frame = new Frame();
-        private Medicine medicine = new Medicine();
-        public Medicine Medicine
+        private Frame frame;
+        private MedicineDTO medicine = new MedicineDTO();
+        public MedicineDTO Medicine
         {
             get { return medicine; }
             set { medicine = value; }
         }
-        private MedicineController controller = new MedicineController();
-        public BrisanjeLekaRevizijaUpravnik(Medicine selectedMedicine, Frame upravnikFrame)
+
+        private MedicineController controller;
+        public BrisanjeLekaRevizijaUpravnik(MedicineDTO selectedMedicine, Frame upravnikFrame)
         {
             InitializeComponent();
             this.DataContext = this;
             medicine = selectedMedicine;
             frame = upravnikFrame;
+            controller = new MedicineController();
 
             NazivTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             TipTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();

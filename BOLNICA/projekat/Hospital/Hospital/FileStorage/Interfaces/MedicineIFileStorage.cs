@@ -9,5 +9,7 @@ namespace Hospital.FileStorage.Interfaces
 {
     public interface MedicineIFileStorage : GenericRepository<Medicine>
     {
+        List<Medicine> loadReplacementMedicines(Medicine medicine);
+        List<Medicine> loadApprovedMedicines();
     }
 }

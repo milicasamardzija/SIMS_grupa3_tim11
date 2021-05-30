@@ -71,14 +71,14 @@ namespace Hospital
         }
 
         private void dodaj(object sender, RoutedEventArgs e)
-        {   if(ListaLekovaRevizija.SelectedItem != null)
-                LekoviRevizijaFrame.NavigationService.Navigate(new DodavanjeLekaUpravnik(frame, (Review)ListaLekovaRevizija.SelectedItem));
+        {   //if(ListaLekovaRevizija.SelectedItem != null)
+              // LekoviRevizijaFrame.NavigationService.Navigate(new DodavanjeLekaUpravnik(frame, (Review)ListaLekovaRevizija.SelectedItem));
         }
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-            if (ListaLekovaRevizija.SelectedItem != null)
-                LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeLekaUpravnik(frame,(Review)ListaLekovaRevizija.SelectedItem));
+            //if (ListaLekovaRevizija.SelectedItem != null)
+                //LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeLekaUpravnik(frame,(Review)ListaLekovaRevizija.SelectedItem));
         }
 
         private void prikaziReviziju(object sender, SelectionChangedEventArgs e)

@@ -16,7 +16,7 @@
                   Width="577"
                   AutoGenerateColumns="False"
                   IsReadOnly="True"
-                  ItemsSource="{Binding Path = MedicineList}" Grid.ColumnSpan="2">
+                  ItemsSource="{Binding Path = medicines}" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="NAZIV" Width="200" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="TIP" Width="180" Binding="{Binding Type}"/>

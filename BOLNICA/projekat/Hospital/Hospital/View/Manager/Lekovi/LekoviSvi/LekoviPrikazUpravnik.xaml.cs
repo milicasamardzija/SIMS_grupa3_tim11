@@ -1,4 +1,5 @@
-﻿using Hospital.FileStorage.Interfaces;
+﻿using Hospital.DTO;
+using Hospital.FileStorage.Interfaces;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -15,50 +16,37 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.Controller;
 
 namespace Hospital
 {
     public partial class LekoviPrikazUpravnik : UserControl
     {
-        private Frame frameUprvanik;
-        public ObservableCollection<Medicine> MedicineList { get; set; }
+        private Frame frame;
+        public ObservableCollection<MedicineDTO> medicines { get; set; }
+        private MedicineController controller;
         public LekoviPrikazUpravnik(Frame frame)
         {
             InitializeComponent();
             this.DataContext = this;
-            frameUprvanik = frame;
-            MedicineList = loadJason();
+            this.frame = frame;
+            this.controller = new MedicineController();
+            this.medicines = new ObservableCollection<MedicineDTO>(controller.getAll());
         }
-
-        public ObservableCollection<Medicine> loadJason()
-        {
-            MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
-            ObservableCollection<Medicine> ret = new ObservableCollection<Medicine>();
-
-            foreach (Medicine medicine in storage.GetAll())
-            {
-                if (medicine.Approved)
-                {
-                    ret.Add(medicine);
-                }
-            }
-
-            return ret;
-        }
-
+        
         private void dodaj(object sender, RoutedEventArgs e)
         {
-              frameUprvanik.NavigationService.Navigate(new DodavanjeLekaRevizija(frameUprvanik));
+              frame.NavigationService.Navigate(new DodavanjeLekaRevizija(frame));
         }
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
             if (ListaLekova.SelectedItem != null)
             {
-                frameUprvanik.NavigationService.Navigate(new IzmenaLekaUpravnik((Medicine)ListaLekova.SelectedItem, frameUprvanik, MedicineList));
+                frame.NavigationService.Navigate(new IzmenaLekaUpravnik((MedicineDTO)ListaLekova.SelectedItem, frame, medicines));
             } else
             {
-                frameUprvanik.NavigationService.Navigate(new LekoviPrikazUpravnik(frameUprvanik));
+                frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));
             }
         }
 
@@ -66,16 +54,16 @@ namespace Hospital
         {
             if (ListaLekova.SelectedItem != null)
             {
-                LekoviFrame.NavigationService.Navigate(new BrisanjeLekaRevizijaUpravnik((Medicine)ListaLekova.SelectedItem, frameUprvanik));
+                LekoviFrame.NavigationService.Navigate(new BrisanjeLekaRevizijaUpravnik((MedicineDTO)ListaLekova.SelectedItem, frame));
             }
             else
             {
-                frameUprvanik.NavigationService.Navigate(new LekoviPrikazUpravnik(frameUprvanik));
+                frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));
             }
         }
         private void prikazRevizije(object sender, RoutedEventArgs e)
         {
-            frameUprvanik.NavigationService.Navigate(new LekoviRevizijaUpravnik(frameUprvanik));
+            frame.NavigationService.Navigate(new LekoviRevizijaUpravnik(frame));
         }
     }
 }

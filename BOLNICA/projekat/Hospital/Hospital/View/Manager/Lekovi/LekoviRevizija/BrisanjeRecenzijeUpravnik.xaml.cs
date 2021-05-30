@@ -18,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for BrisanjeRecenzijeUpravnik.xaml
-    /// </summary>
     public partial class BrisanjeRecenzijeUpravnik : UserControl
     {
         private Frame frame = new Frame();

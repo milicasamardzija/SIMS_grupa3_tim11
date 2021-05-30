@@ -44,6 +44,22 @@ namespace Hospital.DTO
         {
         }
 
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                if (value != id)
+                {
+                    id = value;
+                    OnProperychanged("Id");
+                }
+            }
+        }
+
         public String Name
         {
             get

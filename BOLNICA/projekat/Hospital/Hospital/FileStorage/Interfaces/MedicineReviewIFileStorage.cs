@@ -9,5 +9,6 @@ namespace Hospital.FileStorage.Interfaces
 {
     interface MedicineReviewIFileStorage : GenericRepository<MedicineReview>
     {
+        void DeleteByIdMedicine(int idMedicine);
     }
 }
