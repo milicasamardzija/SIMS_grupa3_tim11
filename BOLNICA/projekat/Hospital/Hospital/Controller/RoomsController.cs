@@ -53,7 +53,5 @@ namespace Hospital.Controller
         {
             return service.roomByInventory(idInventory, quantity);
         }
-
-        
     }
 }

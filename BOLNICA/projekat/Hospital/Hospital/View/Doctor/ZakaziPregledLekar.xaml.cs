@@ -14,7 +14,6 @@ using System.Windows.Shapes;
 using Hospital.Model;
 using Newtonsoft.Json;
 using System.IO;
-using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -40,44 +39,49 @@ namespace Hospital
 
         public int generateIdCheckup()
         {
-            int returnCheckupId = 0;
-            ICheckFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            List<Checkup> allCheckups = storageCheckup.GetAll();
-            foreach (Checkup checkups in allCheckups)
+            int ret = 0;
+            CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            List<Checkup> allCheckups = storage.GetAll();
+            foreach (Checkup ch in allCheckups)
             {
                 foreach (Checkup checkup in allCheckups)
                 {
-                    if (returnCheckupId == checkup.Id)
+                    if (ret == checkup.Id)
                     {
-                        ++returnCheckupId;
+                        ++ret;
                         break;
                     }
                 }
             }
-            return returnCheckupId;
+            return ret;
         }
 
         public Patient getPatientFromFile()
         {
-            IPatientFileStorage storagePatient = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            Patient returnPatient = storagePatient.FindById(2);
+            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
+            Patient ret = storage.FindById(54);
 
-            return returnPatient;
-        }
-        
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            CheckupFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-
-            Checkup newCheckups = new Checkup(generateIdCheckup(), (int)doctorBox.SelectedIndex, Convert.ToInt16(textPacijent.Text), Date.DisplayDate,
-                Convert.ToInt16(textTrajanje.Text), (CheckupType)comboBox.SelectedIndex);
-
-            storageCheckup.Save(newCheckups);
-            this.Close();
+            return ret;
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            CheckupFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            //int idAppointment = 0;
+            //Patient patient = getPatientFromFile();
+
+            Checkup newCheckups = new Checkup(generateIdCheckup(), (int)doctorBox.SelectedIndex, Convert.ToInt16(textPacijent.Text), Date.DisplayDate,
+                Convert.ToInt16(textTrajanje.Text), (CheckupType)comboBox.SelectedIndex);
+
+            /*public Checkup(int idCh, int idD, int idP, DateTime dateAndTime, int idR, CheckupType type) */
+
+            st.Save(newCheckups);
+           // listCheckup.Add(newCheckups);
             this.Close();
         }
     }

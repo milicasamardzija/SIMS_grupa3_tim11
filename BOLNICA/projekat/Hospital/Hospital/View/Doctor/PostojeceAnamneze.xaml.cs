@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using System.IO;
-using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -22,25 +21,29 @@ namespace Hospital
     /// </summary>
     public partial class PostojeceAnamneze : Window
     {
-        public ObservableCollection<Anamnesis> AnamnesisList { get; set; }
+        public ObservableCollection<Anamnesis> AnamnesisList
+        {
+            get;
+            set;
+        }
 
         public PostojeceAnamneze()
         {
             InitializeComponent();
             this.DataContext = this;
-            AnamnesisList = loadJsonFileAnamnesis();
+            AnamnesisList = loadJ();
         }
 
-        public ObservableCollection<Anamnesis> loadJsonFileAnamnesis()
+        public ObservableCollection<Anamnesis> loadJ()
         {
-            IAnamnesisFileStorage storageAnamnesis = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
-            ObservableCollection<Anamnesis> allAnamnesis = new ObservableCollection<Anamnesis>(storageAnamnesis.GetAll());
-            ObservableCollection<Anamnesis> returnAnamnesis = new ObservableCollection<Anamnesis>();
-            foreach(Anamnesis anamnesis in allAnamnesis)
+            AnamnesisFileStorage ast = new AnamnesisFileStorage(@"./../../../../Hospital/files/anamnesis.json");
+            ObservableCollection<Anamnesis> aa = new ObservableCollection<Anamnesis>(ast.GetAll());
+            ObservableCollection<Anamnesis> ret = new ObservableCollection<Anamnesis>();
+            foreach(Anamnesis a in aa)
             {
-                returnAnamnesis.Add(anamnesis);
+                ret.Add(a);
             }
-            return returnAnamnesis;
+            return ret;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

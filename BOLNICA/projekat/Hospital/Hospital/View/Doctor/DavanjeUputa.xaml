@@ -11,10 +11,10 @@
         <Label x:Name="label2" Content="zatim pritisnite tipku na kojoj pise Enter" FontSize="16" Margin="23,54,59.6,212.6"/>
         <Label x:Name="label3" Content="Uput za laboratoriju" FontSize="14" Margin="23,108,328.6,158.6"/>
         <Label x:Name="label4" Content="Uput za ambulantno-specijalisticki pregled" FontSize="14" Margin="23,163,219.6,103.6"/>
-        <Label x:Name="label5" Content="Uput za bolnicko lecenje" FontSize="14" Margin="23,216,219.6,50.6"/>
+        <Label x:Name="label5" Content="Uput za stacionarno lecenje" FontSize="14" Margin="23,216,219.6,50.6"/>
         <Button x:Name="button1" Content="Izaberi" Height="30" HorizontalAlignment="Left" Margin="391,108,0,167.6" Width="93" FontSize="14" />
         <Button x:Name="button2" Content="Izaberi" Height="30" HorizontalAlignment="Left" Margin="391,163,0,112.6" Width="93" FontSize="14" Click="button2_Click" />
-        <Button x:Name="button3" Content="Izaberi" Height="30" HorizontalAlignment="Left" Margin="391,215,0,60.6" Width="93" FontSize="14" Click="button3_Click" />
+        <Button x:Name="button3" Content="Izaberi" Height="30" HorizontalAlignment="Left" Margin="391,215,0,60.6" Width="93" FontSize="14" />
         <Button x:Name="button4" Content="Izadji" Height="30" HorizontalAlignment="Left" Margin="391,266,0,9.6" Width="93" FontSize="14" Click="button4_Click" />
     </Grid>
 </Window>

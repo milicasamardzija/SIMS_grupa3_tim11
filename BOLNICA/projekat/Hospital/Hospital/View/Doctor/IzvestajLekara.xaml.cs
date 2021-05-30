@@ -24,15 +24,15 @@ namespace Hospital
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            PrikaziIzvestajLekara showReport = new PrikaziIzvestajLekara();
-            showReport.Show();
-        }
-
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            PrikaziIzvestajLekara pil = new PrikaziIzvestajLekara();
+            pil.Show();
         }
     }
 }

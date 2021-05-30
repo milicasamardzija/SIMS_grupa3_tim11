@@ -22,11 +22,16 @@ namespace Hospital
     /// </summary>
     public partial class PrikaziKartonPacijenta : Window
     {
-        public ObservableCollection<MedicalRecord> MedicalList { get; set; }
+        
+        public ObservableCollection<MedicalRecord> MedicalList
+        {
+            get;
+            set;
+        }
         
         public ObservableCollection<Patient> Pacijenti;
         public Patient patient;
-        public int idPatient;
+        public int idP;
 
         public PrikaziKartonPacijenta(ObservableCollection<Patient> list, Patient selectedPatient,int selectedIndex)
         {
@@ -34,23 +39,23 @@ namespace Hospital
             this.DataContext = this;
             Pacijenti = list;
             patient = selectedPatient;
-            idPatient = selectedIndex;
-            MedicalList = loadMedicalRecordFile(idPatient);
+            idP = selectedIndex;
+            MedicalList = loadFileJ(idP);
         }
 
-        public ObservableCollection<MedicalRecord> loadMedicalRecordFile(int idPatients)
+        public ObservableCollection<MedicalRecord> loadFileJ(int id)
         {
-            IMedicalRecordFileStorage storageMedicalRecord = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
-            ObservableCollection<MedicalRecord> allMedicalRecords = new ObservableCollection<MedicalRecord>(storageMedicalRecord.GetAll());
-            ObservableCollection<MedicalRecord> returnMedicalRecord = new ObservableCollection<MedicalRecord>();
-            foreach(MedicalRecord medicalRecord in allMedicalRecords)
+            IMedicalRecordFileStorage mst = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
+            ObservableCollection<MedicalRecord> mr = new ObservableCollection<MedicalRecord>(mst.GetAll());
+            ObservableCollection<MedicalRecord> mrr = new ObservableCollection<MedicalRecord>();
+            foreach(MedicalRecord m in mr)
             {
-                if(medicalRecord.Id == idPatients)
+                if(m.Id == id)
                 {
-                    returnMedicalRecord.Add(medicalRecord);
+                    mrr.Add(m);
                 }
             }
-            return returnMedicalRecord;
+            return mrr;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

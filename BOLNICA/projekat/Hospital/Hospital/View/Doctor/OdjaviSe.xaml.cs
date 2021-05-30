@@ -28,8 +28,8 @@ namespace Hospital
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            MainWindow mw = new MainWindow();
+            mw.Show();
             this.Close();
         }
 

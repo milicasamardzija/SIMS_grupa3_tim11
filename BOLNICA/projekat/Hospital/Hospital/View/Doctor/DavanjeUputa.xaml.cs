@@ -1,5 +1,4 @@
-﻿using Hospital.View.Doctor;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,22 +23,16 @@ namespace Hospital
         {
             InitializeComponent();
         }
-        
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            UputZaAmbulantnoSpecijalistickiPregled instruction = new UputZaAmbulantnoSpecijalistickiPregled();
-            instruction.Show();
-        }
-
-        private void button3_Click(object sender, RoutedEventArgs e)
-        {
-            BolnickoLecenje medicalCare = new BolnickoLecenje();
-            medicalCare.Show();
-        }
 
         private void button4_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            UputZaAmbulantnoSpecijalistickiPregled uasp = new UputZaAmbulantnoSpecijalistickiPregled();
+            uasp.Show();
         }
     }
 }

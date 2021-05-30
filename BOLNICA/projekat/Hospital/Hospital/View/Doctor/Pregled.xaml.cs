@@ -14,7 +14,6 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using System.IO;
 using Hospital.Model;
-using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -23,52 +22,61 @@ namespace Hospital
     /// </summary>
     public partial class Pregled : Window
     {
-        public List<Checkup> CheckupList {get; set; }
-        public int idSignedDoctor;
+        public List<Checkup> CheckupList
+        {
+            get;
+            set;
+        }
+
+        public int id;
+        public int idpacijenta = 1;
 
         public Pregled(int idDoctor)
         {
             InitializeComponent();
             this.DataContext = this;
-            idSignedDoctor = idDoctor;
-            CheckupList = loadJsonFile(idSignedDoctor);
+            id = idDoctor;
+            CheckupList = loadJson(id);
         }
 
-        public List<Checkup> loadJsonFile(int idDoctorSigned)
+        public List<Checkup> loadJson(int idD)
         {
-            ICheckFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            List<Checkup> allCheckups = new List<Checkup>(storageCheckup.GetAll());
-            List<Checkup> returnCheckup = new List<Checkup>(); 
+            CheckupFileStorage cs = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            List<Checkup> cc = new List<Checkup>(cs.GetAll());
+            List<Checkup> ret = new List<Checkup>(); 
 
-            foreach (Checkup checkup in allCheckups) 
+            foreach (Checkup checkup in cc) 
             {
-                returnCheckup.Add(checkup); 
+                //if (checkup.doctor.doctorId == idD) 
+                //{
+                    ret.Add(checkup); 
+                //}
             }
-            return returnCheckup;
+            return ret;
         }
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            AddDialog addDialog = new AddDialog(CheckupList, idSignedDoctor);
-            addDialog.Show();
+            AddDialog ad = new AddDialog(CheckupList, id); 
+            ad.Show();
         }
 
         private void edit_Click(object sender, RoutedEventArgs e)
         {
-            EditDialog editDialog = new EditDialog(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
-            editDialog.Show();
+            EditDialog ed = new EditDialog(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
+            ed.Show();
         }
 
         private void delete_Click(object sender, RoutedEventArgs e)
         {
-            DeleteDialog deleteDialog = new DeleteDialog(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
-            deleteDialog.Show();
+            DeleteDialog dd = new DeleteDialog(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
+            dd.Show();
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            PregledPacijenata showPatients = new PregledPacijenata();
-            showPatients.Show();
+            PregledPacijenata pp = new PregledPacijenata();
+            pp.Show();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -78,38 +86,38 @@ namespace Hospital
 
         private void button4_Click(object sender, RoutedEventArgs e)
         {
-            IzdavanjeRecepta giveRecipe = new IzdavanjeRecepta();
-            giveRecipe.Show();
+            IzdavanjeRecepta ir = new IzdavanjeRecepta();
+            ir.Show();
         }
 
         private void button9_Click(object sender, RoutedEventArgs e)
         {
-            KreiranjeAnamneze newAnamnesis = new KreiranjeAnamneze(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
-            newAnamnesis.Show();
+            KreiranjeAnamneze ka = new KreiranjeAnamneze(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
+            ka.Show();
         }
 
         private void button12_Click(object sender, RoutedEventArgs e)
         {
-            EvidencijaLekar recordDoctor = new EvidencijaLekar();
-            recordDoctor.Show();
+            EvidencijaLekar el = new EvidencijaLekar();
+            el.Show();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            IzvestajLekara reportDoctor = new IzvestajLekara();
-            reportDoctor.Show();
+            IzvestajLekara il = new IzvestajLekara();
+            il.Show();
         }
 
         private void button8_Click(object sender, RoutedEventArgs e)
         {
-            ProfilLekara profileDoctor = new ProfilLekara();
-            profileDoctor.Show();
+            ProfilLekara pl = new ProfilLekara();
+            pl.Show();
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            DavanjeUputa giveInstructions = new DavanjeUputa();
-            giveInstructions.Show();
+            DavanjeUputa du = new DavanjeUputa();
+            du.Show();
         }
     }
 }

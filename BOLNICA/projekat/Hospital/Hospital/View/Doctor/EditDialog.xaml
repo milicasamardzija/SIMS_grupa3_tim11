@@ -15,6 +15,7 @@
         <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="168,188,0,0" VerticalAlignment="Top" Width="207" Height="32" FontSize="16">
             <ComboBoxItem FontSize="16">Pregled</ComboBoxItem>
             <ComboBoxItem FontSize="16">Kontrolni pregled</ComboBoxItem>
+            <ComboBoxItem FontSize="16">Operacija</ComboBoxItem>
         </ComboBox>
         <Button x:Name="button" Content="Potvrdi" HorizontalAlignment="Left" Margin="26,369,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" FontSize="16"/>
         <Button x:Name="button1" Content="Odbaci" HorizontalAlignment="Left" Margin="281,369,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click" FontSize="16"/>

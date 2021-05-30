@@ -86,19 +86,5 @@
 
         </DataGrid>
 
-        <DataGrid
-            x:Name="blogLekar"
-            Height="117"
-            Margin="26,303,369,0"
-            VerticalAlignment="Top"
-            AutoGenerateColumns="False"
-            Background="{x:Null}"
-            ItemsSource="{Binding listInteresting}"
-            RowBackground="Transparent"
-            RowHeight="25">
-            <DataGrid.Columns>
-                <DataGridTextColumn Width="400" Binding="{Binding interesting}" />
-            </DataGrid.Columns>
-        </DataGrid>
     </Grid>
 </Page>

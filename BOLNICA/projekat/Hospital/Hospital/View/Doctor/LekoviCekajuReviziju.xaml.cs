@@ -23,20 +23,21 @@ namespace Hospital
     /// </summary>
     public partial class LekoviCekajuReviziju : Window
     {
+
         public ObservableCollection<Review> ListMedicineReview { get; set; }
 
         public LekoviCekajuReviziju()
         {
             InitializeComponent();
             this.DataContext = this;
-            ListMedicineReview = loadMedicineReview();
+            ListMedicineReview = loadJasFile();
         }
-        
-        public ObservableCollection<Review> loadMedicineReview()
+
+        public ObservableCollection<Review> loadJasFile()
         {
             MedicineIFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
             MedicineReviewIFileStorage storageMedicineReview = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
-            ObservableCollection<Review> returnMedicineReview = new ObservableCollection<Review>();
+            ObservableCollection<Review> returnLekRevizija = new ObservableCollection<Review>();
 
             foreach (Medicine medicine in storageMedicine.GetAll())
             {
@@ -46,12 +47,13 @@ namespace Hospital
                     {
                         if (medicineRewiev.IdMedicine == medicine.Id)
                         {
-                            returnMedicineReview.Add(new Review(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
+                            returnLekRevizija.Add(new Review(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
                             break;
                         }
                     }
                 }
             }
+
             foreach (Medicine medicine in storageMedicine.GetAll())
             {
                 if (medicine.Delete)
@@ -60,14 +62,14 @@ namespace Hospital
                     {
                         if (medicineRewiev.IdMedicine == medicine.Id)
                         {
-                            returnMedicineReview.Add(new Review(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
+                            returnLekRevizija.Add(new Review(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
                             break;
                         }
                     }
                 }
             }
 
-            return returnMedicineReview;
+            return returnLekRevizija;
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -77,8 +79,8 @@ namespace Hospital
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            RevizijaLekaLekar reviewMedicine = new RevizijaLekaLekar(ListMedicineReview, (Review)ReviewMedicineList.SelectedItem, ReviewMedicineList.SelectedIndex);
-            reviewMedicine.Show();
+            RevizijaLekaLekar rll = new RevizijaLekaLekar(ListMedicineReview, (Review)ReviewMedicineList.SelectedItem, ReviewMedicineList.SelectedIndex);
+            rll.Show();
         }
     }
 }

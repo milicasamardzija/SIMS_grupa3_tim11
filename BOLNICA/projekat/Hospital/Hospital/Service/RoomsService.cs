@@ -267,6 +267,5 @@ namespace Hospital.Service
             }
             return filtratedRooms;
         }
-
     }
 }

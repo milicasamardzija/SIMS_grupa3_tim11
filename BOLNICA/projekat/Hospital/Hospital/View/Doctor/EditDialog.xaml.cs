@@ -15,7 +15,6 @@ using System.Collections.ObjectModel;
 using Hospital.Model;
 using Newtonsoft.Json;
 using System.IO;
-using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -24,9 +23,10 @@ namespace Hospital
     /// </summary>
     public partial class EditDialog : Window
     {
+
         public List<Checkup> listCheckup;
         public Checkup checkup;
-        public int indexCheckup;
+        public int index;
         public int idD;
 
         public EditDialog(List<Checkup> list, Checkup selectedCheckup, int selectedIndex)
@@ -34,9 +34,10 @@ namespace Hospital
             InitializeComponent();
             listCheckup = list;
             checkup = selectedCheckup;
-            indexCheckup = selectedIndex;
-
+            index = selectedIndex;
             datePick.SelectedDate = Convert.ToDateTime(selectedCheckup.Date);
+            //datePick.DisplayDate = new DateTime(2021, 04, 17);
+           // timeText.SelectedText = Convert.ToString(selectedCheckup.Time);
             durationText.SelectedText = Convert.ToString(selectedCheckup.Duration);
             comboBox.SelectedIndex = (int)selectedCheckup.Type;
             patientBox.SelectedText = Convert.ToString(selectedCheckup.IdPatient);
@@ -50,55 +51,55 @@ namespace Hospital
 
         public int generisiID()
         {
-            int returnCheckup = 0;
-            ICheckFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            int ret = 0;
+            CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             List<Checkup> allCheckups = storage.GetAll();
-            foreach (Checkup checkups in allCheckups)
+            foreach (Checkup ch in allCheckups)
             {
                 foreach (Checkup checkup in allCheckups)
                 {
-                    if (returnCheckup == checkup.Id)
+                    if (ret == checkup.Id)
                     {
-                        ++returnCheckup;
+                        ++ret;
                         break;
                     }
                 }
             }
-            return returnCheckup;
+            return ret;
         }
 
-        public int getDoctorFromFile() 
+        public int getDoctorFromFile() //fija koja vraca doktora koji je ulogovan na sistem i koji ce biti ubacen u termin
         {
-            int returnDoctor = 0;
-            List<Doctor> doctors = JsonConvert.DeserializeObject<List<Doctor>>(File.ReadAllText(@"./../../../../Hospital/files/storageDoctor.json")); 
+            int ret = 0;
+            List<Doctor> doctors = JsonConvert.DeserializeObject<List<Doctor>>(File.ReadAllText(@"./../../../../Hospital/files/storageDoctor.json")); //cita listu doktora iz fajla
 
-            foreach (Doctor doctor in doctors)  
+            foreach (Doctor doctor in doctors)  //prolaz kroz sve dokore u fajlu
             {
-                 if (doctor.Id == idD) 
+                 if (doctor.Id == idD) //pronalazi doktora sa id-jem ulogovanog doktora
                  {
-                    returnDoctor = idD;
-                break;
+                ret = idD;
+                break; //kada ga nadje izlazi iz petlje
                 }
             }
 
-            return returnDoctor;
-        }
-
-        public void componentsEditDialog()
-        {
-            checkup.Date = datePick.DisplayDate;
-            checkup.Duration = Convert.ToDouble(durationText.Text);
-            checkup.Type = (CheckupType)comboBox.SelectedIndex;
-            checkup.IdPatient = Convert.ToInt16(patientBox.Text);
-            checkup.IdRoom = Convert.ToInt16(idRoom.Text);
+            return ret;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            ICheckFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            componentsEditDialog();
+            CheckupFileStorage st = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            checkup.Date = datePick.DisplayDate;
+            //checkup.Time = Convert.ToString(timeText.Text);
+            checkup.Duration = Convert.ToDouble(durationText.Text);
+            checkup.Type = (CheckupType)comboBox.SelectedIndex;
+            checkup.IdPatient = Convert.ToInt16(patientBox.Text);
+            checkup.IdRoom = Convert.ToInt16(idRoom.Text);
+            int doctorId = getDoctorFromFile();
+           // int ida = 1;
 
-            listCheckup[indexCheckup] = new Checkup(generisiID(), getDoctorFromFile(), Convert.ToInt16(checkup.IdPatient), Convert.ToDateTime(checkup.Date),
+            int idCheckup = generisiID();
+
+            listCheckup[index] = new Checkup(idCheckup, doctorId, Convert.ToInt16(checkup.IdPatient), Convert.ToDateTime(checkup.Date),
                 Convert.ToInt16(checkup.IdRoom), (CheckupType)comboBox.SelectedIndex);
 
             st.DeleteById(Convert.ToInt16(durationText.Text));
