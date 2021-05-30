@@ -16,7 +16,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <ComboBox x:Name="startTime" HorizontalAlignment="Left"  Width="50" FontFamily="Goudy Old Style"  Margin="70,110,0,225" SelectionChanged="startTime_SelectionChanged" />
+        <ComboBox x:Name="startTime" HorizontalAlignment="Left"  Width="50" FontFamily="Goudy Old Style"  Margin="80,110,0,225" SelectionChanged="startTime_SelectionChanged" />
         <ComboBox x:Name="endTime" HorizontalAlignment="Left" FontFamily="Goudy Old Style"   Width="50" Margin="190,110,0,225" SelectionChanged="endTime_SelectionChanged" RenderTransformOrigin="0.704,0.474"  />
         <Line  
             X1="500" Y1="0"  
@@ -40,11 +40,11 @@
             </DataGrid.Resources>
 
             <DataGrid.Columns >
-                <DataGridTextColumn  Header="         Lekar   " Width="100">
+                <DataGridTextColumn  Header="         Lekar   "    Width="100">
                     <DataGridTextColumn.Binding>
                         <MultiBinding StringFormat="{}{0} {1}">
-                            <Binding Path="Ljekar.ime"/>
-                            <Binding Path="Ljekar.prezime"/>
+                            <Binding Path="=Ljekar.name"/>
+                            <Binding Path="Ljekar.surname"/>
                         </MultiBinding>
                     </DataGridTextColumn.Binding>
                 </DataGridTextColumn>
