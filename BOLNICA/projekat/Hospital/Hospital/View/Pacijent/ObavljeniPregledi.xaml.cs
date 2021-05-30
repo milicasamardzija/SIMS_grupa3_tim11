@@ -61,7 +61,9 @@ namespace Hospital.View.Pacijent
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             selektovanaAnamneza = (Anamnesis)Anamneza.SelectedItem;
-           // DodajBelesku beleska = new DodajBelesku(id,selektovanaAnamneza);
+            DodajBelesku beleska = new DodajBelesku(id,selektovanaAnamneza);
+            beleska.Show();
+            this.Close();
 
         }
 
@@ -77,6 +79,9 @@ namespace Hospital.View.Pacijent
 
         private void ShowNotesForAnamnesis(object sender, RoutedEventArgs e)
         {
+            PrikazBiljeski beleske = new PrikazBiljeski(id,selektovanaAnamneza);
+            beleske.Show();
+
 
         }
 

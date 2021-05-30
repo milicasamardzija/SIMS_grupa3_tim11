@@ -71,8 +71,14 @@ namespace Hospital.View.Pacijent
                     selectedAnamnesis.NotesForAnamnesis = notes;
                 }
 
-                
+                AnamnesisFileStorage storage = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
 
+                
+                storage.DeleteById(0);
+                storage.Save(selectedAnamnesis);
+                this.Close();
+                ObavljeniPregledi pregledi = new ObavljeniPregledi(id);
+                pregledi.Show();
 
             }
             else
@@ -94,6 +100,14 @@ namespace Hospital.View.Pacijent
                 }
 
 
+                AnamnesisFileStorage storage = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
+
+
+                storage.DeleteById(0);
+                storage.Save(selectedAnamnesis);
+                this.Close();
+                ObavljeniPregledi pregledi = new ObavljeniPregledi(id);
+                pregledi.Show();
 
             }
 
@@ -103,7 +117,7 @@ namespace Hospital.View.Pacijent
 
         private void cancel_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)

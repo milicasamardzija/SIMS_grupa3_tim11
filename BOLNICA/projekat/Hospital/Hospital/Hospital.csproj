@@ -178,6 +178,9 @@
     <Compile Include="View\Pacijent\Obolnici.xaml.cs">
       <DependentUpon>Obolnici.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pacijent\PrikazBiljeski.xaml.cs">
+      <DependentUpon>PrikazBiljeski.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pacijent\Prioritet.xaml.cs">
       <DependentUpon>Prioritet.xaml</DependentUpon>
     </Compile>
@@ -356,6 +359,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pacijent\Obolnici.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pacijent\PrikazBiljeski.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
