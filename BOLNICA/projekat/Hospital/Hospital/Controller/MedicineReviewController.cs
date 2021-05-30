@@ -78,5 +78,17 @@ namespace Hospital.Controller
                 }
             }
         }
+
+        public MedicineDTO getMedicineByReview(ReviewDTO review)
+        {
+            Medicine medicine = serviceReview.getMedicineByReview(new Review(review.Name, review.MedicineType,review.ReviewType,review.Done, review.IdMedicine, review.IdMedicineReview));
+            return new MedicineDTO(medicine.Id, medicine.Name, medicine.Quantity, medicine.Type,
+                medicine.IdsIngredients, medicine.IdsMedicines, medicine.Approved);
+        }
+
+        public void sendBackToRevision(ReviewDTO review)
+        {
+            serviceReview.sendBackToRevision(new Review(review.Name, review.MedicineType,review.ReviewType, review.Done,review.IdMedicine, review.IdMedicineReview));
+        }
     }
 }

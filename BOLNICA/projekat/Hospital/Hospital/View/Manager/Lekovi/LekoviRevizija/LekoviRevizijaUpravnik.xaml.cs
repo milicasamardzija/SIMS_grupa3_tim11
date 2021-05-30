@@ -18,6 +18,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Hospital.Controller;
 using Hospital.DTO;
+using Hospital.View.Manager.Lekovi.LekoviRevizija;
+using AddingNewItemEventArgs = System.Windows.Controls.AddingNewItemEventArgs;
 
 namespace Hospital
 {
@@ -61,6 +63,11 @@ namespace Hospital
         private void unazad(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));
+        }
+
+        private void posaljiOpet(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new IzmenaLekaRevizija((ReviewDTO)ListaLekovaRevizija.SelectedItem,frame));
         }
     }
 }
