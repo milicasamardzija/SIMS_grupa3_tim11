@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:Hospital.View.Secretary.CRUDPatient.RegistredPatient"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="BlokiraniPacijenti"
-    Width="450"
+    Width="442"
     Height="400"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
@@ -27,6 +27,8 @@
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
             ItemsSource="{Binding Path=listBlocked}"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden"
             TextElement.Foreground="#FF08316B">
             <DataGrid.Columns>
                 <DataGridTextColumn

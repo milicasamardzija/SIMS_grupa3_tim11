@@ -30,6 +30,8 @@
             Background="#FFF0F0F0"
             Foreground="#FF114C9F"
             ItemsSource="{Binding Path=listPatient}"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden"
             SelectionChanged="PrikazPacijenata_SelectionChanged"
             TextElement.FontFamily="Chooper Black"
             TextElement.FontSize="12"
@@ -39,15 +41,15 @@
                 <DataGridTextColumn
                     Width="115"
                     Binding="{Binding Name}"
-                    Header="IME" />
+                    Header="Ime" />
                 <DataGridTextColumn
                     Width="115"
                     Binding="{Binding Surname}"
-                    Header="PREZIME" />
+                    Header="Prezime" />
                 <DataGridTextColumn
                     Width="160"
                     Binding="{Binding Jmbg}"
-                    Header="JMBG" />
+                    Header="Jmbg" />
             </DataGrid.Columns>
         </DataGrid>
         <Button

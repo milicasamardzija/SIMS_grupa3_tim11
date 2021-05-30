@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.DTO;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,14 +25,17 @@ namespace Hospital.Sekretar
         public DateTime date { get; set; } = DateTime.Now;
         public String person;
         private NotificationsFileStorage storage;
+
+        
         public ObservableCollection<Notifications> listNotification { get; set; }
         public ObservableCollection<Notifications> myTableUpdate;
+        public PatientDTO selectedPatient; 
 
         public KreirajObavestenje(ObservableCollection<Notifications> list)
         {
             InitializeComponent();
             storage = new NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
-            listNotification = loadNotifications();
+           // listNotification = loadNotifications();
             myTableUpdate = list;
         }
         public int generisiId()
@@ -90,7 +94,13 @@ namespace Hospital.Sekretar
                 Notifications notification = new Notifications(title.Text, content.Text, date, generisiId(), person);
                 storage.Save(notification);
                 myTableUpdate.Add(notification);
+            }else if (pacijenti.SelectedItem != null)
+                {
+                selectedPatient = (PatientDTO)pacijenti.SelectedItem;
+                Notifications notification = new Notifications(title.Text, content.Text, date, generisiId(), person = "Pacijent", selectedPatient.Id);
+
             }
+
             else
             {
                 MessageBox.Show("Oznacite kome saljete obavestenje");

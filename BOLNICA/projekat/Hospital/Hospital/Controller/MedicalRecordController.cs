@@ -53,11 +53,11 @@ namespace Hospital.Controller
         {
             MedicalRecord record = new MedicalRecord();
             record = servis.findMedicalRecordById(id);
-            ObservableCollection<AlergensDTO> alergens = new ObservableCollection<AlergensDTO>();
+            ObservableCollection<AlergensDTO> alergens = new ObservableCollection<AlergensDTO>(); //zbog konverzije 
 
             foreach (Alergens a in record.Alergens)
             {
-                alergens.Add(new AlergensDTO(a.Name, a.Code));
+                alergens.Add(new AlergensDTO(a.Name, a.Code)); 
             }
             MedicalRecordDTO foundRecord = new MedicalRecordDTO(record.Name, record.Surname, record.Jmbg, record.Gender, record.BirthdayDate, record.MedicalRecordId, record.HealthCareCategory, record.IdHealthCard, record.BloodType, alergens);
 

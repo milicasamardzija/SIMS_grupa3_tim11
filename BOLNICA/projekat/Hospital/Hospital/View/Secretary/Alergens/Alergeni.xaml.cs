@@ -47,13 +47,15 @@ namespace Hospital.Sekretar
             this.DataContext = this;
             controller = new MedicalRecordController();
             id = selectedPatient.Id;
+          //  MessageBoxResult res= MessageBox.Show(Convert.ToString(id));
             record = controller.findRecordById(id);
-            
+           // MessageBoxResult res1 = MessageBox.Show(Convert.ToString(record.Name));
+            //MessageBoxResult res2 = MessageBox.Show(Convert.ToString(record.MedicalRecordId));
 
             listAllAlergens = loadJasonAllAlergens();
             listAlergens = loadPatientAlergens(id);
 
-          /*  listPatient = list;
+            listPatient = list;
 
             foreach (PatientDTO p in listPatient)
             {
@@ -64,7 +66,7 @@ namespace Hospital.Sekretar
                 }
             }
 
-            index = sel;*/
+            index = sel;
 
         }
 
@@ -98,9 +100,7 @@ namespace Hospital.Sekretar
             
             
             MedicalRecordDTO promeniM = controller.findRecordById(id);
-
             promeniM.Alergens = listAlergens;
-
             controller.deleteRecordById(id);
             controller.saveMedicalRecord(promeniM);
 

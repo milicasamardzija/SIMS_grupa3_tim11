@@ -33,5 +33,23 @@ namespace Hospital.Model
 
             return ret;
         }
+
+        public ObservableCollection<Notifications> FindByIdPatient(int idPatient)
+        {
+            List<Notifications> all = GetAll();
+            ObservableCollection<Notifications> allNootifications = new ObservableCollection<Notifications>(all);
+            ObservableCollection<Notifications> ret = new ObservableCollection<Notifications>();
+
+            foreach (Notifications n in all)
+            {
+                if (n.IdPatient == idPatient)
+                {
+                    ret.Add(n);
+
+                }
+            }
+
+            return ret;
+        }
     }
 }
