@@ -111,12 +111,11 @@ namespace Hospital.View.Pacijent
             times.Items.Clear();
             availableTimes.Clear();
             termini.Clear();
-            CheckupFileStorage app = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            PatientFileStorage patients = new PatientFileStorage("./../../../../Hospital/files/storagepatient.json");
+           
             DoctorFileStorage doctors = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
             global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
 
-            foreach (Checkup t in app.GetAll())
+            foreach (Checkup t in checkupController.getAll())
             { foreach (Doctor d in doctors.GetAll())
                 {
                     if (t.IdDoctor == d.Id)

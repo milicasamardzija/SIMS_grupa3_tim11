@@ -1,4 +1,5 @@
 ﻿using Hospital.Controller;
+using Hospital.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,31 +25,32 @@ namespace Hospital.View.Pacijent
         int id;
         DateTime date;
         MedicalRecordController mrcontroller;
+        PatientController patientController;
 
         public ZdravstveniKarton(int idP)
         {
             InitializeComponent();
             id = idP;
             mrcontroller = new MedicalRecordController();
+            patientController = new PatientController();
 
 
 
 
-            MedicalRecordsFileStorage storage2 = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
-            List<MedicalRecord> records = mrcontroller.getAll();
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            List<Patient> patients = storage.GetAll();
-            foreach (MedicalRecord record in records)
+         
+           
+            
+            foreach (MedicalRecord record in mrcontroller.getAll())
             {
-                foreach (Patient patient in patients)
+                foreach (PatientDTO patient in patientController.getAll())
                 {
                     if (patient.Id == idP && patient.Id == record.Id)
                     {
-                        imePacijenta.Text = patient.name + " " + patient.surname;
-                        ime.Text = patient.name;
-                        prezime.Text = patient.surname;
+                        imePacijenta.Text = patient.Name + " " + patient.Surname;
+                        ime.Text = patient.Name;
+                        prezime.Text = patient.Surname;
 
-                        jmbg.Text = patient.jmbg;
+                        jmbg.Text = patient.Jmbg;
 
                         broj.Text = record.IdHealthCard.ToString();
                         grupa.Text = record.bloodType.ToString();
