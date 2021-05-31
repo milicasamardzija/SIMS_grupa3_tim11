@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.View.Manager.Prostorije.CRUDProstorije;
 
 namespace Hospital
 {
@@ -48,8 +49,10 @@ namespace Hospital
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-            rooms.RemoveAt(index);
-            controller.deleteById(room.Id);
+           // rooms.RemoveAt(index);
+           // controller.deleteById(room.Id);
+            IzbrisiProstorijuPotvrda brisanje = new IzbrisiProstorijuPotvrda(room.Id,rooms,index);
+            brisanje.Show();
             frame.NavigationService.Navigate(new BelsekaMagacin());
         }
 

@@ -123,6 +123,9 @@
     <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeRecenzijeUpravnik.xaml.cs">
       <DependentUpon>BrisanjeRecenzijeUpravnik.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Prostorije\CRUDProstorije\IzbrisiProstorijuPotvrda.xaml.cs">
+      <DependentUpon>IzbrisiProstorijuPotvrda.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\BrisanjeRenovacijeSIgurnost.xaml.cs">
       <DependentUpon>BrisanjeRenovacijeSIgurnost.xaml</DependentUpon>
     </Compile>
@@ -373,6 +376,10 @@
     <Page Include="View\Manager\Ostalo\BelsekaMagacin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Manager\Prostorije\CRUDProstorije\IzbrisiProstorijuPotvrda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pacijent\DodajBelesku.xaml">
       <SubType>Designer</SubType>
