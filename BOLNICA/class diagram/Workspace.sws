@@ -4,7 +4,10 @@
 
 <Workspace>
 	<Local Expanded="Yes">
-		<Model Expanded="Yes" ID="{1A208A45-3D9E-4B3C-956B-5416D97B10BC}" Name="Bolnica" Selected="Yes" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="PomeranjeTerminaa.oom"/>
+		<Model Expanded="Yes" ID="{1A208A45-3D9E-4B3C-956B-5416D97B10BC}" Name="Bolnica" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="PomeranjeTerminaa.oom"/>
+		<Model ID="{1A208A45-3D9E-4B3C-956B-5416D97B10BC}" Loaded="No" Name="Bolnica" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="file:///C|/Users/Milica/Desktop/sims/class diagram/Bolnica.oom"/>
+		<Model Expanded="Yes" ID="{A7509E27-7837-4E93-BD96-7A2A6FC8F9CC}" Loaded="No" Name="Hospital" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="file:///C|/Users/Milica/Desktop/sims/Hospital.oom"/>
+		<Model ID="{5C11A22E-ECD0-4EA6-BE65-2EC769DF6812}" Name="Proba" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="file:///C|/Users/Milica/Desktop/sims/Proba.oom"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>
