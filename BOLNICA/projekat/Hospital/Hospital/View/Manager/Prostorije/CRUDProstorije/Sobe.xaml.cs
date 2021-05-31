@@ -4,6 +4,7 @@ using Hospital.View.Manager.Prostorije.RenoviranjeProstorije;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,7 +72,14 @@ namespace Hospital
       
         private void PretragaSobe(object sender, TextChangedEventArgs e)
         {
-            ListaProstorija.ItemsSource = roomController.roomsByType(PretragaTxt.Text);
+            if (PretragaTxt.Text == "")
+            {
+                ListaProstorija.ItemsSource = roomController.getAll();
+            }
+            else
+            {
+                ListaProstorija.ItemsSource = roomController.roomsByType(PretragaTxt.Text);
+            }
         }
 
         public void ucitajInventar()
@@ -90,7 +98,13 @@ namespace Hospital
             if (!KolicinaInventarTxt.Text.Equals("")) {
                 quantity = Convert.ToInt32(KolicinaInventarTxt.Text);
             }
-            ListaProstorija.ItemsSource = roomController.roomByInventory(Convert.ToInt32(((ComboBoxItem)ImeInventarTxt.SelectedItem).Tag),  quantity);
+            if (KolicinaInventarTxt.Text.Equals(""))
+            {
+                ListaProstorija.ItemsSource = roomController.getAll();
+            } else
+            {
+                ListaProstorija.ItemsSource = roomController.roomByInventory(Convert.ToInt32(((ComboBoxItem)ImeInventarTxt.SelectedItem).Tag), quantity);
+            }
         } 
 
         private void zakaziRenoviranje(object sender, RoutedEventArgs e)
