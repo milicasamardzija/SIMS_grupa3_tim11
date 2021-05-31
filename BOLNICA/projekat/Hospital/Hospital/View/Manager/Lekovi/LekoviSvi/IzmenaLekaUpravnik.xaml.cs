@@ -15,167 +15,98 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.Controller;
+using Hospital.DTO;
 
 namespace Hospital
 {
-   
     public partial class IzmenaLekaUpravnik : UserControl
     {
-        private Medicine medicine = new Medicine();
-        public Medicine Medicine
+        private MedicineDTO medicine = new MedicineDTO();
+        public MedicineDTO Medicine
         {
             get { return medicine; }
             set { medicine = value; }
         }
     
-        private ObservableCollection<Ingredient> ingredientsBase = new ObservableCollection<Ingredient>();
-        public ObservableCollection<Ingredient> IngredientsBase
+        private ObservableCollection<IngredientDTO> ingredientsBase = new ObservableCollection<IngredientDTO>();
+        public ObservableCollection<IngredientDTO> IngredientsBase
         {
             get { return ingredientsBase; }
             set { ingredientsBase = value;}
         }
-        private ObservableCollection<Medicine> medicinesBase = new ObservableCollection<Medicine>();
-        public ObservableCollection<Medicine> MedicinesBase
+        private ObservableCollection<MedicineDTO> medicinesBase = new ObservableCollection<MedicineDTO>();
+        public ObservableCollection<MedicineDTO> MedicinesBase
         {
             get { return medicinesBase; }
             set { medicinesBase = value; }
         }
-        private ObservableCollection<Ingredient> ingredientsMedicine = new ObservableCollection<Ingredient>();
-        public ObservableCollection<Ingredient> IngredientsMedicine
+        private ObservableCollection<IngredientDTO> ingredientsMedicine = new ObservableCollection<IngredientDTO>();
+        public ObservableCollection<IngredientDTO> IngredientsMedicine
         {
             get { return ingredientsMedicine; }
             set { ingredientsMedicine = value; }
         }
-        private ObservableCollection<Medicine> replacementMedicine = new ObservableCollection<Medicine>();
-        public ObservableCollection<Medicine> ReplacementMedicine
+        private ObservableCollection<MedicineDTO> replacementMedicine = new ObservableCollection<MedicineDTO>();
+        public ObservableCollection<MedicineDTO> ReplacementMedicine
         {
             get { return replacementMedicine; }
             set { replacementMedicine = value; }
         }
 
-        private Frame frame = new Frame();
-        private ObservableCollection<Medicine> allMedicines = new ObservableCollection<Medicine>();
-        private MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
-        private List<int> medicineIds = new List<int>();
-        private List<int> ingredientsIds = new List<int>();
+        private Frame frame;
+        private ObservableCollection<MedicineDTO> allMedicines;
+        private MedicineController medicineController;
+        private IngredientController ingredientController;
 
-        public IzmenaLekaUpravnik(Medicine selectedMedicine,Frame managerFrame,ObservableCollection<Medicine> medicines)
+        public IzmenaLekaUpravnik(MedicineDTO medicine,Frame frame,ObservableCollection<MedicineDTO> medicines)
         {
             InitializeComponent();
             this.DataContext = this;
-            medicine = selectedMedicine;
-            ingredientsBase = loadJasonIngredients();
-            medicinesBase = loadJasonMedicines();
-            ingredientsMedicine = loadJsonMedicineIngredients();
-            replacementMedicine = loadJsonReplacementMedicines();
-            frame = managerFrame;
-            allMedicines = medicines;
-        }
-        public ObservableCollection<Medicine> loadJsonReplacementMedicines()
-        {
-            MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
-            ObservableCollection<Medicine> ret = new ObservableCollection<Medicine>();
-            if (medicine != null) {
-                foreach (int id in medicine.IdsMedicines)
-                {
-                    foreach (Medicine medicine in storage.GetAll())
-                    {
-                        if (medicine.Id == id)
-                        {
-                            ret.Add(medicine);
-                            break;
-                        }
-                    }
-                }
-            }
-            return ret;
-        }
-        public ObservableCollection<Ingredient> loadJsonMedicineIngredients()
-        {
-            IngredientsIFileStorage storage = new IngredientsFileStorage("./../../../../Hospital/files/storageIngredients.json");
-            ObservableCollection<Ingredient> ret = new ObservableCollection<Ingredient>();
-            if (medicine != null)
-            {
-                foreach (int id in medicine.IdsIngredients)
-                {
-                    foreach (Ingredient ingredient in storage.GetAll())
-                    {
-                        if (ingredient.Id == id)
-                        {
-                            ret.Add(ingredient);
-                            break;
-                        }
-                    }
-                }
-            }
-            return ret;
-        }
-        public ObservableCollection<Ingredient> loadJasonIngredients()
-        {
-            IngredientsIFileStorage storage = new IngredientsFileStorage("./../../../../Hospital/files/storageIngredients.json");
-            ObservableCollection<Ingredient> ret = new ObservableCollection<Ingredient>(storage.GetAll());
-            return ret;
-        }
-
-        public ObservableCollection<Medicine> loadJasonMedicines()
-        {
-            MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
-            ObservableCollection<Medicine> ret = new ObservableCollection<Medicine>();
-            foreach (Medicine medicine in storage.GetAll())
-            {
-                if (medicine.Approved)
-                {
-                    ret.Add(medicine);
-                }
-            }
-            return ret;
+            this.frame = frame;
+            this.allMedicines = medicines;
+            this.medicine = medicine;
+            this.medicineController = new MedicineController();
+            this.ingredientController = new IngredientController();
+            this.ingredientsBase = new ObservableCollection<IngredientDTO>(ingredientController.getAll());
+            this.medicinesBase = new ObservableCollection<MedicineDTO>(medicineController.loadApprovedMedicines());
+            this.ingredientsMedicine = new ObservableCollection<IngredientDTO>(ingredientController.loadMedicineIngredients(medicine));
+            this.replacementMedicine = new ObservableCollection<MedicineDTO>(medicineController.loadReplacementMedicines(medicine));
         }
 
         private void dodajSastojak(object sender, RoutedEventArgs e)
         {
-            ingredientsMedicine.Add((Ingredient)SastojciBaza.SelectedItem);
-            ingredientsBase.Remove((Ingredient)SastojciBaza.SelectedItem);
+            ingredientsMedicine.Add((IngredientDTO)SastojciBaza.SelectedItem);
+            ingredientsBase.Remove((IngredientDTO)SastojciBaza.SelectedItem);
         }
 
         private void isbrisiSastojak(object sender, RoutedEventArgs e)
         {
-            ingredientsBase.Add((Ingredient)SastojciLek.SelectedItem);
-            ingredientsMedicine.Remove((Ingredient)SastojciLek.SelectedItem); 
+            ingredientsBase.Add((IngredientDTO)SastojciLek.SelectedItem);
+            ingredientsMedicine.Remove((IngredientDTO)SastojciLek.SelectedItem); 
         }
 
         private void dodajZamenskiLek(object sender, RoutedEventArgs e)
         {
-            replacementMedicine.Add((Medicine)ZamenskilekoviBaza.SelectedItem);
-            medicinesBase.Remove((Medicine)ZamenskilekoviBaza.SelectedItem);
+            replacementMedicine.Add((MedicineDTO)ZamenskilekoviBaza.SelectedItem);
+            medicinesBase.Remove((MedicineDTO)ZamenskilekoviBaza.SelectedItem);
         }
 
         private void izbrisiZamenskiLek(object sender, RoutedEventArgs e)
         {
-            medicinesBase.Add((Medicine)ZamenskiLekoviLek.SelectedItem);
-            replacementMedicine.Remove((Medicine)ZamenskiLekoviLek.SelectedItem);
+            medicinesBase.Add((MedicineDTO)ZamenskiLekoviLek.SelectedItem);
+            replacementMedicine.Remove((MedicineDTO)ZamenskiLekoviLek.SelectedItem);
         }
-        public void convert()
-        {
-            foreach (Medicine medicine in ReplacementMedicine)
-            {
-                medicineIds.Add(medicine.Id);
-            }
-            foreach (Ingredient ingredient in IngredientsMedicine)
-            {
-                ingredientsIds.Add(ingredient.Id);
-            }
-        }
+
         private void Potvrdi(object sender, RoutedEventArgs e)
         {
             NazivTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             TipTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             GramazaTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            medicine.IdsMedicines = medicineController.convertReplacementMedicinesIntoIds(replacementMedicine.ToList());
+            medicine.IdsIngredients = ingredientController.convertReplacementMedicinesIntoIds(ingredientsMedicine.ToList());
 
-            convert();
-            medicine.IdsMedicines = medicineIds;
-            medicine.IdsIngredients = ingredientsIds;
-
-            storage.SaveAll(allMedicines.ToList());
+            medicineController.update(medicine);
             frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));
         }
 

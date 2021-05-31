@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-        Title="BrisanjeRenovacijeSIgurnost" Height="200" Width="400" WindowStartupLocation="CenterScreen" Background="AliceBlue" ScrollViewer.HorizontalScrollBarVisibility="Visible" WindowStyle="None">
+        Title="BrisanjeRenovacijeSIgurnost" Height="200" Width="400" WindowStartupLocation="CenterScreen" Background="#FFDFD7BB" ScrollViewer.HorizontalScrollBarVisibility="Visible" WindowStyle="None">
     <Grid>
-        <TextBox Background="AliceBlue" Text="Da li ste sigurni da zelite &#xD;&#xA;da otkazete renoviranje?" FontSize="18" IsReadOnly="True" Margin="85,27,90.6,85.4" FontWeight="Bold" TextAlignment="Justify" SelectionBrush="AliceBlue" BorderBrush="AliceBlue"/>
-        <Button Content="Potvrdi" Click="Potvrdi" Background="LightBlue" FontWeight="Bold" Margin="56,140,254.6,26.6" />
-        <Button Content="Odustani" Click="Odustani" Background="LightBlue" FontWeight="Bold" Margin="253,140,55.6,26.6" RenderTransformOrigin="1.566,0.464" />
+        <TextBox Background="#FFDFD7BB"  Foreground="#FF373434" Text="Da li ste sigurni da zelite &#xD;&#xA;da otkazete renoviranje?" FontSize="18" IsReadOnly="True" Margin="85,27,90.6,85.4" FontWeight="Bold" TextAlignment="Justify" SelectionBrush="AliceBlue" BorderBrush="AliceBlue"/>
+        <Button Content="Potvrdi"  Foreground="#FF373434" Click="Potvrdi" Background="#FFFFC800" FontWeight="Bold" Margin="56,140,254.6,26.6" />
+        <Button Content="Odustani" Foreground="#FF373434" Click="Odustani" Background="#FFFFC800" FontWeight="Bold" Margin="253,140,55.6,26.6" RenderTransformOrigin="1.566,0.464" />
     </Grid>
 </Window>

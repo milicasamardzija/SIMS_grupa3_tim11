@@ -44,7 +44,6 @@ namespace Hospital
             this.roomController = new RoomsController();
             this.inventoryController = new InventoryController();
             this.inventories = new ObservableCollection<InventoryDTO>(inventoryController.getAll());
-           // this.rooms = new ObservableCollection<RoomDTO>(roomController.getAll());
         }
         private void dodaj(object sender, RoutedEventArgs e)
         {
@@ -95,14 +94,14 @@ namespace Hospital
 
         private void PretragaTxt_TextChanged(object sender, TextChangedEventArgs e)
         {
-           /* InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
+            InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             List<Inventory> all = storage.GetAll();
 
             filteredInventory.Clear();
 
             if (PretragaTxt.Text.Equals(""))
             {
-                ListaInventara.ItemsSource = loadJason();
+                ListaInventara.ItemsSource = new ObservableCollection<Inventory>(storage.GetAll());
             }
             else
             {
@@ -135,12 +134,12 @@ namespace Hospital
                     }
                 }
                 ListaInventara.ItemsSource = filteredInventory.ToList();
-            }*/
+            }
         }
 
         private void filtriranjeKolicina(object sender, TextChangedEventArgs e)
         {
-           /* int kolicina = -1;
+            int kolicina = -1;
             InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             List<Inventory> all = storage.GetAll();
             if (!KolicinaFiltriranja.Text.Equals(""))
@@ -178,7 +177,7 @@ namespace Hospital
                 {
                     ListaInventara.ItemsSource = inventories;
                 }
-            } */
+            } 
             
         }
 

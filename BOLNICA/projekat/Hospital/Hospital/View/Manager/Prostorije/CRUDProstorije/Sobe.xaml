@@ -13,31 +13,17 @@
                        Foreground= "#ffc800"
                        Grid.Row="0"
                        Grid.Column="0"
-                       Margin="33,20,622,577"
-                       FontSize="20" Width="625"
+                       Margin="33,29,622,568"
+                       FontSize="22" Width="625"
                        FontWeight="Bold"
                        />
         <DataGrid Name="ListaProstorija"
-                      Margin="33,185,542,112"
+                      Margin="33,209,542,148"
                       Grid.Column="0"
-                      Background="#ffc800"
                       AutoGenerateColumns="False"
                       SelectionMode="Single"
                       IsReadOnly="True"
-                      ItemsSource="{Binding Path = Rooms}"  HorizontalGridLinesBrush="#ffc800" VerticalGridLinesBrush="#ffc800" Foreground="#FF373434" GridLinesVisibility="None"
-                      >
-            <DataGrid.OpacityMask>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FF373434" Offset="1"/>
-                </LinearGradientBrush>
-            </DataGrid.OpacityMask>
-            <DataGrid.BorderBrush>
-                <RadialGradientBrush>
-                    <GradientStop Color="Black" Offset="1"/>
-                    <GradientStop Color="#FF373434"/>
-                </RadialGradientBrush>
-            </DataGrid.BorderBrush>
+                      ItemsSource="{Binding Path = Rooms}" Background="#FFDFD7BB" RowBackground="#FFDFD7BB" Foreground="#FF373434" FontSize="16">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="BROJ" Width="150" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="NAMENA" Width="190" Binding="{Binding Purpose}"/>
@@ -45,32 +31,48 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Inventar" Background="#ffc800" Click="prikazInventara" Width="180" FontWeight="Bold"/>
+                            <Button Content="Inventar" Background="#ffc800" Click="prikazInventara" Width="180" FontWeight="Bold" Foreground="#FF373434"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Margin="33,546,1144,46" Background="#ffc800" Click="dodavanje" Content="DODAJ" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontSize="16" Foreground="#FF373434"/>
-        <Button Margin="319,546,858,46" Background = "#ffc800" Click="izmeni" Content="IZMENI" RenderTransformOrigin="1.07,0.564" FontWeight="Bold" FontSize="16" Foreground="#FF373434">
+        <Button Margin="33,532,1144,60" Background="#ffc800" Click="dodavanje" Content="DODAJ" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontSize="16" Foreground="#FF373434">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Margin="634,546,542,44" Background = "#ffc800" Click="obrisi" Content="IZBRISI" RenderTransformOrigin="0.538,0.22" FontWeight="Bold" FontSize="16" Foreground="#FF373434"/>
-        <Frame Name="SobeFrame" HorizontalAlignment="Left" Margin="781,128,0,0" VerticalAlignment="Top" Height="400" Width="470" />
-        <StackPanel Background="#ffc800" Margin="33,70,968,472">
-            <Label Content="Unesite sprat ili  namenu prostorije:" FontSize="14" FontWeight="Bold" Height="40" Margin="20,0,10.2,0" VerticalAlignment="Top"/>
-            <TextBox Name="PretragaTxt" FontSize="16" FontWeight="Bold" Width="216" TextChanged="PretragaSobe" Margin="0,0,0,31.6" Height="45" VerticalAlignment="Bottom"/>
+        <Button Margin="329,532,848,60" Background = "#ffc800" Click="izmeni" Content="IZMENI" RenderTransformOrigin="1.07,0.564" FontWeight="Bold" FontSize="16" Foreground="#FF373434">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Margin="634,532,542,58" Background = "#ffc800" Click="obrisi" Content="IZBRISI" RenderTransformOrigin="0.538,0.22" FontWeight="Bold" FontSize="16" Foreground="#FF373434">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Frame Name="SobeFrame" HorizontalAlignment="Left" Margin="764,92,0,0" VerticalAlignment="Top" Height="400" Width="470" />
+        <StackPanel Background="#ffc800" Margin="33,92,968,450">
+            <Label Content="Unesite sprat ili  namenu prostorije:" FontSize="16" FontWeight="Bold" Height="40" Margin="0,0,-26.8,0" VerticalAlignment="Top" Foreground="#FF373434"/>
+            <TextBox x:Name="PretragaTxt" FontSize="16" FontWeight="Bold" Width="216" TextChanged="PretragaSobe" Margin="0,0,0,31.6" Height="45" VerticalAlignment="Bottom"/>
         </StackPanel>
-        <StackPanel Background="#ffc800" HorizontalAlignment="Left" Height="100" Margin="329,68,0,0" VerticalAlignment="Top" Width="409">
+        <StackPanel Background="#ffc800" HorizontalAlignment="Left" Height="100" Margin="329,92,0,0" VerticalAlignment="Top" Width="409">
             <Label Content="Filtriranje soba na osnovu inventara&#xD;&#xA; (naziv i kolicina):" FontSize="16"  FontWeight="Bold" Height="51" Margin="0,0,-0.2,0" Background="#FFFFC800" ScrollViewer.VerticalScrollBarVisibility="Disabled" Foreground="#FF373434"></Label>
             <Grid>
                 <ComboBox Name = "ImeInventarTxt" Grid.Row="0" Grid.Column="0" Margin="8,3,131.8,-34" FontSize="16"/>
-                <TextBox Name ="KolicinaInventarTxt" Grid.Row="0" Margin="286,3,10.8,-34" RenderTransformOrigin="0.498,1.049" FontWeight="Bold" TextChanged="KolicinaInventarTxt_TextChanged"/>
+                <TextBox Name ="KolicinaInventarTxt" Grid.Row="0" Margin="286,3,10.8,-34" RenderTransformOrigin="0.498,1.049" FontWeight="Bold" TextChanged="KolicinaInventarTxt_TextChanged" FontSize="16"/>
             </Grid>
         </StackPanel>
-        <Button Margin="781,546,314,44" Background = "#ffc800" Click="zakaziRenoviranje" Content="ZAKAZI RENOVIRANJE" RenderTransformOrigin="-0.561,0.77" FontWeight="Bold" FontSize="16" Foreground="#FF373434" />
-        <Button Margin="1120,546,29,44" Background = "#ffc800" Click="RenoviranjePrikaz" Content="RENOVIRANJE" RenderTransformOrigin="-0.561,0.77" FontWeight="Bold" FontSize="16" Foreground="#FF373434" />
+        <Button Margin="764,530,331,60" Background = "#ffc800" Click="zakaziRenoviranje" Content="ZAKAZI RENOVIRANJE" RenderTransformOrigin="-0.561,0.77" FontWeight="Bold" FontSize="16" Foreground="#FF373434" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Margin="1103,530,46,60" Background = "#ffc800" Click="RenoviranjePrikaz" Content="RENOVIRANJE" RenderTransformOrigin="-0.561,0.77" FontWeight="Bold" FontSize="16" Foreground="#FF373434">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
     </Grid>
 </UserControl>

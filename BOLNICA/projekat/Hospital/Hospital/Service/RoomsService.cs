@@ -34,9 +34,9 @@ namespace Hospital.Service
 
         public void zakaziRenoviranje(RoomRenovation renovation)
         {
-
             if (isRoomAvailableRenovation(renovation))
             {
+                renovation.Id = generateIdRenovation();
                 renovationStorage.Save(renovation);
                 moveInventoryForRenovation(renovation);
             } else
@@ -216,6 +216,23 @@ namespace Hospital.Service
             foreach (Room roomBig in roomStorage.GetAll())
             {
                 foreach (Room room in roomStorage.GetAll())
+                {
+                    if (ret == room.Id)
+                    {
+                        ++ret;
+                        break;
+                    }
+                }
+            }
+            return ret;
+        }
+
+        public int generateIdRenovation()
+        {
+            int ret = 0;
+            foreach (RoomRenovation roomBig in renovationStorage.GetAll())
+            {
+                foreach (RoomRenovation room in renovationStorage.GetAll())
                 {
                     if (ret == room.Id)
                     {

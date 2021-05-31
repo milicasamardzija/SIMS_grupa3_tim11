@@ -49,6 +49,12 @@ namespace Hospital.Controller
         {
             return service.roomsByType(type);
         }
+
+        internal void mergeRooms(int idRoomFirst, int idRoomSecond)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Room> roomByInventory(int idInventory, int quantity)
         {
             return service.roomByInventory(idInventory, quantity);

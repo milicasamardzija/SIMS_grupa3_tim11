@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-        Title="PremestanjeOdbijenoInventar"  Height="200" Width="400" WindowStartupLocation="CenterScreen" Background="AliceBlue" ScrollViewer.HorizontalScrollBarVisibility="Visible" WindowStyle="None">
+        Title="PremestanjeOdbijenoInventar"  Height="200" Width="400" WindowStartupLocation="CenterScreen" Background="#FFDFD7BB" ScrollViewer.HorizontalScrollBarVisibility="Visible" WindowStyle="None">
     <Grid>
-        <Label Content="Zakazano je premestanje inventara &#xD;&#xA;koga trenutno nema na stanju.&#xD;&#xA;Premestanje nece biti obavljeno." Margin="44,15,27.6,64.6" FontWeight="Bold" FontSize="18" ></Label>
-        <Button  Background="LightBlue" Content="U redu." Margin="146,129,156.6,23.6" FontWeight="Bold" FontSize="18" Click="Povratak" RenderTransformOrigin="0.5,0.502"/>
+        <Label Foreground="#FF373434" Content="Zakazano je premestanje inventara &#xD;&#xA;koga trenutno nema na stanju.&#xD;&#xA;Premestanje nece biti obavljeno." Margin="43,25,28.6,54.6" FontWeight="Bold" FontSize="18" ></Label>
+        <Button Foreground="#FF373434" Background="#FFFFC800" Content="U redu." Margin="146,129,156.6,23.6" FontWeight="Bold" FontSize="18" Click="Povratak" RenderTransformOrigin="0.5,0.502">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
     </Grid>
 </Window>

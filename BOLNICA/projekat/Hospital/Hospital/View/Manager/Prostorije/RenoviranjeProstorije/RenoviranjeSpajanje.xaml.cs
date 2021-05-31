@@ -1,0 +1,55 @@
+﻿using Hospital.DTO;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using Hospital.Controller;
+
+namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
+{
+    public partial class RenoviranjeSpajanje : UserControl
+    {
+        private Frame frame;
+        private RoomDTO room;
+        private RoomsController roomController;
+        public RenoviranjeSpajanje(Frame frame, DTO.RoomDTO room)
+        {
+            InitializeComponent();
+            this.frame = frame;
+            this.room = room;
+            this.roomController = new RoomsController();
+            addRooms();
+        }
+        private void addRooms()
+        {
+            brojProstorijeTxt.SelectedText = Convert.ToString(room.Id);
+            SobeComboBox.Items.Clear();
+            foreach (RoomDTO room in roomController.getAll())
+            {
+                ComboBoxItem item = new ComboBoxItem();
+                item.Content = Convert.ToString(room.Id) + " " + Convert.ToString(room.Purpose);
+                item.Tag = room.Id;
+                SobeComboBox.Items.Add(item);
+            }
+        }
+        private void renoviraj(object sender, RoutedEventArgs e)
+        {
+            roomController.mergeRooms(room.Id, Convert.ToInt32(((ComboBoxItem)SobeComboBox.SelectedItem).Tag));
+            frame.NavigationService.Navigate(new BelsekaMagacin());
+        }
+        private void odustani(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new BelsekaMagacin());
+        }
+    }
+}

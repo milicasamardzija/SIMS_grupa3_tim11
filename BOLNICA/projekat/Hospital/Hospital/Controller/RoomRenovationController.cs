@@ -25,7 +25,7 @@ namespace Hospital.Controller
             List<RoomRenovationDTO> renovations = new List<RoomRenovationDTO>();
             foreach (RoomRenovation renovation in service.getAll())
             {
-                renovations.Add(new RoomRenovationDTO(renovation.IdRenovation, renovation.Id, renovation.DateBegin, renovation.DateEnd, renovation.Description));
+                renovations.Add(new RoomRenovationDTO(renovation.Id, renovation.IdRoom, renovation.DateBegin, renovation.DateEnd, renovation.Description));
             }
             return renovations;
         }

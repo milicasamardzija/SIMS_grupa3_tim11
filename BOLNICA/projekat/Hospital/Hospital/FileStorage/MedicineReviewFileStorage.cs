@@ -13,5 +13,16 @@ namespace Hospital.Model
     class MedicineReviewFileStorage : GenericFileStorage<MedicineReview>, MedicineReviewIFileStorage
     {
         public MedicineReviewFileStorage(String filePath) : base(filePath) { }
+
+        public void DeleteByIdMedicine(int idMedicine)
+        {
+            foreach (MedicineReview review in GetAll())
+            {
+                if (review.IdMedicine == idMedicine)
+                {
+                    Delete(review);
+                }
+            }
+        }
     }
 }

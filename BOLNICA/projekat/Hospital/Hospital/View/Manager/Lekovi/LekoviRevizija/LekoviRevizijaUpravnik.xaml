@@ -5,18 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hospital"
              mc:Ignorable="d" 
-                      Height="640" Width="1280"  Background="LightBlue">
+                      Height="640" Width="1280"  Background="#FF373434">
     <Grid Margin="0,0,-4,0.6" >
         <DataGrid Name="ListaLekovaRevizija"
-                  Background="AliceBlue" 
                   HorizontalAlignment="Left"
                   Height="287" 
                   Margin="69,135,0,0" 
                   VerticalAlignment="Top" 
-                  Width="577"
+                  Width="642"
                   AutoGenerateColumns="False"
                   IsReadOnly="True"
-                  ItemsSource="{Binding Path = MedicineReviewList}" SelectionChanged="prikaziReviziju">
+                  Background="#FFDFD7BB" RowBackground="#FFDFD7BB" Foreground="#FF373434"
+                  ItemsSource="{Binding Path = MedicineReviewList}" SelectionChanged="prikaziReviziju" FontSize="16">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="NAZIV" Width="100" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="TIP LEKA" Width="150" Binding="{Binding MedicineType}"/>
@@ -30,22 +30,32 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock  FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="69,42,0,0" TextWrapping="Wrap" Text="Lekovi koji su cekaju reviziju od strane strucnog lica" VerticalAlignment="Top" Height="42" Width="742" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
-        <Frame Name="LekoviRevizijaFrame" Content="" HorizontalAlignment="Left" Margin="749,135,0,0" VerticalAlignment="Top" Height="401" Width="470" BorderBrush="#FFB42412" OpacityMask="Black" Foreground="#FFA31818" NavigationUIVisibility="Hidden"/>
-        <Button Background="AliceBlue"  Content="Dodaj lek" HorizontalAlignment="Left" Margin="69,481,0,0" VerticalAlignment="Top" Width="133" Height="48" FontSize="24" FontWeight="Bold" Click="dodaj" RenderTransformOrigin="0.562,-0.422" />
-        <Button Background="AliceBlue" Content="Izbrisi lek" HorizontalAlignment="Left" Margin="268,481,0,0" VerticalAlignment="Top" Width="129" Height="47" FontSize="24" FontWeight="Bold" Click="izbrisi" RenderTransformOrigin="0.487,0.41"/>
-        <Button Background="AliceBlue" Content="Izbrisi recenziju" HorizontalAlignment="Left" Margin="456,481,0,0" VerticalAlignment="Top" Width="190" Height="47" FontSize="24" FontWeight="Bold" Click="izbrisiRezenziju" RenderTransformOrigin="0.487,0.41"/>
-        <Button Click="unazad" Background="AliceBlue" HorizontalAlignment="Left" Margin="10,546,0,0" VerticalAlignment="Top" Width="105" Height="53" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54">
+        <TextBlock Foreground= "#ffc800" FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="69,42,0,0" TextWrapping="Wrap" Text="Lekovi koji su cekaju reviziju od strane strucnog lica" VerticalAlignment="Top" Height="42" Width="742" FontWeight="Bold" FontStyle="Italic"/>
+        <Frame Name="LekoviRevizijaFrame" Content=""  HorizontalAlignment="Left" Margin="749,135,0,0" VerticalAlignment="Top" Height="401" Width="470"  NavigationUIVisibility="Hidden"/>
+        <Button Background="#ffc800" Content="Dodaj lek" HorizontalAlignment="Left" Margin="69,481,0,0" VerticalAlignment="Top" Width="133" Height="48"  FontSize="24" Foreground="#FF373434" FontWeight="Bold" Click="dodaj" RenderTransformOrigin="0.562,-0.422" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Background="#ffc800" Foreground="#FF373434" Content="Izbrisi lek" HorizontalAlignment="Left" Margin="220,482,0,0" VerticalAlignment="Top" Width="129" Height="47" FontSize="24" FontWeight="Bold" Click="izbrisi" RenderTransformOrigin="-0.084,0.607">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Background="#ffc800" Foreground="#FF373434" Content="Izbrisi recenziju" HorizontalAlignment="Left" Margin="531,481,0,0" VerticalAlignment="Top" Width="180" Height="47" FontSize="24" FontWeight="Bold" Click="izbrisiRezenziju" RenderTransformOrigin="0.487,0.41">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Click="unazad" Background="#ffc800" HorizontalAlignment="Left" Margin="69,564,0,0" VerticalAlignment="Top" Width="133" Height="43" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54">
             <Image Source="/Sekretar/Arrow-Left-icon.png" RenderTransformOrigin="0.5,0.5">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleY="1.081"/>
-                        <RotateTransform/>
-                        <TranslateTransform Y="0.581"/>
-                    </TransformGroup>
-                </Image.RenderTransform>
+                
             </Image>
+        </Button>
+        <Button Background="#ffc800"  Foreground="#FF373434" Content="Izmeni lek" HorizontalAlignment="Left" Margin="373,482,0,0" VerticalAlignment="Top" Width="139" Height="47" FontSize="24" FontWeight="Bold" Click="posaljiOpet" RenderTransformOrigin="0.426,2.251">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
         </Button>
     </Grid>
 </UserControl>

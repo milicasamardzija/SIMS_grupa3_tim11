@@ -5,19 +5,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hospital"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="470" Background="AliceBlue">
+             Width="427" Height="339" Background="#FFDFD7BB">
     <Grid>
-        <Grid Margin="-10,-10,0.4,0">
-            <Label Margin="10,35,332,327" Foreground="Black" FontSize="18" Grid.Column="0" Grid.Row="0" RenderTransformOrigin="0.498,-0.169" FontWeight="Bold">Broj prostorije</Label>
-            <TextBox IsReadOnly="True" Name="brojProstorijeTxt"  Width="200" Margin="226,35,54,340" Grid.Row="0" />
-            <Label Margin="10,109,302,242" Foreground="Black" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" Content="Datum pocetka" FontWeight="Bold"/>
-            <Label Height="30" Margin="10,173,313,207" Foreground="Black" FontSize="18" Grid.Column="0" Content="Datum zavrsetka" FontWeight="Bold"/>
-            <Label Margin="10,258,272,102" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold" Content="Opis radova"/>
-            <TextBox Name="opisRadova" Text="{Binding Path =RoomRenovation.Description, UpdateSourceTrigger=PropertyChanged}" Height="30" Width="200" Margin="226,258,54,122" RenderTransformOrigin="0.531,-0.345"/>
-            <Button Margin="71,349,302,31" Grid.Column="0" Height="30" Background="LightBlue" Click="renoviraj" FontSize="18" FontWeight="Bold">Potvrdi</Button>
-            <Button Margin="272,349,99,31" Height="30" Background="LightBlue"  Click="odustani" FontSize="18" FontWeight="Bold">Odustani</Button>
-            <DatePicker Name="BeginDate" SelectedDate="{Binding Path = RoomRenovation.DateBegin, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="226,109,0,0" VerticalAlignment="Top" Width="200" Height="32"/>
-            <DatePicker Name="EndDate" SelectedDate="{Binding Path =RoomRenovation.DateEnd, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="226,180,0,0" VerticalAlignment="Top" Width="200" Height="32"/>
+        <Grid Margin="0,0,0.2,-11.8">
+            <TextBox IsReadOnly="True" Name="brojProstorijeTxt"  Width="200" Margin="227,18,0,303" Grid.Row="0" FontSize="18" RenderTransformOrigin="0.775,0.625" >
+            </TextBox>
+            <Label Margin="0,78,282,234.2" Foreground="#FF373434" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" Content="Datum pocetka" FontWeight="Bold"/>
+            <Label Margin="0,148,272,152.2" Foreground="#FF373434" FontSize="18" Grid.Column="0" Content="Datum zavrsetka" FontWeight="Bold"/>
+            <Label Margin="0,214,282,94.2" Foreground="#FF373434" FontSize="18" Grid.Column="0" FontWeight="Bold" Content="Detalji"/>
+            <TextBox Name="opisRadova" Text="{Binding Path =RoomRenovation.Description, UpdateSourceTrigger=PropertyChanged}" Height="30" Width="200" Margin="227,213,0,108" RenderTransformOrigin="0.531,-0.345" FontSize="18"/>
+            <Button Margin="51,293,296,25.2" Foreground="#FF373434" Grid.Column="0" Background="#ffc800" Click="renoviraj" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.413,-0.626">Potvrdi</Button>
+            <Button Margin="272,293,62,25.2"  Background="#ffc800" Foreground="#FF373434"  Click="odustani" FontSize="18" FontWeight="Bold">Odustani</Button>
+            <DatePicker Name="BeginDate"  HorizontalAlignment="Left" Margin="227,78,0,0" VerticalAlignment="Top" Width="200" Height="37" FontSize="18" FirstDayOfWeek="Monday" SelectedDateFormat="Short"/>
+            <DatePicker Name="EndDate"  HorizontalAlignment="Left" Margin="227,148,0,0" VerticalAlignment="Top" Width="200" Height="30" FontSize="18" FirstDayOfWeek="Monday"/>
+            <Label Margin="0,18,282,295.2" Foreground="#FF373434" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" Content="Broj sobe" FontWeight="Bold"/>
         </Grid>
     </Grid>
 </UserControl>

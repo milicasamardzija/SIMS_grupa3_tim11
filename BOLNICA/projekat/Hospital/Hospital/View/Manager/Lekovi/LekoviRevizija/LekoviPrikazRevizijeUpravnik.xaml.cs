@@ -1,4 +1,5 @@
-﻿using Hospital.FileStorage.Interfaces;
+﻿using Hospital.DTO;
+using Hospital.FileStorage.Interfaces;
 using Hospital.Model;
 using Hospital.Prikaz;
 using System;
@@ -15,44 +16,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.Controller;
 
 namespace Hospital
 {
     public partial class LekoviPrikazRevizijeUpravnik : UserControl
     {
-        private Review revizija;
-        public LekoviPrikazRevizijeUpravnik(Review selected)
+        private ReviewDTO revision;
+        private MedicineReviewController reviewController;
+        public LekoviPrikazRevizijeUpravnik(ReviewDTO revision)
         {
             InitializeComponent();
-            revizija = selected;
+            this.revision = revision;
+            this.reviewController = new MedicineReviewController();
 
-            NazivTxt.SelectedText = selected.Name;
-            TipTxt.SelectedText = selected.MedicineType;
-            VrstaTxt.SelectedText = Convert.ToString(selected.ReviewType);
-            LekarTxt.SelectedText = getDoctor();
-            RecenzijaTxt.SelectedText = getRezension();
-            
-        }
-
-        public String getDoctor()
-        {
-            DoctorFileStorage storage = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
-            Doctor doctor = storage.FindById(getIdDoctor());
-            return doctor.Name + " " + doctor.Surname;
-        }
-
-        public int getIdDoctor()
-        {
-            MedicineReviewIFileStorage storage = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
-            MedicineReview review = storage.FindById(revizija.IdMedicineReview);
-            return review.IdDoctor;
-        }
-
-        public String getRezension()
-        {
-            MedicineReviewIFileStorage storage = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
-            MedicineReview review = storage.FindById(revizija.IdMedicineReview);
-            return review.Review;
+            NazivTxt.SelectedText = revision.Name;
+            TipTxt.SelectedText = revision.MedicineType;
+            VrstaTxt.SelectedText = Convert.ToString(revision.ReviewType);
+            LekarTxt.SelectedText = reviewController.getDoctor(revision);
+            RecenzijaTxt.SelectedText = reviewController.getRezension(revision);
         }
     }
 }

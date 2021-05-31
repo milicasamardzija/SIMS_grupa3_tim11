@@ -6,34 +6,38 @@
              xmlns:local="clr-namespace:Hospital"
              mc:Ignorable="d" 
                    Height="640" Width="1280">
-    <Grid Background="LightBlue">
+    <Grid Background="#FF373434">
         <TextBlock TextWrapping="Wrap" Text="Prikaz renoviranja soba"
                        HorizontalAlignment="Center"
                        FontStyle="Italic"
-                       Foreground= "Black"
+                       Foreground= "#FFFFC800"
                        Grid.Row="0"
                        Grid.Column="0"
                        Margin="34,42,549,555"
-                       FontSize="20" Width="697" FontWeight="Bold"
+                       FontSize="22" Width="697" FontWeight="Bold"
                        />
         <DataGrid Name="ProstorijeRenoviranje"
                       Margin="34,108,434,189"
                       Grid.Column="0"
-                      Background="AliceBlue"
+                      Background="#FFDFD7BB" RowBackground="#FFDFD7BB" Foreground="#FF373434">
                       AutoGenerateColumns="False"
                       SelectionMode="Single"
                       IsReadOnly="True"
                       ItemsSource="{Binding Renovations}"
                       >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="BROJ PROSTORIJE" Width="140" Binding="{Binding IdRoom}"/>
+                <DataGridTextColumn Header="BROJ PROSTORIJE" Width="140" Binding="{Binding Path = IdRoom}"/>
                 <DataGridTextColumn Header="DATUM POCETKA" Width="150" Binding="{Binding DateBegin, StringFormat='{}{0:dd.MM.yyyy.}'}"/>
                 <DataGridTextColumn Header="DATUM ZAVRSETKA" Width="150" Binding="{Binding DateEnd, StringFormat='{}{0:dd.MM.yyyy.}'}"/>
                 <DataGridTextColumn Header="OPIS" Width="362"  Binding="{Binding Description}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Background="AliceBlue" Content="Otkazi renoviranje" HorizontalAlignment="Left" Margin="983,255,0,0" VerticalAlignment="Top" Width="199" Height="60" FontSize="18" FontWeight="Bold" Click="Otkazi"/>
-        <Button Click="unazad" Background="AliceBlue" HorizontalAlignment="Left" Margin="34,507,0,0" VerticalAlignment="Top" Width="113" Height="65" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54">
+        <Button Background="#FFFFC800" Foreground="#FF373434" Content="Otkazi renoviranje" HorizontalAlignment="Left" Margin="983,255,0,0" VerticalAlignment="Top" Width="199" Height="60" FontSize="18" FontWeight="Bold" Click="Otkazi">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Click="unazad" Background="#FFFFC800" HorizontalAlignment="Left" Margin="34,507,0,0" VerticalAlignment="Top" Width="113" Height="65" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54">
            
         </Button>
     </Grid>

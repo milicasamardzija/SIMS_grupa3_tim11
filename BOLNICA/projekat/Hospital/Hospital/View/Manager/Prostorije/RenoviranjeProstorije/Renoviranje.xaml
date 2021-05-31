@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="Hospital.View.Manager.Prostorije.RenoviranjeProstorije.Renoviranje"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hospital.View.Manager.Prostorije.RenoviranjeProstorije"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="470" Background="#FFDFD7BB">
+    <Grid>
+        <Grid Margin="-10,-10,0.4,0">
+            <Label Margin="30,30,312,334" Foreground="#FF373434" FontSize="18" Grid.Column="0" Grid.Row="0" RenderTransformOrigin="0.498,-0.169" FontWeight="Bold" Content="Tip renoviranja"/>
+            <ComboBox Name="TipRenoviranjaComboBox" HorizontalAlignment="Left" Margin="257,30,0,0" VerticalAlignment="Top" Width="200" Height="31" SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBoxItem Content="Krecenje" Foreground="#FF373434" FontSize="18" ></ComboBoxItem>
+                <ComboBoxItem Content="Spajanje prostorija" Foreground="#FF373434" FontSize="18" ></ComboBoxItem>
+                <ComboBoxItem Content="Razdvajanje prostorije" Foreground="#FF373434" FontSize="18" ></ComboBoxItem>
+            </ComboBox>
+            <Frame Name="RenoviranjeFrame" Content="" HorizontalAlignment="Left"  Margin="30,61,0,0" VerticalAlignment="Top" Width="427" Height="339"/>
+        </Grid>
+    </Grid>
+</UserControl>

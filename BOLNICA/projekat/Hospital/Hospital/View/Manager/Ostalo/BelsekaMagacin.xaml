@@ -5,10 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hospital"
              mc:Ignorable="d" 
-             Height="400" Width="470" Background="AliceBlue">
+             Height="400" Width="470" Background="#FFDFD7BB">
     <Grid>
-        <TextBox Name="BeleskaTxt" HorizontalAlignment="Left" Height="197" Margin="75,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="338" FontSize="24" SelectionBrush="#FFD74D00" Background="#FF42BCBA" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="106,33,0,0" TextWrapping="Wrap" Text="Ovde unesite belesku:" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Height="56" Width="288" Foreground="#FF2333AE"/>
-        <Button Content="Sacuvaj" HorizontalAlignment="Left" Margin="177,315,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.286,1.325" Height="49" Click="Button_Click" Background="#FF949EEA" FontSize="24"/>
+        <TextBox Name="BeleskaTxt" Foreground="#FFDFD7BB" HorizontalAlignment="Left" Height="208" Margin="22,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="427" FontSize="24" Background="#FF373434" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,28,0,0" TextWrapping="Wrap" Text="Ovde mozete uneti belesku:" VerticalAlignment="Top" FontSize="24" Height="56" Width="450" Foreground="#FF373434" FontStyle="Italic" FontWeight="Bold"/>
+        <Button Content="Sacuvaj" Foreground="#FF373434" HorizontalAlignment="Left" Margin="178,325,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.286,1.325" Height="49" Click="Button_Click" Background="#ffc800" FontSize="24" FontWeight="Bold">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
     </Grid>
 </UserControl>

@@ -63,6 +63,7 @@
     </ApplicationDefinition>
     <Compile Include="Controller\DoctorController.cs" />
     <Compile Include="Controller\FunctionalityController.cs" />
+    <Compile Include="Controller\IngredientController.cs" />
     <Compile Include="Controller\MedicalRecordController.cs" />
     <Compile Include="Controller\SurveyController.cs" />
     <Compile Include="Controller\MedicineReviewController.cs" />
@@ -70,9 +71,10 @@
     <Compile Include="Controller\RoomRenovationController.cs" />
     <Compile Include="Controller\StaticInventoryMovementController.cs" />
     <Compile Include="DTO\FunkcionalityDTO.cs" />
+    <Compile Include="DTO\IngredientDTO.cs" />
     <Compile Include="DTO\InventoryDTO.cs" />
     <Compile Include="DTO\MedicineDTO.cs" />
-    <Compile Include="DTO\MedicineReviewDTO.cs" />
+    <Compile Include="DTO\ReviewDTO.cs" />
     <Compile Include="DTO\RoomInventoryDTO.cs" />
     <Compile Include="DTO\RoomRenovationDTO.cs" />
     <Compile Include="Controller\PatientController.cs" />
@@ -95,8 +97,10 @@
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
     <Compile Include="Model\Note.cs" />
+    <Compile Include="Model\Medicine\Review.cs" />
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\FunctionalityService.cs" />
+    <Compile Include="Service\IngredientService.cs" />
     <Compile Include="Service\MedicalRecordService.cs" />
     <Compile Include="Service\SurveyService.cs" />
     <Compile Include="Service\MedicineReviewService.cs" />
@@ -106,6 +110,9 @@
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeLekaRevizijaUpravnik.xaml.cs">
       <DependentUpon>BrisanjeLekaRevizijaUpravnik.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Lekovi\LekoviRevizija\IzmenaLekaRevizija.xaml.cs">
+      <DependentUpon>IzmenaLekaRevizija.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Lekovi\LekoviSvi\BrisanjeLekaUpravnik.xaml.cs">
       <DependentUpon>BrisanjeLekaUpravnik.xaml</DependentUpon>
@@ -120,6 +127,15 @@
     <Compile Include="Controller\InventoryController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
     <Compile Include="Controller\RoomsController.cs" />
+    <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\Renoviranje.xaml.cs">
+      <DependentUpon>Renoviranje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeRazdvajanje.xaml.cs">
+      <DependentUpon>RenoviranjeRazdvajanje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeSpajanje.xaml.cs">
+      <DependentUpon>RenoviranjeSpajanje.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pacijent\DodajAnketu.xaml.cs">
       <DependentUpon>DodajAnketu.xaml</DependentUpon>
     </Compile>
@@ -138,9 +154,6 @@
     </Compile>
     <Compile Include="View\Manager\Lekovi\LekoviSvi\DodavanjeLekaUpravnik.xaml.cs">
       <DependentUpon>DodavanjeLekaUpravnik.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Manager\Lekovi\LekoviRevizija\IzmenaLekaRevizija.xaml.cs">
-      <DependentUpon>IzmenaLekaRevizija.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Lekovi\LekoviSvi\IzmenaLekaUpravnik.xaml.cs">
       <DependentUpon>IzmenaLekaUpravnik.xaml</DependentUpon>
@@ -285,7 +298,6 @@
     <Compile Include="View\Secretary\CRUDCheckup\SacuvajLekara.xaml.cs">
       <DependentUpon>SacuvajLekara.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Medicine\Review.cs" />
     <Compile Include="View\Secretary\CRUDCheckup\SlobodniLekari.xaml.cs">
       <DependentUpon>SlobodniLekari.xaml</DependentUpon>
     </Compile>
@@ -347,6 +359,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Manager\Lekovi\LekoviRevizija\IzmenaLekaRevizija.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\Ostalo\BelsekaMagacin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -356,6 +372,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pacijent\ObavljeniPregledi.xaml">
+    <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Prostorije\RenoviranjeProstorije\Renoviranje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeRazdvajanje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeSpajanje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -556,10 +584,6 @@
     <Page Include="View\Manager\Inventar\CRUDInventar\IzmenaInventaraDijalog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\Manager\Lekovi\LekoviRevizija\IzmenaLekaRevizija.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Lekovi\LekoviSvi\IzmenaLekaUpravnik.xaml">
       <SubType>Designer</SubType>
@@ -1044,6 +1068,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="View\Images\Button-White-Remove-icon.png" />
+    <Resource Include="View\Images\Manager\box-32.png" />
+    <Resource Include="View\Images\Manager\building-32.png" />
+    <Resource Include="View\Images\Manager\message-32.png" />
+    <Resource Include="View\Images\Manager\pill-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\Manager\edit-32.png" />
+    <Resource Include="View\Images\Manager\plus-32.png" />
+    <Resource Include="View\Images\Manager\trash-2-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

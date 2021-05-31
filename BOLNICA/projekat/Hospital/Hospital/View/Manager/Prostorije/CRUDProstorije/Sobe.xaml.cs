@@ -1,5 +1,6 @@
 ﻿using Hospital.Controller;
 using Hospital.DTO;
+using Hospital.View.Manager.Prostorije.RenoviranjeProstorije;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -31,7 +32,7 @@ namespace Hospital
             frameMagacin = magacin;
             Rooms = new ObservableCollection<RoomDTO>(roomController.getAll());
             ucitajInventar();
-            //SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
+            SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
         }
 
         private void dodavanje(object sender, RoutedEventArgs e)
@@ -98,7 +99,7 @@ namespace Hospital
             {
                 SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
             } else {
-                SobeFrame.NavigationService.Navigate(new RenoviranjeSobe(SobeFrame, (RoomDTO)ListaProstorija.SelectedItem));
+                SobeFrame.NavigationService.Navigate(new Renoviranje(SobeFrame, (RoomDTO)ListaProstorija.SelectedItem));
             }
         }
 

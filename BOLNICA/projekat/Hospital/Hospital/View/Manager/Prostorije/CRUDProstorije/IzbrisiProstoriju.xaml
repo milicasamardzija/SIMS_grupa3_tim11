@@ -5,23 +5,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hospital"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="470" Background="AliceBlue">
+             d:DesignHeight="400" d:DesignWidth="470" Background="#FFDFD7BB">
     <Grid>
         <Grid Margin="-10,-10,0.4,0">
-            <Label Margin="10,45,323,317" Foreground="Black" FontSize="18" Grid.Column="0" Grid.Row="0" FontWeight="Bold" RenderTransformOrigin="0.498,-0.169">Broj prostorije</Label>
-            <TextBox IsReadOnly="True" Text="{Binding Room.Id}" Name="brojProstorijeTxt" Width="200" Margin="244,45,36,330" Grid.Row="0" />
-            <Label Height="30" Width="100" Margin="10,124,370,256" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold" RenderTransformOrigin="-0.119,-0.46">Namena</Label>
-            <ComboBox Name="namenaTxt" SelectedValue="{Binding Path = Room.Purpose}" SelectedValuePath="Purpose" Width="200" Margin="244,124,36,248">
+            <Label Margin="27,45,306,317" Foreground="#FF373434" FontSize="18" Grid.Column="0" Grid.Row="0" FontWeight="Bold" RenderTransformOrigin="0.498,-0.169">Broj prostorije</Label>
+            <TextBox IsReadOnly="True" Text="{Binding Room.Id}" Name="brojProstorijeTxt" Width="200" Margin="244,45,36,330" Grid.Row="0" FontSize="18" />
+            <Label Height="30" Width="100" Margin="27,124,353,256" Foreground="#FF373434" FontSize="18" Grid.Column="0" FontWeight="Bold" RenderTransformOrigin="-0.119,-0.46">Namena</Label>
+            <ComboBox Name="namenaTxt" SelectedValue="{Binding Path = Room.Purpose}" SelectedValuePath="Purpose" Width="200" Margin="244,124,36,248" FontSize="16">
                 <ComboBoxItem>SALA</ComboBoxItem>
                 <ComboBoxItem>SOBA</ComboBoxItem>
                 <ComboBoxItem>ORDINACIJA</ComboBoxItem>
             </ComboBox>
-            <Label Height="30" Width="100" Margin="10,204,370,176" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold">Sprat</Label>
-            <TextBox Name="spratTxt" Width="200" Text="{Binding Room.Floor}" Margin="244,198,36,176"/>
-            <Label Margin="10,269,272,71" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold">Kapacitet prostorije</Label>
-            <TextBox Name="kapacitetTxt" Text="{Binding Room.Capacity}" Width="200" Margin="244,269,36,107"/>
-            <Button Margin="86,346,300,34" Grid.Column="0" Height="30" Click="izbrisi" Background="LightBlue" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.545,1.596">Potvrdi</Button>
-            <Button Margin="283,346,99,34" Height="30" Background="LightBlue" Click="odustani" RenderTransformOrigin="0.363,-0.605" FontSize="18" FontWeight="Bold">Odustani</Button>
+            <Label Height="30" Width="100" Margin="27,198,353,182" Foreground="#FF373434" FontSize="18" Grid.Column="0" FontWeight="Bold">Sprat</Label>
+            <TextBox Name="spratTxt" Width="200" Text="{Binding Room.Floor}" Margin="244,198,36,176" FontSize="18"/>
+            <Label Margin="27,271,255,69" Foreground="#FF373434" FontSize="18" Grid.Column="0" FontWeight="Bold">Kapacitet prostorije</Label>
+            <TextBox Name="kapacitetTxt" Text="{Binding Room.Capacity}" Width="200" Margin="244,269,36,107" FontSize="18"/>
+            <Button Foreground="#FF373434" Margin="27,346,359,24" Content="Potvrdi" Grid.Column="0" Click="izbrisi" Background="#FFFFC800" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.545,1.596">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button Foreground="#FF373434" Margin="346,346,36,24" Background="#FFFFC800" Click="odustani" RenderTransformOrigin="0.363,-0.605" FontSize="18" FontWeight="Bold" Content="Odustani">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
         </Grid>
     </Grid>
 </UserControl>

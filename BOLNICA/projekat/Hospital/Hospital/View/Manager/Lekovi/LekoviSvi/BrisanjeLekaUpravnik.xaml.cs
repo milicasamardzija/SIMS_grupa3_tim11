@@ -1,4 +1,5 @@
 ﻿using Hospital.Controller;
+using Hospital.DTO;
 using Hospital.FileStorage.Interfaces;
 using Hospital.Model;
 using Hospital.Prikaz;
@@ -22,19 +23,20 @@ namespace Hospital
     public partial class BrisanjeLekaUpravnik : UserControl
     {
         private Frame frame;
-        private Review revision;
+        private ReviewDTO revision;
+        private MedicineController controller;
 
-        public BrisanjeLekaUpravnik(Frame frame, Review revision)
+        public BrisanjeLekaUpravnik(Frame frame, ReviewDTO revision)
         {
             InitializeComponent();
             this.frame = frame;
             this.revision = revision;
+            this.controller = new MedicineController();
         }
 
         private void obrisi(object sender, RoutedEventArgs e)
         {
-            //storage.DeleteById(revision.IdMedicine);
-           // reviewStorage.DeleteByIdMedicine(revision.IdMedicine);
+            controller.deleteMedicine(revision.IdMedicine);
             frame.NavigationService.Navigate(new LekoviRevizijaUpravnik(frame));
         }
 
