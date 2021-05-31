@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:Hospital.View.Doctor"
         mc:Ignorable="d"
         Title="UpravljanjeBlogom" Height="328.538" Width="567.981" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Label x:Name="label1" Content="Unesite u prazno polje zanimljivosti, zatim pritiskom na zeljeno dugme izvrsice se zeljena akcija" HorizontalAlignment="Left" Margin="10,10,0,252.2"/>
-        <TextBox x:Name="textBox" Text="" HorizontalAlignment="Left" Height="100" Margin="20,78,0,121.2" Width="337" />
-        <Button x:Name="button1" Content="Izadji" HorizontalAlignment="Left" Height="30" Margin="412,244,0,25.2" Width="110" Click="button1_Click"/>
+    <Grid ToolTip="Da bi se izvrsile zeljene akcije, oznacite zeljeno dugme, a zatim pritisnite tipku Enter">
+        <Label x:Name="label1" Content="Unesite u prazno polje zanimljivosti" HorizontalAlignment="Left" Margin="10,10,0,252.2" FontSize="14" Width="262"/>
+        <TextBox x:Name="textBox" Text="" HorizontalAlignment="Left" Margin="20,78,0,74.2" Width="337" />
+        <Button x:Name="button1" Content="Izadji" HorizontalAlignment="Left" Height="30" Margin="412,195,0,74.2" Width="110" Click="button1_Click"/>
         <Button x:Name="button2" Content="Dodaj" HorizontalAlignment="Left" Height="30" Margin="412,78,0,191.2" Width="110" Click="button2_Click"/>
-        <Button x:Name="button3" Content="Izmeni" HorizontalAlignment="Left" Height="30" Margin="412,148,0,121.2" Width="110" Click="button3_Click"/>
+        <Button x:Name="button3" Content="Izmeni" HorizontalAlignment="Left" Height="30" Margin="412,142,0,127.2" Width="110" Click="button3_Click"/>
     </Grid>
 </Window>

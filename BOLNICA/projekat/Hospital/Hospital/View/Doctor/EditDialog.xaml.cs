@@ -26,11 +26,11 @@ namespace Hospital
     public partial class EditDialog : Window
     {
         public ObservableCollection<CheckupDTO> listCheckup;
-        public Checkup checkup;
+        public CheckupDTO checkup;
         public int indexCheckup;
         public int idD;
 
-        public EditDialog(ObservableCollection<CheckupDTO> list, Checkup selectedCheckup, int selectedIndex)
+        public EditDialog(ObservableCollection<CheckupDTO> list, CheckupDTO selectedCheckup, int selectedIndex)
         {
             InitializeComponent();
             listCheckup = list;
@@ -99,8 +99,8 @@ namespace Hospital
             ICheckFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             componentsEditDialog();
 
-           // listCheckup[indexCheckup] = new Checkup(generisiID(), getDoctorFromFile(), Convert.ToInt16(checkup.IdPatient), Convert.ToDateTime(checkup.Date),
-            //    Convert.ToInt16(checkup.IdRoom), (CheckupType)comboBox.SelectedIndex);
+            //listCheckup[indexCheckup] = new Checkup(generisiID(), getDoctorFromFile(), Convert.ToInt16(checkup.IdPatient), Convert.ToDateTime(checkup.Date),
+              // Convert.ToInt16(checkup.IdRoom), (CheckupType)comboBox.SelectedIndex);
 
            // storageCheckup.DeleteById(Convert.ToInt16(durationText.Text));
           //  storageCheckup.Save(checkup);

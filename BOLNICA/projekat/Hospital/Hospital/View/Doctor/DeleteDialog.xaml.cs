@@ -25,15 +25,15 @@ namespace Hospital
     {
 
         public ObservableCollection<CheckupDTO> listCheckup;
+        public CheckupDTO checkup = new CheckupDTO();
         public int indexCheckup;
         public int idCheckup;
         public CheckupController controller = new CheckupController();
 
-        public DeleteDialog(ObservableCollection<CheckupDTO> list, Checkup selectedCheckup, int selectedIndex)
+        public DeleteDialog(ObservableCollection<CheckupDTO> list, CheckupDTO selectedCheckup, int selectedIndex)
         {
             InitializeComponent();
             listCheckup = list;
-            idCheckup = selectedCheckup.Id;
             indexCheckup = selectedIndex;
         }
 

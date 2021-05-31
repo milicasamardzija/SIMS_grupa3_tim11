@@ -17,6 +17,7 @@ using Hospital.Model;
 using Hospital.FileStorage.Interfaces;
 using Hospital.DTO;
 using Hospital.Controller;
+using Hospital.View.Doctor;
 
 namespace Hospital
 {
@@ -26,6 +27,7 @@ namespace Hospital
     public partial class Pregled : Window
     {
         public ObservableCollection<CheckupDTO> CheckupList { get; set; }
+        public CheckupDTO checkup = new CheckupDTO();
         public CheckupController checkupController = new CheckupController();
         public int idSignedDoctor;
 
@@ -45,13 +47,13 @@ namespace Hospital
 
         private void edit_Click(object sender, RoutedEventArgs e)
         {
-            EditDialog editDialog = new EditDialog(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
+            EditDialog editDialog = new EditDialog(CheckupList, (CheckupDTO)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
             editDialog.Show();
         }
 
         private void delete_Click(object sender, RoutedEventArgs e)
         {
-            DeleteDialog deleteDialog = new DeleteDialog(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
+            DeleteDialog deleteDialog = new DeleteDialog(CheckupList, (CheckupDTO)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
             deleteDialog.Show();
         }
 
@@ -101,5 +103,6 @@ namespace Hospital
             DavanjeUputa giveInstructions = new DavanjeUputa();
             giveInstructions.Show();
         }
+
     }
 }

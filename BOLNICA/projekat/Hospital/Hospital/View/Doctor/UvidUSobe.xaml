@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital.View.Doctor"
         mc:Ignorable="d"
-        Title="UvidUSobe" Height="290.951" Width="534.571" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Label x:Name="label1" Content="Sobe" HorizontalAlignment="Left" FontSize="16" Margin="10,0,0,228.6" Width="91" Foreground="#FFFF008D"/>
-        <DataGrid Margin="10,38,137,33.6" x:Name="listOfRooms" ItemsSource="{Binding Path=RoomsLook}">
+        Title="UvidUSobe" Height="361.267" Width="630.021" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
+    <Grid ToolTip="Da biste izasli iz ovog prozora potrebno je da oznacite dugme Izadji i da pritisnete Enter">
+        <Label x:Name="label1" Content="Sobe" HorizontalAlignment="Left" FontSize="16" Margin="10,0,0,214.6" Width="91" Foreground="#FFFF008D"/>
+        <DataGrid Margin="10,52,137,33.6" x:Name="listOfRooms" ItemsSource="{Binding Path=RoomsLook}">
             <DataGrid.Columns>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="button1" Content="Izadji" HorizontalAlignment="Left" Height="30" Margin="406,198,0,33.6" Width="91" Click="button1_Click"/>
+        <Button x:Name="button1" Content="Izadji" HorizontalAlignment="Left" Height="30" Margin="507,268,0,34" Width="91" Click="button1_Click"/>
     </Grid>
 </Window>
