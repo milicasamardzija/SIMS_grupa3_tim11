@@ -35,29 +35,10 @@ namespace Hospital.Service
             }
             storage.DeleteById(renovation.Id);
         }
+        
         public List<RoomRenovation> getAll()
         {
             return storage.GetAll();
-        }
-        public int genrateId()
-        {
-            int ret = 0;
-
-            RenovationIFileStorage storage = new RenovationFileStorage("./../../../../Hospital/files/storageRenovationRooms.json");
-            List<RoomRenovation> allRooms = storage.GetAll();
-
-            foreach (RoomRenovation roomBig in allRooms)
-            {
-                foreach (RoomRenovation room in allRooms)
-                {
-                    if (ret == room.Id)
-                    {
-                        ++ret;
-                        break;
-                    }
-                }
-            }
-            return ret;
         }
     }
 }

@@ -122,5 +122,6 @@ namespace Hospital.View.Manager.Lekovi.LekoviRevizija
         {
             frame.NavigationService.Navigate(new LekoviRevizijaUpravnik(frame));
         }
+
     }
 }

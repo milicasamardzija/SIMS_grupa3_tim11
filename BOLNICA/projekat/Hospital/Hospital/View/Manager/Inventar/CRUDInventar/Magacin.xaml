@@ -5,41 +5,41 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hospital"
              mc:Ignorable="d" 
-             Height="640" Width="1280"  Background="#595959">
+             Height="640" Width="1280"  Background="#FF373434">
     <Grid Margin="0,0,-4,0.6" >
         <DataGrid Name="ListaInventara" 
-                  Background="#FFFFC800" 
                   HorizontalAlignment="Left"
                   Height="253" 
                   Margin="69,241,0,0" 
                   VerticalAlignment="Top" 
                   Width="593"
+                  FontSize="16"
                   AutoGenerateColumns="False"
                   IsReadOnly="True"
-                  ItemsSource="{Binding Path = inventories}" RowBackground="#FFFFE35B">
+                  ItemsSource="{Binding Path = inventories}" Background="#FFEDDCA0" RowBackground="#FFEDDCA0" Foreground="#FF373434">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="TIP" Width="200" Binding="{Binding Type}"/>
                 <DataGridTextColumn Header="IME" Width="200" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="KOLICINA" Width="185" Binding="{Binding Quantity}" />
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock  FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="69,29,0,0" TextWrapping="Wrap" Text="Inventar bolnice koji se nalazi u magacinu" VerticalAlignment="Top" Height="42" Width="650" FontWeight="Bold" FontStyle="Italic" Foreground="#FFFFC800"/>
+        <TextBlock  FontSize="22" TextAlignment="Left" HorizontalAlignment="Left" Margin="69,29,0,0" TextWrapping="Wrap" Text="Inventar bolnice koji se nalazi u magacinu" VerticalAlignment="Top" Height="42" Width="650" FontWeight="Bold" FontStyle="Italic" Foreground="#FFFFC800"/>
         <Frame Name="MagacinFrame" Content="" HorizontalAlignment="Left" Margin="752,94,0,0" VerticalAlignment="Top" Height="400" Width="470" BorderBrush="#FFB42412" OpacityMask="Black" Foreground="#FFA31818" NavigationUIVisibility="Hidden" RenderTransformOrigin="0.508,0.644"/>
-        <Button Foreground="#595959" Background="#FFFFC800"  Content="Dodaj" HorizontalAlignment="Left" Margin="69,530,0,0" VerticalAlignment="Top" Width="133" Height="48" FontSize="24" FontWeight="Bold" Click="dodaj" RenderTransformOrigin="0.562,-0.422" />
-        <Button Foreground="#595959" Background="#FFFFC800" Content="Izbrisi" HorizontalAlignment="Left" Margin="379,530,0,0" VerticalAlignment="Top" Width="129" Height="47" FontSize="24" FontWeight="Bold" Click="izbrisi" RenderTransformOrigin="0.574,1.728"/>
-        <Button Foreground="#595959" Background="#FFFFC800" Content="Prebaci" HorizontalAlignment="Left" Margin="541,531,0,0" VerticalAlignment="Top" Width="121" Height="47" FontSize="24" FontWeight="Bold" Click="premesti" RenderTransformOrigin="0.817,-0.283" />
-        <Button Foreground="#595959" Background="#FFFFC800" Content="Izmeni" HorizontalAlignment="Left" Margin="222,531,0,0" VerticalAlignment="Top" Width="131" Height="47" Click="izmeni" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.453,-1.384"/>
+        <Button Foreground="#FF373434" Background="#FFFFC800"  Content="Dodaj" HorizontalAlignment="Left" Margin="69,530,0,0" VerticalAlignment="Top" Width="133" Height="48" FontSize="24" FontWeight="Bold" Click="dodaj" RenderTransformOrigin="0.562,-0.422" />
+        <Button Foreground="#FF373434" Background="#FFFFC800" Content="Izbrisi" HorizontalAlignment="Left" Margin="379,530,0,0" VerticalAlignment="Top" Width="129" Height="47" FontSize="24" FontWeight="Bold" Click="izbrisi" RenderTransformOrigin="0.574,1.728"/>
+        <Button Foreground="#FF373434" Background="#FFFFC800" Content="Prebaci" HorizontalAlignment="Left" Margin="541,531,0,0" VerticalAlignment="Top" Width="121" Height="47" FontSize="24" FontWeight="Bold" Click="premesti" RenderTransformOrigin="0.817,-0.283" />
+        <Button Foreground="#FF373434" Background="#FFFFC800" Content="Izmeni" HorizontalAlignment="Left" Margin="222,531,0,0" VerticalAlignment="Top" Width="131" Height="47" Click="izmeni" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.453,-1.384"/>
 
         <Grid Background="#FFFFC800" Margin="304,94,622,434.4">
-            <Label Foreground="#595959" Grid.Row="0" Grid.Column="0" Content="Unesite kolicinu i uslov po kojima&#xD;&#xA; zelite da filtrirate inventar :" HorizontalAlignment="Left" VerticalAlignment="Top" Width="266" FontSize="16" FontWeight="Bold" Height="53"/>
+            <Label Foreground="#FF373434" Grid.Row="0" Grid.Column="0" Content="Unesite kolicinu i uslov po kojima&#xD;&#xA; zelite da filtrirate inventar :" HorizontalAlignment="Left" VerticalAlignment="Top" Width="266" FontSize="16" FontWeight="Bold" Height="53"/>
             <TextBox Name="KolicinaFiltriranja" HorizontalAlignment="Left" Height="47" Margin="275,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" FontSize="18" RenderTransformOrigin="0.525,0.775" FontWeight="Bold" TextChanged="filtriranjeKolicina"/>
-            <ComboBox Foreground="#595959" Grid.Column="0" Name="UslovFiltriranja" SelectedIndex="0" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Width="255" Height="47" FontSize="14" FontWeight="Bold">
+            <ComboBox Foreground="#FF373434" Grid.Column="0" Name="UslovFiltriranja" SelectedIndex="0" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Width="255" Height="47" FontSize="14" FontWeight="Bold">
                 <ComboBoxItem Content="Vece ili jednako od unetog broja" ></ComboBoxItem>
                 <ComboBoxItem Content="Manje ili jednako od unetog broja" ></ComboBoxItem>
             </ComboBox>
         </Grid>
         <Grid Background="#FFFFC800" Margin="69,94,993,434.4">
-            <Label Foreground="#595959" Grid.Row="0" Grid.Column="0" Content="Unesite naziv, vrstu ili &#xA;kolicinu inventara:" HorizontalAlignment="Left" Margin="0,0,-43,0" VerticalAlignment="Top" Width="265" FontSize="16" FontWeight="Bold" Height="62"/>
+            <Label  Foreground="#FF373434" Grid.Row="0" Grid.Column="0" Content="Unesite naziv, vrstu ili &#xA;kolicinu inventara:" HorizontalAlignment="Left" Margin="0,0,-43,0" VerticalAlignment="Top" Width="265" FontSize="16" FontWeight="Bold" Height="62"/>
             <TextBox Grid.Column="0" Name="PretragaTxt" HorizontalAlignment="Left" Height="34" Margin="10,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" TextChanged="PretragaTxt_TextChanged" UndoLimit="102" AutomationProperties.HelpText="Unesite zeljeni naziv/kolicinu/tip" FontSize="18" FontWeight="Bold" />
         </Grid>
     </Grid>

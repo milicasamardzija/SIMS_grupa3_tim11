@@ -1,5 +1,6 @@
 ﻿using Hospital.Controller;
 using Hospital.DTO;
+using Hospital.View.Manager.Prostorije.RenoviranjeProstorije;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -98,7 +99,7 @@ namespace Hospital
             {
                 SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
             } else {
-                SobeFrame.NavigationService.Navigate(new RenoviranjeSobe(SobeFrame, (RoomDTO)ListaProstorija.SelectedItem));
+                SobeFrame.NavigationService.Navigate(new Renoviranje(SobeFrame, (RoomDTO)ListaProstorija.SelectedItem));
             }
         }
 

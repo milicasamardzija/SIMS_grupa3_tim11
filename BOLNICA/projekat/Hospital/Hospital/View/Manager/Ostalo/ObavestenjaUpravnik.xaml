@@ -6,20 +6,20 @@
              xmlns:local="clr-namespace:Hospital"
              mc:Ignorable="d" 
               Height="640" Width="1280">
-    <Grid Background="LightBlue">
+    <Grid Background="#FF373434">
         <TextBlock TextWrapping="Wrap" Text="Prikaz obavestenja"
                        HorizontalAlignment="Center"
                        FontStyle="Italic"
-                       Foreground= "Black"
+                       Foreground= "#ffc800"
                        Grid.Row="0"
                        Grid.Column="0"
-                       Margin="34,42,549,555"
-                       FontSize="20" Width="697" FontWeight="Bold"
+                       Margin="34,54,549,543"
+                       FontSize="22" Width="697" FontWeight="Bold"
                        />
         <DataGrid Name="Obavestenja"
-                      Margin="34,134,434,163"
+                      Margin="34,134,434,139"
                       Grid.Column="0"
-                      Background="AliceBlue"
+                      Background="#FFEDDCA0" RowBackground="#FFEDDCA0" Foreground="#FF373434" FontSize="16"
                       AutoGenerateColumns="False"
                       SelectionMode="Single"
                       IsReadOnly="True"

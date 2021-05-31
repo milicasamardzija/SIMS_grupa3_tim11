@@ -123,6 +123,15 @@
     <Compile Include="Controller\InventoryController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
     <Compile Include="Controller\RoomsController.cs" />
+    <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\Renoviranje.xaml.cs">
+      <DependentUpon>Renoviranje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeRazdvajanje.xaml.cs">
+      <DependentUpon>RenoviranjeRazdvajanje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeSpajanje.xaml.cs">
+      <DependentUpon>RenoviranjeSpajanje.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pacijent\DodajAnketu.xaml.cs">
       <DependentUpon>DodajAnketu.xaml</DependentUpon>
     </Compile>
@@ -338,6 +347,18 @@
     <Page Include="View\Manager\Ostalo\BelsekaMagacin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Manager\Prostorije\RenoviranjeProstorije\Renoviranje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeRazdvajanje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeSpajanje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pacijent\Obolnici.xaml">
       <SubType>Designer</SubType>

@@ -5,43 +5,43 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hospital"
              mc:Ignorable="d" 
-              Height="626" Width="1280"  Background="LightBlue">
+              Height="626" Width="1280"  Background="#FF373434">
     <Grid>
-        <Label Content="Naziv" HorizontalAlignment="Left" Margin="42,26,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.483,-0.119"/>
-        <Label Content="Gramaza" HorizontalAlignment="Left" Margin="42,82,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.443,-0.065"/>
-        <Label Content="Tip" HorizontalAlignment="Left" Margin="42,140,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.793,-0.208"/>
+        <Label Content="Naziv" HorizontalAlignment="Left" Margin="42,26,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Foreground="#FFFFC800" RenderTransformOrigin="0.483,-0.119"/>
+        <Label Content="Gramaza" Foreground="#FFFFC800" HorizontalAlignment="Left" Margin="42,82,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.443,-0.065"/>
+        <Label Content="Tip" Foreground="#FFFFC800" HorizontalAlignment="Left" Margin="42,140,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.793,-0.208"/>
         <TextBox Name="NazivTxt" HorizontalAlignment="Left" Height="34" Margin="226,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18"/>
         <TextBox Name="TipTxt" HorizontalAlignment="Left" Height="34" Margin="226,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18"/>
         <TextBox Name="GramazaTxt" HorizontalAlignment="Left" Height="34" Margin="226,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18" />
-        <Label Content="Zamenski lekovi" HorizontalAlignment="Left" Margin="42,399,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.234,3.518"/>
-        <Label Content="Sastojci" HorizontalAlignment="Left" Margin="42,210,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.908,3.708"/>
-        <DataGrid Name="SastojciBaza" ItemsSource="{Binding Path = IngredientsBase}" AutoGenerateColumns="False" Background="AliceBlue" HorizontalAlignment="Left" Height="166" Margin="226,210,0,0" VerticalAlignment="Top" Width="244">
+        <Label Content="Zamenski lekovi" Foreground="#FFFFC800" HorizontalAlignment="Left" Margin="42,399,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.234,3.518"/>
+        <Label Content="Sastojci" Foreground="#FFFFC800" HorizontalAlignment="Left" Margin="42,210,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.908,3.708"/>
+        <DataGrid Name="SastojciBaza" ItemsSource="{Binding Path = IngredientsBase}" AutoGenerateColumns="False" Background="#FFEDDCA0" HorizontalAlignment="Left" Height="166" Margin="226,210,0,0" VerticalAlignment="Top" Width="244">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Dodaj sastojak" Background="AliceBlue" Click="dodajSastojak" HorizontalAlignment="Left" Margin="570,267,0,0" VerticalAlignment="Top" Width="204" FontSize="18" Height="51" FontWeight="Bold"/>
-        <Button Content="Dodaj zamenski lek" Background="AliceBlue" Click="dodajZamenskiLek" HorizontalAlignment="Left" Margin="570,454,0,0" VerticalAlignment="Top" Width="204" FontSize="18" FontWeight="Bold" Height="48"/>
-        <DataGrid x:Name="ZamenskilekoviBaza" ItemsSource="{Binding Path = MedicinesBase}" AutoGenerateColumns="False"  Background="AliceBlue" HorizontalAlignment="Left" Height="166" Margin="226,399,0,0" VerticalAlignment="Top" Width="244">
+        <Button Content="Dodaj sastojak" Background="#FFFFC800" Click="dodajSastojak" HorizontalAlignment="Left" Margin="570,267,0,0" VerticalAlignment="Top" Width="204" FontSize="18" Height="51" FontWeight="Bold"/>
+        <Button Content="Dodaj zamenski lek" Background="#FFFFC800" Click="dodajZamenskiLek" HorizontalAlignment="Left" Margin="570,454,0,0" VerticalAlignment="Top" Width="204" FontSize="18" FontWeight="Bold" Height="48"/>
+        <DataGrid x:Name="ZamenskilekoviBaza" ItemsSource="{Binding Path = MedicinesBase}" AutoGenerateColumns="False"  Background="#FFEDDCA0" HorizontalAlignment="Left" Height="166" Margin="226,399,0,0" VerticalAlignment="Top" Width="244">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="SastojciLek" ItemsSource="{Binding Path = IngredientsMedicine}" Background="AliceBlue" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="166" Margin="873,210,0,0" VerticalAlignment="Top" Width="244">
+        <DataGrid x:Name="SastojciLek" ItemsSource="{Binding Path = IngredientsMedicine}" Background="#FFEDDCA0" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="166" Margin="873,210,0,0" VerticalAlignment="Top" Width="244">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="ZamenskiLekoviLek" ItemsSource="{Binding Path = ReplacementMedicine}" Background="AliceBlue" AutoGenerateColumns="False"  HorizontalAlignment="Left" Height="166" Margin="873,399,0,0" VerticalAlignment="Top" Width="244">
+        <DataGrid x:Name="ZamenskiLekoviLek" ItemsSource="{Binding Path = ReplacementMedicine}" Background="#FFEDDCA0" AutoGenerateColumns="False"  HorizontalAlignment="Left" Height="166" Margin="873,399,0,0" VerticalAlignment="Top" Width="244">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Potvrdi" Click="Potvrdi" Background="AliceBlue" HorizontalAlignment="Left" Margin="503,544,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43" RenderTransformOrigin="0.675,-0.058"/>
-        <Button Content="Odustani" Click="Odustani" Background="AliceBlue" HorizontalAlignment="Left" Margin="679,544,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43" RenderTransformOrigin="0.545,-0.198"/>
-        <Label Content="Specijalizacija" HorizontalAlignment="Left" Margin="701,26,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
-        <ComboBox Name="SpecijalizacijaComboBox" Background="AliceBlue" HorizontalAlignment="Left" Margin="873,26,0,0" VerticalAlignment="Top" Width="244" Height="34" SelectionChanged="getDoctors"/>
-        <Label Content="Doktor" HorizontalAlignment="Left" Margin="701,82,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
-        <ComboBox Name="DoktoriIsfiltrirani" HorizontalAlignment="Left" Margin="873,82,0,0" VerticalAlignment="Top" Width="244" Height="34"/>
+        <Button Content="Potvrdi" Click="Potvrdi" Background="#FFFFC800" HorizontalAlignment="Left" Margin="503,544,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43" RenderTransformOrigin="0.675,-0.058"/>
+        <Button Content="Odustani" Click="Odustani" Background="#FFFFC800" HorizontalAlignment="Left" Margin="679,544,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43" RenderTransformOrigin="0.545,-0.198"/>
+        <Label Content="Specijalizacija" Foreground="#FFFFC800" HorizontalAlignment="Left" Margin="701,26,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <ComboBox Name="SpecijalizacijaComboBox" Background="#FFEDDCA0" HorizontalAlignment="Left" Margin="873,26,0,0" VerticalAlignment="Top" Width="244" Height="34" SelectionChanged="getDoctors"/>
+        <Label Content="Doktor" Foreground="#FFFFC800" HorizontalAlignment="Left" Margin="701,82,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <ComboBox Name="DoktoriIsfiltrirani" HorizontalAlignment="Left" Margin="873,82,0,0" VerticalAlignment="Top" Width="244" FontSize="18" Height="34"/>
     </Grid>
 </UserControl>
