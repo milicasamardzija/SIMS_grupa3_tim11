@@ -114,6 +114,9 @@
     <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeLekaRevizijaUpravnik.xaml.cs">
       <DependentUpon>BrisanjeLekaRevizijaUpravnik.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeRecenzijaPotvrda.xaml.cs">
+      <DependentUpon>BrisanjeRecenzijaPotvrda.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Lekovi\LekoviRevizija\IzmenaLekaRevizija.xaml.cs">
       <DependentUpon>IzmenaLekaRevizija.xaml</DependentUpon>
     </Compile>
@@ -366,6 +369,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Inventar\CRUDInventar\BrisanjePotvrdiInventar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeRecenzijaPotvrda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

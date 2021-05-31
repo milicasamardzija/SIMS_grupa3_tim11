@@ -56,7 +56,12 @@ namespace Hospital
         private void izbrisiRezenziju(object sender, RoutedEventArgs e)
         {
             if (ListaLekovaRevizija.SelectedItem != null)
-                LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeRecenzijeUpravnik(frame, (ReviewDTO)ListaLekovaRevizija.SelectedItem));
+                // LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeRecenzijeUpravnik(frame, (ReviewDTO)ListaLekovaRevizija.SelectedItem));
+            {
+                BrisanjeRecenzijaPotvrda brisanje =
+                    new BrisanjeRecenzijaPotvrda(frame, (ReviewDTO) ListaLekovaRevizija.SelectedItem);
+                brisanje.Show();
+            }
         }
 
         private void unazad(object sender, RoutedEventArgs e)
