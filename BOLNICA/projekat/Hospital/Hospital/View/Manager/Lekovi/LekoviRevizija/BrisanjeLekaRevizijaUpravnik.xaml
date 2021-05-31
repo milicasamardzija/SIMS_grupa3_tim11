@@ -5,19 +5,25 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hospital"
              mc:Ignorable="d" 
-             Height="401" Width="470" Background="AliceBlue">
+             Height="401" Width="470" Background="#FFDFD7BB">
     <Grid>
-        <Label Content="Naziv" HorizontalAlignment="Left" Margin="34,32,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-        <Label Content="Tip" HorizontalAlignment="Left" Margin="34,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.809,6.038" FontSize="18" FontWeight="Bold"/>
-        <Label Content="Specijalizacija" HorizontalAlignment="Left" Margin="34,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.809,6.038" FontSize="18" FontWeight="Bold"/>
-        <Label Content="Lekar" HorizontalAlignment="Left" Margin="34,246,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.809,6.038" FontSize="18" FontWeight="Bold"/>
-        <ComboBox Name="LekarComboBox" HorizontalAlignment="Left" Margin="245,246,0,0" VerticalAlignment="Top" Width="204" Height="33" FontSize="18" FontWeight="Bold"/>
-        <ComboBox Name="SpecijalizacijaComboBox" HorizontalAlignment="Left" Margin="245,187,0,0" VerticalAlignment="Top" Width="204" FontSize="18" FontWeight="Bold" SelectionChanged="getDoctors"/>
-        <TextBox Name="NazivTxt" Text="{Binding Medicine.Name}" HorizontalAlignment="Left" Height="27" Margin="245,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontSize="18" FontWeight="Bold"/>
-        <TextBox Name="TipTxt" Text="{Binding Medicine.Type}" HorizontalAlignment="Left" Height="29" Margin="245,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontSize="18" FontWeight="Bold"/>
-        <Button Background="LightBlue" Content="Potvrdi" HorizontalAlignment="Left" Margin="85,327,0,0" VerticalAlignment="Top" Width="96" FontSize="18" FontWeight="Bold" Height="37" RenderTransformOrigin="0.5,0.5" Click="potvrdi">
+        <Label Content="Naziv" Foreground="#FF373434" HorizontalAlignment="Left" Margin="32,36,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.117,0.463"/>
+        <Label Content="Tip" Foreground="#FF373434" HorizontalAlignment="Left" Margin="32,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.809,6.038" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Specijalizacija" Foreground="#FF373434" HorizontalAlignment="Left" Margin="32,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.809,6.038" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Lekar" Foreground="#FF373434" HorizontalAlignment="Left" Margin="34,222,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.809,6.038" FontSize="18" FontWeight="Bold"/>
+        <ComboBox Name="LekarComboBox" Foreground="#FF373434" HorizontalAlignment="Left" Margin="232,222,0,0" VerticalAlignment="Top" Width="204" Height="33" FontSize="18" FontWeight="Bold"/>
+        <ComboBox Name="SpecijalizacijaComboBox" Foreground="#FF373434" HorizontalAlignment="Left" Margin="232,159,0,0" VerticalAlignment="Top" Width="204" FontSize="18" FontWeight="Bold" SelectionChanged="getDoctors"/>
+        <TextBox Name="NazivTxt" Foreground="#FF373434" Text="{Binding Medicine.Name}" HorizontalAlignment="Left" Height="34" Margin="232,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontSize="18" FontWeight="Bold"/>
+        <TextBox Name="TipTxt" Foreground="#FF373434" Text="{Binding Medicine.Type}" HorizontalAlignment="Left" Height="34" Margin="232,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontSize="18" FontWeight="Bold"/>
+        <Button Background="#FFFFC800" Foreground="#FF373434" Content="Potvrdi" HorizontalAlignment="Left" Margin="34,312,0,0" VerticalAlignment="Top" Width="96" FontSize="18" FontWeight="Bold" Height="37" RenderTransformOrigin="0.5,0.5" Click="potvrdi">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
         </Button>
-        <Button Background="LightBlue" Content="Odustani" HorizontalAlignment="Left" Margin="298,327,0,0" VerticalAlignment="Top" Width="96" FontSize="18" FontWeight="Bold" Height="37" RenderTransformOrigin="1.385,0.296" Click="odustani">
+        <Button Background="#FFFFC800" Foreground="#FF373434" Content="Odustani" HorizontalAlignment="Left" Margin="340,312,0,0" VerticalAlignment="Top" Width="96" FontSize="18" FontWeight="Bold" Height="37" RenderTransformOrigin="1.385,0.296" Click="odustani">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
         </Button>
 
 

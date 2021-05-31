@@ -19,7 +19,7 @@
         <DataGrid Name="ProstorijeRenoviranje"
                       Margin="34,108,434,189"
                       Grid.Column="0"
-                      Background="#FFEDDCA0" RowBackground="#FFEDDCA0" Foreground="#FF373434">
+                      Background="#FFDFD7BB" RowBackground="#FFDFD7BB" Foreground="#FF373434">
                       AutoGenerateColumns="False"
                       SelectionMode="Single"
                       IsReadOnly="True"
@@ -32,7 +32,11 @@
                 <DataGridTextColumn Header="OPIS" Width="362"  Binding="{Binding Description}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Background="#FFFFC800" Foreground="#FF373434" Content="Otkazi renoviranje" HorizontalAlignment="Left" Margin="983,255,0,0" VerticalAlignment="Top" Width="199" Height="60" FontSize="18" FontWeight="Bold" Click="Otkazi"/>
+        <Button Background="#FFFFC800" Foreground="#FF373434" Content="Otkazi renoviranje" HorizontalAlignment="Left" Margin="983,255,0,0" VerticalAlignment="Top" Width="199" Height="60" FontSize="18" FontWeight="Bold" Click="Otkazi">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
         <Button Click="unazad" Background="#FFFFC800" HorizontalAlignment="Left" Margin="34,507,0,0" VerticalAlignment="Top" Width="113" Height="65" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54">
            
         </Button>

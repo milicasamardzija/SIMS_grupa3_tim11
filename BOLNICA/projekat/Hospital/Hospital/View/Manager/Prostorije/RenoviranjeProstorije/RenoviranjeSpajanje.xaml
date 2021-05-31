@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hospital.View.Manager.Prostorije.RenoviranjeProstorije"
              mc:Ignorable="d" 
-             Width="427" Height="339" Background="#FFEDDCA0">
+             Width="427" Height="339" Background="#FFDFD7BB">
     <Grid>
         <Grid Margin="0,0,0.2,-11.8">
             <TextBox IsReadOnly="True" Name="brojProstorijeTxt"  Width="200" Margin="227,18,0,303" Grid.Row="0" FontSize="18" RenderTransformOrigin="0.775,0.625" >

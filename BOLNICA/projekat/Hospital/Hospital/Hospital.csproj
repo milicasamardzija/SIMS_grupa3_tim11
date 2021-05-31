@@ -1024,9 +1024,11 @@
   <ItemGroup>
     <Resource Include="View\Pacijent\download %282%29.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="View\Images\Manager\box-24.png" />
+    <Resource Include="View\Images\Manager\box-32.png" />
+    <Resource Include="View\Images\Manager\building-32.png" />
+    <Resource Include="View\Images\Manager\message-32.png" />
+    <Resource Include="View\Images\Manager\pill-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

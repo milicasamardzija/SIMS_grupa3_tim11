@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hospital.View.Manager.Prostorije.RenoviranjeProstorije"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="470" Background="#FFEDDCA0">
+             d:DesignHeight="400" d:DesignWidth="470" Background="#FFDFD7BB">
     <Grid>
         <Grid Margin="-10,-10,0.4,0">
             <Label Margin="30,30,312,334" Foreground="#FF373434" FontSize="18" Grid.Column="0" Grid.Row="0" RenderTransformOrigin="0.498,-0.169" FontWeight="Bold" Content="Tip renoviranja"/>

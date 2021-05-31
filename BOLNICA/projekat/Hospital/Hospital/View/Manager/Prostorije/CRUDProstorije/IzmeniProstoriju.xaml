@@ -5,23 +5,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hospital"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="470" Background="AliceBlue">
+             d:DesignHeight="400" d:DesignWidth="470" Background="#FFDFD7BB">
     <Grid>
         <Grid Margin="-10,-10,0.4,0">
-            <Label Margin="10,40,330,325"   Foreground="Black" FontSize="18"  Grid.Column="0" Grid.Row="0" FontWeight="Bold" RenderTransformOrigin="0.498,-0.169">Broj prostorije</Label>
-            <TextBox IsReadOnly="True" Text="{Binding Room.Id}" Name="brojProstorijeTxt" Width="200" Margin="238,40,42,335" Grid.Row="0" RenderTransformOrigin="0.746,0.543" />
-            <Label Height="30" Width="100" Margin="10,109,370,271" Foreground="Black" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" FontWeight="Bold">Namena</Label>
-            <ComboBox Name="namenaTxt" Height="30" Width="200" Margin="238,109,42,271">
+            <Label Margin="25,30,285,335"   Foreground="#FF373434" FontSize="20"  Grid.Column="0" Grid.Row="0" FontWeight="Bold" RenderTransformOrigin="0.498,-0.169">Broj prostorije</Label>
+            <TextBox Foreground="#FF373434" IsReadOnly="True" Text="{Binding Room.Id}" Name="brojProstorijeTxt" Width="200" Margin="257,30,23,345" Grid.Row="0" RenderTransformOrigin="0.746,0.543" FontSize="18" />
+            <Label Width="100" Margin="25,109,355,255" Foreground="#FF373434" FontSize="20" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" FontWeight="Bold">Namena</Label>
+            <ComboBox Foreground="#FF373434" Name="namenaTxt" Height="30" Width="200" Margin="257,109,23,271" FontSize="16">
                 <ComboBoxItem>SALA</ComboBoxItem>
                 <ComboBoxItem>SOBA</ComboBoxItem>
                 <ComboBoxItem>ORDINACIJA</ComboBoxItem>
             </ComboBox>
-            <Label Width="100" Margin="10,185,370,181" Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold" RenderTransformOrigin="-0.075,0.585">Sprat</Label>
-            <TextBox Name="spratTxt" Width="200" Text="{Binding Room.Floor}" Margin="238,193,42,181"/>
-            <Label Margin="10,268,272,94"  Foreground="Black" FontSize="18" Grid.Column="0" FontWeight="Bold">Kapacitet prostorije</Label>
-            <TextBox Name="kapacitetTxt" Text="{Binding Room.Capacity}"  Height="30" Width="200" Margin="238,268,42,112"/>
-            <Button Margin="100,346,300,34" Grid.Column="0" Width="80" Height="30" Click="izmenaProstorije" Background="LightBlue" FontSize="18" FontWeight="Bold">Potvrdi</Button>
-            <Button Margin="290,346,93,34" Height="30" Background="LightBlue" Click="odustani" RenderTransformOrigin="0.363,-0.605" FontSize="18" FontWeight="Bold">Odustani</Button>
+            <Label Width="100" Margin="25,176,355,191" Foreground="#FF373434" FontSize="22" Grid.Column="0" FontWeight="Bold" RenderTransformOrigin="-0.075,0.585">Sprat</Label>
+            <TextBox Foreground="#FF373434" Name="spratTxt" Width="200" Text="{Binding Room.Floor}" Margin="257,176,23,198" FontSize="18"/>
+            <Label Margin="25,250,228,112"  Foreground="#FF373434" FontSize="22" Grid.Column="0" FontWeight="Bold">Kapacitet prostorije</Label>
+            <TextBox  Foreground="#FF373434" Name="kapacitetTxt" Text="{Binding Room.Capacity}" Width="200" Margin="257,250,23,126" RenderTransformOrigin="0.578,-0.227" FontSize="18"/>
+            <Button Foreground="#FF373434" Margin="25,336,344,34" Content="Potvrdi" Grid.Column="0" Click="izmenaProstorije" Background="#FFFFC800" FontSize="18" FontWeight="Bold" RenderTransformOrigin="-0.602,0.503">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button Foreground="#FF373434" Margin="353,336,23,34" Background="#FFFFC800" Content="Odustani" Click="odustani" RenderTransformOrigin="0.363,-0.605" FontSize="18" FontWeight="Bold">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
         </Grid>
     </Grid>
 </UserControl>

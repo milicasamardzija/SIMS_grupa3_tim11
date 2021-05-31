@@ -4,17 +4,25 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hospital"
-             mc:Ignorable="d" Background="AliceBlue" Height="424" Width="463">
+             mc:Ignorable="d" Background="#FFDFD7BB" Height="424" Width="463">
     <Grid>
-        <Label Content="Ime" HorizontalAlignment="Left" Margin="30,85,0,0" VerticalAlignment="Top" Height="50" Width="64" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Tip" HorizontalAlignment="Left" Margin="30,19,0,0" VerticalAlignment="Top" Height="54" Width="92" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Kolicina" HorizontalAlignment="Left" Margin="17,163,0,0" VerticalAlignment="Top" Height="53" Width="110" FontSize="24" RenderTransformOrigin="0.512,0.925" FontWeight="Bold"/>
-        <TextBox Name="KolicinaTxt" HorizontalAlignment="Left" Height="53" Margin="180,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244"/>
-        <TextBox Name="ImeTxt" HorizontalAlignment="Left" Height="50" Margin="180,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244"/>
-        <Button Background="LightBlue" Content="Premesti" HorizontalAlignment="Left" Margin="30,335,0,0" VerticalAlignment="Top" Width="132" FontSize="24" Height="62" FontWeight="Bold" Click="premesti"/>
-        <Button Background="LightBlue" Content="Odustani" HorizontalAlignment="Left" Margin="300,335,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="1.7,10.906" FontSize="24" Height="62" FontWeight="Bold" Click="odustani"/>
-        <Label Content="Broj prostorije" HorizontalAlignment="Left" Margin="17,234,0,0" VerticalAlignment="Top" Height="53" Width="177" FontSize="24" RenderTransformOrigin="0.512,0.925" FontWeight="Bold"/>
-        <TextBox Name="IdSobeTxt"  HorizontalAlignment="Left" Height="52" Margin="347,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"/>
+        <Label Foreground="#FF373434" Content="Ime" HorizontalAlignment="Left" Margin="17,85,0,0" VerticalAlignment="Top" Height="50" Width="64" FontSize="24" FontWeight="Bold"/>
+        <Label Foreground="#FF373434" Content="Tip" HorizontalAlignment="Left" Margin="17,19,0,0" VerticalAlignment="Top" Height="54" Width="92" FontSize="24" FontWeight="Bold"/>
+        <Label Foreground="#FF373434" Content="Kolicina" HorizontalAlignment="Left" Margin="17,163,0,0" VerticalAlignment="Top" Height="53" Width="110" FontSize="24" RenderTransformOrigin="0.512,0.925" FontWeight="Bold"/>
+        <TextBox Foreground="#FF373434" Name="KolicinaTxt" HorizontalAlignment="Left" Height="53" Margin="180,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244"/>
+        <TextBox Foreground="#FF373434" Name="ImeTxt" HorizontalAlignment="Left" Height="50" Margin="180,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244"/>
+        <Button Background="#FFFFC800" Foreground="#FF373434" Content="Premesti" HorizontalAlignment="Left" Margin="30,352,0,0" VerticalAlignment="Top" Width="132" FontSize="24" Height="45" FontWeight="Bold" Click="premesti">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Background="#FFFFC800" Foreground="#FF373434" Content="Odustani" HorizontalAlignment="Left" Margin="300,352,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="1.7,10.906" FontSize="24" Height="45" FontWeight="Bold" Click="odustani">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Label Foreground="#FF373434" Content="Broj prostorije" HorizontalAlignment="Left" Margin="17,235,0,0" VerticalAlignment="Top" Height="53" Width="177" FontSize="24" RenderTransformOrigin="0.512,0.925" FontWeight="Bold"/>
+        <TextBox Foreground="#FF373434" Name="IdSobeTxt"  HorizontalAlignment="Left" Height="52" Margin="347,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"/>
         <ComboBox Name="TypeTxt" HorizontalAlignment="Left" Margin="180,19,0,0" VerticalAlignment="Top" Width="244" Height="41">
             <ComboBoxItem IsSelected="True">STATICKI</ComboBoxItem>
             <ComboBoxItem IsSelected="True">DINAMICKI</ComboBoxItem>

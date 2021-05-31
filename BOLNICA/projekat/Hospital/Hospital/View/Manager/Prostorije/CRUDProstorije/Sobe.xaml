@@ -23,7 +23,7 @@
                       AutoGenerateColumns="False"
                       SelectionMode="Single"
                       IsReadOnly="True"
-                      ItemsSource="{Binding Path = Rooms}" Background="#FFEDDCA0" RowBackground="#FFEDDCA0" Foreground="#FF373434" FontSize="16">
+                      ItemsSource="{Binding Path = Rooms}" Background="#FFDFD7BB" RowBackground="#FFDFD7BB" Foreground="#FF373434" FontSize="16">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="BROJ" Width="150" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="NAMENA" Width="190" Binding="{Binding Purpose}"/>

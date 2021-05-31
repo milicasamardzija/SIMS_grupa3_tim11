@@ -19,7 +19,7 @@
         <DataGrid Name="Obavestenja"
                       Margin="34,134,434,139"
                       Grid.Column="0"
-                      Background="#FFEDDCA0" RowBackground="#FFEDDCA0" Foreground="#FF373434" FontSize="16"
+                      Background="#FFDFD7BB" RowBackground="#FFDFD7BB" Foreground="#FF373434" FontSize="16"
                       AutoGenerateColumns="False"
                       SelectionMode="Single"
                       IsReadOnly="True"
