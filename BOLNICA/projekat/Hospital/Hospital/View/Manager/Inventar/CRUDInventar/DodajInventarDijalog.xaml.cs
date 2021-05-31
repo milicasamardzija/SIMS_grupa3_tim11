@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -37,8 +38,13 @@ namespace Hospital
             this.frame = frame;
             this.inventories = inventories;
             this.inventoryController = new InventoryController();
+            addType();
         }
 
+        private void addType()
+        {
+            TypeTxt.ItemsSource = Enum.GetValues((typeof(InventoryType)));
+        }
 
         private void odustani(object sender, RoutedEventArgs e)
         {

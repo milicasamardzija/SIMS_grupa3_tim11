@@ -22,9 +22,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <ComboBox Name="TypeTxt" HorizontalAlignment="Left" Margin="180,41,0,0" VerticalAlignment="Top" Width="244" Height="41" FontSize="18">
-            <ComboBoxItem IsSelected="True" >STATICKI</ComboBoxItem>
-            <ComboBoxItem >DINAMICKI</ComboBoxItem>
+        <ComboBox Name="TypeTxt" SelectedValue="{Binding Path=Inventory.Type , UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="180,41,0,0" VerticalAlignment="Top" Width="244" Height="41" FontSize="18">
         </ComboBox>
     </Grid>
 </UserControl>

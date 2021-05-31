@@ -39,6 +39,11 @@ namespace Hospital
             this.index = index;
             this.controller = new InventoryController();
             this.inventory = inventory;
+            addType();
+        }
+        private void addType()
+        {
+            TypeTxt.ItemsSource = Enum.GetValues((typeof(InventoryType)));
         }
         private void odustani(object sender, RoutedEventArgs e)
         {

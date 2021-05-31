@@ -23,8 +23,6 @@
             </Button.Effect>
         </Button>
         <ComboBox Name="TypeTxt" SelectedValue="{Binding Path=Inventory.Type, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Margin="180,41,0,0" VerticalAlignment="Top" Width="244" Height="41" FontSize="18">
-            <ComboBoxItem IsSelected="True">STATICKI</ComboBoxItem>
-            <ComboBoxItem IsSelected="True">DINAMICKI</ComboBoxItem>
         </ComboBox>
     </Grid>
 </UserControl>

@@ -41,8 +41,12 @@ namespace Hospital
             this.index = index;
             this.inventory = inventory;
             this.controller = new InventoryController();
+            addType();
         }
-
+        private void addType()
+        {
+            TypeTxt.ItemsSource = Enum.GetValues((typeof(InventoryType)));
+        }
         private void odustani(object sender, RoutedEventArgs e)
         {
            frame.NavigationService.Navigate(new BelsekaMagacin());
