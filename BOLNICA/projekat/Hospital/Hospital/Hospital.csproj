@@ -115,6 +115,9 @@
     <Compile Include="View\Doctor\BolnickoLecenje.xaml.cs">
       <DependentUpon>BolnickoLecenje.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Doctor\UpravljanjeBlogom.xaml.cs">
+      <DependentUpon>UpravljanjeBlogom.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Doctor\UvidUSobe.xaml.cs">
       <DependentUpon>UvidUSobe.xaml</DependentUpon>
     </Compile>
@@ -358,6 +361,10 @@
     <Page Include="View\Doctor\BolnickoLecenje.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Doctor\UpravljanjeBlogom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Doctor\UvidUSobe.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -1,6 +1,7 @@
 ﻿using Hospital.View.Doctor;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,9 @@ namespace Hospital
     /// </summary>
     public partial class EvidencijaLekar : Window
     {
+        public ObservableCollection<Notice> listNoticeDoctor { get; set; }
+        public int id;
+
         public EvidencijaLekar()
         {
             InitializeComponent();
@@ -47,6 +51,11 @@ namespace Hospital
         {
             this.Close();
         }
-        
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            UpravljanjeBlogom notices = new UpravljanjeBlogom(listNoticeDoctor, id);
+            notices.Show();
+        }
     }
 }

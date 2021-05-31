@@ -10,7 +10,7 @@ using System.ComponentModel;
 
 namespace Hospital.Model
 {
-    public class Checkup : Entity, INotifyPropertyChanged
+    public class Checkup : Entity
     {
         private DateTime date;
         private double duration;
