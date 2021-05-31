@@ -5,9 +5,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Hospital.Sekretar"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="PrioritetLekar"
+    Title="Prioritet lekar"
     Width="500"
-    Height="450"
+    Height="380"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
@@ -25,23 +25,28 @@
         <Label
             Grid.ColumnSpan="2"
             Width="193"
-            Margin="46,42,0,0"
+            Margin="46,30,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Izaberite zeljenog lekara "
+            Content="Izaberite zeljenog lekara: "
             FontFamily="Chooper Black Bold"
             FontSize="14"
-            Foreground="#FF0E18E7" />
+            FontWeight="Bold"
+            Foreground="#FF1B4C93"
+            RenderTransformOrigin="0.49,1.112" />
         <DataGrid
             x:Name="doktori"
             Grid.ColumnSpan="2"
             Width="403"
             Height="205"
-            Margin="0,96,44.6,0"
+            Margin="0,62,44.6,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
-            ItemsSource="{Binding listDoctors}">
+            Foreground="#FF1B4C93"
+            ItemsSource="{Binding listDoctors}"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="100"
@@ -65,22 +70,27 @@
 
         <Button
             Grid.Column="1"
-            Width="108"
+            Width="81"
             Height="32"
-            Margin="230.4,341,0,0"
+            Margin="257.6,299,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="getDoctorTerms"
-            Content="Pretrazi termin"
-            Cursor="Hand" />
+            Content="Pretrazi"
+            Cursor="Hand"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93"
+            RenderTransformOrigin="0.586,-0.266" />
         <Button
             Grid.ColumnSpan="2"
             Width="81"
             Height="32"
-            Margin="46,341,0,0"
+            Margin="46,299,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Decline"
-            Content="Odustani" />
+            Content="Odustani"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
     </Grid>
 </Window>

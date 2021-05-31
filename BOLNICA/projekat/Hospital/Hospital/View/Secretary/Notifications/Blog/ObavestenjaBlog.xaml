@@ -57,7 +57,8 @@
             RowHeight="30"
             ScrollViewer.HorizontalScrollBarVisibility="Hidden"
             ScrollViewer.VerticalScrollBarVisibility="Hidden"
-            TextElement.FontSize="14">
+            TextElement.FontSize="14"
+            TextElement.Foreground="#FF083F82">
 
             <DataGrid.Columns>
                 <DataGridTextColumn

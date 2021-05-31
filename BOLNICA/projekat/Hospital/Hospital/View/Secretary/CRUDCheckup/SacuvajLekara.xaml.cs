@@ -30,7 +30,8 @@ namespace Hospital.Sekretar
         public ObservableCollection<Patient> listPatient;
         public ObservableCollection<Doctor> listDoctor;
         public CheckupController controller;
-
+      //  public List<Checkup> terms;
+        
        
         public SacuvajLekara(ObservableCollection<Doctor> list, Doctor selectedDoctor, Patient patient)
         {
@@ -43,6 +44,7 @@ namespace Hospital.Sekretar
             doctor = selectedDoctor;
             idD = selectedDoctor.Id;
             doctorTerms.ItemsSource = loadCheckups(idD);
+            //terms = loadCheckups(idD);
           
             
         }

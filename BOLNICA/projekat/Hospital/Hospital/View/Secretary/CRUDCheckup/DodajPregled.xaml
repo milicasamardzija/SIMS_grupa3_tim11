@@ -81,9 +81,9 @@
             TextWrapping="Wrap" />-->
         <Button
             Grid.ColumnSpan="2"
-            Width="89"
-            Height="33"
-            Margin="44,365,0,0"
+            Width="95"
+            Height="34"
+            Margin="40,365,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="#FFF4EDED"
@@ -94,8 +94,8 @@
             TextElement.Foreground="#FF0C0D8B" />
         <Button
             Grid.Column="1"
-            Width="96"
-            Height="33"
+            Width="95"
+            Height="34"
             Margin="240.6,365,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -111,7 +111,7 @@
             x:Name="sviPacijenti"
             Grid.ColumnSpan="2"
             Width="407"
-            Height="239"
+            Height="264"
             Margin="40,74,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"

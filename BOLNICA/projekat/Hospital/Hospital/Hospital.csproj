@@ -1028,5 +1028,8 @@
   <ItemGroup>
     <Resource Include="View\Images\Button-White-Remove-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\Search-Add-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
