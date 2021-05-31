@@ -19,7 +19,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Button
-            Width="130"
+            Width="136"
             Height="38"
             Margin="44,56,0,0"
             HorizontalAlignment="Left"
@@ -30,9 +30,9 @@
             FontWeight="Bold"
             Foreground="#FF1B4C93" />
         <Button
-            Width="106"
+            Width="115"
             Height="38"
-            Margin="235,56,0,0"
+            Margin="249,56,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Button_Click"
@@ -42,34 +42,37 @@
             Foreground="#FF1B4C93" />
         <DataGrid
             Name="mojaObavestenja"
-            Width="521"
-            Height="196"
+            Width="520"
+            Height="229"
             Margin="44,124,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
             Background="Transparent"
+            Foreground="#FF083F82"
             ItemsSource="{Binding listNotification}"
-            RowHeight="40">
+            RowHeight="40"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Width="106"
+                    Width="110"
                     Binding="{Binding Date}"
                     Header="Datum prijema" />
                 <DataGridTextColumn
-                    Width="120"
+                    Width="150"
                     Binding="{Binding Title}"
                     Header="Naslov obavestenja" />
                 <DataGridTextColumn
-                    Width="300"
+                    Width="258"
                     Binding="{Binding Content}"
                     Header="Sadrzaj" />
             </DataGrid.Columns>
         </DataGrid>
         <Button
-            Width="127"
+            Width="133"
             Height="38"
-            Margin="400,56,0,0"
+            Margin="432,56,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Delete"
@@ -89,6 +92,6 @@
             Margin="584,44,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Source="logo-removebg-preview.png" />
+            Source="/Hospital;component/View/Images/logo-removebg-preview.png" />
     </Grid>
 </Page>

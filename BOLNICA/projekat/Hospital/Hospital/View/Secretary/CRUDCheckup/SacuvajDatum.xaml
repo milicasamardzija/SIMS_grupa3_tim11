@@ -5,9 +5,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Hospital.Sekretar"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="SacuvajDatum"
-    Width="408.815"
-    Height="351.156"
+    Title="Sacuvaj datum"
+    Width="360"
+    Height="300"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
@@ -24,20 +24,25 @@
         </Grid.Background>
         <Label
             Grid.ColumnSpan="2"
-            Margin="55,37,0,0"
+            Margin="28,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Lista slobodnih lekara" />
+            Content="Lista slobodnih lekara:"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
         <DataGrid
             Name="doctors"
             Grid.ColumnSpan="2"
             Width="296"
             Height="182"
-            Margin="55,68,0,0"
+            Margin="28,41,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
-            ItemsSource="{Binding listDoctors}">
+            Foreground="#FF1B4C93"
+            ItemsSource="{Binding listDoctors}"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="80"
@@ -46,9 +51,9 @@
                 <DataGridTextColumn
                     Width="90"
                     Binding="{Binding surname}"
-                    Header="prezime" />
+                    Header="Prezime" />
                 <DataGridTextColumn
-                    Width="100"
+                    Width="110"
                     Binding="{Binding SpecializationType}"
                     Header="Specijalizacija" />
             </DataGrid.Columns>
@@ -56,19 +61,25 @@
         <Button
             Grid.Column="1"
             Width="75"
-            Margin="186.4,277,0,0"
+            Height="32"
+            Margin="169.8,228,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="CreateCheckup"
-            Content="Sacuvaj termin" />
+            Content="Sacuvaj"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
         <Button
             Grid.ColumnSpan="2"
             Width="75"
-            Margin="55,277,0,0"
+            Height="32"
+            Margin="28,228,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Decline"
-            Content="odustani" />
+            Content="Odustani"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
 
     </Grid>
 </Window>

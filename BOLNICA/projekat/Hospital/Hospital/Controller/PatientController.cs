@@ -24,11 +24,13 @@ namespace Hospital.Controller
         {
             return patientService.loadBlockedPatients();
         }
+
         public void odblokirajPacijenta(PatientDTO patient)
         {
             patientService.odblokirajPacijenta(patient);
 
         }
+
 
 
         public List<PatientDTO> getAll()
@@ -39,6 +41,37 @@ namespace Hospital.Controller
                 patients.Add(new PatientDTO(patient.name, patient.surname, patient.telephoneNumber, patient.jmbg, patient.gender, patient.birthdayDate, patient.Id, patient.HealthCareCategory, patient.IdHealthCard, patient.Occupation, patient.Insurence, patient.adress,patient.banovan));
             }
             return patients;
+        }
+
+
+        public ObservableCollection<PatientDTO> loadGuests()
+        {
+            return patientService.loadGuests();
+        }
+
+        public ObservableCollection<PatientDTO> loadAllPatients()
+        {
+            return patientService.loadAllPatients();
+        }
+
+        public ObservableCollection<PatientDTO> loadRegistred()
+        {
+            return patientService.loadRegistred();
+        }
+
+        public void izmeniPacijenta(PatientDTO patient)
+        {
+            patientService.izmeniPacijenta(patient);
+        }
+
+        public void obrisiPacijenta(PatientDTO patient)
+        {
+            patientService.obrisiPacijenta(patient);
+        }
+        
+        public void save(PatientDTO newPatient)
+        {
+            patientService.save(newPatient);
         }
 
     }

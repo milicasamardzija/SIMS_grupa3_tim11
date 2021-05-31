@@ -5,9 +5,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Hospital.Sekretar"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="SacuvajLekara"
-    Width="350"
-    Height="400"
+    Title="Sacuvaj lekara"
+    Width="315"
+    Height="380"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
@@ -25,26 +25,29 @@
         <Label
             Width="53"
             Height="26"
-            Margin="76,34,0,0"
+            Margin="27,14,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Datum"
-            RenderTransformOrigin="0.216,2.498" />
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
         <DatePicker
             Name="date"
-            Width="102"
-            Height="23"
-            Margin="134,35,0,0"
+            Width="120"
+            Height="29"
+            Margin="97,15,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Focusable="False" />
         <Label
             Width="51"
             Height="26"
-            Margin="78,68,0,0"
+            Margin="29,51,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Vreme" />
+            Content="Vreme"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
         <!--  <ListBox
             x:Name="selectedTime"
             Width="100"
@@ -78,28 +81,30 @@
         </ListBox>-->
         <DataGrid
             x:Name="doctorTerms"
-            Width="276"
+            Width="249"
             Height="128"
-            Margin="27,188,0,0"
+            Margin="27,170,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            AutoGenerateColumns="False">
+            AutoGenerateColumns="False"
+            Foreground="Transparent"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden"
+            TextElement.Foreground="#FF1B4C93">
             <DataGrid.Columns>
-                <DataGridTextColumn
-                    Width="65"
-                    Binding="{Binding IdCh}"
-                    Header="Id termina" />
+
+
 
                 <DataGridTextColumn
-                    Width="105"
+                    Width="100"
                     Binding="{Binding Date}"
                     Header="Datum" />
                 <DataGridTextColumn
-                    Width="40"
+                    Width="65"
                     Binding="{Binding IdRoom}"
                     Header="Soba" />
                 <DataGridTextColumn
-                    Width="80"
+                    Width="75"
                     Binding="{Binding Duration}"
                     Header="Trajanje" />
             </DataGrid.Columns>
@@ -107,42 +112,53 @@
         <Label
             Width="74"
             Height="26"
-            Margin="78,99,0,0"
+            Margin="30,88,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Soba" />
+            Content="Soba"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
         <Label
-            Width="142"
+            Width="163"
             Height="26"
-            Margin="27,157,0,0"
+            Margin="29,139,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Svi zauzeti termini lekara:" />
+            Content="Svi zauzeti termini lekara:"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
         <ComboBox
             Name="listRooms"
-            Width="100"
-            Height="22"
-            Margin="136,106,0,0"
+            Width="120"
+            Height="29"
+            Margin="97,88,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top" />
         <Button
             Width="75"
-            Margin="228,326,0,0"
+            Height="32"
+            Margin="201,308,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="SaveCheckup"
-            Content="Sacuvaj" />
+            Content="Sacuvaj"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
         <Button
             Width="75"
-            Margin="27,326,0,0"
+            Height="32"
+            Margin="29,308,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Decline"
-            Content="Odustani" />
+            Content="Odustani"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
         <ComboBox
             Name="selectedTime"
-            Width="100"
-            Margin="136,68,0,0"
+            Width="120"
+            Height="29"
+            Margin="97,51,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem>07:00</ComboBoxItem>
@@ -151,13 +167,34 @@
             <ComboBoxItem>08:30</ComboBoxItem>
             <ComboBoxItem>09:00</ComboBoxItem>
             <ComboBoxItem>09:30</ComboBoxItem>
+            <ComboBoxItem>10:00</ComboBoxItem>
+            <ComboBoxItem>10:30</ComboBoxItem>
+            <ComboBoxItem>11:00</ComboBoxItem>
+            <ComboBoxItem>11:30</ComboBoxItem>
+            <ComboBoxItem>12:00</ComboBoxItem>
+            <ComboBoxItem>12:30</ComboBoxItem>
+            <ComboBoxItem>13:00</ComboBoxItem>
+            <ComboBoxItem>13:30</ComboBoxItem>
+            <ComboBoxItem>14:00</ComboBoxItem>
+            <ComboBoxItem>14:30</ComboBoxItem>
+            <ComboBoxItem>15:00</ComboBoxItem>
+            <ComboBoxItem>15:30</ComboBoxItem>
+            <ComboBoxItem>16:00</ComboBoxItem>
+            <ComboBoxItem>16:30</ComboBoxItem>
+            <ComboBoxItem>17:00</ComboBoxItem>
+            <ComboBoxItem>17:30</ComboBoxItem>
+
         </ComboBox>
         <Button
-            Width="75"
-            Margin="259,71,0,0"
+            Width="44"
+            Height="28"
+            Margin="232,52,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="Btn"
-            Content="nadji" />
+            Click="Btn">
+            <Button.Background>
+                <ImageBrush ImageSource="/Hospital;component/View/Images/Search-Add-icon.png" Stretch="None" />
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

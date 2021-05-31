@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.FileStorage.Interfaces
 {
-    interface IPatientFileStorage : GenericRepository<Patient>
+    public interface IPatientFileStorage : GenericRepository<Patient>
     {
     }
 }

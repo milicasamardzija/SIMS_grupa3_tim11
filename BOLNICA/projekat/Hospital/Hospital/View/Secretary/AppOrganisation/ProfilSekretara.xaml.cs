@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Hospital
+namespace Hospital.View.Secretary.AppOrganisation
 {
     /// <summary>
-    /// Interaction logic for Profil.xaml
+    /// Interaction logic for ProfilSekretara.xaml
     /// </summary>
-    public partial class MojProfil : Window
+    public partial class ProfilSekretara : Page
     {
-        public MojProfil()
+        public ProfilSekretara()
         {
             InitializeComponent();
         }

@@ -1,4 +1,6 @@
-﻿using Hospital.Model;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,81 +18,67 @@ using System.Windows.Shapes;
 
 namespace Hospital.Sekretar
 {
-    /// <summary>
-    /// Interaction logic for KreirajObavestenje.xaml
-    /// </summary>
+    
     public partial class KreirajObavestenje : Window
     {
         public DateTime date { get; set; } = DateTime.Now;
         public String person;
-        private NotificationsFileStorage storage;
-        public ObservableCollection<Notifications> listNotification { get; set; }
-        public ObservableCollection<Notifications> myTableUpdate;
+        public NotificationsController controller;
+        public ObservableCollection<NotificationsDTO> listNotification { get; set; }
+        public ObservableCollection<PatientDTO> listPatients { get; set; }
+        public ObservableCollection<NotificationsDTO> myTableUpdate;
+        public PatientDTO selectedPatient;
+        public PatientController patientController;
 
-        public KreirajObavestenje(ObservableCollection<Notifications> list)
+        public KreirajObavestenje(ObservableCollection<NotificationsDTO> list)
         {
             InitializeComponent();
-            storage = new NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
+            this.DataContext = this;
+            controller = new NotificationsController();
+            patientController = new PatientController();
             listNotification = loadNotifications();
+            listPatients = patientController.loadAllPatients();
             myTableUpdate = list;
         }
-        public int generisiId()
+  
+        public ObservableCollection<NotificationsDTO> loadNotifications()
         {
-            int ret = 0;
-
-            NotificationsFileStorage pfs = new NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
-            List<Notifications> allNotifications = pfs.GetAll();
-
-            ObservableCollection<Notifications> all = new ObservableCollection<Notifications>(allNotifications);
-
-            foreach (Notifications nId in all)
-            {
-                foreach (Notifications n in all)
-                {
-                    if (ret == n.Id)
-                    {
-                        ++ret;
-                        break;
-                    }
-                }
-            }
-            return ret;
-        }
-        public ObservableCollection<Notifications> loadNotifications()
-        {
-            NotificationsFileStorage nf = new NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
-            ObservableCollection<Notifications> n = new ObservableCollection<Notifications>(nf.GetAll());
-
-            return n;
-
+            ObservableCollection<NotificationsDTO> notifications = new ObservableCollection<NotificationsDTO>(controller.getAll());
+            return notifications;
         }
         private void SendBtn(object sender, RoutedEventArgs e)
         {
             if ((bool)upravnikCh.IsChecked)
             {
                 person = "Upravnik";
-                Notifications notification = new Notifications(title.Text, content.Text, date, generisiId(), person);
-                storage.Save(notification);
+                NotificationsDTO notification = new NotificationsDTO(title.Text, content.Text, date, 0, person);
+                controller.createNotification(notification);
 
             }
            else if ((bool)lekarCh.IsChecked)
                 {
                 person = "Lekar";
-                Notifications notification = new Notifications(title.Text, content.Text, date, generisiId(), person);
-                storage.Save(notification);
+                NotificationsDTO notification = new NotificationsDTO(title.Text, content.Text, date, 0, person);
+                controller.createNotification(notification);
             }
            else if ((bool)pacijentCh.IsChecked) {
                 person = "Pacijent";
-                Notifications notification = new Notifications(title.Text, content.Text, date, generisiId(), person);
-                storage.Save(notification);
+                NotificationsDTO notification = new NotificationsDTO(title.Text, content.Text, date, 0, person);
+                controller.createNotification(notification);
             }
            else if ((bool)sekretarCh.IsChecked)
             {
                 person = "Sekretar";
-                Notifications notification = new Notifications(title.Text, content.Text, date, generisiId(), person);
-                storage.Save(notification);
+                NotificationsDTO notification = new NotificationsDTO(title.Text, content.Text, date, 0, person);
+                controller.createNotification(notification);
                 myTableUpdate.Add(notification);
+            }else if (pacijenti.SelectedItem != null)
+                {
+                selectedPatient = (PatientDTO)pacijenti.SelectedItem;
+                NotificationsDTO notification = new NotificationsDTO(title.Text, content.Text, date, 0, person = "Pacijent", selectedPatient.Id);
+                controller.createNotificationForPatient(notification);
             }
+
             else
             {
                 MessageBox.Show("Oznacite kome saljete obavestenje");

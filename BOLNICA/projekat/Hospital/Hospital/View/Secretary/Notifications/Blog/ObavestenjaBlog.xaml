@@ -5,28 +5,35 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Hospital.Model"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="ObavestenjaBlog"
-    Width="450"
-    Height="450"
+    Title="Obavestenja na blogu"
+    Width="550"
+    Height="350"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid Margin="0,0,-6.4,0">
+    <Grid Margin="0,0,0,0">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Offset="0" Color="Gray" />
+                <GradientStop Offset="1" Color="White" />
+                <GradientStop Offset="0.094" Color="#FF2BACC5" />
+            </LinearGradientBrush>
+        </Grid.Background>
         <Button
             Width="90"
-            Height="34"
-            Margin="172,320,0,0"
+            Height="32"
+            Margin="226,261,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="obrisi"
-            Content="obrisi"
+            Content="Obrisi"
             Cursor="Hand"
             FontWeight="Bold"
             Foreground="#FF0852AE"
             TextElement.FontSize="14" />
         <Button
             Width="88"
-            Height="34"
-            Margin="45,320,0,0"
+            Height="32"
+            Margin="28,261,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="odustani"
@@ -37,17 +44,25 @@
             TextElement.FontSize="14" />
         <DataGrid
             Name="textBlog"
-            Width="389"
-            Height="191"
-            Margin="28,42,0,0"
+            Width="492"
+            Height="210"
+            Margin="28,23,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
+            Background="Transparent"
+            Foreground="#FF083F82"
+            HeadersVisibility="None"
             ItemsSource="{Binding listNotice}"
-            RowHeight="30">
+            RowHeight="30"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden"
+            TextElement.FontSize="14"
+            TextElement.Foreground="#FF083F82">
+
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Width="400"
+                    Width="490"
                     Binding="{Binding notice}"
                     Header="Sadrzaj zvanicnih obavestenja na blogu" />
 
@@ -56,8 +71,8 @@
         </DataGrid>
         <Button
             Width="80"
-            Height="28"
-            Margin="313,320,0,0"
+            Height="32"
+            Margin="440,261,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="dodaj"

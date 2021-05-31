@@ -28,33 +28,34 @@
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
             Background="#FFF0F0F0"
+            Foreground="#FF114C9F"
             ItemsSource="{Binding Path=listPatient}"
-            SelectionChanged="PrikazPacijenata_SelectionChanged">
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden"
+            SelectionChanged="PrikazPacijenata_SelectionChanged"
+            TextElement.FontFamily="Chooper Black"
+            TextElement.FontSize="12"
+            TextElement.Foreground="#FF0852AE">
 
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="115"
                     Binding="{Binding Name}"
-                    Header="IME" />
+                    Header="Ime" />
                 <DataGridTextColumn
                     Width="115"
                     Binding="{Binding Surname}"
-                    Header="PREZIME" />
+                    Header="Prezime" />
                 <DataGridTextColumn
                     Width="160"
                     Binding="{Binding Jmbg}"
-                    Header="JMBG" />
-
-                <DataGridTextColumn
-                    Width="120"
-                    Binding="{Binding banovan}"
-                    Header="STATUS PACIJENTA" />
+                    Header="Jmbg" />
             </DataGrid.Columns>
         </DataGrid>
         <Button
             Width="75"
-            Height="26"
-            Margin="126,330,0,0"
+            Height="32"
+            Margin="126,324,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="izmeniNalogPacijenta"
@@ -66,8 +67,8 @@
             TextElement.FontSize="14" />
         <Button
             Width="75"
-            Height="26"
-            Margin="337,330,0,0"
+            Height="32"
+            Margin="336,324,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="izbrisiNalogPacijenta"
@@ -79,8 +80,8 @@
             TextElement.FontSize="14" />
         <Button
             Width="75"
-            Height="26"
-            Margin="230,330,0,0"
+            Height="32"
+            Margin="230,324,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="addAlergents"
@@ -90,8 +91,8 @@
             TextElement.FontSize="14" />
         <Button
             Width="75"
-            Height="26"
-            Margin="20,330,0,0"
+            Height="32"
+            Margin="20,324,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="CancelBtn"
@@ -107,11 +108,11 @@
             Content="Pronadji pacijenta:"
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF08316B" />
+            Foreground="#FF0852AE" />
 
         <StackPanel
             Width="254"
-            Height="29"
+            Height="27"
             Margin="0,10,32,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top">

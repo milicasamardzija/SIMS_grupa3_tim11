@@ -5,52 +5,67 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hospital.Model
+namespace Hospital.DTO
 {
-   public class Notifications  : Entity, INotifyPropertyChanged
+    public class NotificationsDTO
     {
-    
         private String title;
         private String content;
         private DateTime date;
         private int idPatient;
         private String person;
+        private int id;
 
-        public Notifications() {}
+        public NotificationsDTO() { }
 
-        public Notifications(String t, String c, DateTime d, int id, String p) : base(id)
+        public NotificationsDTO(String t, String c, DateTime d, int id, String p)
         {
             this.title = t;
             this.content = c;
             this.date = d;
-            this.Id = id;
+            this.id = id;
             this.person = p;
-            this.idPatient = -1;
+            this.idPatient = -1; //nema ga
         }
-        public Notifications(String t, String c, DateTime d, int id, String p, int idPatient) : base(id)
+        public NotificationsDTO(String t, String c, DateTime d, int id, String p, int idP)
         {
             this.title = t;
             this.content = c;
             this.date = d;
-            this.idPatient = idPatient;
+            this.idPatient = id;
             this.person = p;
-            this.Id = id;
+            this.idPatient = idP;
         }
-         public int IdPatient
-          {
-              get
-              {
-                  return idPatient;
-              }
-              set
-              {
-                  if (value != idPatient)
-                  {
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                if (value != id)
+                {
+                    id = value;
+                    OnPropertyChanged("Id");
+                }
+            }
+        }
+        public int IdPatient
+        {
+            get
+            {
+                return idPatient;
+            }
+            set
+            {
+                if (value != idPatient)
+                {
                     idPatient = value;
-                      OnPropertyChanged("IdPatient");
-                  }
-              }
-          } 
+                    OnPropertyChanged("IdPatient");
+                }
+            }
+        }
         public DateTime Date
         {
             get
@@ -125,3 +140,4 @@ namespace Hospital.Model
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }
+

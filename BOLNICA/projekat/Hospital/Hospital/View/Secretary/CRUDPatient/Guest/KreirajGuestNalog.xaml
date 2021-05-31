@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:Hospital"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Kreiraj guest nalog"
-    Width="500"
+    Width="450"
     Height="400"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
@@ -23,46 +23,53 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Ime"
-            FontFamily="Segoe UI Semilight"
-            FontSize="15" />
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="#FF0852AE" />
         <Label
             Margin="40,54,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Prezime"
-            FontFamily="Segoe UI Semilight"
-            FontSize="15" />
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="#FF0852AE" />
         <Label
             Margin="40,89,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="JMBG"
-            FontSize="15" />
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="#FF0852AE" />
         <Label
             Margin="40,116,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Datum rodjenja"
-            FontFamily="Segoe UI Semilight"
-            FontSize="15" />
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="#FF0852AE" />
         <Label
-            Margin="50,151,0,0"
+            Margin="40,152,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Pol"
-            FontFamily="Segoe UI Semilight"
-            FontSize="15" />
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="#FF0852AE" />
         <Label
-            Margin="40,183,0,0"
+            Margin="40,184,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Broj telefona"
-            FontFamily="Segoe UI Semilight"
-            FontSize="15" />
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="#FF0852AE" />
 
         <TextBox
             x:Name="imeText"
-            Width="120"
+            Width="144"
             Height="23"
             Margin="200,26,0,0"
             HorizontalAlignment="Left"
@@ -71,7 +78,7 @@
             TextWrapping="Wrap" />
         <TextBox
             x:Name="prezimeText"
-            Width="120"
+            Width="144"
             Height="23"
             Margin="200,54,0,0"
             HorizontalAlignment="Left"
@@ -80,7 +87,7 @@
             TextWrapping="Wrap" />
         <TextBox
             x:Name="jmbgText"
-            Width="120"
+            Width="144"
             Height="23"
             Margin="200,89,0,0"
             HorizontalAlignment="Left"
@@ -90,7 +97,7 @@
 
         <TextBox
             x:Name="brojTelText"
-            Width="120"
+            Width="144"
             Height="23"
             Margin="200,183,0,0"
             HorizontalAlignment="Left"
@@ -98,19 +105,20 @@
             Text=""
             TextWrapping="Wrap" />
         <Button
-            Width="75"
-            Margin="387,335,0,0"
+            Width="80"
+            Height="32"
+            Margin="286,300,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="kreirajGuest"
             Content="Sacuvaj"
             Cursor="Hand"
-            FontFamily="Cooper Black"
             FontSize="14"
+            FontWeight="Bold"
             Foreground="#FF0852AE" />
         <ComboBox
             x:Name="pol"
-            Width="120"
+            Width="144"
             Margin="200,154,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
@@ -120,35 +128,39 @@
             <ComboBoxItem>Zenski</ComboBoxItem>
         </ComboBox>
         <Button
-            Width="75"
-            Margin="40,335,0,0"
+            Width="80"
+            Height="32"
+            Margin="50,300,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="odustani"
             Content="Odustani"
             Cursor="Hand"
-            FontFamily="Cooper Black"
+            FontSize="14"
+            FontWeight="Bold"
             Foreground="#FF0852AE" />
         <Label
-            Margin="50,225,0,0"
+            Margin="40,225,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Krvna grupa"
-            FontSize="14" />
-
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="#FF0852AE" />
+        <!--
         <Label
             Margin="50,265,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Alergeni"
-            FontSize="14" />
+            FontSize="14" />-->
         <ComboBox
             x:Name="krvnaGrupa"
-            Width="120"
+            Width="144"
             Margin="200,225,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
-            <ComboBoxItem IsSelected="True">
+            <ComboBoxItem>
                 AB
             </ComboBoxItem>
             <ComboBoxItem>
@@ -163,17 +175,18 @@
         </ComboBox>
         <DatePicker
             Name="datum"
-            Margin="200,120,173.6,0"
+            Margin="200,120,99.2,0"
             VerticalAlignment="Top"
+            Focusable="True"
             IsTodayHighlighted="True" />
-        <Button
-            Width="75"
-            Margin="221,265,0,0"
+        <!--  <Button
+            Width="120"
+            Margin="200,265,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Dodaj"
-            FontFamily="Cooper Black"
-            Foreground="#FF0852AE" />
+            FontWeight="Bold"
+            Foreground="#FF0852AE" Height="17" />-->
 
     </Grid>
 </Window>

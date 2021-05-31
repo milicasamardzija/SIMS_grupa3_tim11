@@ -56,7 +56,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
   </ItemGroup>
-  <ItemGroup>
+  <ItemGroup> 
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -65,21 +65,38 @@
     <Compile Include="Controller\FunctionalityController.cs" />
     <Compile Include="Controller\IngredientController.cs" />
     <Compile Include="Controller\MedicalRecordController.cs" />
+
+    <Compile Include="Controller\NotificationsController.cs" />
+    <Compile Include="Controller\PatientController1.cs" />
+
     <Compile Include="Controller\SurveyController.cs" />
     <Compile Include="Controller\MedicineReviewController.cs" />
     <Compile Include="Controller\RoomInventoryController.cs" />
     <Compile Include="Controller\RoomRenovationController.cs" />
     <Compile Include="Controller\StaticInventoryMovementController.cs" />
+
     <Compile Include="DTO\FunkcionalityDTO.cs" />
     <Compile Include="DTO\IngredientDTO.cs" />
+
+    <Compile Include="DTO\AlergensDTO.cs" />
+
     <Compile Include="DTO\InventoryDTO.cs" />
+    <Compile Include="DTO\MedicalRecordDTO.cs" />
     <Compile Include="DTO\MedicineDTO.cs" />
+
     <Compile Include="DTO\ReviewDTO.cs" />
+
+    <Compile Include="DTO\MedicineReviewDTO.cs" />
+    <Compile Include="DTO\NotificationsDTO.cs" />
+
     <Compile Include="DTO\RoomInventoryDTO.cs" />
     <Compile Include="DTO\RoomRenovationDTO.cs" />
     <Compile Include="Controller\PatientController.cs" />
     <Compile Include="DTO\PatientDTO.cs" />
+
     <Compile Include="DTO\SurveyDTO.cs" />
+
+
     <Compile Include="FileStorage\Interfaces\IAlergensFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IAnamnesisFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\ICheckFileStorage.cs" />
@@ -96,12 +113,20 @@
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
+
     <Compile Include="Model\Note.cs" />
     <Compile Include="Model\Medicine\Review.cs" />
+
+
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\FunctionalityService.cs" />
     <Compile Include="Service\IngredientService.cs" />
     <Compile Include="Service\MedicalRecordService.cs" />
+
+
+    <Compile Include="Service\NotificationsService.cs" />
+    <Compile Include="Service\PatientService1.cs" />
+
     <Compile Include="Service\SurveyService.cs" />
     <Compile Include="Service\MedicineReviewService.cs" />
     <Compile Include="Service\RoomInventoryService.cs" />
@@ -207,6 +232,9 @@
     <Compile Include="View\Pacijent\ZdravstveniKarton.xaml.cs">
       <DependentUpon>ZdravstveniKarton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Secretary\AppOrganisation\ProfilSekretara.xaml.cs">
+      <DependentUpon>ProfilSekretara.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Secretary\CRUDPatient\RegistredPatient\BlokiraniPacijenti.xaml.cs">
       <DependentUpon>BlokiraniPacijenti.xaml</DependentUpon>
     </Compile>
@@ -253,7 +281,7 @@
     <Compile Include="View\Secretary\Alergens\Alergeni.xaml.cs">
       <DependentUpon>Alergeni.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Secretary\Notifications\SvaObavestenja.xaml.cs">
+    <Compile Include="View\Secretary\AppOrganisation\SvaObavestenja.xaml.cs">
       <DependentUpon>SvaObavestenja.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Secretary\CRUDCheckup\DodajPregled.xaml.cs">
@@ -605,6 +633,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Secretary\AppOrganisation\ProfilSekretara.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Secretary\CRUDPatient\RegistredPatient\BlokiraniPacijenti.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -657,7 +689,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Secretary\Notifications\SvaObavestenja.xaml">
+    <Page Include="View\Secretary\AppOrganisation\SvaObavestenja.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1077,6 +1109,12 @@
     <Resource Include="View\Images\Manager\edit-32.png" />
     <Resource Include="View\Images\Manager\plus-32.png" />
     <Resource Include="View\Images\Manager\trash-2-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\Search-Add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Secretary\AppOrganisation\profile-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

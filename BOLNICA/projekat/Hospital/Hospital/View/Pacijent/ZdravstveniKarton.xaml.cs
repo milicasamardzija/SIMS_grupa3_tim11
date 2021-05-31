@@ -53,7 +53,7 @@ namespace Hospital.View.Pacijent
                         jmbg.Text = patient.Jmbg;
 
                         broj.Text = record.IdHealthCard.ToString();
-                        grupa.Text = record.bloodType.ToString();
+                        grupa.Text = record.BloodType.ToString();
                         date = record.birthdayDate.Date;
 
                         datum.Text = date.ToString();

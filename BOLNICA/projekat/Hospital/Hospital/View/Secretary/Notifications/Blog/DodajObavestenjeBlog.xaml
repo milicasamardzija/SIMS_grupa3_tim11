@@ -5,8 +5,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Hospital.Sekretar"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="DodajObavestenjeBlog"
-    Width="350"
+    Title="Dodaj obavestenje na blog"
+    Width="330"
     Height="300"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
@@ -20,23 +20,24 @@
         </Grid.Background>
         <TextBox
             Name="sadrzaj"
-            Width="248"
+            Width="257"
             Height="114"
-            Margin="40,55,0,0"
+            Margin="31,55,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
         <Label
-            Margin="40,24,0,0"
+            Margin="31,26,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Sadrzaj"
+            Content="Sadrzaj:"
             FontSize="14"
             FontWeight="Bold"
             Foreground="#FF1B4C93" />
         <Button
             Width="75"
+            Height="32"
             Margin="213,206,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -47,7 +48,8 @@
             Foreground="#FF1B4C93" />
         <Button
             Width="75"
-            Margin="40,206,0,0"
+            Height="32"
+            Margin="31,206,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Ne"

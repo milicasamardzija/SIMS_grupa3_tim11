@@ -11,6 +11,7 @@ using System.Threading.Tasks;
     {
     private String name;
     private String code;
+   
 
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -19,6 +20,7 @@ using System.Threading.Tasks;
     public Alergens(String n, String c)  {
         this.name = n;
         this.code = c;
+        this.Id = 0;
     }
 
     protected virtual void OnPropertyChanged(string name)

@@ -44,7 +44,25 @@ namespace Hospital.DTO
 
         }
 
+        public PatientDTO(String i, String p, String br, String jmbgG, Gender pol, DateTime datR, int id)
+        {
+            this.name = i;
+            this.surname = p;
+            this.telephoneNumber = br;
+            this.jmbg = jmbgG;
+            this.gender = pol;
+            this.birthdayDate = datR;
+            //   this.patientId = idP;
+            this.Id = id;
 
+
+            this.guest = true;
+
+        }
+
+        public PatientDTO()
+        {
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

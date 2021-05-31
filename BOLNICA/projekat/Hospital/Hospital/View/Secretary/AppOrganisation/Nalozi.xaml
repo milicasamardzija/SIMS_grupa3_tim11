@@ -64,6 +64,7 @@
                 </MenuItem.Background>
             </MenuItem>
             <MenuItem
+                Click="profil"
                 FontSize="16"
                 FontWeight="Bold"
                 Header="     MOJ PROFIL"
