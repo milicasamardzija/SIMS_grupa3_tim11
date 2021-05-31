@@ -1,4 +1,5 @@
 ﻿using Hospital.DTO;
+using Hospital.FileStorage.Interfaces;
 using Hospital.Model;
 using Hospital.Service;
 using System;
@@ -29,6 +30,6 @@ namespace Hospital.Controller
             }
             return medicines;
         }
-        
+       
     }
 }

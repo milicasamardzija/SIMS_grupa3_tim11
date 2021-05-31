@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using Hospital.DTO;
+using Hospital.FileStorage.Interfaces;
 
 namespace Hospital.Service
 {
@@ -22,5 +23,24 @@ namespace Hospital.Service
           {
               return medicineStorage.GetAll();
           }
+
+        public int generateIdMedicine()
+        {
+            int returnMedicine = 0;
+            MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
+            ObservableCollection<Medicine> all = new ObservableCollection<Medicine>(storage.GetAll());
+            foreach (Medicine medicine in all)
+            {
+                foreach (Medicine medicines in all)
+                {
+                    if (returnMedicine == medicines.Id)
+                    {
+                        ++returnMedicine;
+                        break;
+                    }
+                }
+            }
+            return returnMedicine;
+        }
     }
 }

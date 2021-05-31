@@ -26,8 +26,8 @@ namespace Hospital
     {
 
         public ObservableCollection<Ingredient> DataIngredient { get; set; }
-        public ObservableCollection<Medicine> DataMedicine { get; set; }
-        public MedicineController controller = new MedicineController();
+        public ObservableCollection<MedicineDTO> DataMedicine { get; set; }
+        public MedicineController1 controller = new MedicineController1();
 
         public ObservableCollection<MedicineDTO> medicineList;
         public MedicineDTO medicine;
@@ -41,7 +41,7 @@ namespace Hospital
             medicine = selectedMedicine;
             indexMedicine = selectedIndex;
             DataIngredient = loadIngredient();
-            DataMedicine = loadMedicine();
+            DataMedicine = new ObservableCollection<MedicineDTO>(controller.getAll());
 
             nazivLText.SelectedText = Convert.ToString(selectedMedicine.Name);
             gramazaLText.SelectedText = Convert.ToString(selectedMedicine.Quantity);
@@ -56,18 +56,6 @@ namespace Hospital
             foreach (Ingredient ingredient in ingredients)
             {
                 ret.Add(ingredient);
-            }
-            return ret;
-        }
-
-        public ObservableCollection<Medicine> loadMedicine()
-        {
-            MedicineIFileStorage storage = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
-            ObservableCollection<Medicine> medicines = new ObservableCollection<Medicine>(storage.GetAll());
-            ObservableCollection<Medicine> ret = new ObservableCollection<Medicine>();
-            foreach (Medicine medicine in medicines)
-            {
-                ret.Add(medicine);
             }
             return ret;
         }
@@ -96,8 +84,8 @@ namespace Hospital
             List<int> ingredients = new List<int>();
             List<int> medicines = new List<int>();
 
-            //medicineList[indexMedicine] = new Medicine(generateIdMedicine(), Convert.ToString(nazivLText.Text), Convert.ToDouble(gramazaLText.Text),
-            //    Convert.ToString(vrstaLText.Text), ingredients, medicines, true);
+            medicineList[indexMedicine] = new MedicineDTO(generateIdMedicine(), Convert.ToString(nazivLText.Text), Convert.ToDouble(gramazaLText.Text),
+                Convert.ToString(vrstaLText.Text), ingredients, medicines, true);
 
             this.Close();
         }
