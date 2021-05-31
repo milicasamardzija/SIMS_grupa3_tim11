@@ -38,7 +38,8 @@
             </Button.Effect>
         </Button>
         <Button Click="unazad" Background="#FFFFC800" HorizontalAlignment="Left" Margin="34,507,0,0" VerticalAlignment="Top" Width="113" Height="65" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54">
-           
+            <Image Source="./../../../Images/Manager/left-64.png">
+            </Image>
         </Button>
     </Grid>
 </UserControl>

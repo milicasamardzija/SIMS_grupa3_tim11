@@ -47,9 +47,8 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Click="unazad" Background="#ffc800" HorizontalAlignment="Left" Margin="69,564,0,0" VerticalAlignment="Top" Width="133" Height="43" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54">
-            <Image Source="/Sekretar/Arrow-Left-icon.png" RenderTransformOrigin="0.5,0.5">
-                
+        <Button Click="unazad" Background="#ffc800" HorizontalAlignment="Left" Margin="69,556,0,0" VerticalAlignment="Top" Width="133" Height="51" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54">
+            <Image Source="./../../../Images/Manager/left-64.png">
             </Image>
         </Button>
         <Button Background="#ffc800"  Foreground="#FF373434" Content="Izmeni lek" HorizontalAlignment="Left" Margin="373,482,0,0" VerticalAlignment="Top" Width="139" Height="47" FontSize="24" FontWeight="Bold" Click="posaljiOpet" RenderTransformOrigin="0.426,2.251">

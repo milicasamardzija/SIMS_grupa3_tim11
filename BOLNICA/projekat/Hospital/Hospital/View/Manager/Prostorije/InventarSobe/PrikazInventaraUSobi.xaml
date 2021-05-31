@@ -39,7 +39,7 @@
         <Label Foreground="#FF373434" Content="  Unesite naziv, vrstu ili kolicinu opreme:" HorizontalAlignment="Left" Margin="86,91,0,0" VerticalAlignment="Top" Width="325" FontSize="16" FontWeight="Bold"/>
         <TextBox x:Name="PretragaTxt" HorizontalAlignment="Left" Height="54" Margin="98,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" TextChanged="PretragaTxt_TextChanged" UndoLimit="102" AutomationProperties.HelpText="Unesite zeljeni naziv/kolicinu/tip" FontSize="18" FontWeight="Bold" />
         <Button Click="unazad" Background="#FFFFC800" HorizontalAlignment="Left" Margin="86,244.3,0,0" VerticalAlignment="Top" Width="113" Height="65" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54" Grid.Row="1">
-            <Image Source="/Sekretar/Arrow-Left-icon.png">
+            <Image Source="./../../../Images/Manager/left-64.png">
             </Image>
         </Button>
     </Grid>

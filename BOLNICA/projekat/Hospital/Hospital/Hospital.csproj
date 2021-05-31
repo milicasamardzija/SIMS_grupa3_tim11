@@ -372,7 +372,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pacijent\ObavljeniPregledi.xaml">
-    <SubType>Designer</SubType>
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Prostorije\RenoviranjeProstorije\Renoviranje.xaml">
@@ -1077,6 +1077,10 @@
     <Resource Include="View\Images\Manager\edit-32.png" />
     <Resource Include="View\Images\Manager\plus-32.png" />
     <Resource Include="View\Images\Manager\trash-2-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\Manager\left-48.png" />
+    <Resource Include="View\Images\Manager\left-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
