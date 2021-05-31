@@ -54,7 +54,12 @@ namespace Hospital.Service
 
         public ObservableCollection<PatientDTO> loadAllPatients()
         {
-            ObservableCollection<PatientDTO> allPatients = new ObservableCollection<PatientDTO>((IEnumerable<PatientDTO>)patientStorage.GetAll());
+            ObservableCollection<PatientDTO> allPatients = new ObservableCollection<PatientDTO>();
+            List<Patient> loaded = patientStorage.GetAll();
+            foreach(Patient p in loaded)
+            {
+                allPatients.Add(new PatientDTO(p.name, p.surname, p.TelephoneNumber, p.Jmbg, p.Gender, p.BirthdayDate, p.Id, p.HealthCareCategory, p.IdHealthCard, p.Occupation, p.Insurence, p.adress, p.banovan));
+            }
             return allPatients;
         }
 

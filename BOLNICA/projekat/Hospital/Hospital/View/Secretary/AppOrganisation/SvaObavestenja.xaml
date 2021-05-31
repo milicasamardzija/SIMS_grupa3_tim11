@@ -42,7 +42,7 @@
             Foreground="#FF1B4C93" />
         <DataGrid
             Name="mojaObavestenja"
-            Width="521"
+            Width="520"
             Height="229"
             Margin="44,124,0,0"
             HorizontalAlignment="Left"
@@ -56,15 +56,15 @@
             ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Width="106"
+                    Width="110"
                     Binding="{Binding Date}"
                     Header="Datum prijema" />
                 <DataGridTextColumn
-                    Width="120"
+                    Width="150"
                     Binding="{Binding Title}"
                     Header="Naslov obavestenja" />
                 <DataGridTextColumn
-                    Width="300"
+                    Width="258"
                     Binding="{Binding Content}"
                     Header="Sadrzaj" />
             </DataGrid.Columns>

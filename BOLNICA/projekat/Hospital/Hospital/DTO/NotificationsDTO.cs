@@ -36,6 +36,21 @@ namespace Hospital.DTO
             this.person = p;
             this.idPatient = idP;
         }
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                if (value != id)
+                {
+                    id = value;
+                    OnPropertyChanged("Id");
+                }
+            }
+        }
         public int IdPatient
         {
             get

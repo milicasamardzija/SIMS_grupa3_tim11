@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Hospital.Service
 {
-   public class NotificationsService
+    public class NotificationsService
     {
 
-        public INotificationsFileStorage storageNotifications= new  NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
+        public INotificationsFileStorage storageNotifications = new NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
         public IPatientFileStorage storagePatients = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
         public NotificationsService()
         {
@@ -44,6 +44,25 @@ namespace Hospital.Service
         public List<Notifications> getAll()
         {
             return storageNotifications.GetAll();
+        }
+
+        public ObservableCollection<Notifications> loadNotificationsByPerson(String person)
+        {
+            ObservableCollection<Notifications> notifications = storageNotifications.FindByPerson(person);
+            return notifications;
+        }
+
+        public void deleteNotification(Notifications notification)
+        {
+             storageNotifications.Delete(notification);
+        } 
+        public void createNotification(Notifications notifications)
+        {
+            storageNotifications.Save(notifications);
+        }
+        public void createNotificationForPatient(Notifications notifications)
+        {
+            storageNotifications.Save(notifications);
         }
     }
 

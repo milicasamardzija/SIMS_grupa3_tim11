@@ -1,4 +1,6 @@
-﻿using Hospital.Model;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using Hospital.Model;
 using Hospital.Sekretar;
 using System;
 using System.Collections.Generic;
@@ -21,21 +23,22 @@ namespace Hospital
   
     public partial class SvaObavestenja : Page
     {
-        public ObservableCollection<Notifications> listNotification { get; set; }
+        public ObservableCollection<NotificationsDTO> listNotification { get; set; }
+        public NotificationsController controller;
         public SvaObavestenja()
         {
             InitializeComponent();
             this.DataContext = this;
+            controller = new NotificationsController();
             listNotification = loadMyNotifications("Sekretar");
           
         }
   
  
-      private ObservableCollection<Notifications> loadMyNotifications(String person)
+      private ObservableCollection<NotificationsDTO> loadMyNotifications(String person)
         {
-            NotificationsFileStorage nfs = new NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
-            ObservableCollection<Notifications> notes = new ObservableCollection<Notifications>(nfs.FindByPerson(person));
-            return notes;
+           
+            return controller.loadNotificationsByPerson(person);
         }
 
 
@@ -56,7 +59,7 @@ namespace Hospital
         {
             if (mojaObavestenja.SelectedIndex != -1)
             {
-                ObrisiObavestenje nepotrebno = new ObrisiObavestenje(listNotification, (Notifications)mojaObavestenja.SelectedItem, mojaObavestenja.SelectedIndex);
+               ObrisiObavestenje nepotrebno = new ObrisiObavestenje(listNotification, (NotificationsDTO)mojaObavestenja.SelectedItem, mojaObavestenja.SelectedIndex);
                 nepotrebno.Show();
             } else
             {

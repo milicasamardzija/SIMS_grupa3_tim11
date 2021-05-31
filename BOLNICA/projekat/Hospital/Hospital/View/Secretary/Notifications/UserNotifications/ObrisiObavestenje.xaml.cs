@@ -1,4 +1,6 @@
-﻿using Hospital.Model;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,13 +23,15 @@ namespace Hospital.Sekretar
     /// </summary>
     public partial class ObrisiObavestenje : Window
     {
-       public ObservableCollection<Notifications> listN { get; set; }
-        public Notifications delete;
+        public ObservableCollection<NotificationsDTO> listN { get; set; }
+        public NotificationsDTO delete;
+        public NotificationsController controller;
         public int index;
         public int id;
-        public ObrisiObavestenje(ObservableCollection<Notifications> list, Notifications notification, int sel)
+        public ObrisiObavestenje(ObservableCollection<NotificationsDTO> list, NotificationsDTO notification, int sel)
         {
             InitializeComponent();
+            controller = new NotificationsController();
             listN = list;
             index = sel;
             delete = notification;
@@ -36,8 +40,7 @@ namespace Hospital.Sekretar
 
         private void Yes(object sender, RoutedEventArgs e)
         {
-            NotificationsFileStorage nfs = new NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
-            nfs.Delete(delete);
+            controller.deleteNotification(delete);
             listN.RemoveAt(index);
             this.Close();
         }
