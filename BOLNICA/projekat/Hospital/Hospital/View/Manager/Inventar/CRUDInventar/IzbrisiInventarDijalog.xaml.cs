@@ -25,9 +25,15 @@ namespace Hospital
         private int index;
         private InventoryController controller;
         private InventoryDTO inventory;
+        public InventoryDTO Inventory
+        {
+            get { return inventory;}
+            set { inventory = value; }
+        }
         public IzbrisiInventarDijalog(Frame frame,ObservableCollection<InventoryDTO> inventories, InventoryDTO inventory, int index)
         {
             InitializeComponent();
+            this.DataContext = this;
             this.frame = frame;
             this.inventories = inventories;
             this.index = index;

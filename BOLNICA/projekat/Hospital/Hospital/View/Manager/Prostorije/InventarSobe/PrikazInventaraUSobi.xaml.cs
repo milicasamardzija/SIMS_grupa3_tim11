@@ -35,6 +35,7 @@ namespace Hospital
             this.frame = frame;
             this.room = room;
             inventories = new ObservableCollection<InventoryDTO>(inventoryController.getInventoryForRoom(room.Id));
+            ListaInventara.ItemsSource = inventoryController.getInventoryForRoom(room.Id);
             InventarPemesti.NavigationService.Navigate(new BelsekaMagacin());
         }
 
@@ -59,7 +60,7 @@ namespace Hospital
         {
             if (PretragaTxt.Text.Equals(""))
             {
-                ListaInventara.ItemsSource = inventoryController.getAll();
+                ListaInventara.ItemsSource = inventoryController.getInventoryForRoom(room.Id);
             } else //fali pretraga za tip i kolicinu
             {
                 ListaInventara.ItemsSource = inventoryController.inventoryByName(PretragaTxt.Text);
