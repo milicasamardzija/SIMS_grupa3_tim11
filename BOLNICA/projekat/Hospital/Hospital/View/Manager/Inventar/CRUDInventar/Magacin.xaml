@@ -25,7 +25,7 @@
         </DataGrid>
         <TextBlock  FontSize="22" TextAlignment="Left" HorizontalAlignment="Left" Margin="69,29,0,0" TextWrapping="Wrap" Text="Inventar bolnice koji se nalazi u magacinu" VerticalAlignment="Top" Height="42" Width="650" FontWeight="Bold" FontStyle="Italic" Foreground="#FFFFC800"/>
         <Frame Name="MagacinFrame" Content="" HorizontalAlignment="Left" Margin="752,94,0,0" VerticalAlignment="Top" Height="400" Width="470" NavigationUIVisibility="Hidden" RenderTransformOrigin="0.508,0.644"/>
-        <Button Foreground="#FF373434" Background="#FFFFC800"  Content="Dodaj" HorizontalAlignment="Left" Margin="69,530,0,0" VerticalAlignment="Top" Width="133" Height="48" FontSize="24" FontWeight="Bold" Click="dodaj" RenderTransformOrigin="0.562,-0.422" >
+        <Button Foreground="#FF373434" Background="#FFFFC800"  HorizontalAlignment="Left" Margin="69,530,0,0" VerticalAlignment="Top" Width="133" Height="48" FontSize="24" FontWeight="Bold" Click="dodaj" Content="Dodaj" RenderTransformOrigin="0.562,-0.422" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
