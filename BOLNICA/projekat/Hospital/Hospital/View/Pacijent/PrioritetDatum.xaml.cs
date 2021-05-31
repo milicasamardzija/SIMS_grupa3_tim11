@@ -105,8 +105,7 @@ namespace Hospital.View.Pacijent
 
         private void Nazad_na_pocetnu(object sender, RoutedEventArgs e)
         {
-            //  Prioritet prioritet = new Prioritet(id);
-            // prioritet.Show();
+            
             this.Close();
         }
 
@@ -168,7 +167,7 @@ namespace Hospital.View.Pacijent
             return retVal;
         }
 
-        public bool PatientIsAvailable(DateTime pocetak, DateTime kraj) // proverava da li je lekar slobodan izmedju neka dva trenutka u vremenu
+        public bool PatientIsAvailable(DateTime pocetak, DateTime kraj) 
         {
             bool retVal = true;
            

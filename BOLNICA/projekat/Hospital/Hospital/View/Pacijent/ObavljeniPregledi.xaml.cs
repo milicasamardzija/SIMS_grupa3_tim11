@@ -74,6 +74,9 @@ namespace Hospital.View.Pacijent
 
         private void odustani(object sender, RoutedEventArgs e)
         {
+            ZdravstveniKarton karton = new ZdravstveniKarton(id);
+            karton.Show();
+            this.Close();
 
         }
 

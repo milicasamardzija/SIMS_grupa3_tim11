@@ -38,7 +38,7 @@ namespace Hospital.View.Pacijent
         {
             PrioritetDoktor doktor = new PrioritetDoktor(appointmentList, id);
             doktor.Show();
-            this.Close();
+           
 
         }
 
@@ -46,7 +46,7 @@ namespace Hospital.View.Pacijent
         {
             PrioritetDatum datum = new PrioritetDatum(id);
             datum.Show();
-            this.Close();
+            
         }
     }
 }

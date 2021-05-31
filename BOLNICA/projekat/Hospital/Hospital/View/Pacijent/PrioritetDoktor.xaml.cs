@@ -83,8 +83,7 @@ namespace Hospital.View.Pacijent
         private void odustani(object sender, RoutedEventArgs e)
         {
 
-            Prioritet prioritet = new Prioritet(appointmentList, id);
-            prioritet.Show();
+         
             this.Close();
         }
 

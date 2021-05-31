@@ -197,7 +197,6 @@ namespace Hospital
         {
 
 
-            CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             global::Doctor doktor1 = (global::Doctor)lekar.SelectedItem;
 
             if (time.SelectedIndex != -1)

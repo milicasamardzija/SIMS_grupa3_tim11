@@ -1,4 +1,6 @@
-﻿using Hospital.Model;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -26,6 +28,8 @@ namespace Hospital
         public int count2 = 0;
         public int count3 = 0;
 
+        PatientController patientController;
+        FunctionalityController functionalityController;
 
         public ObservableCollection<Checkup> AppointmentList
         {
@@ -38,27 +42,24 @@ namespace Hospital
             this.DataContext = this;
             id = idP;
             AppointmentList = loadJason();
+            patientController = new PatientController();
+            functionalityController = new FunctionalityController();
 
 
-            Patient ret = new Patient();
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storageDoctor.json");
-            List<Patient> patients = storage.GetAll();
-            ObservableCollection<Patient> allPatients = new ObservableCollection<Patient>(patients);
+          
 
-            FunctionalityFileStorage funkcije = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
-            List<Functionality> funkcionalnosti = funkcije.GetAll();
+          
 
-
-            foreach (Patient patient in allPatients)
+            foreach (PatientDTO patient in patientController.getAll())
 
             { 
                 
                 if (patient.Id == idP)
 
                 {
-                    imePacijentaa.Text = patient.name + " " + patient.surname;
+                    imePacijentaa.Text = patient.Name + " " + patient.Surname;
 
-                    foreach (Functionality funkcionalnost in funkcionalnosti)
+                    foreach (FunctionalityDTO funkcionalnost in functionalityController.getAll())
                     {
 
                         if (patient.Id == funkcionalnost.idPacijenta)
@@ -80,7 +81,7 @@ namespace Hospital
 
                     if (count1 > 5 || count2>3 ||  count3>3)
                     {
-                        patient.banovan = true;
+                        patient.Banovan = true;
                         
                     }
 
@@ -119,21 +120,17 @@ namespace Hospital
 
             dd.Show();
 
-            Patient ret = new Patient();
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storageDoctor.json");
-           List<Patient> patients = storage.GetAll();
-            ObservableCollection<Patient> allPatients = new ObservableCollection<Patient>(patients);
-
-            FunctionalityFileStorage funkcije = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
-            List<Functionality> funkcionalnosti = funkcije.GetAll();
+         
+        
+            
 
             
 
-            foreach (Patient patient in allPatients) //prolaz kroz sve pacijente u fajlu
+            foreach (PatientDTO patient in patientController.getAll()) //prolaz kroz sve pacijente u fajlu
             {
                 if (patient.Id == id)
                 { 
-                    foreach (Functionality funkcionalnost in funkcionalnosti)
+                    foreach (FunctionalityDTO funkcionalnost in functionalityController.getAll())
                     {
 
                         if (patient.Id == funkcionalnost.idPacijenta  && funkcionalnost.vrstaFunkcionalnosti == "dodavanje")
@@ -145,26 +142,26 @@ namespace Hospital
 
                     if (count1 > 1)
                     {
-                        patient.banovan = true;
+                        patient.Banovan = true;
 
                        
 
                     }
 
-                    if (patient.banovan == false)
+                    if (patient.Banovan == false)
                     {
                         dd.Show();
                     }
                     else
                     {
-                        patient.datumBanovanja = DateTime.Now;
-                        MessageBoxResult result = MessageBox.Show("Zakazivanje je blokirano.", "Upozorenje", MessageBoxButton.OK);
+                        patient.DatumBanovanja = DateTime.Now;
+                       // MessageBoxResult result = MessageBox.Show("Zakazivanje je blokirano.", "Upozorenje", MessageBoxButton.OK);
                     }
                   
                  
-                    if(patient.datumBanovanja.AddMinutes(2) <= DateTime.Now)
+                    if(patient.DatumBanovanja.AddMinutes(2) <= DateTime.Now)
                     {
-                        patient.banovan = false;
+                        patient.Banovan = false;
                         count1 = 0;
                     }
                 }
@@ -181,20 +178,15 @@ namespace Hospital
 
             it.Show();
             Patient ret = new Patient();
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storageDoctor.json");
-            List<Patient> patients = storage.GetAll();
-            ObservableCollection<Patient> allPatients = new ObservableCollection<Patient>(patients);
-            FunctionalityFileStorage funkcije = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
-            List<Functionality> funkcionalnosti = funkcije.GetAll();
+           
 
 
-
-            foreach (Patient patient in allPatients) //prolaz kroz sve pacijente u fajlu
+            foreach (PatientDTO patient in patientController.getAll()) //prolaz kroz sve pacijente u fajlu
             {
                 if (patient.Id == id)
                 {
 
-                    foreach (Functionality funkcionalnost in funkcionalnosti)
+                    foreach (FunctionalityDTO funkcionalnost in functionalityController.getAll())
                     {
 
                         if (patient.Id == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkcionalnosti == "izmena")
@@ -206,16 +198,16 @@ namespace Hospital
 
                     if (count2 > 3)
                     {
-                        patient.banovan = true;
+                        patient.Banovan = true;
 
                     }
-                    if (patient.banovan == false)
+                    if (patient.Banovan == false)
                     {
                        it.Show();
                     }
                     else
                     {
-                        MessageBoxResult result = MessageBox.Show("Izmena termina je blokirana.", "Upozorenje", MessageBoxButton.OK);
+                      //  MessageBoxResult result = MessageBox.Show("Izmena termina je blokirana.", "Upozorenje", MessageBoxButton.OK);
                     }
                 }
 
@@ -230,19 +222,14 @@ namespace Hospital
             ObrisiTermin ob = new ObrisiTermin(AppointmentList, (Checkup)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
 
             Patient ret = new Patient();
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            List<Patient> patients = storage.GetAll();
-
-            ObservableCollection<Patient> allPatients = new ObservableCollection<Patient>(patients);
-            FunctionalityFileStorage funkcije = new FunctionalityFileStorage("./../../../../Hospital/files/count.json");
-            List<Functionality> funkcionalnosti = funkcije.GetAll();
+           
 
 
-            foreach (Patient patient in allPatients) //prolaz kroz sve pacijente u fajlu
+            foreach (PatientDTO patient in patientController.getAll()) //prolaz kroz sve pacijente u fajlu
             {
                 if (patient.Id == id)
                 {
-                    foreach (Functionality funkcionalnost in funkcionalnosti)
+                    foreach (FunctionalityDTO funkcionalnost in functionalityController.getAll())
                     {
 
                         if (patient.Id == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkcionalnosti == "brisanje")
@@ -254,19 +241,19 @@ namespace Hospital
 
                     if (count3 > 3)
                     {
-                        patient.banovan = true;
+                        patient.Banovan = true;
 
                     }
 
 
 
-                    if (patient.banovan == false)
+                    if (patient.Banovan == false)
                     {
                         ob.Show();
                     }
                     else
                     {
-                        MessageBoxResult result = MessageBox.Show("Brisanje termina je blokirano.", "Upozorenje", MessageBoxButton.OK);
+                      //  MessageBoxResult result = MessageBox.Show("Brisanje termina je blokirano.", "Upozorenje", MessageBoxButton.OK);
                     }
                 }
 
