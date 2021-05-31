@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.Prikaz
 {
-    public class Review : INotifyPropertyChanged
+    public class Review
     {
         private String name;
         private String medicineType;
@@ -17,24 +17,15 @@ namespace Hospital.Prikaz
         private int idMedicine;
         private int idMedicineReviw;
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnProperychanged(string name)
+        public Review(String name, String typeMedicine, ReviewType typeReview, Boolean done, int idMedicine, int idReview)
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
-
-        public Review(String n, String typeMedicine, ReviewType typeReview, Boolean d, int idM, int idR)
-        {
-            name = n;
-            reviewType = typeReview;
-            medicineType = typeMedicine;
-            done = d;
-            idMedicine = idM;
-            idMedicineReviw = idR;
+            this.name = name;
+            this.reviewType = typeReview;
+            this.medicineType = typeMedicine;
+            this.done = done;
+            this.idMedicine = idMedicine;
+            this.idMedicineReviw = idReview;
         }
 
         public String Name
@@ -48,7 +39,6 @@ namespace Hospital.Prikaz
                 if (value != name)
                 {
                     name = value;
-                    OnProperychanged("Name");
                 }
             }
         }
@@ -63,7 +53,6 @@ namespace Hospital.Prikaz
                 if (value != medicineType)
                 {
                     medicineType = value;
-                    OnProperychanged("MedicineType");
                 }
             }
         }
@@ -79,7 +68,6 @@ namespace Hospital.Prikaz
                 if (value != reviewType)
                 {
                     reviewType = value;
-                    OnProperychanged("ReviewType");
                 }
             }
         }
@@ -95,7 +83,6 @@ namespace Hospital.Prikaz
                 if (value != done)
                 {
                     done = value;
-                    OnProperychanged("Done");
                 }
             }
         }
@@ -110,7 +97,6 @@ namespace Hospital.Prikaz
                 if (value != idMedicine)
                 {
                     idMedicine = value;
-                    OnProperychanged("IdMedicine");
                 }
             }
         }
@@ -126,7 +112,6 @@ namespace Hospital.Prikaz
                 if (value != idMedicineReviw)
                 {
                     idMedicineReviw = value;
-                    OnProperychanged("IdMedicineReview");
                 }
             }
         }

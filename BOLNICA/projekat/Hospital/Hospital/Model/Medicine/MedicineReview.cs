@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model
 {
-    public class MedicineReview : Entity,INotifyPropertyChanged
+    public class MedicineReview : Entity
     {
         private int idMedicine;
         private int idDoctor;
@@ -16,17 +16,7 @@ namespace Hospital.Model
         private ReviewType typeReview;
         private String review;
         private Boolean done;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnProperychanged(string name)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
-
+        
         public MedicineReview(int id, int medicineId,int doctorId, ReviewType tReview, String reviewTxt, Boolean reviewDone) : base(id)
         {
             idMedicine = medicineId;
@@ -47,7 +37,6 @@ namespace Hospital.Model
                 if (value != idMedicine)
                 {
                     idMedicine = value;
-                    OnProperychanged("IdMedicine");
                 }
             }
         }
@@ -63,7 +52,6 @@ namespace Hospital.Model
                 if (value != idDoctor)
                 {
                     idDoctor = value;
-                    OnProperychanged("IdDoctor");
                 }
             }
         }
@@ -80,7 +68,6 @@ namespace Hospital.Model
                 if (value != doctor)
                 {
                     doctor = value;
-                    OnProperychanged("Doctor");
                 }
             }
         }
@@ -96,7 +83,6 @@ namespace Hospital.Model
                 if (value != typeReview)
                 {
                     typeReview = value;
-                    OnProperychanged("TypeReview");
                 }
             }
         }
@@ -112,7 +98,6 @@ namespace Hospital.Model
                 if (value != review)
                 {
                     review = value;
-                    OnProperychanged("Review");
                 }
             }
         }
@@ -128,7 +113,6 @@ namespace Hospital.Model
                 if (value != done)
                 {
                     done = value;
-                    OnProperychanged("Done");
                 }
             }
         }

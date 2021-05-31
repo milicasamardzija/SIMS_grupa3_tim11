@@ -7,19 +7,10 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model
 {
-    public class Ingredient : Entity,INotifyPropertyChanged
+    public class Ingredient : Entity
     {
         private String name;
         private double quantity;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnProperychanged(string name)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
 
         public Ingredient(int id, String nameIngerdient, double quantityIngredient) : base(id)
         {
@@ -38,7 +29,6 @@ namespace Hospital.Model
                 if (value != name)
                 {
                     name = value;
-                    OnProperychanged("Name");
                 }
             }
         }
@@ -54,7 +44,6 @@ namespace Hospital.Model
                 if (value != quantity)
                 {
                     quantity = value;
-                    OnProperychanged("Quantity");
                 }
             }
         }

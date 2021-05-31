@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-public class Room : Entity, INotifyPropertyChanged
+public class Room : Entity
 {
    private int floor;
    private Boolean occupancy;
@@ -12,24 +12,14 @@ public class Room : Entity, INotifyPropertyChanged
  
     public Room() { }
 
-    public Room(int id, int f, bool o, Purpose p, int c) : base(id)
+    public Room(int id, int floor, bool ocuupancy, Purpose purpose, int capacity) : base(id)
     {
-        floor = f;
-        occupancy = o;
-        purpose = p;
-        capacity = c;
+        this.floor = floor;
+        this.occupancy = ocuupancy;
+        this.purpose = purpose;
+        this.capacity = capacity;
     }
 
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected virtual void OnProperychanged(string name)
-    {
-        if (PropertyChanged != null)
-        {
-            PropertyChanged(this, new PropertyChangedEventArgs(name));
-        }
-    }
 
     public int Floor
     {
@@ -42,7 +32,6 @@ public class Room : Entity, INotifyPropertyChanged
             if(value != floor)
             {
                 floor = value;
-                OnProperychanged("Floor");
             }
         }
     }
@@ -58,7 +47,6 @@ public class Room : Entity, INotifyPropertyChanged
             if (value != occupancy)
             {
                 occupancy = value;
-                OnProperychanged("Occupancy");
             }
         }
     }
@@ -74,7 +62,6 @@ public class Room : Entity, INotifyPropertyChanged
             if (value != purpose)
             {
                 purpose = value;
-                OnProperychanged("Purpose");
             }
         }
     }
@@ -90,7 +77,6 @@ public class Room : Entity, INotifyPropertyChanged
             if(value != capacity)
             {
                 capacity = value;
-                OnProperychanged("Capacity");
             }
         }
     }
