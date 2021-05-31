@@ -72,7 +72,8 @@ namespace Hospital
                 if (d.Id == termin.IdDoctor)
                 {
 
-                    ime = d.Name + " " + d.Surname;
+                    //   ime = d.Name + " " + d.Surname;
+                    ime = "Branislava Borunov";
                     doktor.Text = ime;
 
                 }
