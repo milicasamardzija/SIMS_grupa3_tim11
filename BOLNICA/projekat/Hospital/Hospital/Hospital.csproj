@@ -189,6 +189,9 @@
     <Compile Include="View\Pacijent\ZdravstveniKarton.xaml.cs">
       <DependentUpon>ZdravstveniKarton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Secretary\AppOrganisation\ProfilSekretara.xaml.cs">
+      <DependentUpon>ProfilSekretara.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Secretary\CRUDPatient\RegistredPatient\BlokiraniPacijenti.xaml.cs">
       <DependentUpon>BlokiraniPacijenti.xaml</DependentUpon>
     </Compile>
@@ -561,6 +564,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Ostalo\ObavestenjaUpravnik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Secretary\AppOrganisation\ProfilSekretara.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1030,6 +1037,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="View\Images\Search-Add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Secretary\AppOrganisation\profile-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

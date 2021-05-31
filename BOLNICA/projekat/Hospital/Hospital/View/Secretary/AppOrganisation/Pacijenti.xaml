@@ -48,7 +48,7 @@
         <Button
             Width="180"
             Height="32"
-            Margin="75,194,0,0"
+            Margin="75,195,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="prikaziGPacijenteButton"
@@ -85,7 +85,7 @@
         <Button
             Width="168"
             Height="32"
-            Margin="375,194,0,0"
+            Margin="375,195,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="kreirajGButton"
@@ -105,7 +105,7 @@
         <Button
             Width="180"
             Height="32"
-            Margin="75,266,0,0"
+            Margin="75,255,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="allCheckups"
@@ -123,7 +123,7 @@
         <Button
             Width="168"
             Height="32"
-            Margin="375,328,0,0"
+            Margin="375,315,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="    Placanje termina"
@@ -145,11 +145,11 @@
             FontFamily="Chooper Black"
             FontSize="18"
             FontWeight="Bold"
-            Foreground="#FF123EB9" />
+            Foreground="#FF0852AE" />
         <Button
             Width="180"
             Height="35"
-            Margin="75,325,0,0"
+            Margin="75,315,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="urgentCheckup"
@@ -164,11 +164,22 @@
                     Stretch="None" />
             </Button.Background>
         </Button>
-        <Button Content="      Blokirani pacijenti" HorizontalAlignment="Left" Margin="375,266,0,0" VerticalAlignment="Top" FontSize="14"
+        <Button
+            Width="168"
+            Height="32"
+            Margin="375,255,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="BlockedPatientsBtn"
+            Content="      Blokirani pacijenti"
+            FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF1B4C93" Width="168" Height="32" Click="BlockedPatientsBtn">
+            Foreground="#FF1B4C93">
             <Button.Background>
-                <ImageBrush ImageSource="/Hospital;component/View/Images/Button-White-Remove-icon.png" Stretch="None" AlignmentX="Left"/>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/Button-White-Remove-icon.png"
+                    Stretch="None" />
             </Button.Background>
         </Button>
 

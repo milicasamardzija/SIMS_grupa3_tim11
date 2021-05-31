@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.View.Secretary.AppOrganisation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,10 +46,10 @@ namespace Hospital
         }
        
        
-      /*  private void blog(object sender, RoutedEventArgs e)
+      private void profil(object sender, RoutedEventArgs e)
         {
-            UredjivanjeBloga blog = new UredjivanjeBloga();
-            blog.ShowDialog();
-        } */
+            ProfilSekretara ps = new ProfilSekretara();
+            frameS.Navigate(ps);
+        } 
     }
 }
