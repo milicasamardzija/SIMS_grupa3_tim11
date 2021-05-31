@@ -38,7 +38,14 @@ namespace Hospital
             this.frame = frame;
             this.roomsView = listaProstorija;
             controller = new RoomsController();
+            addPurpose();
         }
+
+        private void addPurpose()
+        {
+            NamenaText.ItemsSource = Enum.GetValues((typeof(Purpose)));
+        }
+
         private void dodavanjeProstorije(object sender, RoutedEventArgs e)
         {
             controller.save(Room);

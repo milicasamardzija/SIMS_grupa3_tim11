@@ -32,6 +32,7 @@ namespace Hospital
             this.frame = frame;
             this.controller = new MedicineController();
             this.medicines = new ObservableCollection<MedicineDTO>(controller.getAll());
+            LekoviFrame.NavigationService.Navigate(new BelsekaMagacin());
         }
         
         private void dodaj(object sender, RoutedEventArgs e)

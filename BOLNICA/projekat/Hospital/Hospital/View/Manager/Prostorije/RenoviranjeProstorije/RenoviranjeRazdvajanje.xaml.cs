@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,6 +26,12 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
             InitializeComponent();
             this.frame = frame;
             this.room = room;
+            addPurpose();
+        }
+
+        private void addPurpose()
+        {
+            TipSobeComboBox.ItemsSource = Enum.GetValues((typeof(Purpose)));
         }
 
         private void renoviraj(object sender, RoutedEventArgs e)

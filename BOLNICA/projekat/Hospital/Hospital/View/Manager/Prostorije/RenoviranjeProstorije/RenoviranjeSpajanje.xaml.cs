@@ -37,7 +37,7 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
             foreach (RoomDTO room in roomController.getAll())
             {
                 ComboBoxItem item = new ComboBoxItem();
-                item.Content = Convert.ToString(room.Id) + " " + Convert.ToString(room.Purpose);
+                item.Content = Convert.ToString(room.Purpose) + " broj " +  Convert.ToString(room.Id);
                 item.Tag = room.Id;
                 SobeComboBox.Items.Add(item);
             }

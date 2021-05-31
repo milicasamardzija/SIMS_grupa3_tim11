@@ -9,10 +9,7 @@
     <Grid>
         <Grid Margin="0,0,-0.4,0">
             <Label Foreground="#FF373434" Margin="20,30,323.8,315" FontSize="22" Grid.Column="0" FontWeight="Bold">Namena</Label>
-            <ComboBox Name ="NamenaText" Width="200" Margin="249,30,21.8,321" Background="AliceBlue" FontSize="18">
-                <ComboBoxItem IsSelected="True">SALA</ComboBoxItem>
-                <ComboBoxItem >SOBA</ComboBoxItem>
-                <ComboBoxItem>ORDINACIJA</ComboBoxItem>
+            <ComboBox Name ="NamenaText" Width="200" Margin="249,30,21.8,321"  FontSize="18" SelectedValue="{Binding Path=Room.Purpose , UpdateSourceTrigger=PropertyChanged}">
             </ComboBox>
             <Label Width="100" Margin="20,124,350.8,228" Foreground="#FF373434" FontSize="22" Grid.Column="0" FontWeight="Bold" RenderTransformOrigin="0.548,0.074">Sprat</Label>
             <TextBox Foreground="#FF373434" Name="SpratText" Text="{Binding Path=Room.Floor , UpdateSourceTrigger=PropertyChanged}" Width="200" Margin="249,124,21.8,235"/>

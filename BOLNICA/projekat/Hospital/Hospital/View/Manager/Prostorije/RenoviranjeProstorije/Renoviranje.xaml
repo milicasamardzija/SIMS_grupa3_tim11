@@ -9,7 +9,7 @@
     <Grid>
         <Grid Margin="-10,-10,0.4,0">
             <Label Margin="30,30,312,334" Foreground="#FF373434" FontSize="18" Grid.Column="0" Grid.Row="0" RenderTransformOrigin="0.498,-0.169" FontWeight="Bold" Content="Tip renoviranja"/>
-            <ComboBox Name="TipRenoviranjaComboBox" HorizontalAlignment="Left" Margin="257,30,0,0" VerticalAlignment="Top" Width="200" Height="31" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBox Name="TipRenoviranjaComboBox" HorizontalAlignment="Left" Margin="257,30,0,0" VerticalAlignment="Top" Width="200" Height="31" SelectionChanged="ComboBox_SelectionChanged" FontSize="16">
                 <ComboBoxItem Content="Krecenje" Foreground="#FF373434" FontSize="18" ></ComboBoxItem>
                 <ComboBoxItem Content="Spajanje prostorija" Foreground="#FF373434" FontSize="18" ></ComboBoxItem>
                 <ComboBoxItem Content="Razdvajanje prostorije" Foreground="#FF373434" FontSize="18" ></ComboBoxItem>

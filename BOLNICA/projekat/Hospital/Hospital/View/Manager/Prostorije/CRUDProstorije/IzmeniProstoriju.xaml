@@ -11,10 +11,7 @@
             <Label Margin="25,30,285,335"   Foreground="#FF373434" FontSize="20"  Grid.Column="0" Grid.Row="0" FontWeight="Bold" RenderTransformOrigin="0.498,-0.169">Broj prostorije</Label>
             <TextBox Foreground="#FF373434" IsReadOnly="True" Text="{Binding Room.Id}" Name="brojProstorijeTxt" Width="200" Margin="257,30,23,345" Grid.Row="0" RenderTransformOrigin="0.746,0.543" FontSize="18" />
             <Label Width="100" Margin="25,109,355,255" Foreground="#FF373434" FontSize="20" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" FontWeight="Bold">Namena</Label>
-            <ComboBox Foreground="#FF373434" Name="namenaTxt" Height="30" Width="200" Margin="257,109,23,271" FontSize="16">
-                <ComboBoxItem>SALA</ComboBoxItem>
-                <ComboBoxItem>SOBA</ComboBoxItem>
-                <ComboBoxItem>ORDINACIJA</ComboBoxItem>
+            <ComboBox Foreground="#FF373434" Name="namenaTxt" SelectedValue="{Binding Path=Room.Purpose , UpdateSourceTrigger=PropertyChanged}" Height="30" Width="200" Margin="257,109,23,271" FontSize="16">
             </ComboBox>
             <Label Width="100" Margin="25,176,355,191" Foreground="#FF373434" FontSize="22" Grid.Column="0" FontWeight="Bold" RenderTransformOrigin="-0.075,0.585">Sprat</Label>
             <TextBox Foreground="#FF373434" Name="spratTxt" Width="200" Text="{Binding Room.Floor}" Margin="257,176,23,198" FontSize="18"/>

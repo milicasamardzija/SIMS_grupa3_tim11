@@ -30,7 +30,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock Foreground= "#ffc800" FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="69,42,0,0" TextWrapping="Wrap" Text="Lekovi koji su cekaju reviziju od strane strucnog lica" VerticalAlignment="Top" Height="42" Width="742" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBlock Foreground= "#ffc800" FontSize="22" TextAlignment="Left" HorizontalAlignment="Left" Margin="69,55,0,0" TextWrapping="Wrap" Text="Lekovi koji su cekaju reviziju od strane strucnog lica" VerticalAlignment="Top" Height="42" Width="742" FontWeight="Bold" FontStyle="Italic"/>
         <Frame Name="LekoviRevizijaFrame" Content=""  HorizontalAlignment="Left" Margin="749,135,0,0" VerticalAlignment="Top" Height="401" Width="470"  NavigationUIVisibility="Hidden"/>
         <Button Background="#ffc800" Content="Dodaj lek" HorizontalAlignment="Left" Margin="69,481,0,0" VerticalAlignment="Top" Width="133" Height="48"  FontSize="24" Foreground="#FF373434" FontWeight="Bold" Click="dodaj" RenderTransformOrigin="0.562,-0.422" >
             <Button.Effect>

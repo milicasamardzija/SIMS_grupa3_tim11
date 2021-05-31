@@ -38,12 +38,18 @@ namespace Hospital
             this.room = room;
             this.index = index;
             this.frame = frame;
+            addPurpose();
+        }
+
+        private void addPurpose()
+        {
+            namenaTxt.ItemsSource = Enum.GetValues((typeof(Purpose)));
         }
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-            controller.deleteById(room.Id);
             rooms.RemoveAt(index);
+            controller.deleteById(room.Id);
             frame.NavigationService.Navigate(new BelsekaMagacin());
         }
 

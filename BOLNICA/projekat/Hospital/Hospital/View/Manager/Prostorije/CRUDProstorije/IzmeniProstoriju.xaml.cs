@@ -40,13 +40,18 @@ namespace Hospital
             this.frame = frame;
             this.room = selectedItem;
             this.controller = new RoomsController();
+            addPurpose();
         }
 
+        private void addPurpose()
+        {
+            namenaTxt.ItemsSource = Enum.GetValues((typeof(Purpose)));
+        }
         private void izmenaProstorije(object sender, RoutedEventArgs e)
         {
             controller.update(room);
-            rooms[index] = room;
             frame.NavigationService.Navigate(new BelsekaMagacin());
+            rooms[index] = room;
         }
 
         private void odustani(object sender, RoutedEventArgs e)
