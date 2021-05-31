@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Hospital.Controller;
+using Hospital.View.Manager.Inventar.CRUDInventar;
 
 namespace Hospital
 {
@@ -52,8 +53,8 @@ namespace Hospital
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-            controller.delete(inventory.Id);
-            inventories.RemoveAt(index);
+            BrisanjePotvrdiInventar brisanje = new BrisanjePotvrdiInventar(inventory.Id,inventories,index);
+            brisanje.Show();
             frame.NavigationService.Navigate(new BelsekaMagacin());
         }
     }

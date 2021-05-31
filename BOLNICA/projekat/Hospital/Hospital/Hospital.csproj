@@ -108,6 +108,9 @@
     <Compile Include="Service\RoomRenovationService.cs" />
     <Compile Include="Service\StaticInventoryMovemenetService.cs" />
     <Compile Include="Service\PatientService.cs" />
+    <Compile Include="View\Manager\Inventar\CRUDInventar\BrisanjePotvrdiInventar.xaml.cs">
+      <DependentUpon>BrisanjePotvrdiInventar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeLekaRevizijaUpravnik.xaml.cs">
       <DependentUpon>BrisanjeLekaRevizijaUpravnik.xaml</DependentUpon>
     </Compile>
@@ -356,6 +359,10 @@
       <DependentUpon>ZamenaLekova.xaml</DependentUpon>
     </Compile>
     <Page Include="View\Doctor\AddDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Inventar\CRUDInventar\BrisanjePotvrdiInventar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
