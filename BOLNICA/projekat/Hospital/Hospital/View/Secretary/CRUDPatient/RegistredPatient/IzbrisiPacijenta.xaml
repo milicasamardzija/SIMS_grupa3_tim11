@@ -28,7 +28,7 @@
             FontFamily="Chooper Black Bold"
             FontSize="16"
             FontWeight="Bold"
-            Foreground="#FF0C0D8B" />
+            Foreground="#FF0852AE" />
         <Button
             Width="86"
             Height="32"
@@ -40,7 +40,7 @@
             Cursor="Hand"
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF0C0D8B"
+            Foreground="#FF0852AE"
             TextElement.FontFamily="Chooper Black Bold" />
         <Button
             Width="86"
@@ -54,7 +54,7 @@
             FontFamily="Chooper Black Bold"
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF0C0D8B" />
+            Foreground="#FF0852AE" />
 
     </Grid>
 </Window>

@@ -106,7 +106,7 @@
             TextWrapping="Wrap" />
         <Button
             Width="80"
-            Height="28"
+            Height="32"
             Margin="286,300,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -129,7 +129,7 @@
         </ComboBox>
         <Button
             Width="80"
-            Height="29"
+            Height="32"
             Margin="50,300,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"

@@ -74,8 +74,14 @@ namespace Hospital
 
         private void addAlergents(object sender, RoutedEventArgs e)
         {
-           Alergeni a = new Alergeni(listPatient, (PatientDTO)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
-            a.Show();
+            if (PrikazPacijenata.SelectedItem != null)
+            {
+                Alergeni a = new Alergeni(listPatient, (PatientDTO)PrikazPacijenata.SelectedItem, PrikazPacijenata.SelectedIndex);
+                a.Show();
+            } else
+            {
+                MessageBoxResult mess = MessageBox.Show("Niste odabrali pacijenta!");
+            }
         }
 
         private void CancelBtn(object sender, RoutedEventArgs e)

@@ -35,7 +35,7 @@
             SelectionChanged="PrikazPacijenata_SelectionChanged"
             TextElement.FontFamily="Chooper Black"
             TextElement.FontSize="12"
-            TextElement.Foreground="#FF08316B">
+            TextElement.Foreground="#FF0852AE">
 
             <DataGrid.Columns>
                 <DataGridTextColumn
@@ -54,8 +54,8 @@
         </DataGrid>
         <Button
             Width="75"
-            Height="26"
-            Margin="126,330,0,0"
+            Height="32"
+            Margin="126,324,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="izmeniNalogPacijenta"
@@ -67,8 +67,8 @@
             TextElement.FontSize="14" />
         <Button
             Width="75"
-            Height="26"
-            Margin="337,330,0,0"
+            Height="32"
+            Margin="336,324,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="izbrisiNalogPacijenta"
@@ -80,8 +80,8 @@
             TextElement.FontSize="14" />
         <Button
             Width="75"
-            Height="26"
-            Margin="230,330,0,0"
+            Height="32"
+            Margin="230,324,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="addAlergents"
@@ -91,8 +91,8 @@
             TextElement.FontSize="14" />
         <Button
             Width="75"
-            Height="26"
-            Margin="20,330,0,0"
+            Height="32"
+            Margin="20,324,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="CancelBtn"
@@ -108,7 +108,7 @@
             Content="Pronadji pacijenta:"
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF08316B" />
+            Foreground="#FF0852AE" />
 
         <StackPanel
             Width="254"

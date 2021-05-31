@@ -71,15 +71,28 @@ namespace Hospital.Sekretar
         }
         private void Delete(object sender, RoutedEventArgs e)
         {
-            ObrisiPregled del = new ObrisiPregled(listCheckups, (Checkup)sviPregledi.SelectedItem, sviPregledi.SelectedIndex);
-            del.Show();
+            if (sviPregledi.SelectedItem != null)
+            {
+                ObrisiPregled del = new ObrisiPregled(listCheckups, (Checkup)sviPregledi.SelectedItem, sviPregledi.SelectedIndex);
+                del.Show();
+            }else
+            {
+                MessageBoxResult mess = MessageBox.Show("Niste odabrali pregled koji zelite da otkazete!");
+            }
         }
 
         private void Edit(object sender, RoutedEventArgs e)
         {
-            IzmeniPregled edit = new IzmeniPregled(listCheckups, (Checkup)sviPregledi.SelectedItem, sviPregledi.SelectedIndex);
-        edit.Show();
-          }
+            if (sviPregledi.SelectedItem != null)
+            {
+                IzmeniPregled edit = new IzmeniPregled(listCheckups, (Checkup)sviPregledi.SelectedItem, sviPregledi.SelectedIndex);
+                edit.Show();
+            }
+            else
+            {
+                MessageBoxResult mess = MessageBox.Show("Niste odabrali pregled za izmenu!");
+            }
+        }
         private void Exit(object sender, RoutedEventArgs e)
         {
             this.Close();

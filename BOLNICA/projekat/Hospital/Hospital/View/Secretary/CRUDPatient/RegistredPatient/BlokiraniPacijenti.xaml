@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Hospital.View.Secretary.CRUDPatient.RegistredPatient"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="BlokiraniPacijenti"
+    Title="Blokirani pacijenti"
     Width="442"
     Height="400"
     WindowStartupLocation="CenterScreen"
@@ -29,20 +29,21 @@
             ItemsSource="{Binding Path=listBlocked}"
             ScrollViewer.HorizontalScrollBarVisibility="Hidden"
             ScrollViewer.VerticalScrollBarVisibility="Hidden"
-            TextElement.Foreground="#FF08316B">
+            TextElement.FontSize="12"
+            TextElement.Foreground="#FF0852AE">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="100"
                     Binding="{Binding Name}"
-                    Header="IME" />
+                    Header="Ime" />
                 <DataGridTextColumn
                     Width="100"
                     Binding="{Binding Surname}"
-                    Header="PREZIME" />
+                    Header="Prezime" />
                 <DataGridTextColumn
                     Width="160"
                     Binding="{Binding Jmbg}"
-                    Header="JMBG" />
+                    Header="Jmbg" />
             </DataGrid.Columns>
         </DataGrid>
         <Button

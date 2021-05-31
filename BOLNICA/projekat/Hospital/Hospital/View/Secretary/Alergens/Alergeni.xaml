@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:Hospital.Sekretar"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Alergeni"
-    Width="550"
+    Width="450"
     Height="320"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
@@ -22,7 +22,7 @@
             x:Name="svi"
             Width="180"
             Height="191"
-            Margin="24,41,0,0"
+            Margin="10,44,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
@@ -45,7 +45,7 @@
             x:Name="selected"
             Width="183"
             Height="191"
-            Margin="333,46,0,0"
+            Margin="241,44,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
@@ -69,7 +69,7 @@
         </DataGrid>
         <Label
             Name="sviAlergeni"
-            Margin="24,10,0,0"
+            Margin="10,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Lista svih alergena"
@@ -78,7 +78,7 @@
             Foreground="#FF1B4C93" />
         <Label
             Name="alergeniPacijenta"
-            Margin="333,10,0,0"
+            Margin="241,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Alergeni datog pacijenta"
@@ -86,38 +86,37 @@
             FontWeight="Bold"
             Foreground="#FF1B4C93" />
         <Button
-            Width="61"
-            Height="21"
-            Margin="237,116,0,0"
+            Width="40"
+            Height="34"
+            Margin="196,103,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="AddAlergens"
-            Content="Dodaj"
             Cursor="Hand"
             FontWeight="Bold"
             Foreground="#FF0E2C91"
-            TextElement.FontFamily="Chooper Black" />
-        <Image
-            Width="51"
-            Height="40"
-            Margin="247,46,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Source="/Hospital;component/View/Images/vector.png" />
+            TextElement.FontFamily="Chooper Black">
+            <Button.Background>
+                <ImageBrush ImageSource="/Hospital;component/View/Images/Add-icon.png" Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
-            Width="60"
-            Height="21"
-            Margin="237,142,0,0"
+            Width="40"
+            Height="33"
+            Margin="196,142,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="RemoveAlergen"
-            Content="Obrisi"
             FontWeight="Bold"
-            Foreground="#FF1B4C93" />
+            Foreground="#FF1B4C93">
+            <Button.Background>
+                <ImageBrush ImageSource="/Hospital;component/View/Images/Button-White-Remove-icon.png" Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
             Width="98"
-            Height="23"
-            Margin="221,242,0,0"
+            Height="26"
+            Margin="169,245,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="saveAlergens"

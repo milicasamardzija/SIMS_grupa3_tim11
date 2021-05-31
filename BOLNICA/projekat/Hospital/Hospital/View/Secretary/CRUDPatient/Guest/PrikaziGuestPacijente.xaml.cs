@@ -62,9 +62,12 @@ namespace Hospital
         }
         private void izbrisiGuest(object sender, RoutedEventArgs e)
         {
-            //IzbrisiPacijenta p = new IzbrisiPacijenta(listGPatient, (Patient)PrikaziGPacijente.SelectedItem, PrikaziGPacijente.SelectedIndex);
+          // IzbrisiPacijenta p = new IzbrisiPacijenta(listGPatient, (Patient)PrikaziGPacijente.SelectedItem, PrikaziGPacijente.SelectedIndex);
            // p.Show();
         }
-       
+        private void izadji(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

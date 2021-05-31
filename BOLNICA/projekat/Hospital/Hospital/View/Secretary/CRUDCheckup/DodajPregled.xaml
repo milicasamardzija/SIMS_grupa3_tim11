@@ -91,7 +91,7 @@
             Content="Prioritet lekar"
             Cursor="Hand"
             FontWeight="Bold"
-            TextElement.Foreground="#FF0C0D8B" />
+            TextElement.Foreground="#FF0852AE" />
         <Button
             Grid.Column="1"
             Width="95"
@@ -105,7 +105,7 @@
             Content="Prioritet termin"
             Cursor="Hand"
             FontWeight="Bold"
-            Foreground="#FF0C0D8B"
+            Foreground="#FF0852AE"
             TextElement.FontSize="12" />
         <DataGrid
             x:Name="sviPacijenti"
@@ -119,8 +119,8 @@
             ItemsSource="{Binding listPatients}"
             ScrollViewer.HorizontalScrollBarVisibility="Hidden"
             ScrollViewer.VerticalScrollBarVisibility="Hidden"
-            TextElement.FontSize="14"
-            TextElement.Foreground="#FF0C0D8B">
+            TextElement.FontSize="12"
+            TextElement.Foreground="#FF0852AE">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="100"
@@ -148,6 +148,6 @@
             FontFamily="Chooper Black Bold"
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF141A91" />
+            Foreground="#FF1B4C93" />
     </Grid>
 </Window>

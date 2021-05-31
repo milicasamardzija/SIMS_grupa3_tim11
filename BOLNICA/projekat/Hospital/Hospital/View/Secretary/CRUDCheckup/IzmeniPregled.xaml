@@ -5,8 +5,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Hospital.Sekretar"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="IzmeniPregled"
-    Width="318.8"
+    Title="Izmeni pregled"
+    Width="320"
     Height="250"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
@@ -23,27 +23,31 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Label
-            Margin="60,16,0,0"
+            Margin="33,16,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Datum" />
+            Content="Datum"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
         <DatePicker
             Name="datum"
-            Width="103"
+            Width="106"
             Height="30"
-            Margin="142,17,0,0"
+            Margin="115,16,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top" />
         <Label
-            Margin="62,47,0,0"
+            Margin="35,55,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Vreme"
-            RenderTransformOrigin="0.438,-1.367" />
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
         <ComboBox
             Name="selectedTime"
-            Width="78"
-            Margin="140,50,0,0"
+            Width="104"
+            Height="28"
+            Margin="115,58,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem>07:00</ComboBoxItem>
@@ -52,40 +56,68 @@
             <ComboBoxItem>08:30</ComboBoxItem>
             <ComboBoxItem>09:00</ComboBoxItem>
             <ComboBoxItem>09:30</ComboBoxItem>
+            <ComboBoxItem>10:00</ComboBoxItem>
+            <ComboBoxItem>10:30</ComboBoxItem>
+            <ComboBoxItem>11:00</ComboBoxItem>
+            <ComboBoxItem>11:30</ComboBoxItem>
+            <ComboBoxItem>12:00</ComboBoxItem>
+            <ComboBoxItem>12:30</ComboBoxItem>
+            <ComboBoxItem>13:00</ComboBoxItem>
+            <ComboBoxItem>13:30</ComboBoxItem>
+            <ComboBoxItem>14:00</ComboBoxItem>
+            <ComboBoxItem>14:30</ComboBoxItem>
+            <ComboBoxItem>15:00</ComboBoxItem>
+            <ComboBoxItem>15:30</ComboBoxItem>
+            <ComboBoxItem>16:00</ComboBoxItem>
+            <ComboBoxItem>16:30</ComboBoxItem>
+            <ComboBoxItem>17:00</ComboBoxItem>
+            <ComboBoxItem>17:30</ComboBoxItem>
         </ComboBox>
         <Label
-            Margin="60,105,0,0"
+            Margin="33,102,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Prostorija" />
+            Content="Prostorija"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
         <Button
-            Width="75"
-            Margin="140,77,0,0"
+            Width="39"
+            Height="28"
+            Margin="236,58,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="Nadji"
-            Content="nadji" />
+            Click="Nadji">
+            <Button.Background>
+                <ImageBrush ImageSource="/Hospital;component/View/Images/Search-Add-icon.png" />
+            </Button.Background>
+        </Button>
         <ComboBox
             Name="listRooms"
-            Width="76"
-            Height="23"
-            Margin="140,105,0,0"
+            Width="104"
+            Height="28"
+            Margin="115,98,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top" />
         <Button
             Width="91"
+            Height="32"
             Margin="184,162,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Find"
-            Content="Nadji lekara" />
+            Content="Nadji lekara"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
         <Button
             Width="75"
-            Margin="31,162,0,0"
+            Height="32"
+            Margin="33,162,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Decline"
-            Content="odustani" />
+            Content="Odustani"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
 
     </Grid>
 </Window>
