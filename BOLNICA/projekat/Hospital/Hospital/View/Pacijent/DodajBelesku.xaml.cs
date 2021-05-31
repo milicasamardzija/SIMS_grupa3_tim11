@@ -1,4 +1,6 @@
 ﻿
+using Hospital.Controller;
+using Hospital.DTO;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -25,6 +27,7 @@ namespace Hospital.View.Pacijent
         private Anamnesis selectedAnamnesis;
         private Boolean OnReminder;
         private Note note;
+        PatientController patientController;
         public DodajBelesku(int idP, Anamnesis selected)
         {
             InitializeComponent();
@@ -32,11 +35,23 @@ namespace Hospital.View.Pacijent
             selectedAnamnesis = selected;
             note = new Note();
             BlackOutDates();
+            patientController = new PatientController();
+
             startDatePicker.Visibility = Visibility.Hidden;
             endDatePicker.Visibility = Visibility.Hidden;
             startDateTextBlock.Visibility = Visibility.Hidden;
             endDateTextBlock.Visibility = Visibility.Hidden;
             OnReminder = false;
+
+
+            List<PatientDTO> patients = patientController.getAll();
+            foreach (PatientDTO patient in patients)
+            {
+                if (patient.Id == idP)
+                {
+                    imePacijenta.Text = patient.Name + " " + patient.Surname;
+                }
+            }
 
         }
 

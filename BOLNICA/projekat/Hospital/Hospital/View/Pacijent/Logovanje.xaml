@@ -1,0 +1,77 @@
+﻿<Window x:Class="Hospital.View.Pacijent.Logovanje"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital.View.Pacijent"
+             mc:Ignorable="d"
+               Title="" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="MyButtonDesign">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="MyContentPresenter" 
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+
+                  
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="True">
+                    
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                  
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+
+        <Button  Style="{ StaticResource MyButtonDesign}"  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="7,16,0,0" FontSize="22" Height="19" Click="nazad_na_pocetnu" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6">
+            <Button.Background>
+                <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Ulogujte se&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="87,41,0,0" FontSize="30" FontFamily="Goudy Old Style" Height="45" Foreground="#FF2B59DF"/>
+        <Label FontFamily="Goudy Old Style" Content="Korisničko ime:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,122,0,0" Width="94"/>
+        <Label Content="Lozinka:" FontFamily="Goudy Old Style" HorizontalAlignment="Left" Margin="44,174,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.542,0.117" Height="30"/>
+        <TextBox  Name="ime" FontFamily="Goudy Old Style" HorizontalAlignment="Left" Height="21" Margin="48,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="212" />
+        <PasswordBox
+            Name="lozinka"
+            Width="212"
+            Height="22"
+            Margin="48,199,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="17" />
+        <Button  Style="{ StaticResource MyButtonDesign}"  Content="Prijava" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="108,332,0,0" Click="prijavi_se" FontFamily="Goudy Old Style" Height="30" FontSize="15" TextOptions.TextFormattingMode="Display" Background="#FF4768CB" Foreground="#FFFDF3F3" RenderTransformOrigin="0.5,0.5" BorderBrush="#FFEEE8E8">
+
+        </Button>
+        <Label  FontFamily="Goudy Old Style" Content="Uloga:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,226,0,0" RenderTransformOrigin="0.718,0.305"/>
+        <ComboBox FontFamily="Goudy Old Style" Name="uloga" HorizontalAlignment="Left" VerticalAlignment="Top" Width="212" Margin="48,248,0,0" BorderBrush="Black" Foreground="Black">
+            <ComboBoxItem Foreground="Black" IsSelected="True">PACIJENT</ComboBoxItem>
+            <ComboBoxItem Foreground="Black">LEKAR</ComboBoxItem>
+            <ComboBoxItem Foreground="Black">SEKRETAR</ComboBoxItem>
+            <ComboBoxItem Foreground="Black">UPRAVNIK</ComboBoxItem>
+
+        </ComboBox>
+
+        <Label Content="Zaboravili ste lozinku?" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,370,0,0" FontFamily="Goudy Old Style Italic Underline" Width="108" Background="#FFFDF9F9" Foreground="#FFF12A2A" />
+
+    </Grid>
+</Window>
+

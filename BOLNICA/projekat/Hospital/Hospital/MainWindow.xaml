@@ -5,48 +5,58 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Hospital"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Prijava"
-    Width="800"
-    Height="450"
-    WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d">
-    <Grid Background="LightBlue">
-        <Frame
-            x:Name="frame"
-            Width="790"
-            Height="390"
-            Margin="0,30,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            NavigationUIVisibility="Hidden" />
-        <Menu
-            Width="296"
-            Height="30"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Background="LightGray">
-            <MenuItem
-                Click="prijava"
-                FontSize="20"
-                FontWeight="Bold"
-                Foreground="#FF0852AE"
-                Header="PRIJAVA  " />
-            <MenuItem
-                Background="LightGray"
-                Click="blog"
-                FontSize="20"
-                FontWeight="Bold"
-                Foreground="#FF0852AE"
-                Header="BLOG  " />
-            <MenuItem
-                Background="LightGray"
-                Click="informacije"
-                FontSize="20"
-                FontWeight="Bold"
-                Foreground="#FF0852AE"
-                Header="O KLINICI" />
+  
+           mc:Ignorable="d"
+               Title="" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="MyButtonDesign">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="MyContentPresenter" 
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
 
-        </Menu>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="True">
+                   
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                   
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+    </Window.Resources>
+    <Grid Margin="4,0,6.2,16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="429*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="344*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Button Style="{ StaticResource MyButtonDesign}"  Content="PRIJAVA" Grid.Column="1" HorizontalAlignment="Left" Margin="103.8,250.2,0,0" VerticalAlignment="Top" Width="88" Height="30" Grid.Row="1" Background="#FFE2DFDF" BorderBrush="#FFEEEBEB" FontFamily="Goudy Old Style" Click="logovanje"/>
+        <Button Style="{ StaticResource MyButtonDesign}"  Content="BLOG" Grid.Column="1" HorizontalAlignment="Left" Margin="103.8,300.2,0,0" VerticalAlignment="Top" Width="88" Height="30" Grid.Row="1" BorderBrush="#FFEEEBEB" FontFamily="Goudy Old Style" Click="blog"/>
+        <Button Style="{ StaticResource MyButtonDesign}"  Content="O BOLNICI" Grid.Column="1" HorizontalAlignment="Left" Margin="103.8,350.2,0,0" VerticalAlignment="Top" Width="88" Height="30" Grid.Row="1" BorderBrush="#FFEEEBEB" FontFamily="Goudy Old Style" Click="o_bolnici"/>
+        <Label Content="Zdravo bolnica" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="191" Grid.Column="1" Margin="61.8,38.2,0,0" Grid.Row="1" FontFamily="Goudy Old Style" Foreground="#FF1438A3"   FontSize="30" />
+        <Image  Stretch="Fill" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="97.8,100.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>

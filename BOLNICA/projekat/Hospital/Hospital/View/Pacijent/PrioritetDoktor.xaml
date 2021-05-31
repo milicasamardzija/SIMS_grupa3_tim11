@@ -6,7 +6,40 @@
         xmlns:local="clr-namespace:Hospital.View.Pacijent"
         mc:Ignorable="d"
        Title="Prioritet-Doktor" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
-    <Grid>
+       <Window.Resources>
+        <Style TargetType="Button" x:Key="MyButtonDesign">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="MyContentPresenter" 
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+
+
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="True">
+
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+    </Window.Resources>
+    
+        <Grid>
         <ListBox x:Name="times" HorizontalAlignment="Left" FontFamily="Goudy Old Style"  Width="230" Margin="40,265,0,119.6" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="times_SelectionChanged" />
 
         <Line  
@@ -38,8 +71,8 @@
         <Label Content=" Izaberite datum:" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Goudy Old Style" Margin="34,154,0,0"/>
         <DatePicker Name="date" SelectedDateChanged="date_SelectedDateChanged" HorizontalAlignment="Left" Height="24" Margin="40,180,0,0" FontFamily="Goudy Old Style" VerticalAlignment="Top" Width="230"/>
         <Label Name="timelabel" FontFamily="Goudy Old Style" Content=" Slobodni termini kod izabranog doktora su:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.953,7.812" Margin="34,239,0,0"/>
-        <Button Content="Odustani" BorderBrush="#FFF9F3F3"   Name="odustanii" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="170,370,0,0" Click="odustani" Height="29"/>
-        <Button Content="Potvrdi"  BorderBrush="#FFF9F3F3"   FontFamily="Goudy Old Style" Name="potvrdii" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="58,370,0,0" Click="potvrdi" Height="29"/>
+        <Button Style="{ StaticResource MyButtonDesign}"  Content="Odustani" BorderBrush="#FFF9F3F3"   Name="odustanii" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="170,370,0,0" Click="odustani" Height="29"/>
+        <Button Style="{ StaticResource MyButtonDesign}" Content="Potvrdi"  BorderBrush="#FFF9F3F3"   FontFamily="Goudy Old Style" Name="potvrdii" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="58,370,0,0" Click="potvrdi" Height="29"/>
 
     </Grid>
 </Window>

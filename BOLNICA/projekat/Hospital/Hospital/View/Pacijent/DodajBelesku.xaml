@@ -13,7 +13,7 @@
         
 
 
-        <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="119,24,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Width="171" Height="29" Foreground="LightBlue"/>
+        <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="154,24,-1.8,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Width="171" Height="29" Foreground="LightBlue"/>
         <Line  
             X1="500" Y1="0"  
             X2="20" Y2="0"  
@@ -24,13 +24,12 @@
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Label x:Name="textOfNote"  Content=" Opis beleške:" HorizontalAlignment="Left" Margin="35,110,0,0" VerticalAlignment="Top" FontSize="12" Height="25" RenderTransformOrigin="0.128,0.784" />
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="45" Margin="45,135,0,0" TextWrapping="Wrap" Text="" FontSize="17" VerticalAlignment="Top" Width="220" TextChanged="textBox_TextChanged" />
-        <TextBlock x:Name="startDateTextBlock" Margin="45,211,0,0" FontSize="11" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Početni datum:" VerticalAlignment="Top" Width="73"/>
-        <TextBlock x:Name="endDateTextBlock" HorizontalAlignment="Left" FontSize="11" Margin="45,277,0,0" TextWrapping="Wrap" Text="Krajnji datum:" VerticalAlignment="Top" Height="23" Width="85"/>
-        <DatePicker x:Name="startDatePicker" SelectedDateChanged="StartDatePicker_OnSelectedDateChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="45,231,0,0" Width="220"/>
-        <DatePicker x:Name="endDatePicker" SelectedDateChanged="EndDatePicker_OnSelectedDateChanged" HorizontalAlignment="Left" Margin="45,296,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.833,0.417" Height="24" Width="220"/>
-        <TextBlock x:Name="imePacijenta_Copy" FontStyle="Italic" HorizontalAlignment="Left" Margin="119,24,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Width="171" Height="29" Foreground="LightBlue"/>
+        <Label x:Name="textOfNote" FontFamily="Goudy Old Style" Content=" Opis beleške:" HorizontalAlignment="Left" Margin="35,110,0,0" VerticalAlignment="Top" FontSize="12" Height="25" RenderTransformOrigin="0.128,0.784" />
+        <TextBox FontFamily="Goudy Old Style" x:Name="textBox" HorizontalAlignment="Left" Height="45" Margin="45,135,0,0" TextWrapping="Wrap" Text="" FontSize="17" VerticalAlignment="Top" Width="220" TextChanged="textBox_TextChanged" />
+        <TextBlock FontFamily="Goudy Old Style" x:Name="startDateTextBlock" Margin="45,211,0,0" FontSize="11" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Početni datum:" VerticalAlignment="Top" Width="73"/>
+        <TextBlock  FontFamily="Goudy Old Style" x:Name="endDateTextBlock" HorizontalAlignment="Left" FontSize="11" Margin="45,277,0,0" TextWrapping="Wrap" Text="Krajnji datum:" VerticalAlignment="Top" Height="23" Width="85"/>
+        <DatePicker x:Name="startDatePicker"  FontFamily="Goudy Old Style" SelectedDateChanged="StartDatePicker_OnSelectedDateChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="45,231,0,0" Width="220"/>
+        <DatePicker x:Name="endDatePicker" FontFamily="Goudy Old Style" SelectedDateChanged="EndDatePicker_OnSelectedDateChanged" HorizontalAlignment="Left" Margin="45,296,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.833,0.417" Height="24" Width="220"/>
         <Line  
             X1="500" Y1="0"  
             X2="20" Y2="0"  

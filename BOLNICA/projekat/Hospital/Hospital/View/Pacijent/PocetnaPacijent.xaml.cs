@@ -42,7 +42,7 @@ namespace Hospital
 
         private void Odjava(object sender, RoutedEventArgs e)
         {
-            MainWindow mw = new MainWindow();
+            Logovanje mw = new Logovanje();
             mw.Show();
             this.Close();
         }

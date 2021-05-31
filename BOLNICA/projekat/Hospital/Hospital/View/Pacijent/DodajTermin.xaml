@@ -6,7 +6,40 @@
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
       Title="Dodaj termin" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
-    <Grid >
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="MyButtonDesign">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="MyContentPresenter" 
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+
+
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="True">
+
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+    </Window.Resources>
+    
+        <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
@@ -37,8 +70,7 @@
                     StrokeThickness="4" Height="10" Width="344" />
             </Label>
             <Label Content="Zakazivanje termina" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="74,78,0,0" FontFamily="Goudy Old Style" Width="166" Height="37" FontSize="20"/>
-            <Button Margin="8.8,3.8,-8.8,35.8" Background="AliceBlue" Click="odustani" Grid.Column="2" Grid.Row="1">Odustani</Button>
-            <ComboBox Name="time"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="38,205,0,0" Height="22" SelectionChanged="time_SelectionChanged" />
+           <ComboBox Name="time"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="38,205,0,0" Height="22" SelectionChanged="time_SelectionChanged" />
             <ComboBox x:Name="lekar" ItemsSource="{Binding Path=Lekar}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="38,269,0,0" Height="22" IsSynchronizedWithCurrentItem="False" FontSize="14">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
@@ -62,9 +94,9 @@
             <Label Content="Vreme:&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,181,0,0" Height="24" FontFamily="Goudy Old Style" FontSize="14" Width="59"/>
             <Label Content="Doktor:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,245,0,0" Width="59" FontFamily="Goudy Old Style" Height="24"/>
 
-            <Button Content="Izaberi prioritet" HorizontalAlignment="Left" VerticalAlignment="Top" Width="96" Margin="95,321,0,0" Background="#FFFFF7F7" Foreground="Black" BorderBrush="White" FontStyle="Italic" Click="izaberi_prioritet" Height="19"/>
-            <Button Content="Odustani" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="165,12.8,0,0" Height="30" FontFamily="Goudy Old Style" FontSize="14" Foreground="#FF0F0D0D" BorderBrush="#FFF9F3F3"  Click="odustani" Grid.Row="1"/>
-            <Button x:Name="potvrdi" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="55,12.8,0,0" Height="30" FontFamily="Goudy Old Style" FontSize="14" Foreground="#FF0F0D0D" BorderBrush="#FFF9F3F3"  Click="add_appointment" Grid.Row="1"/>
+            <Button Style="{ StaticResource MyButtonDesign}" Content="Izaberi prioritet" HorizontalAlignment="Left" VerticalAlignment="Top" Width="96" Margin="95,321,0,0" Background="#FFFFF7F7" Foreground="Black" BorderBrush="White" FontStyle="Italic" Click="izaberi_prioritet" Height="19"/>
+            <Button  Style="{ StaticResource MyButtonDesign}" Content="Odustani" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="165,12.8,0,0" Height="30" FontFamily="Goudy Old Style" FontSize="14" Foreground="#FF0F0D0D" BorderBrush="#FFF9F3F3"  Click="odustani" Grid.Row="1"/>
+            <Button Style="{ StaticResource MyButtonDesign}" x:Name="potvrdi" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="55,12.8,0,0" Height="30" FontFamily="Goudy Old Style" FontSize="14" Foreground="#FF0F0D0D" BorderBrush="#FFF9F3F3"  Click="add_appointment" Grid.Row="1"/>
 
 
         </Grid>

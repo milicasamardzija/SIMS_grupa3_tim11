@@ -5,7 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
             Title="Dodaj termin" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
-    <Grid >
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="MyButtonDesign">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="MyContentPresenter" 
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+
+
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="True">
+
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+    </Window.Resources>
+    
+        <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
@@ -59,8 +92,8 @@
             </Label>
             <Label Content="Vreme:&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,181,0,0" Height="24" FontFamily="Goudy Old Style" FontSize="14" Width="59"/>
             <Label Content="Doktor:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,250,0,0" Width="59" FontFamily="Goudy Old Style" Height="24" RenderTransformOrigin="0.532,1.258"/>
-            <Button x:Name="odustanii" Content="Odustani" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="165,3.8,0,0" Height="30" FontFamily="Goudy Old Style" FontSize="14" Foreground="#FF0F0D0D" BorderBrush="#FFF9F3F3"  Click="odustani" Grid.Row="1"/>
-            <Button x:Name="potvrdi" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="60,3.8,0,0" Height="30" FontFamily="Goudy Old Style" FontSize="14" Foreground="#FF0F0D0D" BorderBrush="#FFF9F3F3"  Click="add_appointment" Grid.Row="1"/>
+            <Button Style="{ StaticResource MyButtonDesign}"  x:Name="odustanii" Content="Odustani" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="165,3.8,0,0" Height="30" FontFamily="Goudy Old Style" FontSize="14" Foreground="#FF0F0D0D" BorderBrush="#FFF9F3F3"  Click="odustani" Grid.Row="1"/>
+            <Button Style="{ StaticResource MyButtonDesign}"  x:Name="potvrdi" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="60,3.8,0,0" Height="30" FontFamily="Goudy Old Style" FontSize="14" Foreground="#FF0F0D0D" BorderBrush="#FFF9F3F3"  Click="add_appointment" Grid.Row="1"/>
 
 
         </Grid>

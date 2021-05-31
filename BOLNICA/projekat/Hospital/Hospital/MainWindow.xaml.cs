@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.View.Pacijent;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,31 +24,26 @@ namespace Hospital
         public MainWindow()
         {
             InitializeComponent();
-            Prijava prijava = new Prijava(new BlogGlavni());
-            frame.Navigate(prijava);
+          
             
         }
 
-        private void prijava(object sender, RoutedEventArgs e)
+        private void logovanje(object sender, RoutedEventArgs e)
         {
-            Prijava p = new Prijava(new BlogGlavni());
-            frame.Navigate(p);
-
+            Logovanje login = new Logovanje();
+            login.Show();
+            this.Close();
         }
 
         private void blog(object sender, RoutedEventArgs e)
-       {
-            BlogGlavni b = new BlogGlavni();
-           frame.Navigate(b);
-
-       }
-
-        private void informacije(object sender, RoutedEventArgs e)
         {
-            InformacijeKlinike info = new InformacijeKlinike();
-            frame.Navigate(info);
 
         }
 
+        private void o_bolnici(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
+

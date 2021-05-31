@@ -6,7 +6,40 @@
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
  Title="Moji pregledi"  Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen" >
-    <Grid>
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="MyButtonDesign">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="MyContentPresenter" 
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+
+
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="True">
+
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+    </Window.Resources>
+   
+        <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="0*"/>
@@ -44,13 +77,13 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Content="Izmeni" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="115.6,360,0,0" Height="23" BorderBrush="#FFFFF3F3" Grid.ColumnSpan="2" Grid.Column="1" FontFamily="Goudy Old Style" Click="izmeni"/>
-        <Button Content="Zakaži" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="115.6,320,0,0" RenderTransformOrigin="0.334,0.479" Height="24" Foreground="#FF0F0D0D" BorderBrush="#FFF4EEEE" Grid.ColumnSpan="2" Grid.Column="1" FontFamily="Goudy Old Style" Click="dodavanje"/>
-        <Button Content="Otkaži" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="115.6,400,0,0" Height="24" BorderBrush="#FFF9F9F9" Grid.ColumnSpan="2" Grid.Column="1" FontFamily="Goudy Old Style"  Click="obrisi"/>
+        <Button Style="{ StaticResource MyButtonDesign}"  Content="Izmeni" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="115.6,360,0,0" Height="23" BorderBrush="#FFFFF3F3" Grid.ColumnSpan="2" Grid.Column="1" FontFamily="Goudy Old Style" Click="izmeni"/>
+        <Button Style="{ StaticResource MyButtonDesign}"  Content="Zakaži" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="115.6,320,0,0" RenderTransformOrigin="0.334,0.479" Height="24" Foreground="#FF0F0D0D" BorderBrush="#FFF4EEEE" Grid.ColumnSpan="2" Grid.Column="1" FontFamily="Goudy Old Style" Click="dodavanje"/>
+        <Button Style="{ StaticResource MyButtonDesign}" Content="Otkaži" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="115.6,400,0,0" Height="24" BorderBrush="#FFF9F9F9" Grid.ColumnSpan="2" Grid.Column="1" FontFamily="Goudy Old Style"  Click="obrisi"/>
         <TextBlock x:Name="imePacijentaa" FontStyle="Italic" HorizontalAlignment="Left" Margin="145,20,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Grid.RowSpan="2" Width="171" Height="38" Foreground="LightBlue"/>
 
 
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="10,25,0,0" FontSize="22" Height="19" Click="Nazad_na_pocetnu" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6" Grid.Column="2">
+        <Button  Style="{ StaticResource MyButtonDesign}" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="10,25,0,0" FontSize="22" Height="19" Click="Nazad_na_pocetnu" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6" Grid.Column="2">
             <Button.Background>
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
             </Button.Background>

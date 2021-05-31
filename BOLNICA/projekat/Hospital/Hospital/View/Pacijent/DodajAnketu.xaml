@@ -42,7 +42,7 @@
 
     </Window.Resources>
     <Grid>
-        <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="111,17,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Grid.RowSpan="2" Width="171" Height="38" Foreground="LightBlue" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="142,17,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Width="171" Height="38" Foreground="LightBlue"/>
 
         <Label Content="     Doktor:" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Goudy Old Style" RenderTransformOrigin="6.25,3.711" Margin="10,124,0,0" Width="99" Height="31"/>
         <Label Content="Ocenite rad doktora na obavljenom pregledu!" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,76,0,0" Width="238"/>
@@ -71,13 +71,11 @@
             StrokeThickness="4" Margin="-19,58,-1.8,169.6" />
         <Button  Style="{ StaticResource MyButtonDesign}" Click="odustani" FontSize="10" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" Width="55" Height="36" Command ="{Binding UpdateStorageCommand}" >
             <StackPanel>
-                <Image Source="arrow.png" Height="30" Width="55" >
+                <Image Source="arrow.png" Height="22" Width="39" >
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
                             <Style.Triggers>
-                                <Trigger Property="IsEnabled" Value="False">
-
-                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False"/>
                             </Style.Triggers>
                         </Style>
                     </Image.Style>

@@ -6,7 +6,40 @@
         xmlns:local="clr-namespace:Hospital.View.Pacijent"
         mc:Ignorable="d"
         Title="" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="MyButtonDesign">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="MyContentPresenter" 
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+
+
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="True">
+
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+    </Window.Resources>
+    
+        <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="315*"/>
             <ColumnDefinition Width="8*"/>
@@ -23,7 +56,7 @@
             X2="20" Y2="0"  
             Stroke="SteelBlue"  
             StrokeThickness="4" Margin="-19,58,-1.8,93" Grid.ColumnSpan="2" />
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="10,25,0,0" FontSize="22" Height="19" Click="Nazad_na_pocetnu" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6">
+        <Button Style="{ StaticResource MyButtonDesign}" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="10,25,0,0" FontSize="22" Height="19" Click="Nazad_na_pocetnu" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6">
             <Button.Background>
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
             </Button.Background>
@@ -52,7 +85,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Odustani" BorderBrush="#FFF9F3F3"   x:Name="odustanii" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="170,25,0,0" Click="odustani" Height="29" Grid.Row="1"/>
-        <Button Content="Potvrdi"  BorderBrush="#FFF9F3F3"   FontFamily="Goudy Old Style" x:Name="potvrdii" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="58,25,0,0" Click="potvrdi" Height="29" Grid.Row="1"/>
+        <Button Style="{ StaticResource MyButtonDesign}" Content="Potvrdi"  BorderBrush="#FFF9F3F3"   FontFamily="Goudy Old Style" x:Name="potvrdii" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="58,25,0,0" Click="potvrdi" Height="29" Grid.Row="1"/>
 
     </Grid>
 </Window>

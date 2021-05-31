@@ -173,6 +173,9 @@
     <Compile Include="View\Pacijent\DodajBelesku.xaml.cs">
       <DependentUpon>DodajBelesku.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pacijent\Logovanje.xaml.cs">
+      <DependentUpon>Logovanje.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pacijent\ObavljeniPregledi.xaml.cs">
       <DependentUpon>ObavljeniPregledi.xaml</DependentUpon>
     </Compile>
@@ -352,6 +355,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Pacijent\DodajBelesku.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pacijent\Logovanje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
