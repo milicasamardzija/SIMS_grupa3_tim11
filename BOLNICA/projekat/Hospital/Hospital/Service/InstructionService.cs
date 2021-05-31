@@ -67,6 +67,13 @@ namespace Hospital.Service
             Checkup newCheckups = new Checkup(generateIdCheckup(), checkup.IdDoctor, checkup.IdPatient, checkup.Date, 0, CheckupType.pregled);
             checkupStoorage.Save(newCheckups);
         }
+
+        public void createInstruction(Instruction instruction)
+        {
+            Instruction newInstruction = new Instruction(generateInstructionId(), instruction.IdCheckup, instruction.InstructionType,
+                instruction.Given, instruction.Jmbg, instruction.Lbo, instruction.Interval, instruction.CommentInstruction);
+            storageInstruction.Save(newInstruction);
+        }
         
     }
 }

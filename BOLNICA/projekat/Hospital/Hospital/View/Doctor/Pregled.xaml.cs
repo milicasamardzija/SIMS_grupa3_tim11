@@ -74,7 +74,7 @@ namespace Hospital
 
         private void button9_Click(object sender, RoutedEventArgs e)
         {
-            KreiranjeAnamneze newAnamnesis = new KreiranjeAnamneze(CheckupList, (Checkup)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
+            KreiranjeAnamneze newAnamnesis = new KreiranjeAnamneze(CheckupList, (CheckupDTO)ListCheckups.SelectedItem, ListCheckups.SelectedIndex);
             newAnamnesis.Show();
         }
 

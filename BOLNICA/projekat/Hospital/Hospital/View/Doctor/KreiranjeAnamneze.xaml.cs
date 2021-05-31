@@ -25,10 +25,10 @@ namespace Hospital
     public partial class KreiranjeAnamneze : Window
     {
         public ObservableCollection<CheckupDTO> listCheckup;
-        public Checkup checkup;
+        public CheckupDTO checkup;
         public int index;
 
-        public KreiranjeAnamneze(ObservableCollection<CheckupDTO> list, Checkup selectedCheckup, int selectedIndex)
+        public KreiranjeAnamneze(ObservableCollection<CheckupDTO> list, CheckupDTO selectedCheckup, int selectedIndex)
         {
             InitializeComponent();
             listCheckup = list;

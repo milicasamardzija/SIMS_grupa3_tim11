@@ -13,6 +13,7 @@ namespace Hospital.Controller
 
         public AnamnesisController()
         {
+
         }
         
         
