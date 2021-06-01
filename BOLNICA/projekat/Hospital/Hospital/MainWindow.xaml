@@ -39,7 +39,7 @@
         </Style>
 
     </Window.Resources>
-    <Grid Margin="4,0,6.2,16">
+    <Grid Margin="4,0,-5.8,-1.4">
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="429*"/>
@@ -87,7 +87,7 @@
 
             </Button.Resources>
         </Button>
-        <Label Content="Zdravo bolnica" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="200" Grid.Column="1" Margin="65,38.2,0,0" Grid.Row="1"  Foreground="#FF1438A3"   FontSize="28" RenderTransformOrigin="0.72,0.583" />
+        <Label Content="Zdravo bolnica" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="210" Grid.Column="1" Margin="65,38.2,0,0" Grid.Row="1"  Foreground="#FF64CCF1"   FontSize="28" RenderTransformOrigin="0.72,0.583" FontWeight="Bold" />
 
      
     </Grid>
