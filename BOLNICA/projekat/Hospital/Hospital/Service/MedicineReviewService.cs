@@ -16,7 +16,7 @@ namespace Hospital.Service
     {
         private MedicineReviewIFileStorage storageMedicineReview;
         private MedicineIFileStorage storageMedicine;
-        private DoctorFileStorage storageDoctor;
+        private IDoctorFileStorage storageDoctor;
 
         public MedicineReviewService()
         {

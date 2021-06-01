@@ -10,12 +10,16 @@ using System.Threading.Tasks;
 
 namespace Hospital.Controller
 {
-    class RoomsController
+    public class RoomsController
     {
-        private RoomsService service = new RoomsService();
+        private RoomsService service;
+        public RoomsController()
+        {
+            service = new RoomsService();
+        }
         public void scheduleRenovation(RoomRenovationDTO renovation)
         {
-            service.zakaziRenoviranje(new RoomRenovation(renovation.IdRenovation,renovation.IdRoom,renovation.DateBegin,renovation.DateEnd,renovation.Description));
+            service.scheduleRenovation(new RoomRenovation(renovation.IdRenovation,renovation.IdRoom,renovation.DateBegin,renovation.DateEnd,renovation.Description));
         }
         public List<RoomDTO> getAll()
         {

@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -65,7 +66,7 @@ namespace Hospital
             }
             quantity = Convert.ToInt32(KolicinaTxt.Text);
 
-            inventoryController.moveInventory(new RoomInventory(idRoom, inventory.Id, quantity), roomOutId);
+            inventoryController.moveInventory(new RoomInventory(-1,idRoom, inventory.Id, quantity), roomOutId);
             listaInvetara.ItemsSource = loadJasonInventory();
 
             frame.NavigationService.Navigate(new BelsekaMagacin());
@@ -73,7 +74,7 @@ namespace Hospital
 
         public ObservableCollection<Inventory> loadJasonInventory()
         {
-            RoomInventoryFileStorage storage = new RoomInventoryFileStorage();
+            IRoomInventoryFileStorage storage = new RoomInventoryFileStorage("./../../../../Hospital/files/storageRoomInventory.json");
             InventoryFileStorage inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
 
             ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>();

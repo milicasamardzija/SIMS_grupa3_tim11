@@ -12,27 +12,23 @@ namespace Hospital.Service
     class RoomsService
     {
         private RenovationIFileStorage renovationStorage;
-        private CheckupFileStorage checkupStorage;
-        private StaticInvnetoryMovementFileStorage inventoryMovementStorage;
-        private RoomInventoryFileStorage roominventoryStorage;
-        private InventoryFileStorage inventoryStorage;
+        private ICheckFileStorage checkupStorage;
+        private IRoomInventoryFileStorage roominventoryStorage;
+        private InventoryIFileStorage inventoryStorage;
         private StaticInvnetoryMovementFileStorage staticInventoryStorage;
         private RoomIFileStorage roomStorage;
-        private RoomInventoryFileStorage inventoryInRoomStorage;
 
         public RoomsService()
         {
             renovationStorage = new RenovationFileStorage("./../../../../Hospital/files/storageRenovationRooms.json");
             checkupStorage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            inventoryMovementStorage = new StaticInvnetoryMovementFileStorage();
-            roominventoryStorage = new RoomInventoryFileStorage();
+            roominventoryStorage = new RoomInventoryFileStorage("./../../../../Hospital/files/storageRoomInventory.json");
             inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             staticInventoryStorage = new StaticInvnetoryMovementFileStorage();
-            inventoryInRoomStorage = new RoomInventoryFileStorage();
             roomStorage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
         }
 
-        public void zakaziRenoviranje(RoomRenovation renovation)
+        public void scheduleRenovation(RoomRenovation renovation)
         {
             if (isRoomAvailableRenovation(renovation))
             {
@@ -45,26 +41,6 @@ namespace Hospital.Service
                 odbijeno.Show();
             }
         }
-
-        /* public Boolean hasNoRenovationScheduled(RoomRenovation renovation)
-         {
-             foreach (RoomRenovation renov in renovationStorage.GetAll())
-             {
-                 if (renovation.IdRoom == renov.IdRoom && renovation.DateBegin.Date == renov.DateBegin.Date)
-                 {
-                     return false;
-                 }
-                 if (renovation.IdRoom == renov.IdRoom && renovation.DateEnd.Date == renov.DateEnd.Date)
-                 {
-                     return false;
-                 }
-                 if (renovation.IdRoom == renov.IdRoom && renovation.DateBegin.Date < renov.DateEnd.Date &&)
-                 {
-                     return false;
-                 }
-             }
-             return true;
-         }*/
 
         public void moveInventoryForRenovation(RoomRenovation renovation)
         {
@@ -170,7 +146,7 @@ namespace Hospital.Service
                 {
                     if(room.Id == checkup.IdRoom) 
                     {
-                       if(checkup.Date!=dateTime.Date) //ovo proverava i datum i vreme
+                       if(checkup.Date!=dateTime.Date)
                        {
                             availableRooms.Add(room);
                        }

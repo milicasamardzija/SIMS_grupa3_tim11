@@ -14,13 +14,13 @@ namespace Hospital.Model
     {
         private InventoryIFileStorage inventoryStorage { get; set; }
         private RoomIFileStorage roomStorage { get; set; }
-        private RoomInventoryFileStorage roomInventoryStorage { get; set; }
+        private IRoomInventoryFileStorage roomInventoryStorage { get; set; }
 
         public StaticInvnetoryMovementFileStorage()
         {
             inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             roomStorage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
-            roomInventoryStorage = new RoomInventoryFileStorage();
+            roomInventoryStorage = new RoomInventoryFileStorage("./../../../../Hospital/files/storageRoomInventory.json");
             List<RoomInventory> all = roomInventoryStorage.GetAll();
             List<Inventory> inventories = inventoryStorage.GetAll();
         }
@@ -90,7 +90,7 @@ namespace Hospital.Model
                     {
                         roomInv.Quantity += quantity;     //povecava se kolicina inventara u sobi
                         nadjen = false;
-                        roomInventoryStorage.serialize(all);//kompletna izmenja lista se serijalizuje
+                        roomInventoryStorage.SaveAll(all);//kompletna izmenja lista se serijalizuje
                         break;
                     }
 
@@ -125,7 +125,7 @@ namespace Hospital.Model
                             break;
                         }
                     }
-                    RoomInventory newInventory = new RoomInventory(idRoomIn, room, invent.Id, invent, quantity);
+                    RoomInventory newInventory = new RoomInventory(-1,-idRoomIn, room, invent.Id, invent, quantity);
                     all.Add(newInventory);
                 }
             }
@@ -151,7 +151,7 @@ namespace Hospital.Model
                         i.Quantity -= quantity;
 
                         inventoryStorage.SaveAll(inventories);
-                        roomInventoryStorage.serialize(all);
+                        roomInventoryStorage.SaveAll(all);
                         break;
                     }
                 }
@@ -196,7 +196,7 @@ namespace Hospital.Model
                             all.Remove(ri);
                         }
 
-                        roomInventoryStorage.serialize(all);
+                        roomInventoryStorage.SaveAll(all);
                         break;
                     }
                 }

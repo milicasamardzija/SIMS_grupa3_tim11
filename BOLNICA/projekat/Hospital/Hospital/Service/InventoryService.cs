@@ -9,17 +9,15 @@ namespace Hospital.Service
 {
     public class InventoryService
     {
-        private RoomFileStorage roomStorage;
         private InventoryIFileStorage inventoryStorage;
-        private RoomInventoryFileStorage roomInventoryStorage;
+        private IRoomInventoryFileStorage roomInventoryStorage;
         private List<RoomInventory> allRoomInventory;
         private List<Inventory> inventories;
         private RoomInventoryService roomInventoryService;
         public InventoryService()
         {
-            roomStorage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
             inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
-            roomInventoryStorage = new RoomInventoryFileStorage();
+            roomInventoryStorage = new RoomInventoryFileStorage("./../../../../Hospital/files/storageRoomInventory.json");
             allRoomInventory = roomInventoryStorage.GetAll();
             inventories = inventoryStorage.GetAll();
             roomInventoryService = new RoomInventoryService();
@@ -174,7 +172,7 @@ namespace Hospital.Service
         private void saveChangeOfInventoryState()
         {
             inventoryStorage.SaveAll(inventories);
-            roomInventoryStorage.serialize(allRoomInventory);
+            roomInventoryStorage.SaveAll(allRoomInventory);
         }
 
         private void moveInventoryRooms(RoomInventory roomInventory, int idRoomOut)

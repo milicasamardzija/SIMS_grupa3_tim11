@@ -7,25 +7,13 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model 
 {
-    public class StaticInventoryMovement : INotifyPropertyChanged
+    public class StaticInventoryMovement
     {
         private int roomInId;
         private int roomOutId;
         private int inventoryId;
         private int quantity;
         private DateTime date;
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnProperychanged(string name)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
-
 
         public StaticInventoryMovement (int idIn, int idOut, int idInv, int q, DateTime d)
         {
@@ -47,7 +35,6 @@ namespace Hospital.Model
                 if (value != roomInId)
                 {
                     roomInId = value;
-                    OnProperychanged("RoomInId");
                 }
             }
         }
@@ -61,7 +48,6 @@ namespace Hospital.Model
             set
             {
                 roomOutId = value;
-                OnProperychanged("RoomOutId");
             }
         }
 
@@ -74,7 +60,6 @@ namespace Hospital.Model
             set
             {
                 inventoryId = value;
-                OnProperychanged("inventoryId");
             }
         }
 
@@ -87,7 +72,6 @@ namespace Hospital.Model
             set
             {
                 quantity = value;
-                OnProperychanged("Quantity");
             }
         }
 
@@ -100,7 +84,6 @@ namespace Hospital.Model
             set
             {
                 date = value;
-                OnProperychanged("Date");
             }
         }
     }

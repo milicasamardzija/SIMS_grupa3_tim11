@@ -40,7 +40,6 @@ namespace Hospital.Controller
                         break;
                     }
                 }
-                
             }
         }
 

@@ -11,11 +11,11 @@ public class Inventory : Entity, INotifyPropertyChanged
 
     public Inventory() { }
 
-    public Inventory(int id, String n, int q, InventoryType t) : base(id)
+    public Inventory(int id, String name, int quantity, InventoryType type) : base(id)
     {
-        name = n;
-        quantity = q;
-        type = t;
+        this.name = name;
+        this.quantity = quantity;
+        this.type = type;
     }
 
     public event PropertyChangedEventHandler PropertyChanged;

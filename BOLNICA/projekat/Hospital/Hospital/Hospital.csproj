@@ -97,6 +97,7 @@
     <Compile Include="FileStorage\Interfaces\InventoryIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IPatientFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IRecipeFileStorage.cs" />
+    <Compile Include="FileStorage\Interfaces\IRoomInventoryFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />

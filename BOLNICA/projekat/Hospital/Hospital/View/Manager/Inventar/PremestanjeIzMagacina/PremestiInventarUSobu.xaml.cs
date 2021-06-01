@@ -18,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for PremestiInventarUSobu.xaml
-    /// </summary>
     public partial class PremestiInventarUSobu : UserControl
     {
         public Frame frame;
@@ -76,7 +73,7 @@ namespace Hospital
             idRoom = Convert.ToInt32(IdSobeTxt.Text);
             quantity = Convert.ToInt32(KolicinaTxt.Text);
 
-            inventoryController.moveInventory(new RoomInventory(idRoom, inventory.Id, quantity), -1);
+            inventoryController.moveInventory(new RoomInventory(-1,idRoom, inventory.Id, quantity), -1);
             inventarTabela.ItemsSource = loadJsonInventory();
             frame.NavigationService.Navigate(new BelsekaMagacin());
         }

@@ -1,17 +1,15 @@
-// File:    RoomInventoryFileStorage.cs
-// Author:  Milica
-// Created: Wednesday, April 14, 2021 6:35:22 PM
-// Purpose: Definition of Class RoomInventoryFileStorage
 
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Hospital.FileStorage;
+using Hospital.FileStorage.Interfaces;
 
-public class RoomInventoryFileStorage
+public class RoomInventoryFileStorage : GenericFileStorage<RoomInventory>,IRoomInventoryFileStorage
 {
-   public RoomInventoryFileStorage() { }
-   public List<RoomInventory> GetAll()
+   public RoomInventoryFileStorage(string filePath) : base(filePath) { }
+  /* public List<RoomInventory> GetAll()
    {
         List<RoomInventory> all = new List<RoomInventory>();
 
@@ -36,7 +34,7 @@ public class RoomInventoryFileStorage
             JsonSerializer serializer = new JsonSerializer();
             serializer.Serialize(file, all);
         }
-    }
+   }
    
    public void Delete(RoomInventory roomInventory)
    {
@@ -51,7 +49,7 @@ public class RoomInventoryFileStorage
             }
         }
         serialize(allInventories);
-    }
+    }*/
    
    public void DeleteByIdInventory(int id)
    {
@@ -65,7 +63,7 @@ public class RoomInventoryFileStorage
                 break;
             }
         }
-        serialize(allInventories);
+        SaveAll(allInventories);
    }
 
     public void DeleteByIdRoom(int id)
@@ -80,10 +78,10 @@ public class RoomInventoryFileStorage
                 break;
             }
         }
-        serialize(allInventories);
+        SaveAll(allInventories);
     }
 
-    public RoomInventory FindByRoomId(int id)
+   /* public RoomInventory FindByRoomId(int id)
    {
         List<RoomInventory> allInventories = GetAll();
         RoomInventory ret = null;
@@ -114,6 +112,6 @@ public class RoomInventoryFileStorage
             }
         }
         return ret;
-    }
+    }*/
 
 }

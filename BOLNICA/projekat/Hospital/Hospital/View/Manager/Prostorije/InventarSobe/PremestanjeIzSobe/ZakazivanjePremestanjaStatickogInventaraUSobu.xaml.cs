@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.FileStorage.Interfaces;
 
 namespace Hospital
 {
@@ -57,7 +58,7 @@ namespace Hospital
 
         public ObservableCollection<Inventory> loadJason()
         {
-            RoomInventoryFileStorage storage = new RoomInventoryFileStorage();
+            IRoomInventoryFileStorage storage = new RoomInventoryFileStorage("./../../../../Hospital/files/storageRoomInventory.json");
             InventoryFileStorage inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
 
             ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>();

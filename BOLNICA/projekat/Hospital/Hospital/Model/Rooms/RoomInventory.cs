@@ -1,13 +1,32 @@
 using Newtonsoft.Json;
 using System;
+using Hospital.Model;
 
-public class RoomInventory
+public class RoomInventory : Entity
 {
     private int idRoom;
     private int idInventory;
     private int quantity;
     private Room room;
     private Inventory inventory;
+
+    public RoomInventory() { }
+
+    public RoomInventory(int id, int idRoom, Room room, int idInventory, Inventory inventory, int quantity) : base(id)
+    {
+        this.idRoom = idRoom;
+        this.room = room;
+        this.idInventory = idInventory;
+        this.inventory = inventory;
+        this.quantity = quantity;
+    }
+
+    public RoomInventory(int id, int idRoomIn, int inventoryId, int quantity) : base(id)
+    {
+        this.IdRoom = idRoomIn;
+        this.IdInventory = inventoryId;
+        this.Quantity = quantity;
+    }
 
     [JsonIgnore]
     public Room Room
@@ -69,23 +88,5 @@ public class RoomInventory
         {
             quantity = value;
         }
-    }
-
-    public RoomInventory() { }
-
-    public RoomInventory(int idR, Room r, int idI, Inventory i, int q)
-    {   
-        idRoom = idR;
-        room = r;
-        idInventory = idI;
-        inventory = i;
-        quantity = q;
-    }
-
-    public RoomInventory(int idRoomIn, int inventoryId, int quantity)
-    {
-        this.IdRoom = idRoomIn;
-        this.IdInventory = inventoryId;
-        this.Quantity = quantity;
     }
 }
