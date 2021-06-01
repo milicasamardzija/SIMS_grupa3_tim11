@@ -16,13 +16,12 @@ namespace Hospital.Model
         public NotificationsFileStorage(String filePath) : base(filePath) { }
 
         //dodala da svako moze da ocita svoje 
-        public ObservableCollection<Notifications> FindByPerson(String person)
+        public List<Notifications> FindByPerson(String person)
         {
             List<Notifications> allNotifications = GetAll();
-            ObservableCollection<Notifications> all = new ObservableCollection<Notifications>(allNotifications);
-            ObservableCollection<Notifications> ret = new ObservableCollection<Notifications>();
+            List<Notifications> ret = new List<Notifications>();
 
-            foreach (Notifications n in all)
+            foreach (Notifications n in allNotifications)
             {
                 if (n.Person == person)
                 {
@@ -30,15 +29,13 @@ namespace Hospital.Model
 
                 }
             }
-
             return ret;
         }
 
-        public ObservableCollection<Notifications> FindByIdPatient(int idPatient)
+        public List<Notifications> FindByIdPatient(int idPatient)
         {
             List<Notifications> all = GetAll();
-            ObservableCollection<Notifications> allNootifications = new ObservableCollection<Notifications>(all);
-            ObservableCollection<Notifications> ret = new ObservableCollection<Notifications>();
+            List<Notifications> ret = new List<Notifications>();
 
             foreach (Notifications n in all)
             {
@@ -48,7 +45,6 @@ namespace Hospital.Model
 
                 }
             }
-
             return ret;
         }
     }

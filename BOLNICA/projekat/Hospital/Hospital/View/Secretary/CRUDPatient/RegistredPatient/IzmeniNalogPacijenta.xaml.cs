@@ -23,14 +23,14 @@ namespace Hospital
 
         public ObservableCollection<PatientDTO> listPatient;
         public PatientController patientContoller;
-        //public ObservableCollection<MedicalRecord> listRecord;
+       
         public PatientDTO patient;
         public PatientDTO Selected 
         { get { return patient; }
             set { patient = value; } 
         }
         public int index;
-       // public MedicalRecord record;
+      
 
         public int id;
         public IzmeniNalogPacijenta(ObservableCollection<PatientDTO> list, PatientDTO selectedPatient, int sel)
@@ -47,7 +47,6 @@ namespace Hospital
 
         private void izmenaPacijentaB(object sender, RoutedEventArgs e)
         {
-            
             patientContoller.izmeniPacijenta(patient);
             this.Close();
             

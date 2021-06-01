@@ -67,13 +67,11 @@ namespace Hospital.Controller
 
         public List<Room> availableRooms(DateTime dateTime)
         {
-             
                return roomService.availableRooms(dateTime);
         }
 
         public List<Doctor> availableDoctors(DateTime date)
         {
-           
             return service.getAvailableDoctors(date);
         }
     }

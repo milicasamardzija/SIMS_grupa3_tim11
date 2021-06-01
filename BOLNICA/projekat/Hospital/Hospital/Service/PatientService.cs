@@ -13,7 +13,6 @@ namespace Hospital.Service
     {
         private IPatientFileStorage patientStorage;
 
-
         public PatientService()
         {
             patientStorage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
@@ -52,7 +51,6 @@ namespace Hospital.Service
             {
                 if (p.Id == patient.Id)
                 {
-
                     Patient unblocked = new Patient(patient.Name, patient.Surname, patient.TelephoneNumber, patient.Jmbg, patient.Gender, patient.BirthdayDate, patient.Id, patient.HealthCareCategory, patient.IdHealthCard, patient.Occupation, patient.Insurence, patient.Adress);
                     patientStorage.Delete(p);
                     patientStorage.Save(unblocked);
@@ -81,7 +79,6 @@ namespace Hospital.Service
             {
                 if (p.guest == true)
                 {
-
                     guests.Add(new PatientDTO(p.Name, p.Surname, p.TelephoneNumber, p.Jmbg, p.Gender, p.BirthdayDate, p.Id));
                 }
             }
@@ -96,7 +93,6 @@ namespace Hospital.Service
             {
                 if (p.guest == false)
                 {
-
                     registred.Add(new PatientDTO(p.Name, p.Surname, p.TelephoneNumber, p.Jmbg, p.Gender, p.BirthdayDate, p.Id, p.HealthCareCategory, p.IdHealthCard, p.Occupation, p.Insurence, p.adress, p.banovan));
                 }
             }
@@ -144,7 +140,6 @@ namespace Hospital.Service
         public int generisiId()
         {
             int ret = 0;
-
             List<Patient> allPatients = patientStorage.GetAll();
 
             foreach (Patient patient in allPatients)

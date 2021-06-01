@@ -30,7 +30,6 @@ namespace Hospital.Sekretar
         int index;
         public int id;
 
-
         public ObservableCollection<AlergensDTO> listAllAlergens
         {
             get;
@@ -91,19 +90,15 @@ namespace Hospital.Sekretar
 
         private void RemoveAlergen(object sender, RoutedEventArgs e)
         {
-          
             listAlergens.Remove((AlergensDTO)selected.SelectedItem);
         }
 
         private void saveAlergens(object sender, RoutedEventArgs e)
         {
-            
-            
             MedicalRecordDTO promeniM = controller.findRecordById(id);
             promeniM.Alergens = listAlergens;
             controller.deleteRecordById(id);
             controller.saveMedicalRecord(promeniM);
-
             this.Close();
         }
     }

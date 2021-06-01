@@ -62,21 +62,7 @@ public class Patient : User
     }
 
 
-   /* public int PatientId
-    {
-        get
-        {
-            return patientId;
-        }
-        set
-        {
-            if (value != patientId)
-            {
-                patientId = value;
-                OnProperychanged("PatientId");
-            }
-        }
-    } */
+ 
 
     public int IdHealthCard
     {
@@ -89,7 +75,7 @@ public class Patient : User
             if (value != idHealthCard)
             {
                 idHealthCard = value;
-                OnProperychanged("IdHealthCard");
+              
             }
         }
     }
@@ -105,7 +91,7 @@ public class Patient : User
             if (value != healthCareCategory)
             {
                 healthCareCategory = value;
-                OnProperychanged("HealthCareCategory");
+               
             }
         }
     }
@@ -121,7 +107,7 @@ public class Patient : User
             if (value != occupation)
             {
                 occupation = value;
-                OnProperychanged("Occupation");
+              
             }
         }
     }
@@ -137,7 +123,7 @@ public class Patient : User
             if (value != insurence)
             {
                 insurence = value;
-                OnProperychanged("Insurence");
+             
             }
         }
     }

@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model
 {
-   public class Notifications  : Entity, INotifyPropertyChanged
+    public class Notifications : Entity
     {
-    
+
         private String title;
         private String content;
         private DateTime date;
         private int idPatient;
         private String person;
 
-        public Notifications() {}
+        public Notifications() { }
 
         public Notifications(String t, String c, DateTime d, int id, String p) : base(id)
         {
@@ -36,21 +36,21 @@ namespace Hospital.Model
             this.person = p;
             this.Id = id;
         }
-         public int IdPatient
-          {
-              get
-              {
-                  return idPatient;
-              }
-              set
-              {
-                  if (value != idPatient)
-                  {
+        public int IdPatient
+        {
+            get
+            {
+                return idPatient;
+            }
+            set
+            {
+                if (value != idPatient)
+                {
                     idPatient = value;
-                      OnPropertyChanged("IdPatient");
-                  }
-              }
-          } 
+
+                }
+            }
+        }
         public DateTime Date
         {
             get
@@ -62,7 +62,7 @@ namespace Hospital.Model
                 if (value != date)
                 {
                     date = value;
-                    OnPropertyChanged("Date");
+
                 }
             }
         }
@@ -79,7 +79,7 @@ namespace Hospital.Model
                 if (value != content)
                 {
                     content = value;
-                    OnPropertyChanged("Content");
+
                 }
             }
         }
@@ -94,7 +94,7 @@ namespace Hospital.Model
                 if (value != person)
                 {
                     person = value;
-                    OnPropertyChanged("Person");
+
                 }
             }
         }
@@ -109,19 +109,10 @@ namespace Hospital.Model
                 if (value != title)
                 {
                     title = value;
-                    OnPropertyChanged("Title");
+
                 }
             }
         }
-
-        private void OnPropertyChanged(string v)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(v));
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
+ 
 }

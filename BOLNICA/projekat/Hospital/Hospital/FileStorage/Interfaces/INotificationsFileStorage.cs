@@ -10,7 +10,7 @@ namespace Hospital.FileStorage.Interfaces
 {
     public interface INotificationsFileStorage : GenericRepository<Notifications>
     {
-        ObservableCollection<Notifications> FindByPerson(String person);
-        ObservableCollection<Notifications> FindByIdPatient(int idPatient);
+        List<Notifications> FindByPerson(String person);
+        List<Notifications> FindByIdPatient(int idPatient);
     }
 }
