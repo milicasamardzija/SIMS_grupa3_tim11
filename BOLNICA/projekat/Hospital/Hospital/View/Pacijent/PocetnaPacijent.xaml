@@ -96,7 +96,7 @@
         <Button   Foreground="White" Background="#FF64CCF1" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="190" Margin="70,355,0,0" Height="47" RenderTransformOrigin="0.722,0.604" BorderBrush="#FFFDF5F5"  FontSize="14">
             <StackPanel Orientation="Horizontal">
                 <Image Source="bolnica.png" Stretch="None" Width="37" Height="27"/>
-                <TextBlock Margin="0,11,0,0" Width="132" FontSize="15" Height="36" Text="    O bolnici" />
+                <TextBlock Margin="0,11,0,0" Width="132" FontSize="15" Height="36" Text="   O bolnici" />
             </StackPanel>
 
             <Button.Resources>

@@ -64,7 +64,7 @@
             Background="#F6F6F6"
             BorderBrush="{x:Null}">
         </PasswordBox>
-        <Button    Background="#FF64CCF1" Content="Prijava" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="75,350,0,0" Click="prijavi_se" Height="36" FontSize="15" TextOptions.TextFormattingMode="Display" Foreground="#FFFDF3F3" RenderTransformOrigin="0.5,0.5" BorderBrush="#FFEEE8E8" FontWeight="Bold">
+        <Button    Background="#FF64CCF1" Content="Prijava" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="75,370,0,0" Click="prijavi_se" Height="40" FontSize="15" TextOptions.TextFormattingMode="Display" Foreground="#FFFDF3F3" RenderTransformOrigin="0.5,0.5" BorderBrush="#FFEEE8E8" FontWeight="Bold">
             <Button.Resources>
                 <Style TargetType="Border">
 
@@ -76,11 +76,11 @@
             </Button.Resources>
         </Button>
         <Label  Content="Uloga:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,260,0,0" RenderTransformOrigin="0.718,0.305"/>
-        <ComboBox Name="uloga" HorizontalAlignment="Left" VerticalAlignment="Top" Width="212" Margin="48,284,0,0" BorderBrush="Black" Foreground="Black">
+        <ComboBox Name="uloga" HorizontalAlignment="Left" VerticalAlignment="Top" Width="212" Margin="48,284,0,0" BorderBrush="#FFF9F4F4" Foreground="Black">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                     <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                    <GradientStop Color="#FFFDF5F5" Offset="1"/>
+                    <GradientStop Color="#FFEBE6E6" Offset="1"/>
                 </LinearGradientBrush>
             </ComboBox.Background>
             <ComboBoxItem Foreground="Black" IsSelected="True">PACIJENT</ComboBoxItem>
@@ -89,8 +89,6 @@
             <ComboBoxItem Foreground="Black">UPRAVNIK</ComboBoxItem>
 
         </ComboBox>
-
-        <Label Content="Zaboravili ste lozinku?" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="105,391,0,0" FontFamily="Goudy Old Style Italic Underline" Width="108" Background="#FFFDF9F9" Foreground="#FFF12A2A" />
 
     </Grid>
 </Window>
