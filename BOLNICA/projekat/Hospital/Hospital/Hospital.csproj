@@ -1083,5 +1083,11 @@
   <ItemGroup>
     <Resource Include="View\Pacijent\exit.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\slika.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

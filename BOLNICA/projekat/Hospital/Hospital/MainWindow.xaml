@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   
            mc:Ignorable="d"
-               Title="" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
+               Title="" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen" Background="AliceBlue">
     <Window.Resources>
         <Style TargetType="Button" x:Key="MyButtonDesign">
             <Setter Property="Template">
@@ -28,10 +28,10 @@
 
                 </Trigger>
                 <Trigger Property="IsEnabled" Value="True">
-                   
+
                 </Trigger>
                 <Trigger Property="IsMouseOver" Value="True">
-                   
+
                 </Trigger>
 
             </Style.Triggers>
@@ -48,15 +48,47 @@
             <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="344*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Button Style="{ StaticResource MyButtonDesign}"  Content="PRIJAVA" Grid.Column="1" HorizontalAlignment="Left" Margin="103.8,250.2,0,0" VerticalAlignment="Top" Width="88" Height="30" Grid.Row="1" Background="#FFE2DFDF" BorderBrush="#FFEEEBEB" FontFamily="Goudy Old Style" Click="logovanje"/>
-        <Button Style="{ StaticResource MyButtonDesign}"  Content="BLOG" Grid.Column="1" HorizontalAlignment="Left" Margin="103.8,300.2,0,0" VerticalAlignment="Top" Width="88" Height="30" Grid.Row="1" BorderBrush="#FFEEEBEB" FontFamily="Goudy Old Style" Click="blog"/>
-        <Button Style="{ StaticResource MyButtonDesign}"  Content="O BOLNICI" Grid.Column="1" HorizontalAlignment="Left" Margin="103.8,350.2,0,0" VerticalAlignment="Top" Width="88" Height="30" Grid.Row="1" BorderBrush="#FFEEEBEB" FontFamily="Goudy Old Style" Click="o_bolnici"/>
-        <Label Content="Zdravo bolnica" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="191" Grid.Column="1" Margin="61.8,38.2,0,0" Grid.Row="1" FontFamily="Goudy Old Style" Foreground="#FF1438A3"   FontSize="30" />
-        <Image  Stretch="Fill" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="97.8,100.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
+        <Button  Background="#FF64CCF1" Content="PRIJAVA"  FontSize="15"  Grid.Column="1" HorizontalAlignment="Left" Margin="87,270.2,0,0" VerticalAlignment="Top" Width="145" Height="40" Grid.Row="1"  BorderBrush="#FFEEEBEB"  Click="logovanje" RenderTransformOrigin="0.563,0.26" Foreground="#FFFDFDFD">
+            <Button.Resources>
+                <Style TargetType="Border">
 
+                    <Setter Property="CornerRadius" Value="17">
+
+                    </Setter>
+                </Style>
+
+            </Button.Resources>
+
+        </Button>
+        <Button  Background="#FF64CCF1"  Content="BLOG" FontSize="15" Grid.Column="1" Foreground="White" HorizontalAlignment="Left" Margin="87,315.2,0,0" VerticalAlignment="Top" Width="145" Height="40" Grid.Row="1" BorderBrush="#FFEEEBEB" Click="blog">
+            <Button.Resources>
+                <Style TargetType="Border">
+
+                    <Setter Property="CornerRadius" Value="17">
+
+                    </Setter>
+                </Style>
+
+            </Button.Resources>
+
+        </Button>
+        <Button Background="#FF64CCF1" Content="O BOLNICI" FontSize="15" Foreground="White" Grid.Column="1" HorizontalAlignment="Left" Margin="87,360.2,0,0" VerticalAlignment="Top" Width="145" Height="40" Grid.Row="1" BorderBrush="#FFEEEBEB"  Click="o_bolnici">
+            <Button.Resources>
+                <Style TargetType="Border">
+
+                    <Setter Property="CornerRadius" Value="17">
+
+                    </Setter>
+                </Style>
+
+            </Button.Resources>
+        </Button>
+        <Label Content="Zdravo bolnica" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="200" Grid.Column="1" Margin="65,38.2,0,0" Grid.Row="1"  Foreground="#FF1438A3"   FontSize="28" RenderTransformOrigin="0.72,0.583" />
+
+     
     </Grid>
 </Window>
