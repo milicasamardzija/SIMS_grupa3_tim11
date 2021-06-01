@@ -1052,5 +1052,36 @@
   <ItemGroup>
     <Resource Include="View\Images\Button-White-Remove-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\tableta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\karton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\termini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\pilule.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\pilula2.png" />
+    <Resource Include="View\Pacijent\tretman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\survey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\anketa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\bolnica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\exit.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
