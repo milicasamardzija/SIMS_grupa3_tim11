@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Pregled" Height="554.982" Width="905.915" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,-6.4,-2.6" ToolTip="Pritiskanjem strelica na tastaturi oznacite zeljeno dugme, zatim pritisnite tipku na kojoj pise Enter.">
-        <Label x:Name="label" Content="Pregled" HorizontalAlignment="Left" Margin="31,10,0,0" VerticalAlignment="Top" Width="97" RenderTransformOrigin="1.322,0.683" FontSize="24" FontStyle="Italic" Foreground="#FFE8256D"/>
+        <Label x:Name="label" Content="Pregled" HorizontalAlignment="Left" Margin="31,10,0,0" VerticalAlignment="Top" Width="97" RenderTransformOrigin="1.322,0.683" FontSize="24" FontStyle="Italic" Foreground="#FF010101"/>
 
                 <DataGrid x:Name="ListCheckups" Margin="31,71,274.6,103.2" Grid.Column="0" Background="MistyRose" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path = CheckupList}" ToolTip="Za izmenu i brisanje pregleda potrebno je oznaciti zeljeni pregled">
             <DataGrid.Columns>

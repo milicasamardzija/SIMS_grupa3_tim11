@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="UvidUSobe" Height="361.267" Width="630.021" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid ToolTip="Da biste izasli iz ovog prozora potrebno je da oznacite dugme Izadji i da pritisnete Enter">
-        <Label x:Name="label1" Content="Sobe" HorizontalAlignment="Left" FontSize="16" Margin="10,0,0,214.6" Width="91" Foreground="#FFFF008D"/>
+        <Label x:Name="label1" Content="Sobe" HorizontalAlignment="Left" FontSize="16" Margin="10,0,0,214.6" Width="91" Foreground="#FF010101"/>
         <DataGrid Margin="10,52,137,33.6" x:Name="listOfRooms" ItemsSource="{Binding Path=RoomsLook}">
             <DataGrid.Columns>
             </DataGrid.Columns>

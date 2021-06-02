@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Evidencija" Height="361.267" Width="630.021" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid ToolTip="Da biste videli lekove koji cekaju reviziju pritisnite dugme Lekovi koji cekaju reviziju">
-        <Label x:Name="label1" Content="Lekovi koji su odobreni od strane strucnog lica" Margin="19,10,120.8,272" FontSize="20" Foreground="#FFFF00B2"/>
+        <Label x:Name="label1" Content="Lekovi koji su odobreni od strane strucnog lica" Margin="19,10,120.8,272" FontSize="20" Foreground="#FF010101"/>
         <DataGrid x:Name="ListMedicines" Margin="19,65,234,82" Grid.Column="0" ToolTip="Da biste izmenili lek, morate prvo da pritisnete Enter, pa strelicama oznacite dugme Izmeni" Background="MistyRose" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path = MedicineList}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="NAZIV" FontSize="16" Binding="{Binding Name}"/>

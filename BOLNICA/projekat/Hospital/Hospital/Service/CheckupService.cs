@@ -112,11 +112,6 @@ namespace Hospital.Service
             return checkupStorage.GetAll();
         }
         
-         /*public List<Checkup> getAllCheckups()
-         {
-             return checkupStorage.GetAllCheckups();
-         }*/
-
         public void deleteById(int id)
         {
             

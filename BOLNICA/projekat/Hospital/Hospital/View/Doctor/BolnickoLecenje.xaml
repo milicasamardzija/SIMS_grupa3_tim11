@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="BolnickoLecenje" Height="306.961" Width="551.972" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label x:Name="label1" Content="Sobe" HorizontalAlignment="Left" FontSize="16" Margin="10,0,0,228.6" Width="91" Foreground="#FFFF008D"/>
+        <Label x:Name="label1" Content="Sobe" HorizontalAlignment="Left" FontSize="16" Margin="10,0,0,228.6" Width="91" Foreground="#FF010101"/>
         <DataGrid Margin="10,38,137,33.6" x:Name="listRooms" ItemsSource="{Binding Path=LookInRooms}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="SPRAT" Width="150" Binding="{Binding Floor}"/>

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="LekoviCekajuReviziju" Height="329.931" Width="622.274" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label x:Name="label1" Content="Lekovi koji cekaju reviziju" Margin="10,10,0,243.4" HorizontalAlignment="Left" Foreground="#FFFF00B2" FontSize="20" Width="288" FontStyle="Italic"/>
+        <Label x:Name="label1" Content="Lekovi koji cekaju reviziju" Margin="10,10,0,243.4" HorizontalAlignment="Left" Foreground="#FF010101" FontSize="20" Width="288" FontStyle="Italic"/>
         <DataGrid Margin="10,62,192,33" x:Name="ReviewMedicineList" ItemsSource="{Binding Path=ListMedicineReview}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="NAZIV" Binding="{Binding Name}"/>

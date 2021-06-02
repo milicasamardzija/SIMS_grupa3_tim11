@@ -38,18 +38,7 @@ namespace Hospital.Controller
             }
             return checkups;
         }
-
-        /*public List<CheckupDTO> getAllCheckups()
-        {
-            List<CheckupDTO> checkups = new List<CheckupDTO>();
-            foreach (Checkup checkup in service.getAllCheckups())
-            {
-                checkups.Add(new CheckupDTO(checkup.Id, checkup.IdDoctor, checkup.IdPatient, checkup.Date, checkup.IdRoom, checkup.Type));
-            }
-            return checkups;
-        }*/
-
-
+        
         public void save(Checkup checkup)
         {
             service.save(checkup);
