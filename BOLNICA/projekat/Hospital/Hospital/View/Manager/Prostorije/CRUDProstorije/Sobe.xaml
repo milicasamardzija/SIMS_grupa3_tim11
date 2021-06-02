@@ -41,6 +41,9 @@
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Dodaj mozete dodati novu prostoriju u bazu bolnice.
+            </Button.ToolTip>
         </Button>
         <Button Margin="329,532,848,60" Background = "#ffc800" Click="izmeni" Content="IZMENI" RenderTransformOrigin="1.07,0.564" FontWeight="Bold" FontSize="16" Foreground="#FF373434">
             <Button.Effect>
@@ -68,6 +71,9 @@
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Zakazi renoviranje mozete zakazati renoviranje selektovane prostorije.
+            </Button.ToolTip>
         </Button>
         <Button Margin="1103,530,46,60" Background = "#ffc800" Click="RenoviranjePrikaz" Content="RENOVIRANJE" RenderTransformOrigin="-0.561,0.77" FontWeight="Bold" FontSize="16" Foreground="#FF373434">
             <Button.Effect>

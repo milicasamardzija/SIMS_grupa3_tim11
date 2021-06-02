@@ -34,6 +34,22 @@ namespace Hospital
             Rooms = new ObservableCollection<RoomDTO>(roomController.getAll());
             ucitajInventar();
             SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
+            setTooltips();
+        }
+
+        void setTooltips()
+        {
+            if (ManagerView.isToolTipVisible)
+            {
+                Style style = new Style(typeof(ToolTip));
+                style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+                style.Seal();
+                this.Resources.Add(typeof(ToolTip), style);
+            }
+            else
+            {
+                this.Resources.Remove(typeof(ToolTip));
+            }
         }
 
         private void dodavanje(object sender, RoutedEventArgs e)

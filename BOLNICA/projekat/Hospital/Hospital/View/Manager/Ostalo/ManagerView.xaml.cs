@@ -25,6 +25,7 @@ namespace Hospital
         private int idRoomIn;
         private int idRoomOut;
         private int quantity;
+        public static Boolean isToolTipVisible = true;
         public ManagerView()
         {
             InitializeComponent();
@@ -78,12 +79,12 @@ namespace Hospital
 
         private void magacin(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new Magacin(frame));
+            frame.NavigationService.Navigate(new Magacin(frame),isToolTipVisible);
         }
 
         private void sobe(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new Sobe(frame));
+            frame.NavigationService.Navigate(new Sobe(frame),isToolTipVisible);
         }
 
         private void lekovi(object sender, RoutedEventArgs e)
@@ -94,6 +95,27 @@ namespace Hospital
         private void obavestenja(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new ObavestenjaUpravnik());
+        }
+
+        private void ukljuci(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult rsltMessageBox = MessageBox.Show("Are you sure you want to disable tooltips?", "Tooltips",
+                MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
+            switch (rsltMessageBox)
+            {
+                case MessageBoxResult.Yes:
+                    isToolTipVisible = true;
+                    break;
+                case MessageBoxResult.No:
+                    break;
+                case MessageBoxResult.Cancel:
+                    break;
+            }
+        }
+
+        private void iskljuci(object sender, RoutedEventArgs e)
+        {
+            isToolTipVisible = false;
         }
     }
 }

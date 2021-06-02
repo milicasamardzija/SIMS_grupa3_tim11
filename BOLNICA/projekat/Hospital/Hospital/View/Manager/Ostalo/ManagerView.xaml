@@ -51,6 +51,13 @@
                 </MenuItem.Background>
             </MenuItem>
             <GridSplitter Background="#FF373434" Height="42" Width="5"/>
+            <MenuItem Header="Ukljuciti tooltip-ove" FontSize="16"
+                      FontWeight="Bold"
+                      TextElement.Foreground="#FF373434" Click="ukljuci" Width="190" />
+            <GridSplitter Background="#FF373434" Height="42" Width="5"/>
+            <MenuItem Header="Iskljuciti tooltip-ove" FontSize="16"
+                      FontWeight="Bold"
+                      TextElement.Foreground="#FF373434" Click="iskljuci" Width="190" />
         </Menu>
         <Frame Name="frame" Background="#FFDFD7BB" HorizontalAlignment="Left" Margin="0,40,0,0" VerticalAlignment="Top" Height="627" Width="1280" NavigationUIVisibility="Hidden" RenderTransformOrigin="0.5,0.5" />
     </Grid>

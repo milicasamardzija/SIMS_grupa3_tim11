@@ -35,6 +35,7 @@ namespace Hospital
         private Frame frame;
         private RoomsController roomController;
         private InventoryController inventoryController;
+     
         public Magacin(Frame frame)
         {
             InitializeComponent();
@@ -44,6 +45,7 @@ namespace Hospital
             this.roomController = new RoomsController();
             this.inventoryController = new InventoryController();
             this.inventories = new ObservableCollection<InventoryDTO>(inventoryController.getAll());
+            setTooltips();
         }
         private void dodaj(object sender, RoutedEventArgs e)
         {
@@ -181,5 +183,22 @@ namespace Hospital
             
         }
 
+        void setTooltips()
+        {
+            if (ManagerView.isToolTipVisible)
+            {
+                Style style = new Style(typeof(ToolTip));
+                style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+                style.Seal();
+                this.Resources.Remove(typeof(ToolTip));
+            }
+            else
+            {
+                Style style = new Style(typeof(ToolTip));
+                style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+                style.Seal();
+                this.Resources.Add(typeof(ToolTip), style);
+            }
+        }
     }
 }

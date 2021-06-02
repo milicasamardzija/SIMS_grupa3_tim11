@@ -29,6 +29,9 @@
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Dodaj mozete dodati novi inventar u magacin.
+            </Button.ToolTip>
         </Button>
         <Button Foreground="#FF373434" Background="#FFFFC800" Content="Izbrisi" HorizontalAlignment="Left" Margin="379,530,0,0" VerticalAlignment="Top" Width="129" Height="47" FontSize="24" FontWeight="Bold" Click="izbrisi" RenderTransformOrigin="0.574,1.728">
             <Button.Effect>
