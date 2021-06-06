@@ -258,12 +258,19 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="izmenaPacijentaB"
-            Content="Sacuvaj"
+            Content="   Sacuvaj"
             Cursor="Hand"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/Actions-dialog-ok-apply-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
 
         <TextBox
             x:Name="brKnjText"
@@ -293,12 +300,19 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="odustaniB"
-            Content="Odustani"
+            Content="    Odustani"
             Cursor="Hand"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/arrow-left-small.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <ComboBox
             x:Name="pol"
             Width="180"

@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Sekretar"
     Width="800"
-    Height="500"
+    Height="510"
     Visibility="Visible"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
@@ -22,8 +22,8 @@
         </Grid.Background>
         <Frame
             x:Name="frameS"
-            Width="794"
-            Height="444"
+            Width="800"
+            Height="460"
             Margin="0,30,-0.4,-3.6"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -42,7 +42,9 @@
                 FontSize="16"
                 FontWeight="Bold"
                 Header="      ANALITIKA"
-                TextElement.Foreground="#FF0852AE">
+                TextElement.Foreground="#FF0852AE"
+                Click="analitika"
+                Cursor="Hand">
                 <MenuItem.Background>
                     <ImageBrush
                         AlignmentX="Left"

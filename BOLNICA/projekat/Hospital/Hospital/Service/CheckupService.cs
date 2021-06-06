@@ -1,4 +1,5 @@
 ﻿using Hospital.DTO;
+using Hospital.FileStorage.Interfaces;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,9 @@ namespace Hospital.Service
 {
     class CheckupService
     {
-       public CheckupFileStorage checkupStorage; 
-        public PatientFileStorage patientsStorage;
-        public DoctorFileStorage doctorStorage;
+       public  ICheckupFileStorage checkupStorage; 
+        public IPatientFileStorage patientsStorage;
+        public IDoctorFileStorage doctorStorage;
 
        public List<Checkup> allCheckups { get; set; }
        

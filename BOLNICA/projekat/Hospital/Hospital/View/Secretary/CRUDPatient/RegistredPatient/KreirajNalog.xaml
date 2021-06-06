@@ -216,13 +216,19 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="kreirajNalogB"
-            Content="Sacuvaj"
+            Content="   Sacuvaj"
             Cursor="Hand"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE"
             RenderTransformOrigin="0.5,0.5"
             TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/Actions-dialog-ok-apply-icon.png"
+                    Stretch="None" />
+            </Button.Background>
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform />
@@ -265,19 +271,26 @@
             </ComboBoxItem>
         </ComboBox>
         <Button
-            Width="91"
+            Width="111"
             Height="33"
             Margin="49,364,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="odustaniB"
-            Content="Odustani"
+            Content="     Odustani"
             Cursor="Hand"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE"
             RenderTransformOrigin="0.227,0.472"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/arrow-left-small.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <ComboBox
             x:Name="pol"
             Width="177"

@@ -105,19 +105,33 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Find"
-            Content="Nadji lekara"
+            Content="     Nadji lekara"
             FontWeight="Bold"
-            Foreground="#FF1B4C93" />
+            Foreground="#FF1B4C93">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/People-Doctor-Male-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
-            Width="75"
+            Width="78"
             Height="32"
             Margin="33,162,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Decline"
-            Content="Odustani"
+            Content="       Odustani"
             FontWeight="Bold"
-            Foreground="#FF1B4C93" />
+            Foreground="#FF1B4C93">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/arrow-left-small.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

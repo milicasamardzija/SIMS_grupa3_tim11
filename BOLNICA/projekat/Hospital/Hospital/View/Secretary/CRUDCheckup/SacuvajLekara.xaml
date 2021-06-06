@@ -141,19 +141,33 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="SaveCheckup"
-            Content="Sacuvaj"
+            Content="     Sacuvaj"
             FontWeight="Bold"
-            Foreground="#FF1B4C93" />
+            Foreground="#FF1B4C93">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/Actions-dialog-ok-apply-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
-            Width="75"
+            Width="77"
             Height="32"
             Margin="29,308,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Decline"
-            Content="Odustani"
+            Content="       Odustani"
             FontWeight="Bold"
-            Foreground="#FF1B4C93" />
+            Foreground="#FF1B4C93">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/arrow-left-small.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <ComboBox
             Name="selectedTime"
             Width="120"

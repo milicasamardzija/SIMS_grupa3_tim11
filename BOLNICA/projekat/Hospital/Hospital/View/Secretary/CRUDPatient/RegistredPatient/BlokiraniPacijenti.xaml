@@ -47,29 +47,43 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button
-            Width="77"
+            Width="100"
             Height="32"
-            Margin="325,321,0,0"
+            Margin="300,321,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="OdblokirajBtn"
-            Content="Odblokiraj"
+            Content="     Aktiviraj"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/system-log-out-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
-            Width="77"
+            Width="91"
             Height="32"
             Margin="37,321,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="DeclineBtn"
-            Content="Izadji"
+            Content="    Izadji"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/arrow-left-small.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Label
             Margin="37,30,0,0"
             HorizontalAlignment="Left"

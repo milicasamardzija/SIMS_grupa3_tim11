@@ -101,5 +101,10 @@ namespace Hospital.Sekretar
             controller.saveMedicalRecord(promeniM);
             this.Close();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

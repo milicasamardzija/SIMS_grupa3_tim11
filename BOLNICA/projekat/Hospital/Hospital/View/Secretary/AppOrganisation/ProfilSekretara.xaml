@@ -74,14 +74,16 @@
             FontWeight="Bold"
             Foreground="#FF1B4C93" />
         <Button
-            Width="99"
-            Height="87"
+            Width="118"
+            Height="102"
             Margin="55,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="">
+            BorderBrush="#FF113B69"
+            Content=""
+            Foreground="#FF14427C">
             <Button.Background>
-                <ImageBrush ImageSource="profile-icon.png" />
+                <ImageBrush ImageSource="/Hospital;component/View/Images/callcenter-girls-flower-icon.png" />
             </Button.Background>
         </Button>
         <Button
@@ -90,9 +92,17 @@
             Margin="566,280,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            BorderBrush="#FF083266"
             Content="Izmeni profil"
             FontWeight="Bold"
-            Foreground="#FF1B4C93" />
+            Foreground="#FF1B4C93">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/edit-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
             Width="120"
             Height="34"
@@ -101,11 +111,18 @@
             VerticalAlignment="Top"
             Content="Odjavi se"
             FontWeight="Bold"
-            Foreground="#FF1B4C93" />
+            Foreground="#FF1B4C93">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/Apps-Dialog-Shutdown-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Image
             Width="181"
             Height="100"
-            Margin="524,10,0,0"
+            Margin="570,33,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="/Hospital;component/View/Images/logo-removebg-preview.png">
