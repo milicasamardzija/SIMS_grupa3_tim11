@@ -54,8 +54,8 @@
     "specializationType": 1
   },
   {
-    "name": "Marija",
-    "surname": "Maric",
+    "name": "Ana",
+    "surname": "Gavrilovic",
     "adress": {
       "street": "Vojove Misica",
       "streetNumber": 14,
@@ -72,8 +72,8 @@
     "specializationType": 3
   },
   {
-    "name": "Ana",
-    "surname": "Pantic",
+    "name": "Mila",
+    "surname": "Bjelogrlic",
     "adress": {
       "street": "Vojove Misica",
       "streetNumber": 14,

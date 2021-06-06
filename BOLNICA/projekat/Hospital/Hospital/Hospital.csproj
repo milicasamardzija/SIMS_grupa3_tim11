@@ -108,6 +108,7 @@
     <Compile Include="Service\RoomRenovationService.cs" />
     <Compile Include="Service\StaticInventoryMovemenetService.cs" />
     <Compile Include="Service\PatientService.cs" />
+    <Compile Include="ValidationManager\StringToDoubleValidationRule.cs" />
     <Compile Include="View\Manager\Inventar\CRUDInventar\BrisanjePotvrdiInventar.xaml.cs">
       <DependentUpon>BrisanjePotvrdiInventar.xaml</DependentUpon>
     </Compile>
@@ -1103,5 +1104,6 @@
     <Resource Include="View\Images\Manager\left-48.png" />
     <Resource Include="View\Images\Manager\left-64.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
