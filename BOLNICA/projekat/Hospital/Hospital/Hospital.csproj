@@ -1151,5 +1151,23 @@
   <ItemGroup>
     <Resource Include="View\Pacijent\ocene.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\doktor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\doctor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\datum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\beleska.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\note2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

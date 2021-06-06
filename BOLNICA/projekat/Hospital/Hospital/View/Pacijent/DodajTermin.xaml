@@ -80,7 +80,9 @@
 
                 </Label.Resources>
             </Label>
-            <ComboBox Name="time"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="38,205,0,0" Height="22" SelectionChanged="time_SelectionChanged" />
+            <ComboBox Name="time"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="38,205,0,0" Height="22" SelectionChanged="time_SelectionChanged" Background="White">
+                
+            </ComboBox>
             <ComboBox x:Name="lekar" ItemsSource="{Binding Path=Lekar}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="38,264,0,0" Height="22" IsSynchronizedWithCurrentItem="False" FontSize="14">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>

@@ -51,7 +51,7 @@
     Stroke="SteelBlue"  
     StrokeThickness="4" Margin="-19,58,-1.8,197.6" Grid.ColumnSpan="3" />
 
-        <Label Content=" Zakazivanje termina"  Foreground="White" Background="#FF64CCF1"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="66,67,0,0"  Width="185" Height="35" FontSize="18" Grid.Column="2">
+        <Label Content="      Pregled termina"  Foreground="White" Background="#FF64CCF1"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="66,67,0,0"  Width="185" Height="35" FontSize="18" Grid.Column="2">
             <Label.Resources>
                 <Style TargetType="Border">
 

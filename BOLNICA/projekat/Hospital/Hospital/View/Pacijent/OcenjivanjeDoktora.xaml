@@ -78,10 +78,10 @@
                 </Style>
             </DataGrid.Resources>
         </DataGrid>
-        <Button   Name="bolnica" Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="29,355,0,0" Height="40" Click="ocenite_bolnicu" Foreground="Black"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20" Grid.Row="1" Grid.Column="1">
+        <Button   Name="bolnica" Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Margin="55,355,0,0" Height="35" Click="ocenite_bolnicu" Foreground="Black"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20" Grid.Row="1" Grid.Column="1">
             <StackPanel Orientation="Horizontal">
                 <Image Source="ocene.png" Stretch="None" Width="36" Height="38" />
-                <TextBlock Margin="0,8,0,0" Width="135" FontSize="15" Height="39" ><Run Text="Oceni rad bolnice"/></TextBlock>
+                <TextBlock Margin="0,5,0,0" Width="124" FontSize="15" Height="25" ><Run Text="Oceni rad bolnice"/></TextBlock>
             </StackPanel>
 
             <Button.Resources>

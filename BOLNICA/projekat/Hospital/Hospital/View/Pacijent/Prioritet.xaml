@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital.View.Pacijent"
         mc:Ignorable="d"
-     Title="Izaberi prioritet"  Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
+     Title="Izaberi prioritet"  Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen"  Background="AliceBlue">
     <Window.Resources>
         <Style TargetType="Button" x:Key="MyButtonDesign">
             <Setter Property="Template">
@@ -38,21 +38,53 @@
         </Style>
 
     </Window.Resources>
-    
-        <Grid>
-        <Label Content="Izaberite prioritet:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,79,0,0"  Width="167" Height="37" FontSize="20"/>
+
+    <Grid>
+        <Label Content="Izaberite prioritet:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,100,0,0"  Width="167" Height="37" FontSize="20"/>
         <Line  
     X1="500" Y1="0"  
     X2="20" Y2="0"  
     Stroke="SteelBlue"  
     StrokeThickness="4" Margin="-19,58,-1.8,197.6" Grid.ColumnSpan="3" />
-        <Button Style="{ StaticResource MyButtonDesign}"  Content="Lekar" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="88" Margin="109,194,0,0" Height="42" RenderTransformOrigin="0.582,0.547" Foreground="#FFF3DCDC" Click="doktor" BorderBrush="#FFFAF7F7" Background="#FF848C9D"  />
+        <Button   Name="doktorr" Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Margin="90,200,0,0" Height="52" Click="doktor" Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20">
+            <StackPanel Orientation="Horizontal" Height="38" Width="110">
+                <Image Source="doctor.png" Stretch="None" Width="38" Margin="0,0,0,0.4" />
+                <TextBlock   Margin="0,6,0,0.4" Width="65" FontSize="20" ><Run Text="Lekar"/></TextBlock>
+            </StackPanel>
+
+            <Button.Resources>
+                <Style TargetType="Border">
+
+                    <Setter Property="CornerRadius" Value="17">
+
+                    </Setter>
+                </Style>
+
+            </Button.Resources>
+
+        </Button>
         <Button Style="{ StaticResource MyButtonDesign}"  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="10,25,0,0" FontSize="22" Height="19" Click="Nazad_na_pocetnu" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6">
             <Button.Background>
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Button Style="{ StaticResource MyButtonDesign}"  Content="Datum"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Click="datum" RenderTransformOrigin="1.585,10.79" Margin="109,294,0,0" Height="40" BorderBrush="#FFF1EBEB" Background="#FF1684A5" Foreground="#FFF6E7E7" />
+        <Button   Name="datumm" Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Margin="90,293,0,0" Height="52" Click="datum" Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20">
+            <StackPanel Orientation="Horizontal" Height="38" Width="110">
+                <Image Source="datum.png" Stretch="None" Width="38" Margin="0,0,0,0.4" />
+                <TextBlock   Margin="0,6,0,0.4" Width="65" FontSize="20" ><Run Text="Datum"/></TextBlock>
+            </StackPanel>
+
+            <Button.Resources>
+                <Style TargetType="Border">
+
+                    <Setter Property="CornerRadius" Value="17">
+
+                    </Setter>
+                </Style>
+
+            </Button.Resources>
+
+        </Button>
     </Grid>
 </Window>
 
