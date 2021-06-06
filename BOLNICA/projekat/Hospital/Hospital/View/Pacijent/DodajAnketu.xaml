@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-     Title="Anketa"  Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
+     Title="Anketa"  Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen" Background="AliceBlue">
 
     <Window.Resources>
         <Style TargetType="Button" x:Key="MyButtonDesign">
@@ -44,10 +44,10 @@
     <Grid>
         <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="142,17,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Width="171" Height="38" Foreground="LightBlue"/>
 
-        <Label Content="     Doktor:" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Goudy Old Style" RenderTransformOrigin="6.25,3.711" Margin="10,124,0,0" Width="99" Height="31"/>
-        <Label Content="Ocenite rad doktora na obavljenom pregledu!" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,76,0,0" Width="238"/>
-        <TextBlock Name="doktor" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Margin="31,145,0,0"/>
-        <Label Content="     Izaberite ocjenu:" HorizontalAlignment="Left" FontFamily="Goudy Old Style" VerticalAlignment="Top" Margin="10,186,0,0" Width="130"/>
+        <Label Content="     Doktor:" HorizontalAlignment="Left" VerticalAlignment="Top"  RenderTransformOrigin="6.25,3.711" Margin="10,124,0,0" Width="99" Height="31"/>
+        <Label  Content="Ocenite rad doktora na obavljenom pregledu!" Foreground="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,87,0,0" Height="37" Width="269" FontWeight="Bold" FontSize="11" />
+        <TextBlock Name="doktor" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Margin="31,145,0,0"/>
+        <Label Content="     Izaberite ocjenu:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,186,0,0" Width="130"/>
         <ComboBox SelectionChanged="ocena_SelectionChanged" Name="ocena" HorizontalAlignment="Left" VerticalAlignment="Top" Width="252" Margin="30,212,0,0">
             <ComboBoxItem >1</ComboBoxItem>
             <ComboBoxItem>2</ComboBoxItem>
@@ -60,10 +60,25 @@
             <ComboBoxItem>9</ComboBoxItem>
             <ComboBoxItem>10</ComboBoxItem>
         </ComboBox>
-        <Label Content="     Upišite Vaš komentar:" HorizontalAlignment="Left" FontFamily="Goudy Old Style" VerticalAlignment="Top" Margin="10,249,0,0" Width="145"/>
+        <Label Content="     Upišite Vaš komentar:" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,249,0,0" Width="145"/>
         <TextBox  Name="komentar" HorizontalAlignment="Left" Text="{Binding Path =Survey.comment, UpdateSourceTrigger=PropertyChanged}" Height="95" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="31,275,0,0"/>
-        <Button  Style="{ StaticResource MyButtonDesign}" Foreground="#FF0F0D0D" BorderBrush="Gray" Name="submit" Content="Pošaljite anketu" HorizontalAlignment="Left" FontFamily="Goudy Old Style" VerticalAlignment="Top" Width="105" Margin="95,390,0,0" RenderTransformOrigin="1.339,0.281" Click="posalji" Height="29" Background="#FF868585"/>
+        <Button   Name="submit" Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Margin="80,390,0,0" Height="40" Click="posalji" Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="potvrdi.png" Stretch="None" Width="30" Height="31" />
+                <TextBlock Margin="0,8,0,0" Width="102" FontSize="15" Height="170" ><Run Text=" Pošalji anketu"/></TextBlock>
+            </StackPanel>
 
+            <Button.Resources>
+                <Style TargetType="Border">
+
+                    <Setter Property="CornerRadius" Value="17">
+
+                    </Setter>
+                </Style>
+
+            </Button.Resources>
+
+        </Button>
         <Line  
             X1="500" Y1="0"  
             X2="20" Y2="0"  

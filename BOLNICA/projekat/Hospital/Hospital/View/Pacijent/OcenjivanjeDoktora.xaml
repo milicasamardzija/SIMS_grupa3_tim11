@@ -64,7 +64,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="           OBAVLJENI PREGLEDI " Binding="{Binding Date}" Width="190"/>
 
-                <DataGridTemplateColumn Header="     ANKETA"  Width="90" >
+                <DataGridTemplateColumn Header="     ANKETA"  Width="90">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Name="btnView" Content="Oceni" Click="oceni_doktora" Background="#FF64CCF1" />
@@ -78,7 +78,7 @@
                 </Style>
             </DataGrid.Resources>
         </DataGrid>
-        <Button   Name="bolnica" Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="29,355,0,0" Height="40" Click="ocenite_bolnicu" Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20" Grid.Row="1" Grid.Column="1">
+        <Button   Name="bolnica" Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="29,355,0,0" Height="40" Click="ocenite_bolnicu" Foreground="Black"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20" Grid.Row="1" Grid.Column="1">
             <StackPanel Orientation="Horizontal">
                 <Image Source="ocene.png" Stretch="None" Width="36" Height="38" />
                 <TextBlock Margin="0,8,0,0" Width="135" FontSize="15" Height="39" ><Run Text="Oceni rad bolnice"/></TextBlock>
@@ -105,7 +105,7 @@
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="128,28,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Grid.RowSpan="2" Width="151" Height="30" Foreground="LightBlue" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="imePacijentaa" FontStyle="Italic" HorizontalAlignment="Left" Margin="124,17,-3,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Grid.RowSpan="2" Width="171" Height="38" Foreground="LightBlue" Grid.ColumnSpan="3"/>
 
     </Grid>
 </Window>

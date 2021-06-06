@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-      Title="Dodaj termin" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
+      Title="Dodaj termin" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen" Background="AliceBlue">
     <Window.Resources>
         <Style TargetType="Button" x:Key="MyButtonDesign">
             <Setter Property="Template">
