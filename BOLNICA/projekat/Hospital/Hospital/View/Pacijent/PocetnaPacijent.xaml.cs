@@ -75,5 +75,12 @@ namespace Hospital
             this.Close();
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Terapija terapija = new Terapija();
+            terapija.Show();
+            this.Close();
+        }
     }
 }

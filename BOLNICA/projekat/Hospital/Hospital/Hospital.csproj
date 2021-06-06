@@ -173,6 +173,9 @@
     <Compile Include="View\Pacijent\DodajBelesku.xaml.cs">
       <DependentUpon>DodajBelesku.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pacijent\Izvjestaj.xaml.cs">
+      <DependentUpon>Izvjestaj.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pacijent\Logovanje.xaml.cs">
       <DependentUpon>Logovanje.xaml</DependentUpon>
     </Compile>
@@ -193,6 +196,9 @@
     </Compile>
     <Compile Include="View\Pacijent\PrioritetDoktor.xaml.cs">
       <DependentUpon>PrioritetDoktor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pacijent\Terapija.xaml.cs">
+      <DependentUpon>Terapija.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pacijent\ZdravstveniKarton.xaml.cs">
       <DependentUpon>ZdravstveniKarton.xaml</DependentUpon>
@@ -358,6 +364,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Pacijent\Izvjestaj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pacijent\Logovanje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -383,6 +393,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pacijent\PrioritetDoktor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pacijent\Terapija.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1088,6 +1102,54 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="View\Pacijent\slika.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\..\Downloads\CalendarExample2\CalendarExample2\MojKalendar\Jarloo.Calendar\MyCalendar.Calendar.csproj">
+      <Project>{31c3b4a7-504b-4eff-bacc-c8f2ffe5af6f}</Project>
+      <Name>MyCalendar.Calendar</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\potvrda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\potvrdi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\odustani.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\odustani2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\odustani3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\pencil2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\olovka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\olovcica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\dodaj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\obrisi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\ocena.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\ocene.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

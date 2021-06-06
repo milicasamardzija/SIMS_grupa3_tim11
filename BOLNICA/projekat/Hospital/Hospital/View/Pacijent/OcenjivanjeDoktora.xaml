@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-      Title="Ocenite lekara" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen" >
+      Title="Ocenite lekara" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen"  Background="AliceBlue">
     <Window.Resources>
         <Style TargetType="Button" x:Key="MyButtonDesign">
             <Setter Property="Template">
@@ -38,8 +38,8 @@
         </Style>
 
     </Window.Resources>
-    
-        <Grid Margin="28,-12,3.2,-9.4">
+
+    <Grid Margin="28,-12,3.2,-9.4">
         <Grid.RowDefinitions>
             <RowDefinition Height="40*"/>
             <RowDefinition Height="431*"/>
@@ -51,39 +51,61 @@
         </Grid.ColumnDefinitions>
 
         <DataGrid Name="ListaObavljenihTermina"
-                      Margin="-15,75,27,106.2"
-                      Background="AliceBlue"
+                      Margin="-15,75,20,106.2"
+                      Background="White"
                       AutoGenerateColumns="False"
                       SelectionMode="Single"
                       IsReadOnly="True"
-                      FontFamily="Goudy Old Style"
+                      HorizontalGridLinesBrush="White"
+                      VerticalGridLinesBrush="white"
+                     
                       ItemsSource="{Binding Path = termini}" SelectionChanged="ListaObavljenihTermina_SelectionChanged" Grid.ColumnSpan="2" Grid.Row="1" 
                       >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="           OBAVLJENI PREGLEDI " Binding="{Binding Date}" Width="190"/>
 
-                <DataGridTemplateColumn Header="     ANKETA"  Width="90">
+                <DataGridTemplateColumn Header="     ANKETA"  Width="90" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Name="btnView" Content="Oceni" Click="oceni_doktora" />
+                            <Button Name="btnView" Content="Oceni" Click="oceni_doktora" Background="#FF64CCF1" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
-
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#FF64CCF1" />
+                </Style>
+            </DataGrid.Resources>
         </DataGrid>
-         <TextBlock x:Name="imePacijenta" FontFamily="Goudy Old Style" FontStyle="Italic" HorizontalAlignment="Left" Margin="142,24,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Width="171" Height="29" Foreground="LightBlue"/>
-       <Button  Style="{ StaticResource MyButtonDesign}" Name="bolnica" FontSize="14" Content="Ocenite rad bolnice"   FontFamily="Goudy Old Style" HorizontalAlignment="Left" Margin="55,345,0,55.2" Width="130" Click="ocenite_bolnicu" RenderTransformOrigin="0.605,0.779" Grid.Column="1" Grid.Row="1"/>
+        <Button   Name="bolnica" Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="29,355,0,0" Height="40" Click="ocenite_bolnicu" Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20" Grid.Row="1" Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="ocene.png" Stretch="None" Width="36" Height="38" />
+                <TextBlock Margin="0,8,0,0" Width="135" FontSize="15" Height="39" ><Run Text="Oceni rad bolnice"/></TextBlock>
+            </StackPanel>
+
+            <Button.Resources>
+                <Style TargetType="Border">
+
+                    <Setter Property="CornerRadius" Value="17">
+
+                    </Setter>
+                </Style>
+
+            </Button.Resources>
+
+        </Button>
         <Line  
             X1="500" Y1="0"  
     X2="20" Y2="0"  
     Stroke="SteelBlue"  
-    StrokeThickness="4" Margin="-50,15,-1,169.2" Grid.ColumnSpan="3" Grid.Row="1" />
+    StrokeThickness="4" Margin="-50,15,-3,169.2" Grid.ColumnSpan="3" Grid.Row="1" />
         <Button   Style="{ StaticResource MyButtonDesign}" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="-15,31,0,0" FontSize="22" Height="19" Click="Nazad_na_pocetnu" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6" RenderTransformOrigin="-4.566,0.8" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Button.Background>
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
+        <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="128,28,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Grid.RowSpan="2" Width="151" Height="30" Foreground="LightBlue" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

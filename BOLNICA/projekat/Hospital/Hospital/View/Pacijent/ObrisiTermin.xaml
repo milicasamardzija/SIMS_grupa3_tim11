@@ -41,7 +41,7 @@
     
         <Grid >
         <Grid>
-            <TextBlock  FontFamily="Goudy Old Style" Text="Da li ste sigurni da želite da obrišete termin?"
+            <TextBlock  Text="Da li ste sigurni da želite da obrišete termin?"
                        TextAlignment="Center"
                        Margin="25,45,28.6,90"
                        Foreground="DarkBlue"

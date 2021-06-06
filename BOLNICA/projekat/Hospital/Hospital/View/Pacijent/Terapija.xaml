@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital.View.Pacijent"
+         xmlns:calendar="clr-namespace:MyCalendar.Calendar;assembly=MyCalendar.Calendar"
         mc:Ignorable="d"
  Title=""  Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen" >
     <Window.Resources>
@@ -32,6 +33,25 @@
 
     </Window.Resources>
     <Grid>
+        <Button    Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="95,395,0,0" Height="45" Click="pdf" Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="tretman.png" Stretch="None" Width="78" Height="40" />
+                <TextBlock Margin="0,11,0,0" Width="43" FontSize="15" Height="37" ><Run Text="PDF"/></TextBlock>
+            </StackPanel>
+
+            <Button.Resources>
+                <Style TargetType="Border">
+
+                    <Setter Property="CornerRadius" Value="17">
+
+                    </Setter>
+                </Style>
+
+            </Button.Resources>
+
+        </Button>
+
+        <calendar:Calendar x:Name="Calendar" Margin="10,100,10.2,59.6"  Background="#FF64CCF1" />
         <Line  
             X1="500" Y1="0"  
             X2="20" Y2="0"  
@@ -43,10 +63,10 @@
             FontStyle="Italic"
             Foreground= "Black"
             Grid.Row="0"
-            Margin="80,70,63.2,334.6"
+            Margin="80,70,63.2,349.6"
             FontSize="20" Width="180"
                        />
-        <TextBlock Margin="0,0,-0.8,-0.4"/>
+
         <TextBlock x:Name="imePacijentaa" FontStyle="Italic" HorizontalAlignment="Left" Margin="145,20,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Width="171" Height="38" Foreground="LightBlue"/>
 
 

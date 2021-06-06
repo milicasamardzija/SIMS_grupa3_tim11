@@ -19,9 +19,22 @@ namespace Hospital.View.Pacijent
     /// </summary>
     public partial class Terapija : Window
     {
+        private PrintDialog _printDialog = new PrintDialog();
         public Terapija()
         {
             InitializeComponent();
+            Calendar.Days[0].Notes = "ampril";
+        }
+
+        private void pdf(object sender, RoutedEventArgs e)
+        {
+              _printDialog.PrintVisual(new Izvjestaj(), "Izveštaj 1");
+          
+        }
+
+        private void Nazad_na_pocetnu(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

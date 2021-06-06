@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
-            Title="Dodaj termin" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
+            Title="Dodaj termin" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen"  Background="AliceBlue">
     <Window.Resources>
         <Style TargetType="Button" x:Key="MyButtonDesign">
             <Setter Property="Template">
@@ -37,8 +37,8 @@
         </Style>
 
     </Window.Resources>
-    
-        <Grid >
+
+    <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
@@ -68,9 +68,19 @@
                     Stroke="SteelBlue"  
                     StrokeThickness="4" Height="10" Width="344" />
             </Label>
-            <Label Content="Pomeranje termina" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="74,78,0,0" FontFamily="Goudy Old Style" Width="166" Height="37" FontSize="20"/>
-            <ComboBox Name="time" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="38,205,0,0" Height="22" SelectionChanged="time_SelectionChanged" />
-            <ComboBox x:Name="lekar" ItemsSource="{Binding Path=Lekar}" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="38,274,0,0" Height="22" IsSynchronizedWithCurrentItem="False" FontSize="14">
+            <Label Content="  Pomeranje termina"  Foreground="White" Background="#FF64CCF1"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="69,63,0,0"  Width="181" Height="37" FontSize="18">
+                <Label.Resources>
+                    <Style TargetType="Border">
+
+                        <Setter Property="CornerRadius" Value="17">
+
+                        </Setter>
+                    </Style>
+
+                </Label.Resources>
+            </Label>
+            <ComboBox  Background="White" Name="time"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="38,205,0,0" Height="22" SelectionChanged="time_SelectionChanged" />
+            <ComboBox x:Name="lekar" ItemsSource="{Binding Path=Lekar}"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="38,274,0,0" Height="26" IsSynchronizedWithCurrentItem="False" FontSize="14">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock>
@@ -86,18 +96,50 @@
             </ComboBox>
             <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="145,20,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Width="171" Height="38" Foreground="LightBlue" Grid.ColumnSpan="2"/>
 
-            <Label Content="Datum:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,120,0,0" RenderTransformOrigin="0.747,0.358" FontFamily="Goudy Old Style" FontSize="14" Height="27" Width="53"/>
+            <Label Content="Datum:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,120,0,0" RenderTransformOrigin="0.747,0.358"  FontSize="14" Height="27" Width="53"/>
             <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="19">
                 <Label Content=""/>
             </Label>
-            <Label Content="Vreme:&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,181,0,0" Height="24" FontFamily="Goudy Old Style" FontSize="14" Width="59"/>
-            <Label Content="Doktor:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,250,0,0" Width="59" FontFamily="Goudy Old Style" Height="24" RenderTransformOrigin="0.532,1.258"/>
-            <Button Style="{ StaticResource MyButtonDesign}"  x:Name="odustanii" Content="Odustani" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="165,3.8,0,0" Height="30" FontFamily="Goudy Old Style" FontSize="14" Foreground="#FF0F0D0D" BorderBrush="#FFF9F3F3"  Click="odustani" Grid.Row="1"/>
-            <Button Style="{ StaticResource MyButtonDesign}"  x:Name="potvrdi" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="60,3.8,0,0" Height="30" FontFamily="Goudy Old Style" FontSize="14" Foreground="#FF0F0D0D" BorderBrush="#FFF9F3F3"  Click="add_appointment" Grid.Row="1"/>
+            <Label Content="Vreme:&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,180,0,0" Height="47"  FontSize="14" Width="59"/>
+            <Label Content="Doktor:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,250,0,0" Width="59"  Height="24" RenderTransformOrigin="0.532,1.258"/>
 
 
+            <Button   Name="potvrdi" Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="95,335,0,0" Height="40" Click="add_appointment" Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20" Grid.RowSpan="2">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="potvrdi.png" Stretch="None" Width="30" Height="31" />
+                    <TextBlock Margin="0,8,0,0" Width="80" FontSize="15" Height="170" ><Run Text=" Potvrdi"/></TextBlock>
+                </StackPanel>
+
+                <Button.Resources>
+                    <Style TargetType="Border">
+
+                        <Setter Property="CornerRadius" Value="17">
+
+                        </Setter>
+                    </Style>
+
+                </Button.Resources>
+
+            </Button>
+            <Button    Name="odustanii" Background="#FF64CCF1" Click="odustani" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="95,34.8,0,-25.2" Height="40"  Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20" Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="odustani3.png" Stretch="None" Width="30" Height="31" />
+                    <TextBlock Margin="0,8,0,0" Width="83" FontSize="15" Height="47" ><Run Text="Odustani"/></TextBlock>
+                </StackPanel>
+
+                <Button.Resources>
+                    <Style TargetType="Border">
+
+                        <Setter Property="CornerRadius" Value="17">
+
+                        </Setter>
+                    </Style>
+
+                </Button.Resources>
+
+            </Button>
         </Grid>
-        <DatePicker Name="date" FontFamily="Goudy Old Style" HorizontalAlignment="Left" Height="22" Margin="38,145,0,0" VerticalAlignment="Top" Width="230" SelectedDateChanged="date_SelectedDateChanged" />
+        <DatePicker Name="date" HorizontalAlignment="Left" Height="25" Margin="38,145,0,0" VerticalAlignment="Top" Width="232" SelectedDateChanged="date_SelectedDateChanged" />
 
 
     </Grid>

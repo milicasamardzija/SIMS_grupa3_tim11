@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hospital.View.Pacijent"
        
        mc:Ignorable="d"
-      Title="Zdravstveni karton"  Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
+      Title="Zdravstveni karton"  Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen" Background="AliceBlue">
 
     <Window.Resources>
         <Style TargetType="Button" x:Key="MyButtonDesign">
@@ -40,9 +40,9 @@
         </Style>
 
     </Window.Resources>
-    
-        <Grid>
-        <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="119,24,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Width="171" Height="29" Foreground="LightBlue"/>
+
+    <Grid>
+        <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="142,24,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Width="171" Height="29" Foreground="LightBlue"/>
         <Line  
             X1="500" Y1="0"  
             X2="20" Y2="0"  
@@ -53,25 +53,38 @@
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Label Content="Ime:"  FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,98,0,0" RenderTransformOrigin="0.256,0.992"/>
-        <Label Content="Prezime:" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,130,0,0"/>
-        <Label Content="Datum rođenja:" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,161,0,0"/>
-        <Label Content="Broj kartona:" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,233,0,0"/>
-        <Label Content="HCC:" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,272,0,0" RenderTransformOrigin="0.344,-0.578"/>
-        <Label Content="Krvna grupa:" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,313,0,0"/>
-        <Label Content="JMBG:&#xD;&#xA;" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,196,0,0" Height="32"/>
-        <TextBox Name="ime" FontFamily="Goudy Old Style"  HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,101,0,0" BorderBrush="White" IsEnabled="False" FontWeight="Bold" AcceptsTab="True"/>
-        <TextBox Name="prezime" FontFamily="Goudy Old Style" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,133,0,0" BorderBrush="White" FontWeight="Bold" IsEnabled="False"/>
-        <TextBox Name="datum" FontFamily="Goudy Old Style" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,168,0,0" BorderBrush="White" IsEnabled="False" FontWeight="Bold"/>
-        <TextBox Name="grupa" FontFamily="Goudy Old Style" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="150,316,0,0" BorderBrush="White" IsEnabled="False" FontWeight="Bold"/>
-        <TextBox Name="broj"  FontFamily="Goudy Old Style" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,236,0,0" RenderTransformOrigin="0.5,-1.444" BorderBrush="#FFF8FAFF" FontWeight="Bold" IsEnabled="False"/>
-        <TextBox x:Name="jmbg" FontFamily="Goudy Old Style" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,199,0,0" BorderBrush="White" FontWeight="Bold" IsEnabled="False"/>
-        <TextBox Name="nzo" HorizontalAlignment="Left"  Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,275,0,0" RenderTransformOrigin="0.5,2.111" BorderBrush="White" IsEnabled="False" FontWeight="Bold" FontFamily="Goudy Old Style"/>
-        <GroupBox FontFamily="Goudy Old Style" Header="Lični podaci" HorizontalAlignment="Left" Height="280" VerticalAlignment="Top" Width="262" Margin="28,80,0,0" BorderBrush="#FF208ED0"/>
-        <Button Style="{ StaticResource MyButtonDesign}" Content="Istorija obavljenih pregleda" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="25" Margin="70,390,0,0"  Foreground="#FF0F0D0D" BorderBrush="#FFFAF5F5" Click="obavljeni_pregledi"/>
+        <Label Content="Ime:"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,98,0,0" RenderTransformOrigin="0.256,0.992"/>
+        <Label Content="Prezime:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,130,0,0"/>
+        <Label Content="Datum rođenja:"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,161,0,0"/>
+        <Label Content="Broj kartona:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,233,0,0"/>
+        <Label Content="HCC:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,272,0,0" RenderTransformOrigin="0.344,-0.578"/>
+        <Label Content="Krvna grupa:"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,313,0,0"/>
+        <Label  Background="AliceBlue" Content="JMBG:&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,196,0,0" Height="32"/>
+        <TextBox  Background="AliceBlue" Name="ime"  HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,101,0,0" BorderBrush="White" IsEnabled="False" FontWeight="Bold" AcceptsTab="True"/>
+        <TextBox  Background="AliceBlue" Name="prezime" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,133,0,0" BorderBrush="White" FontWeight="Bold" IsEnabled="False"/>
+        <TextBox  Background="AliceBlue" Name="datum"  HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,168,0,0" BorderBrush="White" IsEnabled="False" FontWeight="Bold"/>
+        <TextBox  Background="AliceBlue" Name="grupa"  HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="150,316,0,0" BorderBrush="White" IsEnabled="False" FontWeight="Bold"/>
+        <TextBox  Background="AliceBlue" Name="broj" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,236,0,0" RenderTransformOrigin="0.5,-1.444" BorderBrush="#FFF8FAFF" FontWeight="Bold" IsEnabled="False"/>
+        <TextBox Background="AliceBlue" x:Name="jmbg" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,199,0,0" BorderBrush="White" FontWeight="Bold" IsEnabled="False"/>
+        <TextBox Name="nzo" HorizontalAlignment="Left"  Height="21" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,275,0,0" RenderTransformOrigin="0.5,2.111" BorderBrush="White" IsEnabled="False" FontWeight="Bold" />
+        <GroupBox  Foreground="#FF64CCF1" Header="Lični podaci" HorizontalAlignment="Left" Height="280" VerticalAlignment="Top" Width="262" Margin="28,80,0,0" BorderBrush="#FF64CCF1" FontWeight="Bold" FontStyle="Italic"/>
 
+        <Button   Name="dodaj" Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="205" Margin="55,380,0,0" Height="30" Click="obavljeni_pregledi" Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20">
+            <StackPanel Orientation="Horizontal" Height="35" Width="110">
+                <TextBlock Margin="0,3,0,5" Width="115" FontSize="15" Text=" Istorija pregleda" />
+            </StackPanel>
 
+            <Button.Resources>
+                <Style TargetType="Border">
 
+                    <Setter Property="CornerRadius" Value="17">
+
+                    </Setter>
+                </Style>
+
+            </Button.Resources>
+
+        </Button>
     </Grid>
 </Window>
 
