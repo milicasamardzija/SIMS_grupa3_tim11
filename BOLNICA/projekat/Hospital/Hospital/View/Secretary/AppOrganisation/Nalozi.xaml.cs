@@ -23,12 +23,12 @@ namespace Hospital
 
       //  public Page blogg;
 
-        public Nalozi() //(Page blogGlavni)
+        public Nalozi()
         {
             InitializeComponent();
-            // blogg = blogGlavni;
-            //Pacijenti pacijenti = new Pacijenti();
-           // frameS.Navigate(pacijenti);
+
+            ProfilSekretara ps = new ProfilSekretara();
+            frameS.Navigate(ps);
 
         }
 
@@ -50,6 +50,17 @@ namespace Hospital
         {
             ProfilSekretara ps = new ProfilSekretara();
             frameS.Navigate(ps);
-        } 
+        }
+
+        private void analitika(object sender, RoutedEventArgs e)
+        {
+            Analitika a = new Analitika();
+            frameS.Navigate(a);
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

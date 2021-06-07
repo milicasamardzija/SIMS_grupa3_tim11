@@ -7,30 +7,23 @@ using System.Threading.Tasks;
 
 namespace Hospital.Service
 {
-    class MedicalRecordService
+    public class MedicalRecordService
     {
 
         private IMedicalRecordFileStorage mrstorage;
-
+        private IMedicalRecordFileStorage mrStorage;
+        private IAlergensFileStorage alergensFileStorage;
         public MedicalRecordService()
         {
             mrstorage = new MedicalRecordsFileStorage("./../../../../Hospital/files/storageMRecords.json");
              mrStorage = new MedicalRecordsFileStorage("./../../../../Hospital/files/storageMRecords.json");
             alergensFileStorage = new AlergensFileStorage("./../../../../Hospital/files/alergens.json");
-
-
         }
         public List<MedicalRecord> getAll()
         {
             return mrstorage.GetAll();
         }
 
-
-
-        private IMedicalRecordFileStorage mrStorage;
-        private IAlergensFileStorage alergensFileStorage;
-
-        
 
         public List<Alergens> getAllAlergens()
         {

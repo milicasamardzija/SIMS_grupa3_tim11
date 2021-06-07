@@ -75,11 +75,19 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="getDoctorTerms"
-            Content="Pretrazi"
+            Content="    Pretrazi"
             Cursor="Hand"
             FontWeight="Bold"
             Foreground="#FF1B4C93"
-            RenderTransformOrigin="0.586,-0.266" />
+            RenderTransformOrigin="0.586,-0.266"
+            ToolTip="Nadji termin">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/Start-Menu-Search-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
             Grid.ColumnSpan="2"
             Width="81"
@@ -88,8 +96,15 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Decline"
-            Content="Odustani"
+            Content="  Izadji"
             FontWeight="Bold"
-            Foreground="#FF1B4C93" />
+            Foreground="#FF1B4C93">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/arrow-left-small.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

@@ -17,7 +17,6 @@ namespace Hospital.Controller
         public PatientController()
         {
             patientService = new PatientService();
-
         }
 
         public ObservableCollection<PatientDTO> loadBlockedPatients()

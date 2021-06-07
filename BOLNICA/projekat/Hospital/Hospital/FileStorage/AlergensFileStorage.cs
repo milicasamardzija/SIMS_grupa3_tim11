@@ -12,22 +12,6 @@ using System.Threading.Tasks;
     public class AlergensFileStorage : GenericFileStorage<Alergens>, IAlergensFileStorage
     {
     public AlergensFileStorage(String filePath) : base(filePath) { }
-    /* public List<Alergens> GetAll()
-     {
-         List<Alergens> svi = new List<Alergens>();
-
-         svi = JsonConvert.DeserializeObject<List<Alergens>>(File.ReadAllText(@"./../../../../Hospital/files/alergens.json"));
-         return svi;
-     }
-     public void SaveAll(List<Alergens> alergens)
-     {
-         using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/alergens.json"))
-
-         {
-             JsonSerializer serializer = new JsonSerializer();
-             serializer.Serialize(file, alergens);
-
-         }
-} */
+   
 }
 

@@ -6,8 +6,8 @@
     xmlns:local="clr-namespace:Hospital"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="KreirajStalniNalog"
-    Width="720"
-    Height="500"
+    Width="540"
+    Height="520"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
@@ -79,7 +79,7 @@
         <Label
             Grid.Row="6"
             Grid.Column="0"
-            Margin="40,200,0,0"
+            Margin="40,230,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Broj telefona"
@@ -89,7 +89,7 @@
         <Label
             Grid.Row="7"
             Grid.Column="0"
-            Margin="40,230,0,0"
+            Margin="40,260,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Pol"
@@ -98,7 +98,7 @@
             Foreground="#FF083F82" />
         <Label
             Grid.Column="0"
-            Margin="40,258,0,0"
+            Margin="40,290,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Kategorija zdravstvene zastite"
@@ -108,7 +108,7 @@
         <Label
             Grid.Row="9"
             Grid.Column="0"
-            Margin="40,290,0,0"
+            Margin="40,320,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Zanimanje "
@@ -117,7 +117,7 @@
             Foreground="#FF083F82" />
         <Label
             Grid.Column="0"
-            Margin="40,320,0,0"
+            Margin="40,350,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Broj zdravstvene knjizice "
@@ -127,7 +127,7 @@
         <Label
             Grid.Row="11"
             Grid.Column="0"
-            Margin="40,350,0,0"
+            Margin="40,380,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Broj kartona "
@@ -139,7 +139,7 @@
         <TextBox
             x:Name="imeText"
             Grid.Row="0"
-            Width="186"
+            Width="208"
             Height="23"
             Margin="259,20,0,0"
             HorizontalAlignment="Left"
@@ -148,7 +148,7 @@
             TextWrapping="Wrap" />
         <TextBox
             x:Name="prezimeText"
-            Width="186"
+            Width="208"
             Height="23"
             Margin="259,50,0,0"
             HorizontalAlignment="Left"
@@ -157,7 +157,7 @@
             TextWrapping="Wrap" />
         <TextBox
             x:Name="jmbgText"
-            Width="186"
+            Width="208"
             Height="23"
             Margin="259,80,0,0"
             HorizontalAlignment="Left"
@@ -166,7 +166,7 @@
             TextWrapping="Wrap" />
         <TextBox
             x:Name="imePrzOsText"
-            Width="186"
+            Width="208"
             Height="23"
             Margin="259,110,0,0"
             HorizontalAlignment="Left"
@@ -175,7 +175,7 @@
             TextWrapping="Wrap" />
         <TextBox
             x:Name="ulText"
-            Width="111"
+            Width="101"
             Height="23"
             Margin="259,170,0,0"
             HorizontalAlignment="Left"
@@ -184,9 +184,9 @@
             TextWrapping="Wrap" />
         <TextBox
             x:Name="brTelText"
-            Width="186"
+            Width="207"
             Height="23"
-            Margin="259,201,0,0"
+            Margin="259,230,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
@@ -195,48 +195,56 @@
 
         <TextBox
             x:Name="zanimanjeText"
-            Width="186"
+            Width="207"
             Height="23"
-            Margin="259,286,0,0"
+            Margin="259,320,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="" />
         <Button
             x:Name="sacuvaj"
-            Width="113"
+            Width="105"
             Height="36"
-            Margin="548,407,0,0"
+            Margin="361,444,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="sacuvajButton"
-            Content="Sacuvaj"
+            Content="   Sacuvaj"
             Cursor="Hand"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14"
+            ToolTip="Klikni da sacuvas nalog">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/Actions-dialog-ok-apply-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <TextBox
             x:Name="brKnjiziceText"
-            Width="186"
+            Width="207"
             Height="22"
-            Margin="259,320,0,0"
+            Margin="259,350,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
         <TextBox
             x:Name="brKartonaText"
-            Width="186"
+            Width="207"
             Height="23"
-            Margin="259,350,0,0"
+            Margin="259,380,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
         <ComboBox
             x:Name="zastita"
-            Width="186"
-            Margin="259,258,0,0"
+            Width="207"
+            Margin="259,290,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem>
@@ -256,22 +264,29 @@
             </ComboBoxItem>
         </ComboBox>
         <Button
-            Width="130"
+            Width="101"
             Height="36"
-            Margin="40,407,0,0"
+            Margin="40,444,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="odustaniB"
-            Content="Odustani"
+            Content="    Odustani"
             Cursor="Hand"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/arrow-left-small.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <ComboBox
             x:Name="pol"
-            Width="186"
-            Margin="259,230,0,0"
+            Width="207"
+            Margin="259,260,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem>
@@ -283,7 +298,7 @@
         </ComboBox>
         <TextBox
             x:Name="broj"
-            Width="35"
+            Width="57"
             Height="23"
             Margin="410,167,0,0"
             HorizontalAlignment="Left"
@@ -291,7 +306,7 @@
             TextWrapping="Wrap" />
         <Label
             Width="34"
-            Margin="220,170,0,0"
+            Margin="225,170,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="ulica"
@@ -304,15 +319,15 @@
             Foreground="#FF083F82" />
         <Label
             Width="36"
-            Margin="455,167,0,0"
+            Margin="225,201,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="grad"
             Foreground="#FF083F82" />
         <ComboBox
             x:Name="grad"
-            Width="93"
-            Margin="491,170,0,0"
+            Width="99"
+            Margin="261,204,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem>Novi Sad</ComboBoxItem>
@@ -334,7 +349,7 @@
         <ComboBox
             Name="drzava"
             Width="60"
-            Margin="634,170,0,0"
+            Margin="406,203,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem>SRB</ComboBoxItem>
@@ -344,16 +359,17 @@
             <ComboBoxItem>SLO</ComboBoxItem>
         </ComboBox>
         <Label
-            Margin="589,170,0,0"
+            Margin="361,203,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="drzava"
             Foreground="#FF083F82" />
         <DatePicker
-            Width="186"
+            Width="208"
             Height="22"
             Margin="259,140,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top"
+            Focusable="False" />
     </Grid>
 </Window>

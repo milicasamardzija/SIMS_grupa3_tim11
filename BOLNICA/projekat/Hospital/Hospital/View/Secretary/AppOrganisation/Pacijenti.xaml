@@ -21,7 +21,7 @@
         <Image
             Width="175"
             Height="71"
-            Margin="552,33,0,0"
+            Margin="571,33,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="/Hospital;component/View/Images/logo-removebg-preview.png" />
@@ -143,7 +143,7 @@
             VerticalAlignment="Top"
             Content="PACIJENTI ZDRAVO BOLNICE"
             FontFamily="Chooper Black"
-            FontSize="18"
+            FontSize="25"
             FontWeight="Bold"
             Foreground="#FF0852AE" />
         <Button

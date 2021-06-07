@@ -5,8 +5,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Kreiraj nalog"
-    Width="680"
-    Height="450"
+    Width="540"
+    Height="500"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
@@ -20,7 +20,7 @@
         <Label
             Grid.Row="0"
             Grid.Column="0"
-            Margin="40,3,0,0"
+            Margin="43,24,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Ime"
@@ -28,10 +28,11 @@
             FontSize="15"
             FontWeight="Bold"
             Foreground="#FF164783"
+            RenderTransformOrigin="0.739,1.125"
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="40,30,0,0"
+            Margin="43,57,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Prezime"
@@ -42,7 +43,7 @@
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="40,57,0,0"
+            Margin="43,84,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Jmbg"
@@ -50,10 +51,11 @@
             FontSize="15"
             FontWeight="Bold"
             Foreground="#FF164783"
+            RenderTransformOrigin="0.484,0.853"
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="40,84,0,0"
+            Margin="40,111,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Prezime i ime lica osiguranika"
@@ -64,7 +66,7 @@
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="40,110,0,0"
+            Margin="40,143,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Datum rodjenja"
@@ -75,7 +77,7 @@
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="40,140,0,0"
+            Margin="43,170,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Adresa"
@@ -86,7 +88,7 @@
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="40,170,0,0"
+            Margin="40,231,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Broj telefona"
@@ -94,10 +96,11 @@
             FontSize="15"
             FontWeight="Bold"
             Foreground="#FF164783"
+            RenderTransformOrigin="0.508,0.706"
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="40,200,0,0"
+            Margin="40,259,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Pol"
@@ -108,7 +111,7 @@
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="40,230,0,0"
+            Margin="38,281,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Kategorija zdravstvene zastite"
@@ -119,7 +122,7 @@
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="40,260,0,0"
+            Margin="40,313,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Zanimanje "
@@ -130,7 +133,7 @@
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="40,290,0,0"
+            Margin="40,345,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Broj zdravstvene knjizice "
@@ -144,55 +147,56 @@
         <TextBox
             x:Name="imeText"
             Grid.Row="0"
-            Width="178"
+            Width="204"
             Height="23"
-            Margin="245,3,0,0"
+            Margin="261,27,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding Path=Patient.Name, UpdateSourceTrigger=PropertyChanged}"
             TextWrapping="Wrap" />
         <TextBox
             x:Name="prezimeText"
-            Width="178"
+            Width="205"
             Height="23"
-            Margin="245,30,0,0"
+            Margin="260,55,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding Path=Patient.Surname, UpdateSourceTrigger=PropertyChanged}"
             TextWrapping="Wrap" />
         <TextBox
             x:Name="jmbgText"
-            Width="178"
+            Width="206"
             Height="23"
-            Margin="245,56,0,0"
+            Margin="259,83,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding Path=Patient.Jmbg, UpdateSourceTrigger=PropertyChanged}"
             TextWrapping="Wrap" />
         <TextBox
             x:Name="imePrzOsText"
-            Width="178"
+            Width="206"
             Height="23"
-            Margin="245,84,0,0"
+            Margin="259,111,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            RenderTransformOrigin="0.506,1.174"
             Text="{Binding Path=Patient.Insurence, UpdateSourceTrigger=PropertyChanged}"
             TextWrapping="Wrap" />
 
         <TextBox
             x:Name="ulText"
-            Width="103"
+            Width="97"
             Height="23"
-            Margin="245,137,0,0"
+            Margin="261,172,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding Path=Patient.Adress.street, UpdateSourceTrigger=PropertyChanged}"
             TextWrapping="Wrap" />
         <TextBox
             x:Name="brTelText"
-            Width="178"
+            Width="206"
             Height="23"
-            Margin="246,168,0,0"
+            Margin="259,231,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding Path=Patient.TelephoneNumber, UpdateSourceTrigger=PropertyChanged}"
@@ -201,9 +205,9 @@
 
         <TextBox
             x:Name="zanimanjeText"
-            Width="177"
+            Width="206"
             Height="23"
-            Margin="246,260,0,0"
+            Margin="259,313,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding Path=Patient.Occupation, UpdateSourceTrigger=PropertyChanged}"
@@ -212,17 +216,24 @@
             x:Name="sacuvajButton"
             Width="100"
             Height="35"
-            Margin="513,360,0,0"
+            Margin="368,426,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="kreirajNalogB"
-            Content="Sacuvaj"
+            Content="   Sacuvaj"
             Cursor="Hand"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE"
             RenderTransformOrigin="0.5,0.5"
-            TextElement.FontSize="14">
+            TextElement.FontSize="14"
+            ToolTip="Klikni da sacuvas nalog">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/Actions-dialog-ok-apply-icon.png"
+                    Stretch="None" />
+            </Button.Background>
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform />
@@ -234,17 +245,17 @@
         </Button>
         <TextBox
             x:Name="brKnjiziceText"
-            Width="178"
+            Width="206"
             Height="23"
-            Margin="246,290,0,0"
+            Margin="259,345,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding Path=Patient.IdHealthCard, UpdateSourceTrigger=PropertyChanged}"
             TextWrapping="Wrap" />
         <ComboBox
             x:Name="zastita"
-            Width="177"
-            Margin="246,230,0,0"
+            Width="204"
+            Margin="261,286,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             SelectedIndex="{Binding Path=Patient.HealthCareCategory, UpdateSourceTrigger=PropertyChanged}">
@@ -265,23 +276,30 @@
             </ComboBoxItem>
         </ComboBox>
         <Button
-            Width="91"
+            Width="111"
             Height="33"
-            Margin="49,364,0,0"
+            Margin="40,427,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="odustaniB"
-            Content="Odustani"
+            Content="     Odustani"
             Cursor="Hand"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE"
             RenderTransformOrigin="0.227,0.472"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/arrow-left-small.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <ComboBox
             x:Name="pol"
-            Width="177"
-            Margin="246,200,0,0"
+            Width="205"
+            Margin="260,259,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             SelectedIndex="{Binding Path=Patient.Gender, UpdateSourceTrigger=PropertyChanged}">
@@ -294,36 +312,37 @@
         </ComboBox>
         <TextBox
             x:Name="broj"
-            Width="41"
+            Width="62"
             Height="23"
-            Margin="383,136,0,0"
+            Margin="403,174,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="{Binding Path=Patient.Adress.streetNumber, UpdateSourceTrigger=PropertyChanged}"
             TextWrapping="Wrap" />
         <Label
-            Margin="206,137,0,0"
+            Margin="215,169,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="ulica"
-            Foreground="#FF164783" />
+            Foreground="#FF164783"
+            RenderTransformOrigin="1.048,0.656" />
         <Label
-            Margin="353,136,0,0"
+            Margin="363,172,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="broj"
             Foreground="#FF164783" />
         <Label
             Width="36"
-            Margin="439,137,0,0"
+            Margin="215,190,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="grad"
             Foreground="#FF164783" />
         <ComboBox
             x:Name="grad"
-            Width="80"
-            Margin="475,138,0,0"
+            Width="97"
+            Margin="261,204,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             SelectedIndex="{Binding Path=Patient.Adress.city, UpdateSourceTrigger=PropertyChanged}">
@@ -345,8 +364,8 @@
         </ComboBox>
         <ComboBox
             Name="drzava"
-            Width="60"
-            Margin="600,137,0,0"
+            Width="62"
+            Margin="403,204,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             SelectedIndex="{Binding Path=Patient.Adress.country, UpdateSourceTrigger=PropertyChanged}">
@@ -357,20 +376,21 @@
             <ComboBoxItem>SLO</ComboBoxItem>
         </ComboBox>
         <Label
-            Margin="555,138,0,0"
+            Margin="358,200,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="drzava"
-            Foreground="#FF164783" />
+            Foreground="#FF164783"
+            RenderTransformOrigin="0.554,0.875" />
         <DatePicker
             Name="datum"
-            Width="178"
-            Margin="245,112,0,0"
+            Width="206"
+            Margin="259,143,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Focusable="False" />
         <Label
-            Margin="40,320,0,0"
+            Margin="40,377,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Krvna grupa"
@@ -381,8 +401,8 @@
             TextElement.FontSize="14" />
         <ComboBox
             Name="krvnaGrupa"
-            Width="177"
-            Margin="246,320,0,0"
+            Width="205"
+            Margin="260,377,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem>

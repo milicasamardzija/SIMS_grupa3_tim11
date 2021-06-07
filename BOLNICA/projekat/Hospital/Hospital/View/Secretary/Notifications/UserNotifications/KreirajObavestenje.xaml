@@ -101,10 +101,17 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="SendBtn"
-            Content="Posalji "
+            Content="    Posalji "
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF1B4C93" />
+            Foreground="#FF1B4C93">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/Actions-dialog-ok-apply-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
             Width="75"
             Height="35"
@@ -112,10 +119,17 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="CloseBtn"
-            Content="Odustani"
+            Content="     Izadji"
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF1B4C93" />
+            Foreground="#FF1B4C93">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/arrow-left-small.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Label
             Margin="26,111,0,0"
             HorizontalAlignment="Left"

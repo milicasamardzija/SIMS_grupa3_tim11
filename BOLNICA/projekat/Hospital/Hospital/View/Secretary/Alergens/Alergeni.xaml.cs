@@ -30,7 +30,6 @@ namespace Hospital.Sekretar
         int index;
         public int id;
 
-
         public ObservableCollection<AlergensDTO> listAllAlergens
         {
             get;
@@ -81,29 +80,33 @@ namespace Hospital.Sekretar
         }
 
         private void AddAlergens(object sender, RoutedEventArgs e)
-        {
-            listAlergens.Add((AlergensDTO)svi.SelectedItem);
-            listAllAlergens.Remove((AlergensDTO)svi.SelectedItem);
-         
+        { if (svi.SelectedItem != null)
+            {
+                listAlergens.Add((AlergensDTO)svi.SelectedItem);
+                listAllAlergens.Remove((AlergensDTO)svi.SelectedItem);
+            } else {
+                MessageBoxResult result = MessageBox.Show("Niste odabrali alergen!");
+            }
         }
 
       
 
         private void RemoveAlergen(object sender, RoutedEventArgs e)
         {
-          
             listAlergens.Remove((AlergensDTO)selected.SelectedItem);
         }
 
         private void saveAlergens(object sender, RoutedEventArgs e)
         {
-            
-            
             MedicalRecordDTO promeniM = controller.findRecordById(id);
             promeniM.Alergens = listAlergens;
             controller.deleteRecordById(id);
             controller.saveMedicalRecord(promeniM);
+            this.Close();
+        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
     }

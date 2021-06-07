@@ -35,7 +35,8 @@
             SelectionChanged="PrikazPacijenata_SelectionChanged"
             TextElement.FontFamily="Chooper Black"
             TextElement.FontSize="12"
-            TextElement.Foreground="#FF0852AE">
+            TextElement.Foreground="#FF0852AE"
+            ToolTip="Oznacite pacijenta i kliknite na zeljenu akciju">
 
             <DataGrid.Columns>
                 <DataGridTextColumn
@@ -53,42 +54,64 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button
-            Width="75"
+            Width="80"
             Height="32"
-            Margin="126,324,0,0"
+            Margin="121,324,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="izmeniNalogPacijenta"
-            Content="Izmeni "
+            Content="     Izmeni "
             Cursor="Hand"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/edit-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
-            Width="75"
+            Width="82"
             Height="32"
-            Margin="336,324,0,0"
+            Margin="329,324,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="izbrisiNalogPacijenta"
-            Content="Izbrisi"
+            Content="    Izbrisi"
             Cursor="Hand"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/delete-icon2.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
-            Width="75"
+            Width="85"
             Height="32"
-            Margin="230,324,0,0"
+            Margin="223,324,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="addAlergents"
-            Content="Alergeni"
+            Content="     Alergeni"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14"
+            ToolTip="Dodavanje/brisanje i pregled alergena">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/Extras-folder-important-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
             Width="75"
             Height="32"
@@ -96,11 +119,18 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="CancelBtn"
-            Content="Izadji"
+            Content="   Izadji"
             Cursor="Hand"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/arrow-left-small.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Label
             Margin="20,10,0,0"
             HorizontalAlignment="Left"

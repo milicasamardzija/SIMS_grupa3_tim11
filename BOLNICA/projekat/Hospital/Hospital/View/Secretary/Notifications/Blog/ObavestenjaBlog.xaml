@@ -25,11 +25,18 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="obrisi"
-            Content="Obrisi"
+            Content="     Obrisi"
             Cursor="Hand"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/delete-icon2.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
             Width="88"
             Height="32"
@@ -37,11 +44,18 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="odustani"
-            Content="Odustani"
+            Content="   Izadji"
             Cursor="Hand"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/arrow-left-small.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <DataGrid
             Name="textBlog"
             Width="492"
@@ -76,10 +90,17 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="dodaj"
-            Content="Dodaj"
+            Content="  Dodaj"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/math-add-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

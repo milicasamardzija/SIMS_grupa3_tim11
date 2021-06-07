@@ -1,4 +1,5 @@
 ﻿using Hospital.DTO;
+using Hospital.FileStorage.Interfaces;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,9 @@ namespace Hospital.Service
 {
     class CheckupService
     {
-       public CheckupFileStorage checkupStorage; 
-        public PatientFileStorage patientsStorage;
-        public DoctorFileStorage doctorStorage;
+       public  ICheckupFileStorage checkupStorage; 
+        public IPatientFileStorage patientsStorage;
+        public IDoctorFileStorage doctorStorage;
 
        public List<Checkup> allCheckups { get; set; }
        
@@ -55,10 +56,7 @@ namespace Hospital.Service
 
             List<Checkup> checkups = checkupStorage.GetAll();
             allCheckups = checkups;
-
             List<Checkup> unavailableCheckups = new List<Checkup>();
-
-            
             return getDoctorTerms(idDoctor, unavailableCheckups);
 
         }
@@ -71,7 +69,6 @@ namespace Hospital.Service
                 if (c.IdDoctor.Equals(idDoctor))
                 {
                     unavailableCheckups.Add(c);
-
                 }
             }
             return unavailableCheckups;
@@ -82,7 +79,6 @@ namespace Hospital.Service
         {
             Checkup newCheckup = new Checkup(generateIdCheckup(), checkup.IdDoctor, checkup.IdPatient, checkup.Date, 0, CheckupType.pregled);
             checkupStorage.Save(newCheckup);
-
         }
 
         public List<Doctor> getAvailableDoctors(DateTime date)
@@ -102,7 +98,6 @@ namespace Hospital.Service
         }
 
         public List<Checkup> getAvailableTimes(DateTime date,Doctor doctor)
-
         {
             List<Checkup> termini = new List<Checkup>();
             

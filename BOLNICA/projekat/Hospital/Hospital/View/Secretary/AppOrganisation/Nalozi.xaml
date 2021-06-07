@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Sekretar"
     Width="800"
-    Height="500"
+    Height="510"
     Visibility="Visible"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
@@ -23,8 +23,8 @@
         <Frame
             x:Name="frameS"
             Width="794"
-            Height="444"
-            Margin="0,30,-0.4,-3.6"
+            Height="451"
+            Margin="0,30,-0.4,-0.2"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             NavigationUIVisibility="Hidden">
@@ -37,8 +37,11 @@
             Height="30"
             Margin="0,0,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top">
+            VerticalAlignment="Top"
+            ToolTip="Klikon na odredjenu sekciju odlazite na odgovarajuci prozor za manipulaciju aplikacijom ">
             <MenuItem
+                Click="analitika"
+                Cursor="Hand"
                 FontSize="16"
                 FontWeight="Bold"
                 Header="      ANALITIKA"
@@ -52,6 +55,7 @@
             </MenuItem>
             <MenuItem
                 Click="blog"
+                Cursor="Hand"
                 FontSize="16"
                 FontWeight="Bold"
                 Header="    OBAVESTENJA"
@@ -65,6 +69,7 @@
             </MenuItem>
             <MenuItem
                 Click="profil"
+                Cursor="Hand"
                 FontSize="16"
                 FontWeight="Bold"
                 Header="     MOJ PROFIL"
@@ -78,6 +83,7 @@
             </MenuItem>
             <MenuItem
                 Click="pacijenti"
+                Cursor="Hand"
                 FontSize="16"
                 FontWeight="Bold"
                 Header="     PACIJENTI"
@@ -90,15 +96,33 @@
                 </MenuItem.Background>
             </MenuItem>
             <MenuItem
+                Width="153"
                 Height="30"
+                Click="MenuItem_Click"
+                Cursor="Hand"
                 FontSize="16"
                 FontWeight="Bold"
-                Header="    TRANSFER PACIJENATA"
+                Header="      RADNO VREME"
                 TextElement.Foreground="#FF0852AE">
                 <MenuItem.Background>
                     <ImageBrush
                         AlignmentX="Left"
-                        ImageSource="/Hospital;component/View/Images/Transfer-icon.png"
+                        ImageSource="/Hospital;component/View/Secretary/CRUDCheckup/Calendar-2-icon.png"
+                        Stretch="None" />
+                </MenuItem.Background>
+            </MenuItem>
+            <MenuItem
+                Width="124"
+                Height="30"
+                Cursor="Hand"
+                FontSize="16"
+                FontWeight="Bold"
+                Header="    FEEDBACK"
+                TextElement.Foreground="#FF0852AE">
+                <MenuItem.Background>
+                    <ImageBrush
+                        AlignmentX="Left"
+                        ImageSource="important-icon.png"
                         Stretch="None" />
                 </MenuItem.Background>
             </MenuItem>

@@ -57,9 +57,17 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Save"
-            Content="Sacuvaj"
+            Content="     Sacuvaj"
             TextElement.FontWeight="Bold"
-            TextElement.Foreground="#FF1B4C93" />
+            TextElement.Foreground="#FF1B4C93"
+            ToolTip="Klikni da sacuvas termin">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/Actions-dialog-ok-apply-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
             Width="77"
             Height="30"
@@ -67,9 +75,16 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Decline"
-            Content="Odustani"
+            Content="       Odustani"
             TextElement.FontWeight="Bold"
-            TextElement.Foreground="#FF1B4C93" />
+            TextElement.Foreground="#FF1B4C93">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/arrow-left-small.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

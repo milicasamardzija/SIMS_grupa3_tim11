@@ -12,14 +12,15 @@ namespace Hospital.Service
     public class NotificationsService
     {
 
-        public INotificationsFileStorage storageNotifications = new NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
-        public IPatientFileStorage storagePatients = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
+        public INotificationsFileStorage storageNotifications;
+        public IPatientFileStorage storagePatients;
         public NotificationsService()
         {
-
+            storagePatients = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
+            storageNotifications = new NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
         }
 
-        public ObservableCollection<Notifications> findNotificationsByIdPatient(int id) => storageNotifications.FindByIdPatient(id);
+        public ObservableCollection<Notifications> findNotificationsByIdPatient(int id) => new ObservableCollection<Notifications>(storageNotifications.FindByIdPatient(id));
 
         public int generisiId()
         {
@@ -48,7 +49,7 @@ namespace Hospital.Service
 
         public ObservableCollection<Notifications> loadNotificationsByPerson(String person)
         {
-            ObservableCollection<Notifications> notifications = storageNotifications.FindByPerson(person);
+            ObservableCollection<Notifications> notifications =new ObservableCollection<Notifications>( storageNotifications.FindByPerson(person));
             return notifications;
         }
 

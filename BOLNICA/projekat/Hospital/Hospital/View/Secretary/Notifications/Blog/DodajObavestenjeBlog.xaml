@@ -42,10 +42,18 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="da"
-            Content="Dodaj"
+            Content="   Dodaj"
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF1B4C93" />
+            Foreground="#FF1B4C93"
+            ToolTip="Klikni da postavis obavestenje">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/Actions-dialog-ok-apply-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
             Width="75"
             Height="32"
@@ -53,10 +61,17 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Ne"
-            Content="Odustani"
+            Content="    Izadji"
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF1B4C93" />
+            Foreground="#FF1B4C93">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/arrow-left-small.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

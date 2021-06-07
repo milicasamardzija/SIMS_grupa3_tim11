@@ -62,25 +62,40 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="izbrisiGuest"
-            Content="Izbrisi"
+            Content="    Izbrisi"
             Cursor="Hand"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/delete-icon2.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
-            Width="92"
-            Height="31"
-            Margin="333,329,0,0"
+            Width="100"
+            Height="32"
+            Margin="325,328,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="kreirajStalniNalogButton"
-            Content="Registruj"
+            Content="       Registruj"
             Cursor="Hand"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14"
+            ToolTip="Kreiraj stalni nalog">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/Button-White-Add-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Label
             Margin="20,10,0,0"
             HorizontalAlignment="Left"
@@ -120,6 +135,13 @@
             Content="Izadji"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14" />
+            TextElement.FontSize="14">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/arrow-left-small.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>
