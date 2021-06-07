@@ -11,10 +11,14 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Application = System.Windows.Application;
+using HelpProvider = Hospital.View.Manager.Help.HelpProvider;
+using MessageBox = System.Windows.MessageBox;
 
 namespace Hospital
 {
@@ -31,6 +35,7 @@ namespace Hospital
             InitializeComponent();
             frame.NavigationService.Navigate(new Magacin(frame));
             getTasks();
+            MessageBox.Show(Application.Current.Windows[2].ToString());
         }
 
       private void getTasks()
@@ -116,6 +121,20 @@ namespace Hospital
         private void iskljuci(object sender, RoutedEventArgs e)
         {
             isToolTipVisible = false;
+        }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            IInputElement focusedControl = FocusManager.GetFocusedElement(Application.Current.Windows[2]);
+            MessageBox.Show("Ovde sam" +
+                            "");
+            if (focusedControl is DependencyObject)
+            {
+                MessageBox.Show("Boze pomozi");
+                string str = View.Manager.Help.HelpProvider.GetHelpKey((DependencyObject) focusedControl);
+                MessageBox.Show(str);
+                View.Manager.Help.HelpProvider.ShowHelp(str, this);
+            }
         }
     }
 }
