@@ -33,10 +33,10 @@
 
     </Window.Resources>
     <Grid>
-        <Button    Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="165" Margin="95,395,0,0" Height="45" Click="pdf" Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20">
+        <Button    Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="95,400,0,0" Height="40" Click="pdf" Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20">
             <StackPanel Orientation="Horizontal">
-                <Image Source="tretman.png" Stretch="None" Width="78" Height="40" />
-                <TextBlock Margin="0,11,0,0" Width="43" FontSize="15" Height="37" ><Run Text="PDF"/></TextBlock>
+                <Image Source="tretman.png" Stretch="None" Width="57" Height="28" />
+                <TextBlock Margin="0,6,0,0" Width="46" FontSize="20" Height="55" ><Run Text="PDF"/></TextBlock>
             </StackPanel>
 
             <Button.Resources>
@@ -51,7 +51,7 @@
 
         </Button>
 
-        <calendar:Calendar x:Name="Calendar" Margin="10,100,10.2,59.6"  Background="#FF64CCF1" />
+        <calendar:Calendar x:Name="Calendar" Margin="10,100,10.2,74.6"  Background="#FF64CCF1" />
         <Line  
             X1="500" Y1="0"  
             X2="20" Y2="0"  
