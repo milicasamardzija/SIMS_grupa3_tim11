@@ -74,5 +74,14 @@ namespace Hospital.Controller
         {
             return service.getAvailableDoctors(date);
         }
+
+        public int counterOperation(DateTime start, DateTime end)
+        {
+            return service.counterOperation(start, end);
+        }
+        public int counterCheckup(DateTime start, DateTime end)
+        {
+            return service.counterCheckup(start, end);
+        }
     }
 }

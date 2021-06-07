@@ -151,5 +151,38 @@ namespace Hospital.Service
         {
             checkupStorage.Save(checkup);
         }
+
+        public int counterOperation(DateTime start, DateTime end)
+        {
+            List<Checkup> allCheckups = checkupStorage.GetAll();
+            int counter = 0;
+
+            foreach (Checkup c in allCheckups)
+            {
+                if (c.Type == CheckupType.operacija)
+                {
+                    if(c.Date >= start && c.Date <= end) 
+                    counter += 1;
+                }
+            }
+            return counter;
+        }
+
+        public int counterCheckup(DateTime start, DateTime end)
+        {
+            List<Checkup> allCheckups = checkupStorage.GetAll();
+            int counter = 0;
+
+            foreach (Checkup c in allCheckups)
+            {
+                if (c.Type == CheckupType.pregled)
+                {
+                 if (c.Date >= start && c.Date<= end)
+                        counter += 1;
+                }
+            }
+            return counter;
+        }
+
     }
 }

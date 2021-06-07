@@ -176,7 +176,7 @@
             Margin="580,166,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="Button_Click"
+            Click="generateReport"
             Content="    Generisi izvestaj"
             Cursor="Hand"
             FontWeight="Bold"
@@ -203,13 +203,15 @@
             Width="157"
             Margin="580,83,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top"
+            Focusable="False" />
         <DatePicker
             Name="doDate"
             Width="157"
             Margin="580,120,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top"
+            Focusable="False" />
         <Label
             Margin="521,83,0,0"
             HorizontalAlignment="Left"
@@ -218,7 +220,7 @@
             FontWeight="Bold"
             Foreground="#FF0852AE" />
         <Label
-            Margin="523,120,0,0"
+            Margin="521,119,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Do:"
