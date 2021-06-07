@@ -6,8 +6,8 @@
     xmlns:local="clr-namespace:Hospital"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Kreiraj guest nalog"
-    Width="450"
-    Height="400"
+    Width="420"
+    Height="380"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
@@ -105,17 +105,24 @@
             Text=""
             TextWrapping="Wrap" />
         <Button
-            Width="80"
+            Width="92"
             Height="32"
-            Margin="286,300,0,0"
+            Margin="252,300,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="kreirajGuest"
-            Content="Sacuvaj"
+            Content="    Sacuvaj"
             Cursor="Hand"
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF0852AE" />
+            Foreground="#FF0852AE">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/Actions-dialog-ok-apply-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <ComboBox
             x:Name="pol"
             Width="144"
@@ -128,17 +135,24 @@
             <ComboBoxItem>Zenski</ComboBoxItem>
         </ComboBox>
         <Button
-            Width="80"
+            Width="92"
             Height="32"
             Margin="50,300,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="odustani"
-            Content="Odustani"
+            Content="     Odustani"
             Cursor="Hand"
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF0852AE" />
+            Foreground="#FF0852AE">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/arrow-left-small.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Label
             Margin="40,225,0,0"
             HorizontalAlignment="Left"
@@ -175,7 +189,7 @@
         </ComboBox>
         <DatePicker
             Name="datum"
-            Margin="200,120,99.2,0"
+            Margin="200,120,69.6,0"
             VerticalAlignment="Top"
             Focusable="True"
             IsTodayHighlighted="True" />
