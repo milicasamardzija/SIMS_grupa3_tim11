@@ -148,7 +148,12 @@
                 <ImageBrush ImageSource="exit.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Button  Style="{ StaticResource MyButtonDesign}" Foreground="White"  Content="" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="34" Margin="279,23,0,0" Height="30" BorderBrush="#FFEEEDED" RenderTransformOrigin="0.805,0.833" Click="Odjava">
+        <Button  Style="{ StaticResource MyButtonDesign}" Foreground="White"  Content="" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="40" Margin="10,26,0,0" Height="27" BorderBrush="#FFEEEDED" RenderTransformOrigin="-0.544,-0.487" Click="Odjava">
+            <Button.Background>
+                <ImageBrush ImageSource="notification.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button  Style="{ StaticResource MyButtonDesign}" Foreground="White"  Content="" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="34" Margin="284,10,0,0" Height="48" BorderBrush="#FFEEEDED" RenderTransformOrigin="0.805,0.833" Click="Odjava">
             <Button.Background>
                 <ImageBrush ImageSource="person.png" Stretch="Uniform"/>
             </Button.Background>
