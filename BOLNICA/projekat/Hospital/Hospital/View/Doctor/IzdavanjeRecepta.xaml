@@ -22,7 +22,11 @@
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="284,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
         <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="284,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
         <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="284,186,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
-        <DatePicker x:Name="datePicker" Height ="30" SelectedDateChanged="DatePicker_SelectedDateChanged" HorizontalAlignment="Left" Width="248" Margin="284,230,0,248"/>
+        <DatePicker x:Name="datePicker" Height ="30" SelectedDateChanged="DatePicker_SelectedDateChanged" HorizontalAlignment="Left" Width="248" Margin="284,230,0,248">
+        <DatePicker.BlackoutDates>
+            <CalendarDateRange End="2021-06-06"/>
+        </DatePicker.BlackoutDates>
+        </DatePicker>
         <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="23" Margin="284,279,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
         <TextBox x:Name="textBox6" HorizontalAlignment="Left" Height="23" Margin="284,330,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
         <TextBox x:Name="textBox7" HorizontalAlignment="Left" Height="23" Margin="800,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>

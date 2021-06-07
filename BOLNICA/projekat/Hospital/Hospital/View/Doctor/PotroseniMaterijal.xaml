@@ -15,7 +15,7 @@
                 <DataGridTextColumn Header="GRANICA"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label x:Name="label" Content="Da biste dodali potroseni materijal pritisnite dugme Dodaj" HorizontalAlignment="Left" Margin="0,-29,0,215.6" Width="346"/>
+        <Label x:Name="label" Content="Da biste dodali potroseni materijal pritisnite dugme Dodaj" HorizontalAlignment="Left" Margin="0,-29,0,215.6" Width="427" FontSize="14"/>
         <Button x:Name="button1" Content="Dodaj" HorizontalAlignment="Left" Margin="0,251,0,-61.4" Width="110" Click="button1_Click"/>
         <Button x:Name="button2" Content="Izadji" HorizontalAlignment="Left" Margin="437,251,0,-61.4" Width="117" Click="button2_Click"/>
     </Grid>
