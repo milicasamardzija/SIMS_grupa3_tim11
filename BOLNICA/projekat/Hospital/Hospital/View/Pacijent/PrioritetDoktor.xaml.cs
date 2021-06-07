@@ -101,7 +101,7 @@ namespace Hospital.View.Pacijent
             potvrdii.IsEnabled = true;
         }
 
-       /* private void pretraziTermine()
+        private void pretraziTermine()
         {
             times.Items.Clear();
             availableTimes.Clear();
@@ -168,7 +168,7 @@ namespace Hospital.View.Pacijent
             }
 
 
-        }*/
+        }
 
         private void ZakaziTermin()
         {

@@ -17,7 +17,6 @@ using Hospital.Model;
 using Hospital.FileStorage.Interfaces;
 using Hospital.DTO;
 using Hospital.Controller;
-using Hospital.View.Doctor;
 
 namespace Hospital
 {

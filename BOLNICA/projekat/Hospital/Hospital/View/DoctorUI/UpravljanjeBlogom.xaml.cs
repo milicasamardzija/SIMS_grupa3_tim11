@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 
-namespace Hospital.View.Doctor
+namespace Hospital
 {
     /// <summary>
     /// Interaction logic for UpravljanjeBlogom.xaml

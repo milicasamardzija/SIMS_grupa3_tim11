@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Hospital.View.Doctor
+namespace Hospital
 {
     /// <summary>
     /// Interaction logic for BolnickoLecenje.xaml

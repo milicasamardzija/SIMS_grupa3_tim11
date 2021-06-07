@@ -16,7 +16,7 @@ using Hospital.DTO;
 using Hospital.FileStorage.Interfaces;
 using Hospital.Controller;
 
-namespace Hospital.View.Doctor
+namespace Hospital
 {
     /// <summary>
     /// Interaction logic for ZauzmiSobu.xaml

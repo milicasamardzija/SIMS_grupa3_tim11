@@ -1,9 +1,9 @@
-﻿<Window x:Class="Hospital.View.Doctor.UpravljanjeBlogom"
+﻿<Window x:Class="Hospital.UpravljanjeBlogom"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Hospital.View.Doctor"
+        xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
         Title="UpravljanjeBlogom" Height="328.538" Width="567.981" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid ToolTip="Da bi se izvrsile zeljene akcije, oznacite zeljeno dugme, a zatim pritisnite tipku Enter">

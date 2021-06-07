@@ -15,7 +15,7 @@ using System.Collections.ObjectModel;
 using Hospital.DTO;
 using Hospital.Controller;
 
-namespace Hospital.View.Doctor
+namespace Hospital
 {
     /// <summary>
     /// Interaction logic for UvidUSobe.xaml
