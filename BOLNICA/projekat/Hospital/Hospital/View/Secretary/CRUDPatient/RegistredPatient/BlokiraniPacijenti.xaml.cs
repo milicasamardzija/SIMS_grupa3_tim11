@@ -49,6 +49,9 @@ namespace Hospital.View.Secretary.CRUDPatient.RegistredPatient
                 OdblokirajPacijenta odblokiranNote = new OdblokirajPacijenta(listBlocked, PrikazPacijenata.SelectedIndex);
                 odblokiranNote.Show();
 
+            } else
+            {
+                MessageBoxResult mess = MessageBox.Show("Morate odabrati pacijenta!");
             }
         }
         private void DeclineBtn(object sender, RoutedEventArgs e)

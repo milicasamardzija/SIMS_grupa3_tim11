@@ -22,9 +22,9 @@
         </Grid.Background>
         <Frame
             x:Name="frameS"
-            Width="800"
-            Height="460"
-            Margin="0,30,-0.4,-3.6"
+            Width="794"
+            Height="451"
+            Margin="0,30,-0.4,-0.2"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             NavigationUIVisibility="Hidden">
@@ -96,16 +96,33 @@
                 </MenuItem.Background>
             </MenuItem>
             <MenuItem
+                Width="153"
                 Height="30"
+                Click="MenuItem_Click"
                 Cursor="Hand"
                 FontSize="16"
                 FontWeight="Bold"
-                Header="    TRANSFER PACIJENATA"
+                Header="      RADNO VREME"
                 TextElement.Foreground="#FF0852AE">
                 <MenuItem.Background>
                     <ImageBrush
                         AlignmentX="Left"
-                        ImageSource="/Hospital;component/View/Images/Transfer-icon.png"
+                        ImageSource="/Hospital;component/View/Secretary/CRUDCheckup/Calendar-2-icon.png"
+                        Stretch="None" />
+                </MenuItem.Background>
+            </MenuItem>
+            <MenuItem
+                Width="124"
+                Height="30"
+                Cursor="Hand"
+                FontSize="16"
+                FontWeight="Bold"
+                Header="    FEEDBACK"
+                TextElement.Foreground="#FF0852AE">
+                <MenuItem.Background>
+                    <ImageBrush
+                        AlignmentX="Left"
+                        ImageSource="important-icon.png"
                         Stretch="None" />
                 </MenuItem.Background>
             </MenuItem>
