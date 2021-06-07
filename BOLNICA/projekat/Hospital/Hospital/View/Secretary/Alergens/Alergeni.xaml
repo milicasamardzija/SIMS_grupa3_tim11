@@ -29,7 +29,8 @@
             Foreground="#FF1B4C93"
             ItemsSource="{Binding Path=listAllAlergens}"
             ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-            ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            ScrollViewer.VerticalScrollBarVisibility="Hidden"
+            ToolTip="Oznaci alergen i klikni za dodavanje">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="130"
@@ -52,7 +53,8 @@
             Foreground="#FF1B4C93"
             ItemsSource="{Binding Path=listAlergens}"
             ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-            ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            ScrollViewer.VerticalScrollBarVisibility="Hidden"
+            ToolTip="Oznaci ukoliko zelis da uklonis">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="130"
@@ -95,7 +97,8 @@
             Cursor="Hand"
             FontWeight="Bold"
             Foreground="#FF0E2C91"
-            TextElement.FontFamily="Chooper Black">
+            TextElement.FontFamily="Chooper Black"
+            ToolTip="Dodaj alergen">
             <Button.Background>
                 <ImageBrush ImageSource="/Hospital;component/View/Images/Add-icon.png" Stretch="None" />
             </Button.Background>
@@ -108,7 +111,8 @@
             VerticalAlignment="Top"
             Click="RemoveAlergen"
             FontWeight="Bold"
-            Foreground="#FF1B4C93">
+            Foreground="#FF1B4C93"
+            ToolTip="Obrisi alergen">
             <Button.Background>
                 <ImageBrush ImageSource="/Hospital;component/View/Images/Button-White-Remove-icon.png" Stretch="None" />
             </Button.Background>
@@ -122,7 +126,8 @@
             Click="saveAlergens"
             Content="       Sacuvaj "
             FontWeight="Bold"
-            Foreground="#FF1B4C93">
+            Foreground="#FF1B4C93"
+            ToolTip="Sacuvaj unete alergene">
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"

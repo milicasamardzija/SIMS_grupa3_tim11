@@ -143,7 +143,8 @@
             VerticalAlignment="Top"
             Click="findAvailableRoom"
             Content=""
-            RenderTransformOrigin="0.606,0.203">
+            RenderTransformOrigin="0.606,0.203"
+            ToolTip="Nadji sobu">
             <Button.Background>
                 <ImageBrush ImageSource="/Hospital;component/View/Images/Search-Add-icon.png" Stretch="None" />
             </Button.Background>

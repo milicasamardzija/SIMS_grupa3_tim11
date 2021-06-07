@@ -79,7 +79,8 @@
             Cursor="Hand"
             FontWeight="Bold"
             Foreground="#FF1B4C93"
-            RenderTransformOrigin="0.586,-0.266">
+            RenderTransformOrigin="0.586,-0.266"
+            ToolTip="Nadji termin">
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"

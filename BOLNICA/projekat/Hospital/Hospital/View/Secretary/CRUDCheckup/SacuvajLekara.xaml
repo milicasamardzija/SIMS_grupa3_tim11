@@ -38,7 +38,8 @@
             Margin="97,15,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Focusable="False" />
+            Focusable="False"
+            ToolTip="Odaberi datum koji nije zauzet" />
         <Label
             Width="51"
             Height="26"
@@ -205,7 +206,8 @@
             Margin="232,52,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="Btn">
+            Click="Btn"
+            ToolTip="Klikni da pretrazis sobe">
             <Button.Background>
                 <ImageBrush ImageSource="/Hospital;component/View/Images/Search-Add-icon.png" Stretch="None" />
             </Button.Background>

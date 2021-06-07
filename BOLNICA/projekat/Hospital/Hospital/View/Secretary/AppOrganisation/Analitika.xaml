@@ -184,7 +184,7 @@
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"
-                    ImageSource="Adobe-PDF-Document-icon.png"
+                    ImageSource="/Hospital;component/View/Images/Adobe-PDF-Document-icon.png"
                     Stretch="None" />
             </Button.Background>
         </Button>

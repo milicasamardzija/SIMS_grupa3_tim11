@@ -35,7 +35,8 @@
             SelectionChanged="PrikazPacijenata_SelectionChanged"
             TextElement.FontFamily="Chooper Black"
             TextElement.FontSize="12"
-            TextElement.Foreground="#FF0852AE">
+            TextElement.Foreground="#FF0852AE"
+            ToolTip="Oznacite pacijenta i kliknite na zeljenu akciju">
 
             <DataGrid.Columns>
                 <DataGridTextColumn
@@ -102,7 +103,8 @@
             Content="     Alergeni"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14">
+            TextElement.FontSize="14"
+            ToolTip="Dodavanje/brisanje i pregled alergena">
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"

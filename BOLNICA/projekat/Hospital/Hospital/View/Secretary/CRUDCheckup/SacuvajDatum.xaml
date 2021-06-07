@@ -42,7 +42,8 @@
             Foreground="#FF1B4C93"
             ItemsSource="{Binding listDoctors}"
             ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-            ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            ScrollViewer.VerticalScrollBarVisibility="Hidden"
+            ToolTip="Odaberi lekara">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="80"
@@ -68,7 +69,8 @@
             Click="CreateCheckup"
             Content="     Sacuvaj"
             FontWeight="Bold"
-            Foreground="#FF1B4C93">
+            Foreground="#FF1B4C93"
+            ToolTip="Sacuvaj termin">
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"

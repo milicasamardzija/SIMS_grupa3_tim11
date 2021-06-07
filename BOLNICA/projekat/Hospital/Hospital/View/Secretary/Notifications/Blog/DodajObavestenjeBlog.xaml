@@ -45,7 +45,8 @@
             Content="   Dodaj"
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF1B4C93">
+            Foreground="#FF1B4C93"
+            ToolTip="Klikni da postavis obavestenje">
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"

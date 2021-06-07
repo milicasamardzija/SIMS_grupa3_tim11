@@ -37,14 +37,15 @@
             Height="30"
             Margin="0,0,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top">
+            VerticalAlignment="Top"
+            ToolTip="Klikon na odredjenu sekciju odlazite na odgovarajuci prozor za manipulaciju aplikacijom ">
             <MenuItem
+                Click="analitika"
+                Cursor="Hand"
                 FontSize="16"
                 FontWeight="Bold"
                 Header="      ANALITIKA"
-                TextElement.Foreground="#FF0852AE"
-                Click="analitika"
-                Cursor="Hand">
+                TextElement.Foreground="#FF0852AE">
                 <MenuItem.Background>
                     <ImageBrush
                         AlignmentX="Left"
@@ -54,6 +55,7 @@
             </MenuItem>
             <MenuItem
                 Click="blog"
+                Cursor="Hand"
                 FontSize="16"
                 FontWeight="Bold"
                 Header="    OBAVESTENJA"
@@ -67,6 +69,7 @@
             </MenuItem>
             <MenuItem
                 Click="profil"
+                Cursor="Hand"
                 FontSize="16"
                 FontWeight="Bold"
                 Header="     MOJ PROFIL"
@@ -80,6 +83,7 @@
             </MenuItem>
             <MenuItem
                 Click="pacijenti"
+                Cursor="Hand"
                 FontSize="16"
                 FontWeight="Bold"
                 Header="     PACIJENTI"
@@ -93,6 +97,7 @@
             </MenuItem>
             <MenuItem
                 Height="30"
+                Cursor="Hand"
                 FontSize="16"
                 FontWeight="Bold"
                 Header="    TRANSFER PACIJENATA"

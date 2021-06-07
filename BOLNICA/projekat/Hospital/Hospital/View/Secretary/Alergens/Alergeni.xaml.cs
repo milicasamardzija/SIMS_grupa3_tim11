@@ -80,10 +80,13 @@ namespace Hospital.Sekretar
         }
 
         private void AddAlergens(object sender, RoutedEventArgs e)
-        {
-            listAlergens.Add((AlergensDTO)svi.SelectedItem);
-            listAllAlergens.Remove((AlergensDTO)svi.SelectedItem);
-         
+        { if (svi.SelectedItem != null)
+            {
+                listAlergens.Add((AlergensDTO)svi.SelectedItem);
+                listAllAlergens.Remove((AlergensDTO)svi.SelectedItem);
+            } else {
+                MessageBoxResult result = MessageBox.Show("Niste odabrali alergen!");
+            }
         }
 
       

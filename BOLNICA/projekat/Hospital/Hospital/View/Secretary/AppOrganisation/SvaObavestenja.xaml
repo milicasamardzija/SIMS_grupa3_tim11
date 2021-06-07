@@ -28,11 +28,12 @@
             Content="     Kreiraj "
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF1B4C93">
+            Foreground="#FF1B4C93"
+            ToolTip="Novo obavestenje za clanove">
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"
-                    ImageSource="Comment-Add-icon.png"
+                    ImageSource="/Hospital;component/View/Images/Comment-Add-icon.png"
                     Stretch="None" />
             </Button.Background>
         </Button>
@@ -46,11 +47,12 @@
             Content="     Novosti - blog"
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF1B4C93">
+            Foreground="#FF1B4C93"
+            ToolTip="Obavestenja na blogu">
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"
-                    ImageSource="Location-News-icon.png"
+                    ImageSource="/Hospital;component/View/Images/Location-News-icon.png"
                     Stretch="None" />
             </Button.Background>
         </Button>
@@ -98,11 +100,12 @@
             Content="Obrisi "
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF1B4C93">
+            Foreground="#FF1B4C93"
+            ToolTip="Obrisi svoje obavestenje">
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"
-                    ImageSource="Comment-Remove-icon.png"
+                    ImageSource="/Hospital;component/View/Images/Comment-Remove-icon.png"
                     Stretch="None" />
             </Button.Background>
         </Button>

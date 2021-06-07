@@ -86,7 +86,8 @@
             Margin="236,58,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="Nadji">
+            Click="Nadji"
+            ToolTip="Nadji slobodnu sobu">
             <Button.Background>
                 <ImageBrush ImageSource="/Hospital;component/View/Images/Search-Add-icon.png" />
             </Button.Background>
@@ -107,7 +108,8 @@
             Click="Find"
             Content="     Nadji lekara"
             FontWeight="Bold"
-            Foreground="#FF1B4C93">
+            Foreground="#FF1B4C93"
+            ToolTip="Klikni da nadjes lekara">
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"

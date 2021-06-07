@@ -115,7 +115,8 @@
             Cursor="Hand"
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF0852AE">
+            Foreground="#FF0852AE"
+            ToolTip="Klikni da sacuvas guest-a">
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"

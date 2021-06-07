@@ -226,7 +226,8 @@
             FontWeight="Bold"
             Foreground="#FF0852AE"
             RenderTransformOrigin="0.5,0.5"
-            TextElement.FontSize="14">
+            TextElement.FontSize="14"
+            ToolTip="Klikni da sacuvas nalog">
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"

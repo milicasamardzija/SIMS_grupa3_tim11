@@ -30,7 +30,8 @@
             ScrollViewer.HorizontalScrollBarVisibility="Hidden"
             ScrollViewer.VerticalScrollBarVisibility="Hidden"
             TextElement.FontSize="12"
-            TextElement.Foreground="#FF0852AE">
+            TextElement.Foreground="#FF0852AE"
+            ToolTip="Oznaci pacijenta za aktivaciju">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="100"

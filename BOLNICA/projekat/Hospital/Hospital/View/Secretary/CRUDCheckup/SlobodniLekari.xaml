@@ -59,7 +59,8 @@
             Click="Save"
             Content="     Sacuvaj"
             TextElement.FontWeight="Bold"
-            TextElement.Foreground="#FF1B4C93">
+            TextElement.Foreground="#FF1B4C93"
+            ToolTip="Klikni da sacuvas termin">
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"

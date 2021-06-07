@@ -33,7 +33,7 @@
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"
-                    ImageSource="delete-icon2.png"
+                    ImageSource="/Hospital;component/View/Images/delete-icon2.png"
                     Stretch="None" />
             </Button.Background>
         </Button>

@@ -29,7 +29,8 @@
             ScrollViewer.HorizontalScrollBarVisibility="Hidden"
             ScrollViewer.VerticalScrollBarVisibility="Hidden"
             TextElement.FontSize="12"
-            TextElement.Foreground="#FF0852AE">
+            TextElement.Foreground="#FF0852AE"
+            ToolTip="Oznaci termin i klikni na zeljeno dugme">
 
             <DataGrid.Columns>
 
@@ -64,9 +65,9 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button
-            Width="79"
+            Width="82"
             Height="36"
-            Margin="405,350,0,0"
+            Margin="402,350,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BorderBrush="#FF0E1A9F"
@@ -78,7 +79,8 @@
             FontWeight="Bold"
             Foreground="#FF0E18E7"
             TextElement.FontSize="12"
-            TextElement.Foreground="#FF0852AE">
+            TextElement.Foreground="#FF0852AE"
+            ToolTip="Klikni za novi termin">
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"
@@ -125,7 +127,8 @@
             FontWeight="Bold"
             Foreground="#FF0E18E7"
             TextElement.FontSize="12"
-            TextElement.Foreground="#FF0852AE">
+            TextElement.Foreground="#FF0852AE"
+            ToolTip="Klikni da otkazes termin">
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"
@@ -139,6 +142,7 @@
             Margin="28,350,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            BorderBrush="#FF111D9D"
             Click="Exit"
             Content="    Izadji"
             Cursor="Hand"

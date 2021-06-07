@@ -263,7 +263,8 @@
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE"
-            TextElement.FontSize="14">
+            TextElement.FontSize="14"
+            ToolTip="Klikni da sacuvas izmene">
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"
