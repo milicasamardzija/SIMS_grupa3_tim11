@@ -176,9 +176,6 @@
     <Compile Include="View\Manager\Ostalo\ObavestenjaUpravnik.xaml.cs">
       <DependentUpon>ObavestenjaUpravnik.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\DodajBelesku.xaml.cs">
-      <DependentUpon>DodajBelesku.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Pacijent\DodajPage.xaml.cs">
       <DependentUpon>DodajPage.xaml</DependentUpon>
     </Compile>
@@ -199,9 +196,6 @@
     </Compile>
     <Compile Include="View\Pacijent\ObavljeniPage.xaml.cs">
       <DependentUpon>ObavljeniPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pacijent\ObavljeniPregledi.xaml.cs">
-      <DependentUpon>ObavljeniPregledi.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pacijent\Obolnici.xaml.cs">
       <DependentUpon>Obolnici.xaml</DependentUpon>
@@ -389,10 +383,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pacijent\DodajBelesku.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Pacijent\DodajPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -418,10 +408,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pacijent\ObavljeniPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\ObavljeniPregledi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1203,6 +1189,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="View\Pacijent\note2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\zvono.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

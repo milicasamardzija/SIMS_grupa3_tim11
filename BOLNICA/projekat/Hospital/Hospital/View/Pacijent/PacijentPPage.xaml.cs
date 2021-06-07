@@ -25,6 +25,7 @@ namespace Hospital.View.Pacijent
         {
             InitializeComponent();
             parent = p;
+            parent.nazad.Visibility = Visibility.Visible;
         }
         private void Odjava(object sender, RoutedEventArgs e)
         {

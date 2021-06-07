@@ -39,7 +39,7 @@ namespace Hospital
                 }
             }
             this.startWindow.Content = new PacijentPPage(this);
-            nazad.Visibility = Visibility.Hidden;
+            nazad.Visibility = Visibility.Visible;
         }
 
         
@@ -47,6 +47,11 @@ namespace Hospital
         private void Odjava(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -48,7 +48,7 @@ namespace Hospital.View.Pacijent
             patientcontroller = new PatientController();
             funkcionalitycontroller = new FunctionalityController();
             checkupcontroller = new CheckupController();
-
+            parent.nazad.Visibility = Visibility.Hidden;
 
          
 
