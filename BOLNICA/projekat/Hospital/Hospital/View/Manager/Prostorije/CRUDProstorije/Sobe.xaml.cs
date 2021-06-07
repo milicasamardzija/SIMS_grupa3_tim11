@@ -33,7 +33,7 @@ namespace Hospital
             frameMagacin = magacin;
             Rooms = new ObservableCollection<RoomDTO>(roomController.getAll());
             ucitajInventar();
-            SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
+            SobeFrame.NavigationService.Navigate(new BelsekaMagacin(1));
             setTooltips();
         }
 
@@ -61,7 +61,7 @@ namespace Hospital
         {
             if (ListaProstorija.SelectedItem == null)
             {
-                SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
+                SobeFrame.NavigationService.Navigate(new BelsekaMagacin(1));
             }
             else
             {
@@ -73,7 +73,7 @@ namespace Hospital
         {
             if (ListaProstorija.SelectedItem == null)
             {
-                SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
+                SobeFrame.NavigationService.Navigate(new BelsekaMagacin(1));
             }
             else
             {
@@ -127,7 +127,7 @@ namespace Hospital
         {
             if (ListaProstorija.SelectedItem == null)
             {
-                SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
+                SobeFrame.NavigationService.Navigate(new BelsekaMagacin(1));
             } else {
                 SobeFrame.NavigationService.Navigate(new Renoviranje(SobeFrame, (RoomDTO)ListaProstorija.SelectedItem));
             }

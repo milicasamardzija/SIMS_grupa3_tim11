@@ -48,14 +48,14 @@ namespace Hospital
         }
         private void odustani(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
             BrisanjePotvrdiInventar brisanje = new BrisanjePotvrdiInventar(inventory.Id,inventories,index);
             brisanje.Show();
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
     }
 }

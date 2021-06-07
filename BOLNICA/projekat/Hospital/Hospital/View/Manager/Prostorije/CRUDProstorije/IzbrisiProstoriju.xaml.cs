@@ -53,12 +53,12 @@ namespace Hospital
            // controller.deleteById(room.Id);
             IzbrisiProstorijuPotvrda brisanje = new IzbrisiProstorijuPotvrda(room.Id,rooms,index);
             brisanje.Show();
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }
 
         private void odustani(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }
     }
 }

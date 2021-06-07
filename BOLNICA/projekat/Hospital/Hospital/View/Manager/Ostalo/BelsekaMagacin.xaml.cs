@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,26 +16,24 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for BelsekaMagacin.xaml
-    /// </summary>
-
-   
-   // public String Beleska { get; set; }
-
     public partial class BelsekaMagacin : UserControl
     {
         public string beleska;
-        public BelsekaMagacin()
+        private ManagerNote notes = new ManagerNote();
+        private List<ManagerNote> note = new List<ManagerNote>();
+        private int id;
+        public BelsekaMagacin(int id)
         {
             InitializeComponent();
-            BeleskaTxt.Text = beleska;
-
+            note = notes.GetAll();
+            BeleskaTxt.Text = note[id].note;
+            this.id = id;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void sacuvaj(object sender, RoutedEventArgs e)
         {
-            beleska = BeleskaTxt.Text;
+            note[id].note = BeleskaTxt.Text;
+            notes.SaveAll(note);
         }
     }
 }

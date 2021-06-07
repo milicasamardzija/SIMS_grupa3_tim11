@@ -35,7 +35,6 @@ namespace Hospital
             InitializeComponent();
             frame.NavigationService.Navigate(new Magacin(frame));
             getTasks();
-            MessageBox.Show(Application.Current.Windows[2].ToString());
         }
 
       private void getTasks()

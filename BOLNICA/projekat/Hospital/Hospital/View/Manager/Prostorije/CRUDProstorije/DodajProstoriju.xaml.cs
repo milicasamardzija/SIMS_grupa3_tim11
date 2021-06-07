@@ -50,11 +50,11 @@ namespace Hospital
         {
             controller.save(Room);
             roomsView.ItemsSource = controller.getAll();
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }
         private void odustani(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }
 
     }

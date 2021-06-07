@@ -68,7 +68,7 @@ namespace Hospital
 
         private void odustani(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
 
         private void premesti(object sender, RoutedEventArgs e)
@@ -78,7 +78,7 @@ namespace Hospital
 
             inventoryController.moveInventory(new RoomInventory(idRoom, inventory.Id, quantity), -1);
             inventarTabela.ItemsSource = loadJsonInventory();
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
     }
 }

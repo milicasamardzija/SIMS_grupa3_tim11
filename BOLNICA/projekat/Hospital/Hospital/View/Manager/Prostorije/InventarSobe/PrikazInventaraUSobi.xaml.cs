@@ -36,14 +36,14 @@ namespace Hospital
             this.room = room;
             inventories = new ObservableCollection<InventoryDTO>(inventoryController.getInventoryForRoom(room.Id));
             ListaInventara.ItemsSource = inventoryController.getInventoryForRoom(room.Id);
-            InventarPemesti.NavigationService.Navigate(new BelsekaMagacin());
+            InventarPemesti.NavigationService.Navigate(new BelsekaMagacin(3));
         }
 
         private void premesti(object sender, RoutedEventArgs e)
         {
             if (ListaInventara.SelectedItem == null)
             {
-                InventarPemesti.NavigationService.Navigate(new BelsekaMagacin());
+                InventarPemesti.NavigationService.Navigate(new BelsekaMagacin(3));
             }
             else
             {

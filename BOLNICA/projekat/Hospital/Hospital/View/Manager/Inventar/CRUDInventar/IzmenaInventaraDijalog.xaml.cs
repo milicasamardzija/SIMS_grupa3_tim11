@@ -49,14 +49,14 @@ namespace Hospital
         }
         private void odustani(object sender, RoutedEventArgs e)
         {
-           frame.NavigationService.Navigate(new BelsekaMagacin());
+           frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
             controller.update(Inventory);
             inventories[index] = Inventory;
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
     }
 }

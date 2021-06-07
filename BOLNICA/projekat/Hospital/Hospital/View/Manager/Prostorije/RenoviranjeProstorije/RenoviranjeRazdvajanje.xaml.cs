@@ -36,12 +36,12 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
 
         private void renoviraj(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }
 
         private void odustani(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }
     }
 }

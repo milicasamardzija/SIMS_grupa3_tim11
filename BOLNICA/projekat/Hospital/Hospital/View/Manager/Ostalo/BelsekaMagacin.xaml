@@ -10,7 +10,7 @@
     <Grid>
         <TextBox Name="BeleskaTxt" Foreground="#FFDFD7BB" HorizontalAlignment="Left" Height="208" Margin="22,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="427" FontSize="24" Background="#FF373434" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,28,0,0" TextWrapping="Wrap" Text="Ovde mozete uneti belesku:" VerticalAlignment="Top" FontSize="24" Height="56" Width="450" Foreground="#FF373434" FontStyle="Italic" FontWeight="Bold"/>
-        <Button Content="Sacuvaj" Foreground="#FF373434" HorizontalAlignment="Left" Margin="178,325,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.286,1.325" Height="49" Click="Button_Click" Background="#ffc800" FontSize="24" FontWeight="Bold" help:HelpProvider.HelpKey="HTMLPage1">
+        <Button Content="Sacuvaj" Foreground="#FF373434" HorizontalAlignment="Left" Margin="178,325,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.286,1.325" Height="49" Click="sacuvaj" Background="#ffc800" FontSize="24" FontWeight="Bold" help:HelpProvider.HelpKey="HTMLPage1">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

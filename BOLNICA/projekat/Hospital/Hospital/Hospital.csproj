@@ -96,6 +96,7 @@
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
+    <Compile Include="Model\ManagerNote.cs" />
     <Compile Include="Model\Note.cs" />
     <Compile Include="Model\Medicine\Review.cs" />
     <Compile Include="Service\DoctorService.cs" />

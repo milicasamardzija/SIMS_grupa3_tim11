@@ -50,13 +50,13 @@ namespace Hospital
         private void izmenaProstorije(object sender, RoutedEventArgs e)
         {
             controller.update(room);
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(1));
             rooms[index] = room;
         }
 
         private void odustani(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }
     }
 }

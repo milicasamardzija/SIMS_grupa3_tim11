@@ -47,7 +47,7 @@ namespace Hospital
         }
         private void odustani(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
 
         private void prikaz()
@@ -128,7 +128,7 @@ namespace Hospital
 
             doWork();
 
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
 
         private void saveNewMovement()

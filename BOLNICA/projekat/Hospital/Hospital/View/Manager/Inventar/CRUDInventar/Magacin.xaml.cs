@@ -39,7 +39,7 @@ namespace Hospital
         public Magacin(Frame frame)
         {
             InitializeComponent();
-            MagacinFrame.NavigationService.Navigate(new BelsekaMagacin());
+            MagacinFrame.NavigationService.Navigate(new BelsekaMagacin(0));
             this.DataContext = this;
             this.frame = frame;
             this.roomController = new RoomsController();
@@ -56,7 +56,7 @@ namespace Hospital
         {
             if (ListaInventara.SelectedItem == null)
             {
-                MagacinFrame.NavigationService.Navigate(new BelsekaMagacin());
+                MagacinFrame.NavigationService.Navigate(new BelsekaMagacin(0));
             }
             else
             {
@@ -68,7 +68,7 @@ namespace Hospital
         {
             if (ListaInventara.SelectedItem == null)
             {
-                MagacinFrame.NavigationService.Navigate(new BelsekaMagacin());
+                MagacinFrame.NavigationService.Navigate(new BelsekaMagacin(0));
             }
             else
             {
@@ -84,7 +84,7 @@ namespace Hospital
         {
             if (ListaInventara.SelectedItem == null)
             {
-                MagacinFrame.NavigationService.Navigate(new BelsekaMagacin());
+                MagacinFrame.NavigationService.Navigate(new BelsekaMagacin(0));
             }
             else
             {

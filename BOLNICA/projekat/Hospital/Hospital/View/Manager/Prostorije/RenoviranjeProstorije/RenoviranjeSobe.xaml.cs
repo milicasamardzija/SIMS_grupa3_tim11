@@ -42,7 +42,7 @@ namespace Hospital
 
         private void odustani(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new BelsekaMagacin()); 
+            frame.NavigationService.Navigate(new BelsekaMagacin(1)); 
         }
 
         private void renoviraj(object sender, RoutedEventArgs e)
@@ -51,7 +51,7 @@ namespace Hospital
             RoomRenovation.DateBegin = (DateTime)BeginDate.SelectedDate;
             RoomRenovation.DateEnd = (DateTime)EndDate.SelectedDate;
             controller.scheduleRenovation(RoomRenovation);
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }
     }
 }
