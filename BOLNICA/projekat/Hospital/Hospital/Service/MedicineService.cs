@@ -130,7 +130,7 @@ namespace Hospital.Service
             List<Medicine> medicines = new List<Medicine>();
             foreach (int idMedicine in medicine.IdsMedicines)
             {
-                foreach (Medicine medicineReplacement in getAll())
+                foreach (Medicine medicineReplacement in storageMedicine.GetAll())
                 {
                     if (idMedicine == medicineReplacement.Id)
                     {
@@ -138,7 +138,6 @@ namespace Hospital.Service
                         break;
                     }
                 }
-                break;
             }
             return medicines;
         }
