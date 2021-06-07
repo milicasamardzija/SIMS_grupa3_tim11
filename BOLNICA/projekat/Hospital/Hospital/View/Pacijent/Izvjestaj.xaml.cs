@@ -22,7 +22,7 @@ namespace Hospital.View.Pacijent
         public Izvjestaj()
         {
             InitializeComponent();
-            Calendar.Days[0].Notes = "ampril 08:00";
+          //  Calendar.Days[0].Notes = "ampril 08:00";
         }
        
 

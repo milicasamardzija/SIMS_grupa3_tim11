@@ -1,0 +1,109 @@
+﻿<Page x:Class="Hospital.View.Pacijent.ObavljeniPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hospital.View.Pacijent"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="350"
+      Title="ObavljeniPage">
+
+    <Page.Resources>
+        <Style TargetType="Button" x:Key="MyButtonDesign">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="MyContentPresenter" 
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+
+
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="True">
+
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+
+                </Trigger>
+
+
+            </Style.Triggers>
+
+        </Style>
+
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button  Style="{ StaticResource MyButtonDesign}"  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="10,10,0,0" FontSize="22" Height="19" Click="odustani" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6" Grid.RowSpan="2" RenderTransformOrigin="0.186,3.958">
+            <Button.Background>
+                <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button   Name="dodajbtn" Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="175" Margin="85,300,0,0" Height="40" Click="Button_Click" Foreground="White"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20" Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="note2.png" Stretch="None" Width="36" Height="38" />
+                <TextBlock Margin="0,5,0,0" Width="124" FontSize="15" Height="25" ><Run Text=" Dodaj belešku"/></TextBlock>
+            </StackPanel>
+
+            <Button.Resources>
+                <Style TargetType="Border">
+
+                    <Setter Property="CornerRadius" Value="17">
+
+                    </Setter>
+                </Style>
+
+            </Button.Resources>
+
+        </Button>
+
+        <DataGrid  x:Name="Anamneza" BorderThickness="2"  HorizontalGridLinesBrush="White"
+                      VerticalGridLinesBrush="white" BorderBrush="#FFC3C3D4" Background="White" Height="200" Margin="0,55,30.4,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalAlignment="Right" Width="285" SelectionChanged="Anamneza_SelectionChanged" Grid.RowSpan="2" >
+
+
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#FF64CCF1" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Datum" Binding="{Binding datePlace}" Width="80" CanUserResize="False" />
+                <DataGridTextColumn Header="Opis anamneze" Binding="{Binding summary}" Width="140" CanUserResize="False">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                    <DataGridTextColumn.EditingElementStyle>
+                        <Style TargetType="TextBox">
+                            <Setter Property="TextWrapping" Value="Wrap" />
+                            <Setter Property="AcceptsReturn" Value="true" />
+                        </Style>
+                    </DataGridTextColumn.EditingElementStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn Width="60" CanUserResize="False" Header="Beleške">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="ShowNotesForAnamnesis" BorderBrush="Gray" BorderThickness="2" Background="#FF64CCF1" >...</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+    </Grid>
+</Page>

@@ -1,5 +1,4 @@
 ﻿using Hospital.Controller;
-using Hospital.DTO;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -14,16 +13,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Hospital.View.Pacijent
 {
     /// <summary>
-    /// Interaction logic for PrioritetDoktor.xaml
+    /// Interaction logic for DoktorPage.xaml
     /// </summary>
-    public partial class PrioritetDoktor : Window
+    public partial class DoktorPage : Page
     {
-        int id;
+        int idP;
         private List<global::Doctor> lekari;
         private List<string> availableTimes;
         private List<Checkup> termini;
@@ -31,11 +31,13 @@ namespace Hospital.View.Pacijent
         CheckupController checkupController;
         FunctionalityController functionalityController;
         PatientController patientController;
+        private PocetnaPacijent parent;
 
-        public PrioritetDoktor(ObservableCollection<Checkup> applist, int idP)
+        public DoktorPage(PocetnaPacijent p,ObservableCollection<Checkup> applist)
         {
             InitializeComponent();
-            id = idP;
+            parent = p;
+            idP = p.id;
             appointmentList = applist;
             termini = new List<Checkup>();
 
@@ -43,15 +45,6 @@ namespace Hospital.View.Pacijent
             functionalityController = new FunctionalityController();
             patientController = new PatientController();
 
-
-            List<PatientDTO> patients = patientController.getAll();
-            foreach (PatientDTO patient in patients)
-            {
-                if (patient.Id == idP)
-                {
-                    imePacijenta.Text = patient.Name + " " + patient.Surname;
-                }
-            }
 
             DoctorFileStorage df = new DoctorFileStorage("./../../../../Hospital/files/storageDoctor.json");
             lekari = df.GetAll();
@@ -82,16 +75,15 @@ namespace Hospital.View.Pacijent
 
         private void odustani(object sender, RoutedEventArgs e)
         {
+            parent.startWindow.Content = new PrioritetPage(parent, appointmentList);
 
-         
-            this.Close();
+
         }
 
         private void Nazad_na_pocetnu(object sender, RoutedEventArgs e)
         {
-            Prioritet prioritet = new Prioritet(appointmentList, id);
-            prioritet.Show();
-            this.Close();
+            
+
         }
 
         private void ljekari_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -110,12 +102,13 @@ namespace Hospital.View.Pacijent
             times.Items.Clear();
             availableTimes.Clear();
             termini.Clear();
-           
+
             DoctorFileStorage doctors = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
             global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
 
             foreach (Checkup t in checkupController.getAll())
-            { foreach (Doctor d in doctors.GetAll())
+            {
+                foreach (Doctor d in doctors.GetAll())
                 {
                     if (t.IdDoctor == d.Id)
                     {
@@ -128,7 +121,7 @@ namespace Hospital.View.Pacijent
                         }
                     }
                 }
-                if (id == t.IdPatient && t.Date.Date.Equals(date.SelectedDate))
+                if (idP == t.IdPatient && t.Date.Date.Equals(date.SelectedDate))
                 {
 
 
@@ -178,7 +171,7 @@ namespace Hospital.View.Pacijent
 
 
 
-         
+
             global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
             if (times.SelectedIndex != -1)
             {
@@ -188,18 +181,17 @@ namespace Hospital.View.Pacijent
                 DateTime dt = DateTime.Parse(d + " " + t);
                 int idG = checkupController.getAll().Count();
 
-                Checkup checkup = new Checkup(idG, doktor.Id, id, dt, 1, 0);
+                Checkup checkup = new Checkup(idG, doktor.Id, idP, dt, 1, 0);
 
                 checkupController.save(checkup);
                 appointmentList.Add(checkup);
 
-               
-                Functionality funkcionalnost = new Functionality(DateTime.Now, id, "dodavanje");
+
+                Functionality funkcionalnost = new Functionality(DateTime.Now, idP, "dodavanje");
                 functionalityController.save(funkcionalnost);
 
-                this.Close();
-                WindowPacijent wp = new WindowPacijent(id);
-                wp.Show();
+                parent.startWindow.Content = new PreglediP(parent);
+
 
             }
         }

@@ -12,41 +12,44 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Hospital.View.Pacijent
 {
     /// <summary>
-    /// Interaction logic for ZdravstveniKarton.xaml
+    /// Interaction logic for KartonPage.xaml
     /// </summary>
-    public partial class ZdravstveniKarton : Window
+    public partial class KartonPage : Page
     {
-
-        int id;
+      
+        private PocetnaPacijent parent;
+        int idP;
         DateTime date;
         MedicalRecordController mrcontroller;
         PatientController patientController;
+        public KartonPage(PocetnaPacijent p)
 
-        public ZdravstveniKarton(int idP)
         {
             InitializeComponent();
-            id = idP;
+            parent = p;
+            idP = p.id; 
             mrcontroller = new MedicalRecordController();
             patientController = new PatientController();
 
 
 
 
-         
-           
-            
+
+
+
             foreach (MedicalRecord record in mrcontroller.getAll())
             {
                 foreach (PatientDTO patient in patientController.getAll())
                 {
-                    if (patient.Id == idP && patient.Id == record.Id)
+                    if (patient.Id == parent.id && patient.Id == record.Id)
                     {
-                        imePacijenta.Text = patient.Name + " " + patient.Surname;
+                        
                         ime.Text = patient.Name;
                         prezime.Text = patient.Surname;
 
@@ -72,17 +75,15 @@ namespace Hospital.View.Pacijent
 
         private void obavljeni_pregledi(object sender, RoutedEventArgs e)
         {
-            ObavljeniPregledi pregledi = new ObavljeniPregledi(id);
-            pregledi.Show();
-            this.Close();
+            parent.startWindow.Content = new ObavljeniPage(parent);
+
         }
 
         private void odustani(object sender, RoutedEventArgs e)
         {
 
-            PocetnaPacijent pocetna = new PocetnaPacijent(id);
-            pocetna.Show();
-            this.Close();
+            parent.startWindow.Content = new PacijentPPage(parent);
         }
     }
 }
+

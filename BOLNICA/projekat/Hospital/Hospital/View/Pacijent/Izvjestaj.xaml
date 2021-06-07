@@ -8,6 +8,6 @@
         mc:Ignorable="d"
         Title="Izvjestaj" Height="1200" Width="800">
     <Grid>
-        <calendar:Calendar x:Name="Calendar" Margin="10,100,10.2,59.6"  Background="#FF64CCF1" />
+      
     </Grid>
 </Window>

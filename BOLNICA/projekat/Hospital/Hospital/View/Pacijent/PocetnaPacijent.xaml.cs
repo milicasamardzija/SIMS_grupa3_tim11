@@ -38,48 +38,14 @@ namespace Hospital
                     imePacijenta.Text = patient.name + " " + patient.surname;
                 }
             }
+            this.startWindow.Content = new PacijentPPage(this);
+            nazad.Visibility = Visibility.Hidden;
         }
+
+        
 
         private void Odjava(object sender, RoutedEventArgs e)
         {
-            Logovanje mw = new Logovanje();
-            mw.Show();
-            this.Close();
-        }
-
-        private void prikaz_termina(object sender, RoutedEventArgs e)
-        {
-            WindowPacijent wp = new WindowPacijent(id);
-            wp.Show();
-            this.Close();
-        }
-
-        private void klik_na_obavestenja(object sender, RoutedEventArgs e)
-        {
-            PrikazObavestenja po = new PrikazObavestenja();
-            po.Show();
-            this.Close();
-        }
-
-        private void klik_na_karton(object sender, RoutedEventArgs e)
-        {
-            ZdravstveniKarton karton = new ZdravstveniKarton(id);
-            karton.Show();
-            this.Close();
-        }
-
-        private void klik_na_ocenjivanje(object sender, RoutedEventArgs e)
-        {
-            OcenjivanjeDoktora ocena = new OcenjivanjeDoktora(id);
-            ocena.Show();
-            this.Close();
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Terapija terapija = new Terapija();
-            terapija.Show();
             this.Close();
         }
     }

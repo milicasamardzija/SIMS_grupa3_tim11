@@ -1,25 +1,31 @@
 ﻿using Hospital.Controller;
 using Hospital.DTO;
 using Hospital.Model;
-using Hospital.View.Pacijent;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
-namespace Hospital
+namespace Hospital.View.Pacijent
 {
     /// <summary>
-    /// Interaction logic for DodajTermin.xaml
+    /// Interaction logic for DodajPage.xaml
     /// </summary>
-    public partial class DodajTermin : Window
+    
+    public partial class DodajPage : Page
     {
-
+        private PocetnaPacijent parent;
         private CheckupController checkupcontroller;
         private FunctionalityController funkcionalitycontroller;
         private PatientController patientcontroller;
@@ -32,24 +38,19 @@ namespace Hospital
         private const int trajanje = 30;
         private List<string> dostupnoVrijeme;
 
-        public DodajTermin(ObservableCollection<Checkup> applist, int idP)
+
+        public DodajPage(PocetnaPacijent p, ObservableCollection<Checkup> applist)
         {
             InitializeComponent();
+            parent = p;
             appointmentList = applist;
-            idPatient = idP;
+            idPatient = p.id;
             patientcontroller = new PatientController();
             funkcionalitycontroller = new FunctionalityController();
             checkupcontroller = new CheckupController();
 
 
-            List<PatientDTO> patients = patientcontroller.getAll();
-            foreach (PatientDTO patient in patients)
-            {
-                if (patient.Id == idP)
-                {
-                    imePacijenta.Text = patient.Name + " " + patient.Surname;
-                }
-            }
+         
 
             lista = new List<string>();
             lista.Add("08:00");
@@ -87,18 +88,18 @@ namespace Hospital
             lekari = df.GetAll();
             lekar.ItemsSource = lekari;
 
-            
+
 
         }
 
-        
-      
+
+
 
         private void add_appointment(object sender, RoutedEventArgs e)
         {
 
-          
-         global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
+
+            global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
             if (time.SelectedIndex != -1)
             {
                 var item = time.SelectedItem;
@@ -112,17 +113,18 @@ namespace Hospital
                 checkupcontroller.save(checkup);
                 appointmentList.Add(checkup);
 
-              
+
                 Functionality funkcionalnost = new Functionality(DateTime.Now, idPatient, "dodavanje");
                 funkcionalitycontroller.save(funkcionalnost);
 
-                this.Close();
+                parent.startWindow.Content = new PreglediP(parent);
+
             }
         }
 
         private void odustani(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            parent.startWindow.Content = new PreglediP(parent);
         }
 
 
@@ -152,7 +154,7 @@ namespace Hospital
 
             CalculateStartAndEnd(out start, out end);
 
-          //  EnabledDugme();
+            //  EnabledDugme();
 
             CheckAvailableTimes();
 
@@ -181,7 +183,7 @@ namespace Hospital
             List<Checkup> termini = new List<Checkup>();
 
 
-            
+
             if (lekar.SelectedItem != null && date.SelectedDate != null)
             {
                 var item = time.SelectedItem;
@@ -221,7 +223,7 @@ namespace Hospital
             time.ItemsSource = dostupnoVrijeme;
         }
 
-       
+
 
         private void EnabledDugme()
         {
@@ -233,8 +235,8 @@ namespace Hospital
             {
                 potvrdi.IsEnabled = false;
             }
-        } 
-       
+        }
+
         private void date_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateComponents();
@@ -248,12 +250,10 @@ namespace Hospital
         private void izaberi_prioritet(object sender, RoutedEventArgs e)
         {
 
-            Prioritet prioritet = new Prioritet(appointmentList, idPatient);
-            prioritet.Show();
+            parent.startWindow.Content = new PrioritetPage(parent,appointmentList);
+
 
 
         }
     }
 }
-
-

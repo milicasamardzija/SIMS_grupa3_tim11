@@ -12,41 +12,44 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Hospital.View.Pacijent
 {
     /// <summary>
-    /// Interaction logic for Prioritet.xaml
-    public partial class Prioritet : Window
+    /// Interaction logic for PrioritetPage.xaml
+    /// </summary>
+    public partial class PrioritetPage : Page
+
     {
-        int id;
         public ObservableCollection<Checkup> appointmentList;
-        public Prioritet(ObservableCollection<Checkup> applist, int idP)
+        private PocetnaPacijent parent;
+        private int id;
+        public PrioritetPage(PocetnaPacijent p,ObservableCollection<Checkup> applist)
         {
             InitializeComponent();
+            parent = p;
             appointmentList = applist;
-            id = idP;
+            id = p.id;
         }
-
         private void Nazad_na_pocetnu(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            parent.startWindow.Content = new DodajPage(parent, appointmentList);
         }
 
         private void doktor(object sender, RoutedEventArgs e)
         {
-            PrioritetDoktor doktor = new PrioritetDoktor(appointmentList, id);
-            doktor.Show();
            
+            parent.startWindow.Content = new DoktorPage(parent,appointmentList);
+
 
         }
 
         private void datum(object sender, RoutedEventArgs e)
         {
-            PrioritetDatum datum = new PrioritetDatum(id);
-            datum.Show();
-            
+            parent.startWindow.Content = new DatumPage(parent,appointmentList);
+
         }
     }
 }

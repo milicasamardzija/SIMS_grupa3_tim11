@@ -1,5 +1,4 @@
 ﻿using Hospital.Controller;
-using Hospital.DTO;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -14,46 +13,42 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Hospital.View.Pacijent
 {
     /// <summary>
-    /// Interaction logic for PrioritetDatum.xaml
+    /// Interaction logic for DatumPage.xaml
     /// </summary>
-    public partial class PrioritetDatum : Window
-
+    public partial class DatumPage : Page
     {
+        private PocetnaPacijent parent;
         int id;
         private List<string> listStart;
         private List<string> listEnd;
         PatientController patientController;
         CheckupController checkupController;
-        public PrioritetDatum(int idP)
+        public ObservableCollection<Checkup> appointmentList;
+        public DatumPage(PocetnaPacijent p, ObservableCollection<Checkup> applist)
         {
             InitializeComponent();
-            id = idP;
+            parent = p;
+            id = p.id;
+            appointmentList = applist;
             listStart = new List<string>();
             listEnd = new List<string>();
             DataContext = this;
-             BlackOutDates();
+            BlackOutDates();
             potvrdii.IsEnabled = false;
             date.IsEnabled = false;
             patientController = new PatientController();
             checkupController = new CheckupController();
-          
+
             PrikazSlobodnihTermina.Visibility = Visibility.Hidden;
             InitializeStartTimes();
             endTime.IsEnabled = false;
 
-            List<PatientDTO> patients = patientController.getAll();
-            foreach (PatientDTO patient in patients)
-            {
-                if (patient.Id == idP)
-                {
-                    imePacijenta.Text = patient.Name + " " + patient.Surname;
-                }
-            }
         }
 
         private void BlackOutDates()
@@ -103,36 +98,31 @@ namespace Hospital.View.Pacijent
         }
 
 
-        private void Nazad_na_pocetnu(object sender, RoutedEventArgs e)
-        {
-            
-            this.Close();
-        }
+        
 
-     
 
-     
+
 
         private void potvrdi(object sender, RoutedEventArgs e)
         {
-            this.Close();
-           // WindowPacijent wp = new WindowPacijent(id);
-           // wp.Show();
+            parent.startWindow.Content = new PreglediP(parent);
+            // WindowPacijent wp = new WindowPacijent(id);
+            // wp.Show();
         }
 
         private void odustani(object sender, RoutedEventArgs e)
         {
-            
-            this.Close();
+
+            parent.startWindow.Content = new PrioritetPage(parent,appointmentList);
         }
 
-    
 
 
 
-    private void date_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+
+        private void date_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-          
+
             PrikazSlobodnihTermina.Visibility = Visibility.Visible;
             pretraziTermine();
         }
@@ -141,7 +131,7 @@ namespace Hospital.View.Pacijent
         public bool DoctorIsAvailable(DateTime pocetak, DateTime kraj) // proverava da li je lekar slobodan izmedju neka dva trenutka u vremenu
         {
             bool retVal = true;
-           
+
             List<Checkup> termini = checkupController.getAll();
             foreach (Checkup termin in termini)
             {
@@ -167,10 +157,10 @@ namespace Hospital.View.Pacijent
             return retVal;
         }
 
-        public bool PatientIsAvailable(DateTime pocetak, DateTime kraj) 
+        public bool PatientIsAvailable(DateTime pocetak, DateTime kraj)
         {
             bool retVal = true;
-           
+
             List<Checkup> termini = checkupController.getAll();
             foreach (Checkup termin in termini)
             {
@@ -195,7 +185,7 @@ namespace Hospital.View.Pacijent
             }
             return retVal;
         }
-            private void pretraziTermine()
+        private void pretraziTermine()
         {
             DateTime danas = DateTime.Today;
             String pocetak = startTime.SelectedItem.ToString();
@@ -207,17 +197,17 @@ namespace Hospital.View.Pacijent
 
             DoctorFileStorage doctors = new DoctorFileStorage("./../../../../Hospital/files/storageDoctor.json");
             List<global::Doctor> ljekari = doctors.GetAll();
-          
-                for (DateTime tm = pocetniDatum; tm < krajnjiDatum; tm = tm.AddMinutes(30))
-                {
 
-                    foreach (global::Doctor ljekar in ljekari)
-                    {
-                        DateTime end = tm.AddMinutes(30);
-                        PrikazSlobodnihTermina.Items.Add(new SlobodniTermini(ljekar, tm.ToString("HH:mm")));
-                    }  
+            for (DateTime tm = pocetniDatum; tm < krajnjiDatum; tm = tm.AddMinutes(30))
+            {
+
+                foreach (global::Doctor ljekar in ljekari)
+                {
+                    DateTime end = tm.AddMinutes(30);
+                    PrikazSlobodnihTermina.Items.Add(new SlobodniTermini(ljekar, tm.ToString("HH:mm")));
                 }
-            
+            }
+
 
 
 

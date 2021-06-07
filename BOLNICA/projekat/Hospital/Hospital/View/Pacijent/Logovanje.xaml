@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital.View.Pacijent"
              mc:Ignorable="d"
-               Title="" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
+               Title="" Height="500" Width="350" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <Style TargetType="Button" x:Key="MyButtonDesign">
@@ -46,25 +46,34 @@
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Label  Content="Ulogujte se&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,41,0,0" FontSize="30"  Height="54" Foreground="#FF64CCF1" Width="172"  />
-        <Label  Content="Korisničko ime:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,122,0,0" Width="94"/>
-        <Label Content="Lozinka:"  HorizontalAlignment="Left" Margin="44,190,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.542,0.117" Height="33"/>
+        <Label  Content="Ulogujte se&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="88,41,0,0" FontSize="30"  Height="54" Foreground="#FF64CCF1" Width="172"  />
+        <Label  Content="     Korisničko ime:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,135,0,0" Width="111" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.296"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="     Lozinka:"  HorizontalAlignment="Left" Margin="34,207,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.542,0.117" Height="33"/>
         <TextBox   Foreground="DarkGray"
-            Background="#F6F6F6"  BorderBrush="{x:Null}" Name="ime"  HorizontalAlignment="Left" Height="30" Margin="48,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="212" />
+            Background="#F6F6F6"  BorderBrush="{x:Null}" Name="ime"  HorizontalAlignment="Left" Height="30" Margin="54,155,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233" />
         <PasswordBox
             Name="lozinka"
             
-            Width="212"
+            Width="233"
             Height="30"
-            Margin="48,209,0,0"
+            Margin="54,225,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="17" 
             Foreground="DarkGray"
             Background="#F6F6F6"
-            BorderBrush="{x:Null}">
+            BorderBrush="{x:Null}" RenderTransformOrigin="0.623,0.54">
         </PasswordBox>
-        <Button    Background="#FF64CCF1" Content="Prijava" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="75,370,0,0" Click="prijavi_se" Height="40" FontSize="15" TextOptions.TextFormattingMode="Display" Foreground="#FFFDF3F3" RenderTransformOrigin="0.5,0.5" BorderBrush="#FFEEE8E8" FontWeight="Bold">
+        <Button    Background="#FF64CCF1" Content="Prijava" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="88,385,0,0" Click="prijavi_se" Height="40" FontSize="15" TextOptions.TextFormattingMode="Display" Foreground="#FFFDF3F3" RenderTransformOrigin="0.5,0.5" BorderBrush="#FFEEE8E8" FontWeight="Bold">
             <Button.Resources>
                 <Style TargetType="Border">
 
@@ -75,8 +84,8 @@
 
             </Button.Resources>
         </Button>
-        <Label  Content="Uloga:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,260,0,0" RenderTransformOrigin="0.718,0.305"/>
-        <ComboBox Name="uloga" HorizontalAlignment="Left" VerticalAlignment="Top" Width="212" Margin="48,284,0,0" BorderBrush="#FFF9F4F4" Foreground="Black">
+        <Label  Content="     Uloga:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,260,0,0" RenderTransformOrigin="0.718,0.305"/>
+        <ComboBox Name="uloga" HorizontalAlignment="Left" VerticalAlignment="Top" Width="233" Margin="54,286,0,0" BorderBrush="#FFF9F4F4" Foreground="Black">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                     <GradientStop Color="#FFF0F0F0" Offset="0"/>

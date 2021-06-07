@@ -4,7 +4,6 @@ using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,14 +14,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Hospital
+namespace Hospital.View.Pacijent
 {
-  
-    public partial class WindowPacijent : Window
+    /// <summary>
+    /// Interaction logic for PreglediP.xaml
+    /// </summary>
+    public partial class PreglediP : Page
     {
-        public int id { get; set; }
+        private PocetnaPacijent parent { get; set; }
+        public int idP { get; set; }
 
         public int count1 = 0;
         public int count2 = 0;
@@ -30,40 +33,35 @@ namespace Hospital
 
         PatientController patientController;
         FunctionalityController functionalityController;
-
         public ObservableCollection<Checkup> AppointmentList
         {
             get;
             set;
         }
-        public WindowPacijent(int idP)
+        public PreglediP(PocetnaPacijent p)
         {
             InitializeComponent();
             this.DataContext = this;
-            id = idP;
+            parent = p;
+            idP = p.id;
             AppointmentList = loadJason();
             patientController = new PatientController();
             functionalityController = new FunctionalityController();
-
-
-          
-
-          
+           
 
             foreach (PatientDTO patient in patientController.getAll())
 
-            { 
-                
+            {
+
                 if (patient.Id == idP)
 
                 {
-                    imePacijentaa.Text = patient.Name + " " + patient.Surname;
-
+                   
                     foreach (FunctionalityDTO funkcionalnost in functionalityController.getAll())
                     {
 
                         if (patient.Id == funkcionalnost.idPacijenta)
-                        { 
+                        {
                             if (funkcionalnost.vrstaFunkcionalnosti == "dodavanje")
                             {
                                 count1 = count1 + 1;
@@ -79,29 +77,29 @@ namespace Hospital
                         }
                     }
 
-                    if (count1 > 5 || count2>3 ||  count3>3)
+                    if (count1 > 5 || count2 > 3 || count3 > 3)
                     {
                         patient.Banovan = true;
-                        
+
                     }
 
                 }
-                
+
             }
 
 
-          
+
         }
         public ObservableCollection<Checkup> loadJason()
         {
             CheckupFileStorage fs = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             ObservableCollection<Checkup> rs = new ObservableCollection<Checkup>(fs.GetAll()); //svi termini
-            ObservableCollection<Checkup> ret = new ObservableCollection<Checkup>(); 
+            ObservableCollection<Checkup> ret = new ObservableCollection<Checkup>();
 
-            foreach (Checkup appointment in rs) 
+            foreach (Checkup appointment in rs)
             {
 
-                if (appointment.IdPatient == id) 
+                if (appointment.IdPatient ==idP)
                 {
 
                     ret.Add(appointment);
@@ -112,31 +110,29 @@ namespace Hospital
         }
 
 
-       
+
 
         private void dodavanje(object sender, RoutedEventArgs e)
         {
-            DodajTermin dd = new DodajTermin(AppointmentList, id); //salje se i id ulogovang pacijenta
 
-            dd.Show();
 
-         
-        
-            
+            parent.startWindow.Content = new DodajPage(parent, AppointmentList);
 
-            
+
+
+
 
             foreach (PatientDTO patient in patientController.getAll()) //prolaz kroz sve pacijente u fajlu
             {
-                if (patient.Id == id)
-                { 
+                if (patient.Id == idP)
+                {
                     foreach (FunctionalityDTO funkcionalnost in functionalityController.getAll())
                     {
 
-                        if (patient.Id == funkcionalnost.idPacijenta  && funkcionalnost.vrstaFunkcionalnosti == "dodavanje")
+                        if (patient.Id == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkcionalnosti == "dodavanje")
                         {
                             count1 = count1 + 1;
-                               
+
                         }
                     }
 
@@ -144,22 +140,22 @@ namespace Hospital
                     {
                         patient.Banovan = true;
 
-                       
+
 
                     }
 
                     if (patient.Banovan == false)
                     {
-                        dd.Show();
+                      //  dd.Show();
                     }
                     else
                     {
                         patient.DatumBanovanja = DateTime.Now;
-                       // MessageBoxResult result = MessageBox.Show("Zakazivanje je blokirano.", "Upozorenje", MessageBoxButton.OK);
+                        // MessageBoxResult result = MessageBox.Show("Zakazivanje je blokirano.", "Upozorenje", MessageBoxButton.OK);
                     }
-                  
-                 
-                    if(patient.DatumBanovanja.AddMinutes(2) <= DateTime.Now)
+
+
+                    if (patient.DatumBanovanja.AddMinutes(2) <= DateTime.Now)
                     {
                         patient.Banovan = false;
                         count1 = 0;
@@ -170,20 +166,19 @@ namespace Hospital
 
         }
 
-       
+
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
-           IzmeniTermin it = new IzmeniTermin(AppointmentList, (Checkup)ListaTermina.SelectedItem, ListaTermina.SelectedIndex,id);
 
-            it.Show();
-            Patient ret = new Patient();
+            parent.startWindow.Content = new IzmeniPage(parent, AppointmentList, (Checkup)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
            
+          
 
 
             foreach (PatientDTO patient in patientController.getAll()) //prolaz kroz sve pacijente u fajlu
             {
-                if (patient.Id == id)
+                if (patient.Id == idP)
                 {
 
                     foreach (FunctionalityDTO funkcionalnost in functionalityController.getAll())
@@ -203,18 +198,18 @@ namespace Hospital
                     }
                     if (patient.Banovan == false)
                     {
-                       it.Show();
+                        
                     }
                     else
                     {
-                      //  MessageBoxResult result = MessageBox.Show("Izmena termina je blokirana.", "Upozorenje", MessageBoxButton.OK);
+                        //  MessageBoxResult result = MessageBox.Show("Izmena termina je blokirana.", "Upozorenje", MessageBoxButton.OK);
                     }
                 }
 
             }
 
 
-        }   
+        }
 
         private void obrisi(object sender, RoutedEventArgs e)
         {
@@ -222,12 +217,12 @@ namespace Hospital
             ObrisiTermin ob = new ObrisiTermin(AppointmentList, (Checkup)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
 
             Patient ret = new Patient();
-           
+
 
 
             foreach (PatientDTO patient in patientController.getAll()) //prolaz kroz sve pacijente u fajlu
             {
-                if (patient.Id == id)
+                if (patient.Id == idP)
                 {
                     foreach (FunctionalityDTO funkcionalnost in functionalityController.getAll())
                     {
@@ -253,7 +248,7 @@ namespace Hospital
                     }
                     else
                     {
-                      //  MessageBoxResult result = MessageBox.Show("Brisanje termina je blokirano.", "Upozorenje", MessageBoxButton.OK);
+                        //  MessageBoxResult result = MessageBox.Show("Brisanje termina je blokirano.", "Upozorenje", MessageBoxButton.OK);
                     }
                 }
 
@@ -263,9 +258,7 @@ namespace Hospital
 
         private void Nazad_na_pocetnu(object sender, RoutedEventArgs e)
         {
-            PocetnaPacijent pp = new PocetnaPacijent(id);
-            pp.Show();
-            this.Close();
+            parent.startWindow.Content = new PacijentPPage(parent);
         }
     }
 }
