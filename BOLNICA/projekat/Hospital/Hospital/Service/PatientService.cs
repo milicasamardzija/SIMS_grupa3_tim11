@@ -29,10 +29,10 @@ namespace Hospital.Service
             return patientStorage.GetAll();
         }
 
-        public ObservableCollection<PatientDTO> loadBlockedPatients()
+        public List<PatientDTO> loadBlockedPatients()
         {
-            ObservableCollection<PatientDTO> blockedPatients = new ObservableCollection<PatientDTO>();
-            ObservableCollection<Patient> loadedPatients = new ObservableCollection<Patient>(patientStorage.GetAll());
+            List<PatientDTO> blockedPatients = new List<PatientDTO>();
+            List<Patient> loadedPatients = patientStorage.GetAll();
 
             foreach (Patient p in loadedPatients)
             {

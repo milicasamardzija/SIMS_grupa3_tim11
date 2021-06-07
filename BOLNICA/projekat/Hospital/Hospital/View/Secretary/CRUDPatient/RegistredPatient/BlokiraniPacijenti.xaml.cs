@@ -34,8 +34,10 @@ namespace Hospital.View.Secretary.CRUDPatient.RegistredPatient
 
         public ObservableCollection<PatientDTO> loadBlockedPatient()
         {
-            return patientController.loadBlockedPatients();
+            ObservableCollection<PatientDTO> listBlocked= new ObservableCollection<PatientDTO>( patientController.loadBlockedPatients());
+            return listBlocked;
         }
+
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 

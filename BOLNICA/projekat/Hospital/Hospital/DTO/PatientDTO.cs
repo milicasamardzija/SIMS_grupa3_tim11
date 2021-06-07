@@ -52,7 +52,6 @@ namespace Hospital.DTO
             this.jmbg = jmbgG;
             this.gender = pol;
             this.birthdayDate = datR;
-            //   this.patientId = idP;
             this.Id = id;
 
 

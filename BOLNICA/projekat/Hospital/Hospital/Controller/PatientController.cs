@@ -19,7 +19,7 @@ namespace Hospital.Controller
             patientService = new PatientService();
         }
 
-        public ObservableCollection<PatientDTO> loadBlockedPatients()
+        public List<PatientDTO> loadBlockedPatients()
         {
             return patientService.loadBlockedPatients();
         }

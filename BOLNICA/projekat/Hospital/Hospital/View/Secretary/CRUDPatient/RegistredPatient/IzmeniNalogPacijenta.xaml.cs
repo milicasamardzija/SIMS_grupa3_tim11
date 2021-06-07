@@ -23,16 +23,16 @@ namespace Hospital
 
         public ObservableCollection<PatientDTO> listPatient;
         public PatientController patientContoller;
-       
         public PatientDTO patient;
-        public PatientDTO Selected 
-        { get { return patient; }
-            set { patient = value; } 
+        public PatientDTO Selected
+        {
+            get { return patient; }
+            set { patient = value; }
         }
-        public int index;
-      
 
+        public int index;
         public int id;
+
         public IzmeniNalogPacijenta(ObservableCollection<PatientDTO> list, PatientDTO selectedPatient, int sel)
         {
            InitializeComponent();
