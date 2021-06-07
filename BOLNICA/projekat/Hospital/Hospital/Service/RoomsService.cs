@@ -12,7 +12,7 @@ namespace Hospital.Service
     class RoomsService
     {
         private RenovationIFileStorage renovationStorage;
-        private ICheckFileStorage checkupStorage;
+        private ICheckupFileStorage checkupStorage;
         private IRoomInventoryFileStorage roominventoryStorage;
         private InventoryIFileStorage inventoryStorage;
         private StaticInvnetoryMovementFileStorage staticInventoryStorage;
@@ -37,8 +37,8 @@ namespace Hospital.Service
                 moveInventoryForRenovation(renovation);
             } else
             {
-                RenoviranjeOdbijeno odbijeno = new RenoviranjeOdbijeno();
-                odbijeno.Show();
+               // RenoviranjeOdbijeno odbijeno = new RenoviranjeOdbijeno();
+             //   odbijeno.Show();
             }
         }
 

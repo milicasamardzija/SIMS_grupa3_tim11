@@ -365,9 +365,6 @@
     <Compile Include="View\Manager\Inventar\PremestanjeOdbijenoInventar.xaml.cs">
       <DependentUpon>PremestanjeOdbijenoInventar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeOdbijeno.xaml.cs">
-      <DependentUpon>RenoviranjeOdbijeno.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Pacijent\SacuvanaAnketa.xaml.cs">
       <DependentUpon>SacuvanaAnketa.xaml</DependentUpon>
     </Compile>
@@ -772,10 +769,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Inventar\PremestanjeOdbijenoInventar.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeOdbijeno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
