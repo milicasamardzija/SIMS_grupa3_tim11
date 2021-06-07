@@ -57,10 +57,10 @@
         <TextBox  Background="AliceBlue" Name="ime"  HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="165,61,0,0" BorderBrush="White" IsEnabled="False" FontWeight="Bold" AcceptsTab="True"/>
         <TextBox  Background="AliceBlue" Name="prezime" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="165,93,0,0" BorderBrush="White" FontWeight="Bold" IsEnabled="False"/>
         <TextBox  Background="AliceBlue" Name="datum"  HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="165,120,0,0" BorderBrush="White" IsEnabled="False" FontWeight="Bold"/>
-        <TextBox  Background="AliceBlue" Name="grupa"  HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="180,255,0,0" BorderBrush="White" IsEnabled="False" FontWeight="Bold"/>
+        <TextBox  Background="AliceBlue" Name="grupa"  HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="165,255,0,0" BorderBrush="White" IsEnabled="False" FontWeight="Bold"/>
         <TextBox  Background="AliceBlue" Name="broj" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="165,180,0,0" RenderTransformOrigin="0.5,-1.444" BorderBrush="#FFF8FAFF" FontWeight="Bold" IsEnabled="False"/>
         <TextBox Background="AliceBlue" x:Name="jmbg" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="165,150,0,0" BorderBrush="White" FontWeight="Bold" IsEnabled="False"/>
-        <TextBox Name="nzo" HorizontalAlignment="Left"  Height="21" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="180,220,0,0" RenderTransformOrigin="0.5,2.111" BorderBrush="White" IsEnabled="False" FontWeight="Bold" />
+        <TextBox Name="nzo" HorizontalAlignment="Left"  Height="21" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="165,220,0,0" RenderTransformOrigin="0.5,2.111" BorderBrush="White" IsEnabled="False" FontWeight="Bold" />
        
         <Button   Name="dodaj" Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="205" Margin="65,335,0,0" Height="30" Click="obavljeni_pregledi" Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20">
             <StackPanel Orientation="Horizontal" Height="35" Width="110">

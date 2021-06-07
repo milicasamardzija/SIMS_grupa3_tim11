@@ -224,9 +224,6 @@
     <Compile Include="View\Pacijent\Terapija.xaml.cs">
       <DependentUpon>Terapija.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\ZdravstveniKarton.xaml.cs">
-      <DependentUpon>ZdravstveniKarton.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Secretary\CRUDPatient\RegistredPatient\BlokiraniPacijenti.xaml.cs">
       <DependentUpon>BlokiraniPacijenti.xaml</DependentUpon>
     </Compile>
@@ -453,10 +450,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pacijent\Terapija.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\ZdravstveniKarton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
