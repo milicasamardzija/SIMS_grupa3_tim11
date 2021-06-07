@@ -25,7 +25,6 @@ namespace Hospital.View.Pacijent
         {
             InitializeComponent();
             parent = p;
-            parent.nazad.Visibility = Visibility.Visible;
         }
         private void Odjava(object sender, RoutedEventArgs e)
         {
@@ -43,9 +42,7 @@ namespace Hospital.View.Pacijent
 
         private void klik_na_obavestenja(object sender, RoutedEventArgs e)
         {
-            PrikazObavestenja po = new PrikazObavestenja();
-            po.Show();
-         //   this.Close();
+            parent.startWindow.Content = new ObavestenjaPage(parent);
         }
 
         private void klik_na_karton(object sender, RoutedEventArgs e)
@@ -55,9 +52,7 @@ namespace Hospital.View.Pacijent
 
         private void klik_na_ocenjivanje(object sender, RoutedEventArgs e)
         {
-           // OcenjivanjeDoktora ocena = new OcenjivanjeDoktora(id);
-           // ocena.Show();
-        //    this.Close();
+            parent.startWindow.Content = new OcenaPage(parent);
 
         }
 

@@ -123,6 +123,9 @@
     <Compile Include="View\Pacijent\AnamnezaPage.xaml.cs">
       <DependentUpon>AnamnezaPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pacijent\AnketaPage.xaml.cs">
+      <DependentUpon>AnketaPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pacijent\DatumPage.xaml.cs">
       <DependentUpon>DatumPage.xaml</DependentUpon>
     </Compile>
@@ -194,11 +197,20 @@
     <Compile Include="View\Pacijent\Logovanje.xaml.cs">
       <DependentUpon>Logovanje.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pacijent\ObavestenjaPage.xaml.cs">
+      <DependentUpon>ObavestenjaPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pacijent\ObavljeniPage.xaml.cs">
       <DependentUpon>ObavljeniPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pacijent\Obolnici.xaml.cs">
       <DependentUpon>Obolnici.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pacijent\OcenaBolnica.xaml.cs">
+      <DependentUpon>OcenaBolnica.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pacijent\OcenaPage.xaml.cs">
+      <DependentUpon>OcenaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pacijent\PacijentPPage.xaml.cs">
       <DependentUpon>PacijentPPage.xaml</DependentUpon>
@@ -379,6 +391,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Pacijent\AnketaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pacijent\DatumPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -407,11 +423,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Pacijent\ObavestenjaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pacijent\ObavljeniPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pacijent\Obolnici.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pacijent\OcenaBolnica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pacijent\OcenaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1192,6 +1220,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="View\Pacijent\zvono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\poruka.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

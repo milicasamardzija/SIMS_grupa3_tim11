@@ -44,7 +44,7 @@
     </Page.Resources>
     <Grid Margin="0,0,0.4,-0.4">
 
-        <Button    Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Margin="80,28,0,0" Height="47" Click="prikaz_termina" Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20">
+        <Button    Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Margin="80,45,0,0" Height="47" Click="prikaz_termina" Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20">
             <StackPanel Orientation="Horizontal">
                 <Image Source="tretman.png" Stretch="None" Width="46" Height="40" />
                 <TextBlock Margin="0,11,0,0" Width="129" FontSize="15" Height="39" ><Run Text=" Moji pregledi"/></TextBlock>
@@ -62,7 +62,7 @@
 
         </Button>
 
-        <Button    Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Margin="80,95,0,0" Height="47" BorderBrush="#FFFDF7F7" Cursor="Arrow" Background="#FF64CCF1"  FontSize="14" Click="Button_Click">
+        <Button    Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Margin="80,97,0,0" Height="47" BorderBrush="#FFFDF7F7" Cursor="Arrow" Background="#FF64CCF1"  FontSize="14" Click="Button_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="pilula2.png" Stretch="None" Width="39" Height="35"/>
                 <TextBlock Margin="0,11,0,0" Width="125" FontSize="15" Height="36" ><Run Text="   Terapija"/></TextBlock>
@@ -79,7 +79,7 @@
             </Button.Resources>
         </Button>
 
-        <Button   Foreground="White" Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Margin="80,300,0,0" Height="47" RenderTransformOrigin="0.722,0.604" BorderBrush="#FFFDF5F5"  FontSize="14">
+        <Button   Foreground="White" Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Margin="80,305,0,0" Height="47" RenderTransformOrigin="0.722,0.604" BorderBrush="#FFFDF5F5"  FontSize="14">
             <StackPanel Orientation="Horizontal">
                 <Image Source="bolnica.png" Stretch="None" Width="46" Height="28"/>
                 <TextBlock Margin="0,11,0,0" Width="132" FontSize="15" Height="36" Text="  O bolnici" />
@@ -95,7 +95,7 @@
 
             </Button.Resources>
         </Button>
-        <Button   Foreground="White"  HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF64CCF1" Width="190" Margin="80,233,0,0" Height="47" BorderBrush="#FFF6F3F3"  FontSize="14" Click="klik_na_ocenjivanje">
+        <Button   Foreground="White"  HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF64CCF1" Width="190" Margin="80,253,0,0" Height="47" BorderBrush="#FFF6F3F3"  FontSize="14" Click="klik_na_ocenjivanje">
 
 
             <StackPanel Orientation="Horizontal">
@@ -112,7 +112,7 @@
 
             </Button.Resources>
         </Button>
-        <Button   Foreground="White"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Margin="80,163,0,0" Height="47" BorderBrush="#FFFAF4F4"  FontSize="14" Background="#FF64CCF1" Click="klik_na_karton">
+        <Button   Foreground="White"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Margin="80,149,0,0" Height="47" BorderBrush="#FFFAF4F4"  FontSize="14" Background="#FF64CCF1" Click="klik_na_karton">
 
 
             <StackPanel Orientation="Horizontal">
@@ -129,10 +129,27 @@
 
             </Button.Resources>
         </Button>
-        <Button  Foreground="White"  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="39" Margin="290,360,0,0" Height="30" BorderBrush="#FFEEEDED" RenderTransformOrigin="0.805,0.833" Click="Odjava">
+        <Button  Foreground="White"  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="39" Margin="290,350,0,0" Height="30" BorderBrush="#FFEEEDED" RenderTransformOrigin="0.805,0.833" Click="Odjava">
             <Button.Background>
                 <ImageBrush ImageSource="exit.png" Stretch="Uniform"/>
             </Button.Background>
+        </Button>
+        <Button   Foreground="White"  HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF64CCF1" Width="190" Margin="80,201,0,0" Height="47" BorderBrush="#FFF6F3F3"  FontSize="14" Click="klik_na_obavestenja">
+
+
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+
+                    <Setter Property="CornerRadius" Value="17"/>
+                </Style>
+
+            </Button.Resources>
+
+
+            <StackPanel Orientation="Horizontal">
+                <Image Source="poruka.png" Stretch="None" Width="37" Height="32"/>
+                <TextBlock Margin="0,11,0,0" Width="132" FontSize="15" Height="36" Text="    Podsetnik" />
+            </StackPanel>
         </Button>
 
     </Grid>

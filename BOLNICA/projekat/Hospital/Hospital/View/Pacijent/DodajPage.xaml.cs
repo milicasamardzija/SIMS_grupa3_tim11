@@ -48,8 +48,7 @@ namespace Hospital.View.Pacijent
             patientcontroller = new PatientController();
             funkcionalitycontroller = new FunctionalityController();
             checkupcontroller = new CheckupController();
-            parent.nazad.Visibility = Visibility.Hidden;
-
+          
          
 
             lista = new List<string>();
@@ -84,6 +83,7 @@ namespace Hospital.View.Pacijent
 
             CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
             date.BlackoutDates.Add(kalendar);
+
             DoctorFileStorage df = new DoctorFileStorage("./../../../../Hospital/files/storageDoctor.json");
             lekari = df.GetAll();
             lekar.ItemsSource = lekari;

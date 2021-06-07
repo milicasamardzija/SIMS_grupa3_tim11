@@ -170,10 +170,15 @@ namespace Hospital.View.Pacijent
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
+            if (ListaTermina.SelectedItem != null)
+            {
 
-            parent.startWindow.Content = new IzmeniPage(parent, AppointmentList, (Checkup)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
-           
-          
+                parent.startWindow.Content = new IzmeniPage(parent, AppointmentList, (Checkup)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
+
+            } else
+            {
+               
+            }
 
 
             foreach (PatientDTO patient in patientController.getAll()) //prolaz kroz sve pacijente u fajlu
@@ -213,9 +218,15 @@ namespace Hospital.View.Pacijent
 
         private void obrisi(object sender, RoutedEventArgs e)
         {
-
-            ObrisiTermin ob = new ObrisiTermin(AppointmentList, (Checkup)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
-
+            if (ListaTermina.SelectedItem != null)
+            {
+                ObrisiTermin ob = new ObrisiTermin(AppointmentList, (Checkup)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
+                ob.Show();
+            } else
+            {
+              
+               
+            }
             Patient ret = new Patient();
 
 
@@ -244,7 +255,7 @@ namespace Hospital.View.Pacijent
 
                     if (patient.Banovan == false)
                     {
-                        ob.Show();
+                       // ob.Show();
                     }
                     else
                     {

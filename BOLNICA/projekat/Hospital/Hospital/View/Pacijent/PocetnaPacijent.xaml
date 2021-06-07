@@ -48,36 +48,9 @@
             <RowDefinition Height="0*"/>
             <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
-        <Button  Name="nazad" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Margin="10,23,0,0" FontSize="22" Height="30"  Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6" Grid.RowSpan="2">
-            <Button.Background>
-                <ImageBrush ImageSource="zvono.png" Stretch="Uniform"/>
-            </Button.Background>
 
-        </Button>
 
-        <Popup IsOpen="{Binding  ElementName=nazad}" 
-               PlacementTarget="{Binding ElementName=nazad}"
-               Placement="Right"
-               StaysOpen="False"
-               AllowsTransparency="True"
-               VerticalOffset="-90">
-            <Grid>
-                <Border Background="Blue" BorderThickness="1" BorderBrush="Black"
-                Width="200" Height="200" Margin="24,0,0,0">
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White">...</TextBlock>
-                </Border>
-                <Path StrokeThickness="1" Stroke="Black" Fill="Blue" VerticalAlignment="Center">
-                    <Path.Data>
-                        <PathGeometry>
-                            <PathFigure StartPoint="25,0">
-                                <PolyLineSegment Points="0,25 25,50"/>
-                                <LineSegment Point="25,0" IsStroked="False"/>
-                            </PathFigure>
-                        </PathGeometry>
-                    </Path.Data>
-                </Path>
-            </Grid>
-        </Popup>
+
 
         <Line  
     X1="500" Y1="0"  

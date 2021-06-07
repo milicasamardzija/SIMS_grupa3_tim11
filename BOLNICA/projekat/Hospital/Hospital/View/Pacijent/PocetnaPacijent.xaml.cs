@@ -39,7 +39,7 @@ namespace Hospital
                 }
             }
             this.startWindow.Content = new PacijentPPage(this);
-            nazad.Visibility = Visibility.Visible;
+           
         }
 
         
