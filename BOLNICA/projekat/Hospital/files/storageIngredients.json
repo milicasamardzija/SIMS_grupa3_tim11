@@ -1,15 +1,15 @@
 [
-  { "idIngredient": 0,
+  { "id": 0,
     "name": "metamizol-natrijum",
     "quantity": 0.5
   },
   {
-    "idIngredient": 1,
+    "id": 1,
     "name": "levosetirizin",
     "quantity": 0.2
   },
   {
-    "idIngredient": 2,
+    "id": 2,
     "name": "amoksicilin",
     "quantity": 0.1
   }

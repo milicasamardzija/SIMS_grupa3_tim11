@@ -30,17 +30,17 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <DataGrid x:Name="ZamenskilekoviBaza" ItemsSource="{Binding Path = MedicinesBase}" AutoGenerateColumns="False"  Background="#FFDFD7BB" HorizontalAlignment="Left" Height="166" Margin="873,399,0,0" VerticalAlignment="Top" Width="244">
+        <DataGrid x:Name="ZamenskilekoviBaza" IsReadOnly="True" ItemsSource="{Binding Path = MedicinesBase}" AutoGenerateColumns="False"  Background="#FFDFD7BB" HorizontalAlignment="Left" Height="166" Margin="873,399,0,0" VerticalAlignment="Top" Width="244" MouseLeftButtonDown="ZamenskilekoviBaza_MouseLeftButtonDown" MouseMove="ZamenskilekoviBaza_MouseMove">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="SastojciLek" ItemsSource="{Binding Path = IngredientsMedicine}" AllowDrop="True" Background="#FFDFD7BB" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="166" Margin="226,210,0,0" VerticalAlignment="Top" Width="244"  Drop="SastojciLek_Drop">
+        <DataGrid x:Name="SastojciLek" IsReadOnly="True" ItemsSource="{Binding Path = IngredientsMedicine}" AllowDrop="True" Background="#FFDFD7BB" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="166" Margin="226,210,0,0" VerticalAlignment="Top" Width="244"  Drop="SastojciLek_Drop">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="ZamenskiLekoviLek" ItemsSource="{Binding Path = ReplacementMedicine}" Background="#FFDFD7BB" AutoGenerateColumns="False"  HorizontalAlignment="Left" Height="166" Margin="226,399,0,0" VerticalAlignment="Top" Width="244">
+        <DataGrid x:Name="ZamenskiLekoviLek" IsReadOnly="True" ItemsSource="{Binding Path = ReplacementMedicine}" AllowDrop="True" Background="#FFDFD7BB" AutoGenerateColumns="False"  HorizontalAlignment="Left" Height="166" Margin="226,399,0,0" VerticalAlignment="Top" Width="244" Drop="ZamenskiLekoviLek_Drop">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
             </DataGrid.Columns>
