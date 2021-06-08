@@ -21,7 +21,7 @@ namespace Hospital.View.Secretary.AppOrganisation
     /// </summary>
     public partial class Analitika : Page
     {
-      
+
         private CheckupController controller;
 
         public Analitika()
@@ -70,62 +70,68 @@ namespace Hospital.View.Secretary.AppOrganisation
 
         private void generateReport(object sender, RoutedEventArgs e)
         {
-            int operations = controller.counterOperation((DateTime)odDate.SelectedDate, (DateTime)doDate.SelectedDate);
-            int checkups = controller.counterCheckup((DateTime)odDate.SelectedDate, (DateTime)doDate.SelectedDate);
 
-            
-            DateTime p = (DateTime)odDate.SelectedDate;
-            string pocetak = p.ToString("dd.MM.yyyy.");
-            DateTime k = (DateTime)doDate.SelectedDate;
-            string kraj = k.ToString("dd.MM.yyyy.");
-
-           
-         
-
-             using (PdfDocument doc = new PdfDocument())
-              {
-                
-
-                  //Add a page.
-                  PdfPage page = doc.Pages.Add();
-
-                  // Create a PdfLightTable.
-                  PdfLightTable pdfLightTable = new PdfLightTable();
-
-                  // Initialize DataTable to assign as DateSource to the light table.
-                  DataTable table = new DataTable();
+            if (odDate.SelectedDate != null && doDate.SelectedDate != null)
+            {
+                int operations = controller.counterOperation((DateTime)odDate.SelectedDate, (DateTime)doDate.SelectedDate);
+                int checkups = controller.counterCheckup((DateTime)odDate.SelectedDate, (DateTime)doDate.SelectedDate);
 
 
-                //Include columns to the DataTable.
-                table.Columns.Add("Operacije");
-
-                
-                  String zaglavlje = "IZVESTAJ O ZAKAZANIM OPERACIJAMA I PREGLEDIMA U PERIODU OD " + pocetak + " do "+ kraj;
-
-                  //Include rows to the DataTable.
-                  table.Rows.Add(new string[] { zaglavlje });
-                  table.Rows.Add(new string[] { "Broj zakazanih operacija je " + Convert.ToString(operations) });
-                  table.Rows.Add(new string[] { "Broj zakazanih pregleda je " +  Convert.ToString(checkups) });
+                DateTime p = (DateTime)odDate.SelectedDate;
+                string pocetak = p.ToString("dd.MM.yyyy.");
+                DateTime k = (DateTime)doDate.SelectedDate;
+                string kraj = k.ToString("dd.MM.yyyy.");
 
 
 
-                  //Assign data source.
-                  pdfLightTable.DataSource = table;
 
-                  //Draw PdfLightTable.
-                  pdfLightTable.Draw(page, new PointF(0, 0));
+                using (PdfDocument doc = new PdfDocument())
+                {
 
-                  //Save the document
-                  doc.Save("C:\\Users\\neven\\Desktop\\Izvestaj.pdf");
+                    PdfPage page = doc.Pages.Add();
 
-                  //Close the document
+                    // Create a PdfLightTable.
+                    PdfLightTable pdfLightTable = new PdfLightTable();
 
-                  doc.Close(true);
-              }
+                    // tabela
+                    DataTable table = new DataTable();
 
-              MessageBox.Show("Uspesno kreiran izvestaj!");
-          }
+                    PdfGraphics graphics = page.Graphics;
+               
+                    //jedna kolona
+                    table.Columns.Add("Operacije");
 
-        
+
+                    String zaglavlje = "IZVESTAJ O ZAKAZANIM OPERACIJAMA I PREGLEDIMA U PERIODU OD " + pocetak + " do " + kraj;
+
+                    //redovi
+                    table.Rows.Add(new string[] { zaglavlje });
+                    table.Rows.Add(new string[] { "Broj zakazanih operacija je " + Convert.ToString(operations) });
+                    table.Rows.Add(new string[] { "Broj zakazanih pregleda je " + Convert.ToString(checkups) });
+
+
+
+                    //Assign data source.
+                    pdfLightTable.DataSource = table;
+
+                    //Draw PdfLightTable.
+                    pdfLightTable.Draw(page, new PointF(0, 0));
+
+                    //Save the document
+                    doc.Save("C:\\Users\\neven\\Desktop\\Izvestaj.pdf");
+
+                    //Close the document
+
+                    doc.Close(true);
+                }
+
+                MessageBox.Show("Uspesno kreiran izvestaj!");
+            }
+            else
+            {
+                MessageBox.Show("Morate uneti datume!");
+            }
+
+        }
     }
 }
