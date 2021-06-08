@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Alergeni"
     Width="450"
-    Height="320"
+    Height="360"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
@@ -21,13 +21,16 @@
         <DataGrid
             x:Name="svi"
             Width="180"
-            Height="191"
+            Height="219"
             Margin="10,44,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
             Foreground="#FF1B4C93"
+            IsReadOnly="True"
             ItemsSource="{Binding Path=listAllAlergens}"
+            MouseLeftButtonDown="svi_MouseLeftButtonDown"
+            MouseMove="svi_MouseMove"
             ScrollViewer.HorizontalScrollBarVisibility="Hidden"
             ScrollViewer.VerticalScrollBarVisibility="Hidden"
             ToolTip="Oznaci alergen i klikni za dodavanje">
@@ -45,11 +48,13 @@
         <DataGrid
             x:Name="selected"
             Width="183"
-            Height="191"
+            Height="219"
             Margin="241,44,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            AllowDrop="True"
             AutoGenerateColumns="False"
+            Drop="selected_Drop"
             Foreground="#FF1B4C93"
             ItemsSource="{Binding Path=listAlergens}"
             ScrollViewer.HorizontalScrollBarVisibility="Hidden"
@@ -120,7 +125,7 @@
         <Button
             Width="82"
             Height="32"
-            Margin="342,248,0,0"
+            Margin="342,281,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="saveAlergens"
@@ -138,7 +143,7 @@
         <Button
             Width="83"
             Height="32"
-            Margin="10,248,0,0"
+            Margin="10,281,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Button_Click"

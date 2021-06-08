@@ -7,10 +7,12 @@ using System;
 using System.Drawing;
 using System.Windows;
 using System.Windows.Controls;
-
+using System.ComponentModel;
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Tables;
+
 using System.Data;
+using MindFusion.Svg;
 
 namespace Hospital.View.Secretary.AppOrganisation
 {
@@ -19,7 +21,7 @@ namespace Hospital.View.Secretary.AppOrganisation
     /// </summary>
     public partial class Analitika : Page
     {
-
+      
         private CheckupController controller;
 
         public Analitika()
@@ -94,9 +96,8 @@ namespace Hospital.View.Secretary.AppOrganisation
                   DataTable table = new DataTable();
 
 
-
-                  //Include columns to the DataTable.
-                  table.Columns.Add("Operacije");
+                //Include columns to the DataTable.
+                table.Columns.Add("Operacije");
 
                 
                   String zaglavlje = "IZVESTAJ O ZAKAZANIM OPERACIJAMA I PREGLEDIMA U PERIODU OD " + pocetak + " do "+ kraj;
