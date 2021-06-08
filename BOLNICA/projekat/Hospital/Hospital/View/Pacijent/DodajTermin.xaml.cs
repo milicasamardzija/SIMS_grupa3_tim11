@@ -21,7 +21,7 @@ namespace Hospital
 
         private CheckupController checkupcontroller = new CheckupController();
         private FunctionalityController funkcionalitycontroller = new FunctionalityController();
-        private PatientController1 patientcontroller = new PatientController1();
+        private PatientController patientcontroller = new PatientController();
 
         public ObservableCollection<Checkup> appointmentList;
         public int idPatient; //id pacijenta koji je ulogovan
@@ -36,16 +36,18 @@ namespace Hospital
             InitializeComponent();
             appointmentList = applist;
             idPatient = idP;
+            patientcontroller = new PatientController();
+            funkcionalitycontroller = new FunctionalityController();
+            checkupcontroller = new CheckupController();
 
-           
-            List<Patient> patients = patientcontroller.getAll();
-            foreach (Patient patient in patients)
-            {
-                if (patient.Id == idP)
-                {
-                    imePacijenta.Text = patient.name + " " + patient.surname;
-                }
-            }
+            // List<Patient> patients = patientcontroller.getAll();
+            /* foreach (Patient patient in patients)
+             {
+                 if (patient.Id == idP)
+                 {
+                     imePacijenta.Text = patient.name + " " + patient.surname;
+                 }
+             }*/
 
             lista = new List<string>();
             lista.Add("08:00");
@@ -150,7 +152,7 @@ namespace Hospital
 
           //  EnabledDugme();
 
-            //CheckAvailableTimes();
+            CheckAvailableTimes();
 
 
 
@@ -159,7 +161,7 @@ namespace Hospital
         }
 
 
-       /* private void CheckAvailableTimes()
+        private void CheckAvailableTimes()
         {
 
             DateTime datum;
@@ -175,34 +177,16 @@ namespace Hospital
 
             dostupnoVrijeme = new List<string>();
             List<Checkup> termini = new List<Checkup>();
-           CheckupFileStorage app = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            PatientFileStorage patients = new PatientFileStorage("./../../../../Hospital/files/storagepatient.json");
+           
+
 
             if (lekar.SelectedItem != null && date.SelectedDate != null)
             {
-                foreach (Patient patient in patients.GetAll())
-                {
-                    foreach (Checkup termin in  checkupcontroller.getAll())
-                    {
-                        if (l.jmbg == termin.Doctor.jmbg)
-                        {
-                            if (termin.Date.Date.Equals(date.SelectedDate))
-                            {
-                                termini.Add(termin);
-                            }
-                        }
-
-                        if (patient.Id == termin.Patient.Id)
-                        {
-                            if (termin.Date.Date.Equals(date.SelectedDate))
-                            {
-                                termini.Add(termin);
-                            }
-                        }
-
-
-                    }
-                }
+                var item = time.SelectedItem;
+                String t = item.ToString();
+                String d = date.Text;
+                DateTime dt = DateTime.Parse(d + " " + t);
+                //checkupcontroller.getAvailableTimes(dt, l);
             }
 
 
@@ -234,9 +218,8 @@ namespace Hospital
             }
             time.ItemsSource = dostupnoVrijeme;
         }
-        */
-        //  CheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-        //   Checkup newapp = new Checkup(id,doktor.Id,patient.Id,dt,1,0);
+        
+        
 
         private void EnabledDugme()
         {
