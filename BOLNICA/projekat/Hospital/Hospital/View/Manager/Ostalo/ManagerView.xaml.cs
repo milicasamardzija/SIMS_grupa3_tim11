@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Hospital.View.Manager.Ostalo;
+using Hospital.View.Manager.WIzard;
 using Hospital.View.Manager.Zaposleni;
 using Application = System.Windows.Application;
 using HelpProvider = Hospital.View.Manager.Help.HelpProvider;
@@ -31,11 +32,22 @@ namespace Hospital
         private int idRoomIn;
         private int idRoomOut;
         private int quantity;
+        private ManagerNote notes = new ManagerNote();
+        private List<ManagerNote> note = new List<ManagerNote>();
         public ManagerView()
         {
             InitializeComponent();
             frame.NavigationService.Navigate(new ProfilUpravnik(this));
             getTasks();
+            note = notes.GetAll();
+            if (note[4].note.Equals("da"))
+            {
+                Wizard w = new Wizard();
+                w.Show();
+                note[4].note = "ne";
+                notes.SaveAll(note);
+            }
+           
         }
 
       private void getTasks()

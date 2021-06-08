@@ -1,0 +1,128 @@
+﻿<Window x:Class="Hospital.View.Manager.WIzard.Wizard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital.View.Manager.WIzard"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Wizard" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <xctk:Wizard FinishButtonClosesWindow="True">
+            <xctk:WizardPage x:Name="IntroPage" 
+                             Title="Dobrodosli"  FontSize="18"
+                             Description="Ovaj Wizard ce ti objasniti kako funcionise aplikacija." />
+            <xctk:WizardPage x:Name="Page1" PageType="Interior"
+                             Title="Profil"  FontSize="18"
+                             Description="U okviru prozora Profil nalaze se tvoji osnovni podaci i neke dodatne mogucnosti koriscenja aplikacije."
+                             NextPage="{Binding ElementName=Page2}"
+                             PreviousPage="{Binding ElementName=IntroPage}">
+                             <Image Source="../../Images/Manager/wizard/profil.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page2" PageType="Interior"
+                             Title="Magacin" FontSize="18"
+                             Description="U okviru prozora Magacin nalazi se pregled inventara bolnice koji nije rasporedjen po sobama.Moguce je dodavati, brisati i menjati podatke o njemu, kao i vrsiti zakazano i trenutno premestanje unutar bolnice.">
+                <Image Source="../../Images/Manager/wizard/magacin.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page3" PageType="Interior"
+                             Title="Magacin" FontSize="18"
+                             Description="U okviru prozora Magacin nalazi se pregled inventara bolnice koji nije rasporedjen po sobama.Moguce je dodavati, brisati i menjati podatke o njemu, kao i vrsiti zakazano i trenutno premestanje unutar bolnice.">
+                <Image Source="../../Images/Manager/wizard/magacin.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page4" PageType="Interior"
+                             Title="Dodavanje novog inventara" FontSize="18"
+                             Description="Ovde dodajes novi invetar.">
+                <Image Source="../../Images/Manager/wizard/inventarDodaj.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page5" PageType="Interior"
+                             Title="Izmena invetara" FontSize="18"
+                             Description="Ovde menjas informacije o inventaru.">
+                <Image Source="../../Images/Manager/wizard/izmeniInventar.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page6" PageType="Interior"
+                             Title="Brisanje invetara" FontSize="18"
+                             Description="Ovde brises inventar.">
+                <Image Source="../../Images/Manager/wizard/inventIzbrisi.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page7" PageType="Interior"
+                             Title="Odabir nacina premestanja inventara" FontSize="18"
+                             Description="Ovde biras da li se inventar premesta odmah ili zakazujes za neki odredjen datum premestanje.">
+                <Image Source="../../Images/Manager/wizard/prebacivanjeOdabir.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page8" PageType="Interior"
+                             Title="Momentalno premestanje inventara" FontSize="18"
+                             Description="Ovde biras gde i koju kolicinu nekog inventara premestas.">
+                <Image Source="../../Images/Manager/wizard/premestiDimamicki.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page9" PageType="Interior"
+                             Title="Zakazivanje premestanja inventara" FontSize="18"
+                             Description="Ovde biras gde i koju kolicinu nekog inventara premestas,ali i kod datuma i u koje vreme.">
+                <Image Source="../../Images/Manager/wizard/premestiStaticki.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page10" PageType="Interior"
+                             Title="Prostorije" FontSize="18"
+                             Description="U okviru prozora Prostorije nalazi se pregled prostorija bolnice.Moguce je dodavati, brisati i menjati podatke o prostorijama, kao i vrsiti zakazivanje renoviranja.">
+                <Image Source="../../Images/Manager/wizard/sobe.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page11" PageType="Interior"
+                             Title="Inventar u sobi" FontSize="18"
+                             Description="Ovde imas pregled inventara u odredjenoj sobi, kao i mogucnost njegovog premestanja u druge prostorije ili magacin.">
+                <Image Source="../../Images/Manager/wizard/inventarUSobi.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page12" PageType="Interior"
+                             Title="Zakazivanje renoviranja sobe" FontSize="18"
+                             Description="Ovde imas mogucnost biranja nacina renoviranja prostorije.Na primer ovde se moze zakazati spajanje dve prostorije.">
+                <Image Source="../../Images/Manager/wizard/renoviranje.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page13" PageType="Interior"
+                             Title="Pregled svih renoviranja u narednom periodu" FontSize="18"
+                             Description="Ovde imas pregled zakazanih renoviranja.">
+                <Image Source="../../Images/Manager/wizard/renoviranjeSvih.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page14" PageType="Interior"
+                             Title="Lekovi koji su odobreni od strane lekara" FontSize="18"
+                             Description="Ovde imas pregled svih lekova u bazi bolnice.">
+                <Image Source="../../Images/Manager/wizard/lekovi.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page15" PageType="Interior"
+                             Title="Dodavanje leka" FontSize="18"
+                             Description="Ovde dodajes novi lek.">
+                <Image Source="../../Images/Manager/wizard/LekDodaj.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page17" PageType="Interior"
+                             Title="Izmena leka" FontSize="18"
+                             Description="Ovde menjas informacije o leku.">
+                <Image Source="../../Images/Manager/wizard/lekIzmeni.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page18" PageType="Interior"
+                             Title="Brisanje leka" FontSize="18"
+                             Description="Ovde brises lek.">
+                <Image Source="../../Images/Manager/wizard/LekIzbrisi.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page19" PageType="Interior"
+                             Title="Prikaz lekova koji cekaju reviziju" FontSize="18"
+                             Description="Ovde se nalaze svi lekovi koji cekaju da budu odobreni.">
+                <Image Source="../../Images/Manager/wizard/lekoviRevizijaPrikaz.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page20" PageType="Interior"
+                             Title="Zaposleni" FontSize="18"
+                             Description="Ovde se nalaze svi zaposleni doktori bolnice.">
+                <Image Source="../../Images/Manager/wizard/zaposleni.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page21" PageType="Interior"
+                             Title="Obavestenja" FontSize="18"
+                             Description="Ovde se nalaze sva obavestenja.">
+                <Image Source="../../Images/Manager/wizard/obavestenja.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="Page22" PageType="Interior"
+                             Title="Informacije o bolnici" FontSize="18"
+                             Description="Ovde se nalaze osnovne informacije o bolnici.">
+                <Image Source="../../Images/Manager/wizard/klinika.png"/>
+            </xctk:WizardPage>
+            <xctk:WizardPage x:Name="LastPage" PageType="Interior"
+                             Title="Kraj"
+                             Description="Nadam se da ces ucivati u koriscenju aplikacije!"
+                             CanFinish="True"/>
+        </xctk:Wizard>
+    </Grid>
+</Window>

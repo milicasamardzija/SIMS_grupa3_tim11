@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.Model;
+using Hospital.View.Manager.WIzard;
 
 namespace Hospital.View.Manager.Ostalo
 {
@@ -19,6 +21,8 @@ namespace Hospital.View.Manager.Ostalo
     {
         public static Boolean isToolTipVisible = true;
         private ManagerView view;
+        private ManagerNote notes = new ManagerNote();
+        private List<ManagerNote> note = new List<ManagerNote>();
         public ProfilUpravnik(ManagerView managerView)
         {
             InitializeComponent();
@@ -50,6 +54,12 @@ namespace Hospital.View.Manager.Ostalo
         private void odjava(object sender, RoutedEventArgs e)
         {
             view.Close();
+        }
+
+        private void wizard(object sender, RoutedEventArgs e)
+        {
+            Wizard w = new Wizard();
+            w.Show();
         }
     }
 }

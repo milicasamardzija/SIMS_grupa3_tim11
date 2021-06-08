@@ -73,6 +73,21 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -185,6 +200,9 @@
     </Compile>
     <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeSpajanje.xaml.cs">
       <DependentUpon>RenoviranjeSpajanje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\WIzard\Wizard.xaml.cs">
+      <DependentUpon>Wizard.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Zaposleni\Izvestaj.xaml.cs">
       <DependentUpon>Izvestaj.xaml</DependentUpon>
@@ -459,6 +477,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Prostorije\CRUDProstorije\IzbrisiProstorijuPotvrda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\WIzard\Wizard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1187,6 +1209,27 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="View\Images\Manager\wizard\inventarDodaj.png" />
+    <Resource Include="View\Images\Manager\wizard\inventIzbrisi.png" />
+    <Resource Include="View\Images\Manager\wizard\invetIzmeni.png" />
+    <Resource Include="View\Images\Manager\wizard\inventarUSobi.png" />
+    <Resource Include="View\Images\Manager\wizard\izmeniInventar.png" />
+    <Resource Include="View\Images\Manager\wizard\klinika.png" />
+    <Resource Include="View\Images\Manager\wizard\LekDodaj.png" />
+    <Resource Include="View\Images\Manager\wizard\LekIzbrisi.png" />
+    <Resource Include="View\Images\Manager\wizard\lekIzmeni.png" />
+    <Resource Include="View\Images\Manager\wizard\lekovi.png" />
+    <Resource Include="View\Images\Manager\wizard\lekoviRevizijaPrikaz.png" />
+    <Resource Include="View\Images\Manager\wizard\obavestenja.png" />
+    <Resource Include="View\Images\Manager\wizard\prebacivanjeOdabir.png" />
+    <Resource Include="View\Images\Manager\wizard\premestiDimamicki.png" />
+    <Resource Include="View\Images\Manager\wizard\premestiStaticki.png" />
+    <Resource Include="View\Images\Manager\wizard\profil.png" />
+    <Resource Include="View\Images\Manager\wizard\renoviranje.png" />
+    <Resource Include="View\Images\Manager\wizard\renoviranjeSvih.png" />
+    <Resource Include="View\Images\Manager\wizard\sobe.png" />
+    <Resource Include="View\Images\Manager\wizard\zaposleni.png" />
+    <Resource Include="View\Images\Manager\wizard\magacin.png" />
     <Resource Include="Help\Beleska.png" />
     <Content Include="Help\Bolnica.html" />
     <Content Include="Help\Dinamicki.html" />
