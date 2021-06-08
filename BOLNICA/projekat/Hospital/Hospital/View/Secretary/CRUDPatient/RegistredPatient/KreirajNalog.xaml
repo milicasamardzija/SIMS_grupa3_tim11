@@ -4,12 +4,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:val="clr-namespace:Hospital.Validation"
     Title="Kreiraj nalog"
-    Width="540"
-    Height="500"
+    Width="740"
+    Height="405"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid>
+    <Grid Margin="0,0,0,0">
         <Grid.Background>
             <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                 <GradientStop Offset="0" Color="Gray" />
@@ -20,10 +21,10 @@
         <Label
             Grid.Row="0"
             Grid.Column="0"
-            Margin="43,24,0,0"
+            Margin="10,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Ime"
+            Content="Ime:"
             FontFamily="Chooper Black Bold"
             FontSize="15"
             FontWeight="Bold"
@@ -32,10 +33,10 @@
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="43,57,0,0"
+            Margin="10,50,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Prezime"
+            Content="Prezime:"
             FontFamily="Chooper Black Bold"
             FontSize="15"
             FontWeight="Bold"
@@ -43,10 +44,10 @@
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="43,84,0,0"
+            Margin="10,90,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Jmbg"
+            Content="Jmbg:"
             FontFamily="Chooper Black Bold"
             FontSize="15"
             FontWeight="Bold"
@@ -55,10 +56,32 @@
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="40,111,0,0"
+            Margin="336,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Prezime i ime lica osiguranika"
+            Content="Prezime i ime osiguranika:"
+            FontFamily="Chooper Black Bold"
+            FontSize="14"
+            FontWeight="Bold"
+            Foreground="#FF164783"
+            TextElement.FontSize="14" />
+        <Label
+            Grid.Column="0"
+            Margin="336,50,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Datum rodjenja:"
+            FontFamily="Chooper Black Bold"
+            FontSize="14"
+            FontWeight="Bold"
+            Foreground="#FF164783"
+            TextElement.FontSize="14" />
+        <Label
+            Grid.Column="0"
+            Margin="336,90,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Adresa stanovanja:"
             FontFamily="Chooper Black Bold"
             FontSize="15"
             FontWeight="Bold"
@@ -66,32 +89,10 @@
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="40,143,0,0"
+            Margin="10,130,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Datum rodjenja"
-            FontFamily="Chooper Black Bold"
-            FontSize="15"
-            FontWeight="Bold"
-            Foreground="#FF164783"
-            TextElement.FontSize="14" />
-        <Label
-            Grid.Column="0"
-            Margin="43,170,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Adresa"
-            FontFamily="Chooper Black Bold"
-            FontSize="15"
-            FontWeight="Bold"
-            Foreground="#FF164783"
-            TextElement.FontSize="14" />
-        <Label
-            Grid.Column="0"
-            Margin="40,231,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Broj telefona"
+            Content="Telefon:"
             FontFamily="Chooper Black Bold"
             FontSize="15"
             FontWeight="Bold"
@@ -100,10 +101,10 @@
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="40,259,0,0"
+            Margin="10,170,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Pol"
+            Content="Pol:"
             FontFamily="Chooper Black Bold"
             FontSize="15"
             FontWeight="Bold"
@@ -111,10 +112,10 @@
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="38,281,0,0"
+            Margin="336,209,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Kategorija zdravstvene zastite"
+            Content="Zdravstvena zastita:"
             FontFamily="Chooper Black Bold"
             FontSize="15"
             FontWeight="Bold"
@@ -122,10 +123,11 @@
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="40,313,0,0"
+            Width="84"
+            Margin="10,250,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Zanimanje "
+            Content="Zanimanje: "
             FontFamily="Chooper Black Bold"
             FontSize="15"
             FontWeight="Bold"
@@ -133,10 +135,10 @@
             TextElement.FontSize="14" />
         <Label
             Grid.Column="0"
-            Margin="40,345,0,0"
+            Margin="336,166,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Broj zdravstvene knjizice "
+            Content="Broj zdravstvene knjizice: "
             FontFamily="Chooper Black Bold"
             FontSize="15"
             FontWeight="Bold"
@@ -147,76 +149,169 @@
         <TextBox
             x:Name="imeText"
             Grid.Row="0"
-            Width="204"
+            Width="190"
             Height="23"
-            Margin="261,27,0,0"
+            Margin="107,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Text="{Binding Path=Patient.Name, UpdateSourceTrigger=PropertyChanged}"
-            TextWrapping="Wrap" />
+            RenderTransformOrigin="0.32,0.548"
+            TextWrapping="Wrap"
+            Validation.ErrorTemplate="{StaticResource errorTemplate}">
+            <TextBox.Text>
+                <Binding
+                    Path="Patient.Name"
+                    UpdateSourceTrigger="PropertyChanged"
+                    ValidatesOnExceptions="True">
+                    <Binding.ValidationRules>
+                        <val:TextValidation />
+
+
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
         <TextBox
             x:Name="prezimeText"
-            Width="205"
+            Width="190"
             Height="23"
-            Margin="260,55,0,0"
+            Margin="107,50,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Text="{Binding Path=Patient.Surname, UpdateSourceTrigger=PropertyChanged}"
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap"
+            Validation.ErrorTemplate="{StaticResource errorTemplate}">
+            <TextBox.Text>
+                <Binding
+                    Path="Patient.Surname"
+                    UpdateSourceTrigger="PropertyChanged"
+                    ValidatesOnExceptions="True">
+                    <Binding.ValidationRules>
+                        <val:TextValidation />
+
+
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+
+        </TextBox>
         <TextBox
             x:Name="jmbgText"
-            Width="206"
+            Width="190"
             Height="23"
-            Margin="259,83,0,0"
+            Margin="107,90,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Text="{Binding Path=Patient.Jmbg, UpdateSourceTrigger=PropertyChanged}"
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap"
+            Validation.ErrorTemplate="{StaticResource errorTemplate}">
+            <TextBox.Text>
+                <Binding
+                    Path="Patient.Jmbg"
+                    UpdateSourceTrigger="PropertyChanged"
+                    ValidatesOnExceptions="True">
+                    <Binding.ValidationRules>
+                        <val:JMBGValidation />
+
+
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
         <TextBox
             x:Name="imePrzOsText"
-            Width="206"
+            Width="196"
             Height="23"
-            Margin="259,111,0,0"
+            Margin="520,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             RenderTransformOrigin="0.506,1.174"
-            Text="{Binding Path=Patient.Insurence, UpdateSourceTrigger=PropertyChanged}"
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap"
+            Validation.ErrorTemplate="{StaticResource errorTemplate}">
+            <TextBox.Text>
+                <Binding
+                    Path="Patient.Insurence"
+                    UpdateSourceTrigger="PropertyChanged"
+                    ValidatesOnExceptions="True">
+                    <Binding.ValidationRules>
+                        <val:TextValidation />
+
+
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
 
         <TextBox
             x:Name="ulText"
             Width="97"
             Height="23"
-            Margin="261,172,0,0"
+            Margin="520,90,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Text="{Binding Path=Patient.Adress.street, UpdateSourceTrigger=PropertyChanged}"
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap"
+            Validation.ErrorTemplate="{StaticResource errorTemplate}">
+            <TextBox.Text>
+                <Binding
+                    Path="Patient.Adress.street"
+                    UpdateSourceTrigger="PropertyChanged"
+                    ValidatesOnExceptions="True">
+                    <Binding.ValidationRules>
+                        <val:TextValidation />
+
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
         <TextBox
             x:Name="brTelText"
-            Width="206"
+            Width="190"
             Height="23"
-            Margin="259,231,0,0"
+            Margin="107,130,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Text="{Binding Path=Patient.TelephoneNumber, UpdateSourceTrigger=PropertyChanged}"
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap"
+            Validation.ErrorTemplate="{StaticResource errorTemplate}">
+            <TextBox.Text>
+                <Binding
+                    Path="Patient.TelephoneNumber"
+                    UpdateSourceTrigger="PropertyChanged"
+                    ValidatesOnExceptions="True">
+                    <Binding.ValidationRules>
+                        <val:PhoneNumberValidation />
+
+
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
 
 
         <TextBox
             x:Name="zanimanjeText"
-            Width="206"
+            Width="190"
             Height="23"
-            Margin="259,313,0,0"
+            Margin="107,250,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Text="{Binding Path=Patient.Occupation, UpdateSourceTrigger=PropertyChanged}"
-            TextWrapping="Wrap" />
+            Background="#FFFAF7F7"
+            TextWrapping="Wrap"
+            Validation.ErrorTemplate="{StaticResource errorTemplate}">
+            <TextBox.Text>
+                <Binding
+                    Path="Patient.Occupation"
+                    UpdateSourceTrigger="PropertyChanged"
+                    ValidatesOnExceptions="True">
+                    <Binding.ValidationRules>
+                        <val:LettersValidation />
+
+
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
         <Button
             x:Name="sacuvajButton"
-            Width="100"
-            Height="35"
-            Margin="368,426,0,0"
+            Width="115"
+            Height="32"
+            Margin="600,320,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="kreirajNalogB"
@@ -245,17 +340,28 @@
         </Button>
         <TextBox
             x:Name="brKnjiziceText"
-            Width="206"
+            Width="196"
             Height="23"
-            Margin="259,345,0,0"
+            Margin="520,170,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Text="{Binding Path=Patient.IdHealthCard, UpdateSourceTrigger=PropertyChanged}"
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap"
+            Validation.ErrorTemplate="{StaticResource errorTemplate}">
+            <TextBox.Text>
+                <Binding
+                    Path="Patient.IdHealthCard"
+                    UpdateSourceTrigger="PropertyChanged"
+                    ValidatesOnExceptions="True">
+                    <Binding.ValidationRules>
+                        <val:HealthCardValidation />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
         <ComboBox
             x:Name="zastita"
-            Width="204"
-            Margin="261,286,0,0"
+            Width="196"
+            Margin="520,210,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             SelectedIndex="{Binding Path=Patient.HealthCareCategory, UpdateSourceTrigger=PropertyChanged}">
@@ -271,14 +377,14 @@
             <ComboBoxItem>
                 farmer
             </ComboBoxItem>
-            <ComboBoxItem>
+            <ComboBoxItem IsSelected="True">
                 ostalo
             </ComboBoxItem>
         </ComboBox>
         <Button
             Width="111"
             Height="33"
-            Margin="40,427,0,0"
+            Margin="17,320,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="odustaniB"
@@ -298,12 +404,12 @@
         </Button>
         <ComboBox
             x:Name="pol"
-            Width="205"
-            Margin="260,259,0,0"
+            Width="190"
+            Margin="107,170,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             SelectedIndex="{Binding Path=Patient.Gender, UpdateSourceTrigger=PropertyChanged}">
-            <ComboBoxItem>
+            <ComboBoxItem IsSelected="True">
                 Muski
             </ComboBoxItem>
             <ComboBoxItem>
@@ -312,29 +418,41 @@
         </ComboBox>
         <TextBox
             x:Name="broj"
-            Width="62"
+            Width="57"
             Height="23"
-            Margin="403,174,0,0"
+            Margin="657,90,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Text="{Binding Path=Patient.Adress.streetNumber, UpdateSourceTrigger=PropertyChanged}"
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap"
+            Validation.ErrorTemplate="{StaticResource errorTemplate}">
+            <TextBox.Text>
+                <Binding
+                    Path="Patient.Adress.streetNumber"
+                    UpdateSourceTrigger="PropertyChanged"
+                    ValidatesOnExceptions="True">
+                    <Binding.ValidationRules>
+                        <val:NumberValidation />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
         <Label
-            Margin="215,169,0,0"
+            Margin="486,90,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="ulica"
             Foreground="#FF164783"
             RenderTransformOrigin="1.048,0.656" />
         <Label
-            Margin="363,172,0,0"
+            Margin="622,90,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="broj"
-            Foreground="#FF164783" />
+            Foreground="#FF164783"
+            RenderTransformOrigin="0.855,0.461" />
         <Label
             Width="36"
-            Margin="215,190,0,0"
+            Margin="486,127,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="grad"
@@ -342,11 +460,11 @@
         <ComboBox
             x:Name="grad"
             Width="97"
-            Margin="261,204,0,0"
+            Margin="518,129,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             SelectedIndex="{Binding Path=Patient.Adress.city, UpdateSourceTrigger=PropertyChanged}">
-            <ComboBoxItem>Novi Sad</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">Novi Sad</ComboBoxItem>
             <ComboBoxItem>Beograd</ComboBoxItem>
             <ComboBoxItem>Valjevo</ComboBoxItem>
             <ComboBoxItem>Sabac</ComboBoxItem>
@@ -364,19 +482,20 @@
         </ComboBox>
         <ComboBox
             Name="drzava"
-            Width="62"
-            Margin="403,204,0,0"
+            Width="56"
+            Margin="658,129,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            RenderTransformOrigin="0.429,1.223"
             SelectedIndex="{Binding Path=Patient.Adress.country, UpdateSourceTrigger=PropertyChanged}">
-            <ComboBoxItem>SRB</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">SRB</ComboBoxItem>
             <ComboBoxItem>BiH</ComboBoxItem>
             <ComboBoxItem>CG</ComboBoxItem>
             <ComboBoxItem>HR</ComboBoxItem>
             <ComboBoxItem>SLO</ComboBoxItem>
         </ComboBox>
         <Label
-            Margin="358,200,0,0"
+            Margin="613,126,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="drzava"
@@ -384,16 +503,16 @@
             RenderTransformOrigin="0.554,0.875" />
         <DatePicker
             Name="datum"
-            Width="206"
-            Margin="259,143,0,0"
+            Width="196"
+            Margin="518,50,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Focusable="False" />
         <Label
-            Margin="40,377,0,0"
+            Margin="10,210,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Krvna grupa"
+            Content="Krvna grupa:"
             FontFamily="Chooper Black Bold"
             FontSize="15"
             FontWeight="Bold"
@@ -401,11 +520,11 @@
             TextElement.FontSize="14" />
         <ComboBox
             Name="krvnaGrupa"
-            Width="205"
-            Margin="260,377,0,0"
+            Width="190"
+            Margin="107,210,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
-            <ComboBoxItem>
+            <ComboBoxItem IsSelected="True">
                 AB
             </ComboBoxItem>
             <ComboBoxItem>
@@ -417,6 +536,22 @@
             <ComboBoxItem>
                 O
             </ComboBoxItem>
+        </ComboBox>
+        <Label
+            Margin="336,244,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Bracni status:"
+            FontWeight="Bold"
+            Foreground="#FF164783"
+            TextElement.FontSize="14" />
+        <ComboBox
+            Width="196"
+            Margin="518,250,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+            <ComboBoxItem>Slobodan/a</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">U braku</ComboBoxItem>
         </ComboBox>
 
     </Grid>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace Hospital.DTO
         private Adress adress;
         private Boolean banovan = false;
         private DateTime datumBanovanja;
+
 
         public PatientDTO(String n, String s, String tel, String jmb, Gender g, DateTime b, int pId, HealthCareCategory hcc, int idhc, String oc, String ins, Adress adr, Boolean banovan) 
         {
@@ -64,6 +66,7 @@ namespace Hospital.DTO
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
 
         protected virtual void OnProperychanged(string name)
         {
@@ -73,7 +76,9 @@ namespace Hospital.DTO
             }
         }
 
-         public int Id
+    
+
+        public int Id
          {
             get
             {
@@ -97,8 +102,11 @@ namespace Hospital.DTO
             }
             set
             {
+             
                 if (value != idHealthCard)
                 {
+                  
+
                     idHealthCard = value;
                     OnProperychanged("IdHealthCard");
                 }
@@ -129,6 +137,7 @@ namespace Hospital.DTO
             }
             set
             {
+              
                 if (value != occupation)
                 {
                     occupation = value;
@@ -147,6 +156,8 @@ namespace Hospital.DTO
             {
                 if (value != insurence)
                 {
+                    if (string.IsNullOrEmpty(value))
+                        throw new ArgumentException("Pozeljno je uneti osiguranje");
                     insurence = value;
                     OnProperychanged("Insurence");
                 }
@@ -160,6 +171,8 @@ namespace Hospital.DTO
             }
             set
             {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Ime ne moze biti prazno!");
                 if (value != name)
                 {
                     name = value;
@@ -176,6 +189,9 @@ namespace Hospital.DTO
             }
             set
             {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Prezime ne moze biti prazno!");
+
                 if (value != surname)
                 {
                     surname = value;
@@ -192,6 +208,8 @@ namespace Hospital.DTO
             }
             set
             {
+                if(string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Jmbg ne ne moze biti prazan!");
                 if (value != jmbg)
                 {
                     jmbg = value;
@@ -208,6 +226,9 @@ namespace Hospital.DTO
             }
             set
             {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Kontakt telefon je obavezan!");
+
                 if (value != telephoneNumber)
                 {
                     telephoneNumber = value;
@@ -224,6 +245,7 @@ namespace Hospital.DTO
             }
             set
             {
+                
                 if (value != gender)
                 {
                     gender = value;
@@ -308,5 +330,7 @@ namespace Hospital.DTO
                 }
             }
         }
+
+       
     }
 }
