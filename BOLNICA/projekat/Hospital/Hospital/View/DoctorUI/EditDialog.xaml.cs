@@ -37,11 +37,14 @@ namespace Hospital
             checkup = selectedCheckup;
             indexCheckup = selectedIndex;
 
-            datePick.SelectedDate = Convert.ToDateTime(selectedCheckup.Date);
+           // datePick.SelectedDate = Convert.ToDateTime(selectedCheckup.Date);
             durationText.SelectedText = Convert.ToString(selectedCheckup.Duration);
             comboBox.SelectedIndex = (int)selectedCheckup.Type;
             patientBox.SelectedText = Convert.ToString(selectedCheckup.IdPatient);
             idRoom.SelectedText = Convert.ToString(selectedCheckup.IdRoom);
+
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
+            datePick.BlackoutDates.Add(kalendar);
         }
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)

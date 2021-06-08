@@ -23,6 +23,9 @@ namespace Hospital
         public IzdavanjeRecepta()
         {
             InitializeComponent();
+
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
+            datePicker.BlackoutDates.Add(kalendar);
         }
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)

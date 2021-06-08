@@ -9,9 +9,7 @@
     <Grid>
         <Label x:Name="label" Content="Datum" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="91" FontSize="16"/>
         <DatePicker x:Name="datePick" HorizontalAlignment="Left" SelectedDateChanged="DatePicker_SelectedDateChanged" Height="25" Margin="168,27,0,378.4" Width="207">
-        <DatePicker.BlackoutDates>
-            <CalendarDateRange End="2021-06-06"/>
-        </DatePicker.BlackoutDates>
+        
         </DatePicker>
         <Label x:Name="label2" Content="Trajanje" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Width="64" FontSize="16"/>
         <Label x:Name="label3" Content="Tip" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" Width="64" FontSize="16"/>

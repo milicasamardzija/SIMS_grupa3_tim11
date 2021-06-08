@@ -29,6 +29,10 @@ namespace Hospital
             PrikaziIzvestajLekara showReport = new PrikaziIzvestajLekara();
             showReport.Show();
             this.Close();
+
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
+            datePicker1.BlackoutDates.Add(kalendar);
+            datePicker2.BlackoutDates.Add(kalendar);
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)

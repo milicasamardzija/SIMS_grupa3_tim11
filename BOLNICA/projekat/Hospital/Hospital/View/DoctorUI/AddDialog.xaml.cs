@@ -35,6 +35,9 @@ namespace Hospital
             InitializeComponent();
             listCheckup = list;
             idD = idDoctor;
+
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
+            dateP.BlackoutDates.Add(kalendar);
         }
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)

@@ -17,9 +17,7 @@
         <TextBox x:Name="textTrajanje" HorizontalAlignment="Left" Height="30" Margin="156,111,0,264.6" Width="243"/>
         <TextBox x:Name="textPacijent" HorizontalAlignment="Left" Height="30" Margin="156,223,0,152.6" Width="243"/>
         <DatePicker x:Name="Date" HorizontalAlignment="Left" Height="30" Margin="156,11,0,364.6" Width="243">
-        <DatePicker.BlackoutDates>
-            <CalendarDateRange End="2021-06-06"/>
-        </DatePicker.BlackoutDates>
+        
         </DatePicker>
         <Button x:Name="button1" Content="Izadji" HorizontalAlignment="Left" Height="30" Margin="287,351,0,24.6" Width="112" Click="button1_Click"/>
         <Button x:Name="button2" Content="Zakazi" HorizontalAlignment="Left" Height="30" Margin="10,351,0,24.6" Width="112" Click="button2_Click"/>
