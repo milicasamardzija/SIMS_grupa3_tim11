@@ -63,7 +63,7 @@
         </Button>
         <Frame Name="SobeFrame" HorizontalAlignment="Left" Margin="764,92,0,0" VerticalAlignment="Top" Height="400" Width="470" />
         <StackPanel Background="#ffc800" Margin="33,92,968,450">
-            <Label Content="Unesite sprat ili  namenu prostorije:" FontSize="16" FontWeight="Bold" Height="40" Margin="0,0,-26.8,0" VerticalAlignment="Top" Foreground="#FF373434"/>
+            <Label Content="Unesite namenu prostorije:" FontSize="16" FontWeight="Bold" Height="40" Margin="0,0,-26.8,0" VerticalAlignment="Top" Foreground="#FF373434"/>
             <TextBox x:Name="PretragaTxt" FontSize="16" FontWeight="Bold" Width="216" TextChanged="PretragaSobe" Margin="0,0,0,31.6" Height="45" VerticalAlignment="Bottom"/>
         </StackPanel>
         <StackPanel Background="#ffc800" HorizontalAlignment="Left" Height="100" Margin="329,92,0,0" VerticalAlignment="Top" Width="409">

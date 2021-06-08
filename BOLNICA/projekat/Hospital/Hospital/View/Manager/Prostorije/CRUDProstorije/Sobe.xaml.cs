@@ -87,7 +87,9 @@ namespace Hospital
 
         private void prikazInventara(object sender, RoutedEventArgs e)
         {
-           frameMagacin.NavigationService.Navigate(new PrikazInventaraUSobi(Rooms, (RoomDTO)ListaProstorija.SelectedItem,frameMagacin));
+            //Room room = (Room)ListaProstorija.SelectedItem;
+            //RoomDTO roomDTO = new RoomDTO(room.Id, room.Floor, room.Occupancy, room.Purpose, room.Capacity);
+            frameMagacin.NavigationService.Navigate(new PrikazInventaraUSobi(Rooms, (RoomDTO)ListaProstorija.SelectedItem, frameMagacin));
         }
       
         private void PretragaSobe(object sender, TextChangedEventArgs e)
