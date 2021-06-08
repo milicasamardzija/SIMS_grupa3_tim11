@@ -57,7 +57,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label Content="     Lozinka:"  HorizontalAlignment="Left" Margin="34,207,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.542,0.117" Height="33"/>
+        <Label Content="     Lozinka:"  HorizontalAlignment="Left" Margin="34,200,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.542,0.117" Height="25"/>
         <TextBox   Foreground="DarkGray"
             Background="#F6F6F6"  BorderBrush="{x:Null}" Name="ime"  HorizontalAlignment="Left" Height="30" Margin="54,155,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233" />
         <PasswordBox

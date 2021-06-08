@@ -78,7 +78,7 @@
                 </ComboBox.RenderTransform>
 
             </ComboBox>
-            <ComboBox x:Name="lekar" ItemsSource="{Binding Path=Lekar}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="235" Margin="61,229,0,0" Height="22" IsSynchronizedWithCurrentItem="False" FontSize="14">
+            <ComboBox x:Name="lekar" ItemsSource="{Binding Path=Lekar}" HorizontalAlignment="Left"  SelectionChanged="lekar_SelectionChanged" VerticalAlignment="Top" Width="235" Margin="61,229,0,0" Height="22" IsSynchronizedWithCurrentItem="False" FontSize="14">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock>

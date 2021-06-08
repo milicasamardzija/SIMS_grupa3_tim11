@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   
            mc:Ignorable="d"
-               Title="" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen" Background="AliceBlue">
+               Title="" Height="500" Width="350" WindowStartupLocation="CenterScreen" Background="AliceBlue">
     <Window.Resources>
         <Style TargetType="Button" x:Key="MyButtonDesign">
             <Setter Property="Template">
@@ -52,7 +52,7 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Button  Background="#FF64CCF1" Content="PRIJAVA"  FontSize="15"  Grid.Column="1" HorizontalAlignment="Left" Margin="87,270.2,0,0" VerticalAlignment="Top" Width="145" Height="40" Grid.Row="1"  BorderBrush="#FFEEEBEB"  Click="logovanje" RenderTransformOrigin="0.563,0.26" Foreground="#FFFDFDFD">
+        <Button  Background="#FF64CCF1" Content="PRIJAVA"  FontSize="15"  Grid.Column="1" HorizontalAlignment="Left" Margin="100,270.4,0,0" VerticalAlignment="Top" Width="145" Height="40" Grid.Row="1"  BorderBrush="#FFEEEBEB"  Click="logovanje" RenderTransformOrigin="0.563,0.26" Foreground="#FFFDFDFD">
             <Button.Resources>
                 <Style TargetType="Border">
 
@@ -64,7 +64,7 @@
             </Button.Resources>
 
         </Button>
-        <Button  Background="#FF64CCF1"  Content="BLOG" FontSize="15" Grid.Column="1" Foreground="White" HorizontalAlignment="Left" Margin="87,315.2,0,0" VerticalAlignment="Top" Width="145" Height="40" Grid.Row="1" BorderBrush="#FFEEEBEB" Click="blog">
+        <Button  Background="#FF64CCF1"  Content="BLOG" FontSize="15" Grid.Column="1" Foreground="White" HorizontalAlignment="Left" Margin="100,315.4,0,0" VerticalAlignment="Top" Width="145" Height="40" Grid.Row="1" BorderBrush="#FFEEEBEB" Click="blog">
             <Button.Resources>
                 <Style TargetType="Border">
 
@@ -76,7 +76,7 @@
             </Button.Resources>
 
         </Button>
-        <Button Background="#FF64CCF1" Content="O BOLNICI" FontSize="15" Foreground="White" Grid.Column="1" HorizontalAlignment="Left" Margin="87,360.2,0,0" VerticalAlignment="Top" Width="145" Height="40" Grid.Row="1" BorderBrush="#FFEEEBEB"  Click="o_bolnici">
+        <Button Background="#FF64CCF1" Content="O BOLNICI" FontSize="15" Foreground="White" Grid.Column="1" HorizontalAlignment="Left" Margin="100,360.4,0,0" VerticalAlignment="Top" Width="145" Height="40" Grid.Row="1" BorderBrush="#FFEEEBEB"  Click="o_bolnici">
             <Button.Resources>
                 <Style TargetType="Border">
 
@@ -87,7 +87,7 @@
 
             </Button.Resources>
         </Button>
-        <Label Content="Zdravo bolnica" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="210" Grid.Column="1" Margin="65,38.2,0,0" Grid.Row="1"  Foreground="#FF64CCF1"   FontSize="28" RenderTransformOrigin="0.72,0.583" FontWeight="Bold" />
+        <Label Content="Zdravo bolnica" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="210" Grid.Column="1" Margin="70,34.4,0,0" Grid.Row="1"  Foreground="#FF64CCF1"   FontSize="28" RenderTransformOrigin="0.72,0.583" FontWeight="Bold" />
 
      
     </Grid>

@@ -53,7 +53,7 @@ namespace Hospital.View.Pacijent
         }
         private void Nazad_na_pocetnu(object sender, RoutedEventArgs e)
         {
-            
+            parent.startWindow.Content = new PacijentPPage(parent);
         }
         private void oceni_doktora(object sender, RoutedEventArgs e)
         {

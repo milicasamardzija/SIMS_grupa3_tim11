@@ -36,8 +36,7 @@ namespace Hospital.View.Pacijent
         private void prikaz_termina(object sender, RoutedEventArgs e)
         {
             parent.startWindow.Content = new PreglediP(parent);
-            //  wp.Show();
-            //   this.Close();
+          
         }
 
         private void klik_na_obavestenja(object sender, RoutedEventArgs e)
@@ -58,8 +57,8 @@ namespace Hospital.View.Pacijent
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Terapija terapija = new Terapija();
-            terapija.Show();
+          //  Terapija terapija = new Terapija();
+          //  terapija.Show();
            // this.Close();
         }
     }

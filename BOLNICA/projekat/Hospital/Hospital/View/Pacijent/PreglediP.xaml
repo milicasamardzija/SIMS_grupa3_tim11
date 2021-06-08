@@ -9,16 +9,16 @@
       Title=""  Width="350" Height="450" Background="AliceBlue">
 
     <Grid>
-        <Button  Foreground="White"  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Margin="0,10,0,0" Height="25" BorderBrush="#FFEEEDED" RenderTransformOrigin="0.805,0.833" Click="Nazad_na_pocetnu">
+        <Button  Foreground="White"  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Margin="0,10,0,0" Height="25" BorderBrush="#FFEEEDED" RenderTransformOrigin="0.805,0.833" Click="Nazad_na_pocetnu">
             <Button.Background>
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
 
 
-      
+
         <DataGrid Name="ListaTermina"
-                      Margin="30,40,30.4,204.6"
+                      Margin="30,40,40.4,204.6"
                       Background="White"
                       AutoGenerateColumns="False"
                       SelectionMode="Single"
@@ -29,7 +29,7 @@
                       ItemsSource="{Binding Path = AppointmentList}"
                       >
             <DataGrid.Columns>
-                <DataGridTextColumn Header=" ID" Binding="{Binding Id}" Width="80" />
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="80" />
                 <DataGridTextColumn Header="DATUM" Binding="{Binding Date}" Width="130"/>
                 <DataGridTextColumn Header="TRAJANJE" Binding="{Binding Duration}" Width="80"/>
 

@@ -45,6 +45,7 @@ namespace Hospital.View.Pacijent
             parent = p;
             appointmentList = applist;
             idPatient = p.id;
+            potvrdi.IsEnabled = false;
             patientcontroller = new PatientController();
             funkcionalitycontroller = new FunctionalityController();
             checkupcontroller = new CheckupController();
@@ -89,13 +90,26 @@ namespace Hospital.View.Pacijent
             lekar.ItemsSource = lekari;
 
 
+          
+              
+              
+
+
+
+
+
+
+
 
         }
 
 
+       
 
+     
 
-        private void add_appointment(object sender, RoutedEventArgs e)
+     
+            private void add_appointment(object sender, RoutedEventArgs e)
         {
 
 
@@ -240,13 +254,19 @@ namespace Hospital.View.Pacijent
         private void date_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateComponents();
+            EnabledDugme();
         }
 
         private void time_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateComponents();
+            EnabledDugme();
         }
 
+        private void lekar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            EnabledDugme();
+        }
         private void izaberi_prioritet(object sender, RoutedEventArgs e)
         {
 

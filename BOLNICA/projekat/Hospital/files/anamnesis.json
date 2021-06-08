@@ -13,14 +13,7 @@
   {
     "nameS": "Ivan Ivanovic",
     "gender": "Musko",
-    "NotesForAnamnesis": [
-      {
-        "description": "Piti vode.",
-        "StartDate": "0001-01-01T00:00:00",
-        "EndDate": "0001-01-01T00:00:00",
-        "IsSetReminder": false
-      }
-    ],
+    "NotesForAnamnesis": null,
     "datePlace": "05/02/2020",
     "adress": "Narodnog fronta 15 Novi Sad",
     "status": "Ozenjen",
@@ -33,7 +26,7 @@
     "gender": "Muski",
     "NotesForAnamnesis": [
       {
-        "description": "Sve okej.",
+        "description": "Trcati ujutru.",
         "StartDate": "0001-01-01T00:00:00",
         "EndDate": "0001-01-01T00:00:00",
         "IsSetReminder": false

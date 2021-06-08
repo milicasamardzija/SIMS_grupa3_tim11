@@ -227,9 +227,6 @@
     <Compile Include="View\Pacijent\PrioritetPage.xaml.cs">
       <DependentUpon>PrioritetPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\Terapija.xaml.cs">
-      <DependentUpon>Terapija.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Secretary\CRUDPatient\RegistredPatient\BlokiraniPacijenti.xaml.cs">
       <DependentUpon>BlokiraniPacijenti.xaml</DependentUpon>
     </Compile>
@@ -379,6 +376,9 @@
     <Compile Include="View\Doctor\ZamenaLekova.xaml.cs">
       <DependentUpon>ZamenaLekova.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\TerapijaPage.xaml.cs">
+      <DependentUpon>TerapijaPage.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\Doctor\AddDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -460,10 +460,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pacijent\PrioritetPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\Terapija.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -981,6 +977,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Doctor\ZamenaLekova.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TerapijaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

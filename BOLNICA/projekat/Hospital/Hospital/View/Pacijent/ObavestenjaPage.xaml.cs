@@ -27,7 +27,10 @@ namespace Hospital.View.Pacijent
         private List<string> termini;
         private String danas;
         private String datum;
-        
+        private List<string> moje;
+
+
+
         private int result;
 
         private PocetnaPacijent parent;
@@ -40,6 +43,8 @@ namespace Hospital.View.Pacijent
             lista.Add("Andol 100 14:00");
             lista.Add("Midol 5mg 22:00");
             termini = new List<string>();
+            moje = new List<string>();
+
 
             terapija.ItemsSource = lista;
 
@@ -49,6 +54,20 @@ namespace Hospital.View.Pacijent
 
             danas = DateTime.Now.Date.ToString();
 
+            AnamnesisFileStorage anamneze = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
+            List<Note> notes = new List<Note>();
+            foreach (Anamnesis a in anamneze.GetAll())
+            {
+                if (a.NotesForAnamnesis != null)
+                {
+                    foreach (Note n in a.NotesForAnamnesis)
+                    {
+
+                        moje.Add(n.description.ToString());
+                    }
+                }
+            }
+            beleske.ItemsSource = moje;
 
             foreach (Checkup appointment in rs)
             {
@@ -67,7 +86,7 @@ namespace Hospital.View.Pacijent
             }
 
         //    termini.Add("Sutra imate zakazan pregled.Provjerite kalendar.");
-            termini.Add(danas);
+          
             obavestenja.ItemsSource = termini;
             
             
