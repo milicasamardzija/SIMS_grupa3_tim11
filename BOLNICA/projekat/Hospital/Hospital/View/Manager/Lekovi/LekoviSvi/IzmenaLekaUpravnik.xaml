@@ -15,32 +15,40 @@
         <TextBox Name="GramazaTxt" Text="{Binding Medicine.Quantity}" HorizontalAlignment="Left" Height="34" Margin="226,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18" />
         <Label Content="Zamenski lekovi" Foreground="#FFFFC800" HorizontalAlignment="Left" Margin="42,352,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.234,3.518"/>
         <Label Content="Sastojci" Foreground="#FFFFC800" HorizontalAlignment="Left" Margin="42,192,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.908,3.708"/>
-        <DataGrid Name="SastojciBaza" ItemsSource="{Binding Path = IngredientsBase}" AutoGenerateColumns="False" Background="#FFDFD7BB" HorizontalAlignment="Left" Height="134" Margin="226,192,0,0" VerticalAlignment="Top" Width="244">
+        <DataGrid Name="SastojciBaza" ItemsSource="{Binding Path = IngredientsBase}" AutoGenerateColumns="False" Background="#FFDFD7BB" HorizontalAlignment="Left" Height="134" Margin="873,192,0,0" VerticalAlignment="Top" Width="244">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Dodaj sastojak" Background="#FFFFC800" Click="dodajSastojak" HorizontalAlignment="Left" Margin="566,192,0,0" VerticalAlignment="Top" Width="204" FontSize="18" Height="49" FontWeight="Bold" RenderTransformOrigin="0.476,-0.541"/>
-        <Button Content="Dodaj zamenski lek" Background="#FFFFC800" Click="dodajZamenskiLek" HorizontalAlignment="Left" Margin="566,358,0,0" VerticalAlignment="Top" Width="204" FontSize="18" FontWeight="Bold" Height="50" RenderTransformOrigin="0.506,-0.291"/>
-        <DataGrid x:Name="ZamenskilekoviBaza" ItemsSource="{Binding Path = MedicinesBase}" AutoGenerateColumns="False"  Background="#FFDFD7BB" HorizontalAlignment="Left" Height="134" Margin="226,358,0,0" VerticalAlignment="Top" Width="244">
+        <Button Background="#FFFFC800" Click="dodajSastojak" HorizontalAlignment="Left" Margin="623,192,0,0" VerticalAlignment="Top" Width="88" FontSize="18" Height="34" FontWeight="Bold" RenderTransformOrigin="0.476,-0.541">
+            <Image Source="../../../Images/Manager/left-32.png"></Image>
+        </Button>
+        <Button Background="#FFFFC800" Click="dodajZamenskiLek" HorizontalAlignment="Left" Margin="623,358,0,0" VerticalAlignment="Top" Width="88" FontSize="18" FontWeight="Bold" Height="34" RenderTransformOrigin="0.506,-0.291">
+            <Image Source="../../../Images/Manager/left-32.png"></Image>
+        </Button>
+        <DataGrid x:Name="ZamenskilekoviBaza" ItemsSource="{Binding Path = MedicinesBase}" AutoGenerateColumns="False"  Background="#FFDFD7BB" HorizontalAlignment="Left" Height="134" Margin="873,358,0,0" VerticalAlignment="Top" Width="244" RenderTransformOrigin="1.131,0.459">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="SastojciLek" ItemsSource="{Binding Path = IngredientsMedicine}" Background="#FFDFD7BB" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="134" Margin="873,192,0,0" VerticalAlignment="Top" Width="244">
+        <DataGrid x:Name="SastojciLek" ItemsSource="{Binding Path = IngredientsMedicine}" Background="#FFDFD7BB" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="134" Margin="226,192,0,0" VerticalAlignment="Top" Width="244">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="ZamenskiLekoviLek" ItemsSource="{Binding Path = ReplacementMedicine}" Background="#FFDFD7BB" AutoGenerateColumns="False"  HorizontalAlignment="Left" Height="134" Margin="873,358,0,0" VerticalAlignment="Top" Width="244">
+        <DataGrid x:Name="ZamenskiLekoviLek" ItemsSource="{Binding Path = ReplacementMedicine}" Background="#FFDFD7BB" AutoGenerateColumns="False"  HorizontalAlignment="Left" Height="134" Margin="226,358,0,0" VerticalAlignment="Top" Width="244">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Potvrdi" Click="Potvrdi" Background="#FFFFC800" HorizontalAlignment="Left" Margin="455,534,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43"/>
-            <Button Content="Odustani" Click="Odustani" Background="#FFFFC800" HorizontalAlignment="Left" Margin="733,534,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43"/>
+        <Button Content="Potvrdi" Click="Potvrdi" Background="#FFFFC800" HorizontalAlignment="Left" Margin="226,534,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43"/>
+            <Button Content="Odustani" Click="Odustani" Background="#FFFFC800" HorizontalAlignment="Left" Margin="969,534,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43" RenderTransformOrigin="2.005,0.378"/>
         <Label Content="" HorizontalAlignment="Left" Margin="701,26,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
-        <Button Content="Izbrisi sastojak" Background="#FFFFC800" Click="isbrisiSastojak" HorizontalAlignment="Left" Margin="566,277,0,0" VerticalAlignment="Top" Width="204" FontSize="18" Height="49" FontWeight="Bold" RenderTransformOrigin="0.476,-0.541"/>
-        <Button Content="Izbrisi zamenski lek" Background="#FFFFC800" Click="izbrisiZamenskiLek" HorizontalAlignment="Left" Margin="566,442,0,0" VerticalAlignment="Top" Width="204" FontSize="18" FontWeight="Bold" Height="50" RenderTransformOrigin="0.573,2.051"/>
+        <Button  Background="#FFFFC800" Click="isbrisiSastojak" HorizontalAlignment="Left" Margin="623,292,0,0" VerticalAlignment="Top" Width="88" FontSize="18" Height="34" FontWeight="Bold" RenderTransformOrigin="0.476,-0.541">
+            <Image Source="../../../Images/Manager/right-32.png"></Image>
+        </Button>
+        <Button  Background="#FFFFC800" Click="izbrisiZamenskiLek" HorizontalAlignment="Left" Margin="623,458,0,0" VerticalAlignment="Top" Width="88" FontSize="18" FontWeight="Bold" Height="34" RenderTransformOrigin="0.573,2.051">
+            <Image Source="../../../Images/Manager/right-32.png"></Image>
+        </Button>
     </Grid>
 </UserControl>
