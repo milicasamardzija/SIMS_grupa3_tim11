@@ -1,6 +1,4 @@
 ﻿using Hospital.Controller;
-using MindFusion.Graphs;
-using MindFusion.Pdf;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
 using Syncfusion.Pdf.Tables;
@@ -11,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Navigation;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -18,6 +17,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Drawing;
+
 
 namespace Hospital
 {
@@ -48,8 +49,8 @@ namespace Hospital
 
                 font = new PdfStandardFont(PdfFontFamily.Helvetica, 9);
                 StringBuilder stringBuilder = new StringBuilder("");
-                stringBuilder.Append("Prikazan je izvestaj pregleda pacijenta koji se odvio u periodu od ");
-                //graphics.DrawString(stringBuilder.ToString(), font, PdfBrushes.Black, new PointF(28, 180));
+                stringBuilder.Append("Prikazan je izvestaj pregleda pacijenata koji se odvio u periodu od ");
+                graphics.DrawString(stringBuilder.ToString(), font, PdfBrushes.Black, new PointF(28, 180));
                 stringBuilder = new StringBuilder("");
                 stringBuilder.Append(Convert.ToDateTime(datePicker1.Text).ToString("dd.MM.yyyy.")).Append(" do ")
                     .Append(Convert.ToDateTime(datePicker2.Text).ToString("dd.MM.yyyy."));
@@ -60,18 +61,18 @@ namespace Hospital
                 
                 table.Columns.Add("Ime i prezime pacijenta");
                 table.Columns.Add("Datum rodjenja pacijenta");
-                table.Columns.Add("Opis");
+                //table.Columns.Add("Opis");
 
-                table.Rows.Add(new string[] { "Ime i prezime pacijenta", "Datum rodjenja pacijenta", "Opis" });
+                table.Rows.Add(new string[] { "Ime i prezime pacijenta", "Datum rodjenja pacijenta"/*, "Opis" */});
 
-                String summary = "";
+                //String summary = "Pacijent se dobro oseca nakon uzimanja terapije";
 
-                foreach(Patient patient in storagePatient.GetAll())
-                {
+                 foreach(Patient patient in storagePatient.GetAll())
+                 {
                     String name = patient.Name + " " + patient.Surname;
                     table.Rows.Add(new string[] {
                         name, patient.BirthdayDate.ToString(),
-                        summary
+                        /*summary*/
                     });
                 }
                 pdfLightTable.DataSource = table;
