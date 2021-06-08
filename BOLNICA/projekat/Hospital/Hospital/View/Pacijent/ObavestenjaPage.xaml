@@ -8,9 +8,33 @@
       d:DesignHeight="450" d:DesignWidth="350"
       Title="ObavestenjaPage">
 
+    <Page.Resources>
+        <Style TargetType="{x:Type Button}" x:Key="MyButtonDesign">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="MyContentPresenter" 
+                                Content="{TemplateBinding Content}"
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
 
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False"/>
+                <Trigger Property="IsEnabled" Value="True"/>
+                <Trigger Property="IsMouseOver" Value="True"/>
+
+            </Style.Triggers>
+
+        </Style>
+
+    </Page.Resources>
     <Grid>
-        <Button   Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="10,21,0,0" FontSize="22" Height="19" Click="odustani" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6" RenderTransformOrigin="0.186,3.958">
+        <Button   Style="{StaticResource MyButtonDesign}" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="10,21,0,0" FontSize="22" Height="19" Click="odustani"   RenderTransformOrigin="0.186,3.958">
             <Button.Background>
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
             </Button.Background>

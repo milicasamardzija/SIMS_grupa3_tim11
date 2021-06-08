@@ -34,7 +34,11 @@
 
     </Page.Resources>
     <Grid>
-        <Button    Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Margin="105,345,0,0" Height="35" Click="pdf" Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="73*"/>
+        </Grid.RowDefinitions>
+        <Button    Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Margin="105,260,0,0" Height="35" Click="pdf" Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20" Grid.Row="1">
             <StackPanel Orientation="Horizontal">
                 <Image Source="tretman.png" Stretch="None" Width="37" Height="40" />
                 <TextBlock Margin="0,6,0,0" Width="43" FontSize="15" Height="37" ><Run Text="PDF"/></TextBlock>
@@ -51,14 +55,14 @@
             </Button.Resources>
 
         </Button>
-        <Button  Style="{StaticResource MyButtonDesign}" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="10,10,0,0" FontSize="22" Height="19" Click="Nazad_na_pocetnu" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6">
+        <Button  Style="{StaticResource MyButtonDesign}" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="20" Margin="10,10,0,0" FontSize="22"  Click="Nazad_na_pocetnu" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6" RenderTransformOrigin="0.359,-0.096">
             <Button.Background>
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
 
-        <calendar:Calendar x:Name="Calendar" Margin="10,65,10.4,69.6"  Background="white" />
-        <Label Content="   Propisana terapija"  Foreground="White" Background="#FF64CCF1"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,10,0,0"  Width="181" Height="37" FontSize="18">
+        <calendar:Calendar x:Name="Calendar" Margin="10,60,10.4,84.6"  Background="white" Grid.RowSpan="2" />
+        <Label Content="   Propisana terapija"  Foreground="White" Background="#FF64CCF1"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="84,6,0,0"  Width="181" Height="37" FontSize="18">
             <Label.Resources>
                 <Style TargetType="Border">
 

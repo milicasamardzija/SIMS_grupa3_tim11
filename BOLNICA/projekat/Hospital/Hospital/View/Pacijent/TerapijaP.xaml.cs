@@ -33,7 +33,14 @@ namespace Hospital.View.Pacijent
             parent = p;
             Calendar.Days[0].Notes = "ampril 12:00h";
             Calendar.Days[2].Notes = "analgin 10:00h";
-            Calendar.Days[2].Notes = "paracetamol 13:00h";
+            Calendar.Days[3].Notes = "paracetamol 13:00h";
+            Calendar.Days[10].Notes = "paracetamol 13:00h";
+            Calendar.Days[5].Notes = "ampril 12:00h";
+            Calendar.Days[8].Notes = "analgin 10:00h";
+            Calendar.Days[13].Notes = "ampril 10:00h";
+            Calendar.Days[16].Notes = "plavix 13:00h";
+
+
 
         }
         private void Nazad_na_pocetnu(object sender, RoutedEventArgs e)

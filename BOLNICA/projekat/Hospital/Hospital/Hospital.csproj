@@ -1224,5 +1224,17 @@
       <Name>MyCalendar.Calendar</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\logoo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\zdravo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\logo5png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo5.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,6 +9,7 @@
            mc:Ignorable="d"
                Title="" Height="500" Width="350" WindowStartupLocation="CenterScreen" Background="AliceBlue">
     <Window.Resources>
+
         <Style TargetType="Button" x:Key="MyButtonDesign">
             <Setter Property="Template">
                 <Setter.Value>
@@ -63,7 +64,10 @@
 
             </Button.Resources>
 
+
         </Button>
+        <Image Source="logo5.png" Stretch="None" Margin="545,40,-30,955" />
+
         <Button  Background="#FF64CCF1"  Content="BLOG" FontSize="15" Grid.Column="1" Foreground="White" HorizontalAlignment="Left" Margin="100,315.4,0,0" VerticalAlignment="Top" Width="145" Height="40" Grid.Row="1" BorderBrush="#FFEEEBEB" Click="blog">
             <Button.Resources>
                 <Style TargetType="Border">
@@ -89,6 +93,6 @@
         </Button>
         <Label Content="Zdravo bolnica" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="210" Grid.Column="1" Margin="70,34.4,0,0" Grid.Row="1"  Foreground="#FF64CCF1"   FontSize="28" RenderTransformOrigin="0.72,0.583" FontWeight="Bold" />
 
-     
+
     </Grid>
 </Window>

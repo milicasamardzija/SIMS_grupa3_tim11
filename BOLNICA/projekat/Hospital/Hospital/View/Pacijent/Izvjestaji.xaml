@@ -9,14 +9,17 @@
       d:DesignHeight="1200" d:DesignWidth="800"
       Title="Izvjestaji">
     <Grid Background="White">
-        <Label Content="Izvještaj o uzimanju terapije" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Height="60" Width="430" Margin="220,175,0,0"/>
+        <Image Source="logo5png.png" Stretch="None" Margin="545,-305,-30,520" />
+        <Label Content="Izvještaj o uzimanju terapije" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Height="60" Width="430" Margin="205,215,0,0"/>
         <Label Content="Vase Pelagica 6" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Height="45" Width="150" Margin="10,10,0,0"/>
         <Label Content="21000 Novi Sad,Srbija" HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Top" Margin="10,40,0,0"/>
         <Label Content="Telefon: 066/8529761"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,77,0,0" Width="202" Height="37"/>
         <Label Content="Email:zdravobolnica@gmail.com " FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,114,0,0"/>
         <Label Content="Datum: 09/06/2021"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="603,10,0,0"/>
+        <Label Content="JUN 2021"   FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="315,280,0,0" Height="65" Width="180"/>
 
-        <calendar:Calendar x:Name="Calendar" Margin="55,265,50,70"  Background="white" />
+
+        <calendar:Calendar x:Name="Calendar" Margin="55,350,60,70"  Background="white" />
 
     </Grid>
 </Page>
