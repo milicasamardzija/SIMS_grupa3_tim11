@@ -14,7 +14,7 @@
     "birthdayDate": "2021-04-09T00:00:00",
     "username": "braca",
     "password": "braca",
-    "doctorId": 0,
+    "id": 0,
     "specializationType": 1
   },
   {
@@ -32,12 +32,12 @@
     "birthdayDate": "2021-04-09T00:00:00",
     "username": "mita",
     "password": "mita",
-    "doctorId": 1,
+    "id": 1,
     "specializationType": 0
   },
   {
-    "name": "Pera",
-    "surname": "Peric",
+    "name": "Stefan",
+    "surname": "Marinkov",
     "adress": {
       "street": "Vojove Misica",
       "streetNumber": 14,
@@ -50,7 +50,7 @@
     "birthdayDate": "2021-04-09T00:00:00",
     "username": "mita",
     "password": "mita",
-    "doctorId": 2,
+    "id": 2,
     "specializationType": 1
   },
   {
@@ -68,7 +68,7 @@
     "birthdayDate": "2021-04-09T00:00:00",
     "username": "mita",
     "password": "mita",
-    "doctorId": 3,
+    "id": 3,
     "specializationType": 3
   },
   {
@@ -86,7 +86,7 @@
     "birthdayDate": "2021-04-09T00:00:00",
     "username": "mita",
     "password": "mita",
-    "doctorId": 4,
+    "id": 4,
     "specializationType": 4
   },
   {
@@ -104,7 +104,7 @@
     "birthdayDate": "2021-04-09T00:00:00",
     "username": "braca",
     "password": "braca",
-    "doctorId": 5,
+    "id": 5,
     "specializationType": 2
   },
   {
@@ -122,7 +122,7 @@
     "birthdayDate": "2021-04-09T00:00:00",
     "username": "braca",
     "password": "braca",
-    "doctorId": 6,
+    "id": 6,
     "specializationType": 6
   },
   {
@@ -140,7 +140,7 @@
     "birthdayDate": "2021-04-09T00:00:00",
     "username": "veca",
     "password": "veca",
-    "doctorId": 7,
+    "id": 7,
     "specializationType": 7
   },
 
@@ -159,7 +159,7 @@
     "birthdayDate": "2021-04-09T00:00:00",
     "username": "veca",
     "password": "veca",
-    "doctorId": 7,
+    "id": 7,
     "specializationType": 6
   }
 ]

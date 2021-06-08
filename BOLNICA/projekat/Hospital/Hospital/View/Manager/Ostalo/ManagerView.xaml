@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hospital"
         xmlns:help="clr-namespace:Hospital.View.Manager.Help"
         mc:Ignorable="d"
-        Title="ManagerView" WindowStartupLocation="CenterScreen" Height="667.064" Width="1280" Background="AliceBlue" AllowsTransparency="True" WindowStyle="None"  help:HelpProvider.HelpKey="Forma">
+        Title="ManagerView" WindowStartupLocation="CenterScreen" Height="667.064" Width="1280" Background="AliceBlue" AllowsTransparency="True" WindowStyle="None">
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Help" Executed="CommandBinding_Executed"/>
     </Window.CommandBindings>
@@ -16,7 +16,7 @@
                 FontSize="22"
                 FontWeight="Bold"
                 Header="     MAGACIN"
-                TextElement.Foreground="#FF373434" Click="magacin" Width="150" help:HelpProvider.HelpKey="HTMLPage1">
+                TextElement.Foreground="#FF373434" Click="magacin" Width="150">
                 <MenuItem.Background>
                     <ImageBrush
                         AlignmentX="Left"
@@ -45,6 +45,16 @@
                 </MenuItem.Background>
             </MenuItem>
             <GridSplitter Background="#FF373434" Height="42" Width="5"/>
+            <MenuItem Header="      ZAPOSLENI" FontSize="22"
+                      FontWeight="Bold"
+                      TextElement.Foreground="#FF373434" Click="zaposleni" >
+                <MenuItem.Background>
+                    <ImageBrush
+                        AlignmentX="Left"
+                        ImageSource="/Hospital;component/View/Images/Manager/message-32.png" Stretch="None" TileMode="FlipXY" />
+                </MenuItem.Background>
+            </MenuItem>
+            <GridSplitter Background="#FF373434" Height="42" Width="5"/>
             <MenuItem Header="      OBAVESTENJA" FontSize="22"
                       FontWeight="Bold"
                       TextElement.Foreground="#FF373434" Click="obavestenja" >
@@ -62,7 +72,7 @@
             <MenuItem Header="Iskljuciti tooltip-ove" FontSize="16"
                       FontWeight="Bold"
                       TextElement.Foreground="#FF373434" Click="iskljuci" Width="190" />
-            <TextBox Height="23" TextWrapping="Wrap" Text="TextBox" Width="120" help:HelpProvider.HelpKey="HTMLPage1"/>
+
         </Menu>
         <Frame Name="frame" Background="#FFDFD7BB" HorizontalAlignment="Left" Margin="0,40,0,0" VerticalAlignment="Top" Height="627" Width="1280" NavigationUIVisibility="Hidden" RenderTransformOrigin="0.5,0.5" />
     </Grid>

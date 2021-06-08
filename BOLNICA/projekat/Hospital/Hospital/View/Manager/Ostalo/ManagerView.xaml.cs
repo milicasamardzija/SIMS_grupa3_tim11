@@ -16,6 +16,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Hospital.View.Manager.Zaposleni;
 using Application = System.Windows.Application;
 using HelpProvider = Hospital.View.Manager.Help.HelpProvider;
 using MessageBox = System.Windows.MessageBox;
@@ -134,6 +135,11 @@ namespace Hospital
                 MessageBox.Show(str);
                 View.Manager.Help.HelpProvider.ShowHelp(str, this);
             }
+        }
+
+        private void zaposleni(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new ZaposleniPrikaz());
         }
     }
 }

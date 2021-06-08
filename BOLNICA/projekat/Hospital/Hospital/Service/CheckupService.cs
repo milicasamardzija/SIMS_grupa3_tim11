@@ -48,7 +48,25 @@ namespace Hospital.Service
             return val; //vracam prvi koji je dostupan 
         }
 
-       
+        internal List<Checkup> getCheckupDoctorsAndTime(DateTime dateBegin, DateTime dateEnd, int idDoctor)
+        {
+            List<Checkup> checkups = new List<Checkup>();
+            foreach (Checkup checkup in checkupStorage.GetAll())
+            {
+                if (checkup.IdDoctor == idDoctor && checkup.Date == dateBegin)
+                {
+                    checkups.Add(checkup);
+                } else if (checkup.IdDoctor == idDoctor && checkup.Date == dateEnd)
+                {
+                    checkups.Add(checkup);
+                }
+                else if (checkup.IdDoctor == idDoctor && checkup.Date < dateEnd && checkup.Date > dateBegin)
+                {
+                    checkups.Add(checkup);
+                }
+            }
+            return checkups;
+        }
 
         public List<Checkup> getCheckupDoctors(int idDoctor)
         {

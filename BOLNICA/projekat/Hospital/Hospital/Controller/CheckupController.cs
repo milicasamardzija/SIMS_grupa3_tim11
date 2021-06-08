@@ -38,6 +38,16 @@ namespace Hospital.Controller
             return checkups;
         }
 
+        public List<Checkup> getCheckupDoctorsAndTime(DateTime dateTimeBegin, DateTime dateTimeEnd, int idDoctor)
+        {
+            return service.getCheckupDoctorsAndTime(dateTimeBegin, dateTimeEnd, idDoctor);
+        }
+
+        internal List<Checkup> getCheckupInPeriod(DateTime dateTime1, DateTime dateTime2)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Checkup> getAvailableTimes(DateTime date, Doctor doctor)
         {
             List<Checkup> checkups = new List<Checkup>();
