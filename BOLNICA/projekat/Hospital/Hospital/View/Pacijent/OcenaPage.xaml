@@ -89,7 +89,7 @@
             </Button.Resources>
 
         </Button>
-        <Button   Style="{ StaticResource MyButtonDesign}" Content="" HorizontalAlignment="Right" VerticalAlignment="Top" Width="25" Margin="0,10,300.4,0" FontSize="22" Height="35" Click="Nazad_na_pocetnu" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6" RenderTransformOrigin="-4.566,0.8">
+        <Button   Style="{ StaticResource MyButtonDesign}" Content="" HorizontalAlignment="Right" VerticalAlignment="Top" Width="20" Margin="0,17,320.4,0" FontSize="22" Height="20" Click="Nazad_na_pocetnu" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6" RenderTransformOrigin="-4.566,0.8">
             <Button.Background>
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
             </Button.Background>

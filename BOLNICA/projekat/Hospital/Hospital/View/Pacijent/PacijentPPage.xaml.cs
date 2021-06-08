@@ -57,9 +57,8 @@ namespace Hospital.View.Pacijent
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-          //  Terapija terapija = new Terapija();
-          //  terapija.Show();
-           // this.Close();
+            parent.startWindow.Content = new TerapijaP(parent);
+
         }
     }
 }

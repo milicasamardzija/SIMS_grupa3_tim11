@@ -188,8 +188,8 @@
     <Compile Include="View\Pacijent\IzmeniPage.xaml.cs">
       <DependentUpon>IzmeniPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\Izvjestaj.xaml.cs">
-      <DependentUpon>Izvjestaj.xaml</DependentUpon>
+    <Compile Include="View\Pacijent\Izvjestaji.xaml.cs">
+      <DependentUpon>Izvjestaji.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pacijent\KartonPage.xaml.cs">
       <DependentUpon>KartonPage.xaml</DependentUpon>
@@ -226,6 +226,9 @@
     </Compile>
     <Compile Include="View\Pacijent\PrioritetPage.xaml.cs">
       <DependentUpon>PrioritetPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pacijent\TerapijaP.xaml.cs">
+      <DependentUpon>TerapijaP.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Secretary\CRUDPatient\RegistredPatient\BlokiraniPacijenti.xaml.cs">
       <DependentUpon>BlokiraniPacijenti.xaml</DependentUpon>
@@ -376,9 +379,6 @@
     <Compile Include="View\Doctor\ZamenaLekova.xaml.cs">
       <DependentUpon>ZamenaLekova.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\TerapijaPage.xaml.cs">
-      <DependentUpon>TerapijaPage.xaml</DependentUpon>
-    </Compile>
     <Page Include="View\Doctor\AddDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -411,7 +411,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pacijent\Izvjestaj.xaml">
+    <Page Include="View\Pacijent\Izvjestaji.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -460,6 +460,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pacijent\PrioritetPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pacijent\TerapijaP.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -980,10 +984,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\TerapijaPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\MedicalRecord\BloodType.cs" />
@@ -1153,12 +1153,6 @@
     <Resource Include="View\Pacijent\slika.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\..\..\Downloads\CalendarExample2\CalendarExample2\MojKalendar\Jarloo.Calendar\MyCalendar.Calendar.csproj">
-      <Project>{31c3b4a7-504b-4eff-bacc-c8f2ffe5af6f}</Project>
-      <Name>MyCalendar.Calendar</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="View\Pacijent\potvrda.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1223,6 +1217,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="View\Pacijent\poruka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\..\Desktop\CalendarExample2\MojKalendar\Jarloo.Calendar\MyCalendar.Calendar.csproj">
+      <Project>{31c3b4a7-504b-4eff-bacc-c8f2ffe5af6f}</Project>
+      <Name>MyCalendar.Calendar</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

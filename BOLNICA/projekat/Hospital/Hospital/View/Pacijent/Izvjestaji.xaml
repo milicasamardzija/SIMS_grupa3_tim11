@@ -1,0 +1,22 @@
+﻿<Page x:Class="Hospital.View.Pacijent.Izvjestaji"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hospital.View.Pacijent"
+      xmlns:calendar="clr-namespace:MyCalendar.Calendar;assembly=MyCalendar.Calendar"
+      mc:Ignorable="d" 
+      d:DesignHeight="1200" d:DesignWidth="800"
+      Title="Izvjestaji">
+    <Grid Background="White">
+        <Label Content="Izvještaj o uzimanju terapije" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Height="60" Width="430" Margin="220,175,0,0"/>
+        <Label Content="Vase Pelagica 6" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Height="45" Width="150" Margin="10,10,0,0"/>
+        <Label Content="21000 Novi Sad,Srbija" HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Top" Margin="10,40,0,0"/>
+        <Label Content="Telefon: 066/8529761"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,77,0,0" Width="202" Height="37"/>
+        <Label Content="Email:zdravobolnica@gmail.com " FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,114,0,0"/>
+        <Label Content="Datum: 09/06/2021"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="603,10,0,0"/>
+
+        <calendar:Calendar x:Name="Calendar" Margin="55,265,50,70"  Background="white" />
+
+    </Grid>
+</Page>

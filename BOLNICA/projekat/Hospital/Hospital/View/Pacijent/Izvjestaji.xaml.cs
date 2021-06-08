@@ -13,16 +13,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Hospital.View
+namespace Hospital.View.Pacijent
 {
     /// <summary>
-    /// Interaction logic for TerapijaPage.xaml
+    /// Interaction logic for Izvjestaji.xaml
     /// </summary>
-    public partial class TerapijaPage : Page
+    public partial class Izvjestaji : Page
     {
-        public TerapijaPage()
+        public Izvjestaji()
         {
             InitializeComponent();
+            Calendar.Days[0].Notes = "ampril 12:00h";
+            Calendar.Days[2].Notes = "analgin 10:00h";
+            Calendar.Days[2].Notes = "paracetamol 13:00h";
         }
     }
 }
