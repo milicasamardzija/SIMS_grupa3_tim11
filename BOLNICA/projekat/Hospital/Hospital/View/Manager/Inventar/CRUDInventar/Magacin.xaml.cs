@@ -3,6 +3,7 @@ using Hospital.FileStorage.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Hospital.Controller;
+using Hospital.View.Manager.Ostalo;
 
 namespace Hospital
 {
@@ -185,7 +187,7 @@ namespace Hospital
 
         void setTooltips()
         {
-            if (ManagerView.isToolTipVisible)
+            if (ProfilUpravnik.isToolTipVisible)
             {
                 Style style = new Style(typeof(ToolTip));
                 style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));

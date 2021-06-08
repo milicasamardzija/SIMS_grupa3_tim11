@@ -15,13 +15,13 @@ namespace Hospital.ValidationManager
             try
             {
                 var s = value as string;
-                int r;
+                double r;
 
-                if (int.TryParse(s, out r))
+                if (double.TryParse(s, out r))
                 {
                     return new ValidationResult(true, null);
                 }
-                return new ValidationResult(false, "Please enter a valid double value.");
+                return new ValidationResult(false, "Unesite ");
             }
             catch
             {

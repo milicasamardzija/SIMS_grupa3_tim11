@@ -151,6 +151,15 @@
     <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeRecenzijeUpravnik.xaml.cs">
       <DependentUpon>BrisanjeRecenzijeUpravnik.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Ostalo\Informacije.xaml.cs">
+      <DependentUpon>Informacije.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Ostalo\O klinici.xaml.cs">
+      <DependentUpon>O klinici.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Ostalo\ProfilUpravnik.xaml.cs">
+      <DependentUpon>ProfilUpravnik.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Prostorije\CRUDProstorije\IzbrisiProstorijuPotvrda.xaml.cs">
       <DependentUpon>IzbrisiProstorijuPotvrda.xaml</DependentUpon>
     </Compile>
@@ -421,6 +430,18 @@
     <Page Include="View\Manager\Ostalo\BelsekaMagacin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Manager\Ostalo\Informacije.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Ostalo\O klinici.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Ostalo\ProfilUpravnik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Prostorije\CRUDProstorije\IzbrisiProstorijuPotvrda.xaml">
       <SubType>Designer</SubType>
@@ -1159,6 +1180,10 @@
     <Content Include="Help\HTMLPage1.html" />
     <Content Include="Help\HTMLPage2.html" />
     <Content Include="Help\index.html" />
+    <Resource Include="View\Images\Manager\info-32.png" />
+    <Resource Include="View\Images\Manager\profile.png" />
+    <Resource Include="View\Images\Manager\manager-32.png" />
+    <Resource Include="View\Images\Manager\conference-call-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

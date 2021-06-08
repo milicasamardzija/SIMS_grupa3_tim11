@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.View.Manager.Ostalo;
 
 namespace Hospital
 {
@@ -39,7 +40,7 @@ namespace Hospital
 
         void setTooltips()
         {
-            if (ManagerView.isToolTipVisible)
+            if (ProfilUpravnik.isToolTipVisible)
             {
                 Style style = new Style(typeof(ToolTip));
                 style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));

@@ -16,11 +16,17 @@
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Izmeni.
+            </Button.ToolTip>
         </Button>
         <Button Background="#FFFFC800" Foreground="#FF373434" Content="Odustani" HorizontalAlignment="Left" Margin="267,316,0,0" VerticalAlignment="Top" Width="157" RenderTransformOrigin="1.7,10.906" FontSize="30" Height="48" FontWeight="Bold" Click="odustani">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Odustani.
+            </Button.ToolTip>
         </Button>
         <ComboBox Name="TypeTxt" SelectedValue="{Binding Path=Inventory.Type , UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="180,41,0,0" VerticalAlignment="Top" Width="244" Height="41" FontSize="18">
         </ComboBox>

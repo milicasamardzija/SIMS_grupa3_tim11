@@ -11,11 +11,17 @@
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na ovo dugme mozete izvrsiti promenu evidenciju inventara u trenutku.
+            </Button.ToolTip>
         </Button>
         <Button Click="zakaziPremestanje"  Background="#FFFFC800" Foreground="#FF373434" Content="Zakazi premestanje" FontWeight="Bold" FontSize="18" Margin="128,260,124.4,101">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na ovo dugme mozete izvrsiti zakazivanje premestanja inventara.
+            </Button.ToolTip>
         </Button>
     </Grid>
 </UserControl>

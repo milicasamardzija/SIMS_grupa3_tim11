@@ -12,6 +12,16 @@
     </Window.CommandBindings>
     <Grid>
         <Menu HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="1280" Background="#ffc800" Margin="0,0,-6.4,0" Grid.ColumnSpan="2">
+            <MenuItem Header="      PROFIL" FontSize="22"
+                      FontWeight="Bold"
+                      TextElement.Foreground="#FF373434" Click="profil" >
+                <MenuItem.Background>
+                    <ImageBrush
+                        AlignmentX="Left"
+                        ImageSource="/Hospital;component/View/Images/Manager/manager-32.png" Stretch="None" TileMode="FlipXY" />
+                </MenuItem.Background>
+            </MenuItem>
+            <GridSplitter Background="#FF373434" Height="42" Width="5"/>
             <MenuItem
                 FontSize="22"
                 FontWeight="Bold"
@@ -51,7 +61,7 @@
                 <MenuItem.Background>
                     <ImageBrush
                         AlignmentX="Left"
-                        ImageSource="/Hospital;component/View/Images/Manager/message-32.png" Stretch="None" TileMode="FlipXY" />
+                        ImageSource="/Hospital;component/View/Images/Manager/conference-call-32.png" Stretch="None" TileMode="FlipXY" />
                 </MenuItem.Background>
             </MenuItem>
             <GridSplitter Background="#FF373434" Height="42" Width="5"/>
@@ -65,14 +75,18 @@
                 </MenuItem.Background>
             </MenuItem>
             <GridSplitter Background="#FF373434" Height="42" Width="5"/>
-            <MenuItem Header="Ukljuciti tooltip-ove" FontSize="16"
-                      FontWeight="Bold"
-                      TextElement.Foreground="#FF373434" Click="ukljuci" Width="190" />
-            <GridSplitter Background="#FF373434" Height="42" Width="5"/>
-            <MenuItem Header="Iskljuciti tooltip-ove" FontSize="16"
-                      FontWeight="Bold"
-                      TextElement.Foreground="#FF373434" Click="iskljuci" Width="190" />
+            <MenuItem
+                FontSize="22"
+                FontWeight="Bold"
+                Header="     O KLINICI"
+                TextElement.Foreground="#FF373434" Click="klinika" Width="150">
+                <MenuItem.Background>
+                    <ImageBrush
+                        AlignmentX="Left"
+                        ImageSource="/Hospital;component/View/Images/Manager/info-32.png" Stretch="None" TileMode="FlipXY" />
+                </MenuItem.Background>
 
+            </MenuItem>
         </Menu>
         <Frame Name="frame" Background="#FFDFD7BB" HorizontalAlignment="Left" Margin="0,40,0,0" VerticalAlignment="Top" Height="627" Width="1280" NavigationUIVisibility="Hidden" RenderTransformOrigin="0.5,0.5" />
     </Grid>
