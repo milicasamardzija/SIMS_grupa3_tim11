@@ -36,25 +36,40 @@
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Dodaj mozete dodati lek u bazu bolnice.
+            </Button.ToolTip>
         </Button>
         <Button Background="#ffc800" Foreground="#FF373434" Content="Izbrisi lek" HorizontalAlignment="Left" Margin="220,482,0,0" VerticalAlignment="Top" Width="129" Height="47" FontSize="24" FontWeight="Bold" Click="izbrisi" RenderTransformOrigin="-0.084,0.607">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Izbrisi mozete izbrisati lek iz baze bolnice.
+            </Button.ToolTip>
         </Button>
         <Button Background="#ffc800" Foreground="#FF373434" Content="Izbrisi recenziju" HorizontalAlignment="Left" Margin="531,481,0,0" VerticalAlignment="Top" Width="180" Height="47" FontSize="24" FontWeight="Bold" Click="izbrisiRezenziju" RenderTransformOrigin="0.487,0.41">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Izbrisi recenziju mozete izbrisati recenziju.
+            </Button.ToolTip>
         </Button>
-        <Button Click="unazad" Background="#ffc800" HorizontalAlignment="Left" Margin="69,556,0,0" VerticalAlignment="Top" Width="133" Height="51" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54">
+        <Button Click="unazad" Background="#ffc800" HorizontalAlignment="Left" Margin="69,563,0,0" VerticalAlignment="Top" Width="133" Height="44" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54">
             <Image Source="./../../../Images/Manager/left-64.png">
             </Image>
+            <Button.ToolTip>
+                Vratite se na prikaz odobrenih lekova u bolnici.
+            </Button.ToolTip>
         </Button>
         <Button Background="#ffc800"  Foreground="#FF373434" Content="Izmeni lek" HorizontalAlignment="Left" Margin="373,482,0,0" VerticalAlignment="Top" Width="139" Height="47" FontSize="24" FontWeight="Bold" Click="posaljiOpet" RenderTransformOrigin="0.426,2.251">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Izmeni mozete izmeniti informacije o leku.
+            </Button.ToolTip>
         </Button>
     </Grid>
 </UserControl>

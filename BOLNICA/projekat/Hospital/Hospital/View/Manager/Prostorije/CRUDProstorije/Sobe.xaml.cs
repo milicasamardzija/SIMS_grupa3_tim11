@@ -45,11 +45,14 @@ namespace Hospital
                 Style style = new Style(typeof(ToolTip));
                 style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
                 style.Seal();
-                this.Resources.Add(typeof(ToolTip), style);
+                this.Resources.Remove(typeof(ToolTip));
             }
             else
             {
-                this.Resources.Remove(typeof(ToolTip));
+                Style style = new Style(typeof(ToolTip));
+                style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+                style.Seal();
+                this.Resources.Add(typeof(ToolTip), style);
             }
         }
 

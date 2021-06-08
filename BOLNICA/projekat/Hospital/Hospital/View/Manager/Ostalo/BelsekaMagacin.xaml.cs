@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.View.Manager.Ostalo;
 
 namespace Hospital
 {
@@ -28,12 +29,31 @@ namespace Hospital
             note = notes.GetAll();
             BeleskaTxt.Text = note[id].note;
             this.id = id;
+            setTooltips();
         }
 
         private void sacuvaj(object sender, RoutedEventArgs e)
         {
             note[id].note = BeleskaTxt.Text;
             notes.SaveAll(note);
+        }
+
+        void setTooltips()
+        {
+            if (ProfilUpravnik.isToolTipVisible)
+            {
+                Style style = new Style(typeof(ToolTip));
+                style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+                style.Seal();
+                this.Resources.Remove(typeof(ToolTip));
+            }
+            else
+            {
+                Style style = new Style(typeof(ToolTip));
+                style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+                style.Seal();
+                this.Resources.Add(typeof(ToolTip), style);
+            }
         }
     }
 }

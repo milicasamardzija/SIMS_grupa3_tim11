@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Hospital.Controller;
+using Hospital.View.Manager.Ostalo;
 
 namespace Hospital
 {
@@ -33,8 +34,26 @@ namespace Hospital
             this.controller = new MedicineController();
             this.medicines = new ObservableCollection<MedicineDTO>(controller.getAll());
             LekoviFrame.NavigationService.Navigate(new BelsekaMagacin(2));
+            setTooltips();
         }
-        
+
+        void setTooltips()
+        {
+            if (ProfilUpravnik.isToolTipVisible)
+            {
+                Style style = new Style(typeof(ToolTip));
+                style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+                style.Seal();
+                this.Resources.Remove(typeof(ToolTip));
+            }
+            else
+            {
+                Style style = new Style(typeof(ToolTip));
+                style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+                style.Seal();
+                this.Resources.Add(typeof(ToolTip), style);
+            }
+        }
         private void dodaj(object sender, RoutedEventArgs e)
         {
               frame.NavigationService.Navigate(new DodavanjeLekaRevizija(frame));

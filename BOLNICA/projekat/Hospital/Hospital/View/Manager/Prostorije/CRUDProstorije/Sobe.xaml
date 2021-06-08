@@ -49,11 +49,17 @@
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Izmeni mozete izmeniti informacije o selektoovanoj bolnici.
+            </Button.ToolTip>
         </Button>
         <Button Margin="634,532,542,58" Background = "#ffc800" Click="obrisi" Content="IZBRISI" RenderTransformOrigin="0.538,0.22" FontWeight="Bold" FontSize="16" Foreground="#FF373434">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Izbrisi mozete izbrisati selektovanu prostoriju iz baze bolnice.
+            </Button.ToolTip>
         </Button>
         <Frame Name="SobeFrame" HorizontalAlignment="Left" Margin="764,92,0,0" VerticalAlignment="Top" Height="400" Width="470" />
         <StackPanel Background="#ffc800" Margin="33,92,968,450">
@@ -79,6 +85,9 @@
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Renoviranje otvara se prikaz svih zakazanih renoviranja.
+            </Button.ToolTip>
         </Button>
     </Grid>
 </UserControl>

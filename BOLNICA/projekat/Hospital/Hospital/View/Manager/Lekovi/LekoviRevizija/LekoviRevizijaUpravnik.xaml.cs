@@ -19,6 +19,7 @@ using System.Windows.Shapes;
 using Hospital.Controller;
 using Hospital.DTO;
 using Hospital.View.Manager.Lekovi.LekoviRevizija;
+using Hospital.View.Manager.Ostalo;
 
 namespace Hospital
 {
@@ -34,6 +35,25 @@ namespace Hospital
             this.frame = frame;
             medicineController = new MedicineReviewController();
             MedicineReviewList = new ObservableCollection<ReviewDTO>(medicineController.getAll());
+            setTooltips();
+        }
+
+        void setTooltips()
+        {
+            if (ProfilUpravnik.isToolTipVisible)
+            {
+                Style style = new Style(typeof(ToolTip));
+                style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+                style.Seal();
+                this.Resources.Remove(typeof(ToolTip));
+            }
+            else
+            {
+                Style style = new Style(typeof(ToolTip));
+                style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+                style.Seal();
+                this.Resources.Add(typeof(ToolTip), style);
+            }
         }
 
         private void dodaj(object sender, RoutedEventArgs e)

@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
               Height="640" Width="1280">
     <Grid Background="#FF373434">
-        <TextBlock TextWrapping="Wrap" Text="Prikaz obavestenja"
+        <TextBlock TextWrapping="Wrap" Text="Prikaz obavestenja upravnika"
                        HorizontalAlignment="Center"
                        FontStyle="Italic"
                        Foreground= "#ffc800"
