@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.DTO;
 
 namespace Hospital
 {
@@ -32,6 +33,7 @@ namespace Hospital
         private String time;
         private DataGrid tabelaPrikaz;
         private RoomsService serviceRoom = new RoomsService();
+        private RoomsController roomController = new RoomsController();
         public ZakazivanjePremestanjaStatickogInventara(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, DataGrid inventarTabela)
         {
             InitializeComponent();
@@ -43,6 +45,18 @@ namespace Hospital
             ImeTxt.SelectedText = inventory.Name;
             KolicinaTxt.SelectedText = Convert.ToString(inventory.Quantity);
             TypeTxt.SelectedIndex = (int)inventory.Type;
+            addRooms();
+        }
+        private void addRooms()
+        {
+            SobeComboBox.Items.Clear();
+            foreach (RoomDTO room in roomController.getAll())
+            {
+                ComboBoxItem item = new ComboBoxItem();
+                item.Content = Convert.ToString(room.Purpose) + " broj " + Convert.ToString(room.Id);
+                item.Tag = room.Id;
+                SobeComboBox.Items.Add(item);
+            }
         }
         private void odustani(object sender, RoutedEventArgs e)
         {
@@ -76,7 +90,7 @@ namespace Hospital
         private async void premesti(object sender, RoutedEventArgs e)
         {
             //argumenti
-            idRoom = Convert.ToInt32(IdSobeTxt.Text);
+            idRoom = Convert.ToInt32(((ComboBoxItem)SobeComboBox.SelectedItem).Tag);
             quantity = Convert.ToInt32(KolicinaTxt.Text);
             date = (DateTime)DatumTxt.SelectedDate;
             time = VremeTxt.Text;

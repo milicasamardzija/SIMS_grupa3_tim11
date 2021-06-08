@@ -15,12 +15,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.DTO;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for PremestiInventarUSobu.xaml
-    /// </summary>
     public partial class PremestiInventarUSobu : UserControl
     {
         public Frame frame;
@@ -35,6 +33,7 @@ namespace Hospital
         private int quantity;
         private DataGrid inventarTabela;
         private InventoryController inventoryController = new InventoryController();
+        private RoomsController roomController = new RoomsController();
         public PremestiInventarUSobu(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, DataGrid listaInventara)
         {
             InitializeComponent();
@@ -46,10 +45,23 @@ namespace Hospital
             idInventory = selecetedInventory.Id; //id selektovanog inventara
             listRooms = loadJason();
             inventarTabela = listaInventara;
+            addRooms();
 
             ImeTxt.SelectedText = inventory.Name;
             KolicinaTxt.SelectedText = Convert.ToString(inventory.Quantity);
             TypeTxt.SelectedIndex = (int)inventory.Type;
+        }
+
+        private void addRooms()
+        {
+            SobeComboBox.Items.Clear();
+            foreach (RoomDTO room in roomController.getAll())
+            {
+                ComboBoxItem item = new ComboBoxItem();
+                item.Content = Convert.ToString(room.Purpose) + " broj " + Convert.ToString(room.Id);
+                item.Tag = room.Id;
+                SobeComboBox.Items.Add(item);
+            }
         }
 
         public ObservableCollection<Room> loadJason()
@@ -73,7 +85,7 @@ namespace Hospital
 
         private void premesti(object sender, RoutedEventArgs e)
         {
-            idRoom = Convert.ToInt32(IdSobeTxt.Text);
+            idRoom = Convert.ToInt32(((ComboBoxItem)SobeComboBox.SelectedItem).Tag);
             quantity = Convert.ToInt32(KolicinaTxt.Text);
 
             inventoryController.moveInventory(new RoomInventory(idRoom, inventory.Id, quantity), -1);
