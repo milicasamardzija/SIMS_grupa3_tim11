@@ -57,6 +57,9 @@ namespace Hospital.DTO
             }
             set
             {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Sva polja moraju biti popunjena.");
+
                 if (value != name)
                 {
                     name = value;

@@ -46,6 +46,7 @@ namespace Hospital
             listRooms = loadJason();
             inventarTabela = listaInventara;
             addRooms();
+            potvrdiBtn.IsEnabled = false;
 
             ImeTxt.SelectedText = inventory.Name;
             KolicinaTxt.SelectedText = Convert.ToString(inventory.Quantity);
@@ -91,6 +92,14 @@ namespace Hospital
             inventoryController.moveInventory(new RoomInventory(idRoom, inventory.Id, quantity), -1);
             inventarTabela.ItemsSource = loadJsonInventory();
             frame.NavigationService.Navigate(new BelsekaMagacin(0));
+        }
+
+        private void SobeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (!ImeTxt.Text.Equals("") && !KolicinaTxt.Text.Equals("") && SobeComboBox.SelectedIndex != -1)
+            {
+                potvrdiBtn.IsEnabled = true;
+            }
         }
     }
 }

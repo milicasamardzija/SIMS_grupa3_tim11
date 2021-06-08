@@ -48,6 +48,7 @@ namespace Hospital
             addRooms();
             CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
             DatumTxt.BlackoutDates.Add(kalendar);
+            potvrdiBtn.IsEnabled = false;
         }
         private void addRooms()
         {
@@ -129,6 +130,15 @@ namespace Hospital
             InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>(storage.GetAll());
             return ret;
+        }
+
+        private void VremeTxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!ImeTxt.Text.Equals("") && !KolicinaTxt.Text.Equals("") && SobeComboBox.SelectedIndex != -1 && DatumTxt.SelectedDate != null && !VremeTxt.Text.Equals(""))
+
+            {
+                potvrdiBtn.IsEnabled = true;
+            }
         }
     }
 }

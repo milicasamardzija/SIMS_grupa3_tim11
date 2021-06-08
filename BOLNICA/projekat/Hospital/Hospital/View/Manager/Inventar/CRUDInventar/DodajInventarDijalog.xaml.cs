@@ -40,6 +40,7 @@ namespace Hospital
             this.inventories = inventories;
             this.inventoryController = new InventoryController();
             addType();
+            dodajBtn.IsEnabled = false;
         }
 
         private void addType()
@@ -57,6 +58,14 @@ namespace Hospital
             inventoryController.save(new InventoryDTO(inventory.Id,inventory.Name,inventory.Quantity,inventory.Type));
             inventories.Add(inventory);
             frame.NavigationService.Navigate(new BelsekaMagacin(0));
+        }
+
+        private void QuantityTxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!NameTxt.Text.Equals("") && !QuantityTxt.Text.Equals("") && TypeTxt.SelectedIndex != -1)
+            {
+                dodajBtn.IsEnabled = true;
+            }
         }
     }
 }

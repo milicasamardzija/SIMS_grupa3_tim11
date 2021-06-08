@@ -17,6 +17,11 @@ namespace Hospital.ValidationManager
                 var s = value as string;
                 double r;
 
+                if (s.Length == 0)
+                {
+                    return new ValidationResult(false, $"Polje ne sme biti prazno.");
+                }
+
                 if (double.TryParse(s, out r))
                 {
                     return new ValidationResult(true, null);
