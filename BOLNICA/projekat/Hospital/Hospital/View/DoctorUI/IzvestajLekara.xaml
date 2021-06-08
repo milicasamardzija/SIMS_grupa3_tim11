@@ -10,7 +10,7 @@
         <Label x:Name="label1" Content="Unesite ID pacijenta i oznacite datum i vreme" Margin="24,17,65.4,251.4" FontSize="20"/>
         <Label x:Name="label3" Content="Datum pocetka" Margin="24,87,332,185.6" FontSize="16" />
         <Label x:Name="label4" Content="Datum kraja" Margin="24,165,332,107.6" FontSize="16" />
-        <Button x:Name="button1" Content="Prikazi izvestaj" HorizontalAlignment="Left" Cursor="Hand" Margin="24,240,0,25.6" Width="122" FontSize="16" Click="button1_Click"/>
+        <Button x:Name="button1" Content="Prikazi izvestaj" HorizontalAlignment="Left" Grid.Column="0" Cursor="Hand" Margin="24,240,0,25.6" Width="122" FontSize="16" Click="button1_Click"/>
         <Button x:Name="button2" Content="Izadji" HorizontalAlignment="Left" Margin="427,240,0,25.6" Width="122" FontSize="16" Click="button2_Click"/>
         <DatePicker x:Name="datePicker1" HorizontalAlignment="Left" Height="30" Margin="303,98,0,185.6" Width="246"/>
         <DatePicker x:Name="datePicker2" HorizontalAlignment="Left" Height="30" Margin="303,170,0,113.6" Width="246"/>
