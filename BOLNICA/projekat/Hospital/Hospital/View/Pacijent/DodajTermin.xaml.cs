@@ -23,10 +23,9 @@ namespace Hospital
 
         private CheckupController checkupcontroller;
         private FunctionalityController funkcionalitycontroller;
-        
 
-        private CheckupController checkupcontroller = new CheckupController();
-        private FunctionalityController funkcionalitycontroller = new FunctionalityController();
+
+       
         private PatientController patientcontroller = new PatientController();
 
 

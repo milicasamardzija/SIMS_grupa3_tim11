@@ -56,7 +56,7 @@ namespace Hospital
            
 
             lista = new List<string>();
-            termini = checkupcontroller.getAll();
+           // termini = checkupcontroller.getAll();
 
 
             List<PatientDTO> patients = patientcontroller.getAll();

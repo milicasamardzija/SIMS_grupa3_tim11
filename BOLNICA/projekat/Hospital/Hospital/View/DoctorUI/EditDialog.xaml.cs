@@ -55,7 +55,7 @@ namespace Hospital
         public int generisiID()
         {
             int returnCheckup = 0;
-            ICheckFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            ICheckupFileStorage storage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             List<Checkup> allCheckups = storage.GetAll();
             foreach (Checkup checkups in allCheckups)
             {
@@ -99,7 +99,7 @@ namespace Hospital
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            ICheckFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            ICheckupFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             componentsEditDialog();
 
             //listCheckup[indexCheckup] = new Checkup(generisiID(), getDoctorFromFile(), Convert.ToInt16(checkup.IdPatient), Convert.ToDateTime(checkup.Date),

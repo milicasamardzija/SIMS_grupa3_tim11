@@ -142,8 +142,8 @@ namespace Hospital.View.Pacijent
         {
             bool retVal = true;
            
-            List<Checkup> termini = checkupController.getAll();
-            foreach (Checkup termin in termini)
+            //List<Checkup> termini = checkupController.getAll();
+          /*  foreach (Checkup termin in termini)
             {
                 if (termin.IdDoctor.Equals(this))
                 {
@@ -163,7 +163,7 @@ namespace Hospital.View.Pacijent
                         break;
                     }
                 }
-            }
+            }*/
             return retVal;
         }
 
@@ -171,8 +171,8 @@ namespace Hospital.View.Pacijent
         {
             bool retVal = true;
            
-            List<Checkup> termini = checkupController.getAll();
-            foreach (Checkup termin in termini)
+           // List<Checkup> termini = checkupController.getAll();
+           /* foreach (Checkup termin in termini)
             {
                 if (termin.IdPatient.Equals(id))
                 {
@@ -192,7 +192,7 @@ namespace Hospital.View.Pacijent
                         break;
                     }
                 }
-            }
+            }*/
             return retVal;
         }
             private void pretraziTermine()

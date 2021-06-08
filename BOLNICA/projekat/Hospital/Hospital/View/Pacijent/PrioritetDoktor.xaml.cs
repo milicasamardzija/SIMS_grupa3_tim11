@@ -115,7 +115,7 @@ namespace Hospital.View.Pacijent
             global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
 
 
-            foreach (Checkup t in checkupController.getAll())
+          /*  foreach (Checkup t in checkupController.getAll())
 			{
 				foreach (Checkup t in app.GetAll())
 				{ foreach (Doctor d in doctors.GetAll())
@@ -140,7 +140,7 @@ namespace Hospital.View.Pacijent
 
 					}
 				}
-			}
+			}*/
 
             List<Checkup> terminiBezDuplikata = termini.Distinct().ToList();
             DateTime danas = DateTime.Today;

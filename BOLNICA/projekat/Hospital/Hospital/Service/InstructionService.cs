@@ -41,7 +41,7 @@ namespace Hospital.Service
         public int generateIdCheckup()
         {
             int returnCheckupId = 0;
-            ICheckFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            ICheckupFileStorage storageCheckup = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             List<Checkup> allCheckups = storageCheckup.GetAll();
             foreach (Checkup checkups in allCheckups)
             {
