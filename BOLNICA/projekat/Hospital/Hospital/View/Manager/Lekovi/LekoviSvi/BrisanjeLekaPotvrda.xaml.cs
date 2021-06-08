@@ -1,6 +1,4 @@
-﻿using Hospital.Controller;
-using Hospital.DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,34 +11,35 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Hospital.Controller;
+using Hospital.DTO;
 
 namespace Hospital.View.Manager.Lekovi.LekoviRevizija
 {
-   
-    public partial class BrisanjeRecenzijaPotvrda : Window
+    public partial class BrisanjeLekaPotvrda : Window
     {
         private Frame frame;
         private ReviewDTO revision;
-        private MedicineReviewController controller;
-        public BrisanjeRecenzijaPotvrda(Frame frame, ReviewDTO revision)
+        private MedicineController controller;
+        public BrisanjeLekaPotvrda(Frame frame, ReviewDTO revision)
         {
             InitializeComponent();
             this.frame = frame;
             this.revision = revision;
-            this.controller = new MedicineReviewController();
+            this.controller = new MedicineController();
         }
 
         private void obrisi(object sender, RoutedEventArgs e)
         {
-            controller.deleteByIdMedicine(revision.IdMedicine);
-            this.Close();
+            controller.deleteMedicine(revision.IdMedicine);
             frame.NavigationService.Navigate(new LekoviRevizijaUpravnik(frame));
+            this.Close();
         }
 
         private void odustani(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new LekoviRevizijaUpravnik(frame));
             this.Close();
+            frame.NavigationService.Navigate(new LekoviRevizijaUpravnik(frame));
         }
     }
 }

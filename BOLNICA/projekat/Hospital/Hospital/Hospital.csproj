@@ -136,6 +136,9 @@
     <Compile Include="View\Manager\Inventar\CRUDInventar\BrisanjePotvrdiInventar.xaml.cs">
       <DependentUpon>BrisanjePotvrdiInventar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Lekovi\LekoviSvi\BrisanjeLekaPotvrda.xaml.cs">
+      <DependentUpon>BrisanjeLekaPotvrda.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeLekaRevizijaUpravnik.xaml.cs">
       <DependentUpon>BrisanjeLekaRevizijaUpravnik.xaml</DependentUpon>
     </Compile>
@@ -148,8 +151,8 @@
     <Compile Include="View\Manager\Lekovi\LekoviSvi\BrisanjeLekaUpravnik.xaml.cs">
       <DependentUpon>BrisanjeLekaUpravnik.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeRecenzijeUpravnik.xaml.cs">
-      <DependentUpon>BrisanjeRecenzijeUpravnik.xaml</DependentUpon>
+    <Compile Include="View\Manager\Lekovi\LekoviSvi\DodavanjeLekaPotvrda.xaml.cs">
+      <DependentUpon>DodavanjeLekaPotvrda.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Ostalo\Informacije.xaml.cs">
       <DependentUpon>Informacije.xaml</DependentUpon>
@@ -419,11 +422,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Manager\Lekovi\LekoviSvi\BrisanjeLekaPotvrda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeRecenzijaPotvrda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Lekovi\LekoviRevizija\IzmenaLekaRevizija.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Lekovi\LekoviSvi\DodavanjeLekaPotvrda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -512,10 +523,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Lekovi\LekoviSvi\BrisanjeLekaUpravnik.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeRecenzijeUpravnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

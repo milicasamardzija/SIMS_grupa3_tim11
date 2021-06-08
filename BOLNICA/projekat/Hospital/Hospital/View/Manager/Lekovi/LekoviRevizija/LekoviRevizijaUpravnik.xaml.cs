@@ -19,6 +19,7 @@ using System.Windows.Shapes;
 using Hospital.Controller;
 using Hospital.DTO;
 using Hospital.View.Manager.Lekovi.LekoviRevizija;
+using Hospital.View.Manager.Lekovi.LekoviSvi;
 using Hospital.View.Manager.Ostalo;
 
 namespace Hospital
@@ -57,14 +58,23 @@ namespace Hospital
         }
 
         private void dodaj(object sender, RoutedEventArgs e)
-        {   if(ListaLekovaRevizija.SelectedItem != null)
-               LekoviRevizijaFrame.NavigationService.Navigate(new DodavanjeLekaUpravnik(frame, (ReviewDTO)ListaLekovaRevizija.SelectedItem));
+        {
+            if (ListaLekovaRevizija.SelectedItem != null)
+                // LekoviRevizijaFrame.NavigationService.Navigate(new DodavanjeLekaUpravnik(frame, (ReviewDTO)ListaLekovaRevizija.SelectedItem));
+            {
+                DodavanjeLekaPotvrda dodavanje = new DodavanjeLekaPotvrda(frame, (ReviewDTO)ListaLekovaRevizija.SelectedItem);
+                dodavanje.Show();
+            }
         }
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
             if (ListaLekovaRevizija.SelectedItem != null)
-                LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeLekaUpravnik(frame,(ReviewDTO)ListaLekovaRevizija.SelectedItem));
+                // LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeLekaUpravnik(frame,(ReviewDTO)ListaLekovaRevizija.SelectedItem));
+            {
+                BrisanjeLekaPotvrda brisanje = new BrisanjeLekaPotvrda(frame, (ReviewDTO)ListaLekovaRevizija.SelectedItem);
+                brisanje.Show();
+            }
         }
 
         private void prikaziReviziju(object sender, SelectionChangedEventArgs e)
