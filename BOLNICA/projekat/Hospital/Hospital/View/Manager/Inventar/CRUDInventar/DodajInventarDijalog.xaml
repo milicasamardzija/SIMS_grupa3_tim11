@@ -13,10 +13,11 @@
         <Label Foreground="#FF373434" Content="Kolicina" HorizontalAlignment="Left" Margin="30,228,0,0" VerticalAlignment="Top" Height="53" Width="150" FontSize="30" RenderTransformOrigin="0.512,0.925" FontWeight="Bold"/>
         <TextBox Name="QuantityTxt" Foreground="#FF373434"  HorizontalAlignment="Left" Height="45" Margin="180,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18">
             <TextBox.Text>
-                <Binding Path="Inventory.Quantity" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" >
+                <Binding Path="Inventory.Quantity" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True">
                     <Binding.ValidationRules>
-                        <val:StringToDoubleValidationRule ValidationStep="RawProposedValue"/>
-                        <val:MinMaxValidationRule ValidationStep="ConvertedProposedValue" Min="0" Max="350"/>
+                        <val:StringToInteger ValidationStep="RawProposedValue"></val:StringToInteger>
+                        <val:MinValue ValidationStep="ConvertedProposedValue" Min="1"></val:MinValue>
+                        <val:EmptyField ValidationStep="RawProposedValue"></val:EmptyField>
                     </Binding.ValidationRules>
                  </Binding>
             </TextBox.Text>
@@ -36,7 +37,30 @@
                 </ControlTemplate>
             </Validation.ErrorTemplate>
         </TextBox>
-        <TextBox Name="NameTxt" Foreground="#FF373434" Text="{Binding Path=Inventory.Name, UpdateSourceTrigger=PropertyChanged }" HorizontalAlignment="Left" Height="50" Margin="180,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18"/>
+        <TextBox Name="NameTxt" Foreground="#FF373434" HorizontalAlignment="Left" Height="50" Margin="180,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18">
+            <TextBox.Text>
+                <Binding Path="Inventory.Name" UpdateSourceTrigger="PropertyChanged " ValidatesOnDataErrors="True">
+                    <Binding.ValidationRules>
+                        <val:EmptyField ValidationStep="RawProposedValue"></val:EmptyField>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="QuantityTxt"/>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                    </Grid>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
         <Button Foreground="#FF373434" Background="#ffc800" Content="Dodaj" HorizontalAlignment="Left" Margin="30,317,0,0" VerticalAlignment="Top" Width="150" FontSize="30" Height="43" FontWeight="Bold" Click="dodaj">
             <Button.Effect>
                 <DropShadowEffect/>

@@ -15,8 +15,8 @@
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <DatePicker Name="BeginDate"  HorizontalAlignment="Left" Margin="240,120,0,0" VerticalAlignment="Top" Width="200" Height="37" FontSize="18" FirstDayOfWeek="Monday" SelectedDateFormat="Short"/>
-            <DatePicker Name="EndDate"  HorizontalAlignment="Left" Margin="240,224,0,0" VerticalAlignment="Top" Width="200" Height="30" FontSize="18" FirstDayOfWeek="Monday" RenderTransformOrigin="0.494,1.989"/>
+            <DatePicker Name="BeginDate" Focusable="False" HorizontalAlignment="Left" Margin="240,120,0,0" VerticalAlignment="Top" Width="200" Height="37" FontSize="18" FirstDayOfWeek="Monday" SelectedDateFormat="Short"/>
+            <DatePicker Name="EndDate" Focusable="False"  HorizontalAlignment="Left" Margin="240,224,0,0" VerticalAlignment="Top" Width="200" Height="30" FontSize="18" FirstDayOfWeek="Monday" RenderTransformOrigin="0.494,1.989"/>
             <Label Margin="10,10,0.2,339.6" Foreground="#FF373434" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" Content="Generisi izvestaj o zauzetosti lekara u&#xD;&#xA;sledecem periodu:" FontWeight="Bold"/>
         </Grid>
     </Grid>

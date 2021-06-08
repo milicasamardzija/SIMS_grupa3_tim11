@@ -29,6 +29,9 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
             this.room = room;
             this.roomController = new RoomsController();
             addRooms();
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
+            BeginDate.BlackoutDates.Add(kalendar);
+            EndDate.BlackoutDates.Add(kalendar);
         }
         private void addRooms()
         {

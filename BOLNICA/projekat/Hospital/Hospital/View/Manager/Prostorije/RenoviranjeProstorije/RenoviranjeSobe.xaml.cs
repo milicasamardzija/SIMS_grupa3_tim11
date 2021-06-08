@@ -38,6 +38,9 @@ namespace Hospital
             this.room = room;
             controller = new RoomsController();
             brojProstorijeTxt.SelectedText = Convert.ToString(room.Id);
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
+            BeginDate.BlackoutDates.Add(kalendar);
+            EndDate.BlackoutDates.Add(kalendar);
         }
 
         private void odustani(object sender, RoutedEventArgs e)

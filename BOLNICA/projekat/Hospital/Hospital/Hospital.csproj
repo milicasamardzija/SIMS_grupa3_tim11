@@ -127,7 +127,11 @@
     <Compile Include="Service\RoomRenovationService.cs" />
     <Compile Include="Service\StaticInventoryMovemenetService.cs" />
     <Compile Include="Service\PatientService.cs" />
-    <Compile Include="ValidationManager\StringToDoubleValidationRule.cs" />
+    <Compile Include="ValidationManager\EmptyField.cs" />
+    <Compile Include="ValidationManager\MinValue.cs" />
+    <Compile Include="ValidationManager\StringToDouble.cs" />
+    <Compile Include="ValidationManager\StringToInteger.cs" />
+    <Compile Include="ValidationManager\Time.cs" />
     <Compile Include="View\Manager\Help\HelpProvider.cs" />
     <Compile Include="View\Manager\Help\HelpViewer.xaml.cs">
       <DependentUpon>HelpViewer.xaml</DependentUpon>

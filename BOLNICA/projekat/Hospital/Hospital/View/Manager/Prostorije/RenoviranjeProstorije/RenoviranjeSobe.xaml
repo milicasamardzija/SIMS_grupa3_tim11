@@ -24,8 +24,8 @@
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <DatePicker Name="BeginDate"  HorizontalAlignment="Left" Margin="227,78,0,0" VerticalAlignment="Top" Width="200" Height="37" FontSize="18" FirstDayOfWeek="Monday" SelectedDateFormat="Short"/>
-            <DatePicker Name="EndDate"  HorizontalAlignment="Left" Margin="227,148,0,0" VerticalAlignment="Top" Width="200" Height="30" FontSize="18" FirstDayOfWeek="Monday"/>
+            <DatePicker Name="BeginDate" Focusable="False" HorizontalAlignment="Left" Margin="227,78,0,0" VerticalAlignment="Top" Width="200" Height="37" FontSize="18" FirstDayOfWeek="Monday" SelectedDateFormat="Short"/>
+            <DatePicker Name="EndDate" Focusable="False" HorizontalAlignment="Left" Margin="227,148,0,0" VerticalAlignment="Top" Width="200" Height="30" FontSize="18" FirstDayOfWeek="Monday"/>
             <Label Margin="0,18,282,295.2" Foreground="#FF373434" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" Content="Broj sobe" FontWeight="Bold"/>
         </Grid>
     </Grid>

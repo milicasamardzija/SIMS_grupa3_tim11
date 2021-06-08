@@ -46,6 +46,8 @@ namespace Hospital
             KolicinaTxt.SelectedText = Convert.ToString(inventory.Quantity);
             TypeTxt.SelectedIndex = (int)inventory.Type;
             addRooms();
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
+            DatumTxt.BlackoutDates.Add(kalendar);
         }
         private void addRooms()
         {

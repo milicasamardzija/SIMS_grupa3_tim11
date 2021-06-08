@@ -27,6 +27,9 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
             this.frame = frame;
             this.room = room;
             addPurpose();
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
+            BeginDate.BlackoutDates.Add(kalendar);
+            EndDate.BlackoutDates.Add(kalendar);
         }
 
         private void addPurpose()

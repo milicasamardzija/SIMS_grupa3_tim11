@@ -27,7 +27,7 @@
             <ComboBoxItem IsSelected="True">STATICKI</ComboBoxItem>
             <ComboBoxItem IsSelected="True">DINAMICKI</ComboBoxItem>
         </ComboBox>
-        <DatePicker Foreground="#FF373434" Name="DatumTxt" HorizontalAlignment="Left" Margin="203,214,0,0" VerticalAlignment="Top" Width="240" Height="33" RenderTransformOrigin="0.502,1.256" FontSize="16"/>
+        <DatePicker Foreground="#FF373434" Focusable="False" Name="DatumTxt" HorizontalAlignment="Left" Margin="203,214,0,0" VerticalAlignment="Top" Width="240" Height="33" RenderTransformOrigin="0.502,1.256" FontSize="16"/>
         <Label Foreground="#FF373434" Content="Datum" HorizontalAlignment="Left" Margin="17,214,0,0" VerticalAlignment="Top" Height="50" Width="92" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.512,4.592"/>
         <Label Foreground="#FF373434" Content="Vreme" HorizontalAlignment="Left" Margin="17,264,0,0" VerticalAlignment="Top" Height="50" Width="92" FontSize="24" FontWeight="Bold"/>
         <TextBox Foreground="#FF373434" Name="VremeTxt" HorizontalAlignment="Left" Height="32" Margin="203,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="18"/>
