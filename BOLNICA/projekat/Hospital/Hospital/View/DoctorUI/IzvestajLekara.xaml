@@ -8,13 +8,11 @@
         Title="IzvestajLekara" Height="343.33" Width="582.425" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid ToolTip="Pritiskajuci strelice oznacite prazna polja i unesite podatke, zatim strelicama izaberite zeljeno dugme i pritisnite tipku Enter da bi se izvrsila zeljena akcija">
         <Label x:Name="label1" Content="Unesite ID pacijenta i oznacite datum i vreme" Margin="24,17,65.4,251.4" FontSize="20"/>
-        <Label x:Name="label2" Content="ID pacijenta" Margin="24,76,306.4,196.4" FontSize="16" />
-        <Label x:Name="label3" Content="Datum i vreme pocetka" Margin="24,120,332,152.6" FontSize="16" />
-        <Label x:Name="label4" Content="Datum i vreme kraja" Margin="24,165,332,107.6" FontSize="16" />
-        <TextBox x:Name="idTextB" HorizontalAlignment="Left" Height="23" Margin="303,84,0,206.6" Width="246"/>
-        <Button x:Name="button1" Content="Prikazi izvestaj" HorizontalAlignment="Left" Margin="24,240,0,25.6" Width="122" FontSize="16" Click="button1_Click"/>
+        <Label x:Name="label3" Content="Datum pocetka" Margin="24,87,332,185.6" FontSize="16" />
+        <Label x:Name="label4" Content="Datum kraja" Margin="24,165,332,107.6" FontSize="16" />
+        <Button x:Name="button1" Content="Prikazi izvestaj" HorizontalAlignment="Left" Cursor="Hand" Margin="24,240,0,25.6" Width="122" FontSize="16" Click="button1_Click"/>
         <Button x:Name="button2" Content="Izadji" HorizontalAlignment="Left" Margin="427,240,0,25.6" Width="122" FontSize="16" Click="button2_Click"/>
-        <DatePicker x:Name="datePicker1" HorizontalAlignment="Left" Height="30" Margin="303,125,0,158.6" Width="246"/>
-        <DatePicker x:Name="datePicker2" HorizontalAlignment="Left" Height="30" Margin="303,165,0,118.6" Width="246"/>
+        <DatePicker x:Name="datePicker1" HorizontalAlignment="Left" Height="30" Margin="303,98,0,185.6" Width="246"/>
+        <DatePicker x:Name="datePicker2" HorizontalAlignment="Left" Height="30" Margin="303,170,0,113.6" Width="246"/>
     </Grid>
 </Window>
