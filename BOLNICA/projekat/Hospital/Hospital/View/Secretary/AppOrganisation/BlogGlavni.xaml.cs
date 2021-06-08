@@ -22,11 +22,13 @@ namespace Hospital
 
        
         public ObservableCollection<Notice> listNotice { get; set; }
+        public ObservableCollection<Notice> listNoticeDoctor { get; set; }
         public BlogGlavni()
         {
             InitializeComponent();
             this.DataContext = this;
             listNotice= loadJason();
+            listNoticeDoctor = loadNoticeDoctor();
         }
 
         public ObservableCollection<Notice> loadJason()
@@ -36,6 +38,13 @@ namespace Hospital
             
               return rs;
           
+        }
+
+        public ObservableCollection<Notice> loadNoticeDoctor()
+        {
+            NoticeFileStorage noticesDoctorStorage = new NoticeFileStorage(@"./../../../../Hospital/files/noticesDoctor.json");
+            ObservableCollection<Notice> noticeDoctor = new ObservableCollection<Notice>(noticesDoctorStorage.GetAll());
+            return noticeDoctor;
         }
 
     }

@@ -20,9 +20,15 @@ namespace Hospital
     public partial class DodajTermin : Window
     {
 
+
         private CheckupController checkupcontroller;
         private FunctionalityController funkcionalitycontroller;
-        private PatientController patientcontroller;
+        
+
+        private CheckupController checkupcontroller = new CheckupController();
+        private FunctionalityController funkcionalitycontroller = new FunctionalityController();
+        private PatientController patientcontroller = new PatientController();
+
 
         public ObservableCollection<Checkup> appointmentList;
         public int idPatient; //id pacijenta koji je ulogovan
@@ -42,6 +48,7 @@ namespace Hospital
             checkupcontroller = new CheckupController();
 
 
+
             List<PatientDTO> patients = patientcontroller.getAll();
             foreach (PatientDTO patient in patients)
             {
@@ -50,6 +57,7 @@ namespace Hospital
                     imePacijenta.Text = patient.Name + " " + patient.Surname;
                 }
             }
+
 
             lista = new List<string>();
             lista.Add("08:00");
@@ -181,6 +189,7 @@ namespace Hospital
             List<Checkup> termini = new List<Checkup>();
 
 
+
             
             if (lekar.SelectedItem != null && date.SelectedDate != null)
             {
@@ -189,6 +198,7 @@ namespace Hospital
                 String d = date.Text;
                 DateTime dt = DateTime.Parse(d + " " + t);
                 checkupcontroller.getAvailableTimes(dt, l);
+
             }
 
 
@@ -221,7 +231,6 @@ namespace Hospital
             time.ItemsSource = dostupnoVrijeme;
         }
 
-       
 
         private void EnabledDugme()
         {

@@ -1,5 +1,7 @@
 ﻿using Hospital.DTO;
+
 using Hospital.FileStorage.Interfaces;
+
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -26,7 +28,7 @@ namespace Hospital.Service
             doctorStorage = new DoctorFileStorage("./../../../../Hospital/files/storageDoctor.json");
 
         }
-
+        
         public int generateIdCheckup() 
         {
             int val = 0;
@@ -48,9 +50,7 @@ namespace Hospital.Service
             }
             return val; //vracam prvi koji je dostupan 
         }
-
-       
-
+        
         public List<Checkup> getCheckupDoctors(int idDoctor)
         {
 
@@ -74,7 +74,7 @@ namespace Hospital.Service
             return unavailableCheckups;
         }
 
-
+        
         public void createCheckup(Checkup checkup)
         {
             Checkup newCheckup = new Checkup(generateIdCheckup(), checkup.IdDoctor, checkup.IdPatient, checkup.Date, 0, CheckupType.pregled);
@@ -140,7 +140,7 @@ namespace Hospital.Service
         {
             return checkupStorage.GetAll();
         }
-
+        
         public void deleteById(int id)
         {
             
@@ -151,6 +151,7 @@ namespace Hospital.Service
         {
             checkupStorage.Save(checkup);
         }
+
 
         public int counterOperation(DateTime start, DateTime end)
         {
@@ -182,6 +183,13 @@ namespace Hospital.Service
                 }
             }
             return counter;
+        }
+
+
+        public void addCheckup(Checkup checkup)
+        {
+            Checkup newCheckup = new Checkup(generateIdCheckup(), checkup.IdPatient, checkup.IdDoctor, checkup.Date, checkup.IdRoom, checkup.Type);
+            checkupStorage.Save(newCheckup);
         }
 
     }

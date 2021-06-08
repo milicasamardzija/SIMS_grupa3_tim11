@@ -1,0 +1,44 @@
+﻿<Window x:Class="Hospital.IzdavanjeRecepta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital"
+        mc:Ignorable="d"
+        Title="IzdavanjeRecepta" Height="550" Width="1086.731" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
+    <Grid ToolTip="Strelicama na tastaturi krecite se po praznim poljima i upisujte potrebne podatke, zatim strelicama oznacite zeljeno dugme i pritisnite Enter">
+        <Button x:Name="button" Content="Izdaj recept" HorizontalAlignment="Left" Margin="10,447,0,0" VerticalAlignment="Top" Width="101" FontSize="16" Click="button_Click"/>
+        <Button x:Name="button1" Content="Odbaci" HorizontalAlignment="Left" Margin="959,447,0,0" VerticalAlignment="Top" Width="89" FontSize="16" Click="button1_Click"/>
+        <Label x:Name="label" Content="Naziv zdravstvene ustanove" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.572,-0.48" FontSize="16"/>
+        <Label x:Name="label1" Content="Prezime i ime osiguranog lica" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label2" Content="Datum rodjenja osiguranog lica" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label3" Content="Broj zdravstvene knjizice" HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label4" Content="Datum propisivanja leka" HorizontalAlignment="Left" Margin="10,231,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label5" Content="Broj kartona/protokola" HorizontalAlignment="Left" Margin="10,279,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label6" Content="ID lekara" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label7" Content="Sifra propisanog leka" HorizontalAlignment="Left" Margin="593,29,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label8" Content="Dijagnoza" HorizontalAlignment="Left" Margin="593,129,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="284,29,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="284,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="284,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="284,186,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
+        <DatePicker x:Name="datePicker" Height ="30" SelectedDateChanged="DatePicker_SelectedDateChanged" HorizontalAlignment="Left" Width="248" Margin="284,230,0,248">
+        
+        </DatePicker>
+        <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="23" Margin="284,279,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
+        <TextBox x:Name="textBox6" HorizontalAlignment="Left" Height="23" Margin="284,330,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
+        <TextBox x:Name="textBox7" HorizontalAlignment="Left" Height="23" Margin="800,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
+        <TextBox x:Name="textBox8" HorizontalAlignment="Left" Height="23" Margin="800,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
+        <Label x:Name="label9" Content="Gramaza" HorizontalAlignment="Left" Margin="593,77,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="textBox9" HorizontalAlignment="Left" Height="23" Margin="800,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
+        <Label x:Name="label10" Content="Opis" HorizontalAlignment="Left" Margin="593,178,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label11" Content="Pocetak terapije" HorizontalAlignment="Left" Margin="593,231,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label12" Content="Kraj terapije" HorizontalAlignment="Left" Margin="593,280,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="textBox10" HorizontalAlignment="Left" Height="23" Margin="800,186,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
+        <TextBox x:Name="textBox11" HorizontalAlignment="Left" Height="23" Margin="800,233,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
+        <TextBox x:Name="textBox12" HorizontalAlignment="Left" Height="23" Margin="800,279,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
+        <Label x:Name="label13" Content="Broj puta na dan" HorizontalAlignment="Left" Margin="590,321,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.375,2.144"/>
+        <TextBox x:Name="textBox13" HorizontalAlignment="Left" Height="23" Margin="800,330,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248"/>
+
+    </Grid>
+</Window>

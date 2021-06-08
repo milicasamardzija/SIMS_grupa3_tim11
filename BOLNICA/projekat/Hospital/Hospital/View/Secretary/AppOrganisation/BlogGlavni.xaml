@@ -85,6 +85,20 @@
             </DataGrid.Columns>
 
         </DataGrid>
+        <DataGrid
+            x:Name="blog"
+            Height="120"
+            Margin="26,286,369,0"
+            VerticalAlignment="Top"
+            AutoGenerateColumns="False"
+            Background="{x:Null}"
+            ItemsSource="{Binding listNoticeDoctor}"
+            RowBackground="Transparent"
+            RowHeight="25">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="400" Binding="{Binding noticeDoctor}" />
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Page>

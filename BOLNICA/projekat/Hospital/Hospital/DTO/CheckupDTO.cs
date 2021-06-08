@@ -1,17 +1,16 @@
-// File:    Checkup.cs
-// Author:  Nevena
-// Created: Monday, March 22, 2021 3:29:16 PM
-// Purpose: Definition of Class Checkup
-
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Hospital.Model
+namespace Hospital.DTO
 {
-    public class Checkup : Entity
+    public class CheckupDTO : INotifyPropertyChanged
     {
+        private int idCh;
         private DateTime date;
         private double duration;
         private Patient patient;
@@ -21,18 +20,19 @@ namespace Hospital.Model
         private Room room;
         private int idRoom;
         private CheckupType type;
-       
-        public Checkup() { }
-        public Checkup(int idCh, int idD, int idP, DateTime dateAndTime, int idR, CheckupType type) : base(idCh)
+
+        public CheckupDTO() { }
+        public CheckupDTO(int idCh, int idD, int idP, DateTime dateAndTime, int idR, CheckupType type) 
         {
+            this.idCh = idCh;
             this.idDoctor = idD;
             this.idPatient = idP;
             this.Date = dateAndTime;
             this.IdRoom = idR;
-            this.Type=type ;//bice default pregled postvljeno pri kreiranju
+            this.Type = type;//bice default pregled postvljeno pri kreiranju
             this.Duration = 30; //fiksno za pregled!
         }
-        
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string name)
@@ -42,7 +42,7 @@ namespace Hospital.Model
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
-        
+
         [JsonIgnore]
         public Room Room
         {
@@ -72,6 +72,21 @@ namespace Hospital.Model
                 {
                     duration = value;
                     OnPropertyChanged("Duration");
+                }
+            }
+        }
+        public int IdCh
+        {
+            get
+            {
+                return idCh;
+            }
+            set
+            {
+                if (value != idCh)
+                {
+                    idCh = value;
+                    OnPropertyChanged("IdCh");
                 }
             }
         }
@@ -111,7 +126,7 @@ namespace Hospital.Model
             }
         }
 
-       
+
         public int IdRoom
         {
             get
@@ -152,7 +167,7 @@ namespace Hospital.Model
             }
             set
             {
-                if(value != type)
+                if (value != type)
                 {
                     type = value;
                     OnPropertyChanged("Type");
@@ -160,7 +175,7 @@ namespace Hospital.Model
             }
         }
 
-        
+
         public int IdDoctor
         {
             get
@@ -191,7 +206,5 @@ namespace Hospital.Model
                 }
             }
         }
-
-
     }
 }

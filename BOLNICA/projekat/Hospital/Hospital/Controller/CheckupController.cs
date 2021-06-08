@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.DTO;
+using Hospital.Model;
 using Hospital.Sekretar;
 using Hospital.Service;
 using System;
@@ -28,15 +29,16 @@ namespace Hospital.Controller
            
             
         }
-        public List<Checkup> getAll()
+        public List<CheckupDTO> getAll()
         {
-            List<Checkup> checkups = new List<Checkup>();
+            List<CheckupDTO> checkups = new List<CheckupDTO>();
             foreach (Checkup checkup in service.getAll())
             {
-                checkups.Add(new Checkup(checkup.Id,checkup.IdDoctor, checkup.IdPatient, checkup.Date, checkup.IdRoom,checkup.Type));
+                checkups.Add(new CheckupDTO(checkup.Id,checkup.IdDoctor, checkup.IdPatient, checkup.Date, checkup.IdRoom,checkup.Type));
             }
             return checkups;
         }
+
 
         public List<Checkup> getAvailableTimes(DateTime date, Doctor doctor)
         {
@@ -44,13 +46,14 @@ namespace Hospital.Controller
             return checkups = service.getAvailableTimes(date,doctor);
         }
 
+
+        
+
         public void save(Checkup checkup)
         {
             service.save(checkup);
         }
-
-
-      
+        
         public void DeleteById(int id)
         {
             service.deleteById(id);
@@ -60,6 +63,12 @@ namespace Hospital.Controller
         {
             service.changeCheckup( checkup);
         }
+
+        public void addCheckup(CheckupDTO checkup)
+        {
+            service.addCheckup(new Checkup(service.generateIdCheckup(), checkup.IdDoctor, checkup.IdPatient, checkup.Date, checkup.IdRoom, checkup.Type));
+        }
+
         public void createCheckup(Checkup checkup)
         {
             service.createCheckup(checkup);

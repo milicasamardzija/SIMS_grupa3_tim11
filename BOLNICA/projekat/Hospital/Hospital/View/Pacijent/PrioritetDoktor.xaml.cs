@@ -114,29 +114,33 @@ namespace Hospital.View.Pacijent
             DoctorFileStorage doctors = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
             global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
 
+
             foreach (Checkup t in checkupController.getAll())
-            { foreach (Doctor d in doctors.GetAll())
-                {
-                    if (t.IdDoctor == d.Id)
-                    {
-                        if (d.jmbg.Equals(doktor.jmbg))
-                        {
-                            if (t.Date.Date.Equals(date.SelectedDate))
-                            {
-                                termini.Add(t);
-                            }
-                        }
-                    }
-                }
-                if (id == t.IdPatient && t.Date.Date.Equals(date.SelectedDate))
-                {
+			{
+				foreach (Checkup t in app.GetAll())
+				{ foreach (Doctor d in doctors.GetAll())
+					{
+						if (t.IdDoctor == d.Id)
+						{
+							if (d.jmbg.Equals(doktor.jmbg))
+							{
+								if (t.Date.Date.Equals(date.SelectedDate))
+								{
+									termini.Add(t);
+								}
+							}
+						}
+					}
+					if (id == t.IdPatient && t.Date.Date.Equals(date.SelectedDate))
+					{
 
 
-                    termini.Add(t);
+						termini.Add(t);
 
 
-                }
-            }
+					}
+				}
+			}
 
             List<Checkup> terminiBezDuplikata = termini.Distinct().ToList();
             DateTime danas = DateTime.Today;
@@ -207,7 +211,7 @@ namespace Hospital.View.Pacijent
         {
             timelabel.Visibility = Visibility.Visible;
             times.Visibility = Visibility.Visible;
-            pretraziTermine();
+            //pretraziTermine();
         }
     }
 }
