@@ -23,16 +23,16 @@ namespace Hospital
     public partial class DodajInventarDijalog : UserControl
     {
         private Frame frame;
-        private ObservableCollection<InventoryDTO> inventories;
+        private ObservableCollection<Inventory> inventories;
         private InventoryController inventoryController;
-        private InventoryDTO inventory = new InventoryDTO();
+        private Inventory inventory = new Inventory();
 
-        public InventoryDTO Inventory
+        public Inventory Inventory
         {
             get { return inventory; }
             set { inventory = value; }
         }
-        public DodajInventarDijalog(Frame frame,ObservableCollection<InventoryDTO> inventories)
+        public DodajInventarDijalog(Frame frame,ObservableCollection<Inventory> inventories)
         {
             InitializeComponent();
             this.DataContext = this;
@@ -54,7 +54,7 @@ namespace Hospital
 
         private void dodaj(object sender, RoutedEventArgs e)
         {
-            inventoryController.save(inventory);
+            inventoryController.save(new InventoryDTO(inventory.Id,inventory.Name,inventory.Quantity,inventory.Type));
             inventories.Add(inventory);
             frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }

@@ -22,16 +22,16 @@ namespace Hospital
     public partial class IzbrisiInventarDijalog : UserControl
     {
         private Frame frame;
-        private ObservableCollection<InventoryDTO> inventories;
+        private ObservableCollection<Inventory> inventories;
         private int index;
         private InventoryController controller;
-        private InventoryDTO inventory;
-        public InventoryDTO Inventory
+        private Inventory inventory;
+        public Inventory Inventory
         {
             get { return inventory;}
             set { inventory = value; }
         }
-        public IzbrisiInventarDijalog(Frame frame,ObservableCollection<InventoryDTO> inventories, InventoryDTO inventory, int index)
+        public IzbrisiInventarDijalog(Frame frame,ObservableCollection<Inventory> inventories, Inventory inventory, int index)
         {
             InitializeComponent();
             this.DataContext = this;

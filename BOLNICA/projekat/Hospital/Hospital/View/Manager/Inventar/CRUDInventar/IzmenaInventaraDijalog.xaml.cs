@@ -22,17 +22,17 @@ namespace Hospital
     public partial class IzmenaInventaraDijalog : UserControl
     {
         private Frame frame;
-        private ObservableCollection<InventoryDTO> inventories;
+        private ObservableCollection<Inventory> inventories;
         private int index;
-        private InventoryDTO inventory = new InventoryDTO();
-        public InventoryDTO Inventory
+        private Inventory inventory = new Inventory();
+        public Inventory Inventory
         {
             get { return inventory;}
             set { inventory = value; }
         }
 
         private InventoryController controller;
-        public IzmenaInventaraDijalog(Frame frame, ObservableCollection<InventoryDTO> inventories,InventoryDTO inventory, int index)
+        public IzmenaInventaraDijalog(Frame frame, ObservableCollection<Inventory> inventories,Inventory inventory, int index)
         {
             InitializeComponent();
             this.DataContext = this;
@@ -54,7 +54,7 @@ namespace Hospital
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
-            controller.update(Inventory);
+            controller.update(new InventoryDTO(inventory.Id,inventory.Name,inventory.Quantity,inventory.Type));
             inventories[index] = Inventory;
             frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
