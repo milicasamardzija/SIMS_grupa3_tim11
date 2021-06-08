@@ -38,6 +38,7 @@ namespace Hospital
             this.frame = frame;
             this.roomsView = listaProstorija;
             controller = new RoomsController();
+            potvrdiBtn.IsEnabled = false;
             addPurpose();
         }
 
@@ -57,5 +58,12 @@ namespace Hospital
             frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }
 
+        private void KapacitetText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!SpratText.Text.Equals("") && !KapacitetText.Text.Equals("") && NamenaText.SelectedIndex != -1)
+            {
+                potvrdiBtn.IsEnabled = true;
+            }
+        }
     }
 }

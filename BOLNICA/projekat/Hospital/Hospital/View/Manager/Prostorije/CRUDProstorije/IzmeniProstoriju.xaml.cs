@@ -41,6 +41,7 @@ namespace Hospital
             this.room = selectedItem;
             this.controller = new RoomsController();
             addPurpose();
+            potvrdiBtn.IsEnabled = false;
         }
 
         private void addPurpose()
@@ -57,6 +58,14 @@ namespace Hospital
         private void odustani(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new BelsekaMagacin(1));
+        }
+
+        private void kapacitetTxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!spratTxt.Text.Equals("") && !kapacitetTxt.Text.Equals("") && namenaTxt.SelectedIndex != -1)
+            {
+                potvrdiBtn.IsEnabled = true;
+            }
         }
     }
 }

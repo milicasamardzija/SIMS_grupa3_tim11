@@ -30,6 +30,7 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
             CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
             BeginDate.BlackoutDates.Add(kalendar);
             EndDate.BlackoutDates.Add(kalendar);
+            potvrdiBtn.IsEnabled = false;
         }
 
         private void addPurpose()
@@ -45,6 +46,14 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
         private void odustani(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new BelsekaMagacin(1));
+        }
+
+        private void TipSobeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (!BeginDate.Text.Equals("") && !EndDate.Text.Equals("") && TipSobeComboBox.SelectedIndex != -1)
+            {
+                potvrdiBtn.IsEnabled = true;
+            }
         }
     }
 }

@@ -13,7 +13,7 @@
             <Label Margin="0,78,282,234.2" Foreground="#FF373434" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" Content="Datum pocetka" FontWeight="Bold"/>
             <Label Margin="0,148,272,152.2" Foreground="#FF373434" FontSize="18" Grid.Column="0" Content="Datum zavrsetka" FontWeight="Bold"/>
             <Label Margin="0,214,200,74" Foreground="#FF373434" FontSize="18" Grid.Column="0" FontWeight="Bold" Content="Soba sa kojom se spaja"/>
-            <Button Margin="51,293,296,25.2" Foreground="#FF373434" Grid.Column="0" Background="#ffc800" Click="renoviraj" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.413,-0.626" Content="Potvrdi">
+            <Button Name="potvrdiBtn" Margin="51,293,296,25.2" Foreground="#FF373434" Grid.Column="0" Background="#ffc800" Click="renoviraj" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.413,-0.626" Content="Potvrdi">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
@@ -26,7 +26,7 @@
             <DatePicker Name="BeginDate" Focusable="False" HorizontalAlignment="Left" Margin="227,78,0,0" VerticalAlignment="Top" Width="200" Height="37" FontSize="18" FirstDayOfWeek="Monday" SelectedDateFormat="Short"/>
             <DatePicker Name="EndDate" Focusable="False" HorizontalAlignment="Left" Margin="227,148,0,0" VerticalAlignment="Top" Width="200" Height="30" FontSize="18" FirstDayOfWeek="Monday"/>
             <Label Margin="0,18,282,295.2" Foreground="#FF373434" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" Content="Broj sobe" FontWeight="Bold"/>
-            <ComboBox Name="SobeComboBox" HorizontalAlignment="Left" Margin="227,214,0,0" VerticalAlignment="Top" Width="200" Height="31" FontSize="18"/>
+            <ComboBox Name="SobeComboBox" HorizontalAlignment="Left" Margin="227,214,0,0" VerticalAlignment="Top" Width="200" Height="31" FontSize="18" SelectionChanged="SobeComboBox_SelectionChanged"/>
         </Grid>
     </Grid>
 </UserControl>
