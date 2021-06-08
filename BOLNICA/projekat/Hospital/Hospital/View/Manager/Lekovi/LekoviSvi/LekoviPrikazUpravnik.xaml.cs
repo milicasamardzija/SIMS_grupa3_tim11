@@ -67,6 +67,7 @@ namespace Hospital
             } else
             {
                 frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));
+                MessageBoxResult result = MessageBox.Show("Niste selektovali lek!");
             }
         }
 
@@ -79,6 +80,7 @@ namespace Hospital
             else
             {
                 frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));
+                MessageBoxResult result = MessageBox.Show("Niste selektovali lek!");
             }
         }
         private void prikazRevizije(object sender, RoutedEventArgs e)

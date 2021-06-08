@@ -66,6 +66,7 @@ namespace Hospital
             if (ListaProstorija.SelectedItem == null)
             {
                 SobeFrame.NavigationService.Navigate(new BelsekaMagacin(1));
+                MessageBoxResult result = MessageBox.Show("Niste selektovali prostoriju!");
             }
             else
             {
@@ -78,6 +79,7 @@ namespace Hospital
             if (ListaProstorija.SelectedItem == null)
             {
                 SobeFrame.NavigationService.Navigate(new BelsekaMagacin(1));
+                MessageBoxResult result = MessageBox.Show("Niste selektovali prostoriju!");
             }
             else
             {
@@ -134,6 +136,7 @@ namespace Hospital
             if (ListaProstorija.SelectedItem == null)
             {
                 SobeFrame.NavigationService.Navigate(new BelsekaMagacin(1));
+                MessageBoxResult result = MessageBox.Show("Niste selektovali prostoriju!");
             } else {
                 SobeFrame.NavigationService.Navigate(new Renoviranje(SobeFrame, (RoomDTO)ListaProstorija.SelectedItem));
             }

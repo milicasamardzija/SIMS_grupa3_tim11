@@ -62,6 +62,7 @@ namespace Hospital
             if (ListaInventara.SelectedItem == null)
             {
                 MagacinFrame.NavigationService.Navigate(new BelsekaMagacin(0));
+                MessageBoxResult result = MessageBox.Show("Niste selektovali inventar!");
             }
             else
             {
@@ -74,6 +75,7 @@ namespace Hospital
             if (ListaInventara.SelectedItem == null)
             {
                 MagacinFrame.NavigationService.Navigate(new BelsekaMagacin(0));
+                MessageBoxResult result = MessageBox.Show("Niste selektovali inventar!");
             }
             else
             {
@@ -90,6 +92,7 @@ namespace Hospital
             if (ListaInventara.SelectedItem == null)
             {
                 MagacinFrame.NavigationService.Navigate(new BelsekaMagacin(0));
+                MessageBoxResult result = MessageBox.Show("Niste selektovali inventar!");
             }
             else
             {

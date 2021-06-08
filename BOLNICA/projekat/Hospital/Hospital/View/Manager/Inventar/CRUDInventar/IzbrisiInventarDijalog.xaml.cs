@@ -53,9 +53,9 @@ namespace Hospital
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-            BrisanjePotvrdiInventar brisanje = new BrisanjePotvrdiInventar(inventory.Id,inventories,index);
-            brisanje.Show();
-            frame.NavigationService.Navigate(new BelsekaMagacin(0));
+                BrisanjePotvrdiInventar brisanje = new BrisanjePotvrdiInventar(inventory.Id, inventories, index);
+                brisanje.Show();
+                frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
     }
 }

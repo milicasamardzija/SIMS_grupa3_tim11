@@ -65,6 +65,10 @@ namespace Hospital
                 DodavanjeLekaPotvrda dodavanje = new DodavanjeLekaPotvrda(frame, (ReviewDTO)ListaLekovaRevizija.SelectedItem);
                 dodavanje.Show();
             }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Niste selektovali lek!");
+            }
         }
 
         private void izbrisi(object sender, RoutedEventArgs e)
@@ -74,6 +78,10 @@ namespace Hospital
             {
                 BrisanjeLekaPotvrda brisanje = new BrisanjeLekaPotvrda(frame, (ReviewDTO)ListaLekovaRevizija.SelectedItem);
                 brisanje.Show();
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Niste selektovali lek!");
             }
         }
 
@@ -92,6 +100,10 @@ namespace Hospital
                     new BrisanjeRecenzijaPotvrda(frame, (ReviewDTO) ListaLekovaRevizija.SelectedItem);
                 brisanje.Show();
             }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Niste selektovali lek!");
+            }
         }
 
         private void unazad(object sender, RoutedEventArgs e)
@@ -102,7 +114,14 @@ namespace Hospital
         private void posaljiOpet(object sender, RoutedEventArgs e)
         {
             if (ListaLekovaRevizija.SelectedItem != null)
-                frame.NavigationService.Navigate(new IzmenaLekaRevizija((ReviewDTO)ListaLekovaRevizija.SelectedItem,frame));
+            {
+                frame.NavigationService.Navigate(new IzmenaLekaRevizija((ReviewDTO) ListaLekovaRevizija.SelectedItem,
+                    frame));
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Niste selektovali lek!");
+            }
         }
     }
 }

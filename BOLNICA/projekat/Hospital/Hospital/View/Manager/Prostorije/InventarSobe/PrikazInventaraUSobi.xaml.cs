@@ -44,6 +44,7 @@ namespace Hospital
             if (ListaInventara.SelectedItem == null)
             {
                 InventarPemesti.NavigationService.Navigate(new BelsekaMagacin(3));
+                MessageBoxResult result = MessageBox.Show("Niste selektovali inventar!");
             }
             else
             {
