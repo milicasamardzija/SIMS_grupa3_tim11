@@ -18,9 +18,11 @@ namespace Hospital.View.Manager.Ostalo
     public partial class ProfilUpravnik : UserControl
     {
         public static Boolean isToolTipVisible = true;
-        public ProfilUpravnik()
+        private ManagerView view;
+        public ProfilUpravnik(ManagerView managerView)
         {
             InitializeComponent();
+            view = managerView;
             Frame.NavigationService.Navigate(new Informacije());
         }
 
@@ -43,6 +45,11 @@ namespace Hospital.View.Manager.Ostalo
                 case MessageBoxResult.Cancel:
                     break;
             }
+        }
+
+        private void odjava(object sender, RoutedEventArgs e)
+        {
+            view.Close();
         }
     }
 }

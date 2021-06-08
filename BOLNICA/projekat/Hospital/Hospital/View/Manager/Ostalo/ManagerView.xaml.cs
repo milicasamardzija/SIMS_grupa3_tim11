@@ -34,7 +34,7 @@ namespace Hospital
         public ManagerView()
         {
             InitializeComponent();
-            frame.NavigationService.Navigate(new ProfilUpravnik());
+            frame.NavigationService.Navigate(new ProfilUpravnik(this));
             getTasks();
         }
 
@@ -120,12 +120,17 @@ namespace Hospital
 
         private void profil(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new ProfilUpravnik());
+            frame.NavigationService.Navigate(new ProfilUpravnik(this));
         }
 
         private void klinika(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new O_klinici());
+        }
+
+        private void odjava(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

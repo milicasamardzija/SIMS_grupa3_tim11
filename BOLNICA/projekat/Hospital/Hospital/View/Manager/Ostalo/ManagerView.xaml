@@ -85,7 +85,16 @@
                         AlignmentX="Left"
                         ImageSource="/Hospital;component/View/Images/Manager/info-32.png" Stretch="None" TileMode="FlipXY" />
                 </MenuItem.Background>
-
+            </MenuItem>
+            <GridSplitter Background="#FF373434" Height="42" Width="5"/>
+            <MenuItem Header="     ODJAVA" FontSize="22" 
+                      FontWeight="Bold"
+                      TextElement.Foreground="#FF373434" Click="odjava">
+                <MenuItem.Background>
+                    <ImageBrush
+                        AlignmentX="Left"
+                        ImageSource="/Hospital;component/View/Images/Manager/x-mark-3-32.png" Stretch="None" TileMode="FlipXY" />
+                </MenuItem.Background>
             </MenuItem>
         </Menu>
         <Frame Name="frame" Background="#FFDFD7BB" HorizontalAlignment="Left" Margin="0,40,0,0" VerticalAlignment="Top" Height="627" Width="1280" NavigationUIVisibility="Hidden" RenderTransformOrigin="0.5,0.5" />

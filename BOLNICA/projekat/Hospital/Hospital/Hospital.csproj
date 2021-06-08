@@ -1180,6 +1180,8 @@
     <Content Include="Help\HTMLPage1.html" />
     <Content Include="Help\HTMLPage2.html" />
     <Content Include="Help\index.html" />
+    <Resource Include="View\Images\Manager\pdf-32.png" />
+    <Resource Include="View\Images\Manager\x-mark-3-32.png" />
     <Resource Include="View\Images\Manager\info-32.png" />
     <Resource Include="View\Images\Manager\profile.png" />
     <Resource Include="View\Images\Manager\manager-32.png" />
