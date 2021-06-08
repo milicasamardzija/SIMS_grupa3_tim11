@@ -101,7 +101,8 @@ namespace Hospital
 
         private void posaljiOpet(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new IzmenaLekaRevizija((ReviewDTO)ListaLekovaRevizija.SelectedItem,frame));
+            if (ListaLekovaRevizija.SelectedItem != null)
+                frame.NavigationService.Navigate(new IzmenaLekaRevizija((ReviewDTO)ListaLekovaRevizija.SelectedItem,frame));
         }
     }
 }
