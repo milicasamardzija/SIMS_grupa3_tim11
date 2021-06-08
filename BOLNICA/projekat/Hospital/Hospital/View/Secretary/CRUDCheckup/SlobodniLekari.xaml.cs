@@ -45,6 +45,7 @@ namespace Hospital.Sekretar
         private void Save(object sender, RoutedEventArgs e)
         {
             controller.changeCheckup(new Checkup(0, checkup.IdDoctor, checkup.IdPatient, newDate, idRoom, 0));
+            this.Close();
         }
         private void Decline(object sender, RoutedEventArgs e)
         {

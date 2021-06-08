@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:Hospital.Sekretar"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="KreirajObavestenje"
-    Width="450"
+    Width="435"
     Height="500"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
@@ -159,13 +159,16 @@
                     Stretch="None" />
             </StackPanel.Background>
             <TextBox
+                x:Name="pretraga"
                 Height="27"
                 Margin="0,0,0.2,0"
                 Background="Transparent"
                 BorderBrush="#FF081F66"
                 Foreground="#FF072F62"
+                SelectionChanged="TextBox_SelectionChanged"
                 Text=""
-                TextWrapping="Wrap" />
+                TextWrapping="Wrap"
+                ToolTip="Unesite prezime pacijenta" />
         </StackPanel>
         <DataGrid
             x:Name="pacijenti"

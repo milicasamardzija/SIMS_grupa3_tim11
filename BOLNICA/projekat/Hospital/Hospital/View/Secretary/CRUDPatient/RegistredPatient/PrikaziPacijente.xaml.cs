@@ -89,10 +89,17 @@ namespace Hospital
             this.Close();
         }
 
-        private void PrikazPacijenata_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+      
 
+        private void pretraga_TextChanged(object sender, TextChangedEventArgs e)
+        {if(pretraga.Text == "")
+            {
+                PrikazPacijenata.ItemsSource = patientController.getAll();
+            }else {
+                ObservableCollection<PatientDTO> filtrirani = new ObservableCollection<PatientDTO>(patientController.patientBySurname(pretraga.Text));
+                PrikazPacijenata.ItemsSource =filtrirani; 
+            }
+            
         }
-       
     }
 }

@@ -73,5 +73,9 @@ namespace Hospital.Controller
             patientService.save(newPatient);
         }
 
+        public List<PatientDTO> patientBySurname(String surname)
+        {
+           return patientService.patientBySurname(surname);
+        }
     }
 }

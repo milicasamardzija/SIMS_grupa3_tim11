@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Alergeni"
     Width="450"
-    Height="360"
+    Height="390"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
@@ -21,7 +21,7 @@
         <DataGrid
             x:Name="svi"
             Width="180"
-            Height="219"
+            Height="243"
             Margin="10,44,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -48,7 +48,7 @@
         <DataGrid
             x:Name="selected"
             Width="183"
-            Height="219"
+            Height="243"
             Margin="241,44,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -95,7 +95,7 @@
         <Button
             Width="40"
             Height="34"
-            Margin="196,103,0,0"
+            Margin="196,122,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="AddAlergens"
@@ -111,7 +111,7 @@
         <Button
             Width="40"
             Height="33"
-            Margin="196,142,0,0"
+            Margin="196,188,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="RemoveAlergen"
@@ -125,7 +125,7 @@
         <Button
             Width="82"
             Height="32"
-            Margin="342,281,0,0"
+            Margin="342,308,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="saveAlergens"
@@ -143,7 +143,7 @@
         <Button
             Width="83"
             Height="32"
-            Margin="10,281,0,0"
+            Margin="10,308,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Button_Click"

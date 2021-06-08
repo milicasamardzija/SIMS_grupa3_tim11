@@ -14,98 +14,19 @@ using Newtonsoft.Json;
 public class PatientFileStorage : GenericFileStorage<Patient>, IPatientFileStorage 
 {
     public PatientFileStorage(String filePath) : base(filePath) { }
-    /*
-   public ObservableCollection<Patient> GetAll()
-   {
-      ObservableCollection<Patient> sviPacijenti= new ObservableCollection<Patient>();
-
-        sviPacijenti = JsonConvert.DeserializeObject<ObservableCollection<Patient>>(File.ReadAllText(@"./../../../../Hospital/files/storagePatient.json"));
-        return sviPacijenti;
-   }
    
-   public void Save(Patient newPatient)
-   {
-        ObservableCollection<Patient> sviPacijenti = GetAll();
-        sviPacijenti.Add(newPatient);
-        SaveAll(sviPacijenti);
-      
-   }
-   
-   public void SaveAll(ObservableCollection<Patient> patients)
-   {
-        using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/storagePatient.json"))
-        {
-            JsonSerializer serializer = new JsonSerializer();
-            serializer.Serialize(file, patients);
-
-        }
-    }
-   
-   public void Delete(Patient patient)
-   {
-        ObservableCollection<Patient> allPatients = GetAll();
-
-        foreach (Patient p in allPatients)
-        {
-            if (p.PatientId == patient.PatientId)
-            {
-                allPatients.Remove(p);
-                break;
-            }
-        }
-        SaveAll(allPatients);
-    }
-
-    public void DeleteById(int id)
-
-
+    public List<Patient> patientBySurname(String valueS)
     {
-        ObservableCollection<Patient> allPatients = GetAll();
+        List<Patient> filtratedPatients = new List<Patient>();
 
-        foreach (Patient patient in allPatients) {
-
-            if (patient.PatientId == id) {
-
-                allPatients.Remove(patient);
-                break;
-            }
-        }
-        SaveAll(allPatients);
-   }
-   
-   public Patient FindById(int id)
-   {
-        ObservableCollection<Patient> allPatients = GetAll();
-        Patient ret = null;
-
-        foreach (Patient patient in allPatients)
+        foreach(Patient p in GetAll())
         {
-            if (patient.PatientId == id)
+            if (p.Surname.ToUpper().Contains(valueS.ToUpper()))
             {
-                ret = patient;
-                break;
+                filtratedPatients.Add(p);
             }
         }
-
-        return ret;
+        return filtratedPatients;
     }
-   
-   public Boolean ExistsById(int id)
-   {
-        ObservableCollection<Patient> allPatients = GetAll();
-        Boolean ret = false;
-
-        foreach (Patient patient in allPatients)
-        {
-            if (patient.PatientId == id)
-            {
-                ret = true;
-                break;
-            }
-        }
-        return ret;
-   }
-   */
-
 
 }

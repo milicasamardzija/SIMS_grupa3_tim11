@@ -60,8 +60,9 @@ namespace Hospital.Sekretar
            
             DateTime oldDate = (DateTime)date.SelectedDate;
             getDate(oldDate);
-            getRoom();
-            controller.createCheckup(new Checkup(0, idD, idP, chosenDate, idRoom, 0));
+           // getRoom();
+            controller.createCheckup(new Checkup(0, idD, idP, chosenDate, 1, 0));
+            this.Close();
 
         }
 
@@ -84,7 +85,7 @@ namespace Hospital.Sekretar
         }
 
         private void getAvailableRoomsbox() {
-            List<Room> availableRooms = controller.availableRooms(chosenDate);
+           /* List<Room> availableRooms = controller.availableRooms(chosenDate);
 
             foreach (Room r in availableRooms)
             {
@@ -92,12 +93,14 @@ namespace Hospital.Sekretar
                 item.Content = r.Id + " " + r.Purpose;
                 item.Tag = r.Id;
                 listRooms.Items.Add(item);
-            }
+            }*/
         }
        
         public void Btn(object sender, RoutedEventArgs e)
         {
              getAvailableRoomsbox();
         }
+
+      
     }
 }

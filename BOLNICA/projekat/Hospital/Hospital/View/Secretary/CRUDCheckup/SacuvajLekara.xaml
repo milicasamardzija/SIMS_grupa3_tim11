@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Sacuvaj lekara"
     Width="315"
-    Height="380"
+    Height="395"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
@@ -134,11 +134,18 @@
             Height="29"
             Margin="97,88,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top">
+            <ComboBoxItem>0 sala</ComboBoxItem>
+            <ComboBoxItem>3 ordinacija</ComboBoxItem>
+            <ComboBoxItem>1 soba</ComboBoxItem>
+            <ComboBoxItem>2 soba</ComboBoxItem>
+            <ComboBoxItem>4 sala</ComboBoxItem>
+            <ComboBoxItem>5 ordinacija</ComboBoxItem>
+        </ComboBox>
         <Button
             Width="75"
             Height="32"
-            Margin="201,308,0,0"
+            Margin="201,315,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="SaveCheckup"
@@ -155,7 +162,7 @@
         <Button
             Width="77"
             Height="32"
-            Margin="29,308,0,0"
+            Margin="29,315,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Decline"

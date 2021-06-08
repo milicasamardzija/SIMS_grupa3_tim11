@@ -32,7 +32,6 @@
             ItemsSource="{Binding Path=listPatient}"
             ScrollViewer.HorizontalScrollBarVisibility="Hidden"
             ScrollViewer.VerticalScrollBarVisibility="Hidden"
-            SelectionChanged="PrikazPacijenata_SelectionChanged"
             TextElement.FontFamily="Chooper Black"
             TextElement.FontSize="12"
             TextElement.Foreground="#FF0852AE"
@@ -159,7 +158,9 @@
                 Background="Transparent"
                 BorderBrush="#FF08316B"
                 Text=""
-                TextWrapping="Wrap" />
+                TextChanged="pretraga_TextChanged"
+                TextWrapping="Wrap"
+                ToolTip="Unesite prezime pacijenta" />
         </StackPanel>
 
 

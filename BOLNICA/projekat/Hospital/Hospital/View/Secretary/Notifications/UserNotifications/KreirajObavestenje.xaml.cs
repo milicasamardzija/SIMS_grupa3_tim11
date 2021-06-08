@@ -90,5 +90,15 @@ namespace Hospital.Sekretar
             this.Close();
 
         }
+
+        private void TextBox_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            if(pretraga.Text != "") {pacijenti.ItemsSource = patientController.patientBySurname(pretraga.Text); }
+            else
+            {
+                pacijenti.ItemsSource = patientController.getAll();
+            }
+            
+        }
     }
 }

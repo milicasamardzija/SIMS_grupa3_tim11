@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:Hospital"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Blog"
-    d:DesignHeight="391"
+    d:DesignHeight="450"
     d:DesignWidth="794"
     mc:Ignorable="d">
 
@@ -112,15 +112,42 @@
         <Calendar
             Width="185"
             Height="181"
-            Margin="584,158,0,0"
+            Margin="580,208,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top" />
         <Image
             Width="168"
-            Height="114"
+            Height="76"
             Margin="580,33,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Source="/Hospital;component/View/Images/logo-removebg-preview.png" />
+            Cursor="Arrow"
+            Source="/Hospital;component/View/Images/logo-removebg-preview.png">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="/Hospital;component/View/Images/logo-removebg-preview.png" />
+            </Image.OpacityMask>
+        </Image>
+        <Image
+            Width="172"
+            Height="94"
+            Margin="580,94,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Source="/Hospital;component/View/Images/kvalitet-removebg-preview.png">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="/Hospital;component/View/Images/kvalitet-removebg-preview.png" />
+            </Image.OpacityMask>
+        </Image>
+        <Label
+            Width="430"
+            Margin="44,387,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Lider u inovaciji, na usluzi pacijenata!"
+            FontFamily="Segoe Print"
+            FontSize="18"
+            FontStyle="Italic"
+            FontWeight="Bold"
+            Foreground="#FF0C630A" />
     </Grid>
 </Page>

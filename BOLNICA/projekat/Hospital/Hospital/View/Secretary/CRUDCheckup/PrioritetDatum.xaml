@@ -56,7 +56,14 @@
             Height="32"
             Margin="177,124,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top">
+            <ComboBoxItem>2 soba</ComboBoxItem>
+            <ComboBoxItem>1 soba</ComboBoxItem>
+            <ComboBoxItem>7 ordinacija</ComboBoxItem>
+            <ComboBoxItem>9 ordinacija</ComboBoxItem>
+            <ComboBoxItem>3 sala</ComboBoxItem>
+        </ComboBox>
+
         <Button
             Grid.ColumnSpan="2"
             Width="75"

@@ -48,13 +48,13 @@ namespace Hospital.Sekretar
             DateTime oldDate = (DateTime)date.SelectedDate;
             chosenDate = createDate(oldDate, selectedTime.Text);
             ComboBoxItem item = (ComboBoxItem)listRooms.SelectedItem;
-            idRoom = Convert.ToInt32(item.Tag);
-            SacuvajDatum findByDate = new SacuvajDatum(chosenDate, idRoom, patient);
+           // idRoom = Convert.ToInt32(item.Tag);
+            SacuvajDatum findByDate = new SacuvajDatum(chosenDate, 1, patient);
             findByDate.Show();
         }
         private void getAvailableRoomsbox()
         {
-            List<Room> availableRooms = controller.availableRooms(chosenDate);
+          /*  List<Room> availableRooms = controller.availableRooms(chosenDate);
 
             foreach (Room r in availableRooms)
             {
@@ -62,7 +62,7 @@ namespace Hospital.Sekretar
                 item.Content = r.Id + " " + r.Purpose;
                 item.Tag = r.Id;
                 listRooms.Items.Add(item);
-            }
+            } */
         }
         private void CancelBtn(object sender, RoutedEventArgs e)
         {

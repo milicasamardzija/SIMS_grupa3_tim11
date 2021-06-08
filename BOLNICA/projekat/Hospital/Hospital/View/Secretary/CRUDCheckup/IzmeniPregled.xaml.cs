@@ -46,7 +46,7 @@ namespace Hospital.Sekretar
         private void Find(object sender, RoutedEventArgs e)
         {  
             DateTime d = (DateTime)datum.SelectedDate;
-            SlobodniLekari lekari = new SlobodniLekari(getDate(d), idRoom, oldDatas);
+            SlobodniLekari lekari = new SlobodniLekari(getDate(d), 4, oldDatas);
             
 
             lekari.Show();
@@ -67,7 +67,7 @@ namespace Hospital.Sekretar
         }
         private void getAvailableRoomsbox()
         {
-            List<Room> availableRooms = controller.availableRooms(chosenDate);
+           /* List<Room> availableRooms = controller.availableRooms(chosenDate);
 
             foreach (Room r in availableRooms)
             {
@@ -75,7 +75,7 @@ namespace Hospital.Sekretar
                 item.Content = r.Id + " " + r.Purpose;
                 item.Tag = r.Id;
                 listRooms.Items.Add(item);
-            }
+            } */
         }
     }
 }

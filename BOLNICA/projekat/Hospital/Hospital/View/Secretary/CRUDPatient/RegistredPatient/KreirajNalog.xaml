@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:val="clr-namespace:Hospital.Validation"
     Title="Kreiraj nalog"
-    Width="740"
+    Width="745"
     Height="405"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
