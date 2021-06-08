@@ -8,7 +8,7 @@
              Height="640" Width="1280">
     <Grid  Background="#FF373434">
         <Image
-            Margin="10,21,1024,426"
+            Margin="65,54,969,393"
             IsEnabled="False"
             Source="/Hospital;component/View/Images/Manager/profile.png"
             Stretch="Fill"
@@ -24,7 +24,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <TextBlock  FontSize="22" TextAlignment="Left" HorizontalAlignment="Left" Margin="380,54,0,0" TextWrapping="Wrap" Text="Osnovne informacije o upravniku:" VerticalAlignment="Top" Height="42" Width="650" FontWeight="Bold" FontStyle="Italic" Foreground="#FFFFC800"/>
+        <TextBlock  FontSize="22" TextAlignment="Left" HorizontalAlignment="Left" Margin="380,54,0,0" TextWrapping="Wrap" Text="Osnovne informacije o upravniku:" VerticalAlignment="Top" Height="42" Width="420" FontWeight="Bold" FontStyle="Italic" Foreground="#FFFFC800"/>
         <Button Content="Odjava" Click="odjava" Background="#FFFFC800" HorizontalAlignment="Left" Margin="977,344,0,0" VerticalAlignment="Top" Width="184" FontSize="18" FontWeight="Bold" Height="44" RenderTransformOrigin="0.675,-0.058">
             <Button.Effect>
                 <DropShadowEffect/>

@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hospital"
+             xmlns:help="clr-namespace:Hospital.View.Manager.Help"
              mc:Ignorable="d" 
              Height="640" Width="1280"  Background="#FF373434">
     <Grid Margin="0,0,-4,0.6" >
@@ -49,7 +50,7 @@
                 Klikom na dugme Izmeni mozete izmeniti informacije o leku.
             </Button.ToolTip>
         </Button>
-        <Button Background="#ffc800" Foreground="#FF373434" Content="Lekovi koji cekaju reviziju" HorizontalAlignment="Left" Margin="944,514,0,0" VerticalAlignment="Top" Width="296" Click="prikazRevizije" Height="47" RenderTransformOrigin="0.586,0.776" FontWeight="Bold" FontSize="18">
+        <Button Background="#ffc800" Foreground="#FF373434" Content="Lekovi koji cekaju reviziju" HorizontalAlignment="Left" Margin="944,514,0,0" VerticalAlignment="Top" Width="296" Click="prikazRevizije" Height="47" RenderTransformOrigin="0.586,0.776" FontWeight="Bold" FontSize="18" help:HelpProvider.HelpKey="LekoviRevidiranje">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

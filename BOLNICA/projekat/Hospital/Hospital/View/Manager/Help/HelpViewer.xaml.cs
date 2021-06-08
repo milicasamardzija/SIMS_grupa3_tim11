@@ -24,7 +24,6 @@ namespace Hospital.View.Manager.Help
             InitializeComponent();
             string curDir = "./../../../../Hospital/Hospital";
             string path = String.Format("{0}/Help/{1}.html", curDir, key);
-            MessageBox.Show(path);
             if (!File.Exists(path))
             {
                 key = "error";
@@ -42,7 +41,6 @@ namespace Hospital.View.Manager.Help
 
         private void BrowseBack_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            MessageBox.Show("IDEM NAZAD");
             wbHelp.GoBack();
         }
 
