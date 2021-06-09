@@ -109,7 +109,9 @@
             Margin="566,354,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Click="Button_Click"
             Content="Odjavi se"
+            Cursor="Hand"
             FontWeight="Bold"
             Foreground="#FF1B4C93">
             <Button.Background>

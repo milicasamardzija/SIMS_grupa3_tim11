@@ -6,8 +6,8 @@
     xmlns:local="clr-namespace:Hospital"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Guest pacijenti"
-    Width="450"
-    Height="400"
+    Width="455"
+    Height="410"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
@@ -57,8 +57,8 @@
         </DataGrid>
         <Button
             Width="92"
-            Height="31"
-            Margin="170,329,0,0"
+            Height="32"
+            Margin="177,330,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="izbrisiGuest"
@@ -78,7 +78,7 @@
         <Button
             Width="100"
             Height="32"
-            Margin="325,328,0,0"
+            Margin="325,330,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="kreirajStalniNalogButton"
@@ -103,7 +103,7 @@
             Content="Pronadji pacijenta:"
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF08316B" />
+            Foreground="#FF0852AE" />
         <StackPanel
             Width="254"
             Height="27"
@@ -121,14 +121,16 @@
                 x:Name="pretraga"
                 Height="27"
                 Background="Transparent"
-                BorderBrush="#FF08316B"
+                BorderBrush="#FF0D356C"
+                SelectionChanged="pretraga_SelectionChanged"
                 Text=""
-                TextWrapping="Wrap" />
+                TextWrapping="Wrap"
+                ToolTip="Unesi prezime pacijenta" />
         </StackPanel>
         <Button
             Width="92"
             Height="32"
-            Margin="25,329,0,0"
+            Margin="25,330,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="izadji"

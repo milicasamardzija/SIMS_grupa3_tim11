@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -21,9 +23,10 @@ namespace Hospital
     
     public partial class PrikaziGuestPacijente : Window
     {
+        public PatientController controller = new PatientController();
 
 
-        public ObservableCollection<Patient> listGPatient
+        public ObservableCollection<PatientDTO> listGPatient
         {
             get;
             set;
@@ -33,8 +36,8 @@ namespace Hospital
         {
             InitializeComponent();
             this.DataContext = this;
-            listGPatient = loadJason();
-
+            //  listGPatient = loadJason();
+            listGPatient = controller.loadGuests();
         }
 
         private ObservableCollection<Patient> loadJason()
@@ -56,18 +59,29 @@ namespace Hospital
 
         private void kreirajStalniNalogButton(object sender, RoutedEventArgs e)
         {
-              var stalniNalog = new KreirajStalniNalog(listGPatient, (Patient)PrikaziGPacijente.SelectedItem, PrikaziGPacijente.SelectedIndex);
+              var stalniNalog = new KreirajStalniNalog((Patient)PrikaziGPacijente.SelectedItem, PrikaziGPacijente.SelectedIndex);
                stalniNalog.Show();
            
         }
         private void izbrisiGuest(object sender, RoutedEventArgs e)
         {
-          // IzbrisiPacijenta p = new IzbrisiPacijenta(listGPatient, (Patient)PrikaziGPacijente.SelectedItem, PrikaziGPacijente.SelectedIndex);
-           // p.Show();
+           IzbrisiPacijenta p = new IzbrisiPacijenta(listGPatient, (PatientDTO)PrikaziGPacijente.SelectedItem, PrikaziGPacijente.SelectedIndex);
+            p.Show();
         }
         private void izadji(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void pretraga_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            if( pretraga.Text != "")
+            {
+                PrikaziGPacijente.ItemsSource = controller.patientBySurname(pretraga.Text);
+            } else
+            {
+                PrikaziGPacijente.ItemsSource = controller.loadGuests();
+            }
         }
     }
 }

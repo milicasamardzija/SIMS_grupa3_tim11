@@ -69,9 +69,9 @@
 
         <Button
             Grid.Column="1"
-            Width="81"
+            Width="89"
             Height="32"
-            Margin="178,299,0,0"
+            Margin="170,298,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="getDoctorTerms"
@@ -90,9 +90,9 @@
         </Button>
         <Button
             Grid.ColumnSpan="2"
-            Width="81"
+            Width="87"
             Height="32"
-            Margin="46,299,0,0"
+            Margin="46,298,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Decline"

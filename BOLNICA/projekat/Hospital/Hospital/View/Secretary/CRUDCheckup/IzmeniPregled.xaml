@@ -37,7 +37,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top" />
         <Label
-            Margin="35,55,0,0"
+            Margin="33,58,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Vreme"
@@ -98,7 +98,14 @@
             Height="28"
             Margin="115,98,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top">
+            <ComboBoxItem>1 soba</ComboBoxItem>
+            <ComboBoxItem>4 soba</ComboBoxItem>
+            <ComboBoxItem>2 ordinacija</ComboBoxItem>
+            <ComboBoxItem>3 ordinacija</ComboBoxItem>
+            <ComboBoxItem>5 sala</ComboBoxItem>
+            <ComboBoxItem>7 soba</ComboBoxItem>
+        </ComboBox>
         <Button
             Width="91"
             Height="32"

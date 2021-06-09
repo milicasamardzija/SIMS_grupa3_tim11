@@ -233,6 +233,7 @@
     <Compile Include="Service\RoomRenovationService.cs" />
     <Compile Include="Service\StaticInventoryMovemenetService.cs" />
     <Compile Include="Service\PatientService.cs" />
+
     <Compile Include="View\DoctorUI\BolnickoLecenje.xaml.cs">
       <DependentUpon>BolnickoLecenje.xaml</DependentUpon>
     </Compile>
@@ -245,6 +246,15 @@
     <Compile Include="View\DoctorUI\ZauzmiSobu.xaml.cs">
       <DependentUpon>ZauzmiSobu.xaml</DependentUpon>
     </Compile>
+
+    <Compile Include="Validation\HealthCardValidation.cs" />
+    <Compile Include="Validation\JMBGValidation.cs" />
+    <Compile Include="Validation\LettersValidation.cs" />
+    <Compile Include="Validation\NumberValidation.cs" />
+    <Compile Include="Validation\PhoneNumberValidation.cs" />
+    <Compile Include="Validation\TextValidation.cs" />
+    <Compile Include="Validation\ValidationRules.cs" />
+
     <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeLekaRevizijaUpravnik.xaml.cs">
       <DependentUpon>BrisanjeLekaRevizijaUpravnik.xaml</DependentUpon>
     </Compile>

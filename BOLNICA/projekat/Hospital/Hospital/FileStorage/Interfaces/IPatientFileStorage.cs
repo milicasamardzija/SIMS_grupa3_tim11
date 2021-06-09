@@ -8,5 +8,6 @@ namespace Hospital.FileStorage.Interfaces
 {
     public interface IPatientFileStorage : GenericRepository<Patient>
     {
+        List<Patient> patientBySurname(String surname);
     }
 }

@@ -20,10 +20,12 @@ namespace Hospital
     /// </summary>
     public partial class KreirajGuestNalog : Window
     {
-      //  public ObservableCollection<Patient> listPatient;
+        //  public ObservableCollection<Patient> listPatient;
+        public Patient patient = new Patient();
         public KreirajGuestNalog()
         {
             InitializeComponent();
+            DataContext=this;
         }
 
         public int generisiIdG()

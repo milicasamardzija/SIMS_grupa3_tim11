@@ -20,7 +20,7 @@
         </Grid.Background>
 
         <Label
-            Margin="40,34,0,0"
+            Margin="33,31,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Izaberite oblast lekara"
@@ -29,28 +29,48 @@
             Foreground="#FF123EB9" />
         <ComboBox
             Name="specializationCb"
-            Width="198"
+            Width="230"
             Height="24"
-            Margin="40,65,0,0"
+            Margin="33,65,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top" />
         <Button
-            Width="75"
-            Margin="163,160,0,0"
+            Width="86"
+            Cursor="Hand"
+            Height="32"
+            Margin="177,160,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Nadji"
+            Content="     Nadji"
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF123EB9" />
+            Foreground="#FF123EB9"
+            RenderTransformOrigin="0.851,0.458" Click="Button_Click_1">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/Search-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
         <Button
-            Width="75"
-            Margin="40,160,0,0"
+            Width="86"
+            Height="32"
+            Margin="33,160,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Odustani"
+            Cursor="Hand"
+            Click="Button_Click"
+            Content="      Odustani"
             FontSize="14"
             FontWeight="Bold"
-            Foreground="#FF123EB9" />
+            Foreground="#FF123EB9">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="/Hospital;component/View/Images/arrow-left-small.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

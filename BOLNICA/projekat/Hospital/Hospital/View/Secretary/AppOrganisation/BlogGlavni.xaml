@@ -75,9 +75,12 @@
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
             Background="{x:Null}"
+            HeadersVisibility="None"
             ItemsSource="{Binding listNotice}"
             RowBackground="Transparent"
-            RowHeight="25">
+            RowHeight="25"
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+            ScrollViewer.VerticalScrollBarVisibility="Disabled">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="400" Binding="{Binding notice}" />
 

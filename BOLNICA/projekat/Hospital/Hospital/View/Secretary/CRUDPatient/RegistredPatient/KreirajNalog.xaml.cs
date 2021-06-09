@@ -47,14 +47,18 @@ namespace Hospital
      
         private void kreirajNalogB(object sender, RoutedEventArgs e)
         {
-            
-            Adress adresa = new Adress(ulText.Text, Convert.ToInt16(broj.Text), (City)grad.SelectedIndex, (Country)drzava.SelectedIndex);
-            patient.BirthdayDate = (DateTime)datum.SelectedDate;
-            patient.Adress = adresa;
-            patientController.save(Patient);
-          
-            this.Close();
+            if (ulText.Text != null && broj.Text != null && grad.SelectedItem != null && drzava.SelectedItem != null)
+            {
+                Adress adresa = new Adress(ulText.Text, Convert.ToInt16(broj.Text), (City)grad.SelectedIndex, (Country)drzava.SelectedIndex);
+                patient.BirthdayDate = (DateTime)datum.SelectedDate;
+                patient.Adress = adresa;
+                patientController.save(Patient);
 
+                this.Close();
+            } else
+            {
+                MessageBox.Show("Morate popuniti formu!");
+            }
 
         }
 

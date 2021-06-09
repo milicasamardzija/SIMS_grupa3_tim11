@@ -161,5 +161,17 @@ namespace Hospital.Service
             Patient newPatient = new Patient(patient.Name, patient.Surname, patient.TelephoneNumber, patient.Jmbg, patient.Gender, patient.BirthdayDate, generisiId(), patient.HealthCareCategory, patient.IdHealthCard, patient.Occupation, patient.Insurence, patient.Adress);
             patientStorage.Save(newPatient);
         }
+
+        public List<PatientDTO> patientBySurname(String surname)
+        {
+            List<Patient> all = patientStorage.patientBySurname(surname);
+            List<PatientDTO> filtrated = new List<PatientDTO>();
+            foreach (Patient p in all)
+            {
+                PatientDTO nadjen = new PatientDTO(p.Name, p.Surname, p.TelephoneNumber, p.Jmbg, p.Gender,p.BirthdayDate, p.Id, p.HealthCareCategory, p.IdHealthCard, p.Occupation, p.Insurence, p.adress, p.banovan);
+                filtrated.Add(nadjen);
+            }
+            return filtrated;
+        }
     }
 }

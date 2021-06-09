@@ -107,13 +107,15 @@
                     Stretch="None" />
             </StackPanel.Background>
             <TextBox
+                x:Name="pretraga"
                 Height="27"
                 Background="Transparent"
                 BorderBrush="#FF08316B"
                 Text=""
                 TextChanged="TextBox_TextChanged"
                 TextElement.FontSize="14"
-                TextWrapping="Wrap" />
+                TextWrapping="Wrap"
+                ToolTip="Unesi prezime za pretragu" />
         </StackPanel>
     </Grid>
 </Window>

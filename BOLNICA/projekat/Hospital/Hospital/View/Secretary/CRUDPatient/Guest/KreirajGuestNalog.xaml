@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Hospital"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:val="clr-namespace:Hospital.Validation"
     Title="Kreiraj guest nalog"
     Width="420"
     Height="380"
@@ -22,15 +23,16 @@
             Margin="40,19,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Ime"
+            Content="Ime:"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE" />
         <Label
-            Margin="40,54,0,0"
+            Width="90"
+            Margin="40,56,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Prezime"
+            Content="Prezime:"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE" />
@@ -38,7 +40,7 @@
             Margin="40,89,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="JMBG"
+            Content="JMBG:"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE" />
@@ -46,7 +48,7 @@
             Margin="40,116,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Datum rodjenja"
+            Content="Datum rodjenja:"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE" />
@@ -54,7 +56,7 @@
             Margin="40,152,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Pol"
+            Content="Pol:"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE" />
@@ -62,7 +64,7 @@
             Margin="40,184,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Broj telefona"
+            Content="Broj telefona:"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE" />
@@ -74,8 +76,8 @@
             Margin="200,26,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap"
+            Validation.ErrorTemplate="{StaticResource errorTemplate}" />
         <TextBox
             x:Name="prezimeText"
             Width="144"
@@ -158,7 +160,7 @@
             Margin="40,225,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Krvna grupa"
+            Content="Krvna grupa:"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF0852AE" />

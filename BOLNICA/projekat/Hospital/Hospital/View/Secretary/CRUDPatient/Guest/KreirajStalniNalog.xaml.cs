@@ -23,11 +23,11 @@ namespace Hospital
         public ObservableCollection<Patient> listPatient;
         public Patient patient;
         public int index;
-        public KreirajStalniNalog(ObservableCollection<Patient> list, Patient selectedPatient, int sel)
+        public KreirajStalniNalog( Patient selectedPatient, int sel)
         {
             InitializeComponent();
             InitializeComponent();
-            listPatient = list;
+          
 
             foreach (Patient p in listPatient)
             {
@@ -38,7 +38,7 @@ namespace Hospital
                 }
             }
 
-            listPatient = list;
+            //listPatient = list;
             index = sel;
 
             /*imeText.SelectedText = selectedPatient.name;

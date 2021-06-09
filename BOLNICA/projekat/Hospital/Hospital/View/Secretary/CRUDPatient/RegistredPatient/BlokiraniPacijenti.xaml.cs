@@ -40,7 +40,14 @@ namespace Hospital.View.Secretary.CRUDPatient.RegistredPatient
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if(pretraga.Text != "")
+            {
+                PrikazPacijenata.ItemsSource = patientController.patientBySurname(pretraga.Text);
+            }else
+            {
+                PrikazPacijenata.ItemsSource = patientController.loadBlockedPatients();
 
+            }
         }
 
         private void OdblokirajBtn(object sender, RoutedEventArgs e)

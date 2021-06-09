@@ -4,5 +4,21 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:Hospital"
     StartupUri="MainWindow.xaml">
-    <Application.Resources />
+    <Application.Resources>
+
+        <ControlTemplate x:Key="errorTemplate">
+            <Border BorderBrush="#FFF75E5E" BorderThickness="1">
+                <Grid>
+                    <AdornedElementPlaceholder />
+                    <Label
+                        Margin="0,0,2,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Content="{Binding [0].ErrorContent}"
+                        Foreground="OrangeRed"
+                        TextElement.FontSize="8" />
+                </Grid>
+            </Border>
+        </ControlTemplate>
+    </Application.Resources>
 </Application>
