@@ -15,7 +15,7 @@
             VerticalAlignment="Top"
             Content="Opis problema:"
             FontWeight="Bold"
-            Foreground="#FF265FB1" />
+            Foreground="#FF4B80CD" />
         <TextBox
             Width="542"
             Height="53"
@@ -30,10 +30,10 @@
             VerticalAlignment="Top"
             Content="Unesite mail za povratnu informaciju o prijavi problema:"
             FontWeight="Bold"
-            Foreground="#FF265FB1" />
+            Foreground="#FF4B80CD" />
         <TextBox
             x:Name="email"
-            Width="175"
+            Width="334"
             Height="23"
             Margin="358,70,0,0"
             HorizontalAlignment="Left"

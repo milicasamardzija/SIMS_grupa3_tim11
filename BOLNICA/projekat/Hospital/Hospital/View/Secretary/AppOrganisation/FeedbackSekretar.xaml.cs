@@ -26,28 +26,29 @@ namespace Hospital.View.Secretary.AppOrganisation
             ProblemUnchecked p = new ProblemUnchecked();
 
             frame.Navigate(p);
+            Open();
 
         }
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+       private void Open()
         {
-            if((bool)problemCh.IsChecked)
-            {
-                ProblemChecked p = new ProblemChecked();
-                frame.Navigate(p);
-            }
-            else if ((bool)utisakCh.IsChecked)
+            if((bool)utisakBtn.IsChecked)
             {
                 ProblemUnchecked up = new ProblemUnchecked();
                 frame.Navigate(up);
             }
-            else
-            {
-                ProblemUnchecked pu = new ProblemUnchecked();
-                frame.Navigate(pu);
-            }
         }
 
-       
+        private void utisakBtn_Checked(object sender, RoutedEventArgs e)
+        {
+            ProblemUnchecked up = new ProblemUnchecked();
+            frame.Navigate(up);
+        }
+
+        private void problemBtn_Checked(object sender, RoutedEventArgs e)
+        {
+            ProblemChecked p = new ProblemChecked();
+            frame.Navigate(p);
+        }
     }
 }

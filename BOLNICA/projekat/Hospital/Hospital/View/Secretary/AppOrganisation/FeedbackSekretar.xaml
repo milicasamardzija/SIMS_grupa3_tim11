@@ -70,28 +70,10 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <CheckBox
-            x:Name="utisakCh"
-            Width="131"
-            Height="20"
-            Margin="197,166,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Checked="CheckBox_Checked"
-            Content="UTISAK"
-            TextElement.Foreground="#FF1B4C93" />
-        <CheckBox
-            Name="problemCh"
-            Margin="308,166,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Checked="CheckBox_Checked"
-            Content="PRIJAVA PROBLEMA"
-            TextElement.Foreground="#FF1B4C93" />
         <Frame
             x:Name="frame"
             Width="692"
-            Height="121"
+            Height="100"
             Margin="47,295,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
@@ -99,5 +81,40 @@
                 <ImageBrush />
             </Frame.Background>
         </Frame>
+        <Button
+            Width="126"
+            Height="33"
+            Margin="613,400,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="       Posalji feedback"
+            TextElement.FontWeight="Bold"
+            TextElement.Foreground="#FF1B4C93">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="telegram-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
+        <RadioButton
+            x:Name="utisakBtn"
+            Margin="197,166,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Checked="utisakBtn_Checked"
+            Content="UTISAK"
+            GroupName="grupa"
+            IsChecked="True"
+            TextElement.Foreground="#FF1B4C93" />
+        <RadioButton
+            x:Name="problemBtn"
+            Margin="313,166,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Checked="problemBtn_Checked"
+            Content="PRIJAVA PROBLEMA"
+            GroupName="grupa"
+            TextElement.Foreground="#FF1B4C93" />
     </Grid>
 </Page>

@@ -32,7 +32,7 @@
             Foreground="#FF1B4C93" />
         <TextBox
             x:Name="email"
-            Width="175"
+            Width="334"
             Height="23"
             Margin="358,70,0,0"
             HorizontalAlignment="Left"
