@@ -8,11 +8,11 @@ namespace Hospital.Model
 {
     public class Feedback : Entity
     {
-        private FeedbackType type;
-        private int grade;
-        private String comment;
-        private String problem;
-        private String email;
+        public FeedbackType type { get; set; }
+        public int grade { get; set; }
+        public String comment { get; set; }
+        public String problem { get; set; }
+        public String email { get; set; }
 
         public Feedback() { }
 

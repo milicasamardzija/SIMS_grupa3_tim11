@@ -1,18 +1,34 @@
 [
-  {
-    "id": 0,
-    "type": 0,
-    "grade": 5,
-    "comment": "sve je super",
-    "problem": "",
-    "email": ""
-  },
-  {
-    "id": 1,
-    "type": 1,
-    "grade": 3,
-    "comment": "",
-    "problem": "sporo je",
-    "email": "mara@gmail.com"
-  }
+    {
+        "type": 0,
+        "grade": 5,
+        "comment": "sve je super",
+        "problem": "",
+        "email": "",
+        "Id": 0
+    },
+    {
+        "type": 1,
+        "grade": 3,
+        "comment": "",
+        "problem": "sporo je",
+        "email": "mara@gmail.com",
+        "Id": 1
+    },
+    {
+        "type": 0,
+        "grade": 5,
+        "comment": "Dizajn vam je superiska",
+        "problem": null,
+        "email": null,
+        "Id": 2
+    },
+    {
+        "type": 1,
+        "grade": 1,
+        "comment": "nista mi se ne svidja",
+        "problem": "mnogo boja na dizajnu",
+        "email": "nezadovoljko1@gmail.com",
+        "Id": 3
+    }
 ]

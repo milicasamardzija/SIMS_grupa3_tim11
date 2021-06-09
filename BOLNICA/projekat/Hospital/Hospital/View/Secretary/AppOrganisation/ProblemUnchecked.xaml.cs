@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.Controller;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,28 +24,32 @@ namespace Hospital.View.Secretary.AppOrganisation
     {
         public Feedback feedback;
         
-       
+       public FeedbackController controller;
 
         public ProblemUnchecked()
         {
             InitializeComponent();
-        
 
+            controller = new FeedbackController();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (komentar.Text == null || ocena.Value == null)
             {
-                MessageBox.Show(ocena.ToString());
+
                 MessageBox.Show("Morate uneti ocenu i komentar!");
             }
             else
             {
-                feedback = new Feedback(0, FeedbackType.utisak, ocena.Value, komentar.Text);
 
+                feedback = new Feedback(0, FeedbackType.utisak, ocena.Value, komentar.Text);
+                controller.createFeedbackUtisak(feedback);
                 MessageBox.Show("Uspesno ste uneli feedback!");
             }
+            
+               
+            
         }
     }
 }
