@@ -20,10 +20,10 @@ namespace Hospital.Controller
             service = new NotificationsService();
         }
 
-        public ObservableCollection<NotificationsDTO> findByIdPatient(int idPatient)
+        public List<NotificationsDTO> findByIdPatient(int idPatient)
         {
-            ObservableCollection<NotificationsDTO> patientsNotification = new ObservableCollection<NotificationsDTO>();
-            ObservableCollection<Notifications> founded = service.findNotificationsByIdPatient(idPatient);
+            List<NotificationsDTO> patientsNotification = new List<NotificationsDTO>();
+            List<Notifications> founded = service.findNotificationsByIdPatient(idPatient);
 
             foreach(Notifications n in founded)
             {
@@ -31,20 +31,20 @@ namespace Hospital.Controller
             }
             return patientsNotification;
         }
-        public ObservableCollection<NotificationsDTO> getAll()
+        public List<NotificationsDTO> getAll()
         {
             List<Notifications> all = service.getAll();
-            ObservableCollection<NotificationsDTO> allNotifications = new ObservableCollection<NotificationsDTO>();
+            List<NotificationsDTO> allNotifications = new List<NotificationsDTO>();
             foreach(Notifications n in all)
             {
                 allNotifications.Add(new NotificationsDTO(n.Title, n.Content, n.Date, n.Id, n.Person, n.IdPatient));
             }
             return allNotifications;
         }
-        public ObservableCollection<NotificationsDTO> loadNotificationsByPerson(String person)
+        public List<NotificationsDTO> loadNotificationsByPerson(String person)
         {
-            ObservableCollection<NotificationsDTO> notifications = new ObservableCollection<NotificationsDTO>();
-            ObservableCollection<Notifications> allNotifications = service.loadNotificationsByPerson(person);
+            List<NotificationsDTO> notifications = new List<NotificationsDTO>();
+            List<Notifications> allNotifications = service.loadNotificationsByPerson(person);
 
             foreach(Notifications n in allNotifications)
             {
@@ -59,11 +59,9 @@ namespace Hospital.Controller
 
             List<Notifications> allNotifications = service.getAll();
 
-            ObservableCollection<Notifications> all = new ObservableCollection<Notifications>(allNotifications);
-
-            foreach (Notifications nId in all)
+            foreach (Notifications nId in allNotifications)
             {
-                foreach (Notifications n in all)
+                foreach (Notifications n in allNotifications)
                 {
                     if (ret == n.Id)
                     {

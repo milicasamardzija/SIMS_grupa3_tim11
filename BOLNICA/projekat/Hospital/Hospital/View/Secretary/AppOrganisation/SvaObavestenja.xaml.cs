@@ -37,8 +37,8 @@ namespace Hospital
  
       private ObservableCollection<NotificationsDTO> loadMyNotifications(String person)
         {
-           
-            return controller.loadNotificationsByPerson(person);
+            ObservableCollection<NotificationsDTO> loadedNotifications = new ObservableCollection<NotificationsDTO>(controller.loadNotificationsByPerson(person));
+            return loadedNotifications;
         }
 
 

@@ -43,17 +43,17 @@ namespace Hospital.Controller
         }
 
 
-        public ObservableCollection<PatientDTO> loadGuests()
+        public List<PatientDTO> loadGuests()
         {
             return patientService.loadGuests();
         }
 
-        public ObservableCollection<PatientDTO> loadAllPatients()
+        public List<PatientDTO> loadAllPatients()
         {
             return patientService.loadAllPatients();
         }
 
-        public ObservableCollection<PatientDTO> loadRegistred()
+        public List<PatientDTO> loadRegistred()
         {
             return patientService.loadRegistred();
         }

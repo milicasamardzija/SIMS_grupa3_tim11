@@ -37,10 +37,17 @@ namespace Hospital.Sekretar
             controller = new NotificationsController();
             patientController = new PatientController();
             listNotification = loadNotifications();
-            listPatients = patientController.loadAllPatients();
+            listPatients = loadAllPatients();
             myTableUpdate = list;
         }
   
+
+        public ObservableCollection<PatientDTO> loadAllPatients()
+        {
+            ObservableCollection<PatientDTO> ret = new ObservableCollection<PatientDTO>(patientController.loadAllPatients());
+            return ret;
+
+        }
         public ObservableCollection<NotificationsDTO> loadNotifications()
         {
             ObservableCollection<NotificationsDTO> notifications = new ObservableCollection<NotificationsDTO>(controller.getAll());

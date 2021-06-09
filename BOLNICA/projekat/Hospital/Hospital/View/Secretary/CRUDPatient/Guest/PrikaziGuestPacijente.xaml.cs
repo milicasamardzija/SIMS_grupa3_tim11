@@ -37,24 +37,15 @@ namespace Hospital
             InitializeComponent();
             this.DataContext = this;
             //  listGPatient = loadJason();
-            listGPatient = controller.loadGuests();
+            listGPatient = loadGuests();
         }
 
-        private ObservableCollection<Patient> loadJason()
+        private ObservableCollection<PatientDTO> loadGuests()
         {
-            PatientFileStorage pfs = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            ObservableCollection<Patient> rs = new ObservableCollection<Patient>(pfs.GetAll());
-            ObservableCollection<Patient> ret = new ObservableCollection<Patient>();
-
-            foreach (Patient p in rs)
-           {
-               if(p.guest==true)
-               {
-                   ret.Add(p);
-                }
-           }
-
+          
+            ObservableCollection<PatientDTO> ret = new ObservableCollection<PatientDTO>(controller.loadGuests());
             return ret;
+
         }
 
         private void kreirajStalniNalogButton(object sender, RoutedEventArgs e)
