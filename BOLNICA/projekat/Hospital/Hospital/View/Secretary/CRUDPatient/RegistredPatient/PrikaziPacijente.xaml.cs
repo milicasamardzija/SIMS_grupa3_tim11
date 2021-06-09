@@ -42,7 +42,8 @@ namespace Hospital
 
         public ObservableCollection<PatientDTO> loadRegistredPatients()
         {
-            return patientController.loadRegistred();
+            ObservableCollection<PatientDTO> ret = new ObservableCollection<PatientDTO>(patientController.loadRegistred());
+            return ret;
         }
 
    

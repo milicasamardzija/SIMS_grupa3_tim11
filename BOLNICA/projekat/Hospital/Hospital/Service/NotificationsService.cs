@@ -20,17 +20,16 @@ namespace Hospital.Service
             storageNotifications = new NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
         }
 
-        public ObservableCollection<Notifications> findNotificationsByIdPatient(int id) => new ObservableCollection<Notifications>(storageNotifications.FindByIdPatient(id));
+        public List<Notifications> findNotificationsByIdPatient(int id) => new List<Notifications>(storageNotifications.FindByIdPatient(id));
 
         public int generisiId()
         {
             int ret = 0;
             List<Notifications> allNotifications = storageNotifications.GetAll();
-            ObservableCollection<Notifications> all = new ObservableCollection<Notifications>(allNotifications);
-
-            foreach (Notifications nId in all)
+          
+            foreach (Notifications nId in allNotifications)
             {
-                foreach (Notifications n in all)
+                foreach (Notifications n in allNotifications)
                 {
                     if (ret == n.Id)
                     {
@@ -47,10 +46,10 @@ namespace Hospital.Service
             return storageNotifications.GetAll();
         }
 
-        public ObservableCollection<Notifications> loadNotificationsByPerson(String person)
+        public List<Notifications> loadNotificationsByPerson(String person)
         {
-            ObservableCollection<Notifications> notifications =new ObservableCollection<Notifications>( storageNotifications.FindByPerson(person));
-            return notifications;
+            
+            return storageNotifications.FindByPerson(person);
         }
 
         public void deleteNotification(Notifications notification)

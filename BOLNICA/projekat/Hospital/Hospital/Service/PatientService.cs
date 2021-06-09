@@ -60,9 +60,9 @@ namespace Hospital.Service
 
         }
 
-        public ObservableCollection<PatientDTO> loadAllPatients()
+        public List<PatientDTO> loadAllPatients()
         {
-            ObservableCollection<PatientDTO> allPatients = new ObservableCollection<PatientDTO>();
+            List<PatientDTO> allPatients = new List<PatientDTO>();
             List<Patient> loaded = patientStorage.GetAll();
             foreach(Patient p in loaded)
             {
@@ -71,10 +71,10 @@ namespace Hospital.Service
             return allPatients;
         }
 
-        public ObservableCollection<PatientDTO> loadGuests()
+        public List<PatientDTO> loadGuests()
         {
             List<Patient> allPatients = patientStorage.GetAll();
-            ObservableCollection<PatientDTO> guests = new ObservableCollection<PatientDTO>();
+            List<PatientDTO> guests = new List<PatientDTO>();
             foreach (Patient p in allPatients)
             {
                 if (p.guest == true)
@@ -85,10 +85,10 @@ namespace Hospital.Service
             return guests;
         }
 
-        public ObservableCollection<PatientDTO> loadRegistred()
+        public List<PatientDTO> loadRegistred()
         {
             List<Patient> allPatients = patientStorage.GetAll();
-            ObservableCollection<PatientDTO> registred = new ObservableCollection<PatientDTO>();
+            List<PatientDTO> registred = new List<PatientDTO>();
             foreach (Patient p in allPatients)
             {
                 if (p.guest == false)
