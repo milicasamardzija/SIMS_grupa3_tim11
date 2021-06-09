@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,30 @@ namespace Hospital.View.Secretary.AppOrganisation
     /// </summary>
     public partial class ProblemUnchecked : UserControl
     {
+        public Feedback feedback;
+        
+       
+
         public ProblemUnchecked()
         {
             InitializeComponent();
+           // ocena = grade;
+           // komentar = comment;
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if ( komentar.ToString() != null)
+            {
+                feedback = new Feedback(FeedbackType.utisak, ocena.Value, komentar.Text, "nema");
+
+                MessageBox.Show("Uspesno ste uneli feedback!");
+            }
+            else
+            {
+                MessageBox.Show("Morate uneti ocenu i komentar!");
+            }
         }
     }
 }

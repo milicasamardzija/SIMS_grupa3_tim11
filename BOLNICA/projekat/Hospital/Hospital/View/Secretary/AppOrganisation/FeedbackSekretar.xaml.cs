@@ -23,9 +23,7 @@ namespace Hospital.View.Secretary.AppOrganisation
         public FeedbackSekretar()
         {
             InitializeComponent();
-            ProblemUnchecked p = new ProblemUnchecked();
-
-            frame.Navigate(p);
+           
             Open();
 
         }

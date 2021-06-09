@@ -4,27 +4,56 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Hospital.View.Secretary.AppOrganisation"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="135"
+    d:DesignHeight="227"
     d:DesignWidth="692"
     mc:Ignorable="d">
     <Grid>
         <Label
-            Margin="0,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Ocena performansi:"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
+        <materialDesign:RatingBar
+            x:Name="ocena"
+            Margin="150,2,408,194"
+            Foreground="#FF0726D0"
+             />
+        <Label
+            Margin="0,31,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Sugestije i komentari: "
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
+        <TextBox
+            x:Name="komentar"
+            Width="542"
+            Height="52"
+            Margin="150,38,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap" />
+        <Label
+            Margin="0,95,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Opis problema:"
             FontWeight="Bold"
             Foreground="#FF1B4C93" />
         <TextBox
+            x:Name="problem"
             Width="542"
             Height="53"
-            Margin="150,0,0,0"
+            Margin="150,96,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
         <Label
-            Margin="0,67,0,0"
+            Margin="0,153,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Unesite mail za povratnu informaciju o prijavi problema:"
@@ -34,18 +63,19 @@
             x:Name="email"
             Width="334"
             Height="23"
-            Margin="358,70,0,0"
+            Margin="358,156,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
         <Button
             Width="126"
             Height="33"
-            Margin="566,102,0,0"
+            Margin="566,194,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="       Posalji feedback"
             TextElement.FontWeight="Bold"
+            Click="posalji"
             TextElement.Foreground="#FF1B4C93">
             <Button.Background>
                 <ImageBrush

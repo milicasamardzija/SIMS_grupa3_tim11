@@ -49,33 +49,14 @@
             Content="Tip feedback-a: "
             FontWeight="Bold"
             Foreground="#FF1B4C93" />
-        <Label
-            Margin="46,203,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Ocena performansi:"
-            FontWeight="Bold"
-            Foreground="#FF1B4C93" />
-        <Label
-            Margin="46,238,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Sugestije i komentari: "
-            FontWeight="Bold"
-            Foreground="#FF1B4C93" />
-        <TextBox
-            Width="542"
-            Height="52"
-            Margin="197,238,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap" />
+
+
+
         <Frame
             x:Name="frame"
             Width="692"
-            Height="135"
-            Margin="47,295,0,0"
+            Height="227"
+            Margin="47,203,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <Frame.Background>
@@ -102,9 +83,6 @@
             GroupName="grupa"
             TextElement.Foreground="#FF1B4C93" />
 
-        <materialDesign:RatingBar
-            x:Name="ocena"
-            Margin="197,203,458.6,220.6"
-            Foreground="#FF0726D0" />
+
     </Grid>
 </Page>
