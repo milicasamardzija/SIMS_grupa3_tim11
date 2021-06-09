@@ -32,7 +32,7 @@ namespace Hospital.ValidationManager
             }
             else
             {
-                return new ValidationResult(false, "Greška!");
+                return new ValidationResult(false, "");
             }
         }
     }

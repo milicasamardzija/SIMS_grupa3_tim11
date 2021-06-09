@@ -31,7 +31,7 @@ namespace Hospital.ValidationManager
             }
             catch
             {
-                return new ValidationResult(false, "Greška!");
+                return new ValidationResult(false, "");
             }
         }
     }

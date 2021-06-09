@@ -11,11 +11,11 @@
         <Label Content="Tip" Foreground="#FF373434" HorizontalAlignment="Left" Margin="32,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.809,6.038" FontSize="18" FontWeight="Bold"/>
         <Label Content="Specijalizacija" Foreground="#FF373434" HorizontalAlignment="Left" Margin="32,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.809,6.038" FontSize="18" FontWeight="Bold"/>
         <Label Content="Lekar" Foreground="#FF373434" HorizontalAlignment="Left" Margin="34,222,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.809,6.038" FontSize="18" FontWeight="Bold"/>
-        <ComboBox Name="LekarComboBox" Foreground="#FF373434" HorizontalAlignment="Left" Margin="232,222,0,0" VerticalAlignment="Top" Width="204" Height="33" FontSize="18" FontWeight="Bold"/>
+        <ComboBox Name="LekarComboBox" Foreground="#FF373434" HorizontalAlignment="Left" Margin="232,222,0,0" VerticalAlignment="Top" Width="204" Height="33" FontSize="18" FontWeight="Bold" SelectionChanged="LekarComboBox_SelectionChanged"/>
         <ComboBox Name="SpecijalizacijaComboBox" Foreground="#FF373434" HorizontalAlignment="Left" Margin="232,159,0,0" VerticalAlignment="Top" Width="204" FontSize="18" FontWeight="Bold" SelectionChanged="getDoctors"/>
         <TextBox Name="NazivTxt" Foreground="#FF373434" Text="{Binding Medicine.Name}" HorizontalAlignment="Left" Height="34" Margin="232,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontSize="18" FontWeight="Bold"/>
         <TextBox Name="TipTxt" Foreground="#FF373434" Text="{Binding Medicine.Type}" HorizontalAlignment="Left" Height="34" Margin="232,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontSize="18" FontWeight="Bold"/>
-        <Button Background="#FFFFC800" Foreground="#FF373434" Content="Potvrdi" HorizontalAlignment="Left" Margin="50,312,0,0" VerticalAlignment="Top" Width="96" FontSize="18" FontWeight="Bold" Height="37" RenderTransformOrigin="0.5,0.5" Click="potvrdi">
+        <Button Name="potvrdiBtn" Background="#FFFFC800" Foreground="#FF373434" Content="Potvrdi" HorizontalAlignment="Left" Margin="50,312,0,0" VerticalAlignment="Top" Width="96" FontSize="18" FontWeight="Bold" Height="37" RenderTransformOrigin="0.5,0.5" Click="potvrdi">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

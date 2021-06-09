@@ -34,6 +34,12 @@ namespace Hospital
         private MedicineController medicineController;
         private IngredientController ingredientController;
         private Point? _startPoint = new Point();
+        private MedicineDTO medicine = new MedicineDTO();
+        public MedicineDTO Medicine
+        {
+            get { return medicine; }
+            set { medicine = value; }
+        }
 
         public DodavanjeLekaRevizija(Frame frame)
         {
@@ -49,6 +55,7 @@ namespace Hospital
             medicineIds = new List<int>();
             ingredientsIds = new List<int>();
             dodajSpecijalizacije();
+            potvrdiBtn.IsEnabled = false;
         }
 
         private void dodajSastojak(object sender, RoutedEventArgs e)
@@ -65,6 +72,9 @@ namespace Hospital
 
         private void Potvrdi(object sender, RoutedEventArgs e)
         {
+            NazivTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            TipTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            GramazaTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             medicineIds = medicineController.convertReplacementMedicinesIntoIds(ReplacementMedicine.ToList());
             ingredientsIds = ingredientController.convertReplacementMedicinesIntoIds(IngredientsMedicine.ToList());
             medicineController.sendMedicineToRevision(
@@ -230,6 +240,15 @@ namespace Hospital
             if (dgSrc == null || data == null) return;
             MedicinesBase.Remove((MedicineDTO)data);
             ReplacementMedicine.Add((MedicineDTO)data);
+        }
+
+        private void DoktoriIsfiltrirani_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (!NazivTxt.Text.Equals("") && !GramazaTxt.Text.Equals("") && !TipTxt.Text.Equals("") &&
+                SpecijalizacijaComboBox.SelectedIndex != -1 && DoktoriIsfiltrirani.SelectedIndex != -1)
+            {
+                potvrdiBtn.IsEnabled = true;
+            }
         }
     }
 }
