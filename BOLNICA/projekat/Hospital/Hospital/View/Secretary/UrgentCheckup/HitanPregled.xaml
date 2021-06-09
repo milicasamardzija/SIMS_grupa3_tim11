@@ -36,6 +36,7 @@
             VerticalAlignment="Top" />
         <Button
             Width="86"
+            Cursor="Hand"
             Height="32"
             Margin="177,160,0,0"
             HorizontalAlignment="Left"
@@ -44,7 +45,7 @@
             FontSize="14"
             FontWeight="Bold"
             Foreground="#FF123EB9"
-            RenderTransformOrigin="0.851,0.458">
+            RenderTransformOrigin="0.851,0.458" Click="Button_Click_1">
             <Button.Background>
                 <ImageBrush
                     AlignmentX="Left"
@@ -58,6 +59,8 @@
             Margin="33,160,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Cursor="Hand"
+            Click="Button_Click"
             Content="      Odustani"
             FontSize="14"
             FontWeight="Bold"
