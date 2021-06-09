@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model
 {
-    public class Feedback
+    public class Feedback : Entity
     {
         private FeedbackType type;
         private int grade;
@@ -16,21 +16,19 @@ namespace Hospital.Model
 
         public Feedback() { }
 
-        public Feedback(FeedbackType type, int grade, String comment, String problem, String email) {
+        public Feedback(int id, FeedbackType type, int grade, String comment, String problem, String email) : base(id){
             this.type = type;
             this.grade = grade;
             this.comment = comment;
             this.problem = problem;
             this.email = email;
         }
-        public Feedback(FeedbackType type, int grade, String comment, String problem)
+        public Feedback(int id, FeedbackType type, int grade, String comment, String problem) : base(id)
         {
             this.type = type;
             this.grade = grade;
             this.comment = comment;
             this.problem = problem;
-            
         }
-
     }
 }

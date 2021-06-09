@@ -1,0 +1,18 @@
+[
+  {
+    "id": 0,
+    "type": 0,
+    "grade": 5,
+    "comment": "sve je super",
+    "problem": "",
+    "email": ""
+  },
+  {
+    "id": 1,
+    "type": 1,
+    "grade": 3,
+    "comment": "",
+    "problem": "sporo je",
+    "email": "mara@gmail.com"
+  }
+]

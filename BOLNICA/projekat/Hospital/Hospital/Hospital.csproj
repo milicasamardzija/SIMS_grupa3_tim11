@@ -232,10 +232,12 @@
     <Compile Include="Controller\PatientController.cs" />
     <Compile Include="DTO\PatientDTO.cs" />
     <Compile Include="DTO\SurveyDTO.cs" />
+    <Compile Include="FileStorage\FeedbackFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IAlergensFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IAnamnesisFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\ICheckupFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IDoctorFileStorage.cs" />
+    <Compile Include="FileStorage\Interfaces\IFeedbackFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IInstructionFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IMedicalRecordFileStorage.cs" />
     <Compile Include="DTO\RoomDTO.cs" />
