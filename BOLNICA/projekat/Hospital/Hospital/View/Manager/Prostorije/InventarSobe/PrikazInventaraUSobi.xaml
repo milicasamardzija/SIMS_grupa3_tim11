@@ -36,8 +36,8 @@
         <Grid Background="#FFFFC800" Margin="86,91,869,79.7">
 
         </Grid>
-        <Label Foreground="#FF373434" Content="  Unesite naziv, vrstu ili kolicinu opreme:" HorizontalAlignment="Left" Margin="86,91,0,0" VerticalAlignment="Top" Width="325" FontSize="16" FontWeight="Bold"/>
-        <TextBox x:Name="PretragaTxt" HorizontalAlignment="Left" Height="54" Margin="98,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" TextChanged="PretragaTxt_TextChanged" UndoLimit="102" AutomationProperties.HelpText="Unesite zeljeni naziv/kolicinu/tip" FontSize="18" FontWeight="Bold" />
+        <Label Foreground="#FF373434" Content="  Unesite naziv opreme:" HorizontalAlignment="Left" Margin="86,91,0,0" VerticalAlignment="Top" Width="325" FontSize="16" FontWeight="Bold" Height="53"/>
+        <TextBox x:Name="PretragaTxt" HorizontalAlignment="Left" Height="51" Margin="98,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" TextChanged="PretragaTxt_TextChanged" UndoLimit="102" AutomationProperties.HelpText="Unesite zeljeni naziv/kolicinu/tip" FontSize="18" FontWeight="Bold" />
         <Button Click="unazad" Background="#FFFFC800" HorizontalAlignment="Left" Margin="86,269.8,0,0" VerticalAlignment="Top" Width="93" Height="39" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54" Grid.Row="1">
             <Image Source="./../../../Images/Manager/left-64.png">
             </Image>
