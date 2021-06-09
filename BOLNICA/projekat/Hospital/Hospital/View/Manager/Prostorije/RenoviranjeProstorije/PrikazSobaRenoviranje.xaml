@@ -32,13 +32,13 @@
                 <DataGridTextColumn Header="OPIS" Width="362"  Binding="{Binding Description}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Background="#FFFFC800" Foreground="#FF373434" Content="Otkazi renoviranje" HorizontalAlignment="Left" Margin="647,525,0,0" VerticalAlignment="Top" Width="199" Height="57" FontSize="18" FontWeight="Bold" Click="Otkazi">
+        <Button Background="#FFFFC800" Foreground="#FF373434" Content="Otkazi renoviranje" HorizontalAlignment="Left" Margin="647,535,0,0" VerticalAlignment="Top" Width="190" Height="47" FontSize="18" FontWeight="Bold" Click="Otkazi">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Click="unazad" Background="#FFFFC800" HorizontalAlignment="Left" Margin="34,525,0,0" VerticalAlignment="Top" Width="119" Height="57" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54">
-            <Image Source="./../../../Images/Manager/left-64.png" Height="52">
+        <Button Click="unazad" Background="#FFFFC800" HorizontalAlignment="Left" Margin="34,535,0,0" VerticalAlignment="Top" Width="110" Height="47" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54">
+            <Image Source="./../../../Images/Manager/left-64.png" Height="30" Width="57">
             </Image>
         </Button>
     </Grid>

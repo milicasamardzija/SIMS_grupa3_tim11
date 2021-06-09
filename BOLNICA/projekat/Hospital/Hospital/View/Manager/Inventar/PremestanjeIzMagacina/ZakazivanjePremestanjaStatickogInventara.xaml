@@ -22,7 +22,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Label Foreground="#FF373434" Content="Broj prostorije" HorizontalAlignment="Left" Margin="10,156,0,0" VerticalAlignment="Top" Height="53" Width="181" FontSize="24" RenderTransformOrigin="0.512,0.925" FontWeight="Bold"/>
+        <Label Foreground="#FF373434" Content="Broj prostorije" HorizontalAlignment="Left" Margin="17,156,0,0" VerticalAlignment="Top" Height="53" Width="174" FontSize="24" RenderTransformOrigin="0.512,0.925" FontWeight="Bold"/>
         <ComboBox Name="TypeTxt" HorizontalAlignment="Left" Margin="199,10,0,0" VerticalAlignment="Top" Width="244" Height="41" FontSize="16">
             <ComboBoxItem IsSelected="True">STATICKI</ComboBoxItem>
             <ComboBoxItem IsSelected="True">DINAMICKI</ComboBoxItem>
