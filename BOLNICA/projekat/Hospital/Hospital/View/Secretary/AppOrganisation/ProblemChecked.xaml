@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Hospital.View.Secretary.AppOrganisation"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="100"
+    d:DesignHeight="135"
     d:DesignWidth="692"
     mc:Ignorable="d">
     <Grid>
@@ -38,5 +38,21 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
+        <Button
+            Width="126"
+            Height="33"
+            Margin="566,102,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="       Posalji feedback"
+            TextElement.FontWeight="Bold"
+            TextElement.Foreground="#FF1B4C93">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    ImageSource="telegram-icon.png"
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
     </Grid>
 </UserControl>

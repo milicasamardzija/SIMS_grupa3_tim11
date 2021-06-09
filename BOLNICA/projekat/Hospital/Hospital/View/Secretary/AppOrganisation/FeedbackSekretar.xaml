@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Hospital.View.Secretary.AppOrganisation"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="FeedbackSekretar"
     d:DesignHeight="450"
@@ -73,7 +74,7 @@
         <Frame
             x:Name="frame"
             Width="692"
-            Height="100"
+            Height="135"
             Margin="47,295,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
@@ -81,22 +82,6 @@
                 <ImageBrush />
             </Frame.Background>
         </Frame>
-        <Button
-            Width="126"
-            Height="33"
-            Margin="613,400,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="       Posalji feedback"
-            TextElement.FontWeight="Bold"
-            TextElement.Foreground="#FF1B4C93">
-            <Button.Background>
-                <ImageBrush
-                    AlignmentX="Left"
-                    ImageSource="telegram-icon.png"
-                    Stretch="None" />
-            </Button.Background>
-        </Button>
         <RadioButton
             x:Name="utisakBtn"
             Margin="197,166,0,0"
@@ -116,5 +101,10 @@
             Content="PRIJAVA PROBLEMA"
             GroupName="grupa"
             TextElement.Foreground="#FF1B4C93" />
+
+        <materialDesign:RatingBar
+            x:Name="ocena"
+            Margin="197,203,458.6,220.6"
+            Foreground="#FF0726D0" />
     </Grid>
 </Page>
