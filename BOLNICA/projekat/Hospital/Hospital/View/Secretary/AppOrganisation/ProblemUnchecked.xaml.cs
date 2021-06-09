@@ -28,22 +28,22 @@ namespace Hospital.View.Secretary.AppOrganisation
         public ProblemUnchecked()
         {
             InitializeComponent();
-           // ocena = grade;
-           // komentar = comment;
+        
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if ( komentar.ToString() != null)
+            if (komentar.Text == null || ocena.Value == null)
             {
-                feedback = new Feedback(FeedbackType.utisak, ocena.Value, komentar.Text, "nema");
-
-                MessageBox.Show("Uspesno ste uneli feedback!");
+                MessageBox.Show(ocena.ToString());
+                MessageBox.Show("Morate uneti ocenu i komentar!");
             }
             else
             {
-                MessageBox.Show("Morate uneti ocenu i komentar!");
+                feedback = new Feedback(0, FeedbackType.utisak, ocena.Value, komentar.Text);
+
+                MessageBox.Show("Uspesno ste uneli feedback!");
             }
         }
     }

@@ -23,7 +23,7 @@ namespace Hospital.View.Secretary.AppOrganisation
     {
         public Feedback feedback;
       
-        String kom;
+      
         public ProblemChecked()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace Hospital.View.Secretary.AppOrganisation
         {
             if(problem.Text != null && email.Text != null )
             {
-                feedback = new Feedback(FeedbackType.prijava_problema, ocena.Value, kom, problem.Text, email.Text);
+                feedback = new Feedback(0,FeedbackType.prijava_problema, ocena.Value, komentar.Text, problem.Text, email.Text);
                 MessageBox.Show("Uspesno ste uneli feedback!");
             } else
             {

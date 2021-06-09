@@ -23,12 +23,12 @@ namespace Hospital.Model
             this.problem = problem;
             this.email = email;
         }
-        public Feedback(int id, FeedbackType type, int grade, String comment, String problem) : base(id)
+        public Feedback(int id, FeedbackType type, int grade, String comment) : base(id)
         {
             this.type = type;
             this.grade = grade;
             this.comment = comment;
-            this.problem = problem;
+          
         }
     }
 }
