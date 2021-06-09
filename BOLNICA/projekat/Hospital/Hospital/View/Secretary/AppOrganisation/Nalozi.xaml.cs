@@ -57,6 +57,11 @@ namespace Hospital
             Analitika a = new Analitika();
             frameS.Navigate(a);
         }
+        private void feedback(object sender, RoutedEventArgs e)
+        {
+            FeedbackSekretar a = new FeedbackSekretar();
+            frameS.Navigate(a);
+        }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {

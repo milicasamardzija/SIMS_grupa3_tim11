@@ -113,7 +113,6 @@
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-
     <Reference Include="Syncfusion.Compression.Base, Version=19.1460.0.66, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Compression.Base.19.1.0.66\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
     </Reference>
@@ -250,6 +249,8 @@
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
+    <Compile Include="Model\Feedback.cs" />
+    <Compile Include="Model\FeedbackType.cs" />
     <Compile Include="Model\ManagerNote.cs" />
     <Compile Include="Model\Note.cs" />
     <Compile Include="Model\Medicine\Review.cs" />
@@ -268,7 +269,6 @@
     <Compile Include="Service\RoomRenovationService.cs" />
     <Compile Include="Service\StaticInventoryMovemenetService.cs" />
     <Compile Include="Service\PatientService.cs" />
-
     <Compile Include="View\DoctorUI\BolnickoLecenje.xaml.cs">
       <DependentUpon>BolnickoLecenje.xaml</DependentUpon>
     </Compile>
@@ -281,7 +281,6 @@
     <Compile Include="View\DoctorUI\ZauzmiSobu.xaml.cs">
       <DependentUpon>ZauzmiSobu.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="Validation\HealthCardValidation.cs" />
     <Compile Include="Validation\JMBGValidation.cs" />
     <Compile Include="Validation\LettersValidation.cs" />
@@ -433,6 +432,15 @@
     </Compile>
     <Compile Include="View\Secretary\AppOrganisation\Analitika.xaml.cs">
       <DependentUpon>Analitika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Secretary\AppOrganisation\FeedbackSekretar.xaml.cs">
+      <DependentUpon>FeedbackSekretar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Secretary\AppOrganisation\ProblemChecked.xaml.cs">
+      <DependentUpon>ProblemChecked.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Secretary\AppOrganisation\ProblemUnchecked.xaml.cs">
+      <DependentUpon>ProblemUnchecked.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Secretary\AppOrganisation\ProfilSekretara.xaml.cs">
       <DependentUpon>ProfilSekretara.xaml</DependentUpon>
@@ -617,7 +625,6 @@
     <Page Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeRecenzijaPotvrda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-
     </Page>
     <Page Include="View\Manager\Lekovi\LekoviRevizija\IzmenaLekaRevizija.xaml">
       <SubType>Designer</SubType>
@@ -898,6 +905,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Ostalo\ObavestenjaUpravnik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Secretary\AppOrganisation\FeedbackSekretar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Secretary\AppOrganisation\ProblemChecked.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Secretary\AppOrganisation\ProblemUnchecked.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1375,7 +1394,6 @@
     <Resource Include="View\Images\Manager\trash-2-32.png" />
   </ItemGroup>
   <ItemGroup>
-
     <Resource Include="View\Images\Search-Add-icon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1389,6 +1407,8 @@
     <Content Include="Content\Chart.min.css" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\Chart.min.js" />
+    <Resource Include="View\Secretary\AppOrganisation\telegram-icon.png" />
+    <Resource Include="View\Secretary\AppOrganisation\Document-help-icon.png" />
     <Resource Include="View\Secretary\AppOrganisation\important-icon.png" />
     <Resource Include="View\Images\Extras-folder-important-icon.png" />
     <Resource Include="View\Images\system-log-out-icon.png" />

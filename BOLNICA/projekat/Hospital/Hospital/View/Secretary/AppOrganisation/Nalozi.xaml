@@ -114,6 +114,7 @@
             <MenuItem
                 Width="124"
                 Height="30"
+                Click="feedback"
                 Cursor="Hand"
                 FontSize="16"
                 FontWeight="Bold"
