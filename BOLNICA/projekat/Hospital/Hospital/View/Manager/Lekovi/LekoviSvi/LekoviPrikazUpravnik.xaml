@@ -4,14 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hospital"
+             xmlns:help="clr-namespace:Hospital.View.Manager.Help"
              mc:Ignorable="d" 
              Height="640" Width="1280"  Background="#FF373434">
     <Grid Margin="0,0,-4,0.6" >
         <DataGrid Name="ListaLekova" 
                   Background="#FFDFD7BB" RowBackground="#FFDFD7BB" Foreground="#FF373434" FontSize="16" 
                   HorizontalAlignment="Left"
-                  Height="297" 
-                  Margin="69,166,0,0" 
+                  Height="320" 
+                  Margin="69,143,0,0" 
                   VerticalAlignment="Top" 
                   Width="577"
                   AutoGenerateColumns="False"
@@ -29,21 +30,33 @@
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Dodaj mozete poslati informacije o leku doktoru na reviziju.
+            </Button.ToolTip>
         </Button>
         <Button Background="#ffc800" Foreground="#FF373434" Content="Izbrisi" HorizontalAlignment="Left" Margin="517,515,0,0" VerticalAlignment="Top" Width="129" Height="47" FontSize="24" FontWeight="Bold" Click="izbrisi" RenderTransformOrigin="0.487,0.41">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Izbrisi mozete poslati informacije o leku doktoru na reviziju.
+            </Button.ToolTip>
         </Button>
         <Button Background="#ffc800" Foreground="#FF373434" Content="Izmeni" HorizontalAlignment="Left" Margin="291,515,0,0" VerticalAlignment="Top" Width="131" Height="47" Click="izmeni" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.453,-1.384">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Izmeni mozete izmeniti informacije o leku.
+            </Button.ToolTip>
         </Button>
-        <Button Background="#ffc800" Foreground="#FF373434" Content="Lekovi koji cekaju reviziju" HorizontalAlignment="Left" Margin="944,514,0,0" VerticalAlignment="Top" Width="296" Click="prikazRevizije" Height="47" RenderTransformOrigin="0.586,0.776" FontWeight="Bold" FontSize="18">
+        <Button Background="#ffc800" Foreground="#FF373434" Content="Lekovi koji cekaju reviziju" HorizontalAlignment="Left" Margin="944,514,0,0" VerticalAlignment="Top" Width="296" Click="prikazRevizije" Height="47" RenderTransformOrigin="0.586,0.776" FontWeight="Bold" FontSize="18" help:HelpProvider.HelpKey="LekoviRevidiranje">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na ovo dugme otvara se prikaz lekova koji cekaju reviziju od strane lekara.
+            </Button.ToolTip>
         </Button>
     </Grid>
 </UserControl>

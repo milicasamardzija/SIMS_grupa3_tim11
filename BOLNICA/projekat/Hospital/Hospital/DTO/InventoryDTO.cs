@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.DTO
 {
-    public class InventoryDTO : INotifyPropertyChanged
-    {
+    public class InventoryDTO : INotifyPropertyChanged{
         private int id;
         private String name;
         private int quantity;
@@ -58,6 +57,9 @@ namespace Hospital.DTO
             }
             set
             {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("Sva polja moraju biti popunjena.");
+
                 if (value != name)
                 {
                     name = value;

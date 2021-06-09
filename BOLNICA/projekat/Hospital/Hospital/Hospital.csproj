@@ -113,6 +113,7 @@
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+
     <Reference Include="Syncfusion.Compression.Base, Version=19.1460.0.66, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Compression.Base.19.1.0.66\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
     </Reference>
@@ -130,6 +131,24 @@
     </Reference>
     <Reference Include="Syncfusion.Pdf.Base, Version=19.1460.0.66, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Pdf.Wpf.19.1.0.66\lib\net46\Syncfusion.Pdf.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Compression.Base, Version=19.1460.0.67, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Compression.Base.19.1.0.67\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DocIO.Base, Version=19.1460.0.67, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.DocIO.Wpf.19.1.0.67\lib\net46\Syncfusion.DocIO.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DocToPdfConverter.Base, Version=19.1460.0.67, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.DocToPDFConverter.Wpf.19.1.0.67\lib\net46\Syncfusion.DocToPdfConverter.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=19.1460.0.67, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.19.1.0.67\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.OfficeChart.Base, Version=19.1460.0.67, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.OfficeChart.Base.19.1.0.67\lib\net46\Syncfusion.OfficeChart.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Base, Version=19.1460.0.67, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Pdf.Wpf.19.1.0.67\lib\net46\Syncfusion.Pdf.Base.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -165,6 +184,21 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -216,6 +250,7 @@
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
+    <Compile Include="Model\ManagerNote.cs" />
     <Compile Include="Model\Note.cs" />
     <Compile Include="Model\Medicine\Review.cs" />
     <Compile Include="Service\DoctorService.cs" />
@@ -254,9 +289,27 @@
     <Compile Include="Validation\PhoneNumberValidation.cs" />
     <Compile Include="Validation\TextValidation.cs" />
     <Compile Include="Validation\ValidationRules.cs" />
-
+    <Compile Include="ValidationManager\EmptyField.cs" />
+    <Compile Include="ValidationManager\MinValue.cs" />
+    <Compile Include="ValidationManager\StringToDouble.cs" />
+    <Compile Include="ValidationManager\StringToInteger.cs" />
+    <Compile Include="ValidationManager\Time.cs" />
+    <Compile Include="View\Manager\Help\HelpProvider.cs" />
+    <Compile Include="View\Manager\Help\HelpViewer.xaml.cs">
+      <DependentUpon>HelpViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Help\JavaScriptControllHelper.cs" />
+    <Compile Include="View\Manager\Inventar\CRUDInventar\BrisanjePotvrdiInventar.xaml.cs">
+      <DependentUpon>BrisanjePotvrdiInventar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Lekovi\LekoviSvi\BrisanjeLekaPotvrda.xaml.cs">
+      <DependentUpon>BrisanjeLekaPotvrda.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeLekaRevizijaUpravnik.xaml.cs">
       <DependentUpon>BrisanjeLekaRevizijaUpravnik.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeRecenzijaPotvrda.xaml.cs">
+      <DependentUpon>BrisanjeRecenzijaPotvrda.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Lekovi\LekoviRevizija\IzmenaLekaRevizija.xaml.cs">
       <DependentUpon>IzmenaLekaRevizija.xaml</DependentUpon>
@@ -264,8 +317,20 @@
     <Compile Include="View\Manager\Lekovi\LekoviSvi\BrisanjeLekaUpravnik.xaml.cs">
       <DependentUpon>BrisanjeLekaUpravnik.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeRecenzijeUpravnik.xaml.cs">
-      <DependentUpon>BrisanjeRecenzijeUpravnik.xaml</DependentUpon>
+    <Compile Include="View\Manager\Lekovi\LekoviSvi\DodavanjeLekaPotvrda.xaml.cs">
+      <DependentUpon>DodavanjeLekaPotvrda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Ostalo\Informacije.xaml.cs">
+      <DependentUpon>Informacije.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Ostalo\O klinici.xaml.cs">
+      <DependentUpon>O klinici.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Ostalo\ProfilUpravnik.xaml.cs">
+      <DependentUpon>ProfilUpravnik.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Prostorije\CRUDProstorije\IzbrisiProstorijuPotvrda.xaml.cs">
+      <DependentUpon>IzbrisiProstorijuPotvrda.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\BrisanjeRenovacijeSIgurnost.xaml.cs">
       <DependentUpon>BrisanjeRenovacijeSIgurnost.xaml</DependentUpon>
@@ -282,6 +347,18 @@
     </Compile>
     <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeSpajanje.xaml.cs">
       <DependentUpon>RenoviranjeSpajanje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\WIzard\Wizard.xaml.cs">
+      <DependentUpon>Wizard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Zaposleni\Izvestaj.xaml.cs">
+      <DependentUpon>Izvestaj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Zaposleni\Obavestenje.xaml.cs">
+      <DependentUpon>Obavestenje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Zaposleni\ZaposleniPrikaz.xaml.cs">
+      <DependentUpon>ZaposleniPrikaz.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pacijent\DodajAnketu.xaml.cs">
       <DependentUpon>DodajAnketu.xaml</DependentUpon>
@@ -525,13 +602,66 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\Manager\Help\HelpViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Inventar\CRUDInventar\BrisanjePotvrdiInventar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Lekovi\LekoviSvi\BrisanjeLekaPotvrda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeRecenzijaPotvrda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+
+    </Page>
     <Page Include="View\Manager\Lekovi\LekoviRevizija\IzmenaLekaRevizija.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Lekovi\LekoviSvi\DodavanjeLekaPotvrda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Ostalo\BelsekaMagacin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Manager\Ostalo\Informacije.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Ostalo\O klinici.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Ostalo\ProfilUpravnik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Prostorije\CRUDProstorije\IzbrisiProstorijuPotvrda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\WIzard\Wizard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Zaposleni\Izvestaj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Zaposleni\Obavestenje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Zaposleni\ZaposleniPrikaz.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pacijent\DodajBelesku.xaml">
       <SubType>Designer</SubType>
@@ -590,10 +720,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Lekovi\LekoviSvi\BrisanjeLekaUpravnik.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Manager\Lekovi\LekoviRevizija\BrisanjeRecenzijeUpravnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1249,6 +1375,7 @@
     <Resource Include="View\Images\Manager\trash-2-32.png" />
   </ItemGroup>
   <ItemGroup>
+
     <Resource Include="View\Images\Search-Add-icon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1282,6 +1409,58 @@
     <Resource Include="View\Images\edit-icon.png" />
     <Resource Include="View\Images\callcenter-girls-flower-icon.png" />
     <Resource Include="View\Images\Adobe-PDF-Document-icon.png" />
+    <Resource Include="View\Images\Manager\left-48.png" />
+    <Resource Include="View\Images\Manager\left-64.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="View\Images\Manager\wizard\inventarDodaj.png" />
+    <Resource Include="View\Images\Manager\wizard\inventIzbrisi.png" />
+    <Resource Include="View\Images\Manager\wizard\invetIzmeni.png" />
+    <Resource Include="View\Images\Manager\wizard\inventarUSobi.png" />
+    <Resource Include="View\Images\Manager\wizard\izmeniInventar.png" />
+    <Resource Include="View\Images\Manager\wizard\klinika.png" />
+    <Resource Include="View\Images\Manager\wizard\LekDodaj.png" />
+    <Resource Include="View\Images\Manager\wizard\LekIzbrisi.png" />
+    <Resource Include="View\Images\Manager\wizard\lekIzmeni.png" />
+    <Resource Include="View\Images\Manager\wizard\lekovi.png" />
+    <Resource Include="View\Images\Manager\wizard\lekoviRevizijaPrikaz.png" />
+    <Resource Include="View\Images\Manager\wizard\obavestenja.png" />
+    <Resource Include="View\Images\Manager\wizard\prebacivanjeOdabir.png" />
+    <Resource Include="View\Images\Manager\wizard\premestiDimamicki.png" />
+    <Resource Include="View\Images\Manager\wizard\premestiStaticki.png" />
+    <Resource Include="View\Images\Manager\wizard\profil.png" />
+    <Resource Include="View\Images\Manager\wizard\renoviranje.png" />
+    <Resource Include="View\Images\Manager\wizard\renoviranjeSvih.png" />
+    <Resource Include="View\Images\Manager\wizard\sobe.png" />
+    <Resource Include="View\Images\Manager\wizard\zaposleni.png" />
+    <Resource Include="View\Images\Manager\wizard\magacin.png" />
+    <Resource Include="Help\Beleska.png" />
+    <Content Include="Help\Bolnica.html" />
+    <Content Include="Help\Dinamicki.html" />
+    <Content Include="Help\Error.html" />
+    <Content Include="Help\HTMLPage1.html" />
+    <Content Include="Help\index.html" />
+    <Resource Include="Help\Inventar.png" />
+    <Resource Include="Help\izvestaj.png" />
+    <Content Include="Help\Lekovi.html" />
+    <Content Include="Help\LekoviRevidiranje.html" />
+    <Content Include="Help\Magacin.html" />
+    <Resource Include="Help\menu.png" />
+    <Resource Include="Help\pretragaSoba.png" />
+    <Resource Include="Help\Otkacaj.png" />
+    <Content Include="Help\Prostorije.html" />
+    <Resource Include="Help\ren.png" />
+    <Content Include="Help\ZakazivanjeRenoviranja.html" />
+    <Content Include="Help\Zaposleni.html" />
+    <Resource Include="View\Images\Manager\left-32.png" />
+    <Resource Include="View\Images\Manager\right-32.png" />
+    <Resource Include="View\Images\Manager\pdf-32.png" />
+    <Resource Include="View\Images\Manager\x-mark-3-32.png" />
+    <Resource Include="View\Images\Manager\info-32.png" />
+    <Resource Include="View\Images\Manager\profile.png" />
+    <Resource Include="View\Images\Manager\manager-32.png" />
+    <Resource Include="View\Images\Manager\conference-call-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />

@@ -51,7 +51,7 @@ namespace Hospital
         }
         private void odustani(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(3));
         }
 
         private void premesti(object sender, RoutedEventArgs e)
@@ -69,7 +69,7 @@ namespace Hospital
             inventoryController.moveInventory(new RoomInventory(-1,idRoom, inventory.Id, quantity), roomOutId);
             listaInvetara.ItemsSource = loadJasonInventory();
 
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(3));
         }
 
         public ObservableCollection<Inventory> loadJasonInventory()

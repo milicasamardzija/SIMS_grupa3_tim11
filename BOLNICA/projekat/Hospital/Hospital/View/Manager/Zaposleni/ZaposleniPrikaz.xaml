@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Hospital.View.Manager.Zaposleni.ZaposleniPrikaz"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hospital.View.Manager.Zaposleni"
+             mc:Ignorable="d" 
+             Height="640" Width="1280"  Background="#FF373434">
+    <Grid Margin="0,0,-4,0.6" >
+        <DataGrid Name="ListaDoktora" 
+                  Background="#FFDFD7BB" RowBackground="#FFDFD7BB" Foreground="#FF373434" FontSize="16" 
+                  HorizontalAlignment="Left"
+                  Height="320" 
+                  Margin="42,192,0,0" 
+                  VerticalAlignment="Top" 
+                  Width="632"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  ItemsSource="{Binding Path = doctors}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="JMBG" Width="150" Binding="{Binding Jmbg}"/>
+                <DataGridTextColumn Header="Ime" Width="120" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Prezime" Width="180" Binding="{Binding Surname}"/>
+                <DataGridTextColumn Header="Specijalizacija" Width="174" Binding="{Binding SpecializationType}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Foreground= "#ffc800" FontSize="22" TextAlignment="Left" HorizontalAlignment="Left" Margin="42,111,0,0" TextWrapping="Wrap" Text="Doktori koji su zaposleni u bolnici" VerticalAlignment="Top" Height="42" Width="650" FontWeight="Bold" FontStyle="Italic"/>
+        <Frame Name="DoktoriFrame" Content="" HorizontalAlignment="Left" Margin="750,111,0,0" VerticalAlignment="Top" Height="401" Width="470" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</UserControl>

@@ -7,8 +7,16 @@
              mc:Ignorable="d" 
              Height="401" Width="470" Background="#FFDFD7BB">
     <Grid>
-        <TextBlock HorizontalAlignment="Center" Margin="35,100,0,0" TextWrapping="Wrap" Text="Da li ste sigurni da zelite da izbrisete selektovani lek?" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Height="137" Width="402"/>
-        <Button Background="LightBlue" Content="Potvrdi" HorizontalAlignment="Left" Margin="52,280,0,0" VerticalAlignment="Top" Width="122" FontWeight="Bold" FontSize="20" Height="57" Click="obrisi"/>
-        <Button Background="LightBlue" Content="Odustani" HorizontalAlignment="Left" Margin="302,280,0,0" VerticalAlignment="Top" Width="122" FontWeight="Bold" FontSize="20" Height="57" RenderTransformOrigin="1.452,0.637" Click="odustani"/>
+        <TextBlock Foreground="#FF373434" HorizontalAlignment="Center" Margin="35,100,0,0" TextWrapping="Wrap" Text="Da li ste sigurni da zelite da izbrisete selektovani lek?" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Height="137" Width="402"/>
+        <Button Background="#FFFFC800" Foreground="#FF373434" Content="Potvrdi" HorizontalAlignment="Left" Margin="52,280,0,0" VerticalAlignment="Top" Width="122" FontWeight="Bold" FontSize="20" Height="57" Click="obrisi">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Background="#FFFFC800" Foreground="#FF373434" Content="Odustani" HorizontalAlignment="Left" Margin="302,280,0,0" VerticalAlignment="Top" Width="122" FontWeight="Bold" FontSize="20" Height="57" RenderTransformOrigin="1.452,0.637" Click="odustani">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
     </Grid>
 </UserControl>

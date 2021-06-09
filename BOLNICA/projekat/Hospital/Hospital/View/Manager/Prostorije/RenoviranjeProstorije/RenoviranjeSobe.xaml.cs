@@ -38,21 +38,23 @@ namespace Hospital
             this.room = room;
             controller = new RoomsController();
             brojProstorijeTxt.SelectedText = Convert.ToString(room.Id);
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
+            BeginDate.BlackoutDates.Add(kalendar);
+            EndDate.BlackoutDates.Add(kalendar);
         }
 
         private void odustani(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new BelsekaMagacin()); 
+            frame.NavigationService.Navigate(new BelsekaMagacin(1)); 
         }
 
         private void renoviraj(object sender, RoutedEventArgs e)
         {
             RoomRenovation.IdRoom = Convert.ToInt32(brojProstorijeTxt.Text);
-            MessageBox.Show(Convert.ToString(RoomRenovation.IdRoom));
             RoomRenovation.DateBegin = (DateTime)BeginDate.SelectedDate;
             RoomRenovation.DateEnd = (DateTime)EndDate.SelectedDate;
             controller.scheduleRenovation(RoomRenovation);
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }
     }
 }

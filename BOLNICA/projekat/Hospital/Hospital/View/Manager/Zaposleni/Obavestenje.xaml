@@ -1,0 +1,17 @@
+﻿<Window x:Class="Hospital.View.Manager.Zaposleni.Obavestenje"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital.View.Manager.Zaposleni"
+        mc:Ignorable="d"
+        Title="Obavestenje" Height="220" Width="420" WindowStartupLocation="CenterScreen" Background="#FFDFD7BB" ScrollViewer.HorizontalScrollBarVisibility="Visible" WindowStyle="None">
+    <Grid>
+        <Label Foreground="#FF373434" Content="Izvestaj se nalazi u folderu Izvestaji bolnice." Margin="10,67,-0.4,42.6" FontWeight="Bold" FontSize="18" ></Label>
+        <Button Foreground="#FF373434" Background="#FFFFC800" Content="U redu." Margin="146,144,169.6,23.6" FontWeight="Bold" FontSize="18" Click="Povratak">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+    </Grid>
+</Window>

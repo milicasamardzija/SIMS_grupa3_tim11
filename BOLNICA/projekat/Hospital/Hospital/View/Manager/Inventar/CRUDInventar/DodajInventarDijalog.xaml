@@ -4,15 +4,64 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hospital"
+             xmlns:val="clr-namespace:Hospital.ValidationManager"
              mc:Ignorable="d" 
              Height="400" Width="470" Background="#FFDFD7BB" Foreground="#FF373434">
     <Grid>
         <Label Foreground="#FF373434" Content="Ime" HorizontalAlignment="Left" Margin="30,123,0,0" VerticalAlignment="Top" Height="50" Width="92" FontSize="30" RenderTransformOrigin="0.528,0.925" FontWeight="Bold"/>
         <Label Foreground="#FF373434" Content="Tip" HorizontalAlignment="Left" Margin="30,28,0,0" VerticalAlignment="Top" Height="54" Width="92" FontSize="30" FontWeight="Bold"/>
         <Label Foreground="#FF373434" Content="Kolicina" HorizontalAlignment="Left" Margin="30,228,0,0" VerticalAlignment="Top" Height="53" Width="150" FontSize="30" RenderTransformOrigin="0.512,0.925" FontWeight="Bold"/>
-        <TextBox Name="QuantityTxt" Foreground="#FF373434" Text="{Binding Path = Inventory.Quantity, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Height="45" Margin="180,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18"/>
-        <TextBox Name="NameTxt" Foreground="#FF373434" Text="{Binding Path=Inventory.Name, UpdateSourceTrigger=PropertyChanged }" HorizontalAlignment="Left" Height="50" Margin="180,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18"/>
-        <Button Foreground="#FF373434" Background="#ffc800" Content="Dodaj" HorizontalAlignment="Left" Margin="30,317,0,0" VerticalAlignment="Top" Width="150" FontSize="30" Height="43" FontWeight="Bold" Click="dodaj">
+        <TextBox Name="QuantityTxt" Foreground="#FF373434"  HorizontalAlignment="Left" Height="45" Margin="180,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18" TextChanged="QuantityTxt_TextChanged">
+            <TextBox.Text>
+                <Binding Path="Inventory.Quantity" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True">
+                    <Binding.ValidationRules>
+                        <val:StringToInteger ValidationStep="RawProposedValue"></val:StringToInteger>
+                        <val:MinValue ValidationStep="ConvertedProposedValue" Min="1"></val:MinValue>
+                        <val:EmptyField ValidationStep="RawProposedValue"></val:EmptyField>
+                    </Binding.ValidationRules>
+                 </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="QuantityTxt"/>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                    </Grid>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+        <TextBox Name="NameTxt" Foreground="#FF373434" HorizontalAlignment="Left" Height="50" Margin="180,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18">
+            <TextBox.Text>
+                <Binding Path="Inventory.Name" UpdateSourceTrigger="PropertyChanged " ValidatesOnDataErrors="True">
+                    <Binding.ValidationRules>
+                        <val:EmptyField ValidationStep="RawProposedValue"></val:EmptyField>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="QuantityTxt"/>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                    </Grid>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+        <Button Name="dodajBtn" Foreground="#FF373434" Background="#ffc800" Content="Dodaj" HorizontalAlignment="Left" Margin="30,317,0,0" VerticalAlignment="Top" Width="150" FontSize="30" Height="43" FontWeight="Bold" Click="dodaj">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -23,8 +72,10 @@
             </Button.Effect>
         </Button>
         <ComboBox Name="TypeTxt" SelectedValue="{Binding Path=Inventory.Type, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Margin="180,41,0,0" VerticalAlignment="Top" Width="244" Height="41" FontSize="18">
-            <ComboBoxItem IsSelected="True">STATICKI</ComboBoxItem>
-            <ComboBoxItem IsSelected="True">DINAMICKI</ComboBoxItem>
         </ComboBox>
+        <Validation.ErrorTemplate>
+            <ControlTemplate>
+            </ControlTemplate>
+        </Validation.ErrorTemplate>
     </Grid>
 </UserControl>

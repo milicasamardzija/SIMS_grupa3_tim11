@@ -45,10 +45,12 @@ namespace Hospital
             ImeTxt.SelectedText = inventory.Name;
             KolicinaTxt.SelectedText = Convert.ToString(inventory.Quantity);
             TypeTxt.SelectedIndex = (int)inventory.Type;
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
+            DatumTxt.BlackoutDates.Add(kalendar);
         }
         private void odustani(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
 
         private void prikaz()
@@ -129,7 +131,7 @@ namespace Hospital
 
             doWork();
 
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
 
         private void saveNewMovement()

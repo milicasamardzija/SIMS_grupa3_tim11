@@ -29,6 +29,10 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
             this.room = room;
             this.roomController = new RoomsController();
             addRooms();
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
+            BeginDate.BlackoutDates.Add(kalendar);
+            EndDate.BlackoutDates.Add(kalendar);
+            potvrdiBtn.IsEnabled = false;
         }
         private void addRooms()
         {
@@ -37,7 +41,7 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
             foreach (RoomDTO room in roomController.getAll())
             {
                 ComboBoxItem item = new ComboBoxItem();
-                item.Content = Convert.ToString(room.Id) + " " + Convert.ToString(room.Purpose);
+                item.Content = Convert.ToString(room.Purpose) + " broj " +  Convert.ToString(room.Id);
                 item.Tag = room.Id;
                 SobeComboBox.Items.Add(item);
             }
@@ -45,11 +49,19 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
         private void renoviraj(object sender, RoutedEventArgs e)
         {
             roomController.mergeRooms(room.Id, Convert.ToInt32(((ComboBoxItem)SobeComboBox.SelectedItem).Tag));
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }
         private void odustani(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(1));
+        }
+
+        private void SobeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (!BeginDate.Text.Equals("") && !EndDate.Text.Equals("") && SobeComboBox.SelectedIndex != -1)
+            {
+                potvrdiBtn.IsEnabled = true;
+            }
         }
     }
 }

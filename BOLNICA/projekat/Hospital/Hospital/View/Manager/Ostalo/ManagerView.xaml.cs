@@ -11,10 +11,17 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Hospital.View.Manager.Ostalo;
+using Hospital.View.Manager.WIzard;
+using Hospital.View.Manager.Zaposleni;
+using Application = System.Windows.Application;
+using HelpProvider = Hospital.View.Manager.Help.HelpProvider;
+using MessageBox = System.Windows.MessageBox;
 
 namespace Hospital
 {
@@ -25,11 +32,22 @@ namespace Hospital
         private int idRoomIn;
         private int idRoomOut;
         private int quantity;
+        private ManagerNote notes = new ManagerNote();
+        private List<ManagerNote> note = new List<ManagerNote>();
         public ManagerView()
         {
             InitializeComponent();
-            frame.NavigationService.Navigate(new Magacin(frame));
+            frame.NavigationService.Navigate(new ProfilUpravnik(this));
             getTasks();
+            note = notes.GetAll();
+            if (note[4].note.Equals("da"))
+            {
+                Wizard w = new Wizard();
+                w.Show();
+                note[4].note = "ne";
+                notes.SaveAll(note);
+            }
+           
         }
 
       private void getTasks()
@@ -78,12 +96,12 @@ namespace Hospital
 
         private void magacin(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new Magacin(frame));
+            frame.NavigationService.Navigate(new Magacin(frame), ProfilUpravnik.isToolTipVisible);
         }
 
         private void sobe(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new Sobe(frame));
+            frame.NavigationService.Navigate(new Sobe(frame),ProfilUpravnik.isToolTipVisible);
         }
 
         private void lekovi(object sender, RoutedEventArgs e)
@@ -94,6 +112,37 @@ namespace Hospital
         private void obavestenja(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new ObavestenjaUpravnik());
+        }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            IInputElement focusedControl = FocusManager.GetFocusedElement(Application.Current.Windows[2]);
+           
+            if (focusedControl is DependencyObject)
+            {
+                string str = View.Manager.Help.HelpProvider.GetHelpKey((DependencyObject) focusedControl);
+                View.Manager.Help.HelpProvider.ShowHelp(str, this);
+            }
+        }
+
+        private void zaposleni(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new ZaposleniPrikaz());
+        }
+
+        private void profil(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new ProfilUpravnik(this));
+        }
+
+        private void klinika(object sender, RoutedEventArgs e)
+        {
+            frame.NavigationService.Navigate(new O_klinici());
+        }
+
+        private void odjava(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

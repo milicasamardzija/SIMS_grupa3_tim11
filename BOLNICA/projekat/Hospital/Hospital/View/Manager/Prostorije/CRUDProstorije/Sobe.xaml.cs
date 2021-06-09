@@ -4,6 +4,7 @@ using Hospital.View.Manager.Prostorije.RenoviranjeProstorije;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.View.Manager.Ostalo;
 
 namespace Hospital
 {
@@ -32,7 +34,26 @@ namespace Hospital
             frameMagacin = magacin;
             Rooms = new ObservableCollection<RoomDTO>(roomController.getAll());
             ucitajInventar();
-            SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
+            SobeFrame.NavigationService.Navigate(new BelsekaMagacin(1));
+            setTooltips();
+        }
+
+        void setTooltips()
+        {
+            if (ProfilUpravnik.isToolTipVisible)
+            {
+                Style style = new Style(typeof(ToolTip));
+                style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+                style.Seal();
+                this.Resources.Remove(typeof(ToolTip));
+            }
+            else
+            {
+                Style style = new Style(typeof(ToolTip));
+                style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+                style.Seal();
+                this.Resources.Add(typeof(ToolTip), style);
+            }
         }
 
         private void dodavanje(object sender, RoutedEventArgs e)
@@ -44,7 +65,8 @@ namespace Hospital
         {
             if (ListaProstorija.SelectedItem == null)
             {
-                SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
+                SobeFrame.NavigationService.Navigate(new BelsekaMagacin(1));
+                MessageBoxResult result = MessageBox.Show("Niste selektovali prostoriju!");
             }
             else
             {
@@ -56,7 +78,8 @@ namespace Hospital
         {
             if (ListaProstorija.SelectedItem == null)
             {
-                SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
+                SobeFrame.NavigationService.Navigate(new BelsekaMagacin(1));
+                MessageBoxResult result = MessageBox.Show("Niste selektovali prostoriju!");
             }
             else
             {
@@ -66,12 +89,21 @@ namespace Hospital
 
         private void prikazInventara(object sender, RoutedEventArgs e)
         {
-           frameMagacin.NavigationService.Navigate(new PrikazInventaraUSobi(Rooms, (RoomDTO)ListaProstorija.SelectedItem,frameMagacin));
+            //Room room = (Room)ListaProstorija.SelectedItem;
+            //RoomDTO roomDTO = new RoomDTO(room.Id, room.Floor, room.Occupancy, room.Purpose, room.Capacity);
+            frameMagacin.NavigationService.Navigate(new PrikazInventaraUSobi(Rooms, (RoomDTO)ListaProstorija.SelectedItem, frameMagacin));
         }
       
         private void PretragaSobe(object sender, TextChangedEventArgs e)
         {
-            ListaProstorija.ItemsSource = roomController.roomsByType(PretragaTxt.Text);
+            if (PretragaTxt.Text == "")
+            {
+                ListaProstorija.ItemsSource = roomController.getAll();
+            }
+            else
+            {
+                ListaProstorija.ItemsSource = roomController.roomsByType(PretragaTxt.Text);
+            }
         }
 
         public void ucitajInventar()
@@ -90,14 +122,21 @@ namespace Hospital
             if (!KolicinaInventarTxt.Text.Equals("")) {
                 quantity = Convert.ToInt32(KolicinaInventarTxt.Text);
             }
-            ListaProstorija.ItemsSource = roomController.roomByInventory(Convert.ToInt32(((ComboBoxItem)ImeInventarTxt.SelectedItem).Tag),  quantity);
+            if (KolicinaInventarTxt.Text.Equals(""))
+            {
+                ListaProstorija.ItemsSource = roomController.getAll();
+            } else
+            {
+                ListaProstorija.ItemsSource = roomController.roomByInventory(Convert.ToInt32(((ComboBoxItem)ImeInventarTxt.SelectedItem).Tag), quantity);
+            }
         } 
 
         private void zakaziRenoviranje(object sender, RoutedEventArgs e)
         {
             if (ListaProstorija.SelectedItem == null)
             {
-                SobeFrame.NavigationService.Navigate(new BelsekaMagacin());
+                SobeFrame.NavigationService.Navigate(new BelsekaMagacin(1));
+                MessageBoxResult result = MessageBox.Show("Niste selektovali prostoriju!");
             } else {
                 SobeFrame.NavigationService.Navigate(new Renoviranje(SobeFrame, (RoomDTO)ListaProstorija.SelectedItem));
             }

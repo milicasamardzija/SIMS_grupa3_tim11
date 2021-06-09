@@ -40,6 +40,7 @@ namespace Hospital
             NazivTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             TipTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             dodajSpecijalizacije();
+            potvrdiBtn.IsEnabled = false;
         }
 
         public void dodajSpecijalizacije()
@@ -82,6 +83,14 @@ namespace Hospital
                 item.Content = doctor.Name + "  " + doctor.Surname;
                 item.Tag = doctor.Id;
                 LekarComboBox.Items.Add(item);
+            }
+        }
+
+        private void LekarComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (SpecijalizacijaComboBox.SelectedIndex != -1 && LekarComboBox.SelectedIndex != -1)
+            {
+                potvrdiBtn.IsEnabled = true;
             }
         }
     }

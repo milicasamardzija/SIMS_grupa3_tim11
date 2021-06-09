@@ -35,14 +35,16 @@ namespace Hospital
             this.frame = frame;
             this.room = room;
             inventories = new ObservableCollection<InventoryDTO>(inventoryController.getInventoryForRoom(room.Id));
-            InventarPemesti.NavigationService.Navigate(new BelsekaMagacin());
+            ListaInventara.ItemsSource = inventoryController.getInventoryForRoom(room.Id);
+            InventarPemesti.NavigationService.Navigate(new BelsekaMagacin(3));
         }
 
         private void premesti(object sender, RoutedEventArgs e)
         {
             if (ListaInventara.SelectedItem == null)
             {
-                InventarPemesti.NavigationService.Navigate(new BelsekaMagacin());
+                InventarPemesti.NavigationService.Navigate(new BelsekaMagacin(3));
+                MessageBoxResult result = MessageBox.Show("Niste selektovali inventar!");
             }
             else
             {
@@ -59,7 +61,7 @@ namespace Hospital
         {
             if (PretragaTxt.Text.Equals(""))
             {
-                ListaInventara.ItemsSource = inventoryController.getAll();
+                ListaInventara.ItemsSource = inventoryController.getInventoryForRoom(room.Id);
             } else //fali pretraga za tip i kolicinu
             {
                 ListaInventara.ItemsSource = inventoryController.inventoryByName(PretragaTxt.Text);

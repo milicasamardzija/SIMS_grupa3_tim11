@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hospital"
+             xmlns:help="clr-namespace:Hospital.View.Manager.Help"
              mc:Ignorable="d" 
              Height="640" Width="1280">
     <Grid Background="#FF373434">
@@ -41,21 +42,30 @@
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Dodaj mozete dodati novu prostoriju u bazu bolnice.
+            </Button.ToolTip>
         </Button>
         <Button Margin="329,532,848,60" Background = "#ffc800" Click="izmeni" Content="IZMENI" RenderTransformOrigin="1.07,0.564" FontWeight="Bold" FontSize="16" Foreground="#FF373434">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Izmeni mozete izmeniti informacije o selektoovanoj bolnici.
+            </Button.ToolTip>
         </Button>
         <Button Margin="634,532,542,58" Background = "#ffc800" Click="obrisi" Content="IZBRISI" RenderTransformOrigin="0.538,0.22" FontWeight="Bold" FontSize="16" Foreground="#FF373434">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Izbrisi mozete izbrisati selektovanu prostoriju iz baze bolnice.
+            </Button.ToolTip>
         </Button>
         <Frame Name="SobeFrame" HorizontalAlignment="Left" Margin="764,92,0,0" VerticalAlignment="Top" Height="400" Width="470" />
         <StackPanel Background="#ffc800" Margin="33,92,968,450">
-            <Label Content="Unesite sprat ili  namenu prostorije:" FontSize="16" FontWeight="Bold" Height="40" Margin="0,0,-26.8,0" VerticalAlignment="Top" Foreground="#FF373434"/>
-            <TextBox x:Name="PretragaTxt" FontSize="16" FontWeight="Bold" Width="216" TextChanged="PretragaSobe" Margin="0,0,0,31.6" Height="45" VerticalAlignment="Bottom"/>
+            <Label Content="Unesite namenu prostorije:" FontSize="16" FontWeight="Bold" Height="40" Margin="10,0,-26.8,0" VerticalAlignment="Top" Foreground="#FF373434"/>
+            <TextBox x:Name="PretragaTxt" FontSize="16" FontWeight="Bold" TextChanged="PretragaSobe" Margin="10,0,31.2,31.6" Height="45" VerticalAlignment="Bottom"/>
         </StackPanel>
         <StackPanel Background="#ffc800" HorizontalAlignment="Left" Height="100" Margin="329,92,0,0" VerticalAlignment="Top" Width="409">
             <Label Content="Filtriranje soba na osnovu inventara&#xD;&#xA; (naziv i kolicina):" FontSize="16"  FontWeight="Bold" Height="51" Margin="0,0,-0.2,0" Background="#FFFFC800" ScrollViewer.VerticalScrollBarVisibility="Disabled" Foreground="#FF373434"></Label>
@@ -64,15 +74,21 @@
                 <TextBox Name ="KolicinaInventarTxt" Grid.Row="0" Margin="286,3,10.8,-34" RenderTransformOrigin="0.498,1.049" FontWeight="Bold" TextChanged="KolicinaInventarTxt_TextChanged" FontSize="16"/>
             </Grid>
         </StackPanel>
-        <Button Margin="764,530,331,60" Background = "#ffc800" Click="zakaziRenoviranje" Content="ZAKAZI RENOVIRANJE" RenderTransformOrigin="-0.561,0.77" FontWeight="Bold" FontSize="16" Foreground="#FF373434" >
+        <Button Margin="764,530,331,60" Background = "#ffc800" Click="zakaziRenoviranje" Content="ZAKAZI RENOVIRANJE" RenderTransformOrigin="-0.561,0.77" FontWeight="Bold" FontSize="16" Foreground="#FF373434" help:HelpProvider.HelpKey="ZakazivanjeRenoviranja">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Zakazi renoviranje mozete zakazati renoviranje selektovane prostorije.
+            </Button.ToolTip>
         </Button>
         <Button Margin="1103,530,46,60" Background = "#ffc800" Click="RenoviranjePrikaz" Content="RENOVIRANJE" RenderTransformOrigin="-0.561,0.77" FontWeight="Bold" FontSize="16" Foreground="#FF373434">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Renoviranje otvara se prikaz svih zakazanih renoviranja.
+            </Button.ToolTip>
         </Button>
     </Grid>
 </UserControl>

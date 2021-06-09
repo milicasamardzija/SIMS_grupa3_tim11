@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hospital"
+             xmlns:help="clr-namespace:Hospital.View.Manager.Help"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="470" Background="#FFDFD7BB">
     <Grid>
@@ -11,10 +12,7 @@
             <Label Margin="27,45,306,317" Foreground="#FF373434" FontSize="18" Grid.Column="0" Grid.Row="0" FontWeight="Bold" RenderTransformOrigin="0.498,-0.169">Broj prostorije</Label>
             <TextBox IsReadOnly="True" Text="{Binding Room.Id}" Name="brojProstorijeTxt" Width="200" Margin="244,45,36,330" Grid.Row="0" FontSize="18" />
             <Label Height="30" Width="100" Margin="27,124,353,256" Foreground="#FF373434" FontSize="18" Grid.Column="0" FontWeight="Bold" RenderTransformOrigin="-0.119,-0.46">Namena</Label>
-            <ComboBox Name="namenaTxt" SelectedValue="{Binding Path = Room.Purpose}" SelectedValuePath="Purpose" Width="200" Margin="244,124,36,248" FontSize="16">
-                <ComboBoxItem>SALA</ComboBoxItem>
-                <ComboBoxItem>SOBA</ComboBoxItem>
-                <ComboBoxItem>ORDINACIJA</ComboBoxItem>
+            <ComboBox Name="namenaTxt" SelectedValue="{Binding Path = Room.Purpose, UpdateSourceTrigger=PropertyChanged}"  Width="200" Margin="244,124,36,248" FontSize="16">
             </ComboBox>
             <Label Height="30" Width="100" Margin="27,198,353,182" Foreground="#FF373434" FontSize="18" Grid.Column="0" FontWeight="Bold">Sprat</Label>
             <TextBox Name="spratTxt" Width="200" Text="{Binding Room.Floor}" Margin="244,198,36,176" FontSize="18"/>

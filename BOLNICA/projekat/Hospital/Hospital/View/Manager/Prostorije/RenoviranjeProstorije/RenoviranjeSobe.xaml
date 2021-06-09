@@ -8,17 +8,23 @@
              Width="427" Height="339" Background="#FFDFD7BB">
     <Grid>
         <Grid Margin="0,0,0.2,-11.8">
-            <TextBox IsReadOnly="True" Name="brojProstorijeTxt"  Width="200" Margin="227,18,0,303" Grid.Row="0" FontSize="18" RenderTransformOrigin="0.775,0.625" >
+            <TextBox IsReadOnly="True" Name="brojProstorijeTxt"  Width="200" Margin="227,32,0,288" Grid.Row="0" FontSize="18" RenderTransformOrigin="0.775,0.625" >
             </TextBox>
-            <Label Margin="0,78,282,234.2" Foreground="#FF373434" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" Content="Datum pocetka" FontWeight="Bold"/>
-            <Label Margin="0,148,272,152.2" Foreground="#FF373434" FontSize="18" Grid.Column="0" Content="Datum zavrsetka" FontWeight="Bold"/>
-            <Label Margin="0,214,282,94.2" Foreground="#FF373434" FontSize="18" Grid.Column="0" FontWeight="Bold" Content="Detalji"/>
-            <TextBox Name="opisRadova" Text="{Binding Path =RoomRenovation.Description, UpdateSourceTrigger=PropertyChanged}" Height="30" Width="200" Margin="227,213,0,108" RenderTransformOrigin="0.531,-0.345" FontSize="18"/>
-            <Button Margin="51,293,296,25.2" Foreground="#FF373434" Grid.Column="0" Background="#ffc800" Click="renoviraj" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.413,-0.626">Potvrdi</Button>
-            <Button Margin="272,293,62,25.2"  Background="#ffc800" Foreground="#FF373434"  Click="odustani" FontSize="18" FontWeight="Bold">Odustani</Button>
-            <DatePicker Name="BeginDate"  HorizontalAlignment="Left" Margin="227,78,0,0" VerticalAlignment="Top" Width="200" Height="37" FontSize="18" FirstDayOfWeek="Monday" SelectedDateFormat="Short"/>
-            <DatePicker Name="EndDate"  HorizontalAlignment="Left" Margin="227,148,0,0" VerticalAlignment="Top" Width="200" Height="30" FontSize="18" FirstDayOfWeek="Monday"/>
-            <Label Margin="0,18,282,295.2" Foreground="#FF373434" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" Content="Broj sobe" FontWeight="Bold"/>
+            <Label Margin="0,119,282,193" Foreground="#FF373434" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" Content="Datum pocetka" FontWeight="Bold"/>
+            <Label Margin="0,202,272,98" Foreground="#FF373434" FontSize="18" Grid.Column="0" Content="Datum zavrsetka" FontWeight="Bold"/>
+            <Button Name="potvrdiBtn"  Margin="51,293,296,25.2" Foreground="#FF373434" Grid.Column="0" Background="#ffc800" Click="renoviraj" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.413,-0.626" Content="Potvrdi">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button Margin="272,293,62,25.2"  Background="#ffc800" Foreground="#FF373434"  Click="odustani" FontSize="18" FontWeight="Bold" Content="Odustani">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <DatePicker Name="BeginDate" Focusable="False" HorizontalAlignment="Left" Margin="227,119,0,0" VerticalAlignment="Top" Width="200" Height="37" FontSize="18" FirstDayOfWeek="Monday" SelectedDateFormat="Short"/>
+            <DatePicker Name="EndDate" Focusable="False" HorizontalAlignment="Left" Margin="227,202,0,0" VerticalAlignment="Top" Width="200" Height="30" FontSize="18" FirstDayOfWeek="Monday"/>
+            <Label Margin="0,32,282,281" Foreground="#FF373434" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" Content="Broj sobe" FontWeight="Bold"/>
         </Grid>
     </Grid>
 </UserControl>

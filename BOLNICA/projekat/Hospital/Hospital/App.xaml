@@ -5,7 +5,6 @@
     xmlns:local="clr-namespace:Hospital"
     StartupUri="MainWindow.xaml">
     <Application.Resources>
-
         <ControlTemplate x:Key="errorTemplate">
             <Border BorderBrush="#FFF75E5E" BorderThickness="1">
                 <Grid>
@@ -17,6 +16,7 @@
                         Content="{Binding [0].ErrorContent}"
                         Foreground="OrangeRed"
                         TextElement.FontSize="8" />
+                        </Label>
                 </Grid>
             </Border>
         </ControlTemplate>

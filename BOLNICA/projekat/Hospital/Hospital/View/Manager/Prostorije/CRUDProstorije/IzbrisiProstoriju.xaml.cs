@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.View.Manager.Prostorije.CRUDProstorije;
 
 namespace Hospital
 {
@@ -38,18 +39,26 @@ namespace Hospital
             this.room = room;
             this.index = index;
             this.frame = frame;
+            addPurpose();
+        }
+
+        private void addPurpose()
+        {
+            namenaTxt.ItemsSource = Enum.GetValues((typeof(Purpose)));
         }
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-            controller.deleteById(room.Id);
-            rooms.RemoveAt(index);
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+           // rooms.RemoveAt(index);
+           // controller.deleteById(room.Id);
+            IzbrisiProstorijuPotvrda brisanje = new IzbrisiProstorijuPotvrda(room.Id,rooms,index);
+            brisanje.Show();
+            frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }
 
         private void odustani(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }
     }
 }

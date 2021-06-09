@@ -40,18 +40,32 @@ namespace Hospital
             this.frame = frame;
             this.room = selectedItem;
             this.controller = new RoomsController();
+            addPurpose();
+            potvrdiBtn.IsEnabled = false;
         }
 
+        private void addPurpose()
+        {
+            namenaTxt.ItemsSource = Enum.GetValues((typeof(Purpose)));
+        }
         private void izmenaProstorije(object sender, RoutedEventArgs e)
         {
             controller.update(room);
+            frame.NavigationService.Navigate(new BelsekaMagacin(1));
             rooms[index] = room;
-            frame.NavigationService.Navigate(new BelsekaMagacin());
         }
 
         private void odustani(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(1));
+        }
+
+        private void kapacitetTxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!spratTxt.Text.Equals("") && !kapacitetTxt.Text.Equals("") && namenaTxt.SelectedIndex != -1)
+            {
+                potvrdiBtn.IsEnabled = true;
+            }
         }
     }
 }

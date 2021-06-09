@@ -4,53 +4,121 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Hospital"
+             xmlns:validationManager="clr-namespace:Hospital.ValidationManager"
              mc:Ignorable="d" 
               Height="626" Width="1280"  Background="#FF373434">
-    <Grid>
+    <Grid RenderTransformOrigin="0.459,1.277">
         <Label Content="Naziv" HorizontalAlignment="Left" Margin="42,26,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Foreground="#FFFFC800" RenderTransformOrigin="0.483,-0.119"/>
         <Label Content="Gramaza" Foreground="#FFFFC800" HorizontalAlignment="Left" Margin="42,82,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.443,-0.065"/>
         <Label Content="Tip" Foreground="#FFFFC800" HorizontalAlignment="Left" Margin="42,140,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.793,-0.208"/>
-        <TextBox Name="NazivTxt" HorizontalAlignment="Left" Height="34" Margin="226,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18"/>
-        <TextBox Name="TipTxt" HorizontalAlignment="Left" Height="34" Margin="226,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18"/>
-        <TextBox Name="GramazaTxt" HorizontalAlignment="Left" Height="34" Margin="226,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18" />
-        <Label Content="Zamenski lekovi" Foreground="#FFFFC800" HorizontalAlignment="Left" Margin="42,399,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.234,3.518"/>
+        <TextBox Name="NazivTxt" HorizontalAlignment="Left" Height="34" Margin="226,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18">
+            <TextBox.Text>
+                <Binding Path="Medicine.Name" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True">
+                    <Binding.ValidationRules>
+                        <validationManager:EmptyField ValidationStep="RawProposedValue"></validationManager:EmptyField>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="QuantityTxt"/>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                    </Grid>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+        <TextBox Name="TipTxt" HorizontalAlignment="Left" Height="34" Margin="226,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18">
+            <TextBox.Text>
+                <Binding Path="Medicine.Type" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True">
+                    <Binding.ValidationRules>
+                        <validationManager:EmptyField ValidationStep="RawProposedValue"></validationManager:EmptyField>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="QuantityTxt"/>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                    </Grid>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+        <TextBox Name="GramazaTxt" HorizontalAlignment="Left" Height="34" Margin="226,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18" >
+            <TextBox.Text>
+                <Binding Path="Medicine.Quantity" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True">
+                    <Binding.ValidationRules>
+                        <validationManager:EmptyField ValidationStep="RawProposedValue"></validationManager:EmptyField>
+                        <validationManager:StringToDouble ValidationStep="RawProposedValue"></validationManager:StringToDouble>
+                        <validationManager:MinValue Min="0.1"></validationManager:MinValue>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="QuantityTxt"/>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                    </Grid>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+        <Label Content="Zamenski lekovi" Foreground="#FFFFC800" HorizontalAlignment="Left" Margin="42,362,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.234,3.518"/>
         <Label Content="Sastojci" Foreground="#FFFFC800" HorizontalAlignment="Left" Margin="42,210,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.908,3.708"/>
-        <DataGrid Name="SastojciBaza" ItemsSource="{Binding Path = IngredientsBase}" AutoGenerateColumns="False" Background="#FFDFD7BB" HorizontalAlignment="Left" Height="166" Margin="226,210,0,0" VerticalAlignment="Top" Width="244">
+        <DataGrid Name="SastojciBaza" IsReadOnly="True" ItemsSource="{Binding Path = IngredientsBase}"  AutoGenerateColumns="False" Background="#FFDFD7BB" HorizontalAlignment="Left" Height="137" Margin="873,210,0,0" VerticalAlignment="Top" Width="244" MouseLeftButtonDown="SastojciBaza_MouseLeftButtonDown" MouseMove="SastojciBaza_MouseMove">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Dodaj sastojak" Background="#FFFFC800" Click="dodajSastojak" HorizontalAlignment="Left" Margin="570,267,0,0" VerticalAlignment="Top" Width="204" FontSize="18" Height="51" FontWeight="Bold">
+        <Button  Background="#FFFFC800" Click="dodajSastojak" HorizontalAlignment="Left" Margin="621,210,0,0" VerticalAlignment="Top" Width="88" FontSize="18" Height="34" FontWeight="Bold">
+            <Image Source="../../../Images/Manager/left-48.png"></Image>
+        </Button>
+        <Button Background="#FFFFC800" Click="dodajZamenskiLek" HorizontalAlignment="Left" Margin="621,368,0,0" VerticalAlignment="Top" Width="88" FontSize="18" FontWeight="Bold" Height="34" RenderTransformOrigin="0.451,-0.343">
+            <Image Source="../../../Images/Manager/left-48.png"></Image>
+        </Button>
+        <DataGrid x:Name="ZamenskilekoviBaza" IsReadOnly="True" ItemsSource="{Binding Path = MedicinesBase}" AutoGenerateColumns="False"  Background="#FFDFD7BB" HorizontalAlignment="Left" Height="146" Margin="873,368,0,0" VerticalAlignment="Top" Width="244" MouseLeftButtonDown="ZamenskilekoviBaza_MouseLeftButtonDown" MouseMove="ZamenskilekoviBaza_MouseMove">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="SastojciLek" IsReadOnly="True" ItemsSource="{Binding Path = IngredientsMedicine}" AllowDrop="True" Background="#FFDFD7BB" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="137" Margin="226,210,0,0" VerticalAlignment="Top" Width="244"  Drop="SastojciLek_Drop">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="ZamenskiLekoviLek" IsReadOnly="True" ItemsSource="{Binding Path = ReplacementMedicine}" AllowDrop="True" Background="#FFDFD7BB" AutoGenerateColumns="False"  HorizontalAlignment="Left" Height="146" Margin="226,368,0,0" VerticalAlignment="Top" Width="244" Drop="ZamenskiLekoviLek_Drop">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="potvrdiBtn" Content="Potvrdi" Click="Potvrdi" Background="#FFFFC800" HorizontalAlignment="Left" Margin="226,544,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43" RenderTransformOrigin="0.675,-0.058">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Content="Dodaj zamenski lek" Background="#FFFFC800" Click="dodajZamenskiLek" HorizontalAlignment="Left" Margin="570,454,0,0" VerticalAlignment="Top" Width="204" FontSize="18" FontWeight="Bold" Height="48">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <DataGrid x:Name="ZamenskilekoviBaza" ItemsSource="{Binding Path = MedicinesBase}" AutoGenerateColumns="False"  Background="#FFDFD7BB" HorizontalAlignment="Left" Height="166" Margin="226,399,0,0" VerticalAlignment="Top" Width="244">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <DataGrid x:Name="SastojciLek" ItemsSource="{Binding Path = IngredientsMedicine}" Background="#FFDFD7BB" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="166" Margin="873,210,0,0" VerticalAlignment="Top" Width="244">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <DataGrid x:Name="ZamenskiLekoviLek" ItemsSource="{Binding Path = ReplacementMedicine}" Background="#FFDFD7BB" AutoGenerateColumns="False"  HorizontalAlignment="Left" Height="166" Margin="873,399,0,0" VerticalAlignment="Top" Width="244">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Naziv" Width="235" Binding="{Binding Name}"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button Content="Potvrdi" Click="Potvrdi" Background="#FFFFC800" HorizontalAlignment="Left" Margin="503,544,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43" RenderTransformOrigin="0.675,-0.058">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <Button Content="Odustani" Click="Odustani" Background="#FFFFC800" HorizontalAlignment="Left" Margin="679,544,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43" RenderTransformOrigin="0.545,-0.198">
+        <Button Content="Odustani" Click="Odustani" Background="#FFFFC800" HorizontalAlignment="Left" Margin="969,544,0,0" VerticalAlignment="Top" Width="148" FontSize="18" FontWeight="Bold" Height="43" RenderTransformOrigin="0.545,-0.198">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -58,6 +126,6 @@
         <Label Content="Specijalizacija" Foreground="#FFFFC800" HorizontalAlignment="Left" Margin="701,26,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
         <ComboBox Name="SpecijalizacijaComboBox" Background="#FFEDDCA0" HorizontalAlignment="Left" Margin="873,26,0,0" VerticalAlignment="Top" Width="244" Height="34" SelectionChanged="getDoctors"/>
         <Label Content="Doktor" Foreground="#FFFFC800" HorizontalAlignment="Left" Margin="701,82,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
-        <ComboBox Name="DoktoriIsfiltrirani" HorizontalAlignment="Left" Margin="873,82,0,0" VerticalAlignment="Top" Width="244" FontSize="18" Height="34"/>
+        <ComboBox Name="DoktoriIsfiltrirani" HorizontalAlignment="Left" Margin="873,82,0,0" VerticalAlignment="Top" Width="244" FontSize="18" Height="34" SelectionChanged="DoktoriIsfiltrirani_SelectionChanged"/>
     </Grid>
 </UserControl>

@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Hospital.View.Manager.Zaposleni.Izvestaj"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hospital.View.Manager.Zaposleni"
+             mc:Ignorable="d" 
+             Height="401" Width="470" Background="#FFDFD7BB">
+    <Grid>
+        <Grid Margin="0,0,0.2,-11.8">
+            <Label Margin="27,119,345.2,255.6" Foreground="#FF373434" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" Content="Pocetak" FontWeight="Bold"/>
+            <Label Margin="27,217,325.2,158.6" Foreground="#FF373434" FontSize="18" Grid.Column="0" Content="Kraj" FontWeight="Bold" RenderTransformOrigin="0.458,1.28"/>
+            <Button Margin="153,323,158.2,53.6" Foreground="#FF373434" Grid.Column="0" Background="#ffc800" Click="generateReport" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.413,-0.626" Content="Generisi izvestaj">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <DatePicker Name="BeginDate" Focusable="False" HorizontalAlignment="Left" Margin="240,120,0,0" VerticalAlignment="Top" Width="200" Height="37" FontSize="18" FirstDayOfWeek="Monday" SelectedDateFormat="Short"/>
+            <DatePicker Name="EndDate" Focusable="False"  HorizontalAlignment="Left" Margin="240,224,0,0" VerticalAlignment="Top" Width="200" Height="30" FontSize="18" FirstDayOfWeek="Monday" RenderTransformOrigin="0.494,1.989"/>
+            <Label Margin="10,10,0.2,339.6" Foreground="#FF373434" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" Content="Generisi izvestaj o zauzetosti lekara u&#xD;&#xA;sledecem periodu:" FontWeight="Bold"/>
+        </Grid>
+    </Grid>
+</UserControl>

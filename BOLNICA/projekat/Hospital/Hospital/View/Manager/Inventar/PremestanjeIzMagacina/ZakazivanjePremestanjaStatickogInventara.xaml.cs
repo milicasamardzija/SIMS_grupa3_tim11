@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital.DTO;
 
 namespace Hospital
 {
@@ -32,6 +33,7 @@ namespace Hospital
         private String time;
         private DataGrid tabelaPrikaz;
         private RoomsService serviceRoom = new RoomsService();
+        private RoomsController roomController = new RoomsController();
         public ZakazivanjePremestanjaStatickogInventara(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, DataGrid inventarTabela)
         {
             InitializeComponent();
@@ -43,10 +45,25 @@ namespace Hospital
             ImeTxt.SelectedText = inventory.Name;
             KolicinaTxt.SelectedText = Convert.ToString(inventory.Quantity);
             TypeTxt.SelectedIndex = (int)inventory.Type;
+            addRooms();
+            CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
+            DatumTxt.BlackoutDates.Add(kalendar);
+            potvrdiBtn.IsEnabled = false;
+        }
+        private void addRooms()
+        {
+            SobeComboBox.Items.Clear();
+            foreach (RoomDTO room in roomController.getAll())
+            {
+                ComboBoxItem item = new ComboBoxItem();
+                item.Content = Convert.ToString(room.Purpose) + " broj " + Convert.ToString(room.Id);
+                item.Tag = room.Id;
+                SobeComboBox.Items.Add(item);
+            }
         }
         private void odustani(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
 
          public void prikaz()
@@ -76,7 +93,7 @@ namespace Hospital
         private async void premesti(object sender, RoutedEventArgs e)
         {
             //argumenti
-            idRoom = Convert.ToInt32(IdSobeTxt.Text);
+            idRoom = Convert.ToInt32(((ComboBoxItem)SobeComboBox.SelectedItem).Tag);
             quantity = Convert.ToInt32(KolicinaTxt.Text);
             date = (DateTime)DatumTxt.SelectedDate;
             time = VremeTxt.Text;
@@ -98,7 +115,7 @@ namespace Hospital
 
             doWork();
 
-            frame.NavigationService.Navigate(new BelsekaMagacin());
+            frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
 
         private void saveNewMovement()
@@ -113,6 +130,15 @@ namespace Hospital
             InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
             ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>(storage.GetAll());
             return ret;
+        }
+
+        private void VremeTxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!ImeTxt.Text.Equals("") && !KolicinaTxt.Text.Equals("") && SobeComboBox.SelectedIndex != -1 && DatumTxt.SelectedDate != null && !VremeTxt.Text.Equals(""))
+
+            {
+                potvrdiBtn.IsEnabled = true;
+            }
         }
     }
 }

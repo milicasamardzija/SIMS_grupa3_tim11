@@ -3,6 +3,7 @@ using Hospital.FileStorage.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,12 +17,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Hospital.Controller;
+using Hospital.View.Manager.Ostalo;
 
 namespace Hospital
 {
     public partial class Magacin : UserControl
     {
-        public ObservableCollection<InventoryDTO> inventories
+        public ObservableCollection<Inventory> inventories
         {
             get;
             set;
@@ -35,15 +37,20 @@ namespace Hospital
         private Frame frame;
         private RoomsController roomController;
         private InventoryController inventoryController;
+
+        private InventoryIFileStorage storage =
+            new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
+
         public Magacin(Frame frame)
         {
             InitializeComponent();
-            MagacinFrame.NavigationService.Navigate(new BelsekaMagacin());
+            MagacinFrame.NavigationService.Navigate(new BelsekaMagacin(0));
             this.DataContext = this;
             this.frame = frame;
             this.roomController = new RoomsController();
             this.inventoryController = new InventoryController();
-            this.inventories = new ObservableCollection<InventoryDTO>(inventoryController.getAll());
+            this.inventories = new ObservableCollection<Inventory>(storage.GetAll());
+            setTooltips();
         }
         private void dodaj(object sender, RoutedEventArgs e)
         {
@@ -54,11 +61,12 @@ namespace Hospital
         {
             if (ListaInventara.SelectedItem == null)
             {
-                MagacinFrame.NavigationService.Navigate(new BelsekaMagacin());
+                MagacinFrame.NavigationService.Navigate(new BelsekaMagacin(0));
+                MessageBoxResult result = MessageBox.Show("Niste selektovali inventar!");
             }
             else
             {
-                MagacinFrame.NavigationService.Navigate(new IzbrisiInventarDijalog(MagacinFrame, inventories, (InventoryDTO)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
+                MagacinFrame.NavigationService.Navigate(new IzbrisiInventarDijalog(MagacinFrame, inventories, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
             }
         }
 
@@ -66,15 +74,16 @@ namespace Hospital
         {
             if (ListaInventara.SelectedItem == null)
             {
-                MagacinFrame.NavigationService.Navigate(new BelsekaMagacin());
+                MagacinFrame.NavigationService.Navigate(new BelsekaMagacin(0));
+                MessageBoxResult result = MessageBox.Show("Niste selektovali inventar!");
             }
             else
             {
-              /*  Inventory inventory = (Inventory)ListaInventara.SelectedItem;
+                Inventory inventory = (Inventory)ListaInventara.SelectedItem;
                 if (inventory.Type == InventoryType.staticki)
                     MagacinFrame.NavigationService.Navigate(new PremestanjeInventara(MagacinFrame, inventories, ListaInventara, true, null, ListaInventara));
-                else*
-                    MagacinFrame.NavigationService.Navigate(new PremestiInventarUSobu(MagacinFrame, inventories, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex, ListaInventara));*/
+                else
+                    MagacinFrame.NavigationService.Navigate(new PremestiInventarUSobu(MagacinFrame, inventories, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex, ListaInventara));
             }
         }
 
@@ -82,11 +91,12 @@ namespace Hospital
         {
             if (ListaInventara.SelectedItem == null)
             {
-                MagacinFrame.NavigationService.Navigate(new BelsekaMagacin());
+                MagacinFrame.NavigationService.Navigate(new BelsekaMagacin(0));
+                MessageBoxResult result = MessageBox.Show("Niste selektovali inventar!");
             }
             else
             {
-                MagacinFrame.NavigationService.Navigate(new IzmenaInventaraDijalog(MagacinFrame, inventories, (InventoryDTO)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
+                MagacinFrame.NavigationService.Navigate(new IzmenaInventaraDijalog(MagacinFrame, inventories, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex));
             }
         }
 
@@ -148,7 +158,7 @@ namespace Hospital
             }
             filteredInventory.Clear();
 
-            if (UslovFiltriranja.SelectedIndex == 0) //>=
+            if (UslovFiltriranja.SelectedIndex == 0) 
             {
                 foreach (Inventory inventory in all)
                 {
@@ -163,7 +173,7 @@ namespace Hospital
                     ListaInventara.ItemsSource = inventories;
                 }
 
-            } else if (UslovFiltriranja.SelectedIndex == 1) //<=
+            } else if (UslovFiltriranja.SelectedIndex == 1)
             {
                 foreach (Inventory inventory in all)
                 {
@@ -181,5 +191,22 @@ namespace Hospital
             
         }
 
+        void setTooltips()
+        {
+            if (ProfilUpravnik.isToolTipVisible)
+            {
+                Style style = new Style(typeof(ToolTip));
+                style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+                style.Seal();
+                this.Resources.Remove(typeof(ToolTip));
+            }
+            else
+            {
+                Style style = new Style(typeof(ToolTip));
+                style.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+                style.Seal();
+                this.Resources.Add(typeof(ToolTip), style);
+            }
+        }
     }
 }

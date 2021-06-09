@@ -22,26 +22,10 @@ namespace Hospital
 {
     public partial class DodavanjeLekaRevizija : UserControl
     {
-        public ObservableCollection<IngredientDTO> IngredientsBase
-        {
-            get;
-            set;
-        }
-        public ObservableCollection<MedicineDTO> MedicinesBase
-        {
-            get;
-            set;
-        }
-        public ObservableCollection<IngredientDTO> IngredientsMedicine
-        {
-            get;
-            set;
-        }
-        public ObservableCollection<MedicineDTO> ReplacementMedicine
-        {
-            get;
-            set;
-        }
+        public ObservableCollection<IngredientDTO> IngredientsBase { get; set; }
+        public ObservableCollection<MedicineDTO> MedicinesBase { get; set; }
+        public ObservableCollection<IngredientDTO> IngredientsMedicine { get; set; }
+        public ObservableCollection<MedicineDTO> ReplacementMedicine { get; set; }
 
         private Frame frame;
         private DoctorFileStorage storage;
@@ -49,6 +33,13 @@ namespace Hospital
         private List<int> ingredientsIds;
         private MedicineController medicineController;
         private IngredientController ingredientController;
+        private Point? _startPoint = new Point();
+        private MedicineDTO medicine = new MedicineDTO();
+        public MedicineDTO Medicine
+        {
+            get { return medicine; }
+            set { medicine = value; }
+        }
 
         public DodavanjeLekaRevizija(Frame frame)
         {
@@ -64,25 +55,32 @@ namespace Hospital
             medicineIds = new List<int>();
             ingredientsIds = new List<int>();
             dodajSpecijalizacije();
+            potvrdiBtn.IsEnabled = false;
         }
+
         private void dodajSastojak(object sender, RoutedEventArgs e)
         {
-            IngredientsMedicine.Add((IngredientDTO)SastojciBaza.SelectedItem);
-            IngredientsBase.Remove((IngredientDTO)SastojciBaza.SelectedItem);
+            IngredientsMedicine.Add((IngredientDTO) SastojciBaza.SelectedItem);
+            IngredientsBase.Remove((IngredientDTO) SastojciBaza.SelectedItem);
         }
 
         private void dodajZamenskiLek(object sender, RoutedEventArgs e)
         {
-            ReplacementMedicine.Add((MedicineDTO)ZamenskilekoviBaza.SelectedItem);
-            MedicinesBase.Remove((MedicineDTO)ZamenskilekoviBaza.SelectedItem);
+            ReplacementMedicine.Add((MedicineDTO) ZamenskilekoviBaza.SelectedItem);
+            MedicinesBase.Remove((MedicineDTO) ZamenskilekoviBaza.SelectedItem);
         }
 
         private void Potvrdi(object sender, RoutedEventArgs e)
         {
-          medicineIds = medicineController.convertReplacementMedicinesIntoIds(ReplacementMedicine.ToList());
-          ingredientsIds = ingredientController.convertReplacementMedicinesIntoIds(IngredientsMedicine.ToList());
-            medicineController.sendMedicineToRevision(new MedicineDTO(-1, NazivTxt.Text, Convert.ToDouble(GramazaTxt.Text), TipTxt.Text, ingredientsIds, medicineIds, false), Convert.ToInt32(
-                ((ComboBoxItem)DoktoriIsfiltrirani.SelectedItem).Tag));
+            NazivTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            TipTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            GramazaTxt.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            medicineIds = medicineController.convertReplacementMedicinesIntoIds(ReplacementMedicine.ToList());
+            ingredientsIds = ingredientController.convertReplacementMedicinesIntoIds(IngredientsMedicine.ToList());
+            medicineController.sendMedicineToRevision(
+                new MedicineDTO(-1, NazivTxt.Text, Convert.ToDouble(GramazaTxt.Text), TipTxt.Text, ingredientsIds,
+                    medicineIds, false), Convert.ToInt32(
+                    ((ComboBoxItem) DoktoriIsfiltrirani.SelectedItem).Tag));
             frame.NavigationService.Navigate(new LekoviPrikazUpravnik(frame));
         }
 
@@ -101,12 +99,13 @@ namespace Hospital
             DoctorFileStorage storage = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
             List<Doctor> filtratedDoctors = new List<Doctor>();
             foreach (Doctor doctor in storage.GetAll())
-            {  
-                if(doctor.SpecializationType == (SpecializationType)SpecijalizacijaComboBox.SelectedItem)
+            {
+                if (doctor.SpecializationType == (SpecializationType) SpecijalizacijaComboBox.SelectedItem)
                 {
                     filtratedDoctors.Add(doctor);
                 }
             }
+
             return filtratedDoctors;
         }
 
@@ -120,6 +119,135 @@ namespace Hospital
                 item.Content = doctor.Name + "  " + doctor.Surname;
                 item.Tag = doctor.Id;
                 DoktoriIsfiltrirani.Items.Add(item);
+            }
+        }
+
+        private static T FindAnchestor<T>(DependencyObject current)
+            where T : DependencyObject
+        {
+            do
+            {
+                if (current is T)
+                {
+                    return (T) current;
+                }
+
+                current = VisualTreeHelper.GetParent(current);
+            } while (current != null);
+
+            return null;
+        }
+
+        private void SastojciBaza_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            _startPoint = e.GetPosition(null);
+        }
+
+        private void SastojciBaza_MouseMove(object sender, MouseEventArgs e)
+        {
+            // No drag operation
+            if (_startPoint == null)
+                return;
+
+            var dg = sender as DataGrid;
+            if (dg == null) return;
+            // Get the current mouse position
+            Point mousePos = e.GetPosition(null);
+            Vector diff = _startPoint.Value - mousePos;
+            // test for the minimum displacement to begin the drag
+            if (e.LeftButton == MouseButtonState.Pressed &&
+                (Math.Abs(diff.X) > SystemParameters.MinimumHorizontalDragDistance ||
+                 Math.Abs(diff.Y) > SystemParameters.MinimumVerticalDragDistance))
+            {
+
+                // Get the dragged DataGridRow
+                var DataGridRow =
+                    FindAnchestor<DataGridRow>((DependencyObject) e.OriginalSource);
+
+                if (DataGridRow == null)
+                    return;
+                // Find the data behind the DataGridRow
+                var dataTodrop = (IngredientDTO) dg.ItemContainerGenerator.ItemFromContainer(DataGridRow);
+
+                if (dataTodrop == null) return;
+
+                // Initialize the drag & drop operation
+                var dataObj = new DataObject(dataTodrop);
+                dataObj.SetData("DragSource", sender);
+                DragDrop.DoDragDrop(dg, dataObj, DragDropEffects.Copy);
+                _startPoint = null;
+            }
+        }
+
+        private void SastojciLek_Drop(object sender, DragEventArgs e)
+        {
+            var dg = sender as DataGrid;
+            if (dg == null) return;
+            var dgSrc = e.Data.GetData("DragSource") as DataGrid;
+            var data = e.Data.GetData(typeof(IngredientDTO));
+            if (dgSrc == null || data == null) return;
+            IngredientsBase.Remove((IngredientDTO) data);
+            IngredientsMedicine.Add((IngredientDTO) data);
+        }
+
+        private void ZamenskilekoviBaza_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            _startPoint = e.GetPosition(null);
+        }
+
+        private void ZamenskilekoviBaza_MouseMove(object sender, MouseEventArgs e)
+        {
+            // No drag operation
+            if (_startPoint == null)
+                return;
+
+            var dg = sender as DataGrid;
+            if (dg == null) return;
+            // Get the current mouse position
+            Point mousePos = e.GetPosition(null);
+            Vector diff = _startPoint.Value - mousePos;
+            // test for the minimum displacement to begin the drag
+            if (e.LeftButton == MouseButtonState.Pressed &&
+                (Math.Abs(diff.X) > SystemParameters.MinimumHorizontalDragDistance ||
+                 Math.Abs(diff.Y) > SystemParameters.MinimumVerticalDragDistance))
+            {
+
+                // Get the dragged DataGridRow
+                var DataGridRow =
+                    FindAnchestor<DataGridRow>((DependencyObject)e.OriginalSource);
+
+                if (DataGridRow == null)
+                    return;
+                // Find the data behind the DataGridRow
+                var dataTodrop = (MedicineDTO)dg.ItemContainerGenerator.ItemFromContainer(DataGridRow);
+
+                if (dataTodrop == null) return;
+
+                // Initialize the drag & drop operation
+                var dataObj = new DataObject(dataTodrop);
+                dataObj.SetData("DragSource", sender);
+                DragDrop.DoDragDrop(dg, dataObj, DragDropEffects.Copy);
+                _startPoint = null;
+            }
+        }
+
+        private void ZamenskiLekoviLek_Drop(object sender, DragEventArgs e)
+        {
+            var dg = sender as DataGrid;
+            if (dg == null) return;
+            var dgSrc = e.Data.GetData("DragSource") as DataGrid;
+            var data = e.Data.GetData(typeof(MedicineDTO));
+            if (dgSrc == null || data == null) return;
+            MedicinesBase.Remove((MedicineDTO)data);
+            ReplacementMedicine.Add((MedicineDTO)data);
+        }
+
+        private void DoktoriIsfiltrirani_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (!NazivTxt.Text.Equals("") && !GramazaTxt.Text.Equals("") && !TipTxt.Text.Equals("") &&
+                SpecijalizacijaComboBox.SelectedIndex != -1 && DoktoriIsfiltrirani.SelectedIndex != -1)
+            {
+                potvrdiBtn.IsEnabled = true;
             }
         }
     }

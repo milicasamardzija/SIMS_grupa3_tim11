@@ -29,21 +29,33 @@
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Dodaj mozete dodati novi inventar u magacin.
+            </Button.ToolTip>
         </Button>
         <Button Foreground="#FF373434" Background="#FFFFC800" Content="Izbrisi" HorizontalAlignment="Left" Margin="379,530,0,0" VerticalAlignment="Top" Width="129" Height="47" FontSize="24" FontWeight="Bold" Click="izbrisi" RenderTransformOrigin="0.574,1.728">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Izbrisi mozete izbrisati selektovani inventar iz evidencije.
+            </Button.ToolTip>
         </Button>
         <Button Foreground="#FF373434" Background="#FFFFC800" Content="Prebaci" HorizontalAlignment="Left" Margin="541,531,0,0" VerticalAlignment="Top" Width="121" Height="47" FontSize="24" FontWeight="Bold" Click="premesti" RenderTransformOrigin="0.817,-0.283" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Prebaci mozete izvrsiti premestanje inventara u neku od soba bolnice.
+            </Button.ToolTip>
         </Button>
         <Button Foreground="#FF373434" Background="#FFFFC800" Content="Izmeni" HorizontalAlignment="Left" Margin="222,531,0,0" VerticalAlignment="Top" Width="131" Height="47" Click="izmeni" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.453,-1.384">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
+            <Button.ToolTip>
+                Klikom na dugme Izmeni mozete izmeniti postojece informacije o selektovanom inventaru.
+            </Button.ToolTip>
         </Button>
 
         <Grid Background="#FFFFC800" Margin="304,94,622,434.4">

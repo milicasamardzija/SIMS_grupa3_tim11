@@ -7,22 +7,30 @@
              mc:Ignorable="d" 
              Background="#FFDFD7BB" Height="400" Width="470">
     <Grid>
-        <Label Foreground="#FF373434" Content="Ime" HorizontalAlignment="Left" Margin="17,58,0,0" VerticalAlignment="Top" Height="50" Width="64" FontSize="24" FontWeight="Bold"/>
+        <Label Foreground="#FF373434" Content="Ime" HorizontalAlignment="Left" Margin="17,48,0,0" VerticalAlignment="Top" Height="50" Width="64" FontSize="24" FontWeight="Bold"/>
         <Label Foreground="#FF373434" Content="Tip" HorizontalAlignment="Left" Margin="17,4,0,0" VerticalAlignment="Top" Height="54" Width="92" FontSize="24" FontWeight="Bold"/>
-        <Label Foreground="#FF373434" Content="Kolicina" HorizontalAlignment="Left" Margin="17,115,0,0" VerticalAlignment="Top" Height="53" Width="110" FontSize="24" RenderTransformOrigin="0.512,0.925" FontWeight="Bold"/>
-        <TextBox Foreground="#FF373434" Name="KolicinaTxt" HorizontalAlignment="Left" Height="40" Margin="180,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18"/>
-        <TextBox Foreground="#FF373434" Name="ImeTxt" HorizontalAlignment="Left" Height="37" Margin="180,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18"/>
-        <Button Foreground="#FF373434" Click="premesti" Background="#FFFFC800" Content="Premesti" HorizontalAlignment="Left" Margin="43,345,0,0" VerticalAlignment="Top" Width="132" FontSize="24" Height="45" FontWeight="Bold" RenderTransformOrigin="0.347,0.991"/>
-        <Button Foreground="#FF373434" Click="odustani" Background="#FFFFC800" Content="Odustani" HorizontalAlignment="Left" Margin="278,345,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="1.7,10.906" FontSize="24" Height="45" FontWeight="Bold"/>
-        <Label Foreground="#FF373434" Content="Broj prostorije" HorizontalAlignment="Left" Margin="17,173,0,0" VerticalAlignment="Top" Height="53" Width="181" FontSize="24" RenderTransformOrigin="0.512,0.925" FontWeight="Bold"/>
-        <TextBox Foreground="#FF373434" Name="IdSobeTxt"  HorizontalAlignment="Left" Height="39" Margin="329,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" FontSize="18"/>
-        <ComboBox Name="TypeTxt" HorizontalAlignment="Left" Margin="180,4,0,0" VerticalAlignment="Top" Width="244" Height="41" FontSize="16">
+        <Label Foreground="#FF373434" Content="Kolicina" HorizontalAlignment="Left" Margin="17,103,0,0" VerticalAlignment="Top" Height="53" Width="110" FontSize="24" RenderTransformOrigin="0.512,0.925" FontWeight="Bold"/>
+        <TextBox Foreground="#FF373434" Name="KolicinaTxt" HorizontalAlignment="Left" Height="30" Margin="199,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18"/>
+        <TextBox Foreground="#FF373434" Name="ImeTxt" HorizontalAlignment="Left" Height="32" Margin="199,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18"/>
+        <Button Name="potvrdiBtn"  Foreground="#FF373434" Click="premesti" Background="#FFFFC800" Content="Premesti" HorizontalAlignment="Left" Margin="17,326,0,0" VerticalAlignment="Top" Width="132" FontSize="24" Height="45" FontWeight="Bold" RenderTransformOrigin="0.347,0.991">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Foreground="#FF373434" Click="odustani" Background="#FFFFC800" Content="Odustani" HorizontalAlignment="Left" Margin="323,326,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="1.7,10.906" FontSize="24" Height="45" FontWeight="Bold">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Label Foreground="#FF373434" Content="Broj prostorije" HorizontalAlignment="Left" Margin="17,156,0,0" VerticalAlignment="Top" Height="53" Width="174" FontSize="24" RenderTransformOrigin="0.512,0.925" FontWeight="Bold"/>
+        <ComboBox Name="TypeTxt" HorizontalAlignment="Left" Margin="199,10,0,0" VerticalAlignment="Top" Width="244" Height="41" FontSize="16">
             <ComboBoxItem IsSelected="True">STATICKI</ComboBoxItem>
             <ComboBoxItem IsSelected="True">DINAMICKI</ComboBoxItem>
         </ComboBox>
-        <DatePicker Foreground="#FF373434" Name="DatumTxt" HorizontalAlignment="Left" Margin="180,235,0,0" VerticalAlignment="Top" Width="244" Height="33" RenderTransformOrigin="0.502,1.256" FontSize="16"/>
-        <Label Foreground="#FF373434" Content="Datum" HorizontalAlignment="Left" Margin="17,235,0,0" VerticalAlignment="Top" Height="50" Width="92" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.512,4.592"/>
-        <Label Foreground="#FF373434" Content="Vreme" HorizontalAlignment="Left" Margin="17,283,0,0" VerticalAlignment="Top" Height="50" Width="92" FontSize="24" FontWeight="Bold"/>
-        <TextBox Foreground="#FF373434" Name="VremeTxt" HorizontalAlignment="Left" Height="37" Margin="180,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" FontSize="18"/>
+        <DatePicker Foreground="#FF373434" Focusable="False" Name="DatumTxt" HorizontalAlignment="Left" Margin="203,214,0,0" VerticalAlignment="Top" Width="240" Height="33" RenderTransformOrigin="0.502,1.256" FontSize="16"/>
+        <Label Foreground="#FF373434" Content="Datum" HorizontalAlignment="Left" Margin="17,214,0,0" VerticalAlignment="Top" Height="50" Width="92" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.512,4.592"/>
+        <Label Foreground="#FF373434" Content="Vreme" HorizontalAlignment="Left" Margin="17,264,0,0" VerticalAlignment="Top" Height="50" Width="92" FontSize="24" FontWeight="Bold"/>
+        <TextBox Foreground="#FF373434" Name="VremeTxt" HorizontalAlignment="Left" Height="32" Margin="203,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" FontSize="18" TextChanged="VremeTxt_TextChanged"/>
+        <ComboBox Name="SobeComboBox" HorizontalAlignment="Left" Margin="203,165,0,0" VerticalAlignment="Top" Width="240" Height="30" FontSize="18"/>
     </Grid>
 </UserControl>

@@ -25,10 +25,9 @@ namespace Hospital.Controller
         public List<Checkup> getCheckupDoctors(int idDoctor) 
         {
             List<Checkup> checkups = new List<Checkup>();
-             return checkups = service.getCheckupDoctors(idDoctor);
-           
-            
+             return checkups = service.getCheckupDoctors(idDoctor); 
         }
+
         public List<CheckupDTO> getAll()
         {
             List<CheckupDTO> checkups = new List<CheckupDTO>();
@@ -39,15 +38,16 @@ namespace Hospital.Controller
             return checkups;
         }
 
+        public List<Checkup> getCheckupDoctorsAndTime(DateTime dateTimeBegin, DateTime dateTimeEnd, int idDoctor)
+        {
+            return service.getCheckupDoctorsAndTime(dateTimeBegin, dateTimeEnd, idDoctor);
+        }
 
         public List<Checkup> getAvailableTimes(DateTime date, Doctor doctor)
         {
             List<Checkup> checkups = new List<Checkup>();
             return checkups = service.getAvailableTimes(date,doctor);
         }
-
-
-        
 
         public void save(Checkup checkup)
         {

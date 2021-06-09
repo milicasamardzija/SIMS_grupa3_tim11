@@ -34,10 +34,11 @@ namespace Hospital
         public PrikazSobaRenoviranje(Frame frame)
         {
             InitializeComponent();
+            this.DataContext = this;
             this.controller = new RoomRenovationController();
             Renovations = new ObservableCollection<RoomRenovationDTO>(controller.getAll());
-            this.DataContext = this;
             this.frame = frame;
+            //ProstorijeRenoviranje.ItemsSource = Renovations;
         }
      
         private void Otkazi(object sender, RoutedEventArgs e)

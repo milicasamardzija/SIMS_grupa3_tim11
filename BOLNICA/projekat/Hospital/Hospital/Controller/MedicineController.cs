@@ -61,7 +61,10 @@ namespace Hospital.Controller
         public List<MedicineDTO> loadReplacementMedicines(MedicineDTO medicine)
         {
             List<MedicineDTO> medicines = new List<MedicineDTO>();
-            foreach (Medicine medic in service.loadReplacementMedicines(new Medicine(medicine.Id, medicine.Name, medicine.Quantity, medicine.Type, medicine.IdsIngredients, medicine.IdsMedicines, medicine.Approved)))
+            List<Medicine> replacementMedicines = service.loadReplacementMedicines(new Medicine(medicine.Id,
+                medicine.Name, medicine.Quantity, medicine.Type, medicine.IdsIngredients, medicine.IdsMedicines,
+                medicine.Approved));
+            foreach (Medicine medic in replacementMedicines)
             {
                 medicines.Add(new MedicineDTO(medic.Id, medic.Name, medic.Quantity, medic.Type, medic.IdsIngredients, medic.IdsMedicines, medic.Approved));
             }
