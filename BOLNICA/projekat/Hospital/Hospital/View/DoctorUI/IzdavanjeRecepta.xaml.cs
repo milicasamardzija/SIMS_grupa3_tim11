@@ -20,6 +20,8 @@ namespace Hospital
     /// </summary>
     public partial class IzdavanjeRecepta : Window
     {
+        public IAlergensFileStorage storage = new AlergensFileStorage("./../../../../Hospital/files/alergens.json");
+
         public IzdavanjeRecepta()
         {
             InitializeComponent();
@@ -52,10 +54,29 @@ namespace Hospital
             return returnRecipe;
         }
 
+        public void mesages()
+        {
+            foreach (Alergens alergen in storage.GetAll())
+            {
+                if (Convert.ToInt16(textBox7.Text) == alergen.Id)
+                {
+                    MessageBox.Show("Pacijent je alergican na lek! Unesite novi lek, molim.");
+                    break;
+                }
+                else
+                {
+                    MessageBox.Show("Uneseni lek je ispravan!");
+                    break;
+                }
+
+            }
+        }
+
         private void button_Click(object sender, RoutedEventArgs e)
         {
             RecipeFileStorage storageRecipe = new RecipeFileStorage(@"./../../../../Hospital/files/recepti.json");
             List<Recipe> recipeList = new List<Recipe>();
+            mesages();
 
             Recipe newRecipe = new Recipe(generateID(), Convert.ToString(textBox.Text), Convert.ToString(textBox1.Text), Convert.ToString(textBox2.Text),
                 Convert.ToString(textBox3.Text), datePicker.DisplayDate, Convert.ToString(textBox5.Text),
