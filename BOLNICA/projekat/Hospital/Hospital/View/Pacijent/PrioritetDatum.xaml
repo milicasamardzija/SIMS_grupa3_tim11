@@ -5,36 +5,69 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital.View.Pacijent"
         mc:Ignorable="d"
-        Title="" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
-    <Grid>
+        Title="" Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen" Background="AliceBlue">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="MyButtonDesign">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="MyContentPresenter" 
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+
+
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="True">
+
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Margin="0,14,0.2,-14.4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="315*"/>
             <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="4*"/>
-            <RowDefinition/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <ComboBox x:Name="startTime" HorizontalAlignment="Left"  Width="50" FontFamily="Goudy Old Style"  Margin="80,110,0,225" SelectionChanged="startTime_SelectionChanged" />
-        <ComboBox x:Name="endTime" HorizontalAlignment="Left" FontFamily="Goudy Old Style"   Width="50" Margin="190,110,0,225" SelectionChanged="endTime_SelectionChanged" RenderTransformOrigin="0.704,0.474"  />
+        <ComboBox x:Name="startTime" HorizontalAlignment="Left"  Width="50"   Margin="80,110,0,215.4" SelectionChanged="startTime_SelectionChanged" />
+        <ComboBox x:Name="endTime" HorizontalAlignment="Left"   Width="50" Margin="190,110,0,215.4" SelectionChanged="endTime_SelectionChanged" RenderTransformOrigin="0.704,0.474"  />
         <Line  
             X1="500" Y1="0"  
             X2="20" Y2="0"  
             Stroke="SteelBlue"  
-            StrokeThickness="4" Margin="-19,58,-1.8,93" Grid.ColumnSpan="2" />
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="10,25,0,0" FontSize="22" Height="19" Click="Nazad_na_pocetnu" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6">
+            StrokeThickness="4" Margin="-19,58,-1.8,92.4" Grid.ColumnSpan="2" />
+        <Button Style="{ StaticResource MyButtonDesign}" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="10,25,0,0" FontSize="22" Height="19" Click="Nazad_na_pocetnu" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6">
             <Button.Background>
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="145,19,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Width="171" Height="38" Foreground="LightBlue" Grid.ColumnSpan="2"/>
-        <DatePicker x:Name="date" SelectedDateChanged="date_SelectedDateChanged" HorizontalAlignment="Left" Height="24" Margin="45,178,0,0" FontFamily="Goudy Old Style" VerticalAlignment="Top" Width="230"/>
-        <Label Content= "   Izaberite datum:" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Goudy Old Style" Margin="34,154,0,0" RenderTransformOrigin="0.176,0.267" Height="24" Width="96"/>
-        <Label Content="Izaberite interval:" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Goudy Old Style" Margin="100,81,0,0" Height="24" Width="91"/>
-        <Label Content="do" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,110,0,0" FontFamily="Goudy Old Style"  Height="25" Width="22"/>
+        <DatePicker x:Name="date" SelectedDateChanged="date_SelectedDateChanged" HorizontalAlignment="Left" Height="24" Margin="45,178,0,0" VerticalAlignment="Top" Width="230"/>
+        <Label Content= "      Izaberite datum:" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="19,154,0,0" RenderTransformOrigin="0.176,0.267" Height="24" Width="111"/>
+        <Label Content="Izaberite interval:" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="109,81,0,0" Height="24" Width="101"/>
+        <Label Content="do" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,110,0,0"  Height="25" Width="30"/>
 
-        <DataGrid x:Name="PrikazSlobodnihTermina" ScrollViewer.VerticalScrollBarVisibility="Visible" FontFamily="Goudy Old Style" IsReadOnly="True" Margin="45,240,40.2,10" SelectionChanged="PrikazSlobodnihTermina_SelectionChanged" >
+        <DataGrid x:Name="PrikazSlobodnihTermina" ScrollViewer.VerticalScrollBarVisibility="Visible"  IsReadOnly="True" Margin="45,229,30.2,30.4" SelectionChanged="PrikazSlobodnihTermina_SelectionChanged" >
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}"/>
             </DataGrid.Resources>
@@ -51,9 +84,40 @@
                 <DataGridTextColumn Header="           Vreme  "  Binding="{Binding AvailableTimes}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Odustani" BorderBrush="#FFF9F3F3"   x:Name="odustanii" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="170,25,0,0" Click="odustani" Height="29" Grid.Row="1"/>
-        <Button Content="Potvrdi"  BorderBrush="#FFF9F3F3"   FontFamily="Goudy Old Style" x:Name="potvrdii" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="58,25,0,0" Click="potvrdi" Height="29" Grid.Row="1"/>
+        <Button   Name="potvrdii" Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="95,341,0,0" Height="40" Click="potvrdi" Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20" Grid.RowSpan="2">
+            <StackPanel Orientation="Horizontal" Height="30" Width="100" RenderTransformOrigin="1.096,1.167">
+                <Image Source="potvrdi.png" Stretch="None" Width="30" Height="31" />
+                <TextBlock Margin="0,5,0,0" Width="74" FontSize="15" Height="28" ><Run Text=" Potvrdi"/></TextBlock>
+            </StackPanel>
 
+            <Button.Resources>
+                <Style TargetType="Border">
+
+                    <Setter Property="CornerRadius" Value="17">
+
+                    </Setter>
+                </Style>
+
+            </Button.Resources>
+
+        </Button>
+        <Button    Name="odustanii" Background="#FF64CCF1" Click="odustani" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="95,35.6,0,0" Height="40"  Foreground="white"  BorderBrush="#FFF7F1F1"  FontSize="14" RenderTransformOrigin="20,20" Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="odustani3.png" Stretch="None" Width="33" Height="31" />
+                <TextBlock Margin="0,8,0,0" Width="77" FontSize="15" Height="52" ><Run Text="Odustani"/></TextBlock>
+            </StackPanel>
+
+            <Button.Resources>
+                <Style TargetType="Border">
+
+                    <Setter Property="CornerRadius" Value="17">
+
+                    </Setter>
+                </Style>
+
+            </Button.Resources>
+
+        </Button>
     </Grid>
 </Window>
 
