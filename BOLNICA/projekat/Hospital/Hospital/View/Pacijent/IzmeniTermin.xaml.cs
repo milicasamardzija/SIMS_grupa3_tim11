@@ -311,10 +311,5 @@ namespace Hospital
         {
             this.Close();
         }
-
-        private void prikaz_termina(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +27,7 @@ namespace Hospital
             InitializeComponent();
             Prijava prijava = new Prijava(new BlogGlavni());
             frame.Navigate(prijava);
-
+            
         }
 
         private void prijava(object sender, RoutedEventArgs e)
@@ -39,11 +38,11 @@ namespace Hospital
         }
 
         private void blog(object sender, RoutedEventArgs e)
-        {
+       {
             BlogGlavni b = new BlogGlavni();
-            frame.Navigate(b);
+           frame.Navigate(b);
 
-        }
+       }
 
         private void informacije(object sender, RoutedEventArgs e)
         {

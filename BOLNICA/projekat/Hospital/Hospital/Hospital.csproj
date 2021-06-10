@@ -353,7 +353,6 @@
     <Compile Include="Controller\InventoryController.cs" />
     <Compile Include="Controller\MedicineController.cs" />
     <Compile Include="Controller\RoomsController.cs" />
-
     <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\Renoviranje.xaml.cs">
       <DependentUpon>Renoviranje.xaml</DependentUpon>
     </Compile>
@@ -377,16 +376,6 @@
     </Compile>
     <Compile Include="View\Pacijent\DodajAnketu.xaml.cs">
       <DependentUpon>DodajAnketu.xaml</DependentUpon>
-      </Compile>
-    <Compile Include="View\Pacijent\AnamnezaPage.xaml.cs">
-      <DependentUpon>AnamnezaPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pacijent\AnketaPage.xaml.cs">
-      <DependentUpon>AnketaPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pacijent\DatumPage.xaml.cs">
-      <DependentUpon>DatumPage.xaml</DependentUpon>
-
     </Compile>
     <Compile Include="FileStorage\GenericFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\FunctionalityIFileStorage.cs" />
@@ -432,56 +421,29 @@
     <Compile Include="View\Manager\Ostalo\ObavestenjaUpravnik.xaml.cs">
       <DependentUpon>ObavestenjaUpravnik.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\DodajPage.xaml.cs">
-      <DependentUpon>DodajPage.xaml</DependentUpon>
+    <Compile Include="View\Pacijent\DodajBelesku.xaml.cs">
+      <DependentUpon>DodajBelesku.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\DoktorPage.xaml.cs">
-      <DependentUpon>DoktorPage.xaml</DependentUpon>
+    <Compile Include="View\Pacijent\ObavljeniPregledi.xaml.cs">
+      <DependentUpon>ObavljeniPregledi.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\IzmeniPage.xaml.cs">
-      <DependentUpon>IzmeniPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pacijent\Izvjestaji.xaml.cs">
-      <DependentUpon>Izvjestaji.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pacijent\KartonPage.xaml.cs">
-      <DependentUpon>KartonPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pacijent\Logovanje.xaml.cs">
-      <DependentUpon>Logovanje.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pacijent\ObavestenjaPage.xaml.cs">
-      <DependentUpon>ObavestenjaPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pacijent\ObavljeniPage.xaml.cs">
-      <DependentUpon>ObavljeniPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pacijent\OBolnici.xaml.cs">
-      <DependentUpon>OBolnici.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pacijent\OcenaBolnica.xaml.cs">
-      <DependentUpon>OcenaBolnica.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pacijent\OcenaPage.xaml.cs">
-      <DependentUpon>OcenaPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pacijent\PacijentPPage.xaml.cs">
-      <DependentUpon>PacijentPPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pacijent\PreglediP.xaml.cs">
-      <DependentUpon>PreglediP.xaml</DependentUpon>
+    <Compile Include="View\Pacijent\Obolnici.xaml.cs">
+      <DependentUpon>Obolnici.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pacijent\PrikazBiljeski.xaml.cs">
       <DependentUpon>PrikazBiljeski.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pacijent\Prioritet.xaml.cs">
+      <DependentUpon>Prioritet.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pacijent\PrioritetDatum.xaml.cs">
       <DependentUpon>PrioritetDatum.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\PrioritetPage.xaml.cs">
-      <DependentUpon>PrioritetPage.xaml</DependentUpon>
+    <Compile Include="View\Pacijent\PrioritetDoktor.xaml.cs">
+      <DependentUpon>PrioritetDoktor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\TerapijaP.xaml.cs">
-      <DependentUpon>TerapijaP.xaml</DependentUpon>
+    <Compile Include="View\Pacijent\ZdravstveniKarton.xaml.cs">
+      <DependentUpon>ZdravstveniKarton.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Secretary\AppOrganisation\Analitika.xaml.cs">
       <DependentUpon>Analitika.xaml</DependentUpon>
@@ -519,6 +481,12 @@
     <Compile Include="FileStorage\StaticInvnetoryMovementFileStorage.cs" />
     <Compile Include="Model\Checkup\Survey.cs" />
     <Compile Include="FileStorage\SurveyFileStorage.cs" />
+    <Compile Include="View\Pacijent\OceniteBolnicu.xaml.cs">
+      <DependentUpon>OceniteBolnicu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pacijent\OcenjivanjeDoktora.xaml.cs">
+      <DependentUpon>OcenjivanjeDoktora.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Inventar\PremestanjeInventara.xaml.cs">
       <DependentUpon>PremestanjeInventara.xaml</DependentUpon>
     </Compile>
@@ -697,7 +665,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-
     <Page Include="View\Manager\Ostalo\Informacije.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -734,16 +701,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pacijent\AnamnezaPage.xaml">
-
+    <Page Include="View\Pacijent\ObavljeniPregledi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pacijent\AnketaPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-
     <Page Include="View\Manager\Prostorije\RenoviranjeProstorije\Renoviranje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -760,64 +721,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pacijent\DatumPage.xaml">
-
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\DodajPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\DoktorPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\IzmeniPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\Izvjestaji.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\KartonPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\Logovanje.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\ObavestenjaPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\ObavljeniPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\OBolnici.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\OcenaBolnica.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\OcenaPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\PacijentPPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\PreglediP.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Pacijent\PrikazBiljeski.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pacijent\Prioritet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -825,11 +733,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pacijent\PrioritetPage.xaml">
+    <Page Include="View\Pacijent\PrioritetDoktor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pacijent\TerapijaP.xaml">
+    <Page Include="View\Pacijent\ZdravstveniKarton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -860,6 +768,10 @@
     <Page Include="View\DoctorUI\DeleteDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pacijent\DodajAnketu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Manager\Inventar\CRUDInventar\DodajInventarDijalog.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -1059,6 +971,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Pacijent\OceniteBolnicu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Pacijent\OcenjivanjeDoktora.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\Manager\Inventar\PremestanjeInventara.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1118,6 +1038,13 @@
     <Compile Include="View\Manager\Prostorije\CRUDProstorije\Sobe.xaml.cs">
       <DependentUpon>Sobe.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pacijent\WindowPacijent.xaml.cs">
+      <DependentUpon>WindowPacijent.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\Pacijent\DodajTermin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pacijent\IzmeniTermin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1178,6 +1105,9 @@
     </Compile>
     <Compile Include="View\Secretary\CRUDPatient\RegistredPatient\KreirajNalog.xaml.cs">
       <DependentUpon>KreirajNalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pacijent\DodajTermin.xaml.cs">
+      <DependentUpon>DodajTermin.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pacijent\IzmeniTermin.xaml.cs">
       <DependentUpon>IzmeniTermin.xaml</DependentUpon>
@@ -1327,6 +1257,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DoctorUI\UputZaAmbulantnoSpecijalistickiPregled.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pacijent\WindowPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1574,133 +1508,6 @@
     <Resource Include="View\Images\Manager\profile.png" />
     <Resource Include="View\Images\Manager\manager-32.png" />
     <Resource Include="View\Images\Manager\conference-call-32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\tableta.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\karton.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\termini.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\pilule.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\pilula2.png" />
-    <Resource Include="View\Pacijent\tretman.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\history.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\survey.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\anketa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\bolnica.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\exit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\person.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\slika.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\potvrda.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\potvrdi.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\close.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\odustani.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\odustani2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\odustani3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\pencil2.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\olovka.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\olovcica.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\dodaj.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\obrisi.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\ocena.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\ocene.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\doktor.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\doctor.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\datum.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\note.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\beleska.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\note2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\zvono.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\poruka.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\..\..\Desktop\CalendarExample2\MojKalendar\Jarloo.Calendar\MyCalendar.Calendar.csproj">
-      <Project>{31c3b4a7-504b-4eff-bacc-c8f2ffe5af6f}</Project>
-      <Name>MyCalendar.Calendar</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\logoo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\zdravo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\logo5png.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\bolnicaaa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="bolnicaaa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Pacijent\slikab.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />

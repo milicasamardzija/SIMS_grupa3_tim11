@@ -116,8 +116,8 @@ namespace Hospital.View.Pacijent
         private void potvrdi(object sender, RoutedEventArgs e)
         {
             this.Close();
-           // WindowPacijent wp = new WindowPacijent(id);
-           // wp.Show();
+            WindowPacijent wp = new WindowPacijent(id);
+            wp.Show();
         }
 
         private void odustani(object sender, RoutedEventArgs e)

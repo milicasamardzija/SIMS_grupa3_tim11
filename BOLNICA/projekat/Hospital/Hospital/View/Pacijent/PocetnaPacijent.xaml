@@ -5,42 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-        Title=""  Height="500" Width="350" WindowStartupLocation="CenterScreen" Background="AliceBlue">
-    <Window.Resources>
-        <Style TargetType="Button" x:Key="MyButtonDesign">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-
-                        <Grid Background="{TemplateBinding Background}" >
-
-                            <ContentPresenter x:Name="MyContentPresenter" 
-                                          Content="{TemplateBinding Content}"
-                                          HorizontalAlignment="Center" 
-                                          VerticalAlignment="Center" />
-
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-
-            <Style.Triggers>
-                <Trigger Property="IsEnabled" Value="False">
-
-
-                </Trigger>
-                <Trigger Property="IsEnabled" Value="True">
-
-                </Trigger>
-                <Trigger Property="IsMouseOver" Value="True">
-
-                </Trigger>
-
-            </Style.Triggers>
-
-        </Style>
-
-    </Window.Resources>
+        Title="Početna strana"  Height="479.165" Width="329.457" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,0.2,-0.4">
         <Grid.RowDefinitions>
             <RowDefinition Height="0*"/>
@@ -49,27 +14,25 @@
             <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
 
-
-
-
         <Line  
     X1="500" Y1="0"  
     X2="20" Y2="0"  
-    Stroke="#FF64CCF1"  
+    Stroke="SteelBlue"  
     StrokeThickness="4" Margin="-19,58,-1.8,169.6" Grid.Row="1" />
-        <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="144,28,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Grid.RowSpan="2" Width="151" Height="30" Foreground="LightBlue"/>
 
+        <Canvas Margin="145,11,27,400.6" Grid.RowSpan="2">
+            <Path Stretch="Fill" Width="25" Height="25" Fill="#FFC3D0F7" Data="F1M59.8746,46.168C58.6237,44.849 57.1312,44.142 55.3145,43.4492 55.2132,43.4115 55.1055,43.3777 55.0026,43.3412 47.7142,37.0339 51.1328,31.9818 51.1328,25.5339 51.1328,19.1433 44.7653,9.40503 36.179,6.63025 36.2103,6.40369 36.2308,6.17322 36.2308,5.94019 36.2308,3.09509 33.9258,0.790405 31.0823,0.790405 28.2386,0.790405 25.9319,3.09509 25.9319,5.94019 25.9319,6.25659 25.9648,6.56775 26.0208,6.86719 17.8066,9.89063 11.7965,19.1263 11.7965,25.5339 11.7965,31.9271 14.8346,36.9727 8.23468,42.9857 6.90881,43.392 5.72394,43.8542 4.68555,44.3972 3.80042,44.8711 2.99835,45.4011 2.28711,46.168 1.5918,46.9128 0.941406,48.0625 0.94397,49.4297 0.941406,50.8008 1.5918,51.9506 2.28711,52.6941 3.53839,54.0144 5.03186,54.7214 6.84894,55.4167 9.56934,56.4102 13.0719,57.1576 17.1992,57.6927 19.9818,58.0508 23.0553,58.2917 26.2972,58.418 27.5768,60.6484 29.4964,62.0691 31.6445,62.0691 33.8066,62.0691 35.7402,60.6302 37.0201,58.375 42.3177,58.1185 47.082,57.5248 50.9134,56.6719 53.5313,56.0808 55.709,55.3945 57.4778,54.4648 58.3633,53.9922 59.1637,53.4623 59.8746,52.6941 60.5719,51.9506 61.222,50.8008 61.2194,49.4297 61.222,48.0625 60.5719,46.9128 59.8746,46.168z M12.5699,50.7695C10.7207,50.3594 9.19434,49.8777 8.16272,49.4297 8.38184,49.3347 8.62335,49.2371 8.88538,49.1433 10.9075,48.3881 14.0898,47.6654 17.9212,47.1771 20.2897,46.8699 22.9241,46.6498 25.7184,46.5209 25.0566,48.0781 24.6673,49.9102 24.6673,51.8802 24.6673,52.0183 24.6774,52.1537 24.6826,52.2917 19.9688,52.0287 15.7718,51.4883 12.5699,50.7695z M53.278,49.7201C51.2559,50.4779 48.0748,51.1953 44.2435,51.6863 42.498,51.9128 40.5996,52.0898 38.6113,52.2214 38.6126,52.1068 38.6214,51.9949 38.6214,51.8802 38.6214,49.9336 38.2428,48.1224 37.5938,46.5756 42.2633,46.8412 46.4141,47.3816 49.5934,48.0951 51.4414,48.5039 52.9691,48.9883 54.0006,49.4363 53.7816,49.5287 53.5403,49.6277 53.278,49.7201z" Canvas.Left="-129.6" Canvas.Top="8.8" RenderTransformOrigin="0.952,0.536"/>
+        </Canvas>
 
-
-
-
-
-
-        <Frame x:Name="startWindow" NavigationUIVisibility="Hidden" Margin="0,63,-0.2,-0.6" Height="Auto"  Width="Auto" Grid.RowSpan="4"/>
-
-        <Button  Style="{ StaticResource MyButtonDesign}" Foreground="White"  Content="" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="34" Margin="300,15,0,0" Height="43" BorderBrush="#FFEEEDED" RenderTransformOrigin="0.805,0.833" Click="Odjava">
+        <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="145,20,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Grid.RowSpan="2" Width="171" Height="38" Foreground="LightBlue"/>
+        <Button Content="Moji pregledi" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="117" Margin="102,102,0,0" Height="40" Click="prikaz_termina" Foreground="#FF0E0000" Background="#FFE8DEDE" BorderBrush="#FFF7F1F1" FontFamily="Goudy Old Style" FontSize="14"/>
+        <Button Content="Terapija" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="117" Margin="102,162,0,0" Height="40" BorderBrush="#FFFDF7F7" Cursor="Arrow" FontFamily="Goudy Old Style" FontSize="14"/>
+        <Button Content="O klinici" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="117" Margin="102,342,0,0" Height="40" RenderTransformOrigin="0.722,0.604" BorderBrush="#FFFDF5F5" FontFamily="Goudy Old Style" FontSize="14"/>
+        <Button Content="Ocena pregleda" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="117" Margin="102,282,0,0" Height="40" BorderBrush="#FFF6F3F3" FontFamily="Goudy Old Style" FontSize="14" Click="klik_na_ocenjivanje"/>
+        <Button Content="Zdravstveni karton" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="117" Margin="102,222,0,0" Height="40" BorderBrush="#FFFAF4F4" FontFamily="Goudy Old Style" FontSize="14" Click="klik_na_karton"/>
+        <Button Content="" HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top" Width="71" Margin="252,392,0,0" Height="38" BorderBrush="#FFEEEDED" Foreground="#FFFDF4F4" RenderTransformOrigin="0.401,0.502" Click="Odjava">
             <Button.Background>
-                <ImageBrush ImageSource="person.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="download (2).png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
     </Grid>
