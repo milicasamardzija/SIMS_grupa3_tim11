@@ -10,22 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Hospital.View.Pacijent
 {
     /// <summary>
-    /// Interaction logic for Obolnici.xaml
+    /// Interaction logic for OBolnici.xaml
     /// </summary>
-    public partial class Obolnici : Window
+    public partial class OBolnici : Page
     {
-        public Obolnici()
+        private PocetnaPacijent parent;
+        public OBolnici(PocetnaPacijent p)
         {
             InitializeComponent();
+            parent = p;
         }
-
         private void odustani(object sender, RoutedEventArgs e)
         {
+            parent.startWindow.Content = new KartonPage(parent);
 
         }
     }

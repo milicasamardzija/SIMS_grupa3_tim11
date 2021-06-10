@@ -79,7 +79,7 @@
             </Button.Resources>
         </Button>
 
-        <Button   Foreground="White" Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Margin="80,305,0,0" Height="47" RenderTransformOrigin="0.722,0.604" BorderBrush="#FFFDF5F5"  FontSize="14">
+        <Button   Foreground="White" Background="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Margin="80,305,0,0" Height="47" RenderTransformOrigin="0.722,0.604" BorderBrush="#FFFDF5F5" Click="bolnica" FontSize="14">
             <StackPanel Orientation="Horizontal">
                 <Image Source="bolnica.png" Stretch="None" Width="46" Height="28"/>
                 <TextBlock Margin="0,11,0,0" Width="132" FontSize="15" Height="36" Text="  O bolnici" />

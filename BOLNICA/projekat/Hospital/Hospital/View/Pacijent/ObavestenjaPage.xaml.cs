@@ -40,8 +40,8 @@ namespace Hospital.View.Pacijent
             parent = p;
 
             lista = new List<string>();
-            lista.Add("Andol 100 14:00");
-            lista.Add("Midol 5mg 22:00");
+            lista.Add("Paracetamol 13:00");
+           
             termini = new List<string>();
             moje = new List<string>();
 

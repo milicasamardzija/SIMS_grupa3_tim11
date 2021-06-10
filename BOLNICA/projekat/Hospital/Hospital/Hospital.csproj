@@ -129,9 +129,6 @@
     <Compile Include="View\Pacijent\DatumPage.xaml.cs">
       <DependentUpon>DatumPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\DodajAnketu.xaml.cs">
-      <DependentUpon>DodajAnketu.xaml</DependentUpon>
-    </Compile>
     <Compile Include="FileStorage\GenericFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\FunctionalityIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\GenericRepository.cs" />
@@ -203,8 +200,8 @@
     <Compile Include="View\Pacijent\ObavljeniPage.xaml.cs">
       <DependentUpon>ObavljeniPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pacijent\Obolnici.xaml.cs">
-      <DependentUpon>Obolnici.xaml</DependentUpon>
+    <Compile Include="View\Pacijent\OBolnici.xaml.cs">
+      <DependentUpon>OBolnici.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pacijent\OcenaBolnica.xaml.cs">
       <DependentUpon>OcenaBolnica.xaml</DependentUpon>
@@ -251,12 +248,6 @@
     <Compile Include="FileStorage\StaticInvnetoryMovementFileStorage.cs" />
     <Compile Include="Model\Checkup\Survey.cs" />
     <Compile Include="FileStorage\SurveyFileStorage.cs" />
-    <Compile Include="View\Pacijent\OceniteBolnicu.xaml.cs">
-      <DependentUpon>OceniteBolnicu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pacijent\OcenjivanjeDoktora.xaml.cs">
-      <DependentUpon>OcenjivanjeDoktora.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Manager\Inventar\PremestanjeInventara.xaml.cs">
       <DependentUpon>PremestanjeInventara.xaml</DependentUpon>
     </Compile>
@@ -431,7 +422,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pacijent\Obolnici.xaml">
+    <Page Include="View\Pacijent\OBolnici.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -494,10 +485,6 @@
     <Page Include="View\Doctor\DeleteDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\DodajAnketu.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Manager\Inventar\CRUDInventar\DodajInventarDijalog.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -684,14 +671,6 @@
     <Page Include="View\Secretary\Notifications\Blog\ObavestenjaBlog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pacijent\OceniteBolnicu.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\Pacijent\OcenjivanjeDoktora.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Manager\Inventar\PremestanjeInventara.xaml">
       <SubType>Designer</SubType>
@@ -1234,7 +1213,13 @@
     <Resource Include="View\Pacijent\logo5png.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="logo5.png" />
+    <Resource Include="View\Pacijent\bolnicaaa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bolnicaaa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Pacijent\slikab.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

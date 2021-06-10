@@ -60,6 +60,11 @@ namespace Hospital.View.Pacijent
             parent.startWindow.Content = new TerapijaP(parent);
 
         }
+
+        private void bolnica(object sender, RoutedEventArgs e)
+        {
+            parent.startWindow.Content = new OBolnici(parent);
+        }
     }
 }
     

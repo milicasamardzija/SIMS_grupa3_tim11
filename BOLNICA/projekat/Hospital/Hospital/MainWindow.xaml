@@ -5,94 +5,48 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Hospital"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  
-           mc:Ignorable="d"
-               Title="" Height="500" Width="350" WindowStartupLocation="CenterScreen" Background="AliceBlue">
-    <Window.Resources>
+    Title="Prijava"
+    Width="800"
+    Height="450"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid Background="LightBlue">
+        <Frame
+            x:Name="frame"
+            Width="790"
+            Height="390"
+            Margin="0,30,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            NavigationUIVisibility="Hidden" />
+        <Menu
+            Width="296"
+            Height="30"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="LightGray">
+            <MenuItem
+                Click="prijava"
+                FontSize="20"
+                FontWeight="Bold"
+                Foreground="#FF0852AE"
+                Header="PRIJAVA  " />
+            <MenuItem
+                Background="LightGray"
+                Click="blog"
+                FontSize="20"
+                FontWeight="Bold"
+                Foreground="#FF0852AE"
+                Header="BLOG  " />
+            <MenuItem
+                Background="LightGray"
+                Click="informacije"
+                FontSize="20"
+                FontWeight="Bold"
+                Foreground="#FF0852AE"
+                Header="O KLINICI" />
 
-        <Style TargetType="Button" x:Key="MyButtonDesign">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Grid Background="{TemplateBinding Background}">
-                            <ContentPresenter x:Name="MyContentPresenter" 
-                                          Content="{TemplateBinding Content}"
-                                          HorizontalAlignment="Center" 
-                                          VerticalAlignment="Center" />
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-
-            <Style.Triggers>
-                <Trigger Property="IsEnabled" Value="False">
-
-                </Trigger>
-                <Trigger Property="IsEnabled" Value="True">
-
-                </Trigger>
-                <Trigger Property="IsMouseOver" Value="True">
-
-                </Trigger>
-
-            </Style.Triggers>
-
-        </Style>
-
-    </Window.Resources>
-    <Grid Margin="4,0,-5.8,-1.4">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="429*"/>
-            <RowDefinition Height="0*"/>
-            <RowDefinition Height="0*"/>
-            <RowDefinition Height="0*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="0*"/>
-        </Grid.ColumnDefinitions>
-        <Button  Background="#FF64CCF1" Content="PRIJAVA"  FontSize="15"  Grid.Column="1" HorizontalAlignment="Left" Margin="100,270.4,0,0" VerticalAlignment="Top" Width="145" Height="40" Grid.Row="1"  BorderBrush="#FFEEEBEB"  Click="logovanje" RenderTransformOrigin="0.563,0.26" Foreground="#FFFDFDFD">
-            <Button.Resources>
-                <Style TargetType="Border">
-
-                    <Setter Property="CornerRadius" Value="17">
-
-                    </Setter>
-                </Style>
-
-            </Button.Resources>
-
-
-        </Button>
-        <Image Source="logo5.png" Stretch="None" Margin="545,40,-30,955" />
-
-        <Button  Background="#FF64CCF1"  Content="BLOG" FontSize="15" Grid.Column="1" Foreground="White" HorizontalAlignment="Left" Margin="100,315.4,0,0" VerticalAlignment="Top" Width="145" Height="40" Grid.Row="1" BorderBrush="#FFEEEBEB" Click="blog">
-            <Button.Resources>
-                <Style TargetType="Border">
-
-                    <Setter Property="CornerRadius" Value="17">
-
-                    </Setter>
-                </Style>
-
-            </Button.Resources>
-
-        </Button>
-        <Button Background="#FF64CCF1" Content="O BOLNICI" FontSize="15" Foreground="White" Grid.Column="1" HorizontalAlignment="Left" Margin="100,360.4,0,0" VerticalAlignment="Top" Width="145" Height="40" Grid.Row="1" BorderBrush="#FFEEEBEB"  Click="o_bolnici">
-            <Button.Resources>
-                <Style TargetType="Border">
-
-                    <Setter Property="CornerRadius" Value="17">
-
-                    </Setter>
-                </Style>
-
-            </Button.Resources>
-        </Button>
-        <Label Content="Zdravo bolnica" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="210" Grid.Column="1" Margin="70,34.4,0,0" Grid.Row="1"  Foreground="#FF64CCF1"   FontSize="28" RenderTransformOrigin="0.72,0.583" FontWeight="Bold" />
-
+        </Menu>
 
     </Grid>
 </Window>
