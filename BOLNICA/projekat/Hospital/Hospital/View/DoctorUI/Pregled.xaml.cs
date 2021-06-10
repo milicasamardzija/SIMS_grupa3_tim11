@@ -17,6 +17,7 @@ using Hospital.Model;
 using Hospital.FileStorage.Interfaces;
 using Hospital.DTO;
 using Hospital.Controller;
+using Hospital.View.DoctorUI;
 
 namespace Hospital
 {
@@ -83,6 +84,12 @@ namespace Hospital
         {
             EvidencijaLekar recordDoctor = new EvidencijaLekar();
             recordDoctor.Show();
+        }
+
+        private void button11_Click(object sender, RoutedEventArgs e)
+        {
+            PovratneInformacijeLekar informations = new PovratneInformacijeLekar();
+            informations.Show();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

@@ -29,7 +29,7 @@
         <Button x:Name="button4" Content="Izdavanje recepta" HorizontalAlignment="Left" Margin="672,319,0,0" VerticalAlignment="Top" Width="171" RenderTransformOrigin="0.033,0.309" FontSize="16" Click="button4_Click"/>
         <Button x:Name="button8" Content="Profil" HorizontalAlignment="Left" Margin="31,463,0,0" VerticalAlignment="Top" Width="97" FontSize="16" RenderTransformOrigin="0.267,0.32" Click="button8_Click"/>
         <Button x:Name="button9" Content="Anamneza" HorizontalAlignment="Left" Margin="672,268,0,0" VerticalAlignment="Top" Width="171" FontSize="16" Click="button9_Click" />
-        <Button x:Name="button11" Content="Blog" HorizontalAlignment="Left" Margin="197,463,0,0" VerticalAlignment="Top" Width="94" FontSize="16" RenderTransformOrigin="0.267,0.32" />
+        <Button x:Name="button11" Content="Blog" HorizontalAlignment="Left" Margin="197,463,0,0" VerticalAlignment="Top" Width="94" FontSize="16" RenderTransformOrigin="0.267,0.32" Click="button11_Click"/>
         <Button x:Name="button12" Content="Evidencija" HorizontalAlignment="Left" Margin="376,463,0,0" VerticalAlignment="Top" Width="102" FontSize="16" RenderTransformOrigin="0.267,0.32" Click="button12_Click"/>
 
     </Grid>

@@ -278,8 +278,17 @@
     <Compile Include="View\DoctorUI\BolnickoLecenje.xaml.cs">
       <DependentUpon>BolnickoLecenje.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DoctorUI\PovratneInformacijeLekar.xaml.cs">
+      <DependentUpon>PovratneInformacijeLekar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DoctorUI\Problem.xaml.cs">
+      <DependentUpon>Problem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DoctorUI\UpravljanjeBlogom.xaml.cs">
       <DependentUpon>UpravljanjeBlogom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DoctorUI\Utisak.xaml.cs">
+      <DependentUpon>Utisak.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DoctorUI\UvidUSobe.xaml.cs">
       <DependentUpon>UvidUSobe.xaml</DependentUpon>
@@ -604,7 +613,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\DoctorUI\PovratneInformacijeLekar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DoctorUI\Problem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DoctorUI\UpravljanjeBlogom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DoctorUI\Utisak.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,19 @@
+﻿<Window x:Class="Hospital.View.DoctorUI.PovratneInformacijeLekar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital.View.DoctorUI"
+        mc:Ignorable="d"
+        Title="PovratneInformacijeLekar" Height="369.605" Width="662.645" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Width="567" Height="105" Margin="48,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+            Content=" * Kako biste nam pomogli da unapredimo performanse nase aplikacije, &#xD;&#xA;molimo Vas da popunite sledecu formu.&#xD;&#xA;&#xD;&#xA;* Ukoliko imate nekih problema, mozete ih prijaviti nasem IT timu i pri&#xD;&#xA;tome odaberite odgovarajuci tip povratne informacije.&#xD;&#xA;&#xD;&#xA;"
+            FontSize="14" FontWeight="Bold" Foreground="#FF02060C" />
+        <Label x:Name="label2" Content="Tip povratne informacije:" Foreground="#FF02060C" HorizontalAlignment="Left" Height="40" Margin="48,136,0,164"/>
+        <RadioButton x:Name="radioButton1" Margin="245,142,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="radioButton1_Checked"
+            Content="UTISAK" GroupName="group" TextElement.Foreground="#FF02060C" />
+        <RadioButton x:Name="radioButton2" Margin="406,142,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+            Checked="radioButton2_Checked" Content="PRIJAVA PROBLEMA" GroupName="group" TextElement.Foreground="#FF02060C" />
+    </Grid>
+</Window>
