@@ -14,6 +14,8 @@ namespace Hospital.DTO
         private String description;
         private int idRenovation;
         private int idRoom;
+        private int idRoomSecond;
+        private Purpose purpose;
         public RoomRenovationDTO() {}
         public RoomRenovationDTO(int id, int idRoom, DateTime dateBegin, DateTime dateEnd, String description)
         {
@@ -23,6 +25,27 @@ namespace Hospital.DTO
             this.description = description;
             this.idRoom = idRoom;
             this.idRenovation = id;
+        }
+        public RoomRenovationDTO(int id, int idRoom,int idRoomSecond, DateTime dateBegin, DateTime dateEnd, String description)
+        {
+            this.dateBegin = dateBegin;
+            this.dateEnd = dateEnd.AddHours(23);
+            this.dateEnd.AddMinutes(59);
+            this.description = description;
+            this.idRoom = idRoom;
+            this.idRenovation = id;
+            this.idRoomSecond = idRoomSecond;
+        }
+
+        public RoomRenovationDTO(int id, int idRoom, Purpose purpose, DateTime dateBegin, DateTime dateEnd, String description)
+        {
+            this.dateBegin = dateBegin;
+            this.dateEnd = dateEnd.AddHours(23);
+            this.dateEnd.AddMinutes(59);
+            this.description = description;
+            this.idRoom = idRoom;
+            this.idRenovation = id;
+            this.purpose = purpose;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

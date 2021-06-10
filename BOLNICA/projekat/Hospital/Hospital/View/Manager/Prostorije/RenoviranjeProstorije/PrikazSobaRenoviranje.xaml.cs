@@ -2,6 +2,7 @@
 using Hospital.DTO;
 using Hospital.FileStorage.Interfaces;
 using Hospital.Model;
+using Hospital.Model.Rooms;
 using Hospital.Service;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,6 @@ namespace Hospital
             this.controller = new RoomRenovationController();
             Renovations = new ObservableCollection<RoomRenovationDTO>(controller.getAll());
             this.frame = frame;
-            //ProstorijeRenoviranje.ItemsSource = Renovations;
         }
      
         private void Otkazi(object sender, RoutedEventArgs e)

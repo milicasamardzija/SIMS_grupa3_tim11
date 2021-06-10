@@ -4,6 +4,7 @@
     "DateBegin": "2021-05-31T00:00:00",
     "DateEnd": "2021-06-15T11:00:00",
     "Description": "Krecenje sobe i menjane prozora.",
-    "Id": 3
+    "Id": 3,
+    "purpose": 0
   }
 ]

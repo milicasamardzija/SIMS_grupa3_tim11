@@ -259,6 +259,8 @@
     <Compile Include="Model\ManagerNote.cs" />
     <Compile Include="Model\Note.cs" />
     <Compile Include="Model\Medicine\Review.cs" />
+    <Compile Include="Model\Rooms\RoomMerge.cs" />
+    <Compile Include="Model\Rooms\RoomSeparate.cs" />
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\FeedbackService.cs" />
     <Compile Include="Service\FunctionalityService.cs" />
