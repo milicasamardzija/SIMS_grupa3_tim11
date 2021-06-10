@@ -54,6 +54,13 @@ namespace Hospital.Controller
                 revision.Done, revision.IdMedicine, revision.IdMedicineReview));
         }
 
+        public string makeRecension(ReviewDTO revision)
+        {
+            revision.Done = true;
+            return serviceReview.getRezension(new Review(revision.Name, revision.MedicineType, revision.ReviewType,
+                revision.Done, revision.IdMedicine, revision.IdMedicineReview));
+        }
+
         public string getDoctor(ReviewDTO revision)
         {
             return serviceReview.getDoctor(new Review(revision.Name, revision.MedicineType, revision.ReviewType, revision.Done,

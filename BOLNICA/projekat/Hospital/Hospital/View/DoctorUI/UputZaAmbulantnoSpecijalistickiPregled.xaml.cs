@@ -26,7 +26,7 @@ namespace Hospital
         public List<CheckupDTO> CheckupList { get; set; }
         public int idDoctor;
         public InstructionController controller = new InstructionController();
-        public Instruction instruction;
+        public Instruction instruction = new Instruction();
 
         public UputZaAmbulantnoSpecijalistickiPregled()
         {
@@ -36,7 +36,7 @@ namespace Hospital
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-           // controller.createInstruction(instruction);
+            controller.createInstruction(instruction);
             this.Close();
         }
 

@@ -57,6 +57,12 @@ namespace Hospital.Service
             return review.Review;
         }
 
+        public String makeRecension(Review revision)
+        {
+            MedicineReview review = storageMedicineReview.FindById(revision.IdMedicineReview);
+            return review.Review;
+        }
+
         public void sendBackToRevision(Review review)
         {
             List<MedicineReview> reviews = storageMedicineReview.GetAll();

@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using System.IO;
 using Hospital.FileStorage.Interfaces;
+using Hospital.Controller;
 
 namespace Hospital
 {
@@ -23,6 +24,7 @@ namespace Hospital
     public partial class PostojeceAnamneze : Window
     {
         public ObservableCollection<Anamnesis> AnamnesisList { get; set; }
+        public AnamnesisController controllerAnamnesis = new AnamnesisController();
 
         public PostojeceAnamneze()
         {

@@ -63,12 +63,6 @@ namespace Hospital
                     MessageBox.Show("Pacijent je alergican na lek! Unesite novi lek, molim.");
                     break;
                 }
-                else
-                {
-                    MessageBox.Show("Uneseni lek je ispravan!");
-                    break;
-                }
-
             }
         }
 

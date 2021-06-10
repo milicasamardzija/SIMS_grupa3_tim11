@@ -9,13 +9,23 @@ namespace Hospital.Controller
 {
     public class AnamnesisController
     {
-        private AnamnesisService service = new AnamnesisService();
+        private AnamnesisService service;
 
         public AnamnesisController()
         {
-
+            service = new AnamnesisService();
         }
-        
-        
+
+        public List<Anamnesis> getAll()
+        {
+            List<Anamnesis> allAnamnesis = new List<Anamnesis>(service.getAll());
+            List<Anamnesis> anamnesis = new List<Anamnesis>();
+            foreach(Anamnesis a in allAnamnesis)
+            {
+                Anamnesis newAnamnesis = new Anamnesis(a.Id, a.nameS, a.gender, a.datePlace, a.adress,
+                    a.status, a.job, a.summary);
+            }
+            return anamnesis;
+        }
     }
 }

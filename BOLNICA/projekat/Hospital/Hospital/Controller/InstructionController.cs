@@ -11,10 +11,11 @@ namespace Hospital.Controller
 {
     public class InstructionController
     {
-        public InstructionService service = new InstructionService();
+        public InstructionService service;
 
         public InstructionController()
         {
+            service = new InstructionService();
         }
 
         public void newCheckup(CheckupDTO checkup)

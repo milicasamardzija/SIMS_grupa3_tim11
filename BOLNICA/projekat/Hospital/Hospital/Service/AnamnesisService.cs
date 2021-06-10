@@ -4,17 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hospital.FileStorage;
 
 namespace Hospital.Service
 {
     public class AnamnesisService
     {
-        public AnamnesisFileStorage storageAnamnesis;
-
+        private IAnamnesisFileStorage storage;
+        
         public AnamnesisService()
         {
-            storageAnamnesis = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
+            storage = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
         }
-        
+
+        public List<Anamnesis> getAll()
+        {
+            return storage.GetAll();
+        }
     }
 }
