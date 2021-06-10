@@ -38,14 +38,15 @@ namespace Hospital.View.Secretary.AppOrganisation
             if (komentar.Text == null || ocena.Value == null)
             {
 
-                MessageBox.Show("Morate uneti ocenu i komentar!");
+                feedback = new Feedback(0, FeedbackType.utisak, ocena.Value, komentar.Text);
+                controller.createFeedbackUtisak(feedback);
+                MessageBox.Show("Uspesno ste uneli feedback!");
+             
             }
             else
             {
 
-                feedback = new Feedback(0, FeedbackType.utisak, ocena.Value, komentar.Text);
-                controller.createFeedbackUtisak(feedback);
-                MessageBox.Show("Uspesno ste uneli feedback!");
+                MessageBox.Show("Morate uneti ocenu i komentar!");
             }
             
                
