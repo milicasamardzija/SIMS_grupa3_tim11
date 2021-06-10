@@ -20,14 +20,16 @@ namespace Hospital.View.Secretary.AppOrganisation
     /// </summary>
     public partial class ProfilSekretara : Page
     {
-        public ProfilSekretara()
+        private Nalozi glavniProzor;
+        public ProfilSekretara(Nalozi prozor)
         {
             InitializeComponent();
+            glavniProzor = prozor;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void odjavise(object sender, RoutedEventArgs e)
         {
-            
+            glavniProzor.Close();
         }
     }
 }

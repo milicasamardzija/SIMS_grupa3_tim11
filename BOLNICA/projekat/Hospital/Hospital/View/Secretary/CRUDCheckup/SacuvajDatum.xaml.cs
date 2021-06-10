@@ -1,4 +1,5 @@
 ﻿using Hospital.Controller;
+using Hospital.DTO;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -22,14 +23,14 @@ namespace Hospital.Sekretar
     /// </summary>
     public partial class SacuvajDatum : Window
     {
-        public List<Doctor> listDoctors { get; set; }
-        public Patient patient;
+        public List<DoctorDTO> listDoctors { get; set; }
+        public PatientDTO patient;
         public int idRoom;
         public DateTime chosenDate;
        
         public CheckupController controller = new CheckupController();
 
-        public SacuvajDatum(DateTime date, int idR, Patient selectedPatient)
+        public SacuvajDatum(DateTime date, int idR, PatientDTO selectedPatient)
         {
             InitializeComponent();
             this.DataContext = this;
@@ -40,16 +41,16 @@ namespace Hospital.Sekretar
 
         }
 
-        public List<Doctor> findAvailableDoctors(DateTime date)
+        public List<DoctorDTO> findAvailableDoctors(DateTime date)
         {
             return controller.availableDoctors(date);
         }
 
         private void CreateCheckup(object sender, RoutedEventArgs e)
         {
-            Doctor d = (Doctor)doctors.SelectedItem;
+            DoctorDTO d = (DoctorDTO)doctors.SelectedItem;
             int idDoctor = d.Id;
-            controller.createCheckup(new Checkup(0, idDoctor, patient.Id, chosenDate, idRoom, 0));
+            controller.createCheckup(new CheckupDTO(0, idDoctor, patient.Id, chosenDate, idRoom, 0));
             this.Close();
         }
 

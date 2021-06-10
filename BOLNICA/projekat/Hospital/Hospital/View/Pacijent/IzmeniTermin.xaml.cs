@@ -211,7 +211,7 @@ namespace Hospital
                 termin.IdPatient = idPatient;
                 termin.Date = dt;
                 checkupcontroller.DeleteById(termin.Id);
-                checkupcontroller.save(termin);
+               // checkupcontroller.save(termin);
 
 
                 Functionality funkcionalnost = new Functionality(DateTime.Now, idPatient, "izmena");

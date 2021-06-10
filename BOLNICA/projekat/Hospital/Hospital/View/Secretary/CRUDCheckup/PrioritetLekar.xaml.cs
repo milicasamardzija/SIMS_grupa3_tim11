@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -19,40 +21,42 @@ namespace Hospital.Sekretar
     public partial class PrioritetLekar : Window
     {
 
-        public Patient patient;
+        public PatientDTO patient;
 
-       public  ObservableCollection<Patient> listPatient
+        private DoctorController doctorController; 
+
+       public  ObservableCollection<PatientDTO> listPatient
         {
             get; set;
         }
-       public  ObservableCollection<Doctor> listDoctors
+       public  ObservableCollection<DoctorDTO> listDoctors
         {
             get; set;
         }
-        public PrioritetLekar(ObservableCollection<Patient> list, Patient selectedPatient)
+        public PrioritetLekar(ObservableCollection<PatientDTO> list, PatientDTO selectedPatient)
         {
             InitializeComponent();
             this.DataContext = this;
             patient=selectedPatient; //imam pacijenta kome zakazujem 
-       
+            doctorController = new DoctorController();
             listPatient = list;
             listDoctors = loadJson();// ucitava se lista svih lekara 
 
         }
 
-        private ObservableCollection<Doctor> loadJson()
+        private ObservableCollection<DoctorDTO> loadJson()
         {
-            DoctorFileStorage dfs = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
-             ObservableCollection<Doctor> doctors = new ObservableCollection<Doctor>(dfs.GetAll());
+           
+             ObservableCollection<DoctorDTO> doctors = new ObservableCollection<DoctorDTO>(doctorController.getAll());
             return doctors;
 
         }
 
         private void getDoctorTerms(object sender, RoutedEventArgs e)
         {
-            if ((Doctor)doktori.SelectedItem != null)
+            if ((DoctorDTO)doktori.SelectedItem != null)
             {
-                SacuvajLekara terms = new SacuvajLekara(listDoctors, (Doctor)doktori.SelectedItem, patient); //poslala sam informaciju o doktoru, moram i o ranijem pacijentu 
+                SacuvajLekara terms = new SacuvajLekara(listDoctors, (DoctorDTO)doktori.SelectedItem, patient); //poslala sam informaciju o doktoru, moram i o ranijem pacijentu 
                 terms.Show();
 
             } else

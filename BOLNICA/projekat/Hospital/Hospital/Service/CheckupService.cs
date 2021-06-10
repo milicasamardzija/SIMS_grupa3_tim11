@@ -31,12 +31,9 @@ namespace Hospital.Service
         public int generateIdCheckup() 
         {
             int val = 0;
+             List<Checkup> allCheckups = new List<Checkup>(checkupStorage.GetAll());
 
-            CheckupFileStorage checkupStorage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            List<Checkup> allCheckups = new List<Checkup>();
-            allCheckups= checkupStorage.GetAll(); 
-
-            foreach (Checkup idCh in allCheckups)
+             foreach (Checkup idCh in allCheckups)
             {
                 foreach (Checkup c in allCheckups)
                 {
@@ -148,8 +145,8 @@ namespace Hospital.Service
 
         public void changeCheckup(Checkup checkup)
         {
-            checkupStorage.DeleteById(checkup.Id);
-            Checkup newCheckup = new Checkup(generateIdCheckup(), checkup.IdDoctor, checkup.IdPatient, checkup.Date, 0, CheckupType.pregled);
+            checkupStorage.DeleteById(checkup.Id);  //ostavljam njego Id jer je ipak izmena u pitanju
+            Checkup newCheckup = new Checkup(checkup.Id, checkup.IdDoctor, checkup.IdPatient, checkup.Date, 0, CheckupType.pregled);
             checkupStorage.Save(newCheckup);
 
         }

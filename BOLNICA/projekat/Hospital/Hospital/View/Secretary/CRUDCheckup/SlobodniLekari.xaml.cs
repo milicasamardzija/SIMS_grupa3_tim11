@@ -1,4 +1,5 @@
 ﻿using Hospital.Controller;
+using Hospital.DTO;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace Hospital.Sekretar
    
     public partial class SlobodniLekari : Window
     {
-        public List<Doctor> listDoctors { get; set; }
+        public List<DoctorDTO> listDoctors { get; set; }
         public Checkup checkup;
         public CheckupController controller;
         public int idRoom;
@@ -38,13 +39,13 @@ namespace Hospital.Sekretar
            
         }
 
-        public List<Doctor> getAvailableDoctors(DateTime date)
+        public List<DoctorDTO> getAvailableDoctors(DateTime date)
         {
             return controller.availableDoctors(date);
         }
         private void Save(object sender, RoutedEventArgs e)
         {
-            controller.changeCheckup(new Checkup(0, checkup.IdDoctor, checkup.IdPatient, newDate, idRoom, 0));
+            controller.changeCheckup(new CheckupDTO(checkup.Id, checkup.IdDoctor, checkup.IdPatient, newDate, idRoom, 0));
             this.Close();
         }
         private void Decline(object sender, RoutedEventArgs e)

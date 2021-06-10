@@ -46,7 +46,7 @@
                     Header="Prezime " />
                 <DataGridTextColumn
                     Width="85"
-                    Binding="{Binding SpecializationType}"
+                    Binding="{Binding Type}"
                     Header="Specijalizacija" />
             </DataGrid.Columns>
         </DataGrid>

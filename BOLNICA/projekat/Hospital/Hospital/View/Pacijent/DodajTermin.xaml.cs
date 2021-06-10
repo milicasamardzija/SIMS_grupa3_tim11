@@ -104,7 +104,7 @@ namespace Hospital
         private void add_appointment(object sender, RoutedEventArgs e)
         {
 
-          
+          /*
          global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
             if (time.SelectedIndex != -1)
             {
@@ -123,8 +123,8 @@ namespace Hospital
                 Functionality funkcionalnost = new Functionality(DateTime.Now, idPatient, "dodavanje");
                 funkcionalitycontroller.save(funkcionalnost);
 
-                this.Close();
-            }
+                this.Close(); 
+            }*/
         }
 
         private void odustani(object sender, RoutedEventArgs e)

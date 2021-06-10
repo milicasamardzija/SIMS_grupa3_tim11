@@ -19,11 +19,16 @@ namespace Hospital.Service
         }
 
 
+
+        public List<Doctor> getAll()
+        {
+            return doctorStorage.GetAll();
+        }
+
+
         public int brojZaposlenihPoSpecijalizaciji(String specijalizacija)
         {
             int count = 0;
-
-
             return count;
         }
     }

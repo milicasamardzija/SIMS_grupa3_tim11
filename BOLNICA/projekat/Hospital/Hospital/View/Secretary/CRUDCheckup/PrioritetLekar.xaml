@@ -52,16 +52,16 @@
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="100"
-                    Binding="{Binding name}"
+                    Binding="{Binding Name}"
                     Header="Ime Lekara" />
                 <DataGridTextColumn
                     Width="100"
-                    Binding="{Binding surname}"
+                    Binding="{Binding Surname}"
                     Header="Prezime lekara" />
 
                 <DataGridTextColumn
                     Width="100"
-                    Binding="{Binding SpecializationType}"
+                    Binding="{Binding Type}"
                     Header="Specijalizacija" />
             </DataGrid.Columns>
 

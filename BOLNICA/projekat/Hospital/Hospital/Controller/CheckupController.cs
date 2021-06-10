@@ -22,10 +22,16 @@ namespace Hospital.Controller
             roomService = new RoomsService();
         }
 
-        public List<Checkup> getCheckupDoctors(int idDoctor) 
+        public List<CheckupDTO> getCheckupDoctors(int idDoctor)
         {
-            List<Checkup> checkups = new List<Checkup>();
-             return checkups = service.getCheckupDoctors(idDoctor); 
+            List<Checkup> checkups = new List<Checkup>(service.getCheckupDoctors(idDoctor));
+            List<CheckupDTO> unavailableCheckups = new List<CheckupDTO>();
+            foreach (Checkup c in checkups)
+            {
+                CheckupDTO checkup = new CheckupDTO(c.Id, c.IdDoctor, c.IdPatient, c.Date, c.IdRoom, c.Type);
+                unavailableCheckups.Add(checkup);
+            }
+            return unavailableCheckups; 
         }
 
         public List<CheckupDTO> getAll()
@@ -49,9 +55,10 @@ namespace Hospital.Controller
             return checkups = service.getAvailableTimes(date,doctor);
         }
 
-        public void save(Checkup checkup)
+        public void save(CheckupDTO checkup)
         {
-            service.save(checkup);
+            Checkup newCheckup = new Checkup(checkup.IdCh, checkup.IdDoctor, checkup.IdPatient, checkup.Date, checkup.IdRoom, checkup.Type);
+            service.save(newCheckup);
         }
         
         public void DeleteById(int id)
@@ -59,19 +66,22 @@ namespace Hospital.Controller
             service.deleteById(id);
         }
 
-        public void changeCheckup(Checkup checkup)
+        public void changeCheckup(CheckupDTO checkup)
         {
-            service.changeCheckup( checkup);
+            Checkup update = new Checkup(checkup.IdCh, checkup.IdDoctor, checkup.IdPatient, checkup.Date, checkup.IdRoom, checkup.Type);
+            service.changeCheckup(update);
         }
 
-        public void addCheckup(CheckupDTO checkup)
+        public void addCheckup(CheckupDTO checkup) //Ivanino
         {
             service.addCheckup(new Checkup(service.generateIdCheckup(), checkup.IdDoctor, checkup.IdPatient, checkup.Date, checkup.IdRoom, checkup.Type));
         }
 
-        public void createCheckup(Checkup checkup)
+        public void createCheckup(CheckupDTO checkup) //Sekretar kad zakazuje samo pregled 
         {
-            service.createCheckup(checkup);
+            Checkup newCheckup = new Checkup(0, checkup.IdDoctor, checkup.IdPatient, checkup.Date, checkup.IdRoom, CheckupType.pregled);
+
+            service.createCheckup(newCheckup);
         }
 
         public List<Room> availableRooms(DateTime dateTime)
@@ -79,9 +89,16 @@ namespace Hospital.Controller
                return roomService.availableRooms(dateTime);
         }
 
-        public List<Doctor> availableDoctors(DateTime date)
+        public List<DoctorDTO> availableDoctors(DateTime date)
         {
-            return service.getAvailableDoctors(date);
+          List<Doctor> doctors = service.getAvailableDoctors(date);
+            List<DoctorDTO> availableDoctors = new List<DoctorDTO>();
+            foreach(Doctor d in doctors )
+            {
+                DoctorDTO doctor = new DoctorDTO(d.Id, d.Name, d.Surname, d.telephoneNumber, d.jmbg, d.gender, d.BirthdayDate, d.adress, d.SpecializationType);
+                availableDoctors.Add(doctor);
+            }
+            return availableDoctors;
         }
 
         public int counterOperation(DateTime start, DateTime end)

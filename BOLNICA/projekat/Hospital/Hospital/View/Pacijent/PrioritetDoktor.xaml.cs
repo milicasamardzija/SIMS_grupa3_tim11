@@ -192,10 +192,10 @@ namespace Hospital.View.Pacijent
                 DateTime dt = DateTime.Parse(d + " " + t);
                 int idG = checkupController.getAll().Count();
 
-                Checkup checkup = new Checkup(idG, doktor.Id, id, dt, 1, 0);
+               // Checkup checkup = new Checkup(idG, doktor.Id, id, dt, 1, 0);
 
-                checkupController.save(checkup);
-                appointmentList.Add(checkup);
+               // checkupController.save(checkup);
+               // appointmentList.Add(checkup);
 
                
                 Functionality funkcionalnost = new Functionality(DateTime.Now, id, "dodavanje");

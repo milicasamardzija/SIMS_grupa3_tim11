@@ -37,7 +37,7 @@
             Margin="55,319,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="E-mail:                         nhdsncm@gmail.com"
+            Content="E-mail:                         nevena@gmail.com"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF1B4C93" />
@@ -69,7 +69,7 @@
             Margin="55,356,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Korisnicko ime:           b"
+            Content="Korisnicko ime:           nevena"
             FontSize="16"
             FontWeight="Bold"
             Foreground="#FF1B4C93" />
@@ -109,7 +109,7 @@
             Margin="566,354,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="Button_Click"
+            Click="odjavise"
             Content="Odjavi se"
             Cursor="Hand"
             FontWeight="Bold"

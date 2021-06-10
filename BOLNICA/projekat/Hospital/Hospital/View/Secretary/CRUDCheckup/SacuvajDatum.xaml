@@ -47,15 +47,15 @@
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="80"
-                    Binding="{Binding name}"
+                    Binding="{Binding Name}"
                     Header="Ime " />
                 <DataGridTextColumn
                     Width="90"
-                    Binding="{Binding surname}"
+                    Binding="{Binding Surname}"
                     Header="Prezime" />
                 <DataGridTextColumn
                     Width="110"
-                    Binding="{Binding SpecializationType}"
+                    Binding="{Binding Type}"
                     Header="Specijalizacija" />
             </DataGrid.Columns>
         </DataGrid>

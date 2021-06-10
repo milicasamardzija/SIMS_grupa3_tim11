@@ -1,4 +1,5 @@
 ﻿using Hospital.Controller;
+using Hospital.DTO;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -20,20 +21,20 @@ namespace Hospital.Sekretar
   
     public partial class SacuvajLekara : Window
     {
-        public Patient selectedPatient; 
-        public Doctor doctor; 
+        public PatientDTO selectedPatient; 
+        public DoctorDTO doctor; 
         public int idD; 
         public int idP; 
         public int idRoom; 
         public DateTime chosenDate; 
         public String time; 
-        public ObservableCollection<Patient> listPatient;
-        public ObservableCollection<Doctor> listDoctor;
+        public ObservableCollection<PatientDTO> listPatient;
+        public ObservableCollection<DoctorDTO> listDoctor;
         public CheckupController controller;
       //  public List<Checkup> terms;
         
        
-        public SacuvajLekara(ObservableCollection<Doctor> list, Doctor selectedDoctor, Patient patient)
+        public SacuvajLekara(ObservableCollection<DoctorDTO> list, DoctorDTO selectedDoctor, PatientDTO patient)
         {
             InitializeComponent();
             this.DataContext = this;
@@ -49,10 +50,10 @@ namespace Hospital.Sekretar
             
         }
 
-       public List<Checkup> loadCheckups(int id)
+       public List<CheckupDTO> loadCheckups(int id)
         {
-            List<Checkup> show = new List<Checkup>();
-            show = controller.getCheckupDoctors(idD);
+            List<CheckupDTO> show = new List<CheckupDTO>(controller.getCheckupDoctors(idD));
+            
             return show;
         }
         public void SaveCheckup(object sender, RoutedEventArgs e)
@@ -61,7 +62,7 @@ namespace Hospital.Sekretar
             DateTime oldDate = (DateTime)date.SelectedDate;
             getDate(oldDate);
            // getRoom();
-            controller.createCheckup(new Checkup(0, idD, idP, chosenDate, 1, 0));
+            controller.createCheckup(new CheckupDTO(0, idD, idP, chosenDate, 1, 0));
             this.Close();
 
         }

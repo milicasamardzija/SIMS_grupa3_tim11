@@ -1,4 +1,5 @@
 ﻿using Hospital.Controller;
+using Hospital.DTO;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,14 +20,14 @@ namespace Hospital.Sekretar
    
     public partial class PrioritetDatum : Window
     {
-        public ObservableCollection<Patient> listPatients;
+        public ObservableCollection<PatientDTO> listPatients;
         public int idP;
         public int idRoom;
         public DateTime chosenDate;
         public CheckupController controller = new CheckupController();
-        Patient patient;
+        PatientDTO patient;
         
-        public PrioritetDatum(ObservableCollection<Patient> list, Patient selectedPatient)
+        public PrioritetDatum(ObservableCollection<PatientDTO> list, PatientDTO selectedPatient)
         {
             InitializeComponent();
             this.DataContext = this;

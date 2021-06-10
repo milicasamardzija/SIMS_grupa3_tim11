@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -20,7 +22,9 @@ namespace Hospital.Sekretar
     /// </summary>
     public partial class DodajPregled : Window
     {
-        public ObservableCollection<Patient> listPatients
+
+        public PatientController patientController;
+        public ObservableCollection<PatientDTO> listPatients
         {
             get;
             set;
@@ -29,21 +33,22 @@ namespace Hospital.Sekretar
         {
             InitializeComponent();
             this.DataContext = this;
-            listPatients = loadJson();
+            patientController = new PatientController();
+            listPatients = loadAllPatients();
+           
         }
 
 
-        private ObservableCollection<Patient> loadJson()
+        private ObservableCollection<PatientDTO> loadAllPatients()
         {
-            PatientFileStorage pfs = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            ObservableCollection<Patient> patient = new ObservableCollection<Patient>(pfs.GetAll());
-            return patient;
+            ObservableCollection<PatientDTO> patients = new ObservableCollection<PatientDTO>(patientController.loadAllPatients());
+            return patients;
 
         }
         private void SaveDoctorBtn(object sender, RoutedEventArgs e)
-        {  if ((Patient)sviPacijenti.SelectedItem != null)
+        {  if ((PatientDTO)sviPacijenti.SelectedItem != null)
             {
-                PrioritetLekar doctorPriority = new PrioritetLekar(listPatients, (Patient)sviPacijenti.SelectedItem);
+                PrioritetLekar doctorPriority = new PrioritetLekar(listPatients, (PatientDTO)sviPacijenti.SelectedItem);
                 doctorPriority.Show();
             } else
             {
@@ -53,9 +58,9 @@ namespace Hospital.Sekretar
         }
         private void SaveDateBtn(object sender, RoutedEventArgs e)
         {
-            if ((Patient)sviPacijenti.SelectedItem != null)
+            if ((PatientDTO)sviPacijenti.SelectedItem != null)
             {
-                PrioritetDatum datePriority = new PrioritetDatum(listPatients, (Patient)sviPacijenti.SelectedItem);
+                PrioritetDatum datePriority = new PrioritetDatum(listPatients, (PatientDTO)sviPacijenti.SelectedItem);
                 datePriority.Show();
             } else
             {

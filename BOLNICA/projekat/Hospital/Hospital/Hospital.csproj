@@ -219,10 +219,12 @@
     <Compile Include="Controller\RoomInventoryController.cs" />
     <Compile Include="Controller\RoomRenovationController.cs" />
     <Compile Include="Controller\StaticInventoryMovementController.cs" />
+    <Compile Include="DTO\DoctorDTO.cs" />
     <Compile Include="DTO\FunkcionalityDTO.cs" />
     <Compile Include="DTO\IngredientDTO.cs" />
     <Compile Include="DTO\AlergensDTO.cs" />
     <Compile Include="DTO\CheckupDTO.cs" />
+    <Compile Include="DTO\INotifyPropertyChange.cs" />
     <Compile Include="DTO\InventoryDTO.cs" />
     <Compile Include="DTO\MedicalRecordDTO.cs" />
     <Compile Include="DTO\MedicineDTO.cs" />

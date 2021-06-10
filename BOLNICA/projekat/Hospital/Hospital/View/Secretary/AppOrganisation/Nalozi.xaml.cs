@@ -27,7 +27,7 @@ namespace Hospital
         {
             InitializeComponent();
 
-            ProfilSekretara ps = new ProfilSekretara();
+            ProfilSekretara ps = new ProfilSekretara(this);
             frameS.Navigate(ps);
 
         }
@@ -48,7 +48,7 @@ namespace Hospital
        
       private void profil(object sender, RoutedEventArgs e)
         {
-            ProfilSekretara ps = new ProfilSekretara();
+            ProfilSekretara ps = new ProfilSekretara(this);
             frameS.Navigate(ps);
         }
 
