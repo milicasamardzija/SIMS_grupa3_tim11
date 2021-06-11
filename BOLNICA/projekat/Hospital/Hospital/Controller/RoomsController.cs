@@ -1,6 +1,7 @@
 ﻿
 using Hospital.DTO;
 using Hospital.Model;
+using Hospital.Model.Rooms;
 using Hospital.Service;
 using System;
 using System.Collections.Generic;
@@ -52,11 +53,6 @@ namespace Hospital.Controller
         public List<Room> roomsByType(String type)
         {
             return service.roomsByType(type);
-        }
-
-        internal void mergeRooms(int idRoomFirst, int idRoomSecond)
-        {
-            throw new NotImplementedException();
         }
 
         public List<Room> roomByInventory(int idInventory, int quantity)

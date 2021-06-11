@@ -88,6 +88,21 @@ namespace Hospital.DTO
                 }
             }
         }
+        public int IdRoomSecond
+        {
+            get
+            {
+                return idRoomSecond;
+            }
+            set
+            {
+                if (value != idRoomSecond)
+                {
+                    idRoomSecond = value;
+                    OnProperychanged("IdRoomSecond");
+                }
+            }
+        }
         public DateTime DateBegin
         {
             get
@@ -130,6 +145,21 @@ namespace Hospital.DTO
                 {
                     description = value;
                     OnProperychanged("Description");
+                }
+            }
+        }
+        public Purpose Purpose
+        {
+            get
+            {
+                return purpose;
+            }
+            set
+            {
+                if (value != purpose)
+                {
+                    purpose = value;
+                    OnProperychanged("Purpose");
                 }
             }
         }

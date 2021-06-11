@@ -251,9 +251,13 @@
     <Compile Include="FileStorage\Interfaces\IPatientFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IRecipeFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IRoomInventoryFileStorage.cs" />
+    <Compile Include="FileStorage\Interfaces\IRoomMergeFileStorage.cs" />
+    <Compile Include="FileStorage\Interfaces\IRoomSeparateFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
+    <Compile Include="FileStorage\RoomMergeFileStorage.cs" />
+    <Compile Include="FileStorage\RoomSeparateFileStorage.cs" />
     <Compile Include="Model\Feedback.cs" />
     <Compile Include="Model\FeedbackType.cs" />
     <Compile Include="Model\ManagerNote.cs" />
@@ -348,6 +352,9 @@
     <Compile Include="Controller\RoomsController.cs" />
     <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\Renoviranje.xaml.cs">
       <DependentUpon>Renoviranje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeOdbijeno.xaml.cs">
+      <DependentUpon>RenoviranjeOdbijeno.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeRazdvajanje.xaml.cs">
       <DependentUpon>RenoviranjeRazdvajanje.xaml</DependentUpon>
@@ -659,6 +666,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Prostorije\CRUDProstorije\IzbrisiProstorijuPotvrda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeOdbijeno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

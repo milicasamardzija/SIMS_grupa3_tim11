@@ -1,5 +1,6 @@
 ﻿using Hospital.FileStorage.Interfaces;
 using Hospital.Model;
+using Hospital.Model.Rooms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,6 +61,16 @@ namespace Hospital.Service
                      }
                  }
              } 
+        }
+
+        internal void mergeRooms(RoomMerge roomMerge)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal int generateIdMerge()
+        {
+            throw new NotImplementedException();
         }
 
         public Boolean isRoomAvailableInventoryMovement(StaticInventoryMovement movement)

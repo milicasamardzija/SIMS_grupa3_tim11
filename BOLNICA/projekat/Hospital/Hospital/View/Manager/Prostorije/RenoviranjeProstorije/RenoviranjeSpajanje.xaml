@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Hospital.View.Manager.Prostorije.RenoviranjeProstorije"
+             xmlns:local="clr-namespace:Hospital.View.Manager.Prostorije.RenoviranjeProstorije" xmlns:dto="clr-namespace:Hospital.DTO" d:DataContext="{d:DesignInstance Type=dto:RoomRenovationDTO}"
              mc:Ignorable="d" 
              Width="427" Height="339" Background="#FFDFD7BB">
     <Grid>
         <Grid Margin="0,0,0.2,-11.8">
-            <TextBox IsReadOnly="True" Name="brojProstorijeTxt"  Width="200" Margin="227,18,0,303" Grid.Row="0" FontSize="18" RenderTransformOrigin="0.775,0.625" >
+            <TextBox IsReadOnly="True" Name="brojProstorijeTxt" Text ="{Binding Renovation.IdRoom}"  Width="200" Margin="227,18,0,303" Grid.Row="0" FontSize="18" RenderTransformOrigin="0.775,0.625" >
             </TextBox>
             <Label Margin="0,78,282,234.2" Foreground="#FF373434" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" Content="Datum pocetka" FontWeight="Bold"/>
             <Label Margin="0,148,272,152.2" Foreground="#FF373434" FontSize="18" Grid.Column="0" Content="Datum zavrsetka" FontWeight="Bold"/>
@@ -23,8 +23,8 @@
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <DatePicker Name="BeginDate" Focusable="False" HorizontalAlignment="Left" Margin="227,78,0,0" VerticalAlignment="Top" Width="200" Height="37" FontSize="18" FirstDayOfWeek="Monday" SelectedDateFormat="Short"/>
-            <DatePicker Name="EndDate" Focusable="False" HorizontalAlignment="Left" Margin="227,148,0,0" VerticalAlignment="Top" Width="200" Height="30" FontSize="18" FirstDayOfWeek="Monday"/>
+            <DatePicker Name="BeginDate" SelectedDate ="{Binding Renovation.DateBegin}" Focusable="False" HorizontalAlignment="Left" Margin="227,78,0,0" VerticalAlignment="Top" Width="200" Height="37" FontSize="18" FirstDayOfWeek="Monday" SelectedDateFormat="Short"/>
+            <DatePicker Name="EndDate" SelectedDate ="{Binding Renovation.DateEnd}" Focusable="False" HorizontalAlignment="Left" Margin="227,148,0,0" VerticalAlignment="Top" Width="200" Height="30" FontSize="18" FirstDayOfWeek="Monday"/>
             <Label Margin="0,18,282,295.2" Foreground="#FF373434" FontSize="18" Grid.Column="0" RenderTransformOrigin="-0.119,-0.46" Content="Broj sobe" FontWeight="Bold"/>
             <ComboBox Name="SobeComboBox" HorizontalAlignment="Left" Margin="227,214,0,0" VerticalAlignment="Top" Width="200" Height="31" FontSize="18" SelectionChanged="SobeComboBox_SelectionChanged"/>
         </Grid>

@@ -1,4 +1,5 @@
-﻿using Hospital.DTO;
+﻿using Hospital.Controller;
+using Hospital.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,19 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
     {
         private Frame frame;
         private RoomDTO room;
+        private RoomRenovationController renovationController = new RoomRenovationController();
+        private RoomRenovationDTO renovation = new RoomRenovationDTO();
+        public RoomRenovationDTO Renovation
+        {
+            get
+            {
+                return renovation;
+            }
+            set
+            {
+                value = renovation;
+            }
+        }
         public RenoviranjeRazdvajanje(Frame frame, DTO.RoomDTO room)
         {
             InitializeComponent();
@@ -40,6 +54,7 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
 
         private void renoviraj(object sender, RoutedEventArgs e)
         {
+            renovationController.separateRoomsSchedule(renovation);
             frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }
 

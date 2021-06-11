@@ -22,6 +22,7 @@ using Hospital.View.Manager.Zaposleni;
 using Application = System.Windows.Application;
 using HelpProvider = Hospital.View.Manager.Help.HelpProvider;
 using MessageBox = System.Windows.MessageBox;
+using Hospital.Controller;
 
 namespace Hospital
 {
@@ -34,11 +35,13 @@ namespace Hospital
         private int quantity;
         private ManagerNote notes = new ManagerNote();
         private List<ManagerNote> note = new List<ManagerNote>();
+        private RoomRenovationController renovationControler = new RoomRenovationController();
         public ManagerView()
         {
             InitializeComponent();
             frame.NavigationService.Navigate(new ProfilUpravnik(this));
             getTasks();
+            mergeRooms();
             note = notes.GetAll();
             if (note[4].note.Equals("da"))
             {
@@ -50,7 +53,13 @@ namespace Hospital
            
         }
 
-      private void getTasks()
+        private void mergeRooms()
+        {
+           // RoomRenovationController renovationControler = new RoomRenovationController();
+           // foreach(IRoomMergeFileStorage renovation in)
+        }
+
+        private void getTasks()
         {
             StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
             InventoryFileStorage storageInventory = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
