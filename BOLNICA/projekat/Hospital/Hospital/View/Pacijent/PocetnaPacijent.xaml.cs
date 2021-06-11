@@ -1,4 +1,6 @@
-﻿using Hospital.View.Pacijent;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using Hospital.View.Pacijent;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,21 +23,19 @@ namespace Hospital
     /// </summary>
     public partial class PocetnaPacijent : Window
     {
-
+        PatientController patientController;
         public int id { get; set; }
         public PocetnaPacijent(int idP)
         {
             InitializeComponent();
             this.DataContext = this;
             id = idP;
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            List<Patient> allPatients = storage.GetAll();
-            ObservableCollection<Patient> patients = new ObservableCollection<Patient>(allPatients);
-            foreach (Patient patient in patients)
+            patientController = new PatientController();
+            foreach (PatientDTO patient in patientController.getAll())
             {
                 if (patient.Id == idP)
                 {
-                    imePacijenta.Text = patient.name + " " + patient.surname;
+                    imePacijenta.Text = patient.Name + " " + patient.Surname;
                 }
             }
         }
@@ -74,6 +74,13 @@ namespace Hospital
             ocena.Show();
             this.Close();
 
+        }
+
+        private void klik_na_podsjetnik(object sender, RoutedEventArgs e)
+        {
+            Podsjetnik podsjetnik = new Podsjetnik(id);
+            podsjetnik.Show();
+            this.Close();
         }
     }
 }

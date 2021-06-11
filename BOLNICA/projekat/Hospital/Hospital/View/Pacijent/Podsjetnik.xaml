@@ -1,0 +1,32 @@
+﻿<Window x:Class="Hospital.View.Pacijent.Podsjetnik"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital.View.Pacijent"
+        mc:Ignorable="d"
+        Title="Podsjetnik" Height="480" Width="330" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock x:Name="imePacijenta" FontStyle="Italic" HorizontalAlignment="Left" Margin="145,20,0,0" TextWrapping="Wrap" Text="" FontSize="20" VerticalAlignment="Top" Grid.RowSpan="2" Width="171" Height="38" Foreground="LightBlue"/>
+
+        <Line  
+    X1="500" Y1="0"  
+    X2="20" Y2="0"  
+    Stroke="SteelBlue"  
+    StrokeThickness="4" Margin="-19,58,-1.8,169.6" Grid.Row="1" />
+
+        <Button    Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="10,21,0,0" FontSize="22" Height="19" Click="odustani"   RenderTransformOrigin="0.186,3.958">
+            <Button.Background>
+                <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+      
+        <ListBox x:Name="terapija" Margin="65,96,49.4,264.6" Foreground="black" ScrollViewer.VerticalScrollBarVisibility="Visible" BorderBrush="#FFF9F9F9"/>
+        <Label Content="  Podsetnik za terapiju:" HorizontalAlignment="Left" Foreground="#FF64CCF1" VerticalAlignment="Top" FontSize="12" RenderTransformOrigin="2.865,3.32" Margin="52,69,0,0" FontWeight="Bold" Height="27" Width="148"/>
+        <Label Content="  Podsetnik za preglede:" Foreground="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" RenderTransformOrigin="2.865,3.32" Margin="52,185,0,0" Width="158" FontWeight="Bold"/>
+        <ListBox x:Name="obavestenja" Margin="65,211,50.4,150.6" ScrollViewer.VerticalScrollBarVisibility="Visible" BorderBrush="#FFF9F9F9" />
+        <ListBox x:Name="beleske" Margin="63,331,50.4,39.6" ScrollViewer.VerticalScrollBarVisibility="Visible" BorderBrush="#FFF9F9F9" />
+        <Label Content="  Moje beleške:" HorizontalAlignment="Left" Foreground="#FF64CCF1" VerticalAlignment="Top" FontSize="12" RenderTransformOrigin="2.865,3.32" Margin="52,304,0,0" FontWeight="Bold" Height="27" Width="148"/>
+
+    </Grid>
+</Window>
