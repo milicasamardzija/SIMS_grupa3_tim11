@@ -27,20 +27,23 @@ namespace Hospital
     /// </summary>
     public partial class IzmeniTermin : Window
     {
-        public ObservableCollection<Checkup> appointmentList;
-        public Checkup termin;
-        public int index;
-        public int idPatient; //id pacijenta koji je ulogovan
-        private List<string> lista;
-        private List<global::Doctor> lekari;
-        private List<Checkup> termini;
-        public ObservableCollection<Patient> pacijenti;
-        private List<string> availableTimes;
+
+
         PatientController patientcontroller;
         CheckupController checkupcontroller;
         FunctionalityController funkcionalitycontroller;
+        public ObservableCollection<CheckupDTO> appointmentList;
+        private List<CheckupDTO> termini;
+        public ObservableCollection<PatientDTO> pacijenti;
+        public CheckupDTO termin;
+        public int index;
+        public int idPatient;
+        private List<string> lista;
+        private List<global::Doctor> lekari;
+        private List<string> availableTimes;
+        
 
-        public IzmeniTermin(ObservableCollection<Checkup> list, Checkup selectedApp, int selectedIndex, int idP)
+        public IzmeniTermin(ObservableCollection<CheckupDTO> list, CheckupDTO selectedApp, int selectedIndex, int idP)
         {
             InitializeComponent();
 
@@ -56,11 +59,11 @@ namespace Hospital
            
 
             lista = new List<string>();
-           // termini = checkupcontroller.getAll();
+            termini = checkupcontroller.getAll();
 
 
-            List<PatientDTO> patients = patientcontroller.getAll();
-            foreach (PatientDTO patient in patients)
+          
+            foreach (PatientDTO patient in patientcontroller.getAll())
             {
                 if (patient.Id == idP)
                 {
@@ -94,27 +97,7 @@ namespace Hospital
             lista.Add("19:00");
             time.ItemsSource = lista;
 
-
-
-
-            DoctorFileStorage df = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
-            lekari = df.GetAll();
-            lekar.ItemsSource = lekari;
-  
-            List<PatientDTO> sviPacijenti = patientcontroller.getAll();
-            ObservableCollection<PatientDTO> pacijenti = new ObservableCollection<PatientDTO>(sviPacijenti);
-
-            foreach (global::Doctor l in lekari)
-            {
-                if (l.Id == termin.IdDoctor)
-                {
-                  
-                      lekar.SelectedItem = l;
-                }
-            }
-
-
-
+            CheckAvailableTimes();
             date.SelectedDate = selectedApp.Date;
             time.SelectedValue = selectedApp.Date.ToString("HH:mm");
             time.SelectedItem = time.SelectedValue;
@@ -126,11 +109,27 @@ namespace Hospital
             date.BlackoutDates.Add(kalendar1);
 
 
+
+
+            DoctorFileStorage df = new DoctorFileStorage(@"./../../../../Hospital/files/storageDoctor.json");
+            lekari = df.GetAll();
+            lekar.ItemsSource = lekari;
+  
+           
+
+            foreach (global::Doctor l in lekari)
+            {
+                if (l.Id == termin.IdDoctor)
+                {
+                  
+                      lekar.SelectedItem = l;
+                }
+            }
+        
         }
 
 
-      
-
+     
         private void CheckAvailableTimes()
         {
 
@@ -204,15 +203,13 @@ namespace Hospital
                 var item = time.SelectedItem;
                 String t = item.ToString();
                 String d = date.Text;
-                DateTime dt = DateTime.Parse(d + " " + t);
+               termin.Date= DateTime.Parse(d + " " + t);
 
                 termin.Room = null;
                 termin.IdDoctor = doktor1.Id;
                 termin.IdPatient = idPatient;
-                termin.Date = dt;
-                checkupcontroller.DeleteById(termin.Id);
-               // checkupcontroller.save(termin);
-
+               
+                checkupcontroller.changeCheckup(new CheckupDTO(termin.IdCh, termin.IdDoctor, termin.IdPatient, termin.Date, termin.IdRoom, 0));
 
                 Functionality funkcionalnost = new Functionality(DateTime.Now, idPatient, "izmena");
                 funkcionalitycontroller.save(funkcionalnost);
@@ -222,90 +219,12 @@ namespace Hospital
             }
         }
 
+     
 
-        private void setEnabledButtonSubmit()
-        {
-            if (lekar.SelectedItem != null && date.SelectedDate != null && time.SelectedItem != null)
-            {
-                potvrdi.IsEnabled = true;
-            }
-            else
-            {
-                odustanii.IsEnabled = false;
-            }
-        }
-
-        private void odustani_click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-
-        }
-
-        private void time_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+       
+     
 
       
-
-     
-
-        private void potvrda(object sender, RoutedEventArgs e)
-        {
-            foreach (Checkup t in termini)
-            {
-                if (t.Date.Date == date.SelectedDate)
-                {
-                    string sat = t.Date.Hour.ToString();
-                    string minute = t.Date.Minute.ToString();
-                    string izbaci = "";
-                    int brojac1 = 0;
-                    int brojac2 = 0;
-                    foreach (char s in sat)
-                    {
-                        ++brojac1;
-
-                    }
-                    foreach (char s in minute)
-                    {
-                        ++brojac2;
-                    }
-                    if (brojac1 == 1)
-                    {
-                        izbaci = "0" + sat + ":" + minute;
-                    }
-                    else
-                    {
-
-                        izbaci = sat + ":" + minute;
-                    }
-
-                    if (brojac2 == 1)
-                    {
-                        izbaci = izbaci + "0";
-
-                    }
-
-                    lista.Remove(izbaci);
-                    time.ItemsSource = lista;
-                }
-                time.SelectedIndex = 0;
-            }
-        }
-
-     
-
-        private void lekar_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-
-        private void date_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-
-        }
 
         private void odustani(object sender, RoutedEventArgs e)
         {

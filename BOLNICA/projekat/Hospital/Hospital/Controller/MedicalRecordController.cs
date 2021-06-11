@@ -13,11 +13,8 @@ namespace Hospital.Controller
 {
   public class MedicalRecordController
     {
-        private MedicalRecordService service = new MedicalRecordService();
-        public List<MedicalRecord> getAll()
-        {
-           return  service.getAll();
-        }
+      
+       
         
         private MedicalRecordService servis;
 
@@ -25,6 +22,11 @@ namespace Hospital.Controller
         {
             servis = new MedicalRecordService();
         }
+        public List<MedicalRecord> getAll()
+        {
+            return servis.getAll();
+        }
+
         public ObservableCollection<AlergensDTO> getAllAlergens()
         {
             ObservableCollection<AlergensDTO> alergens = new ObservableCollection<AlergensDTO>();

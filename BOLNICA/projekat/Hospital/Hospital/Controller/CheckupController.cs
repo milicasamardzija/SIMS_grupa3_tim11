@@ -34,6 +34,19 @@ namespace Hospital.Controller
             return unavailableCheckups; 
         }
 
+        public List<CheckupDTO> getCheckupsPatient(int idPatient)
+        {
+            List<Checkup> checkups = new List<Checkup>(service.getCheckupsPatient(idPatient));
+            List<CheckupDTO> availableCheckups = new List<CheckupDTO>();
+            foreach (Checkup c in checkups)
+            {
+                CheckupDTO checkup = new CheckupDTO(c.Id, c.IdDoctor, c.IdPatient, c.Date, c.IdRoom, c.Type);
+                availableCheckups.Add(checkup);
+            }
+            return availableCheckups;
+        }
+      
+
         public List<CheckupDTO> getAll()
         {
             List<CheckupDTO> checkups = new List<CheckupDTO>();
@@ -53,6 +66,19 @@ namespace Hospital.Controller
         {
             List<Checkup> checkups = new List<Checkup>();
             return checkups = service.getAvailableTimes(date,doctor);
+        }
+
+
+        public List<CheckupDTO> getCheckupsbyDate(int idPatient)
+        {
+            List<Checkup> checkups = new List<Checkup>(service.getCheckupsPatient(idPatient));
+            List<CheckupDTO> availableCheckups = new List<CheckupDTO>();
+            foreach (Checkup c in checkups)
+            {
+                CheckupDTO checkup = new CheckupDTO(c.Id, c.IdDoctor, c.IdPatient, c.Date, c.IdRoom, c.Type);
+                availableCheckups.Add(checkup);
+            }
+            return availableCheckups;
         }
 
         public void save(CheckupDTO checkup)

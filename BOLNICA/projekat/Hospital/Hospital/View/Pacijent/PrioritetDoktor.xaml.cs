@@ -23,29 +23,30 @@ namespace Hospital.View.Pacijent
     /// </summary>
     public partial class PrioritetDoktor : Window
     {
-        int id;
-        private List<global::Doctor> lekari;
-        private List<string> availableTimes;
-        private List<Checkup> termini;
-        public ObservableCollection<Checkup> appointmentList;
         CheckupController checkupController;
         FunctionalityController functionalityController;
         PatientController patientController;
+        private List<global::Doctor> lekari;
+        private List<string> availableTimes;
+        private List<CheckupDTO> termini;
+        public ObservableCollection<CheckupDTO> appointmentList;
+        int id;
 
-        public PrioritetDoktor(ObservableCollection<Checkup> applist, int idP)
+
+        public PrioritetDoktor(ObservableCollection<CheckupDTO> applist, int idP)
         {
             InitializeComponent();
             id = idP;
             appointmentList = applist;
-            termini = new List<Checkup>();
+            termini = new List<CheckupDTO>();
 
             checkupController = new CheckupController();
             functionalityController = new FunctionalityController();
             patientController = new PatientController();
 
 
-            List<PatientDTO> patients = patientController.getAll();
-            foreach (PatientDTO patient in patients)
+          
+            foreach (PatientDTO patient in patientController.getAll())
             {
                 if (patient.Id == idP)
                 {
@@ -115,40 +116,39 @@ namespace Hospital.View.Pacijent
             global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
 
 
-          /*  foreach (Checkup t in checkupController.getAll())
-			{
-				foreach (Checkup t in app.GetAll())
-				{ foreach (Doctor d in doctors.GetAll())
-					{
-						if (t.IdDoctor == d.Id)
-						{
-							if (d.jmbg.Equals(doktor.jmbg))
-							{
-								if (t.Date.Date.Equals(date.SelectedDate))
-								{
-									termini.Add(t);
-								}
-							}
-						}
-					}
-					if (id == t.IdPatient && t.Date.Date.Equals(date.SelectedDate))
-					{
+
+            foreach (CheckupDTO t in checkupController.getAll())
+            {
+                foreach (Doctor d in doctors.GetAll())
+                {
+                    if (t.IdDoctor == d.Id)
+                    {
+                        if (d.jmbg.Equals(doktor.jmbg))
+                        {
+                            if (t.Date.Date.Equals(date.SelectedDate))
+                            {
+                                termini.Add(t);
+                            }
+                        }
+                    }
+                }
+                if (id == t.IdPatient && t.Date.Date.Equals(date.SelectedDate))
+                {
 
 
-						termini.Add(t);
+                    termini.Add(t);
 
 
-					}
-				}
-			}*/
+                }
+            }
 
-            List<Checkup> terminiBezDuplikata = termini.Distinct().ToList();
+            List<CheckupDTO> terminiBezDuplikata = termini.Distinct().ToList();
             DateTime danas = DateTime.Today;
 
             for (DateTime tm = danas.AddHours(8); tm < danas.AddHours(20); tm = tm.AddMinutes(30))
             {
                 bool slobodno = true;
-                foreach (Checkup termin in terminiBezDuplikata)
+                foreach (CheckupDTO termin in terminiBezDuplikata)
                 {
                     DateTime start = DateTime.Parse(termin.Date.ToString("HH:mm"));
                     DateTime end = DateTime.Parse(termin.Date.AddMinutes(termin.Duration).ToString("HH:mm"));
@@ -179,10 +179,7 @@ namespace Hospital.View.Pacijent
 
         private void ZakaziTermin()
         {
-
-
-
-         
+ 
             global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
             if (times.SelectedIndex != -1)
             {
@@ -192,10 +189,10 @@ namespace Hospital.View.Pacijent
                 DateTime dt = DateTime.Parse(d + " " + t);
                 int idG = checkupController.getAll().Count();
 
-               // Checkup checkup = new Checkup(idG, doktor.Id, id, dt, 1, 0);
+                CheckupDTO checkup = new CheckupDTO(idG, doktor.Id, id, dt, 1, 0);
 
-               // checkupController.save(checkup);
-               // appointmentList.Add(checkup);
+                checkupController.save(checkup);
+                appointmentList.Add(checkup);
 
                
                 Functionality funkcionalnost = new Functionality(DateTime.Now, id, "dodavanje");
@@ -211,7 +208,7 @@ namespace Hospital.View.Pacijent
         {
             timelabel.Visibility = Visibility.Visible;
             times.Visibility = Visibility.Visible;
-            //pretraziTermine();
+            pretraziTermine();
         }
     }
 }

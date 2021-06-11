@@ -37,34 +37,36 @@ namespace Hospital.View.Pacijent
 
 
 
-         
-           
-            
+
+
+
             foreach (MedicalRecord record in mrcontroller.getAll())
             {
                 foreach (PatientDTO patient in patientController.getAll())
                 {
-                    if (patient.Id == idP && patient.Id == record.Id)
-                    {
-                        imePacijenta.Text = patient.Name + " " + patient.Surname;
-                        ime.Text = patient.Name;
-                        prezime.Text = patient.Surname;
+                    if (patient.Id == idP && record.Id==idP)
+                    { 
+                        
 
-                        jmbg.Text = patient.Jmbg;
+                            ime.Text = patient.Name;
+                            prezime.Text = patient.Surname;
 
-                        broj.Text = record.IdHealthCard.ToString();
-                        grupa.Text = record.BloodType.ToString();
-                        date = record.birthdayDate.Date;
+                            jmbg.Text = patient.Jmbg;
 
-                        datum.Text = date.ToString();
-                        nzo.Text = record.HealthCareCategory.ToString();
+                            broj.Text = record.IdHealthCard.ToString();
+                            grupa.Text = record.BloodType.ToString();
+                            date = record.BirthdayDate.Date;
+
+                            datum.Text = date.ToString();
+                            nzo.Text = record.HealthCareCategory.ToString();
 
 
-
+                        
 
                     }
                 }
             }
+
 
 
 

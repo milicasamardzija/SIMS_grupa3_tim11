@@ -77,7 +77,24 @@ namespace Hospital.Service
 
         }
 
-        private List<Checkup> getDoctorTerms(int idDoctor, List<Checkup> unavailableCheckups)
+        public List<Checkup> getCheckupsPatient(int idPatient)
+        {
+            List<Checkup> checkups = checkupStorage.GetAll();
+            List<Checkup> availableCheckups = new List<Checkup>();
+            foreach (Checkup appointment in checkups)
+            {
+
+                if (appointment.IdPatient == idPatient)
+                {
+
+                    availableCheckups.Add(appointment);
+                }
+            }
+            return availableCheckups;
+        }
+        
+
+private List<Checkup> getDoctorTerms(int idDoctor, List<Checkup> unavailableCheckups)
         {
             foreach (Checkup c in allCheckups)
             {
@@ -89,7 +106,24 @@ namespace Hospital.Service
             return unavailableCheckups;
         }
 
-        
+        public List<Checkup> getCheckupsbyDate(int idPatient)
+        {
+            List<Checkup> checkups = checkupStorage.GetAll();
+            List<Checkup> availableCheckups = new List<Checkup>();
+            foreach (Checkup appointment in checkups)
+            {
+
+                if (appointment.IdPatient == idPatient)
+                {
+                    if (DateTime.Now > appointment.Date)
+                    {
+                      availableCheckups.Add(appointment);
+                    }
+                }
+            }
+            return availableCheckups;
+        }
+
         public void createCheckup(Checkup checkup)
         {
             Checkup newCheckup = new Checkup(generateIdCheckup(), checkup.IdDoctor, checkup.IdPatient, checkup.Date, 0, CheckupType.pregled);

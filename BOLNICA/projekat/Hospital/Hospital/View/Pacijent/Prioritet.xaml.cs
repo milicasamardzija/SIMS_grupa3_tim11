@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.DTO;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,9 +21,18 @@ namespace Hospital.View.Pacijent
     /// Interaction logic for Prioritet.xaml
     public partial class Prioritet : Window
     {
+        CheckupDTO checkup = new CheckupDTO();
+        CheckupDTO Checkup
+        {
+            get { return checkup; }
+            set { checkup = value; }
+        }
+
+
+        public ObservableCollection<CheckupDTO> appointmentList { get; set; }
         int id;
-        public ObservableCollection<Checkup> appointmentList;
-        public Prioritet(ObservableCollection<Checkup> applist, int idP)
+       
+        public Prioritet(ObservableCollection<CheckupDTO> applist, int idP)
         {
             InitializeComponent();
             appointmentList = applist;

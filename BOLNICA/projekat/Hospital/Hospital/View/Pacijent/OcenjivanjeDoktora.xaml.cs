@@ -1,4 +1,6 @@
-﻿using Hospital.Model;
+﻿using Hospital.Controller;
+using Hospital.DTO;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,15 +19,14 @@ using System.Windows.Shapes;
 
 namespace Hospital
 {
-    /// <summary>
-    /// Interaction logic for OcenjivanjeDoktora.xaml
-    /// </summary>
+ 
     public partial class OcenjivanjeDoktora : Window
     {
+
+        PatientController patientController;
+        CheckupController checkupController;
         public int id { get; set; }
-
-
-        public ObservableCollection<Checkup> termini
+        public ObservableCollection<CheckupDTO> termini
         {
             get;
             set;
@@ -35,22 +36,20 @@ namespace Hospital
             InitializeComponent();
             this.DataContext = this;
             id = idP;
-            termini = loadJason();
+            patientController = new PatientController();
+            checkupController = new CheckupController();
+
+            termini = new ObservableCollection<CheckupDTO>(checkupController.getCheckupsbyDate(id));
             bolnica.IsEnabled = false;
 
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            List<Patient> patients = storage.GetAll();
-            ObservableCollection<Patient> allPatients = new ObservableCollection<Patient>(patients);
-            foreach (Patient patient in allPatients)
+
+            foreach (PatientDTO patient in patientController.getAll())
             {
                 if (patient.Id == idP)
                 {
-                    imePacijenta.Text = patient.name + " " + patient.surname;
+                    imePacijenta.Text = patient.Name + " " + patient.Surname;
                 }
             }
-
-
-
             if (termini.Count > 5)
             {
                 bolnica.IsEnabled = true;
@@ -65,29 +64,11 @@ namespace Hospital
         }
         private void oceni_doktora(object sender, RoutedEventArgs e)
         {
-            DodajAnketu pp = new DodajAnketu(termini, (Checkup)ListaObavljenihTermina.SelectedItem, ListaObavljenihTermina.SelectedIndex, id);
+           DodajAnketu pp = new DodajAnketu(termini, (CheckupDTO)ListaObavljenihTermina.SelectedItem, ListaObavljenihTermina.SelectedIndex, id);
             pp.Show();
 
         }
-        public ObservableCollection<Checkup> loadJason()
-        {
-            CheckupFileStorage fs = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            ObservableCollection<Checkup> rs = new ObservableCollection<Checkup>(fs.GetAll());
-            ObservableCollection<Checkup> ret = new ObservableCollection<Checkup>();
-
-            foreach (Checkup appointment in rs)
-            {
-                if (appointment.IdPatient == id)
-                { if (DateTime.Now > appointment.Date)
-                    {
-                        ret.Add(appointment);
-                    }
-                }
-            }
-
-            return ret;
-        }
-
+      
         private void ocenite_bolnicu(object sender, RoutedEventArgs e)
         {
             OceniteBolnicu oceni = new OceniteBolnicu(id);
@@ -96,14 +77,6 @@ namespace Hospital
 
        
 
-        public void UpdateTable()
-        {
-            ListaObavljenihTermina.Items.Remove(((Checkup)ListaObavljenihTermina.SelectedItem).Id);
-        }
-
-        private void ListaObavljenihTermina_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+     
     }
 }

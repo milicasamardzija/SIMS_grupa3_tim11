@@ -24,26 +24,26 @@ namespace Hospital
     public partial class DodajAnketu : Window
     {
 
-        public OcenjivanjeDoktora parent;
-        public ObservableCollection<Checkup> obavljeniTermini;
-        public Checkup termin;
-        public int index;
-        public int idPatient; //id pacijenta koji je ulogovan
-        public string ime;
-        private string lekar;
+      
         SurveyController surveycontroler;
         PatientController patientcontroller;
+        DoctorController doctorcontroller;
         private SurveyDTO survey = new SurveyDTO();
+        
     
         public SurveyDTO Survey
         {
             get { return survey; }
             set { survey = value; }
         }
-
-
-
-        public DodajAnketu(ObservableCollection<Checkup> list, Checkup selectedApp, int selectedIndex, int idP)
+     
+        public ObservableCollection<CheckupDTO> obavljeniTermini;
+        public CheckupDTO termin;
+        public int index;
+        public int idPatient;
+        public string ime;
+     
+        public DodajAnketu(ObservableCollection<CheckupDTO> list, CheckupDTO selectedApp, int selectedIndex, int idP)
         {
             InitializeComponent();
             obavljeniTermini = list;
@@ -52,12 +52,11 @@ namespace Hospital
             idPatient = idP;
             surveycontroler = new SurveyController();
             patientcontroller = new PatientController();
-
+            doctorcontroller = new DoctorController();
             submit.IsEnabled = false;
 
 
-            List<PatientDTO> patients = patientcontroller.getAll();
-            foreach (PatientDTO patient in patients)
+            foreach (PatientDTO patient in patientcontroller.getAll())
             {
                 if (patient.Id == idP)
                 {
@@ -65,13 +64,12 @@ namespace Hospital
                 }
             }
 
-            DoctorFileStorage dstorage = new DoctorFileStorage("./../../../../Hospital/files/storageDoctor.json");
-            List<Doctor> doctors = dstorage.GetAll();
-            foreach (Doctor d in doctors)
+         
+            foreach (DoctorDTO d in doctorcontroller.getAll())
             {
                 if (d.Id == termin.IdDoctor)
                 {
-
+                   
                     ime = d.Name + " " + d.Surname;
                     doktor.Text = ime;
 
@@ -82,33 +80,30 @@ namespace Hospital
 
         }
 
+ 
+        private void posalji(object sender, RoutedEventArgs e)
+        {
+          
+            int ocenjeno = ocena.SelectedIndex;
+            string komentarisano = komentar.Text;
+            int id = surveycontroler.getAll().Count() + 1;
+            SurveyDTO survey = new SurveyDTO(id, komentarisano, ocenjeno, ime);
 
+            surveycontroler.save(survey);
+            obavljeniTermini.RemoveAt(index);
+            this.Close();
+            SacuvanaAnketa poslato = new SacuvanaAnketa();
+            poslato.Show();
+
+
+
+        }
 
         private void odustani(object sender, RoutedEventArgs e)
         {
             OcenjivanjeDoktora ocjeni = new OcenjivanjeDoktora(idPatient);
 
             this.Close();
-
-        }
-
-        private void posalji(object sender, RoutedEventArgs e)
-        {
-            SacuvanaAnketa poslato = new SacuvanaAnketa();
-            poslato.Show();
-
-
-
-            lekar = doktor.Text;
-            int ocenjeno = ocena.SelectedIndex;
-            string komentarisano = komentar.Text;
-            int id = surveycontroler.getAll().Count() + 1;
-            Survey survey = new Survey(id, komentarisano, ocenjeno, null);
-
-            surveycontroler.save(Survey);
-            obavljeniTermini.RemoveAt(index);
-            this.Close();
-
 
         }
 
