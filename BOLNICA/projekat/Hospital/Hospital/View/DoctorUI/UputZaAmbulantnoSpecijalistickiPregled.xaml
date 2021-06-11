@@ -15,7 +15,7 @@
         <TextBox x:Name="upucujeText" Height="30" HorizontalAlignment="Left" Margin="105,10,0,358.4" Width="199"/>
         <TextBox x:Name="jmbgUText" Height="30" HorizontalAlignment="Left" Margin="105,64,0,304.4" Width="199"/>
         <TextBox x:Name="lboUText" Height="30" HorizontalAlignment="Left" Margin="391,64,0,304.4" Width="170"/>
-        <TextBox x:Name="registarskiBrojText" Height="30" HorizontalAlignment="Left" Margin="105,112,0,256.4" Width="199"/>
+        <TextBox x:Name="lekarText" Height="30" HorizontalAlignment="Left" Margin="105,112,0,256.4" Width="199"/>
         <TextBox x:Name="razlogText" HorizontalAlignment="Left" Margin="10,216,0,65.4" Width="551"/>
         <Button x:Name="button1" Content="Izdaj uput" HorizontalAlignment="Left" Height="30" Margin="10,351,0,17.4" Width="103" FontSize="14" Click="button1_Click" />
         <Button x:Name="button2" Content="Zakazi pregled" HorizontalAlignment="Left" Height="30" Margin="245,351,0,17.4" Width="103" FontSize="14" Click="button2_Click" />

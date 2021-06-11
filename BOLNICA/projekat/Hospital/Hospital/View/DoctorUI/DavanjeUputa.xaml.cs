@@ -1,6 +1,8 @@
 ﻿
+using Hospital.DTO;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +22,10 @@ namespace Hospital
     /// </summary>
     public partial class DavanjeUputa : Window
     {
+        public ObservableCollection<CheckupDTO> CheckupList;
+        public CheckupDTO checkup;
+        public int index;
+
         public DavanjeUputa()
         {
             InitializeComponent();

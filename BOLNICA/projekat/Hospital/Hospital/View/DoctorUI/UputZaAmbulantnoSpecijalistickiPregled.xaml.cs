@@ -23,7 +23,8 @@ namespace Hospital
     /// </summary>
     public partial class UputZaAmbulantnoSpecijalistickiPregled : Window
     {
-        public List<CheckupDTO> CheckupList { get; set; }
+        public ObservableCollection<CheckupDTO> CheckupList { get; set; }
+        public CheckupDTO checkup;
         public int idDoctor;
         public InstructionController controller = new InstructionController();
         public Instruction instruction = new Instruction();
