@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using System.IO;
 using Hospital.FileStorage.Interfaces;
+using Hospital.DTO;
+using Hospital.Controller;
 
 namespace Hospital
 {
@@ -24,32 +26,20 @@ namespace Hospital
     {
 
         public ObservableCollection<MedicalRecord> MedicalList { get; set; }
+        public MedicalRecordController controller = new MedicalRecordController();
 
-        public ObservableCollection<Patient> Pacijenti;
-        public Patient patient;
+        public ObservableCollection<PatientDTO> Pacijenti;
+        public PatientDTO patient;
         public int idPatient;
 
-        public PrikaziKartonPacijenta(ObservableCollection<Patient> list, Patient selectedPatient, int selectedIndex)
+        public PrikaziKartonPacijenta(ObservableCollection<PatientDTO> list, PatientDTO selectedPatient, int selectedIndex)
         {
             InitializeComponent();
             this.DataContext = this;
             Pacijenti = list;
             patient = selectedPatient;
             idPatient = selectedIndex;
-            MedicalList = loadMedicalRecordFile();
-        }
-
-        public ObservableCollection<MedicalRecord> loadMedicalRecordFile()
-        {
-            IMedicalRecordFileStorage storageMedicalRecord = new MedicalRecordsFileStorage(@"./../../../../Hospital/files/storageMRecords.json");
-            ObservableCollection<MedicalRecord> allMedicalRecords = new ObservableCollection<MedicalRecord>(storageMedicalRecord.GetAll());
-            ObservableCollection<MedicalRecord> returnMedicalRecord = new ObservableCollection<MedicalRecord>();
-            foreach (MedicalRecord medicalRecord in allMedicalRecords)
-            {
-                 returnMedicalRecord.Add(medicalRecord);
-                
-            }
-            return returnMedicalRecord;
+            MedicalList = new ObservableCollection<MedicalRecord>(controller.getAll());
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
