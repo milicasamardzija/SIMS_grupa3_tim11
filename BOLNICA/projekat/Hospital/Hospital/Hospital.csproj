@@ -320,6 +320,15 @@
     <Compile Include="ValidationManager\StringToDouble.cs" />
     <Compile Include="ValidationManager\StringToInteger.cs" />
     <Compile Include="ValidationManager\Time.cs" />
+    <Compile Include="View\Manager\FeedbackM\FeedbackFirst.xaml.cs">
+      <DependentUpon>FeedbackFirst.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FeedbackM\FeedbackGood.xaml.cs">
+      <DependentUpon>FeedbackGood.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\FeedbackM\Problem.xaml.cs">
+      <DependentUpon>Problem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Help\HelpProvider.cs" />
     <Compile Include="View\Manager\Help\HelpViewer.xaml.cs">
       <DependentUpon>HelpViewer.xaml</DependentUpon>
@@ -654,6 +663,18 @@
     <Page Include="View\DoctorUI\ZauzmiSobu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Manager\FeedbackM\FeedbackFirst.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FeedbackM\FeedbackGood.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\FeedbackM\Problem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Help\HelpViewer.xaml">
       <SubType>Designer</SubType>

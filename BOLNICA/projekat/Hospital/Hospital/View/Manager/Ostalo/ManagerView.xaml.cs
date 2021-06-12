@@ -43,7 +43,7 @@ namespace Hospital
         public ManagerView()
         {
             InitializeComponent();
-            frame.NavigationService.Navigate(new ProfilUpravnik(this));
+            frame.NavigationService.Navigate(new ProfilUpravnik(this,frame));
             getTasks();
             mergeRooms();
             separateRooms();
@@ -185,7 +185,7 @@ namespace Hospital
 
         private void profil(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new ProfilUpravnik(this));
+            frame.NavigationService.Navigate(new ProfilUpravnik(this,frame));
         }
 
         private void klinika(object sender, RoutedEventArgs e)

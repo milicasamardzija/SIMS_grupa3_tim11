@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Hospital.Model;
+using Hospital.View.Manager.FeedbackM;
 using Hospital.View.Manager.WIzard;
 
 namespace Hospital.View.Manager.Ostalo
@@ -23,11 +24,13 @@ namespace Hospital.View.Manager.Ostalo
         private ManagerView view;
         private ManagerNote notes = new ManagerNote();
         private List<ManagerNote> note = new List<ManagerNote>();
-        public ProfilUpravnik(ManagerView managerView)
+        private Frame managerFrame = new Frame();
+        public ProfilUpravnik(ManagerView managerView,Frame managerFrame)
         {
             InitializeComponent();
             view = managerView;
             Frame.NavigationService.Navigate(new Informacije());
+            this.managerFrame = managerFrame;
         }
 
         private void ukljuci(object sender, RoutedEventArgs e)
@@ -60,6 +63,11 @@ namespace Hospital.View.Manager.Ostalo
         {
             Wizard w = new Wizard();
             w.Show();
+        }
+
+        private void feedback(object sender, RoutedEventArgs e)
+        {
+            managerFrame.NavigationService.Navigate(new FeedbackGood());
         }
     }
 }

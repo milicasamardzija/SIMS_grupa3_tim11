@@ -19,7 +19,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Content="Iskljuci tooltip-ove" Click="iskljuci" Background="#FFFFC800" HorizontalAlignment="Left" Margin="977,250,0,0" VerticalAlignment="Top" Width="184" FontSize="18" FontWeight="Bold" Height="44" RenderTransformOrigin="0.675,-0.058">
+        <Button Content="Iskljuci tooltip-ove" Click="iskljuci" Background="#FFFFC800" HorizontalAlignment="Left" Margin="977,203,0,0" VerticalAlignment="Top" Width="184" FontSize="18" FontWeight="Bold" Height="44" RenderTransformOrigin="0.675,-0.058">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -30,7 +30,12 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Content="Ukljuci wizard" Click="wizard" Background="#FFFFC800" HorizontalAlignment="Left" Margin="977,363,0,0" VerticalAlignment="Top" Width="184" FontSize="18" FontWeight="Bold" Height="44" RenderTransformOrigin="0.675,-0.058">
+        <Button Content="Ukljuci wizard" Click="wizard" Background="#FFFFC800" HorizontalAlignment="Left" Margin="977,299,0,0" VerticalAlignment="Top" Width="184" FontSize="18" FontWeight="Bold" Height="44" RenderTransformOrigin="0.675,-0.058">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="Feedback" Click="feedback" Background="#FFFFC800" HorizontalAlignment="Left" Margin="977,393,0,0" VerticalAlignment="Top" Width="184" FontSize="18" FontWeight="Bold" Height="44" RenderTransformOrigin="0.675,-0.058">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

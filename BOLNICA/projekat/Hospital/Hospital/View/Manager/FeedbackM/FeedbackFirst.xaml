@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Hospital.View.Manager.FeedbackM.FeedbackFirst"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hospital.View.Manager.FeedbackM" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+              Height="301"  Background="#FF373434">
+    <Grid>
+        <Label
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Ocena performansi:"
+            FontSize="18"
+            FontWeight="Bold"
+            Foreground="#FFFFC800" Margin="0,23,0,0" />
+        <materialDesign:RatingBar
+            x:Name="ocena"
+            Margin="317,23,405.2,172.8"
+            Foreground="#FFFFC800" />
+        <Label
+            Margin="0,94,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Sugestije i komentari: "
+            FontSize="18"
+            FontWeight="Bold"
+            Foreground="#FFFFC800" />
+        <TextBox
+            x:Name="komentar"
+            Width="542"
+            Height="52"
+            Margin="317,94,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap" />
+        <Button
+            Width="193"
+            Height="49"
+            Margin="666,242,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="       Posalji feedback"
+            FontSize="18"
+            FontWeight="Bold"
+            Click="posalji"
+            TextElement.Foreground="#FFFFC800">
+            <Button.Background>
+                <ImageBrush
+                    AlignmentX="Left"
+                    
+                    Stretch="None" />
+            </Button.Background>
+        </Button>
+    </Grid>
+</UserControl>
