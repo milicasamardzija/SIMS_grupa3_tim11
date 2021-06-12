@@ -99,11 +99,26 @@ namespace Hospital.Service
                 }
             }
         }
-        private Boolean isRoomAvailableRenovation(RoomRenovation renovation)
+        private Boolean isRoomAvailableRenovation(RoomMerge renovation)
         {
             foreach (Checkup checkup in checkupStorage.GetAll())
             {
-                if (checkup.IdRoom == renovation.Id)
+                if (checkup.IdRoom == renovation.IdRoom)
+                {
+                    if (checkup.Date.Date == renovation.DateBegin.Date)
+                    {
+                        return false;
+                    }
+
+                    if (checkup.Date.Date > renovation.DateBegin.Date)
+                    {
+                        return false;
+                    }
+                }
+            }
+            foreach (Checkup checkup in checkupStorage.GetAll())
+            {
+                if (checkup.IdRoom == renovation.IdRoomSecond)
                 {
                     if (checkup.Date.Date == renovation.DateBegin.Date)
                     {

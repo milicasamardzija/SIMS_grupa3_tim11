@@ -58,6 +58,7 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
         {
             renovation.DateBegin = (DateTime)BeginDate.SelectedDate;
             renovation.DateEnd = (DateTime)EndDate.SelectedDate;
+            renovation.Purpose = (Purpose)TipSobeComboBox.SelectedIndex;
             renovationController.separateRoomsSchedule(renovation);
             frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }

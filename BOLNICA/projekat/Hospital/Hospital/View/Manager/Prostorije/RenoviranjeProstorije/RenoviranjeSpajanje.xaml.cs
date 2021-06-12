@@ -75,6 +75,7 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
             renovation.IdRoomSecond = Convert.ToInt32(((ComboBoxItem)SobeComboBox.SelectedItem).Tag);
             renovation.DateBegin = (DateTime)BeginDate.SelectedDate;
             renovation.DateEnd = (DateTime)EndDate.SelectedDate;
+            renovation.Purpose = (Purpose)NamenaComboBox.SelectedIndex;
             renovationController.mergeRoomsSchedule(renovation);
             frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }
