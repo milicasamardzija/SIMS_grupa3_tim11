@@ -12,7 +12,7 @@ namespace Hospital.Controller
     public class MergeRoomController
     {
         private RoomMergeService service = new RoomMergeService();
-        public void mergeRoomsSchedule(RoomRenovationDTO renovation)
+        public void mergeRoomsSchedule(RoomMergeDTO renovation)
         {
             service.mergeRoomsSchedule(new RoomMerge(service.generateIdMerge(),renovation.IdRoom,renovation.IdRoomSecond,renovation.DateBegin,renovation.DateEnd,renovation.Purpose,renovation.Description));
         }

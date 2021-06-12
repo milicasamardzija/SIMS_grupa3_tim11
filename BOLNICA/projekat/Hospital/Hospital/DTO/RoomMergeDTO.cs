@@ -12,6 +12,7 @@ namespace Hospital.DTO
         private int idRoomSecond;
         private Purpose purpose;
 
+        public RoomMergeDTO() { }
         public RoomMergeDTO(int id, int idRoomFirst, int idRoomSecond, DateTime dateBegin, DateTime dateEnd, Purpose purpose, String description) : base(id, idRoomFirst, dateBegin, dateEnd, description)
         {
             this.idRoomSecond = idRoomSecond;

@@ -30,31 +30,5 @@ namespace Hospital.Controller
             }
             return renovations;
         }
-      
-
-        public void separateRoomsSchedule(RoomRenovationDTO renovation)
-        {
-            String description = "Razdvajanje prostorije broj " + renovation.IdRoom + ".";
-            service.separateRoomsSchedule(new RoomSeparate(service.generateIdSeparate(), renovation.IdRoom, renovation.Purpose, renovation.DateBegin, renovation.DateEnd, description));
-        }
-        public List<RoomRenovationDTO> getAllMergeRenovations()
-        {
-            List<RoomRenovationDTO> renovations = new List<RoomRenovationDTO>();
-            foreach(RoomMerge renovation in service.getAllMergeRenovations())
-            {
-                renovations.Add(new RoomRenovationDTO());
-            }
-            return renovations;
-        }
-
-        public List<RoomRenovationDTO> getAllMSeparateRenovations()
-        {
-            List<RoomRenovationDTO> renovations = new List<RoomRenovationDTO>();
-            foreach (RoomSeparate renovation in service.getAllSeparateRenovations())
-            {
-                renovations.Add(new RoomRenovationDTO());
-            }
-            return renovations;
-        }
     }
 }

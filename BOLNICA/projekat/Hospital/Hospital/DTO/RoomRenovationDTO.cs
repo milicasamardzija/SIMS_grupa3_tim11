@@ -15,13 +15,11 @@ namespace Hospital.DTO
         private int idRenovation;
         private int idRoom;
         private int idRoomSecond;
-        private Purpose purpose;
         public RoomRenovationDTO() {}
         public RoomRenovationDTO(int id, int idRoom, DateTime dateBegin, DateTime dateEnd, String description)
         {
             this.dateBegin = dateBegin;
-            this.dateEnd = dateEnd.AddHours(23);
-            this.dateEnd.AddMinutes(59);
+            this.dateEnd = dateEnd;
             this.description = description;
             this.idRoom = idRoom;
             this.idRenovation = id;
@@ -29,8 +27,7 @@ namespace Hospital.DTO
         public RoomRenovationDTO(int id, int idRoom,int idRoomSecond, DateTime dateBegin, DateTime dateEnd, String description)
         {
             this.dateBegin = dateBegin;
-            this.dateEnd = dateEnd.AddHours(23);
-            this.dateEnd.AddMinutes(59);
+            this.dateEnd = dateEnd;
             this.description = description;
             this.idRoom = idRoom;
             this.idRenovation = id;
@@ -40,12 +37,10 @@ namespace Hospital.DTO
         public RoomRenovationDTO(int id, int idRoom, Purpose purpose, DateTime dateBegin, DateTime dateEnd, String description)
         {
             this.dateBegin = dateBegin;
-            this.dateEnd = dateEnd.AddHours(23);
-            this.dateEnd.AddMinutes(59);
+            this.dateEnd = dateEnd;
             this.description = description;
             this.idRoom = idRoom;
             this.idRenovation = id;
-            this.purpose = purpose;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -145,21 +140,6 @@ namespace Hospital.DTO
                 {
                     description = value;
                     OnProperychanged("Description");
-                }
-            }
-        }
-        public Purpose Purpose
-        {
-            get
-            {
-                return purpose;
-            }
-            set
-            {
-                if (value != purpose)
-                {
-                    purpose = value;
-                    OnProperychanged("Purpose");
                 }
             }
         }

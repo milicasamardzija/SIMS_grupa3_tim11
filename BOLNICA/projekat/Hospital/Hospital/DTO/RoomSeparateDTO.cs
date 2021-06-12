@@ -10,7 +10,7 @@ namespace Hospital.DTO
     public class RoomSeparateDTO : RoomRenovationDTO, INotifyPropertyChanged
     {
         private Purpose purpose;
-
+        public RoomSeparateDTO() { }
         public RoomSeparateDTO(int id, int idRoom, Purpose purpose, DateTime dateBegin, DateTime dateEnd, String description) : base(id,idRoom,dateBegin,dateEnd,description)
         {
             this.purpose = purpose;

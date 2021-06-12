@@ -23,8 +23,8 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
         private Frame frame;
         private RoomDTO room;
         private RoomSeparateController renovationController = new RoomSeparateController();
-        private RoomRenovationDTO renovation = new RoomRenovationDTO();
-        public RoomRenovationDTO Renovation
+        private RoomSeparateDTO renovation = new RoomSeparateDTO();
+        public RoomSeparateDTO Renovation
         {
             get
             {

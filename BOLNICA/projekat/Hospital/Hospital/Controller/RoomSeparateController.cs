@@ -16,7 +16,7 @@ namespace Hospital.Controller
         {
             service = new RoomSeparateService();
         }
-        public void separateRoomsSchedule(RoomRenovationDTO renovation)
+        public void separateRoomsSchedule(RoomSeparateDTO renovation)
         {
             service.separateRoomsSchedule(new RoomSeparate(service.generateIdSeparate(), renovation.IdRoom, renovation.Purpose, renovation.DateBegin, renovation.DateEnd, renovation.Description));
         }
