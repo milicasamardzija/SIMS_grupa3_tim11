@@ -30,11 +30,7 @@ namespace Hospital.Controller
             }
             return renovations;
         }
-        public void mergeRoomsSchedule(RoomRenovationDTO renovation)
-        {
-            String description = "Spajanje prostorije broj " + renovation.IdRoom + " sa prostorijom broj " + renovation.IdRoomSecond + ".";
-            service.mergeRoomsSchedule(new RoomMerge(service.generateIdMerge(), renovation.IdRoom, renovation.IdRoomSecond, renovation.DateBegin, renovation.DateEnd, description));
-        }
+      
 
         public void separateRoomsSchedule(RoomRenovationDTO renovation)
         {

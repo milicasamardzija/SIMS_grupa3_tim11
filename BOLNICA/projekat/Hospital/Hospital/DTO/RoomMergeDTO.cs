@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hospital.Model.Rooms
+namespace Hospital.DTO
 {
-    public class RoomMerge : RoomRenovation
+    public class RoomMergeDTO : RoomRenovationDTO, INotifyPropertyChanged
     {
         private int idRoomSecond;
         private Purpose purpose;
 
-        public RoomMerge(int id, int idRoomFirst,int idRoomSecond, DateTime dateBegin, DateTime dateEnd, Purpose purpose, String description) : base(id, idRoomFirst,dateBegin,dateEnd,description)
+        public RoomMergeDTO(int id, int idRoomFirst, int idRoomSecond, DateTime dateBegin, DateTime dateEnd, Purpose purpose, String description) : base(id, idRoomFirst, dateBegin, dateEnd, description)
         {
             this.idRoomSecond = idRoomSecond;
             this.purpose = purpose;
@@ -27,6 +28,7 @@ namespace Hospital.Model.Rooms
                 if (value != idRoomSecond)
                 {
                     idRoomSecond = value;
+                    OnProperychanged("IdRoomSecond");
                 }
             }
         }
@@ -41,6 +43,7 @@ namespace Hospital.Model.Rooms
                 if (value != purpose)
                 {
                     purpose = value;
+                    OnProperychanged("Purpose");
                 }
             }
         }

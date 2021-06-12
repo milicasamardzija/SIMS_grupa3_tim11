@@ -23,6 +23,8 @@ using Application = System.Windows.Application;
 using HelpProvider = Hospital.View.Manager.Help.HelpProvider;
 using MessageBox = System.Windows.MessageBox;
 using Hospital.Controller;
+using Hospital.Model.Rooms;
+using Hospital.Service;
 
 namespace Hospital
 {
@@ -35,13 +37,16 @@ namespace Hospital
         private int quantity;
         private ManagerNote notes = new ManagerNote();
         private List<ManagerNote> note = new List<ManagerNote>();
-        private RoomRenovationController renovationControler = new RoomRenovationController();
+        private MergeRoomController renovationControler = new MergeRoomController();
+        private RoomSeparateController renovationSeparateController = new RoomSeparateController();
+        private RoomMergeService renovationS = new RoomMergeService();
         public ManagerView()
         {
             InitializeComponent();
             frame.NavigationService.Navigate(new ProfilUpravnik(this));
             getTasks();
             mergeRooms();
+            separateRooms();
             note = notes.GetAll();
             if (note[4].note.Equals("da"))
             {
@@ -52,11 +57,50 @@ namespace Hospital
             }
            
         }
+        private void doMerge(RoomMerge renovation)
+        {
+            TimeSpan t = renovation.DateBegin.Subtract(DateTime.Now);
 
+            if (renovation.DateBegin < DateTime.Now)
+            {
+                renovationControler.mergeRooms(renovation);
+            }
+            else
+            {
+                Thread.Sleep(t);
+                renovationControler.mergeRooms(renovation);
+            }
+        }
         private void mergeRooms()
         {
-           // RoomRenovationController renovationControler = new RoomRenovationController();
-           // foreach(IRoomMergeFileStorage renovation in)
+            foreach(RoomMerge renovation in renovationS.getAllMergeRenovations())
+            {
+                Task t = new Task(() => doMerge(renovation));
+                t.Start();
+            }
+        }
+
+        private void doSeparate(RoomSeparate renovation)
+        {
+            TimeSpan t = dateExecution.Subtract(DateTime.Now);
+
+            if (renovation.DateBegin < DateTime.Now)
+            {
+                renovationSeparateController.separateRooms(renovation);
+            }
+            else
+            {
+                Thread.Sleep(t);
+                renovationSeparateController.separateRooms(renovation);
+            }
+        }
+        private void separateRooms()
+        {
+            foreach (RoomSeparate renovation in renovationSeparateController.getAll())
+            {
+                Task t = new Task(() => doSeparate(renovation));
+                t.Start();
+            }
         }
 
         private void getTasks()
@@ -71,14 +115,15 @@ namespace Hospital
                 idRoomOut = task.RoomOutId;
                 quantity = task.Quantity;
 
-                foreach (Inventory i in storageInventory.GetAll())
-                {
-                    if (i.Id == task.InventoryId)
+                if(storageInventory.GetAll() != null)
+                    foreach (Inventory i in storageInventory.GetAll())
                     {
-                        inventory = i;
-                        break;
+                        if (i.Id == task.InventoryId)
+                        {
+                            inventory = i;
+                            break;
+                        }
                     }
-                }
 
                 Task t = new Task(doWork);
                 t.Start();
@@ -90,7 +135,7 @@ namespace Hospital
         {
             StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
             TimeSpan t = dateExecution.Subtract(DateTime.Now);
-            
+
             if (dateExecution < DateTime.Now)
             {
                 storage.moveInventoryStatic(inventory, idRoomIn, idRoomOut, quantity);
@@ -100,7 +145,6 @@ namespace Hospital
                 Thread.Sleep(t);
                 storage.moveInventoryStatic(inventory, idRoomIn, idRoomOut, quantity);
             }
-
         }
 
         private void magacin(object sender, RoutedEventArgs e)

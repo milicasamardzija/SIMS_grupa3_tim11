@@ -18,10 +18,11 @@ namespace Hospital.Controller
         public List<InventoryDTO> getAll()
         {
             List<InventoryDTO> inventories = new List<InventoryDTO>();
-            foreach (Inventory inventory in service.getAll())
-            {
-                inventories.Add(new InventoryDTO(inventory.Id,inventory.Name,inventory.Quantity,inventory.Type));
-            }
+            if(service.getAll() != null)
+                foreach (Inventory inventory in service.getAll())
+                {
+                    inventories.Add(new InventoryDTO(inventory.Id,inventory.Name,inventory.Quantity,inventory.Type));
+                }
             return inventories;
         }
 

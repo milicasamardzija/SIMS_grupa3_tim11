@@ -1,10 +1,1 @@
-[
-  {
-    "IdRoom": 0,
-    "DateBegin": "2021-05-31T00:00:00",
-    "DateEnd": "2021-06-15T11:00:00",
-    "Description": "Krecenje sobe i menjane prozora.",
-    "Id": 3,
-    "idRoom" : 1
-  }
-]
+[{"IdRoomSecond":0,"Purpose":0,"IdRoom":1,"DateBegin":"2021-07-02T00:00:00","DateEnd":"2021-07-13T21:00:00","Description":null,"Id":0},{"IdRoomSecond":2,"Purpose":2,"IdRoom":1,"DateBegin":"2021-06-17T00:00:00","DateEnd":"2021-06-25T22:00:00","Description":"Zakazano je spajanje sobe broj 1 sa sobom broj 2.","Id":1},{"IdRoomSecond":0,"Purpose":0,"IdRoom":3,"DateBegin":"2021-06-12T00:00:00","DateEnd":"2021-06-13T23:00:00","Description":"Zakazano je spajanje sobe broj 3 sa sobom broj 0.","Id":2}]

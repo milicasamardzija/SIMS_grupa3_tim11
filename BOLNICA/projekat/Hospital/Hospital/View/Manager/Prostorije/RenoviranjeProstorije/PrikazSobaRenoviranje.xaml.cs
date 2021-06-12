@@ -30,14 +30,28 @@ namespace Hospital
             get;
             set;
         }
+        public ObservableCollection<RoomMergeDTO> RenovationsMerge
+        {
+            get;
+            set;
+        }
+        public ObservableCollection<RoomSeparateDTO> RenovationsSeparate
+        {
+            get;
+            set;
+        }
         private Frame frame;
         private RoomRenovationController controller;
+        private MergeRoomController controllerMerge = new MergeRoomController();
+        private RoomSeparateController controllerSeparate = new RoomSeparateController();
         public PrikazSobaRenoviranje(Frame frame)
         {
             InitializeComponent();
             this.DataContext = this;
             this.controller = new RoomRenovationController();
             Renovations = new ObservableCollection<RoomRenovationDTO>(controller.getAll());
+            RenovationsMerge = new ObservableCollection<RoomMergeDTO>(controllerMerge.getAllMergeRenovations());
+            RenovationsSeparate = new ObservableCollection<RoomSeparateDTO>(controllerSeparate.getAllSeparateRenovations());
             this.frame = frame;
         }
      

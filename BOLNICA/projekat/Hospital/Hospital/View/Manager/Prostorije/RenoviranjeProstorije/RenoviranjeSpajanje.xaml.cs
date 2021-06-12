@@ -22,7 +22,7 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
         private Frame frame;
         private RoomDTO room;
         private RoomsController roomController = new RoomsController();
-        private RoomRenovationController renovationController = new RoomRenovationController();
+        private MergeRoomController renovationController = new MergeRoomController();
         private RoomRenovationDTO renovation = new RoomRenovationDTO();
         public RoomRenovationDTO Renovation
         {
@@ -44,6 +44,7 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
             this.room = room;
             renovation.IdRoom = room.Id;
             addRooms();
+            addPurpose();
             CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
             BeginDate.BlackoutDates.Add(kalendar);
             EndDate.BlackoutDates.Add(kalendar);
@@ -61,9 +62,16 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
                 SobeComboBox.Items.Add(item);
             }
         }
+
+        private void addPurpose()
+        {
+            NamenaComboBox.ItemsSource = Enum.GetValues((typeof(Purpose)));
+        }
         private void renoviraj(object sender, RoutedEventArgs e)
         {
             renovation.IdRoomSecond = Convert.ToInt32(((ComboBoxItem)SobeComboBox.SelectedItem).Tag);
+            renovation.DateBegin = (DateTime)BeginDate.SelectedDate;
+            renovation.DateEnd = (DateTime)EndDate.SelectedDate;
             renovationController.mergeRoomsSchedule(renovation);
             frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }

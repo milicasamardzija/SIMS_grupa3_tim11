@@ -209,11 +209,13 @@
     <Compile Include="Controller\FunctionalityController.cs" />
     <Compile Include="Controller\IngredientController.cs" />
     <Compile Include="Controller\MedicalRecordController.cs" />
+    <Compile Include="Controller\MergeRoomController.cs" />
     <Compile Include="Controller\NotificationsController.cs" />
     <Compile Include="Controller\AnamnesisController.cs" />
     <Compile Include="Controller\InstructionController.cs" />
     <Compile Include="Controller\MedicineController1.cs" />
     <Compile Include="Controller\RecipeController.cs" />
+    <Compile Include="Controller\RoomSeparateController.cs" />
     <Compile Include="Controller\SurveyController.cs" />
     <Compile Include="Controller\MedicineReviewController.cs" />
     <Compile Include="Controller\RoomInventoryController.cs" />
@@ -231,9 +233,11 @@
     <Compile Include="DTO\ReviewDTO.cs" />
     <Compile Include="DTO\NotificationsDTO.cs" />
     <Compile Include="DTO\RoomInventoryDTO.cs" />
+    <Compile Include="DTO\RoomMergeDTO.cs" />
     <Compile Include="DTO\RoomRenovationDTO.cs" />
     <Compile Include="Controller\PatientController.cs" />
     <Compile Include="DTO\PatientDTO.cs" />
+    <Compile Include="DTO\RoomSeparateDTO.cs" />
     <Compile Include="DTO\SurveyDTO.cs" />
     <Compile Include="FileStorage\FeedbackFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IAlergensFileStorage.cs" />
@@ -275,6 +279,8 @@
     <Compile Include="Service\InstructionService.cs" />
     <Compile Include="Service\MedicineService1.cs" />
     <Compile Include="Service\RecipeService.cs" />
+    <Compile Include="Service\RoomMergeService.cs" />
+    <Compile Include="Service\RoomSeparateService.cs" />
     <Compile Include="Service\SurveyService.cs" />
     <Compile Include="Service\MedicineReviewService.cs" />
     <Compile Include="Service\RoomInventoryService.cs" />
