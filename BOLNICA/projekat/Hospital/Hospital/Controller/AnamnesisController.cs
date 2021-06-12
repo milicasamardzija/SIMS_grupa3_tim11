@@ -22,7 +22,7 @@ namespace Hospital.Controller
             List<Anamnesis> anamnesis = new List<Anamnesis>();
             foreach(Anamnesis a in allAnamnesis)
             {
-                Anamnesis newAnamnesis = new Anamnesis(a.Id, a.nameS, a.gender, a.datePlace, a.adress,
+                Anamnesis newAnamnesis = new Anamnesis(a.Id, a.nameS, a.gender, a.idPatient, a.adress,
                     a.status, a.job, a.summary);
             }
             return anamnesis;

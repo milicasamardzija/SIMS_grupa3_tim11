@@ -61,7 +61,7 @@ namespace Hospital
             ObservableCollection<Anamnesis> listAnamnesis = new ObservableCollection<Anamnesis>();
 
             Anamnesis newAnamnesis = new Anamnesis(generateIdAnamnesis(), Convert.ToString(textIme), Convert.ToString(textPol.Text),
-                Convert.ToString(textDatum.Text), Convert.ToString(textAdresa.Text), Convert.ToString(textBrak.Text),
+                Convert.ToInt16(textDatum.Text), Convert.ToString(textAdresa.Text), Convert.ToString(textBrak.Text),
                 Convert.ToString(textZanimanje.Text), Convert.ToString(textZakljucak.Text));
 
             storageAnamnesis.Save(newAnamnesis);

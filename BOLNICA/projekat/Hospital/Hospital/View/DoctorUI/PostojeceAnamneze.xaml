@@ -11,7 +11,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="IME I PREZIME" Binding="{Binding nameS}" FontSize="16"/>
                 <DataGridTextColumn Header="POL" Binding="{Binding gender}" FontSize="16"/>
-                <DataGridTextColumn Header="DATUM RODJENJA I MESTO" Binding="{Binding datePlace}" FontSize="16"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding datePlace}" FontSize="16"/>
                 <DataGridTextColumn Header="ADRESA" Binding="{Binding adress}" FontSize="16"/>
                 <DataGridTextColumn Header="BRACNI STATUS" Binding="{Binding status}" FontSize="16"/>
                 <DataGridTextColumn Header="ZAPOSLENJE" Binding="{Binding job}" FontSize="16"/>

@@ -24,7 +24,6 @@ namespace Hospital
     public partial class PostojeceAnamneze : Window
     {
         public ObservableCollection<Anamnesis> AnamnesisList { get; set; }
-        public AnamnesisController controllerAnamnesis = new AnamnesisController();
 
         public PostojeceAnamneze()
         {

@@ -11,7 +11,7 @@
         <Button x:Name="button1" Content="Izadji" HorizontalAlignment="Left" Margin="424,387,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Click="button1_Click"/>
         <Label x:Name="label" Content="Prezime i ime pacijenta" HorizontalAlignment="Left" Margin="24,21,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="label1" Content="Pol" HorizontalAlignment="Left" Margin="24,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.036,0.383" FontSize="16"/>
-        <Label x:Name="label2" Content="Datum i mesto rodjenja" HorizontalAlignment="Left" Margin="24,90,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label2" Content="ID pacijenta" HorizontalAlignment="Left" Margin="24,90,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="label3" Content="Adresa stanovanja" HorizontalAlignment="Left" Margin="24,126,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="label4" Content="Bracno stanje" HorizontalAlignment="Left" Margin="24,164,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="label5" Content="Zanimanje" HorizontalAlignment="Left" Margin="24,201,0,0" VerticalAlignment="Top" FontSize="16"/>

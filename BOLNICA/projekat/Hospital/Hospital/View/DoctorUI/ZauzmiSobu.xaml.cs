@@ -49,7 +49,7 @@ namespace Hospital
             room.Capacity = room.Capacity + 1;
             if(room.Capacity == maxValue)
             {
-                room.Occupancy = true;
+                MessageBox.Show("Soba je zauzeta!");
             }
             LookInRooms[indexRoom] = room;
             this.Close();
