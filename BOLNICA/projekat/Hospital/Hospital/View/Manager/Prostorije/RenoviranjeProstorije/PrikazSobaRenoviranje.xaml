@@ -42,7 +42,7 @@
             </Image>
         </Button>
         <DataGrid x:Name="Spajanje"
-            Margin="34,243,434,271"
+            Margin="34,238,434,276"
             Grid.Column="0"
             Background="#FFDFD7BB" RowBackground="#FFDFD7BB" Foreground="#FF373434"
             AutoGenerateColumns="False"
