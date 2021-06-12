@@ -424,6 +424,9 @@
     <Compile Include="View\Pacijent\DodajBelesku.xaml.cs">
       <DependentUpon>DodajBelesku.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pacijent\FeedBackPatient.xaml.cs">
+      <DependentUpon>FeedBackPatient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pacijent\ObavljeniPregledi.xaml.cs">
       <DependentUpon>ObavljeniPregledi.xaml</DependentUpon>
     </Compile>
@@ -444,6 +447,12 @@
     </Compile>
     <Compile Include="View\Pacijent\PrioritetDoktor.xaml.cs">
       <DependentUpon>PrioritetDoktor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pacijent\ProblemPacijent.xaml.cs">
+      <DependentUpon>ProblemPacijent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pacijent\UtisakPacijent.xaml.cs">
+      <DependentUpon>UtisakPacijent.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pacijent\ZdravstveniKarton.xaml.cs">
       <DependentUpon>ZdravstveniKarton.xaml</DependentUpon>
@@ -704,6 +713,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Pacijent\FeedBackPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pacijent\ObavljeniPregledi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -741,6 +754,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pacijent\PrioritetDoktor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pacijent\ProblemPacijent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pacijent\UtisakPacijent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

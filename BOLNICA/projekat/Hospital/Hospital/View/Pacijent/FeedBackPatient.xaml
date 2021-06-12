@@ -1,0 +1,60 @@
+﻿<Window x:Class="Hospital.View.Pacijent.FeedBackPatient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital.View.Pacijent"
+        mc:Ignorable="d"
+        Title="" Height="480" Width="330"  WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Line  
+                    X1="500" Y1="0"  
+                    X2="20" Y2="0"  
+                    Stroke="SteelBlue"  
+                    StrokeThickness="4" Margin="-22,56,-20.8,220.4" />
+        <Label
+            Margin="27,212,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Tip feedback-a: "
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
+
+        <RadioButton
+            x:Name="utisakBtn"
+            Margin="53,273,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Checked="utisakBtn_Checked"
+            Content="UTISAK"
+            GroupName="grupa"
+            TextElement.Foreground="#FF1B4C93" />
+         <Button  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="10,25,0,0" FontSize="22" Height="19" Click="odustani" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6" Grid.RowSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <RadioButton
+            x:Name="problemBtn"
+            Margin="53,314,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Checked="problemBtn_Checked"
+            Content="PRIJAVA PROBLEMA"
+            GroupName="grupa"
+            TextElement.Foreground="#FF1B4C93" Height="21" Width="179" />
+
+        <Label
+            Width="354"
+            Height="77"
+            Margin="10,83,-40.8,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content=" * Kako biste nam pomogli da unapredimo performanse &#xD;&#xA; nase aplikacije, molimo Vas da popunite sledecu formu.&#xD;&#xA;&#xD;&#xA;* Ukoliko imate nekih problema, mozete ih prijaviti nasem  &#xD;&#xA;IT timu i pri tome odaberite odgovarajuci tip feedback-a.&#xD;&#xA;&#xD;&#xA;"
+            FontSize="10"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
+
+    </Grid>
+</Window>
