@@ -13,11 +13,11 @@
                        Foreground= "#FFFFC800"
                        Grid.Row="0"
                        Grid.Column="0"
-                       Margin="34,42,549,555"
+                       Margin="34,10,549,587"
                        FontSize="22" Width="697" FontWeight="Bold"
                        />
         <DataGrid Name="ProstorijeRenoviranje"
-                      Margin="34,90,434,424"
+                      Margin="34,53,434,461"
                       Grid.Column="0"
                       Background="#FFDFD7BB" RowBackground="#FFDFD7BB" Foreground="#FF373434"
                       AutoGenerateColumns="False"
@@ -53,11 +53,12 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="DATUM POCETKA" Width="150" Binding="{Binding DateBegin, StringFormat=\{0:dd.MM.yyyy.\}}"/>
                 <DataGridTextColumn Header="DATUM ZAVRSETKA" Width="150" Binding="{Binding DateEnd, StringFormat=\{0:dd.MM.yyyy.\}}"/>
-                <DataGridTextColumn Header="OPIS" Width="362"  Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="OPIS" Width="360"  Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="BROJ NOVE SOBE" Width="150"  Binding="{Binding IdNewRoom}"/>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid x:Name="ProstorijeRazdvajanje"
-            Margin="34,399,434,115"
+            Margin="34,419,434,95"
             Grid.Column="0"
             Background="#FFDFD7BB" RowBackground="#FFDFD7BB" Foreground="#FF373434"
             AutoGenerateColumns="False"
@@ -69,7 +70,26 @@
                 <DataGridTextColumn Header="DATUM POCETKA" Width="150" Binding="{Binding DateBegin, StringFormat=\{0:dd.MM.yyyy.\}}"/>
                 <DataGridTextColumn Header="DATUM ZAVRSETKA" Width="150" Binding="{Binding DateEnd, StringFormat=\{0:dd.MM.yyyy.\}}"/>
                 <DataGridTextColumn Header="OPIS" Width="362"  Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="BROJ NOVE SOBE" Width="150"  Binding="{Binding IdNewRoom}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <TextBlock TextWrapping="Wrap" Text="Prikaz zakazanih spajanja soba"
+            HorizontalAlignment="Center"
+            FontStyle="Italic"
+            Foreground= "#FFFFC800"
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="34,195,549,402"
+            FontSize="22" Width="697" FontWeight="Bold"
+                       />
+        <TextBlock TextWrapping="Wrap" Text="Prikaz zakazanih razdvajanja soba"
+            HorizontalAlignment="Center"
+            FontStyle="Italic"
+            Foreground= "#FFFFC800"
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="34,376,549,221"
+            FontSize="22" Width="697" FontWeight="Bold"
+                       />
     </Grid>
 </UserControl>

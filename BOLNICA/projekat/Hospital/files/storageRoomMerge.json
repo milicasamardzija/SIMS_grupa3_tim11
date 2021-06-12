@@ -1,12 +1,1 @@
-[
-  {
-    "IdRoomSecond": 2,
-    "IdNewRoom": 3,
-    "Purpose": 2,
-    "IdRoom": 6,
-    "DateBegin": "2021-06-11T00:00:00",
-    "DateEnd": "2021-06-11T23:00:00",
-    "Description": "Zakazano je spajanje sobe broj 6 sa sobom broj 2.",
-    "Id": 0
-  }
-]
+[{"IdRoomSecond":2,"IdNewRoom":3,"Purpose":2,"IdRoom":6,"DateBegin":"2021-06-11T00:00:00","DateEnd":"2021-06-11T23:00:00","Description":"Zakazano je spajanje sobe broj 6 sa sobom broj 2.","Id":0},{"IdRoomSecond":1,"IdNewRoom":2,"Purpose":2,"IdRoom":3,"DateBegin":"2021-08-01T00:00:00","DateEnd":"2021-09-05T23:00:00","Description":"Zakazano je spajanje sobe broj 3 sa sobom broj 1.","Id":1}]
