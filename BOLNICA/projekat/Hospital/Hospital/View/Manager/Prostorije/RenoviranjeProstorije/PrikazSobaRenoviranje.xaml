@@ -13,11 +13,11 @@
                        Foreground= "#FFFFC800"
                        Grid.Row="0"
                        Grid.Column="0"
-                       Margin="34,42,549,555"
+                       Margin="34,10,549,587"
                        FontSize="22" Width="697" FontWeight="Bold"
                        />
         <DataGrid Name="ProstorijeRenoviranje"
-                      Margin="34,108,434,189"
+                      Margin="34,53,434,461"
                       Grid.Column="0"
                       Background="#FFDFD7BB" RowBackground="#FFDFD7BB" Foreground="#FF373434"
                       AutoGenerateColumns="False"
@@ -32,14 +32,64 @@
                 <DataGridTextColumn Header="OPIS" Width="362"  Binding="{Binding Description}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Background="#FFFFC800" Foreground="#FF373434" Content="Otkazi renoviranje" HorizontalAlignment="Left" Margin="647,535,0,0" VerticalAlignment="Top" Width="190" Height="47" FontSize="18" FontWeight="Bold" Click="Otkazi">
+        <Button Background="#FFFFC800" Foreground="#FF373434" Content="Otkazi renoviranje" HorizontalAlignment="Left" Margin="656,560,0,0" VerticalAlignment="Top" Width="190" Height="47" FontSize="18" FontWeight="Bold" Click="Otkazi" RenderTransformOrigin="0.579,1.121">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Click="unazad" Background="#FFFFC800" HorizontalAlignment="Left" Margin="34,535,0,0" VerticalAlignment="Top" Width="110" Height="47" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54">
+        <Button Click="unazad" Background="#FFFFC800" HorizontalAlignment="Left" Margin="34,560,0,0" VerticalAlignment="Top" Width="110" Height="47" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.475,0.54">
             <Image Source="./../../../Images/Manager/left-64.png" Height="30" Width="57">
             </Image>
         </Button>
+        <DataGrid x:Name="Spajanje"
+            Margin="34,238,434,276"
+            Grid.Column="0"
+            Background="#FFDFD7BB" RowBackground="#FFDFD7BB" Foreground="#FF373434"
+            AutoGenerateColumns="False"
+            SelectionMode="Single"
+            IsReadOnly="True"
+            ItemsSource="{Binding RenovationsMerge}"
+                      >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="DATUM POCETKA" Width="150" Binding="{Binding DateBegin, StringFormat=\{0:dd.MM.yyyy.\}}"/>
+                <DataGridTextColumn Header="DATUM ZAVRSETKA" Width="150" Binding="{Binding DateEnd, StringFormat=\{0:dd.MM.yyyy.\}}"/>
+                <DataGridTextColumn Header="OPIS" Width="360"  Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="BROJ NOVE SOBE" Width="150"  Binding="{Binding IdNewRoom}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="ProstorijeRazdvajanje"
+            Margin="34,419,434,95"
+            Grid.Column="0"
+            Background="#FFDFD7BB" RowBackground="#FFDFD7BB" Foreground="#FF373434"
+            AutoGenerateColumns="False"
+            SelectionMode="Single"
+            IsReadOnly="True"
+            ItemsSource="{Binding RenovationsSeparate}"
+                      >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="DATUM POCETKA" Width="150" Binding="{Binding DateBegin, StringFormat=\{0:dd.MM.yyyy.\}}"/>
+                <DataGridTextColumn Header="DATUM ZAVRSETKA" Width="150" Binding="{Binding DateEnd, StringFormat=\{0:dd.MM.yyyy.\}}"/>
+                <DataGridTextColumn Header="OPIS" Width="362"  Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="BROJ NOVE SOBE" Width="150"  Binding="{Binding IdNewRoom}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock TextWrapping="Wrap" Text="Prikaz zakazanih spajanja soba"
+            HorizontalAlignment="Center"
+            FontStyle="Italic"
+            Foreground= "#FFFFC800"
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="34,195,549,402"
+            FontSize="22" Width="697" FontWeight="Bold"
+                       />
+        <TextBlock TextWrapping="Wrap" Text="Prikaz zakazanih razdvajanja soba"
+            HorizontalAlignment="Center"
+            FontStyle="Italic"
+            Foreground= "#FFFFC800"
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="34,376,549,221"
+            FontSize="22" Width="697" FontWeight="Bold"
+                       />
     </Grid>
 </UserControl>

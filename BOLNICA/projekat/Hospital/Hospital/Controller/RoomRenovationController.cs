@@ -1,5 +1,6 @@
 ﻿using Hospital.DTO;
 using Hospital.Model;
+using Hospital.Model.Rooms;
 using Hospital.Service;
 using System;
 using System.Collections.Generic;

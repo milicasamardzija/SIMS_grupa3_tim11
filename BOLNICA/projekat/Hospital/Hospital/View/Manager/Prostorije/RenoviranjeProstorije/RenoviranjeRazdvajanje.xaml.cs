@@ -1,4 +1,5 @@
-﻿using Hospital.DTO;
+﻿using Hospital.Controller;
+using Hospital.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +22,27 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
     {
         private Frame frame;
         private RoomDTO room;
+        private RoomSeparateController renovationController = new RoomSeparateController();
+        private RoomSeparateDTO renovation = new RoomSeparateDTO();
+        public RoomSeparateDTO Renovation
+        {
+            get
+            {
+                return renovation;
+            }
+            set
+            {
+                value = renovation;
+            }
+        }
         public RenoviranjeRazdvajanje(Frame frame, DTO.RoomDTO room)
         {
             InitializeComponent();
+            this.DataContext = this;
             this.frame = frame;
             this.room = room;
             addPurpose();
+            renovation.IdRoom = room.Id;
             CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
             BeginDate.BlackoutDates.Add(kalendar);
             EndDate.BlackoutDates.Add(kalendar);
@@ -40,6 +56,10 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
 
         private void renoviraj(object sender, RoutedEventArgs e)
         {
+            renovation.DateBegin = (DateTime)BeginDate.SelectedDate;
+            renovation.DateEnd = (DateTime)EndDate.SelectedDate;
+            renovation.Purpose = (Purpose)TipSobeComboBox.SelectedIndex;
+            renovationController.separateRoomsSchedule(renovation);
             frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }
 

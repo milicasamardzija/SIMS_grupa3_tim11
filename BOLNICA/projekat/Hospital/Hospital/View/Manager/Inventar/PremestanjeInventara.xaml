@@ -7,15 +7,21 @@
              mc:Ignorable="d" 
              Height="400" Width="470" Background="#FFDFD7BB">
     <Grid>
-        <Button Click="premestiMomentalno" Background="#FFFFC800" Foreground="#FF373434" Content="Premesti momentalno" Margin="128,79,124.4,280" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.604,-0.75">
+        <Button Click="premestiMomentalno" Background="#FFFFC800" Foreground="#FF373434" Content="Premesti momentalno" Margin="128,44,124.4,315" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.604,-0.75">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button Click="zakaziPremestanje"  Background="#FFFFC800" Foreground="#FF373434" Content="Zakazi premestanje" FontWeight="Bold" FontSize="18" Margin="128,260,124.4,101">
+        <Button Click="zakaziPremestanje"  Background="#FFFFC800" Foreground="#FF373434" Content="Zakazi premestanje" FontWeight="Bold" FontSize="18" Margin="128,149,124.4,212">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
+        <Button Click="premestanje" Background="#FFFFC800" Foreground="#FF373434" Content="Zakazi premestanje" FontWeight="Bold" FontSize="18" Margin="128,319,124.4,42">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Label Content="Zakazi premestanje inventara u nove sobe bolnice:" Foreground="#FF373434" HorizontalAlignment="Left" Margin="24,264,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
     </Grid>
 </UserControl>

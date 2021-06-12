@@ -21,14 +21,30 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
     {
         private Frame frame;
         private RoomDTO room;
-        private RoomsController roomController;
+        private RoomsController roomController = new RoomsController();
+        private MergeRoomController renovationController = new MergeRoomController();
+        private RoomMergeDTO renovation = new RoomMergeDTO();
+        public RoomMergeDTO Renovation
+        {
+            get
+            {
+                return renovation;
+            }
+            set
+            {
+                value = renovation;
+            }
+        }
+
         public RenoviranjeSpajanje(Frame frame, DTO.RoomDTO room)
         {
             InitializeComponent();
+            this.DataContext = this;
             this.frame = frame;
             this.room = room;
-            this.roomController = new RoomsController();
+            renovation.IdRoom = room.Id;
             addRooms();
+            addPurpose();
             CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
             BeginDate.BlackoutDates.Add(kalendar);
             EndDate.BlackoutDates.Add(kalendar);
@@ -40,15 +56,27 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
             SobeComboBox.Items.Clear();
             foreach (RoomDTO room in roomController.getAll())
             {
-                ComboBoxItem item = new ComboBoxItem();
-                item.Content = Convert.ToString(room.Purpose) + " broj " +  Convert.ToString(room.Id);
-                item.Tag = room.Id;
-                SobeComboBox.Items.Add(item);
+                if (room.Id != renovation.IdRoom)
+                {
+                    ComboBoxItem item = new ComboBoxItem();
+                    item.Content = Convert.ToString(room.Purpose) + " broj " + Convert.ToString(room.Id);
+                    item.Tag = room.Id;
+                    SobeComboBox.Items.Add(item);
+                }
             }
+        }
+
+        private void addPurpose()
+        {
+            NamenaComboBox.ItemsSource = Enum.GetValues((typeof(Purpose)));
         }
         private void renoviraj(object sender, RoutedEventArgs e)
         {
-            roomController.mergeRooms(room.Id, Convert.ToInt32(((ComboBoxItem)SobeComboBox.SelectedItem).Tag));
+            renovation.IdRoomSecond = Convert.ToInt32(((ComboBoxItem)SobeComboBox.SelectedItem).Tag);
+            renovation.DateBegin = (DateTime)BeginDate.SelectedDate;
+            renovation.DateEnd = (DateTime)EndDate.SelectedDate;
+            renovation.Purpose = (Purpose)NamenaComboBox.SelectedIndex;
+            renovationController.mergeRoomsSchedule(renovation);
             frame.NavigationService.Navigate(new BelsekaMagacin(1));
         }
         private void odustani(object sender, RoutedEventArgs e)

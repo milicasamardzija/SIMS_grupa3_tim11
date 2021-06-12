@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.View.Manager.Inventar.PremestanjeIzMagacina;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -56,6 +57,17 @@ namespace Hospital
             if (magacin)
             {
                 frame.NavigationService.Navigate(new ZakazivanjePremestanjaStatickogInventara(frame, listInventory, (Inventory)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,inventarTabela));
+            } else
+            {
+                frame.NavigationService.Navigate(new ZakazivanjePremestanjaStatickogInventaraUSobu(frame, listInventory, (Inventory)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,roomOut, inventarTabela));
+            }
+        }
+
+        private void premestanje(object sender, RoutedEventArgs e)
+        {
+            if (magacin)
+            {
+                frame.NavigationService.Navigate(new PremestanjeNoveSObe(frame, listInventory, (Inventory)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,inventarTabela));
             } else
             {
                 frame.NavigationService.Navigate(new ZakazivanjePremestanjaStatickogInventaraUSobu(frame, listInventory, (Inventory)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,roomOut, inventarTabela));

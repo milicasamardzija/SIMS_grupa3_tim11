@@ -13,11 +13,18 @@ namespace Hospital.Model
         private DateTime dateEnd;
         private String description;
         private int idRoom;
+        public RoomRenovation() { }
         public RoomRenovation(int id, int idRoom, DateTime dateBegin, DateTime dateEnd, String description) : base(id)
         {
             this.dateBegin = dateBegin;
-            this.dateEnd = dateEnd.AddHours(23);
-            this.dateEnd.AddMinutes(59);
+            if(dateEnd.Minute != 59 && dateEnd.Hour != 23)
+            {
+                this.dateEnd = dateEnd.AddHours(23);
+                this.dateEnd.AddMinutes(59);
+            }else
+            {
+                this.dateEnd = dateEnd;
+            }
             this.description = description;
             this.idRoom = idRoom;
         }

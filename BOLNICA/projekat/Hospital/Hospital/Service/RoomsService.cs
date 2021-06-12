@@ -1,5 +1,7 @@
 ﻿using Hospital.FileStorage.Interfaces;
 using Hospital.Model;
+using Hospital.Model.Rooms;
+using Hospital.View.Manager.Prostorije.RenoviranjeProstorije;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,8 +39,8 @@ namespace Hospital.Service
                 moveInventoryForRenovation(renovation);
             } else
             {
-               // RenoviranjeOdbijeno odbijeno = new RenoviranjeOdbijeno();
-             //   odbijeno.Show();
+                RenoviranjeOdbijeno odbijeno = new RenoviranjeOdbijeno();
+                odbijeno.Show();
             }
         }
 
@@ -60,6 +62,29 @@ namespace Hospital.Service
                      }
                  }
              } 
+        }
+
+        public List<Room> getNewRooms()
+        {
+            List<Room> rooms = new List<Room>();
+            foreach (Room room in roomStorage.GetAll())
+            {
+                if (room.Occupancy == true)
+                {
+                    rooms.Add(room);
+                }
+            }
+            return rooms;
+        }
+
+        internal void mergeRooms(RoomMerge roomMerge)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal int generateIdMerge()
+        {
+            throw new NotImplementedException();
         }
 
         public Boolean isRoomAvailableInventoryMovement(StaticInventoryMovement movement)
@@ -109,7 +134,7 @@ namespace Hospital.Service
                  }
             }
             return true;
-       }
+        }
 
         public Boolean isRoomTakenByRenovation(Checkup checkup)
         {

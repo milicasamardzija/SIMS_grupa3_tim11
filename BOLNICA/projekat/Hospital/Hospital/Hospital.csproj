@@ -209,11 +209,13 @@
     <Compile Include="Controller\FunctionalityController.cs" />
     <Compile Include="Controller\IngredientController.cs" />
     <Compile Include="Controller\MedicalRecordController.cs" />
+    <Compile Include="Controller\MergeRoomController.cs" />
     <Compile Include="Controller\NotificationsController.cs" />
     <Compile Include="Controller\AnamnesisController.cs" />
     <Compile Include="Controller\InstructionController.cs" />
     <Compile Include="Controller\MedicineController1.cs" />
     <Compile Include="Controller\RecipeController.cs" />
+    <Compile Include="Controller\RoomSeparateController.cs" />
     <Compile Include="Controller\SurveyController.cs" />
     <Compile Include="Controller\MedicineReviewController.cs" />
     <Compile Include="Controller\RoomInventoryController.cs" />
@@ -231,9 +233,11 @@
     <Compile Include="DTO\ReviewDTO.cs" />
     <Compile Include="DTO\NotificationsDTO.cs" />
     <Compile Include="DTO\RoomInventoryDTO.cs" />
+    <Compile Include="DTO\RoomMergeDTO.cs" />
     <Compile Include="DTO\RoomRenovationDTO.cs" />
     <Compile Include="Controller\PatientController.cs" />
     <Compile Include="DTO\PatientDTO.cs" />
+    <Compile Include="DTO\RoomSeparateDTO.cs" />
     <Compile Include="DTO\SurveyDTO.cs" />
     <Compile Include="FileStorage\FeedbackFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IAlergensFileStorage.cs" />
@@ -251,14 +255,20 @@
     <Compile Include="FileStorage\Interfaces\IPatientFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IRecipeFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IRoomInventoryFileStorage.cs" />
+    <Compile Include="FileStorage\Interfaces\IRoomMergeFileStorage.cs" />
+    <Compile Include="FileStorage\Interfaces\IRoomSeparateFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
+    <Compile Include="FileStorage\RoomMergeFileStorage.cs" />
+    <Compile Include="FileStorage\RoomSeparateFileStorage.cs" />
     <Compile Include="Model\Feedback.cs" />
     <Compile Include="Model\FeedbackType.cs" />
     <Compile Include="Model\ManagerNote.cs" />
     <Compile Include="Model\Note.cs" />
     <Compile Include="Model\Medicine\Review.cs" />
+    <Compile Include="Model\Rooms\RoomMerge.cs" />
+    <Compile Include="Model\Rooms\RoomSeparate.cs" />
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\FeedbackService.cs" />
     <Compile Include="Service\FunctionalityService.cs" />
@@ -269,6 +279,8 @@
     <Compile Include="Service\InstructionService.cs" />
     <Compile Include="Service\MedicineService1.cs" />
     <Compile Include="Service\RecipeService.cs" />
+    <Compile Include="Service\RoomMergeService.cs" />
+    <Compile Include="Service\RoomSeparateService.cs" />
     <Compile Include="Service\SurveyService.cs" />
     <Compile Include="Service\MedicineReviewService.cs" />
     <Compile Include="Service\RoomInventoryService.cs" />
@@ -316,6 +328,9 @@
     <Compile Include="View\Manager\Inventar\CRUDInventar\BrisanjePotvrdiInventar.xaml.cs">
       <DependentUpon>BrisanjePotvrdiInventar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Inventar\PremestanjeIzMagacina\PremestanjeNoveSObe.xaml.cs">
+      <DependentUpon>PremestanjeNoveSObe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Lekovi\LekoviSvi\BrisanjeLekaPotvrda.xaml.cs">
       <DependentUpon>BrisanjeLekaPotvrda.xaml</DependentUpon>
     </Compile>
@@ -355,6 +370,9 @@
     <Compile Include="Controller\RoomsController.cs" />
     <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\Renoviranje.xaml.cs">
       <DependentUpon>Renoviranje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeOdbijeno.xaml.cs">
+      <DependentUpon>RenoviranjeOdbijeno.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeRazdvajanje.xaml.cs">
       <DependentUpon>RenoviranjeRazdvajanje.xaml</DependentUpon>
@@ -645,6 +663,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Manager\Inventar\PremestanjeIzMagacina\PremestanjeNoveSObe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Manager\Lekovi\LekoviSvi\BrisanjeLekaPotvrda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -678,6 +700,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Prostorije\CRUDProstorije\IzbrisiProstorijuPotvrda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Prostorije\RenoviranjeProstorije\RenoviranjeOdbijeno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
