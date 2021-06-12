@@ -56,10 +56,13 @@ namespace Hospital.View.Manager.Prostorije.RenoviranjeProstorije
             SobeComboBox.Items.Clear();
             foreach (RoomDTO room in roomController.getAll())
             {
-                ComboBoxItem item = new ComboBoxItem();
-                item.Content = Convert.ToString(room.Purpose) + " broj " +  Convert.ToString(room.Id);
-                item.Tag = room.Id;
-                SobeComboBox.Items.Add(item);
+                if (room.Id != renovation.IdRoom)
+                {
+                    ComboBoxItem item = new ComboBoxItem();
+                    item.Content = Convert.ToString(room.Purpose) + " broj " + Convert.ToString(room.Id);
+                    item.Tag = room.Id;
+                    SobeComboBox.Items.Add(item);
+                }
             }
         }
 

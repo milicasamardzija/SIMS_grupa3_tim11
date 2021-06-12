@@ -27,7 +27,10 @@ namespace Hospital.Controller
             List<RoomDTO> rooms = new List<RoomDTO>();
             foreach (Room room in service.getAll())
             {
+                if(room.Occupancy == false)
+                {
                 rooms.Add(new RoomDTO(room.Id, room.Floor, room.Occupancy, room.Purpose, room.Capacity));
+                }
             }
             return rooms;
         }
@@ -58,6 +61,16 @@ namespace Hospital.Controller
         public List<Room> roomByInventory(int idInventory, int quantity)
         {
             return service.roomByInventory(idInventory, quantity);
+        }
+
+        public List<RoomDTO> getNewRooms()
+        {
+            List<RoomDTO> rooms = new List<RoomDTO>();
+            foreach (Room room in service.getNewRooms())
+            {
+                rooms.Add(new RoomDTO(room.Id, room.Floor, room.Occupancy, room.Purpose, room.Capacity));
+            }
+            return rooms;
         }
     }
 }

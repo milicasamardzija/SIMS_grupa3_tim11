@@ -319,6 +319,9 @@
     <Compile Include="View\Manager\Inventar\CRUDInventar\BrisanjePotvrdiInventar.xaml.cs">
       <DependentUpon>BrisanjePotvrdiInventar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Manager\Inventar\PremestanjeIzMagacina\PremestanjeNoveSObe.xaml.cs">
+      <DependentUpon>PremestanjeNoveSObe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\Lekovi\LekoviSvi\BrisanjeLekaPotvrda.xaml.cs">
       <DependentUpon>BrisanjeLekaPotvrda.xaml</DependentUpon>
     </Compile>
@@ -636,6 +639,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manager\Inventar\CRUDInventar\BrisanjePotvrdiInventar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Manager\Inventar\PremestanjeIzMagacina\PremestanjeNoveSObe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

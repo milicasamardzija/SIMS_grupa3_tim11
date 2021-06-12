@@ -28,6 +28,7 @@ namespace Hospital.Service
             staticInventoryStorage = new StaticInvnetoryMovementFileStorage();
             checkupStorage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             roomsService = new RoomsService();
+            roomStorage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
         }
         public List<RoomSeparate> getAllSeparateRenovations()
         {
@@ -55,6 +56,8 @@ namespace Hospital.Service
             {
                 String description = "Zakazano je razdvajanje sobe broj " + renovation.IdRoom + ".";
                 renovation.Description = description;
+                renovation.IdNewRoom = roomsService.generateId();
+                roomStorage.Save(new Room(renovation.IdNewRoom, roomStorage.FindById(renovation.IdRoom).Floor, true, renovation.Purpose, 0));
                 separateStorage.Save(renovation);
                 moveInventoryForRenovation(renovation);
             }
@@ -110,7 +113,9 @@ namespace Hospital.Service
         }
         public void separateRooms(RoomSeparate renovation)
         {
-            roomStorage.Save(new Room(roomsService.generateId(), roomStorage.FindById(renovation.IdRoom).Floor,true, renovation.Purpose, 0));
+            Room room = roomStorage.FindById(renovation.IdNewRoom);
+            room.Occupancy = false;
+            roomsService.update(room);
         }
     }
 }

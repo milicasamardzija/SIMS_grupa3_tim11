@@ -1,1 +1,51 @@
-[{"Floor":6,"Occupancy":false,"Purpose":0,"Capacity":3,"Id":0},{"Floor":7,"Occupancy":false,"Purpose":2,"Capacity":0,"Id":1},{"Floor":2,"Occupancy":false,"Purpose":1,"Capacity":0,"Id":2},{"Floor":5,"Occupancy":false,"Purpose":1,"Capacity":0,"Id":3}]
+[
+  {
+    "Floor": 6,
+    "Occupancy": false,
+    "Purpose": 0,
+    "Capacity": 3,
+    "Id": 0
+  },
+  {
+    "Floor": 7,
+    "Occupancy": false,
+    "Purpose": 2,
+    "Capacity": 0,
+    "Id": 1
+  },
+  {
+    "Floor": 2,
+    "Occupancy": false,
+    "Purpose": 1,
+    "Capacity": 0,
+    "Id": 2
+  },
+  {
+    "Floor": 5,
+    "Occupancy": false,
+    "Purpose": 1,
+    "Capacity": 0,
+    "Id": 3
+  },
+  {
+    "Floor": 5,
+    "Occupancy": true,
+    "Purpose": 1,
+    "Capacity": 0,
+    "Id": 4
+  },
+  {
+    "Floor": 5,
+    "Occupancy": true,
+    "Purpose": 1,
+    "Capacity": 0,
+    "Id": 5
+  },
+  {
+    "Floor": 5,
+    "Occupancy": true,
+    "Purpose": 1,
+    "Capacity": 0,
+    "Id": 6
+  }
+]

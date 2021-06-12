@@ -45,8 +45,8 @@ namespace Hospital
             InitializeComponent();
             frame.NavigationService.Navigate(new ProfilUpravnik(this));
             getTasks();
-            mergeRooms();
-            separateRooms();
+            //mergeRooms();
+            //separateRooms();
             note = notes.GetAll();
             if (note[4].note.Equals("da"))
             {
@@ -59,7 +59,7 @@ namespace Hospital
         }
         private void doMerge(RoomMerge renovation)
         {
-            TimeSpan t = renovation.DateBegin.Subtract(DateTime.Now);
+            TimeSpan t = renovation.DateEnd.Subtract(DateTime.Now);
 
             if (renovation.DateBegin < DateTime.Now)
             {
@@ -82,7 +82,7 @@ namespace Hospital
 
         private void doSeparate(RoomSeparate renovation)
         {
-            TimeSpan t = dateExecution.Subtract(DateTime.Now);
+            TimeSpan t = renovation.DateEnd.Subtract(DateTime.Now);
 
             if (renovation.DateBegin < DateTime.Now)
             {

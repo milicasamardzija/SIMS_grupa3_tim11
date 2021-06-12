@@ -10,6 +10,7 @@ namespace Hospital.Model.Rooms
     {
         private int idRoomSecond;
         private Purpose purpose;
+        private int idNewRoom;
 
         public RoomMerge(int id, int idRoomFirst,int idRoomSecond, DateTime dateBegin, DateTime dateEnd, Purpose purpose, String description) : base(id, idRoomFirst,dateBegin,dateEnd,description)
         {
@@ -27,6 +28,20 @@ namespace Hospital.Model.Rooms
                 if (value != idRoomSecond)
                 {
                     idRoomSecond = value;
+                }
+            }
+        }
+        public int IdNewRoom
+        {
+            get
+            {
+                return idNewRoom;
+            }
+            set
+            {
+                if (value != idNewRoom)
+                {
+                    idNewRoom = value;
                 }
             }
         }
