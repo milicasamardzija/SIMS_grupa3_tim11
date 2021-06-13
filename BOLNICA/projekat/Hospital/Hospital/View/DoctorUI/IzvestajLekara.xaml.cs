@@ -27,6 +27,7 @@ namespace Hospital
     public partial class IzvestajLekara : Window
     {
         private ReportController controller;
+        PatientFileStorage storagePatient = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
 
         public IzvestajLekara()
         {
@@ -36,11 +37,7 @@ namespace Hospital
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
-<<<<<<< Updated upstream
-
-        {   controller.CreateDoctorReport((DateTime)datePicker1.SelectedDate, (DateTime)datePicker2.SelectedDate);
-=======
-        {
+        {   
             using (PdfDocument document = new PdfDocument())
             {
                 PdfPage page = document.Pages.Add();
@@ -58,14 +55,14 @@ namespace Hospital
                 stringBuilder = new StringBuilder("");
                 stringBuilder.Append(Convert.ToDateTime(datePicker1.Text).ToString("dd.MM.yyyy.")).Append(" do ")
                     .Append(Convert.ToDateTime(datePicker2.Text).ToString("dd.MM.yyyy."));
-                
+
                 PdfLightTable pdfLightTable = new PdfLightTable();
                 DataTable table = new DataTable();
 
                 table.Columns.Add("Ime i prezime pacijenta");
                 table.Columns.Add("Datum rodjenja pacijenta");
-                
-                table.Rows.Add(new string[] { "Ime i prezime pacijenta", "Datum rodjenja pacijenta"});
+
+                table.Rows.Add(new string[] { "Ime i prezime pacijenta", "Datum rodjenja pacijenta" });
 
                 foreach (Patient patient in storagePatient.GetAll())
                 {
@@ -76,10 +73,13 @@ namespace Hospital
                 }
                 pdfLightTable.DataSource = table;
                 pdfLightTable.Draw(page, new PointF(0, 240));
->>>>>>> Stashed changes
 
+                graphics.DrawString(stringBuilder.ToString(), font, PdfBrushes.Black, new PointF(28, 204));
 
-           
+                document.Save("./../../../../Hospital/reports/reportDoctor1.pdf");
+                document.Close(true);
+            }
+
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
