@@ -18,47 +18,26 @@
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Label
-            FontSize="10"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Ocena performansi:"
-            FontWeight="Bold"
-            Foreground="#FF1B4C93" Margin="10,90,0,0" Height="28" Width="135" />
-        <materialDesign:RatingBar
-            x:Name="ocena"
-            Margin="133,88,65.2,332.4"
-            Foreground="#FF0726D0"
-             />
-        <Label
-            FontSize="10"
-            Margin="0,138,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="   Sugestije i komentari: "
-            FontWeight="Bold"
-            Foreground="#FF1B4C93" />
-        <TextBox Name="komentar" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Margin="10,162,0,0"/>
 
         <Label
             FontSize="10"
-            Margin="0,214,0,0"
+            Margin="0,105,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="   Opis problema:"
             FontWeight="Bold"
             Foreground="#FF1B4C93" />
-        <TextBox Name="problem" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Margin="10,235,0,0"/>
+        <TextBox Name="problem" HorizontalAlignment="Left" Height="58" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Margin="10,129,0,0"/>
 
         <Label
             FontSize="10"
-            Margin="10,289,0,0"
+            Margin="10,230,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Unesite mail za povratnu informaciju o prijavi problema:"
             FontWeight="Bold"
             Foreground="#FF1B4C93" />
-        <TextBox Name="email" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Margin="10,313,0,0"/>
+        <TextBox Name="email" HorizontalAlignment="Left" Height="70" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Margin="10,254,0,0"/>
 
         <Button
             Width="117"
