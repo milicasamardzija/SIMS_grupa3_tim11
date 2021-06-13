@@ -44,8 +44,8 @@ namespace Hospital
             patientcontroller = new PatientController();
 
 
-            List<PatientDTO> patients = patientcontroller.getAll();
-            foreach (PatientDTO patient in patients)
+           
+            foreach (PatientDTO patient in patientcontroller.getAll())
             {
                 if (patient.Id == idP)
                 {
@@ -83,9 +83,9 @@ namespace Hospital
             string komentarisano = komentar.Text;
             int id = surveycontroler.getAll().Count() + 1;
 
-          //  Survey survey = new Survey(id, komentarisano, ocenjeno, null);
+            SurveyDTO survey = new SurveyDTO(id, komentarisano, ocenjeno, null);
 
-            surveycontroler.save(Survey);
+            surveycontroler.save(survey);
 
         }
 

@@ -38,9 +38,9 @@
                       ItemsSource="{Binding Path = AppointmentList}"
                       >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="    ID" Binding="{Binding Id}" Width="50"/>
-                <DataGridTextColumn Header="                DATUM" Binding="{Binding Date}" Width="150"/>
-                <DataGridTextColumn Header="  TRAJANJE" Binding="{Binding Duration}" Width="80"/>
+               
+                <DataGridTextColumn Header="                DATUM" Binding="{Binding Date}" Width="180"/>
+                <DataGridTextColumn Header="  TRAJANJE" Binding="{Binding Duration}" Width="100"/>
             </DataGrid.Columns>
         </DataGrid>
 

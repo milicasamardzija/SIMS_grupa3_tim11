@@ -1,4 +1,5 @@
 ﻿using Hospital.Controller;
+using Hospital.DTO;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -22,17 +23,18 @@ namespace Hospital
     /// </summary>
     public partial class ObrisiTermin : Window
     {
-        public ObservableCollection<Checkup> appointmentList;
-        public int index;
-        public int id;
 
         CheckupController checkupController;
         FunctionalityController functionalityController;
-        public ObrisiTermin(ObservableCollection<Checkup> list, Checkup selectedApp, int selectedIndex)
+        public ObservableCollection<CheckupDTO> appointmentList;
+        public int index;
+        public int id;
+
+        public ObrisiTermin(ObservableCollection<CheckupDTO> list, CheckupDTO selectedApp, int selectedIndex)
         {
             InitializeComponent();
             appointmentList = list;
-            id = selectedApp.Id;
+            id = selectedApp.IdCh;
             index = selectedIndex;
             checkupController = new CheckupController();
             functionalityController = new FunctionalityController();

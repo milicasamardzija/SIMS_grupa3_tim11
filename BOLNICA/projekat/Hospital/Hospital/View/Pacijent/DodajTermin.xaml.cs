@@ -23,21 +23,25 @@ namespace Hospital
 
         private CheckupController checkupcontroller;
         private FunctionalityController funkcionalitycontroller;
+        private PatientController patientcontroller;
 
+        private CheckupDTO checkup = new CheckupDTO();
 
-       
-        private PatientController patientcontroller = new PatientController();
+        CheckupDTO Checkup
+        {
+            get { return checkup; }
+            set { checkup = value; }
+        }
 
-
-        public ObservableCollection<Checkup> appointmentList;
-        public int idPatient; //id pacijenta koji je ulogovan
+        public ObservableCollection<CheckupDTO> appointmentList;
+        public int idPatient; 
         private List<string> lista;
         private List<global::Doctor> lekari;
         public int count1;
         private const int trajanje = 30;
         private List<string> dostupnoVrijeme;
 
-        public DodajTermin(ObservableCollection<Checkup> applist, int idP)
+        public DodajTermin(ObservableCollection<CheckupDTO> applist, int idP)
         {
             InitializeComponent();
             appointmentList = applist;
@@ -46,10 +50,9 @@ namespace Hospital
             funkcionalitycontroller = new FunctionalityController();
             checkupcontroller = new CheckupController();
 
-
-
-            List<PatientDTO> patients = patientcontroller.getAll();
-            foreach (PatientDTO patient in patients)
+            
+         
+            foreach (PatientDTO patient in patientcontroller.getAll())
             {
                 if (patient.Id == idP)
                 {
@@ -85,27 +88,17 @@ namespace Hospital
             time.ItemsSource = lista;
 
 
-
-
-
             CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
             date.BlackoutDates.Add(kalendar);
             DoctorFileStorage df = new DoctorFileStorage("./../../../../Hospital/files/storageDoctor.json");
             lekari = df.GetAll();
             lekar.ItemsSource = lekari;
-
-            
-
-        }
-
-        
-      
+         }
 
         private void add_appointment(object sender, RoutedEventArgs e)
         {
 
-          /*
-         global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
+            global::Doctor doktor = (global::Doctor)lekar.SelectedItem;
             if (time.SelectedIndex != -1)
             {
                 var item = time.SelectedItem;
@@ -114,25 +107,25 @@ namespace Hospital
                 DateTime dt = DateTime.Parse(d + " " + t);
                 int id = checkupcontroller.getAll().Count();
 
-
-                Checkup checkup = new Checkup(id, doktor.Id, idPatient, dt, 1, 0);
+                CheckupDTO checkup = new CheckupDTO(id, doktor.Id, idPatient, dt, 1, 0);
                 checkupcontroller.save(checkup);
-                appointmentList.Add(checkup);
-
-              
+            
                 Functionality funkcionalnost = new Functionality(DateTime.Now, idPatient, "dodavanje");
                 funkcionalitycontroller.save(funkcionalnost);
 
+
+
+              
+                appointmentList.Add(checkup);
+
                 this.Close(); 
-            }*/
+            }
         }
 
         private void odustani(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
-
 
 
         private void CalculateStartAndEnd(out DateTime start, out DateTime end)
@@ -151,25 +144,14 @@ namespace Hospital
                 end = DateTime.Now;
             }
         }
-
         private void UpdateComponents()
         {
             DateTime start;
             DateTime end;
 
             CalculateStartAndEnd(out start, out end);
-
-          //  EnabledDugme();
-
-            CheckAvailableTimes();
-
-
-
-
-
+             CheckAvailableTimes();
         }
-
-
         private void CheckAvailableTimes()
         {
 
@@ -231,17 +213,7 @@ namespace Hospital
         }
 
 
-        private void EnabledDugme()
-        {
-            if (lekar.SelectedItem != null && date.SelectedDate != null && time.SelectedItem != null)
-            {
-                potvrdi.IsEnabled = true;
-            }
-            else
-            {
-                potvrdi.IsEnabled = false;
-            }
-        } 
+    
        
         private void date_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -256,10 +228,10 @@ namespace Hospital
         private void izaberi_prioritet(object sender, RoutedEventArgs e)
         {
 
-            Prioritet prioritet = new Prioritet(appointmentList, idPatient);
+           Prioritet prioritet = new Prioritet(appointmentList, idPatient);
             prioritet.Show();
 
-
+            
         }
     }
 }

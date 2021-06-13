@@ -36,7 +36,7 @@
                     StrokeThickness="4" Height="10" Width="344" />
             </Label>
             <Label Content="Pomeranje termina" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="74,78,0,0" FontFamily="Goudy Old Style" Width="166" Height="37" FontSize="20"/>
-            <ComboBox Name="time" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="38,205,0,0" Height="22" SelectionChanged="time_SelectionChanged" />
+            <ComboBox Name="time" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="38,205,0,0" Height="22"  />
             <ComboBox x:Name="lekar" ItemsSource="{Binding Path=Lekar}" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="38,274,0,0" Height="22" IsSynchronizedWithCurrentItem="False" FontSize="14">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
@@ -64,7 +64,7 @@
 
 
         </Grid>
-        <DatePicker Name="date" FontFamily="Goudy Old Style" HorizontalAlignment="Left" Height="22" Margin="38,145,0,0" VerticalAlignment="Top" Width="230" SelectedDateChanged="date_SelectedDateChanged" />
+        <DatePicker Name="date" FontFamily="Goudy Old Style" HorizontalAlignment="Left" Height="22" Margin="38,145,0,0" VerticalAlignment="Top" Width="230" />
 
 
     </Grid>

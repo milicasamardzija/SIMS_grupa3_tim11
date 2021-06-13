@@ -26,7 +26,7 @@
         <Label Content="HCC:" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,272,0,0" RenderTransformOrigin="0.344,-0.578"/>
         <Label Content="Krvna grupa:" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,313,0,0"/>
         <Label Content="JMBG:&#xD;&#xA;" FontFamily="Goudy Old Style" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,196,0,0" Height="32"/>
-        <TextBox Name="ime" FontFamily="Goudy Old Style"  HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,101,0,0" BorderBrush="White" IsEnabled="False" FontWeight="Bold" AcceptsTab="True"/>
+        <TextBox Name="ime" FontFamily="Goudy Old Style"  HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,101,0,0" BorderBrush="white" IsEnabled="False" FontWeight="Bold" AcceptsTab="True"/>
         <TextBox Name="prezime" FontFamily="Goudy Old Style" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,133,0,0" BorderBrush="White" FontWeight="Bold" IsEnabled="False"/>
         <TextBox Name="datum" FontFamily="Goudy Old Style" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="150,168,0,0" BorderBrush="White" IsEnabled="False" FontWeight="Bold"/>
         <TextBox Name="grupa" FontFamily="Goudy Old Style" HorizontalAlignment="Left" Height="18" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="150,316,0,0" BorderBrush="White" IsEnabled="False" FontWeight="Bold"/>

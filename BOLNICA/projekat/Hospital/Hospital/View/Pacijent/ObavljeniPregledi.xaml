@@ -39,7 +39,19 @@
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="    Datum" Binding="{Binding datePlace}" Width="70" CanUserResize="False" />
-                <DataGridTextColumn Header="       Opis anamneze" Binding="{Binding summary}" Width="152" CanUserResize="False"/>
+                <DataGridTextColumn Header="       Opis anamneze" Binding="{Binding summary}" Width="152" CanUserResize="False">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                    <DataGridTextColumn.EditingElementStyle>
+                        <Style TargetType="TextBox">
+                            <Setter Property="TextWrapping" Value="Wrap" />
+                            <Setter Property="AcceptsReturn" Value="true" />
+                        </Style>
+                    </DataGridTextColumn.EditingElementStyle>
+                </DataGridTextColumn>
                 <DataGridTemplateColumn Width="*" CanUserResize="False" Header="Beleške">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

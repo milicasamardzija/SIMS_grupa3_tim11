@@ -24,30 +24,38 @@ namespace Hospital.View.Pacijent
     public partial class PrioritetDatum : Window
 
     {
+        PatientController patientController;
+        CheckupController checkupController;
+
+        CheckupDTO checkup = new CheckupDTO();
+        CheckupDTO Checkup
+        {
+            get { return checkup; }
+            set { checkup = value; }
+        }
         int id;
         private List<string> listStart;
         private List<string> listEnd;
-        PatientController patientController;
-        CheckupController checkupController;
+       
         public PrioritetDatum(int idP)
         {
             InitializeComponent();
             id = idP;
-            listStart = new List<string>();
-            listEnd = new List<string>();
             DataContext = this;
-             BlackOutDates();
-            potvrdii.IsEnabled = false;
-            date.IsEnabled = false;
             patientController = new PatientController();
             checkupController = new CheckupController();
-          
+            listStart = new List<string>();
+            listEnd = new List<string>();
+            BlackOutDates();
+            potvrdii.IsEnabled = false;
+            date.IsEnabled = false;
+
             PrikazSlobodnihTermina.Visibility = Visibility.Hidden;
             InitializeStartTimes();
             endTime.IsEnabled = false;
 
-            List<PatientDTO> patients = patientController.getAll();
-            foreach (PatientDTO patient in patients)
+          
+            foreach (PatientDTO patient in patientController.getAll())
             {
                 if (patient.Id == idP)
                 {
@@ -138,12 +146,12 @@ namespace Hospital.View.Pacijent
         }
 
 
-        public bool DoctorIsAvailable(DateTime pocetak, DateTime kraj) // proverava da li je lekar slobodan izmedju neka dva trenutka u vremenu
+        public bool DoctorIsAvailable(DateTime pocetak, DateTime kraj)
         {
             bool retVal = true;
            
-            //List<Checkup> termini = checkupController.getAll();
-          /*  foreach (Checkup termin in termini)
+            List<CheckupDTO> termini = checkupController.getAll();
+            foreach (CheckupDTO termin in termini)
             {
                 if (termin.IdDoctor.Equals(this))
                 {
@@ -163,7 +171,7 @@ namespace Hospital.View.Pacijent
                         break;
                     }
                 }
-            }*/
+            }
             return retVal;
         }
 
@@ -171,8 +179,8 @@ namespace Hospital.View.Pacijent
         {
             bool retVal = true;
            
-           // List<Checkup> termini = checkupController.getAll();
-           /* foreach (Checkup termin in termini)
+            List<CheckupDTO> termini = checkupController.getAll();
+            foreach (CheckupDTO termin in termini)
             {
                 if (termin.IdPatient.Equals(id))
                 {
@@ -192,7 +200,7 @@ namespace Hospital.View.Pacijent
                         break;
                     }
                 }
-            }*/
+            }
             return retVal;
         }
             private void pretraziTermine()

@@ -24,7 +24,7 @@
                       SelectionMode="Single"
                       IsReadOnly="True"
                       FontFamily="Goudy Old Style"
-                      ItemsSource="{Binding Path = termini}" SelectionChanged="ListaObavljenihTermina_SelectionChanged" Grid.ColumnSpan="2" Grid.Row="1" 
+                      ItemsSource="{Binding Path = termini}"  Grid.ColumnSpan="2" Grid.Row="1" 
                       >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="           OBAVLJENI PREGLEDI " Binding="{Binding Date}" Width="190"/>

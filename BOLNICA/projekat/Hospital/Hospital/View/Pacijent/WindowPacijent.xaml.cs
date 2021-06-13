@@ -22,33 +22,42 @@ namespace Hospital
   
     public partial class WindowPacijent : Window
     {
+        
+
+        PatientController patientController;
+        FunctionalityController functionalityController;
+        CheckupController checkupController;
+        CheckupDTO checkup = new CheckupDTO();
+        CheckupDTO Checkup
+        {
+            get { return checkup; }
+            set { checkup = value; }
+        }
+
+        public ObservableCollection<CheckupDTO> AppointmentList
+        {
+            get;
+            set;
+        }
+
         public int id { get; set; }
 
         public int count1 = 0;
         public int count2 = 0;
         public int count3 = 0;
-
-        PatientController patientController;
-        FunctionalityController functionalityController;
-
-        public ObservableCollection<Checkup> AppointmentList
-        {
-            get;
-            set;
-        }
         public WindowPacijent(int idP)
         {
             InitializeComponent();
             this.DataContext = this;
             id = idP;
-            AppointmentList = loadJason();
             patientController = new PatientController();
             functionalityController = new FunctionalityController();
+            checkupController = new CheckupController();
+            AppointmentList = new ObservableCollection<CheckupDTO>(checkupController.getCheckupsPatient(id)); 
 
 
-          
 
-          
+
 
             foreach (PatientDTO patient in patientController.getAll())
 
@@ -92,26 +101,6 @@ namespace Hospital
 
           
         }
-        public ObservableCollection<Checkup> loadJason()
-        {
-            CheckupFileStorage fs = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
-            ObservableCollection<Checkup> rs = new ObservableCollection<Checkup>(fs.GetAll()); //svi termini
-            ObservableCollection<Checkup> ret = new ObservableCollection<Checkup>(); 
-
-            foreach (Checkup appointment in rs) 
-            {
-
-                if (appointment.IdPatient == id) 
-                {
-
-                    ret.Add(appointment);
-                }
-            }
-
-            return ret;
-        }
-
-
        
 
         private void dodavanje(object sender, RoutedEventArgs e)
@@ -122,7 +111,7 @@ namespace Hospital
 
          
         
-            
+           
 
             
 
@@ -150,7 +139,7 @@ namespace Hospital
 
                     if (patient.Banovan == false)
                     {
-                        dd.Show();
+                      //  dd.Show();
                     }
                     else
                     {
@@ -174,7 +163,7 @@ namespace Hospital
 
         private void izmeni(object sender, RoutedEventArgs e)
         {
-           IzmeniTermin it = new IzmeniTermin(AppointmentList, (Checkup)ListaTermina.SelectedItem, ListaTermina.SelectedIndex,id);
+          IzmeniTermin it = new IzmeniTermin(AppointmentList, (CheckupDTO)ListaTermina.SelectedItem, ListaTermina.SelectedIndex,id);
 
             it.Show();
             Patient ret = new Patient();
@@ -203,7 +192,7 @@ namespace Hospital
                     }
                     if (patient.Banovan == false)
                     {
-                       it.Show();
+                    //   it.Show();
                     }
                     else
                     {
@@ -219,7 +208,8 @@ namespace Hospital
         private void obrisi(object sender, RoutedEventArgs e)
         {
 
-            ObrisiTermin ob = new ObrisiTermin(AppointmentList, (Checkup)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
+           ObrisiTermin ob = new ObrisiTermin(AppointmentList, (CheckupDTO)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
+            ob.Show();
 
             Patient ret = new Patient();
            
@@ -249,7 +239,7 @@ namespace Hospital
 
                     if (patient.Banovan == false)
                     {
-                        ob.Show();
+                       // ob.Show();
                     }
                     else
                     {

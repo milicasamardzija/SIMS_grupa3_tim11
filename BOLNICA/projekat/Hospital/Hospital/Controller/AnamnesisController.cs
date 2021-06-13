@@ -1,4 +1,5 @@
-﻿using Hospital.Service;
+﻿using Hospital.Model;
+using Hospital.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,21 @@ namespace Hospital.Controller
 
         public AnamnesisController()
         {
-
+           
+          
         }
-        
-        
+
+        public List<Note> NotesForAnamnesis(Anamnesis anamnesis)
+        {
+            return service.NotesForAnamnesis(anamnesis);
+        }
+
+        public List<Anamnesis> getAll()
+        {
+            return service.getAll();
+        }
+
+
     }
+
 }

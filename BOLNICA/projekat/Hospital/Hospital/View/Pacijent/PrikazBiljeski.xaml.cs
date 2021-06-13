@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.Controller;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,13 +23,15 @@ namespace Hospital.View.Pacijent
     {
         int id;
         private Anamnesis selectedAnamnesis;
+        private AnamnesisController controller;
         public PrikazBiljeski(int idP,  Anamnesis selected)
         {
             InitializeComponent();
 
             id = idP;
             selectedAnamnesis = selected;
-            
+            controller = new AnamnesisController();
+            UpdateListView();
         }
 
 
@@ -39,21 +42,8 @@ namespace Hospital.View.Pacijent
 
         private void UpdateListView()
         {
-            AnamnesisFileStorage anamneze = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
-            List<Note> notes = new List<Note>();
-            foreach (Anamnesis a in anamneze.GetAll())
-            {
-              
-                    foreach (Note n in a.NotesForAnamnesis)
-                    {
-                        notes.Add(n);
-                    }
-                
-            }
-             
 
-
-            foreach (Note n in notes)
+            foreach (Note n in controller.NotesForAnamnesis(selectedAnamnesis))
             {
                 showNotesListView.Items.Add(n.description);
             }

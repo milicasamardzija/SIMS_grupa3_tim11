@@ -13,6 +13,7 @@
             X2="20" Y2="0"  
             Stroke="SteelBlue"  
             StrokeThickness="4" Margin="-19,58,-1.8,374.6" />
+     
         <Button  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="10,25,0,0" FontSize="22" Height="19" Click="odustani" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6">
             <Button.Background>
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
