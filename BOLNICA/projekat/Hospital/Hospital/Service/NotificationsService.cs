@@ -54,7 +54,7 @@ namespace Hospital.Service
 
         public void deleteNotification(Notifications notification)
         {
-             storageNotifications.Delete(notification);
+             storageNotifications.DeleteById(notification.Id);
         } 
         public void createNotification(Notifications notifications)
         {

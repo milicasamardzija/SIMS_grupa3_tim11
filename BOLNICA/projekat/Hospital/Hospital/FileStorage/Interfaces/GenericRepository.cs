@@ -12,9 +12,7 @@ namespace Hospital.FileStorage
         List<T> GetAll();
         void Save(T newEntity);
         void SaveAll(List<T> entities);
-        void Delete(T entity);
         void DeleteById(int id);
         T FindById(int id);
-        Boolean ExistsById(int id);
     }
 }
