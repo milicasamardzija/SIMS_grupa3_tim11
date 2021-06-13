@@ -49,7 +49,7 @@ namespace Hospital.View.Pacijent
                 if (mjeseci.SelectedIndex == (th - 1))
 
                 {
-                   kalendar.Days[(int)r.beginning.Day - 1].Notes = str;
+                  //  kalendar.Days[(int)r.beginning.Day - 1].Notes = str;
                     ;
                 }
 
@@ -66,7 +66,7 @@ namespace Hospital.View.Pacijent
 
             DateTime targetDate = new DateTime(year, month, 1);
 
-             kalendar.BuildCalendar(targetDate);
+       //     kalendar.BuildCalendar(targetDate);
 
             dodajNotes();
 
@@ -98,11 +98,6 @@ namespace Hospital.View.Pacijent
         {
             btnGenerisi.Visibility = Visibility.Hidden;
             _printDialog.PrintVisual(this, "Probamo izvještaj!");
-        }
-
-        private void Nazad_na_pocetnu(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }
