@@ -14,7 +14,7 @@ namespace Hospital.Controller
 
         public AnamnesisController()
         {
-
+            service = new AnamnesisService();
         }
 
         public List<Note> NotesForAnamnesis(Anamnesis anamnesis)
@@ -27,6 +27,18 @@ namespace Hospital.Controller
 
             return service.getAll();
         }
+
+        public void deleteById(int id)
+        {
+            service.deleteById(id);
+        }
+
+          public void save(Anamnesis anamnesis)
+          {
+              service.save(new Anamnesis(anamnesis.Id,anamnesis.DatePlace, anamnesis.NotesForAnamnesis1,anamnesis.NameS,anamnesis.Gender, anamnesis.IdPatient,anamnesis.Adress,anamnesis.Status,anamnesis.Job,anamnesis.Summary));
+          }
+        
     }
 
 }
+

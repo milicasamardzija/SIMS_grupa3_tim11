@@ -1,4 +1,5 @@
 ﻿
+using Hospital.Controller;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -21,16 +22,19 @@ namespace Hospital.View.Pacijent
     /// </summary>
     public partial class DodajBelesku : Window
     {
-        int id;
+        AnamnesisController controller;
         private Anamnesis selectedAnamnesis;
         private Boolean OnReminder;
         private Note note;
+        int id;
+
         public DodajBelesku(int idP, Anamnesis selected)
         {
             InitializeComponent();
             id = idP;
             selectedAnamnesis = selected;
             note = new Note();
+            controller = new AnamnesisController();
             BlackOutDates();
             startDatePicker.Visibility = Visibility.Hidden;
             endDatePicker.Visibility = Visibility.Hidden;
@@ -71,11 +75,10 @@ namespace Hospital.View.Pacijent
                     selectedAnamnesis.NotesForAnamnesis1 = notes;
                 }
 
-                AnamnesisFileStorage storage = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
-
+              
                 
-                storage.DeleteById(0);
-                storage.Save(selectedAnamnesis);
+                controller.deleteById(selectedAnamnesis.Id);
+                controller.save(selectedAnamnesis);
                 this.Close();
                 ObavljeniPregledi pregledi = new ObavljeniPregledi(id);
                 pregledi.Show();
@@ -100,11 +103,8 @@ namespace Hospital.View.Pacijent
                 }
 
 
-                AnamnesisFileStorage storage = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
-
-
-                storage.DeleteById(0);
-                storage.Save(selectedAnamnesis);
+                controller.deleteById(selectedAnamnesis.Id);
+                controller.save(selectedAnamnesis);
                 this.Close();
                 ObavljeniPregledi pregledi = new ObavljeniPregledi(id);
                 pregledi.Show();

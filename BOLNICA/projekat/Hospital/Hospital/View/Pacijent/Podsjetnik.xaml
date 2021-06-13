@@ -20,13 +20,10 @@
                 <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-      
-        <ListBox x:Name="terapija" Margin="65,96,49.4,264.6" Foreground="black" ScrollViewer.VerticalScrollBarVisibility="Visible" BorderBrush="#FFF9F9F9"/>
-        <Label Content="  Podsetnik za terapiju:" HorizontalAlignment="Left" Foreground="#FF64CCF1" VerticalAlignment="Top" FontSize="12" RenderTransformOrigin="2.865,3.32" Margin="52,69,0,0" FontWeight="Bold" Height="27" Width="148"/>
-        <Label Content="  Podsetnik za preglede:" Foreground="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" RenderTransformOrigin="2.865,3.32" Margin="52,185,0,0" Width="158" FontWeight="Bold"/>
-        <ListBox x:Name="obavestenja" Margin="65,211,50.4,150.6" ScrollViewer.VerticalScrollBarVisibility="Visible" BorderBrush="#FFF9F9F9" />
-        <ListBox x:Name="beleske" Margin="63,331,50.4,39.6" ScrollViewer.VerticalScrollBarVisibility="Visible" BorderBrush="#FFF9F9F9" />
-        <Label Content="  Moje beleške:" HorizontalAlignment="Left" Foreground="#FF64CCF1" VerticalAlignment="Top" FontSize="12" RenderTransformOrigin="2.865,3.32" Margin="52,304,0,0" FontWeight="Bold" Height="27" Width="148"/>
+        <Label Content="  Podsetnik za preglede:" Foreground="#FF64CCF1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" RenderTransformOrigin="2.865,3.32" Margin="52,104,0,0" Width="158" FontWeight="Bold"/>
+        <ListBox x:Name="obavestenja" Margin="63,135,52.2,227.4" ScrollViewer.VerticalScrollBarVisibility="Visible" BorderBrush="#FFF9F9F9" />
+        <ListBox x:Name="beleske" Margin="63,308,50.2,62.4" ScrollViewer.VerticalScrollBarVisibility="Visible" BorderBrush="#FFF9F9F9" />
+        <Label Content="  Moje beleške:" HorizontalAlignment="Left" Foreground="#FF64CCF1" VerticalAlignment="Top" FontSize="12" RenderTransformOrigin="2.865,3.32" Margin="52,281,0,0" FontWeight="Bold" Height="27" Width="148"/>
 
     </Grid>
 </Window>

@@ -23,6 +23,12 @@ namespace Hospital.Service
             return storageAnamnesis.GetAll();
         }
 
+        public void deleteById(int id)
+        {
+           
+            storageAnamnesis.DeleteById(id);
+        }
+
         public List<Note> NotesForAnamnesis(Anamnesis anamnesis)
         {
             List<Note> notes = new List<Note>();
@@ -39,6 +45,10 @@ namespace Hospital.Service
             return notes;
         }
 
-    
+
+        public void save(Anamnesis anamnesis)
+        {
+            storageAnamnesis.Save(anamnesis);
+        }
     }
 }

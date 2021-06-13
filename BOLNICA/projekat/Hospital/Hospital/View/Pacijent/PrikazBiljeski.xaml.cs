@@ -40,25 +40,16 @@ namespace Hospital.View.Pacijent
             this.Close();
         }
 
-        private void UpdateListView()
-        {
-            AnamnesisFileStorage anamneze = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
-            List<Note> notes = new List<Note>();
-            foreach (Anamnesis a in anamneze.GetAll())
+      
+            private void UpdateListView()
             {
-              
-                    foreach (Note n in a.NotesForAnamnesis1)
-                    {
-                        notes.Add(n);
-                    }
-                
-            }
-             
+
             foreach (Note n in controller.NotesForAnamnesis(selectedAnamnesis))
             {
                 showNotesListView.Items.Add(n.description);
             }
         }
+        
     }
 }
 
