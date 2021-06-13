@@ -30,6 +30,8 @@ namespace Hospital
         public CheckupDTO checkup = new CheckupDTO();
         public CheckupController checkupController = new CheckupController();
         public int idSignedDoctor;
+        public PatientDTO patient;
+        public int index;
 
         public Pregled(int idDoctor)
         {

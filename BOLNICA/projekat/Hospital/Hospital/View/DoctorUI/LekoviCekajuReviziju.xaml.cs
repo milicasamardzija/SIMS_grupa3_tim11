@@ -15,6 +15,8 @@ using System.Collections.ObjectModel;
 using Hospital.Model;
 using Hospital.Prikaz;
 using Hospital.FileStorage.Interfaces;
+using Hospital.Controller;
+using Hospital.DTO;
 
 namespace Hospital
 {
@@ -23,51 +25,14 @@ namespace Hospital
     /// </summary>
     public partial class LekoviCekajuReviziju : Window
     {
-        public ObservableCollection<Review> ListMedicineReview { get; set; }
+        public ObservableCollection<ReviewDTO> ListMedicineReview { get; set; }
+        public MedicineReviewController controllerReview = new MedicineReviewController();
 
         public LekoviCekajuReviziju()
         {
             InitializeComponent();
             this.DataContext = this;
-            ListMedicineReview = loadMedicineReview();
-        }
-
-        public ObservableCollection<Review> loadMedicineReview()
-        {
-            MedicineIFileStorage storageMedicine = new MedicineFileStorage("./../../../../Hospital/files/storageMedicine.json");
-            MedicineReviewIFileStorage storageMedicineReview = new MedicineReviewFileStorage("./../../../../Hospital/files/storageMedicineReview.json");
-            ObservableCollection<Review> returnMedicineReview = new ObservableCollection<Review>();
-
-            foreach (Medicine medicine in storageMedicine.GetAll())
-            {
-                if (!medicine.Approved)
-                {
-                    foreach (MedicineReview medicineRewiev in storageMedicineReview.GetAll())
-                    {
-                        if (medicineRewiev.IdMedicine == medicine.Id)
-                        {
-                            returnMedicineReview.Add(new Review(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
-                            break;
-                        }
-                    }
-                }
-            }
-            foreach (Medicine medicine in storageMedicine.GetAll())
-            {
-                if (medicine.Delete)
-                {
-                    foreach (MedicineReview medicineRewiev in storageMedicineReview.GetAll())
-                    {
-                        if (medicineRewiev.IdMedicine == medicine.Id)
-                        {
-                            returnMedicineReview.Add(new Review(medicine.Name, medicine.Type, medicineRewiev.TypeReview, medicineRewiev.Done, medicine.Id, medicineRewiev.Id));
-                            break;
-                        }
-                    }
-                }
-            }
-
-            return returnMedicineReview;
+            ListMedicineReview = new ObservableCollection<ReviewDTO>(controllerReview.getAll());
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -77,7 +42,7 @@ namespace Hospital
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            RevizijaLekaLekar reviewMedicine = new RevizijaLekaLekar(ListMedicineReview, (Review)ReviewMedicineList.SelectedItem, ReviewMedicineList.SelectedIndex);
+            RevizijaLekaLekar reviewMedicine = new RevizijaLekaLekar(ListMedicineReview, (ReviewDTO)ReviewMedicineList.SelectedItem, ReviewMedicineList.SelectedIndex);
             reviewMedicine.Show();
         }
     }

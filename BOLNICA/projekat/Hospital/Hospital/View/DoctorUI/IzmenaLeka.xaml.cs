@@ -24,10 +24,11 @@ namespace Hospital
     /// </summary>
     public partial class IzmenaLeka : Window
     {
-
-        public ObservableCollection<Ingredient> DataIngredient { get; set; }
+        public ObservableCollection<IngredientDTO> DataIngredient { get; set; }
         public ObservableCollection<MedicineDTO> DataMedicine { get; set; }
-        public MedicineController1 controller = new MedicineController1();
+        
+        public MedicineController controller = new MedicineController();
+        public IngredientController ingredientController = new IngredientController();
 
         public ObservableCollection<MedicineDTO> medicineList;
         public MedicineDTO medicine;
@@ -40,24 +41,12 @@ namespace Hospital
             medicineList = list;
             medicine = selectedMedicine;
             indexMedicine = selectedIndex;
-            DataIngredient = loadIngredient();
+            DataIngredient = new ObservableCollection<IngredientDTO>(ingredientController.getAll());
             DataMedicine = new ObservableCollection<MedicineDTO>(controller.getAll());
 
             nazivLText.SelectedText = Convert.ToString(selectedMedicine.Name);
             gramazaLText.SelectedText = Convert.ToString(selectedMedicine.Quantity);
             vrstaLText.SelectedText = Convert.ToString(selectedMedicine.Type);
-        }
-
-        public ObservableCollection<Ingredient> loadIngredient()
-        {
-            IngredientsIFileStorage storage = new IngredientsFileStorage("./../../../../Hospital/files/storageIngredients.json");
-            ObservableCollection<Ingredient> ingredients = new ObservableCollection<Ingredient>(storage.GetAll());
-            ObservableCollection<Ingredient> ret = new ObservableCollection<Ingredient>();
-            foreach (Ingredient ingredient in ingredients)
-            {
-                ret.Add(ingredient);
-            }
-            return ret;
         }
 
         public int generateIdMedicine()

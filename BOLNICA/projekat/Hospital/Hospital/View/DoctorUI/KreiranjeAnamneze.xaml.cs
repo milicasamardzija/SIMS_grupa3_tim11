@@ -25,6 +25,8 @@ namespace Hospital
     public partial class KreiranjeAnamneze : Window
     {
         public ObservableCollection<CheckupDTO> listCheckup;
+        IAnamnesisFileStorage storageAnamnesis = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
+        ObservableCollection<Anamnesis> listAnamnesis = new ObservableCollection<Anamnesis>();
         public CheckupDTO checkup;
         public int index;
 
@@ -57,13 +59,10 @@ namespace Hospital
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            IAnamnesisFileStorage storageAnamnesis = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
-            ObservableCollection<Anamnesis> listAnamnesis = new ObservableCollection<Anamnesis>();
-
             Anamnesis newAnamnesis = new Anamnesis(generateIdAnamnesis(), Convert.ToString(textIme), Convert.ToString(textPol.Text),
-                Convert.ToString(textDatum.Text), Convert.ToString(textAdresa.Text), Convert.ToString(textBrak.Text),
-                Convert.ToString(textZanimanje.Text), Convert.ToString(textZakljucak.Text));
-
+               Convert.ToString(textDatum.Text), Convert.ToInt16(textId.Text), Convert.ToString(textAdresa.Text), 
+               Convert.ToString(textBrak.Text), Convert.ToString(textZanimanje.Text), Convert.ToString(textZakljucak.Text));
+           
             storageAnamnesis.Save(newAnamnesis);
             listAnamnesis.Add(newAnamnesis);
             this.Close();

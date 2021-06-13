@@ -30,5 +30,11 @@ namespace Hospital.Model
             this.comment = comment;
           
         }
+        public Feedback(int id, FeedbackType type, String problem, String email)
+        {
+            this.type = type;
+            this.problem = problem;
+            this.email = email;
+        }
     }
 }

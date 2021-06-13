@@ -44,7 +44,7 @@ namespace Hospital
                 {
                     if (val == n.Id)
                     {
-                        ++val; //proveravam sledeci slobodan broj
+                        ++val;
                         break;
                     }
                 }

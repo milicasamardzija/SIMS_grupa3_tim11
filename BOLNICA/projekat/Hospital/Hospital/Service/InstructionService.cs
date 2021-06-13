@@ -11,12 +11,13 @@ namespace Hospital.Service
 {
     public class InstructionService
     {
-        public CheckupFileStorage checkupStoorage;
-        IInstructionFileStorage storageInstruction = new InstructionFileStorage("./../../../../Hospital/files/instructions.json");
+        private ICheckupFileStorage checkupStoorage;
+        private IInstructionFileStorage storageInstruction;
 
         public InstructionService()
         {
             checkupStoorage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            storageInstruction = new InstructionFileStorage("./../../../../Hospital/files/instructions.json");
         }
 
         public int generateInstructionId()

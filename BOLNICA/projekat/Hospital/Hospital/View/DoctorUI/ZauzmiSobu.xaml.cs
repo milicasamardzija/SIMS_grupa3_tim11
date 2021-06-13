@@ -31,6 +31,7 @@ namespace Hospital
             set { room = value; }
         }
         private int indexRoom;
+        public int maxValue = 10;
 
         public ZauzmiSobu(ObservableCollection<RoomDTO> list, RoomDTO selectedRoom, int selectedIndex)
         {
@@ -38,14 +39,17 @@ namespace Hospital
             LookInRooms = list;
             room = selectedRoom;
             indexRoom = selectedIndex;
+            spratText.SelectedText = Convert.ToString(room.Floor);
+            vrstaText.SelectedText = Convert.ToString(room.Purpose);
+            kapacitetText.SelectedText = Convert.ToString(room.Capacity);
         }
-        
+
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            room.Capacity = room.Capacity - 1;
-            if(room.Capacity == 0)
+            room.Capacity = room.Capacity + 1;
+            if(room.Capacity == maxValue)
             {
-                room.Occupancy = true;
+                MessageBox.Show("Soba je zauzeta!");
             }
             LookInRooms[indexRoom] = room;
             this.Close();

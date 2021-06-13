@@ -10,12 +10,11 @@ namespace Hospital.Controller
 {
     public class AnamnesisController
     {
-        private AnamnesisService service = new AnamnesisService();
+        private AnamnesisService service;
 
         public AnamnesisController()
         {
-           
-          
+
         }
 
         public List<Note> NotesForAnamnesis(Anamnesis anamnesis)
@@ -25,10 +24,15 @@ namespace Hospital.Controller
 
         public List<Anamnesis> getAll()
         {
-            return service.getAll();
+            List<Anamnesis> allAnamnesis = new List<Anamnesis>(service.getAll());
+            List<Anamnesis> anamnesis = new List<Anamnesis>();
+            foreach(Anamnesis a in allAnamnesis)
+            {
+                Anamnesis newAnamnesis = new Anamnesis(a.Id, a.NameS, a.Gender, a.DatePlace, a.IdPatient, a.Adress,
+                    a.Status, a.Job, a.Summary);
+            }
+            return anamnesis;
         }
-
-
     }
 
 }

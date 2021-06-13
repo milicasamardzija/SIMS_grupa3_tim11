@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using System.IO;
+using Hospital.DTO;
+using Hospital.Controller;
 
 namespace Hospital
 {
@@ -22,40 +24,25 @@ namespace Hospital
     public partial class PregledPacijenata : Window
     {
         
-        public ObservableCollection<Patient> ListPatient
+        public ObservableCollection<PatientDTO> ListPatient
         {
             get;
             set;
         }
-       /* public ObservableCollection<MedicalRecord> MedicalList
-        {
-            get;
-            set;
-        }*/
+
+        public PatientController controller = new PatientController();
 
         public PregledPacijenata()
         {
             InitializeComponent();
             this.DataContext = this;
-            ListPatient = loadJ();
-        }
-
-        public ObservableCollection<Patient> loadJ()
-        {
-            PatientFileStorage storage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-            ObservableCollection<Patient> ppp = new ObservableCollection<Patient>(storage.GetAll());
-            ObservableCollection<Patient> pat = new ObservableCollection<Patient>();
-            foreach(Patient patient in ppp)
-            {
-                pat.Add(patient);
-            }
-            return pat;
+            ListPatient = new ObservableCollection<PatientDTO>(controller.getAll());
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            PrikaziKartonPacijenta pk = new PrikaziKartonPacijenta(ListPatient, (Patient)Pacijenti.SelectedItem, Pacijenti.SelectedIndex);
-            pk.Show();
+            PrikaziKartonPacijenta showMedicalRecord = new PrikaziKartonPacijenta(ListPatient, (PatientDTO)Pacijenti.SelectedItem, Pacijenti.SelectedIndex);
+            showMedicalRecord.Show();
             this.Close();
         }
 

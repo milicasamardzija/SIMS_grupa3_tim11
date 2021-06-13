@@ -16,6 +16,7 @@ using Newtonsoft.Json;
 using System.IO;
 using Hospital.Controller;
 using Hospital.DTO;
+using System.Collections.ObjectModel;
 
 namespace Hospital
 {
@@ -24,12 +25,12 @@ namespace Hospital
     /// </summary>
     public partial class ZakaziPregledLekar : Window
     {
-        public List<CheckupDTO> listCheckup;
+        public ObservableCollection<CheckupDTO> listCheckup;
         public CheckupDTO checkup = new CheckupDTO();
         public int idDoctor;
         public InstructionController controllerInstruction = new InstructionController();
 
-        public ZakaziPregledLekar(List<CheckupDTO> list, int id)
+        public ZakaziPregledLekar(ObservableCollection<CheckupDTO> list, int id)
         {
             InitializeComponent();
             listCheckup = list;

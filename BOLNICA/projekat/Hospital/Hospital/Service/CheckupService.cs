@@ -241,5 +241,20 @@ private List<Checkup> getDoctorTerms(int idDoctor, List<Checkup> unavailableChec
             checkupStorage.Save(newCheckup);
         }
 
+       /* public int getDoctorFromFile(int doctorId)
+        {
+            int returnDoctor = 0;
+            List<Doctor> doctors = new List<Doctor>(doctorStorage.GetAll());
+
+            foreach (Doctor doctor in doctors)
+            {
+                if (doctor.Id == doctorId)
+                {
+                    returnDoctor = doctorId;
+                    break;
+                }
+            }
+            return returnDoctor;
+        }*/
     }
 }

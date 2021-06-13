@@ -1,6 +1,8 @@
-﻿using Hospital.FileStorage.Interfaces;
+﻿using Hospital.DTO;
+using Hospital.FileStorage.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +22,16 @@ namespace Hospital
     /// </summary>
     public partial class IzdavanjeRecepta : Window
     {
+        public IAlergensFileStorage storage = new AlergensFileStorage("./../../../../Hospital/files/alergens.json");
+        private IRecipeFileStorage storageRecipe = new RecipeFileStorage(@"./../../../../Hospital/files/recepti.json");
+        public List<Recipe> recipeList = new List<Recipe>();
+        public PatientDTO patient = new PatientDTO();
+
         public IzdavanjeRecepta()
         {
             InitializeComponent();
-
+            textBox1.SelectedText = Convert.ToString(patient.Id);
+            textBox3.SelectedText = Convert.ToString(patient.IdHealthCard);
             CalendarDateRange kalendar = new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1));
             datePicker.BlackoutDates.Add(kalendar);
         }
@@ -52,10 +60,26 @@ namespace Hospital
             return returnRecipe;
         }
 
+        public void mesage()
+        {
+            foreach (Alergens alergen in storage.GetAll())
+            {
+                if (Convert.ToInt16(textBox7.Text) == alergen.Id)
+                {
+                    MessageBox.Show("Pacijent je alergican na lek! Unesite novi lek, molim.");
+                    break;
+                }
+               /* else
+                {
+                    MessageBox.Show("Lek je prihvacen!");
+                    break;
+                }*/
+            }
+        }
+
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            RecipeFileStorage storageRecipe = new RecipeFileStorage(@"./../../../../Hospital/files/recepti.json");
-            List<Recipe> recipeList = new List<Recipe>();
+            mesage();
 
             Recipe newRecipe = new Recipe(generateID(), Convert.ToString(textBox.Text), Convert.ToString(textBox1.Text), Convert.ToString(textBox2.Text),
                 Convert.ToString(textBox3.Text), datePicker.DisplayDate, Convert.ToString(textBox5.Text),

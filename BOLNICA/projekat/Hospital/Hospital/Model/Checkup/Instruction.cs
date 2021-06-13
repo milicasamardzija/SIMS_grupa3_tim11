@@ -29,6 +29,10 @@ namespace Hospital.Model
             this.commentInstruction = comment;
         }
 
+        public Instruction()
+        {
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string name)

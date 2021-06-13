@@ -25,7 +25,7 @@ namespace Hospital
     public partial class Evidencija : Window
     {
         public ObservableCollection<MedicineDTO> MedicineList { get; set; }
-        public MedicineController1 controllerMedicine = new MedicineController1();
+        public MedicineController controllerMedicine = new MedicineController();
 
         public Evidencija()
         {

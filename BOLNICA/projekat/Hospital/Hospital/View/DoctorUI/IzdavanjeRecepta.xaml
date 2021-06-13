@@ -10,7 +10,7 @@
         <Button x:Name="button" Content="Izdaj recept" HorizontalAlignment="Left" Margin="10,447,0,0" VerticalAlignment="Top" Width="101" FontSize="16" Click="button_Click"/>
         <Button x:Name="button1" Content="Odbaci" HorizontalAlignment="Left" Margin="959,447,0,0" VerticalAlignment="Top" Width="89" FontSize="16" Click="button1_Click"/>
         <Label x:Name="label" Content="Naziv zdravstvene ustanove" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.572,-0.48" FontSize="16"/>
-        <Label x:Name="label1" Content="Prezime i ime osiguranog lica" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label1" Content="ID Pacijenta" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="label2" Content="Datum rodjenja osiguranog lica" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="label3" Content="Broj zdravstvene knjizice" HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="label4" Content="Datum propisivanja leka" HorizontalAlignment="Left" Margin="10,231,0,0" VerticalAlignment="Top" FontSize="16"/>
