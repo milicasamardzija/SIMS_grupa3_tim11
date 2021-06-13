@@ -1,5 +1,6 @@
 ﻿using Hospital.Controller;
 using Hospital.DTO;
+using Hospital.MVVM.ModelView;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,50 +21,10 @@ namespace Hospital
 {
     public partial class DodajProstoriju : UserControl
     {
-        private ObservableCollection<RoomDTO> rooms;
-        private Frame frame;
-        private RoomsController controller;
-        private RoomDTO room = new RoomDTO();
-        private DataGrid roomsView;
-        public RoomDTO Room
-        {
-            get { return room; }
-            set { room = value; }
-        }
-        public DodajProstoriju(DataGrid listaProstorija, ObservableCollection<RoomDTO> rooms, Frame frame)
+        public DodajProstoriju(ModelViewDodajProstoriju dodajProstoriju)
         {
             InitializeComponent();
-            this.DataContext = this;
-            this.rooms = rooms;
-            this.frame = frame;
-            this.roomsView = listaProstorija;
-            controller = new RoomsController();
-            potvrdiBtn.IsEnabled = false;
-            addPurpose();
-        }
-
-        private void addPurpose()
-        {
-            NamenaText.ItemsSource = Enum.GetValues((typeof(Purpose)));
-        }
-
-        private void dodavanjeProstorije(object sender, RoutedEventArgs e)
-        {
-            controller.save(Room);
-            roomsView.ItemsSource = controller.getAll();
-            frame.NavigationService.Navigate(new BelsekaMagacin(1));
-        }
-        private void odustani(object sender, RoutedEventArgs e)
-        {
-            frame.NavigationService.Navigate(new BelsekaMagacin(1));
-        }
-
-        private void KapacitetText_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (!SpratText.Text.Equals("") && !KapacitetText.Text.Equals("") && NamenaText.SelectedIndex != -1)
-            {
-                potvrdiBtn.IsEnabled = true;
-            }
+            this.DataContext = dodajProstoriju;
         }
     }
 }
