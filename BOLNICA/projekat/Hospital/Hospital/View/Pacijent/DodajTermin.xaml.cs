@@ -110,7 +110,7 @@ namespace Hospital
                 CheckupDTO checkup = new CheckupDTO(id, doktor.Id, idPatient, dt, 1, 0);
                 checkupcontroller.save(checkup);
             
-                Functionality funkcionalnost = new Functionality(DateTime.Now, idPatient, "dodavanje");
+                FunctionalityDTO funkcionalnost = new FunctionalityDTO(idPatient, DateTime.Now,  "dodavanje");
                 funkcionalitycontroller.save(funkcionalnost);
 
 
