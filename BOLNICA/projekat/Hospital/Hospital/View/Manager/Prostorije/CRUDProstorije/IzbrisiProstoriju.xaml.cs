@@ -24,7 +24,6 @@ namespace Hospital
         private ObservableCollection<RoomDTO> rooms = new ObservableCollection<RoomDTO>();
         private int index;
         private Frame frame = new Frame();
-        private RoomsController controller = new RoomsController();
         private RoomDTO room = new RoomDTO();
         public RoomDTO Room
         {
@@ -49,8 +48,6 @@ namespace Hospital
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-           // rooms.RemoveAt(index);
-           // controller.deleteById(room.Id);
             IzbrisiProstorijuPotvrda brisanje = new IzbrisiProstorijuPotvrda(room.Id,rooms,index);
             brisanje.Show();
             frame.NavigationService.Navigate(new BelsekaMagacin(1));
