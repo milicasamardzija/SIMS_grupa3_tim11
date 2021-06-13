@@ -291,6 +291,12 @@
     <Compile Include="Service\RoomRenovationService.cs" />
     <Compile Include="Service\StaticInventoryMovemenetService.cs" />
     <Compile Include="Service\PatientService.cs" />
+    <Compile Include="TemplateForReports\DoctorReportService.cs" />
+    <Compile Include="TemplateForReports\ManagerReportService.cs" />
+    <Compile Include="TemplateForReports\PatientReportService.cs" />
+    <Compile Include="TemplateForReports\PrintReport.cs" />
+    <Compile Include="TemplateForReports\ReportController.cs" />
+    <Compile Include="TemplateForReports\SecretaryReportService.cs" />
     <Compile Include="View\DoctorUI\BolnickoLecenje.xaml.cs">
       <DependentUpon>BolnickoLecenje.xaml</DependentUpon>
     </Compile>

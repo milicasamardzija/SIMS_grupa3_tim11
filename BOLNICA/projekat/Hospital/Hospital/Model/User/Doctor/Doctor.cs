@@ -6,31 +6,11 @@ using System;
     public class Doctor : User
     {
 
-        // public String specialization;
+       
         public int freeDays = 25;
         private SpecializationType specializationType;
 
-        // private int doctorId;
-
-
-
-
-        /*
-            public int DoctorId
-            {
-                get
-                {
-                    return doctorId;
-                }
-                set
-                {
-                    if (value != doctorId)
-                    {
-                        doctorId = value;
-                        OnProperychanged("DoctorId");
-                    }
-                }
-            }*/
+     
 
         public SpecializationType SpecializationType
         {
