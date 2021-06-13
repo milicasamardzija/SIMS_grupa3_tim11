@@ -11,16 +11,16 @@ namespace Hospital.Service
 {
     public class AnamnesisService
     {
-        private IAnamnesisFileStorage storage;
+        private IAnamnesisFileStorage storageAnamnesis;
         
         public AnamnesisService()
         {
-            storage = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
+            storageAnamnesis = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
         }
 
         public List<Anamnesis> getAll()
         {
-            return storage.GetAll();
+            return storageAnamnesis.GetAll();
         }
 
         public List<Note> NotesForAnamnesis(Anamnesis anamnesis)
@@ -28,9 +28,9 @@ namespace Hospital.Service
             List<Note> notes = new List<Note>();
             foreach (Anamnesis a in storageAnamnesis.GetAll())
             {
-                if (a.datePlace.Equals(anamnesis.datePlace))
+                if (a.DatePlace.Equals(anamnesis.DatePlace))
                 {
-                    foreach (Note n in a.NotesForAnamnesis)
+                    foreach (Note n in a.NotesForAnamnesis1)
                     {
                         notes.Add(n);
                     }
@@ -39,10 +39,6 @@ namespace Hospital.Service
             return notes;
         }
 
-        public List<Anamnesis> getAll()
-        {
-            return storageAnamnesis.GetAll();
-        }
-
+    
     }
 }

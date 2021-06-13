@@ -63,9 +63,9 @@ namespace Hospital.View.Pacijent
             List<Note> notes = new List<Note>();
             foreach (Anamnesis a in anamnesisController.getAll())
             {
-                if (a.NotesForAnamnesis != null)
+                if (a.NotesForAnamnesis1 != null)
                 {
-                    foreach (Note n in a.NotesForAnamnesis)
+                    foreach (Note n in a.NotesForAnamnesis1)
                     { if (n.IsSetReminder == true)
                         {
                             if(DateTime.Now>=n.StartDate && DateTime.Now<=n.EndDate) 
