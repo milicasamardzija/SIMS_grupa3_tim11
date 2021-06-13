@@ -5,25 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital"
         mc:Ignorable="d"
-        Title="KreiranjeAnamneze" Height="459.223" Width="521.694" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
+        Title="KreiranjeAnamneze" Height="509.061" Width="528.814" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid ToolTip="Pritiskajuci strelice na tastaturi oznacite prazna polja, pritisnite tipku Enter, unesite podatke, zatim oznacite zeljeno dugme i pritisnite Enter">
-        <Button x:Name="button" Content="Sacuvaj" HorizontalAlignment="Left" Margin="24,387,0,0" VerticalAlignment="Top" Width="75" FontSize="16" RenderTransformOrigin="0.204,-0.284" Click="button_Click"/>
-        <Button x:Name="button1" Content="Izadji" HorizontalAlignment="Left" Margin="424,387,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Click="button1_Click"/>
+        <Button x:Name="button" Content="Sacuvaj" HorizontalAlignment="Left" Margin="24,424.378,0,0" VerticalAlignment="Top" Width="75" FontSize="16" RenderTransformOrigin="0.204,-0.284" Click="button_Click"/>
+        <Button x:Name="button1" Content="Izadji" HorizontalAlignment="Left" Margin="424,424.378,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Click="button1_Click"/>
         <Label x:Name="label" Content="Prezime i ime pacijenta" HorizontalAlignment="Left" Margin="24,21,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="label1" Content="Pol" HorizontalAlignment="Left" Margin="24,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.036,0.383" FontSize="16"/>
         <Label x:Name="label2" Content="ID pacijenta" HorizontalAlignment="Left" Margin="24,90,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="label3" Content="Adresa stanovanja" HorizontalAlignment="Left" Margin="24,126,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="label4" Content="Bracno stanje" HorizontalAlignment="Left" Margin="24,164,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="label5" Content="Zanimanje" HorizontalAlignment="Left" Margin="24,201,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="label6" Content="Zakljucak" HorizontalAlignment="Left" Margin="24,238,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.06,0.291"/>
+        <Label x:Name="label3" Content="Adresa stanovanja" HorizontalAlignment="Left" Margin="23.496,171.533,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label4" Content="Bracno stanje" HorizontalAlignment="Left" Margin="24,207.813,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label5" Content="Zanimanje" HorizontalAlignment="Left" Margin="24,250.498,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label6" Content="Zakljucak" HorizontalAlignment="Left" Margin="23.496,286.778,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.06,0.291"/>
         <TextBox x:Name="textIme" HorizontalAlignment="Left" Height="23" Margin="276,29,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="223"/>
         <TextBox x:Name="textPol" HorizontalAlignment="Left" Height="23" Margin="276,57,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="223"/>
-        <TextBox x:Name="textDatum" HorizontalAlignment="Left" Height="23" Margin="276,90,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="223"/>
-        <TextBox x:Name="textAdresa" HorizontalAlignment="Left" Height="23" Margin="276,126,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="223"/>
-        <TextBox x:Name="textBrak" HorizontalAlignment="Left" Height="23" Margin="276,164,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="223"/>
-        <TextBox x:Name="textZanimanje" HorizontalAlignment="Left" Height="23" Margin="276,201,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="223"/>
-        <TextBox x:Name="textZakljucak" HorizontalAlignment="Left" Height="95" Margin="24,275,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="475"/>
-        <Button x:Name="button2" Content="Postojece" HorizontalAlignment="Left" Margin="227,387,0,0" FontSize="16" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.282,0.301" Click="button2_Click"/>
+        <TextBox x:Name="textId" HorizontalAlignment="Left" Height="23" Margin="276,90,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="223"/>
+        <TextBox x:Name="textAdresa" HorizontalAlignment="Left" Height="23" Margin="276,171.533,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="223"/>
+        <TextBox x:Name="textBrak" HorizontalAlignment="Left" Height="23" Margin="276,207.08,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="223"/>
+        <TextBox x:Name="textZanimanje" HorizontalAlignment="Left" Height="23" Margin="276,250.498,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="223"/>
+        <TextBox x:Name="textZakljucak" HorizontalAlignment="Left" Height="77.201" Margin="24,323.058,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="475"/>
+        <Button x:Name="button2" Content="Postojece" HorizontalAlignment="Left" Margin="227,424.378,0,0" FontSize="16" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.282,0.301" Click="button2_Click"/>
+        <Label x:Name="label8" Content="Datum i mesto rodjenja" HorizontalAlignment="Left" Margin="24,135.253,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="textDatum" HorizontalAlignment="Left" Height="23" Margin="276,135.253,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="223"/>
 
     </Grid>
 </Window>

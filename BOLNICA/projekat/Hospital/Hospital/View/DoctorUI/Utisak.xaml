@@ -6,18 +6,13 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Hospital.View.DoctorUI"
         mc:Ignorable="d"
-        Title="Utisak" Height="306.265" Width="726.508" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
+        Title="Utisak" Height="201.803" Width="726.508" Background="#FFED9CDD" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="Ocena performansi:" FontWeight="Bold" Foreground="#FF02060C" />
-        <materialDesign:RatingBar x:Name="ocenaPerformansi" Margin="150,2,405,194" Foreground="#FF6B0948" />
+        <materialDesign:RatingBar x:Name="ocenaPerformansi" Margin="150,2,405,115.243" Foreground="#FF6B0948" />
         <Label Margin="0,31,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Sugestije i komentari: " FontWeight="Bold" Foreground="#FF02060C" />
         <TextBox x:Name="komentarText" Width="542" Height="52" Margin="150,38,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Text="" TextWrapping="Wrap" />
-        <Label Margin="0,95,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Opis problema:" FontWeight="Bold" Foreground="#FF02060C" />
-        <TextBox x:Name="opisText" Width="542" Height="52" Margin="150,96,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" IsReadOnly="True" TextWrapping="Wrap" />
-        <Label Margin="0,153,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Unesite mail za povratnu informaciju o prijavi problema:" FontWeight="Bold"
-            Foreground="#FF02060C" />
-        <TextBox x:Name="emailText" Width="334" Height="23" Margin="358,156,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" IsReadOnly="True" TextWrapping="Wrap" />
-        <Button Width="126" Height="33" Margin="566,194,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Posalji feedback" TextElement.FontWeight="Bold"
+        <Button Width="126" Height="33" Margin="566,110.905,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Posalji feedback" TextElement.FontWeight="Bold"
             TextElement.Foreground="#FF02060C" Click="Button_Click"/>
     </Grid>
 </Window>

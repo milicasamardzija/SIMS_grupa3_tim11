@@ -60,15 +60,15 @@ namespace Hospital.View.Pacijent
                 note.StartDate = DateTime.MinValue;
                 note.EndDate = DateTime.MinValue;
 
-                if (selectedAnamnesis.NotesForAnamnesis != null)
+                if (selectedAnamnesis.NotesForAnamnesis1 != null)
                 {
-                    selectedAnamnesis.NotesForAnamnesis.Add(note);
+                    selectedAnamnesis.NotesForAnamnesis1.Add(note);
                 }
                 else
                 {
                     List<Note> notes = new List<Note>();
                     notes.Add(note);
-                    selectedAnamnesis.NotesForAnamnesis = notes;
+                    selectedAnamnesis.NotesForAnamnesis1 = notes;
                 }
 
                 AnamnesisFileStorage storage = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
@@ -88,15 +88,15 @@ namespace Hospital.View.Pacijent
                 note.EndDate = (DateTime)endDatePicker.SelectedDate;
                 note.IsSetReminder = true;
 
-                if (selectedAnamnesis.NotesForAnamnesis != null)
+                if (selectedAnamnesis.NotesForAnamnesis1 != null)
                 {
-                    selectedAnamnesis.NotesForAnamnesis.Add(note);
+                    selectedAnamnesis.NotesForAnamnesis1.Add(note);
                 }
                 else
                 {
                     List<Note> notes = new List<Note>();
                     notes.Add(note);
-                    selectedAnamnesis.NotesForAnamnesis = notes;
+                    selectedAnamnesis.NotesForAnamnesis1 = notes;
                 }
 
 

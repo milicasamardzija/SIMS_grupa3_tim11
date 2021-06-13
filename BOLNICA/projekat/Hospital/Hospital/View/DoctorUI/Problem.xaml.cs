@@ -34,7 +34,7 @@ namespace Hospital.View.DoctorUI
         {
             if (!problemText.Text.Equals("") && !emailText.Text.Equals(""))
             {
-                feedback = new Feedback(0, FeedbackType.prijava_problema, ocenaZvezdicama.Value, komentarText.Text, problemText.Text, emailText.Text);
+                feedback = new Feedback(0, FeedbackType.prijava_problema, problemText.Text, emailText.Text);
                 controllerFeedback.createFeedbackProblem(feedback);
                 MessageBox.Show("Uspesno ste uneli povratne informacije!");
             }

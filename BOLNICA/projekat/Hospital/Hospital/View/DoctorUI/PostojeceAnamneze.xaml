@@ -9,13 +9,12 @@
     <Grid ToolTip="Kada zelite da vidite sve podatke u tabeli, krecite se strelicama za gore ili dole, takodje i za levo ili desno">
         <DataGrid x:Name="ListAnamnesis" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" Height="219" Width="576" Background="MistyRose" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path = AnamnesisList}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="IME I PREZIME" Binding="{Binding nameS}" FontSize="16"/>
-                <DataGridTextColumn Header="POL" Binding="{Binding gender}" FontSize="16"/>
-                <DataGridTextColumn Header="ID" Binding="{Binding datePlace}" FontSize="16"/>
-                <DataGridTextColumn Header="ADRESA" Binding="{Binding adress}" FontSize="16"/>
-                <DataGridTextColumn Header="BRACNI STATUS" Binding="{Binding status}" FontSize="16"/>
-                <DataGridTextColumn Header="ZAPOSLENJE" Binding="{Binding job}" FontSize="16"/>
-                <DataGridTextColumn Header="ZAKLJUCAK" Binding="{Binding summary}" FontSize="16"/>
+                <DataGridTextColumn Header="IME I PREZIME" Binding="{Binding NameS}" FontSize="16"/>
+                <DataGridTextColumn Header="POL" Binding="{Binding Gender}" FontSize="16"/>
+                <DataGridTextColumn Header="ADRESA" Binding="{Binding Adress}" FontSize="16"/>
+                <DataGridTextColumn Header="BRACNI STATUS" Binding="{Binding Status}" FontSize="16"/>
+                <DataGridTextColumn Header="ZAPOSLENJE" Binding="{Binding Job}" FontSize="16"/>
+                <DataGridTextColumn Header="ZAKLJUCAK" Binding="{Binding Summary}" FontSize="16"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="button" Content="Izadji" HorizontalAlignment="Left" Margin="511,277,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Click="button_Click"/>

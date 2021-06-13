@@ -60,9 +60,9 @@ namespace Hospital
         private void button_Click(object sender, RoutedEventArgs e)
         {
             Anamnesis newAnamnesis = new Anamnesis(generateIdAnamnesis(), Convert.ToString(textIme), Convert.ToString(textPol.Text),
-                Convert.ToInt16(textDatum.Text), Convert.ToString(textAdresa.Text), Convert.ToString(textBrak.Text),
-                Convert.ToString(textZanimanje.Text), Convert.ToString(textZakljucak.Text));
-
+               Convert.ToString(textDatum.Text), Convert.ToInt16(textId.Text), Convert.ToString(textAdresa.Text), 
+               Convert.ToString(textBrak.Text), Convert.ToString(textZanimanje.Text), Convert.ToString(textZakljucak.Text));
+           
             storageAnamnesis.Save(newAnamnesis);
             listAnamnesis.Add(newAnamnesis);
             this.Close();

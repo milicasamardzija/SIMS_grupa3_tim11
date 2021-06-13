@@ -44,7 +44,7 @@ namespace Hospital.View.Pacijent
             foreach (Anamnesis a in anamneze.GetAll())
             {
               
-                    foreach (Note n in a.NotesForAnamnesis)
+                    foreach (Note n in a.NotesForAnamnesis1)
                     {
                         notes.Add(n);
                     }
