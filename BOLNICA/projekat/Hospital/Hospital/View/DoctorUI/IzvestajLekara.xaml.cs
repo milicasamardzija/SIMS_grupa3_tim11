@@ -27,7 +27,7 @@ namespace Hospital
     public partial class IzvestajLekara : Window
     {
         private ReportController controller;
-        PatientFileStorage storagePatient = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
+        public PdfDocument document = new PdfDocument();
 
         public IzvestajLekara()
         {
@@ -37,54 +37,9 @@ namespace Hospital
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
-        {   
-            using (PdfDocument document = new PdfDocument())
-            {
-                PdfPage page = document.Pages.Add();
-                Syncfusion.Pdf.Graphics.PdfGraphics graphics = page.Graphics;
-                PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 6);
-
-                font = new PdfStandardFont(PdfFontFamily.Helvetica, 18);
-                graphics.DrawString("Izvestaj o ", font, PdfBrushes.Black, new System.Drawing.PointF(170, 100));
-                graphics.DrawString("pregledu stanja pacijenta", font, PdfBrushes.Black, new System.Drawing.PointF(112, 120));
-
-                font = new PdfStandardFont(PdfFontFamily.Helvetica, 9);
-                StringBuilder stringBuilder = new StringBuilder("");
-                stringBuilder.Append("Prikazan je izvestaj pregleda pacijenata koji se odvio u periodu od ");
-                graphics.DrawString(stringBuilder.ToString(), font, PdfBrushes.Black, new PointF(28, 180));
-                stringBuilder = new StringBuilder("");
-                stringBuilder.Append(Convert.ToDateTime(datePicker1.Text).ToString("dd.MM.yyyy.")).Append(" do ")
-                    .Append(Convert.ToDateTime(datePicker2.Text).ToString("dd.MM.yyyy."));
-
-                PdfLightTable pdfLightTable = new PdfLightTable();
-                DataTable table = new DataTable();
-
-                table.Columns.Add("Ime i prezime pacijenta");
-                table.Columns.Add("Datum rodjenja pacijenta");
-
-                table.Rows.Add(new string[] { "Ime i prezime pacijenta", "Datum rodjenja pacijenta" });
-
-                foreach (Patient patient in storagePatient.GetAll())
-                {
-                    String name = patient.Name + " " + patient.Surname;
-                    table.Rows.Add(new string[] {
-                        name, patient.BirthdayDate.ToString(),
-                    });
-                }
-                pdfLightTable.DataSource = table;
-                pdfLightTable.Draw(page, new PointF(0, 240));
-
-                graphics.DrawString(stringBuilder.ToString(), font, PdfBrushes.Black, new PointF(28, 204));
-
-                document.Save("./../../../../Hospital/reports/reportDoctor1.pdf");
-                document.Close(true);
-            }
-
-        }
-
-        private void button2_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            controller.CreateDoctorReport((DateTime)datePicker1.SelectedDate, (DateTime)datePicker2.SelectedDate);
+
         }
     }
 }
