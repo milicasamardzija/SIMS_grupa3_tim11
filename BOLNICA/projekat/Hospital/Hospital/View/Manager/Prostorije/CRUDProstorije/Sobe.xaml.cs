@@ -84,7 +84,7 @@ namespace Hospital
             }
             else
             {
-                SobeFrame.NavigationService.Navigate(new IzmeniProstoriju(Rooms, (RoomDTO)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex, SobeFrame));
+                SobeFrame.NavigationService.Navigate(new IzmeniProstoriju(new ModelViewIzmeniProstoriju(Rooms, (RoomDTO)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex, SobeFrame)));
             }
         }
 
