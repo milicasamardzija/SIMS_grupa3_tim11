@@ -107,32 +107,39 @@ namespace Hospital.Service
         }
 
 
-        public int addFreeShift(Doctor doctor, DateTime start, DateTime end)
+        public bool addFreeShift(Doctor doctor, DateTime start, DateTime end)
         {
             Doctor foundedDoctor = doctorStorage.FindById(doctor.Id);
-           
-            List<ScheduleShift> shifts = foundedDoctor.Shift.ScheduledShifts; //prethodne doktorove smene koje su zakazane na koje dodajem 
-           for( DateTime countDate= start.Date; countDate<= end; countDate=countDate.AddDays(1))
+             List<ScheduleShift> shifts = foundedDoctor.Shift.ScheduledShifts; //prethodne doktorove smene koje su zakazane na koje dodajem 
+            int freeD = GetWorkingDays(start, end); //izbrojano koliko ima dana izmedju
+
+            if (foundedDoctor.FreeDays < freeD)
+            {
+                return false;
+            }
+
+            foundedDoctor.FreeDays -= freeD; //smanjim broj slobodnih dana
+            for ( DateTime countDate = start; countDate <= end; countDate = countDate.AddDays(1))
             {
                 ScheduleShift s = new ScheduleShift(countDate, ShiftType.free, false);
                 shifts.Add(s);
-                
-             
             } 
 
             foundedDoctor.Shift.ScheduledShifts.Equals(shifts);
-            int freeD = GetWorkingDays(start, end);
-            
-            int alldays = foundedDoctor.Vacation.FreeDays - freeD;
-            foundedDoctor.Vacation.FreeDays.Equals(alldays);
+          
             doctorStorage.DeleteById(doctor.Id);
             doctorStorage.Save(foundedDoctor);
 
-            return alldays; //da bih mogla da ispisem koliko mu je jos ostalo 
+            return true; //da bih mogla da ispisem koliko mu je jos ostalo 
 
         }
 
-        
+        public int preostaliDani(Doctor doctor)
+        {
+           Doctor docr= doctorStorage.FindById(doctor.Id);
+            int days = docr.FreeDays;
+            return days;
+        }
 
         //nalazi broj radnih  dana koliko ih je izmedju dva datuma
         public int GetWorkingDays(DateTime from, DateTime to)
@@ -148,16 +155,7 @@ namespace Hospital.Service
             return totalDays;
         }
 
-        //nedovrseno
-        public void countFreeDays(Doctor doctor, DateTime start, DateTime end)
-        {
-            Doctor doctorWithRequst = doctorStorage.FindById(doctor.Id);
-            List<DateTime> dates = new List<DateTime>();
-            int numberOfDays = (end.Date - start.Date).Days; //number of days beetween
-            
-
-
-        }
+     
 
         public List<DateTime> daysFree()
         {

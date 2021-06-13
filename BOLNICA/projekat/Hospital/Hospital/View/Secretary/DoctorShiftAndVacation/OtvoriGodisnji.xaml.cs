@@ -50,8 +50,16 @@ namespace Hospital.View.Secretary.DoctorShiftAndVacation
         {
             if (lekari.SelectedItem != null && datumOd.SelectedDate != null && datumDo.SelectedDate != null)
             {
-                int ret = shiftController.addFreeShift((DoctorDTO)lekari.SelectedItem, (DateTime)datumOd.SelectedDate, (DateTime)datumDo.SelectedDate);
-                MessageBox.Show("Ovom lekaru je ostalo jos " + ret + " slobodnih dana");
+                bool ret=  shiftController.addFreeShift((DoctorDTO)lekari.SelectedItem, (DateTime)datumOd.SelectedDate, (DateTime)datumDo.SelectedDate);
+                if(ret == true)
+                {
+                    int i = shiftController.preostaliDani((DoctorDTO)lekari.SelectedItem);
+                    MessageBox.Show("Ovom lekaru je ostalo jos " + i + " slobodnih dana");
+                }
+                else
+                {
+                    MessageBox.Show("Ovaj lekar nema dovoljno  slobodnih dana");
+                }
             } else
             {
                 MessageBox.Show("Morate popuniti polja!");

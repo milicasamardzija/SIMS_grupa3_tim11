@@ -17,8 +17,6 @@ namespace Hospital.Service
         {
             storage = new FeedbackFileStorage("./../../../../Hospital/files/storageFeedback.json");
         }
-
-
         public int generisiId()
         {
             int ret = 0;

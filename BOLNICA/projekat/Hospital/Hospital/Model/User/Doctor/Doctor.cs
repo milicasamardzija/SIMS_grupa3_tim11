@@ -8,7 +8,7 @@ using System;
     {
 
         // public String specialization;
-        public int freeDays = 25;
+        private int freeDays;
         private SpecializationType specializationType;
         private Shift shift;
         private Vacation vacation;

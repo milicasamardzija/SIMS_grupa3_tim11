@@ -34,11 +34,20 @@ namespace Hospital.Controller
             return shiftService.PredictDoctorShift(doctor, date);
         }
 
-        public int addFreeShift(DoctorDTO doctor, DateTime start, DateTime end)
+        public bool addFreeShift(DoctorDTO doctor, DateTime start, DateTime end)
         {
             Doctor forVacation = new Doctor(doctor.Id, doctor.Name, doctor.Surname, doctor.TelephoneNumber, doctor.Jmbg, doctor.Gender, doctor.BirthdayDate, doctor.Adress
                 , doctor.Type, doctor.Shift, doctor.Vacation);
            return  shiftService.addFreeShift(forVacation, start, end);
+        }
+
+
+        //za ispis koliko je jos slobodnih dana ostalo
+        public int preostaliDani (DoctorDTO doctor)
+        {
+            Doctor forDays = new Doctor(doctor.Id, doctor.Name, doctor.Surname, doctor.TelephoneNumber, doctor.Jmbg, doctor.Gender, doctor.BirthdayDate, doctor.Adress
+               , doctor.Type, doctor.Shift, doctor.Vacation);
+            return shiftService.preostaliDani(forDays);
         }
     }
 }
