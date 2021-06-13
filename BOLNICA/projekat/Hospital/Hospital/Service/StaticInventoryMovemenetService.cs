@@ -10,15 +10,13 @@ namespace Hospital.Service
 {
     public class StaticInventoryMovemenetService
     {
-        private StaticInvnetoryMovementFileStorage storage;
+        private IStaticInventoryMovementFileStorage storage;
         private InventoryIFileStorage inventoryStorage { get; set; }
-        private RoomIFileStorage roomStorage { get; set; }
         private IRoomInventoryFileStorage roomInventoryStorage { get; set; }
         public StaticInventoryMovemenetService()
         {
-            storage = new StaticInvnetoryMovementFileStorage();
+            storage = new StaticInvnetoryMovementFileStorage("./../../../../Hospital/files/storageStaticInventory.json");
             inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
-            roomStorage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
             roomInventoryStorage = new RoomInventoryFileStorage("./../../../../Hospital/files/storageRoomInventory.json");
         }
         public void moveInventoryStatic(StaticInventoryMovement movement)
@@ -147,7 +145,7 @@ namespace Hospital.Service
             {
                 nadjen = moveIntoRoom(movement, nadjen, all);
             }
-            else //ako se prebacuje u magacin
+            else
             {
                 moveIntoStorage(movement, inventories);
             }
@@ -172,18 +170,16 @@ namespace Hospital.Service
         {
             foreach (RoomInventory roomInv in all)
             {
-                //ako vec postoji zeljeni inventar u unetoj sobi
                 if (roomInv.IdInventory == movement.InventoryId && roomInv.IdRoom == movement.RoomInId)
                 {
-                    roomInv.Quantity += movement.Quantity;     //povecava se kolicina inventara u sobi
+                    roomInv.Quantity += movement.Quantity;
                     nadjen = false;
-                    roomInventoryStorage.SaveAll(all);//kompletna izmenja lista se serijalizuje
+                    roomInventoryStorage.SaveAll(all);
                     break;
                 }
 
             }
 
-            //ako ne postoji izabrani inventar u unetoj sobi
             newRoomInventory(movement, nadjen, all);
 
             return nadjen;

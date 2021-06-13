@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model 
 {
-    public class StaticInventoryMovement
+    public class StaticInventoryMovement : Entity
     {
         private int roomInId;
         private int roomOutId;

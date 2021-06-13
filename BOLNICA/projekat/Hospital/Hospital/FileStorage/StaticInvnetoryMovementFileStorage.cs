@@ -1,4 +1,5 @@
-﻿using Hospital.FileStorage.Interfaces;
+﻿using Hospital.FileStorage;
+using Hospital.FileStorage.Interfaces;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -10,39 +11,11 @@ using System.Windows;
 
 namespace Hospital.Model
 {
-    class StaticInvnetoryMovementFileStorage
+    class StaticInvnetoryMovementFileStorage : GenericFileStorage<StaticInventoryMovement>, IStaticInventoryMovementFileStorage
     {
 
-        public StaticInvnetoryMovementFileStorage()
+        public StaticInvnetoryMovementFileStorage(string filePath) : base(filePath)
         {
-     
-        }
-
-        public List<StaticInventoryMovement> GetAll()
-        {
-            List<StaticInventoryMovement> allInventory = new List<StaticInventoryMovement>();
-
-            allInventory = JsonConvert.DeserializeObject<List<StaticInventoryMovement>>(File.ReadAllText(@"./../../../../Hospital/files/storageStaticInventory.json"));
-
-            return allInventory;
-        }
-
-        public void Save(StaticInventoryMovement newInventory)
-        {
-            List<StaticInventoryMovement> allInventories = GetAll();
-
-            allInventories.Add(newInventory);
-
-            SaveAll(allInventories);
-        }
-
-        public void SaveAll(List<StaticInventoryMovement> inventories)
-        {
-            using (StreamWriter file = File.CreateText(@"./../../../../Hospital/files/storageStaticInventory.json"))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, inventories);
-            }
         }
 
         public void DeleteByIds(int idRoomIn, int idRoomOut, int idInvetory)
