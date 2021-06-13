@@ -88,5 +88,11 @@ namespace Hospital
             FeedBackPatient feedback = new FeedBackPatient();
             feedback.Show();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Izvjestaji izvjestaji = new Izvjestaji(id);
+            izvjestaji.Show();
+        }
     }
 }

@@ -454,6 +454,9 @@
     <Compile Include="View\Pacijent\FeedBackPatient.xaml.cs">
       <DependentUpon>FeedBackPatient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pacijent\Izvjestaji.xaml.cs">
+      <DependentUpon>Izvjestaji.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pacijent\ObavljeniPregledi.xaml.cs">
       <DependentUpon>ObavljeniPregledi.xaml</DependentUpon>
     </Compile>
@@ -761,6 +764,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pacijent\FeedBackPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pacijent\Izvjestaji.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1534,7 +1541,12 @@
     <Resource Include="View\Images\Manager\left-48.png" />
     <Resource Include="View\Images\Manager\left-64.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\..\Desktop\CalendarExample2\MojKalendar\Jarloo.Calendar\MyCalendar.Calendar.csproj">
+      <Project>{31c3b4a7-504b-4eff-bacc-c8f2ffe5af6f}</Project>
+      <Name>MyCalendar.Calendar</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="View\Images\Manager\wizard\inventarDodaj.png" />
     <Resource Include="View\Images\Manager\wizard\inventIzbrisi.png" />

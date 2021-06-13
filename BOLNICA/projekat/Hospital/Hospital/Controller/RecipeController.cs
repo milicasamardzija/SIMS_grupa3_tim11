@@ -9,12 +9,21 @@ namespace Hospital.Controller
 {
     public class RecipeController
     {
-        public RecipeService service = new RecipeService();
+        public RecipeService service;
 
         public RecipeController()
         {
+            service = new RecipeService();
         }
-       
 
+        public List<Recipe> getbyId(int id)
+        {
+            return service.getbyId(id);
+        }
+        public List<Recipe> getAll()
+        {
+
+            return service.getAll();
+        }
     }
 }
