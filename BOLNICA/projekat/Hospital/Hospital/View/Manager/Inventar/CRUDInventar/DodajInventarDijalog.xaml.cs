@@ -23,16 +23,16 @@ namespace Hospital
     public partial class DodajInventarDijalog : UserControl
     {
         private Frame frame;
-        private ObservableCollection<Inventory> inventories;
+        private ObservableCollection<InventoryDTO> inventories;
         private InventoryController inventoryController;
-        private Inventory inventory = new Inventory();
+        private InventoryDTO inventory = new InventoryDTO();
 
-        public Inventory Inventory
+        public InventoryDTO Inventory
         {
             get { return inventory; }
             set { inventory = value; }
         }
-        public DodajInventarDijalog(Frame frame,ObservableCollection<Inventory> inventories)
+        public DodajInventarDijalog(Frame frame,ObservableCollection<InventoryDTO> inventories)
         {
             InitializeComponent();
             this.DataContext = this;

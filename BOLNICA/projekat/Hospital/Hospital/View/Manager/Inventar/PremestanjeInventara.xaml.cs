@@ -1,4 +1,5 @@
-﻿using Hospital.View.Manager.Inventar.PremestanjeIzMagacina;
+﻿using Hospital.DTO;
+using Hospital.View.Manager.Inventar.PremestanjeIzMagacina;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,35 +20,35 @@ namespace Hospital
 {
     public partial class PremestanjeInventara : UserControl
     {
-        public Frame frame;
-        public ObservableCollection<Inventory> listInventory;
-        public int index;
-        public int idInventory;
-        public Inventory inventory;
+        private Frame frame;
+        private ObservableCollection<InventoryDTO> inventories;
+        private int index;
+        private int idInventory;
+        private InventoryDTO inventory;
         private DataGrid inventarTabela;
         private Boolean magacin;
-        private Room roomOut;
+        private RoomDTO roomOut;
         private DataGrid tableInventara;
-        public PremestanjeInventara(Frame magacinFrame, ObservableCollection<Inventory> list, DataGrid listaInventara,Boolean IzMagacina,Room outRoom, DataGrid listaInventara1)
+        public PremestanjeInventara(Frame magacinFrame, ObservableCollection<InventoryDTO> inventories, DataGrid listaInventara,Boolean IzMagacina,RoomDTO outRoom, DataGrid listaInventara1)
         {
             InitializeComponent();
-            frame = magacinFrame;
-            listInventory = list;
-            inventarTabela = listaInventara;
-            magacin = IzMagacina;
-            roomOut = outRoom;
-            tableInventara = listaInventara1;
+            this.frame = magacinFrame;
+            this.inventories = inventories;
+            this.inventarTabela = listaInventara;
+            this. magacin = IzMagacina;
+            this.roomOut = outRoom;
+            this.tableInventara = listaInventara1;
         }
 
         private void premestiMomentalno(object sender, RoutedEventArgs e)
         {
             if (magacin)
             {
-                frame.NavigationService.Navigate(new PremestiInventarUSobu(frame, listInventory, (Inventory)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,inventarTabela));
+                frame.NavigationService.Navigate(new PremestiInventarUSobu(frame, inventories, (InventoryDTO)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,inventarTabela));
             }
             else
             {
-                frame.NavigationService.Navigate(new PremestanjeInventaraDijalog(frame, listInventory, (Inventory)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,roomOut,inventarTabela));
+                frame.NavigationService.Navigate(new PremestanjeInventaraDijalog(frame, inventories, (InventoryDTO)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,roomOut,inventarTabela));
             }
             
         }
@@ -56,10 +57,10 @@ namespace Hospital
         {
             if (magacin)
             {
-                frame.NavigationService.Navigate(new ZakazivanjePremestanjaStatickogInventara(frame, listInventory, (Inventory)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,inventarTabela));
+                frame.NavigationService.Navigate(new ZakazivanjePremestanjaStatickogInventara(frame, inventories, (InventoryDTO)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,inventarTabela));
             } else
             {
-                frame.NavigationService.Navigate(new ZakazivanjePremestanjaStatickogInventaraUSobu(frame, listInventory, (Inventory)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,roomOut, inventarTabela));
+                frame.NavigationService.Navigate(new ZakazivanjePremestanjaStatickogInventaraUSobu(frame, inventories, (InventoryDTO)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,roomOut, inventarTabela));
             }
         }
 
@@ -67,10 +68,10 @@ namespace Hospital
         {
             if (magacin)
             {
-                frame.NavigationService.Navigate(new PremestanjeNoveSObe(frame, listInventory, (Inventory)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,inventarTabela));
+                frame.NavigationService.Navigate(new PremestanjeNoveSObe(frame, inventories, (InventoryDTO)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,inventarTabela));
             } else
             {
-                frame.NavigationService.Navigate(new ZakazivanjePremestanjaStatickogInventaraUSobu(frame, listInventory, (Inventory)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,roomOut, inventarTabela));
+                frame.NavigationService.Navigate(new ZakazivanjePremestanjaStatickogInventaraUSobu(frame, inventories, (InventoryDTO)inventarTabela.SelectedItem, inventarTabela.SelectedIndex,roomOut, inventarTabela));
             }
         }
     }

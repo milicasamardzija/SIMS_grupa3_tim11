@@ -25,6 +25,15 @@ namespace Hospital.Controller
                 }
             return inventories;
         }
+        public List<InventoryDTO> loadJasonInventory(int roomOutId)
+        {
+            List<InventoryDTO> inventories = new List<InventoryDTO>();
+            foreach (Inventory inventory in service.loadJasonInventory(roomOutId))
+            {
+                inventories.Add(new InventoryDTO(inventory.Id, inventory.Name, inventory.Quantity, inventory.Type));
+            }
+            return inventories;
+        }
 
         public List<InventoryDTO> getInventoryForRoom(int id)
         {

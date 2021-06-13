@@ -86,5 +86,20 @@ namespace Hospital.Model
                 date = value;
             }
         }
+
+        internal void saveNewMovement(StaticInventoryMovement staticInventoryMovement)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void doWork()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void moveInventoryStatic(StaticInventoryMovement movement)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -22,22 +22,23 @@ namespace Hospital
     public partial class IzbrisiInventarDijalog : UserControl
     {
         private Frame frame;
-        private ObservableCollection<Inventory> inventories;
         private int index;
+        private ObservableCollection<InventoryDTO> inventories;
         private InventoryController controller;
-        private Inventory inventory;
-        public Inventory Inventory
+        private InventoryDTO inventory;
+
+        public InventoryDTO Inventory
         {
             get { return inventory;}
             set { inventory = value; }
         }
-        public IzbrisiInventarDijalog(Frame frame,ObservableCollection<Inventory> inventories, Inventory inventory, int index)
+        public IzbrisiInventarDijalog(Frame frame,ObservableCollection<InventoryDTO> inventories, InventoryDTO inventory, int index)
         {
             InitializeComponent();
             this.DataContext = this;
             this.frame = frame;
-            this.inventories = inventories;
             this.index = index;
+            this.inventories = inventories;
             this.controller = new InventoryController();
             this.inventory = inventory;
             addType();
@@ -53,9 +54,9 @@ namespace Hospital
 
         private void izbrisi(object sender, RoutedEventArgs e)
         {
-                BrisanjePotvrdiInventar brisanje = new BrisanjePotvrdiInventar(inventory.Id, inventories, index);
-                brisanje.Show();
-                frame.NavigationService.Navigate(new BelsekaMagacin(0));
+            BrisanjePotvrdiInventar brisanje = new BrisanjePotvrdiInventar(inventory.Id, inventories, index);
+            brisanje.Show();
+            frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
     }
 }

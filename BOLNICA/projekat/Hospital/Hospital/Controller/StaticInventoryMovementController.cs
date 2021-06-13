@@ -15,6 +15,10 @@ namespace Hospital.Controller
         {
             service = new StaticInventoryMovemenetService();
         }
+        public void saveNewMovement(StaticInventoryMovement movement)
+        {
+            service.saveNewMovement(movement);
+        }
         public void DeleteByRoomsAndDate(int idRoomIn, int idRoomOut, DateTime date)
         {
             service.DeleteByRoomsAndDate(idRoomIn,idRoomOut,date);
@@ -26,6 +30,11 @@ namespace Hospital.Controller
         public List<StaticInventoryMovement> getAll()
         {
             return service.getAll();
+        }
+
+        internal void moveInventoryStatic(StaticInventoryMovement movement)
+        {
+            service.moveInventoryStatic(movement);
         }
     }
 }

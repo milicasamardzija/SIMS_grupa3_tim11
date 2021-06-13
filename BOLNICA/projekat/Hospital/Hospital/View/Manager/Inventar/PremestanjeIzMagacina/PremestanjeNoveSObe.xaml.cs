@@ -22,24 +22,21 @@ namespace Hospital.View.Manager.Inventar.PremestanjeIzMagacina
 {
     public partial class PremestanjeNoveSObe : UserControl
     {
-        private ObservableCollection<Inventory> listInventory;
-        private Inventory inventory;
+        private ObservableCollection<InventoryDTO> inventories;
+        private InventoryDTO inventory;
         private Frame frame;
-        private DateTime date;
-        private int idRoom;
-        private int quantity;
-        private DateTime dateExecution;
-        private String time;
         private DataGrid tabelaPrikaz;
-        private RoomsService serviceRoom = new RoomsService();
+        private StaticInventoryMovement movement;
+        private InventoryController inventoryController = new InventoryController();
         private RoomsController roomController = new RoomsController();
-        public PremestanjeNoveSObe(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, DataGrid inventarTabela)
+        private StaticInventoryMovementController staticController = new StaticInventoryMovementController();
+        public PremestanjeNoveSObe(Frame frame, ObservableCollection<InventoryDTO> inventories, InventoryDTO selecetedInventory, int selectedIndex, DataGrid inventarTabela)
         {
             InitializeComponent();
-            frame = magacinFrame;
-            listInventory = list;
-            inventory = selecetedInventory;
-            tabelaPrikaz = inventarTabela;
+            this.frame = frame;
+            this.inventories = inventories;
+            this.inventory = selecetedInventory;
+            this.tabelaPrikaz = inventarTabela;
 
             ImeTxt.SelectedText = inventory.Name;
             KolicinaTxt.SelectedText = Convert.ToString(inventory.Quantity);
@@ -67,74 +64,48 @@ namespace Hospital.View.Manager.Inventar.PremestanjeIzMagacina
 
         public void prikaz()
         {
-            tabelaPrikaz.ItemsSource = loadJason();
+            tabelaPrikaz.ItemsSource = inventoryController.getAll();
         }
 
         public async Task doWork()
         {
-            Model.StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
-            TimeSpan t = dateExecution.Subtract(DateTime.Now);
+            TimeSpan t = movement.Date.Subtract(DateTime.Now);
 
-            if (dateExecution < DateTime.Now)
+            if (movement.Date < DateTime.Now)
             {
-                storage.moveInventoryStatic(inventory, idRoom, -1, quantity);
+                staticController.moveInventoryStatic(movement);
                 prikaz();
             }
             else
             {
                 await Task.Delay(t);
-                storage.moveInventoryStatic(inventory, idRoom, -1, quantity);
+                staticController.moveInventoryStatic(movement);
                 prikaz();
             }
         }
-
-
         private async void premesti(object sender, RoutedEventArgs e)
         {
-            //argumenti
-            idRoom = Convert.ToInt32(((ComboBoxItem)SobeComboBox.SelectedItem).Tag);
-            quantity = Convert.ToInt32(KolicinaTxt.Text);
-            date = (DateTime)DatumTxt.SelectedDate;
-            time = VremeTxt.Text;
+            TimeSpan t = TimeSpan.ParseExact(VremeTxt.Text, "c", null);
+            DateTime dateExecution = ((DateTime)DatumTxt.SelectedDate).Add(t);
+            movement = new StaticInventoryMovement(Convert.ToInt32(((ComboBoxItem)SobeComboBox.SelectedItem).Tag), -1, inventory.Id, Convert.ToInt32(KolicinaTxt.Text), dateExecution);
 
-            TimeSpan t = TimeSpan.ParseExact(time, "c", null);
-            dateExecution = date.Add(t);
-
-            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, -1, inventory.Id, quantity, dateExecution);
-
-            if (serviceRoom.isRoomAvailableInventoryMovement(newMovement))
+            if (roomController.isRoomAvailableInventoryMovement(movement))
             {
-                saveNewMovement();
+                staticController.saveNewMovement(movement);
             }
             else
             {
                 PremestanjeOdbijeno odbijeno = new PremestanjeOdbijeno();
                 odbijeno.Show();
             }
-
             doWork();
 
             frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
 
-        private void saveNewMovement()
-        {
-            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, -1, inventory.Id, quantity, dateExecution);
-            StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
-            storage.Save(newMovement);
-        }
-
-        public ObservableCollection<Inventory> loadJason()
-        {
-            InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
-            ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>(storage.GetAll());
-            return ret;
-        }
-
         private void VremeTxt_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (!ImeTxt.Text.Equals("") && !KolicinaTxt.Text.Equals("") && SobeComboBox.SelectedIndex != -1 && DatumTxt.SelectedDate != null && !VremeTxt.Text.Equals(""))
-
             {
                 potvrdiBtn.IsEnabled = true;
             }
