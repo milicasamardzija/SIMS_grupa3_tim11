@@ -39,6 +39,12 @@ namespace Hospital.Service
             return notes;
         }
 
-    
+
+
+        public void deleteById(int id)
+        {
+            storageAnamnesis.DeleteById(id);
+        }
+
     }
 }

@@ -27,5 +27,7 @@ namespace Hospital.Service
         {
             return functionalitystorage.GetAll();
         }
+
+        
     }
 }
