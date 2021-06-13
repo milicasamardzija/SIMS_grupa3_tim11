@@ -31,15 +31,14 @@ namespace Hospital
     public partial class ManagerView : Window
     {
         private DateTime dateExecution;
-        private Inventory inventory;
-        private int idRoomIn;
-        private int idRoomOut;
-        private int quantity;
         private ManagerNote notes = new ManagerNote();
+        private StaticInventoryMovement movement = new StaticInventoryMovement();
         private List<ManagerNote> note = new List<ManagerNote>();
         private MergeRoomController renovationControler = new MergeRoomController();
         private RoomSeparateController renovationSeparateController = new RoomSeparateController();
         private RoomMergeService renovationS = new RoomMergeService();
+        private StaticInventoryMovementController movementController = new StaticInventoryMovementController();
+        private InventoryController inventoryController = new InventoryController();
         public ManagerView()
         {
             InitializeComponent();
@@ -59,15 +58,13 @@ namespace Hospital
         }
         private void doMerge(RoomMerge renovation)
         {
-            TimeSpan t = renovation.DateEnd.Subtract(DateTime.Now);
-
             if (renovation.DateBegin < DateTime.Now)
             {
                 renovationControler.mergeRooms(renovation);
             }
             else
             {
-                Thread.Sleep(t);
+                Thread.Sleep(renovation.DateEnd.Subtract(DateTime.Now));
                 renovationControler.mergeRooms(renovation);
             }
         }
@@ -82,15 +79,13 @@ namespace Hospital
 
         private void doSeparate(RoomSeparate renovation)
         {
-            TimeSpan t = renovation.DateEnd.Subtract(DateTime.Now);
-
             if (renovation.DateEnd < DateTime.Now)
             {
                 renovationSeparateController.separateRooms(renovation);
             }
             else
             {
-                Thread.Sleep(t);
+                Thread.Sleep(renovation.DateEnd.Subtract(DateTime.Now));
                 renovationSeparateController.separateRooms(renovation);
             }
         }
@@ -105,45 +100,24 @@ namespace Hospital
 
         private void getTasks()
         {
-            StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
-            InventoryFileStorage storageInventory = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
-
-            foreach (StaticInventoryMovement task in storage.GetAll())
+            foreach (StaticInventoryMovement task in movementController.getAll())
             {
-                dateExecution = task.Date;
-                idRoomIn = task.RoomInId;
-                idRoomOut = task.RoomOutId;
-                quantity = task.Quantity;
-
-                if(storageInventory.GetAll() != null)
-                    foreach (Inventory i in storageInventory.GetAll())
-                    {
-                        if (i.Id == task.InventoryId)
-                        {
-                            inventory = i;
-                            break;
-                        }
-                    }
-
+                movement = task;
                 Task t = new Task(doWork);
                 t.Start();
             }
-
         }
 
         private void doWork()
         {
-            StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
-            TimeSpan t = dateExecution.Subtract(DateTime.Now);
-
             if (dateExecution < DateTime.Now)
             {
-                storage.moveInventoryStatic(inventory, idRoomIn, idRoomOut, quantity);
+                movementController.moveInventoryStatic(movement);
             }
             else
             {
-                Thread.Sleep(t);
-                storage.moveInventoryStatic(inventory, idRoomIn, idRoomOut, quantity);
+                Thread.Sleep(dateExecution.Subtract(DateTime.Now));
+                movementController.moveInventoryStatic(movement);
             }
         }
 

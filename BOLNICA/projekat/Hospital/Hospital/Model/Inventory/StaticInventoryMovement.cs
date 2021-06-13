@@ -24,6 +24,10 @@ namespace Hospital.Model
             date = d;
         }
 
+        public StaticInventoryMovement()
+        {
+        }
+
         public int RoomInId
         {
             get

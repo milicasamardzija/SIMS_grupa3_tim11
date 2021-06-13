@@ -25,6 +25,10 @@ namespace Hospital.Controller
                 }
             return inventories;
         }
+        public List<Inventory> getInventory()
+        {
+            return service.getAll();
+        }
         public List<InventoryDTO> loadJasonInventory(int roomOutId)
         {
             List<InventoryDTO> inventories = new List<InventoryDTO>();

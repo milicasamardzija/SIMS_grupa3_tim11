@@ -9,8 +9,8 @@
     <Grid>
 
         <Label
-            Width="567"
-            Height="105"
+            Width="790"
+            Height="162"
             Margin="47,28,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
