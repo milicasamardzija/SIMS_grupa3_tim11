@@ -38,9 +38,7 @@ namespace Hospital.View.Secretary.AppOrganisation
             if(problem.Text != null && email.Text != null )
             {
                 MessageBox.Show("Morate popuniti polje za opis problema i email");
-                feedback = new Feedback(0, FeedbackType.prijava_problema, ocena.Value, komentar.Text, problem.Text, email.Text);
-                controller.createFeedbackProblem(feedback);
-
+             
 
               
             

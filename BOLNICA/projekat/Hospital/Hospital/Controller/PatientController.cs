@@ -37,7 +37,7 @@ namespace Hospital.Controller
             List<PatientDTO> patients = new List<PatientDTO>();
             foreach (Patient patient in patientService.getAll())
             {
-                patients.Add(new PatientDTO(patient.name, patient.surname, patient.telephoneNumber, patient.jmbg, patient.gender, patient.birthdayDate, patient.Id, patient.HealthCareCategory, patient.IdHealthCard, patient.Occupation, patient.Insurence, patient.adress,patient.banovan));
+                patients.Add(new PatientDTO(patient.Name, patient.Surname, patient.TelephoneNumber, patient.Jmbg, patient.Gender, patient.BirthdayDate, patient.Id, patient.HealthCareCategory, patient.IdHealthCard, patient.Occupation, patient.Insurence, patient.Adress,patient.banovan));
             }
             return patients;
         }

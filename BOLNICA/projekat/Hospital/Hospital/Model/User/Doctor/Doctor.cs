@@ -1,4 +1,5 @@
 
+using Hospital;
 using Hospital.Model;
 using System;
 
@@ -9,30 +10,51 @@ using System;
         // public String specialization;
         public int freeDays = 25;
         private SpecializationType specializationType;
+        private Shift shift;
+        private Vacation vacation;
+    private SpecializationType type;
 
-        // private int doctorId;
+    public Doctor(int id, string name, string surname, string telephoneNumber, string jmbg, Gender gender, DateTime birthdayDate, Adress adress, SpecializationType type, Shift shift, Vacation vacation)
+    {
+        Id = id;
+        this.Name = name;
+        this.Surname = surname;
+        this.TelephoneNumber = telephoneNumber;
+        this.Jmbg = jmbg;
+        this.Gender = gender;
+        this.BirthdayDate = birthdayDate;
+        this.Adress = adress;
+        this.type = type;
+        this.shift = shift;
+        this.vacation = vacation;
+    }
 
 
 
 
-        /*
-            public int DoctorId
+    // private int doctorId;
+
+
+
+
+    /*
+        public int DoctorId
+        {
+            get
             {
-                get
+                return doctorId;
+            }
+            set
+            {
+                if (value != doctorId)
                 {
-                    return doctorId;
+                    doctorId = value;
+                    OnProperychanged("DoctorId");
                 }
-                set
-                {
-                    if (value != doctorId)
-                    {
-                        doctorId = value;
-                        OnProperychanged("DoctorId");
-                    }
-                }
-            }*/
+            }
+        }*/
 
-        public SpecializationType SpecializationType
+    public SpecializationType SpecializationType
         {
             get
             {
@@ -43,7 +65,7 @@ using System;
                 if (value != specializationType)
                 {
                     specializationType = value;
-                    OnProperychanged("SpecializationType");
+                  
                 }
             }
         }
@@ -59,8 +81,39 @@ using System;
                 if (value != freeDays)
                 {
                     freeDays = value;
-                    OnProperychanged("FreeDays");
+                   
                 }
             }
         }
+
+    public Shift Shift
+    {
+        get
+        {
+            return shift;
+        }
+        set
+        {
+            if (value != shift)
+            {
+                shift = value;
+            
+            }
+        }
     }
+    public Vacation Vacation
+    {
+        get
+        {
+            return vacation;
+        }
+        set
+        {
+            if (value != vacation)
+            {
+                vacation = value;
+                
+            }
+        }
+    }
+}

@@ -23,19 +23,19 @@ public class Patient : User
 
     public Patient(String n, String s, String tel, String jmb, Gender g, DateTime b, int pId, HealthCareCategory hcc, int idhc, String oc, String ins, Adress adr) : base()
     { 
-        this.name=n;
-        this.surname=s;
-        this.telephoneNumber=tel;
-        this.jmbg=jmb;
-        this.gender=g;
-        this.birthdayDate=b;
+        this.Name=n;
+        this.Surname=s;
+        this.TelephoneNumber=tel;
+        this.Jmbg=jmb;
+        this.Gender=g;
+        this.BirthdayDate=b;
         //  this.patientId = pId; //id pacijenta je meni isto sto i broj kartona 
         this.Id = pId;
         this.healthCareCategory = hcc;
         this.idHealthCard = idhc; //broj zdrav knjizice
         this.occupation = oc;
         this.insurence = ins;
-        this.adress = adr;
+        this.Adress = adr;
         this.guest = false;
        
 
@@ -47,12 +47,12 @@ public class Patient : User
 
     public Patient(String i, String p, String br, String jmbgG, Gender pol, DateTime datR, int id) 
     {
-        this.name = i;
-        this.surname = p;
-        this.telephoneNumber = br;
-        this.jmbg = jmbgG;
-        this.gender = pol;
-        this.birthdayDate = datR;
+        this.Name = i;
+        this.Surname = p;
+        this.TelephoneNumber = br;
+        this.Jmbg = jmbgG;
+        this.Gender = pol;
+        this.BirthdayDate = datR;
         //   this.patientId = idP;
         this.Id = id;
 

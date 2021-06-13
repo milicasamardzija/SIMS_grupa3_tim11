@@ -18,19 +18,19 @@ public class User : Entity, INotifyPropertyChanged
    {
       throw new NotImplementedException();
    }
-   
-   public String name { get; set; }
-   public String surname { get; set; }
-    public String telephoneNumber { get; set; }
-    public String jmbg { get; set; }
-    public Gender gender { get; set; }
 
-    public DateTime birthdayDate;
-    //public String birthdate { get; set; }
-    public String username { get; set; }
-    public String password { get; set; }
+    private String name;
+    private String surname;
+    private String telephoneNumber;
+    private String jmbg;
+    private Gender gender;
 
-    public Adress adress { get; set; }
+    private DateTime birthdayDate;
+
+    private String username;
+    private String password;
+
+    private Adress adress;
 
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -166,6 +166,21 @@ public class User : Entity, INotifyPropertyChanged
             {
                 password = value;
                 OnProperychanged("Password");
+            }
+        }
+    }
+    public Adress Adress
+    {
+        get
+        {
+            return adress;
+        }
+        set
+        {
+            if (value != adress)
+            {
+                adress = value;
+                OnProperychanged("Adress");
             }
         }
     }

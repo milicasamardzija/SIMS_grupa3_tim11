@@ -1,4 +1,5 @@
 ﻿using Hospital.FileStorage.Interfaces;
+using Hospital.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,22 @@ namespace Hospital.Service
         {
             int count = 0;
             return count;
+        }
+
+        public List<Doctor> doctorsInShift(ShiftType type)
+        {
+            List<Doctor> doctors = new List<Doctor>();
+            List<Doctor> allDoctors = doctorStorage.GetAll(); 
+
+            foreach(Doctor d in allDoctors)
+            {
+                
+                if(d.Shift.Type == type)
+                {
+                    doctors.Add(d);
+                }
+            }
+            return doctors;
         }
     }
 }

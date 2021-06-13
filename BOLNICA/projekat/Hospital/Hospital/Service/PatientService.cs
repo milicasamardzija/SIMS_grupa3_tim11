@@ -38,7 +38,7 @@ namespace Hospital.Service
             {
                 if (p.banovan == true)
                 {
-                    blockedPatients.Add(new PatientDTO(p.Name, p.Surname, p.telephoneNumber, p.Jmbg, p.Gender, p.birthdayDate, p.Id, p.HealthCareCategory, p.IdHealthCard, p.Occupation, p.Insurence, p.adress, p.banovan));
+                    blockedPatients.Add(new PatientDTO(p.Name, p.Surname, p.TelephoneNumber, p.Jmbg, p.Gender, p.BirthdayDate, p.Id, p.HealthCareCategory, p.IdHealthCard, p.Occupation, p.Insurence, p.Adress, p.banovan));
                 }
             }
 
@@ -66,7 +66,7 @@ namespace Hospital.Service
             List<Patient> loaded = patientStorage.GetAll();
             foreach(Patient p in loaded)
             {
-                allPatients.Add(new PatientDTO(p.name, p.surname, p.TelephoneNumber, p.Jmbg, p.Gender, p.BirthdayDate, p.Id, p.HealthCareCategory, p.IdHealthCard, p.Occupation, p.Insurence, p.adress, p.banovan));
+                allPatients.Add(new PatientDTO(p.Name, p.Surname, p.TelephoneNumber, p.Jmbg, p.Gender, p.BirthdayDate, p.Id, p.HealthCareCategory, p.IdHealthCard, p.Occupation, p.Insurence, p.Adress, p.banovan));
             }
             return allPatients;
         }
@@ -93,7 +93,7 @@ namespace Hospital.Service
             {
                 if (p.guest == false)
                 {
-                    registred.Add(new PatientDTO(p.Name, p.Surname, p.TelephoneNumber, p.Jmbg, p.Gender, p.BirthdayDate, p.Id, p.HealthCareCategory, p.IdHealthCard, p.Occupation, p.Insurence, p.adress, p.banovan));
+                    registred.Add(new PatientDTO(p.Name, p.Surname, p.TelephoneNumber, p.Jmbg, p.Gender, p.BirthdayDate, p.Id, p.HealthCareCategory, p.IdHealthCard, p.Occupation, p.Insurence, p.Adress, p.banovan));
                 }
             }
             return registred;
@@ -117,7 +117,7 @@ namespace Hospital.Service
                     p.Id = patient.Id;
                     p.IdHealthCard = patient.IdHealthCard;
                     p.HealthCareCategory = patient.HealthCareCategory;
-                    p.adress = patient.Adress;
+                    p.Adress = patient.Adress;
 
                     break;
                 }
@@ -168,7 +168,7 @@ namespace Hospital.Service
             List<PatientDTO> filtrated = new List<PatientDTO>();
             foreach (Patient p in all)
             {
-                PatientDTO nadjen = new PatientDTO(p.Name, p.Surname, p.TelephoneNumber, p.Jmbg, p.Gender,p.BirthdayDate, p.Id, p.HealthCareCategory, p.IdHealthCard, p.Occupation, p.Insurence, p.adress, p.banovan);
+                PatientDTO nadjen = new PatientDTO(p.Name, p.Surname, p.TelephoneNumber, p.Jmbg, p.Gender,p.BirthdayDate, p.Id, p.HealthCareCategory, p.IdHealthCard, p.Occupation, p.Insurence, p.Adress, p.banovan);
                 filtrated.Add(nadjen);
             }
             return filtrated;

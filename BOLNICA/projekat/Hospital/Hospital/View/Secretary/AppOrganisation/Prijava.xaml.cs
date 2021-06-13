@@ -38,7 +38,7 @@ namespace Hospital
 
                 foreach (Patient patient in patients)
                 {
-                    if (patient.username.Equals(ime.Text) && patient.password.Equals(lozinka.Password)) //ako su sifra i korisnicko ime nadjeni u fajlu
+                    if (patient.Username.Equals(ime.Text) && patient.Password.Equals(lozinka.Password)) //ako su sifra i korisnicko ime nadjeni u fajlu
                     {
                         id = patient.Id; //preuzimamo id pacijenta koji dalje prosledjujemo prozoru koji se prvi otvara, pa dalje ostalim prozorima da bismo uvek prikazivali podatke na osnovu ovog id-ja(odnosno bas sa korisnika koji je ulogovan)
                         PocetnaPacijent p = new PocetnaPacijent(id); //otvara se prozor i prosledjuje id
@@ -55,7 +55,7 @@ namespace Hospital
 
                 foreach (Doctor doctor in doctors)
                 {
-                    if (doctor.username.Equals(ime.Text) && doctor.password.Equals(lozinka.Password))
+                    if (doctor.Username.Equals(ime.Text) && doctor.Password.Equals(lozinka.Password))
                     {
                         id = doctor.Id;
                         Pregled d = new Pregled(id);
@@ -72,7 +72,7 @@ namespace Hospital
 
                 foreach (Secretary secretary in secretaries)
                 {
-                    if (secretary.username.Equals(ime.Text) && secretary.password.Equals(lozinka.Password))
+                    if (secretary.Username.Equals(ime.Text) && secretary.Password.Equals(lozinka.Password))
                     {
                         id = secretary.secretaryId;
                         
@@ -91,7 +91,7 @@ namespace Hospital
 
                 foreach (Manager manager in managers)
                 {
-                    if (manager.username.Equals(ime.Text) && manager.password.Equals(lozinka.Password))
+                    if (manager.Username.Equals(ime.Text) && manager.Password.Equals(lozinka.Password))
                     {
                         id = manager.managerId;
                         // Rooms m = new Rooms();

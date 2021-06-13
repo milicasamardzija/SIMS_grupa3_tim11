@@ -35,7 +35,7 @@ namespace Hospital
             {
                 if (patient.Id == idP)
                 {
-                    imePacijenta.Text = patient.name + " " + patient.surname;
+                    imePacijenta.Text = patient.Name + " " + patient.Surname;
                 }
             }
         }
