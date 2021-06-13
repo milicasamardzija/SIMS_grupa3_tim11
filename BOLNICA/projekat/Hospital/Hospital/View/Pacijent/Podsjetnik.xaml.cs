@@ -61,7 +61,7 @@ namespace Hospital.View.Pacijent
 
             
             List<Note> notes = new List<Note>();
-            foreach (Anamnesis a in anamnesisController.getAll())
+            foreach (Anamnesis a in anamnesisController.getbyId(id))
             {
                 if (a.NotesForAnamnesis1 != null)
                 {
