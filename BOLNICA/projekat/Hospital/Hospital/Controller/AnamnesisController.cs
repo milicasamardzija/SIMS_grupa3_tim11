@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.DTO;
+using Hospital.Model;
 using Hospital.Service;
 using System;
 using System.Collections.Generic;
@@ -22,13 +23,22 @@ namespace Hospital.Controller
             return service.NotesForAnamnesis(anamnesis);
         }
 
-        public List<Anamnesis> getAll()
-        {
+       
 
-            return service.getAll();
+        public List<AnamnesisDTO> getAll()
+        {
+            List<AnamnesisDTO> anamnesis = new List<AnamnesisDTO>();
+            foreach (Anamnesis anamnesa in service.getAll())
+            {
+               
+                    anamnesis.Add(new AnamnesisDTO(anamnesa.Id, anamnesa.DatePlace, anamnesa.NotesForAnamnesis1, anamnesa.NameS,anamnesa.Gender,anamnesa.IdPatient,anamnesa.Adress,anamnesa.Status,anamnesa.Job,anamnesa.Summary));
+                
+            }
+            return anamnesis;
         }
 
-        public List<Anamnesis> getbyId(int id)
+          
+    public List<Anamnesis> getbyId(int id)
         {
             return service.getbyId(id);
         }

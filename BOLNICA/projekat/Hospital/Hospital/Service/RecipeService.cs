@@ -42,5 +42,25 @@ namespace Hospital.Service
             return returnRecipe;
         }
 
+
+        public List<Recipe> getAll()
+        {
+            return storageRecipe.GetAll();
+        }
+        public List<Recipe> getbyId(int id)
+        {
+            List<Recipe> recipes = storageRecipe.GetAll();
+            List<Recipe> patientRecipe = new List<Recipe>();
+            foreach (Recipe recipe in recipes)
+            {
+
+                if (recipe.Id == id)
+                {
+
+                    patientRecipe.Add(recipe);
+                }
+            }
+            return patientRecipe;
+        }
     }
 }
