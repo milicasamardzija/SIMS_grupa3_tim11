@@ -164,7 +164,7 @@ namespace Hospital
 
         private void obavestenja(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new ObavestenjaUpravnik());
+            frame.NavigationService.Navigate(new ObavestenjaUpravnik(new MVVM.ModelView.ModelViewObavestenja()));
         }
 
         private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)

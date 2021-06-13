@@ -23,6 +23,7 @@
                       AutoGenerateColumns="False"
                       SelectionMode="Single"
                       IsReadOnly="True"
+                      ItemsSource="{Binding Path=Notifications}"
                       >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Obavestenje" Width="800" Binding="{Binding Content}" />

@@ -1,4 +1,5 @@
 ﻿using Hospital.Model;
+using Hospital.MVVM.ModelView;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,12 +20,10 @@ namespace Hospital
 {
     public partial class ObavestenjaUpravnik : UserControl
     {
-        private NotificationsFileStorage storage = new NotificationsFileStorage("./../../../../Hospital/files/notifications.json");
-        public ObavestenjaUpravnik()
+        public ObavestenjaUpravnik(ModelViewObavestenja obavestenja)
         {
             InitializeComponent();
-            this.DataContext = this;
-            Obavestenja.ItemsSource = storage.FindByPerson("Upravnik");
+            this.DataContext = obavestenja;
         }
     }
 }
