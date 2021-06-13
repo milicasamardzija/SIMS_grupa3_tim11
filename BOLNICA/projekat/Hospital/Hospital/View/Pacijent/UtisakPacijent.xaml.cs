@@ -37,13 +37,14 @@ namespace Hospital.View.Pacijent
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (komentar.Text.Equals(""))
+            if (komentar.Text == null || ocena.Value == null)
             {
 
                 MessageBox.Show("Morate uneti ocenu i komentar!");
             }
             else
             {
+
                 feedback = new Feedback(0, FeedbackType.utisak, ocena.Value, komentar.Text);
                 controller.createFeedbackUtisak(feedback);
                 MessageBox.Show("Uspesno ste uneli feedback!");

@@ -46,7 +46,7 @@ namespace Hospital
             checkupController.DeleteById(id);
             appointmentList.RemoveAt(index);
 
-            FunctionalityDTO funkcionalnost = new FunctionalityDTO(id,DateTime.Now, "brisanje");
+            Functionality funkcionalnost = new Functionality(DateTime.Now, id, "brisanje");
             functionalityController.save(funkcionalnost);
 
 

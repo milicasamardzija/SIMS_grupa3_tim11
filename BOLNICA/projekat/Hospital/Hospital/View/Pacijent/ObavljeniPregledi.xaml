@@ -32,7 +32,7 @@
             Stroke="SteelBlue"  
             StrokeThickness="4" Margin="-19,58,-1.8,374.6" Grid.RowSpan="2" />
     
-        <DataGrid x:Name="Anamneza" BorderThickness="2" BorderBrush="#FFC3C3D4" Background="White" Height="200" Margin="0,101,22.2,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalAlignment="Right" Width="276"  Grid.RowSpan="2" >
+        <DataGrid x:Name="Anamneza" BorderThickness="2" BorderBrush="#FFC3C3D4" Background="White" Height="200" Margin="0,101,22.2,0" VerticalAlignment="Top" IsReadOnly="True" HorizontalAlignment="Right" Width="276" SelectionChanged="Anamneza_SelectionChanged" Grid.RowSpan="2" >
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}"/>
             </DataGrid.Resources>

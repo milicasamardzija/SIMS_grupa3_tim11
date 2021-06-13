@@ -1,5 +1,4 @@
 ﻿
-using Hospital.Controller;
 using Hospital.Model;
 using System;
 using System.Collections.Generic;
@@ -22,11 +21,10 @@ namespace Hospital.View.Pacijent
     /// </summary>
     public partial class DodajBelesku : Window
     {
-        AnamnesisController anamnesisController;
+        int id;
         private Anamnesis selectedAnamnesis;
         private Boolean OnReminder;
         private Note note;
-        int id;
         public DodajBelesku(int idP, Anamnesis selected)
         {
             InitializeComponent();
@@ -34,7 +32,6 @@ namespace Hospital.View.Pacijent
             selectedAnamnesis = selected;
             note = new Note();
             BlackOutDates();
-            anamnesisController = new AnamnesisController();
             startDatePicker.Visibility = Visibility.Hidden;
             endDatePicker.Visibility = Visibility.Hidden;
             startDateTextBlock.Visibility = Visibility.Hidden;
@@ -74,11 +71,11 @@ namespace Hospital.View.Pacijent
                     selectedAnamnesis.NotesForAnamnesis1 = notes;
                 }
 
-               
+                AnamnesisFileStorage storage = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
 
                 
-                anamnesisController.deleteById(selectedAnamnesis.Id);
-               // anamnesisController.save(selectedAnamnesis);
+                storage.DeleteById(0);
+                storage.Save(selectedAnamnesis);
                 this.Close();
                 ObavljeniPregledi pregledi = new ObavljeniPregledi(id);
                 pregledi.Show();
@@ -103,9 +100,11 @@ namespace Hospital.View.Pacijent
                 }
 
 
-               
-                anamnesisController.deleteById(selectedAnamnesis.Id);
-              //  storage.Save(selectedAnamnesis);
+                AnamnesisFileStorage storage = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
+
+
+                storage.DeleteById(0);
+                storage.Save(selectedAnamnesis);
                 this.Close();
                 ObavljeniPregledi pregledi = new ObavljeniPregledi(id);
                 pregledi.Show();

@@ -24,28 +24,60 @@
             VerticalAlignment="Top"
             Content="Ocena performansi:"
             FontWeight="Bold"
-            Foreground="#FF1B4C93" Margin="20,123,0,0" Height="28" Width="135" />
+            Foreground="#FF1B4C93" Margin="20,90,0,0" Height="28" Width="135" />
         <materialDesign:RatingBar
             x:Name="ocena"
-            Margin="155,121,43.2,299.4"
+            Margin="150,88,48.2,332.4"
             Foreground="#FF0726D0"
              />
         <Label
             FontSize="10"
-            Margin="10,210,0,0"
+            Margin="10,138,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="   Sugestije i komentari: "
             FontWeight="Bold"
-            Foreground="#FF1B4C93" RenderTransformOrigin="0.5,1.764" Height="25" />
+            Foreground="#FF1B4C93" />
         <TextBox
             x:Name="komentar"
-            Width="276"
-            Height="71"
-            Margin="20,235,0,0"
+            Width="279"
+            Height="34"
+            Margin="20,167,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
+            TextWrapping="Wrap" />
+        <Label
+            FontSize="10"
+            Margin="10,214,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="   Opis problema:"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
+        <TextBox
+            x:Name="problem"
+            Width="279"
+            Height="34"
+            Margin="20,235,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <Label
+            FontSize="10"
+            Margin="20,289,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Unesite mail za povratnu informaciju o prijavi problema:"
+            FontWeight="Bold"
+            Foreground="#FF1B4C93" />
+        <TextBox
+            x:Name="email"
+            Width="279"
+            Height="34"
+            Margin="20,313,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
             TextWrapping="Wrap" />
         <Button
             Width="117"

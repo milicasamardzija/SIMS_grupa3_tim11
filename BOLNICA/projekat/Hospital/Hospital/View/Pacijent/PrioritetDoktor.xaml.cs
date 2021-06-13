@@ -195,7 +195,7 @@ namespace Hospital.View.Pacijent
                 appointmentList.Add(checkup);
 
                
-                FunctionalityDTO funkcionalnost = new FunctionalityDTO(id,DateTime.Now, "dodavanje");
+                Functionality funkcionalnost = new Functionality(DateTime.Now, id, "dodavanje");
                 functionalityController.save(funkcionalnost);
 
                 this.Close();

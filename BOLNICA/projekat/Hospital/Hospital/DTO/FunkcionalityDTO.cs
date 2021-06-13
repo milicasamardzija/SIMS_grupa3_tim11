@@ -16,8 +16,9 @@ namespace Hospital.Model
 
 
 
-        public FunctionalityDTO(int idF,DateTime date, string vrsta)
+        public FunctionalityDTO(int idF,DateTime date, int id, string vrsta)
         {
+            this.id = idF;
             this.datumIzvrsavanja = date;
             this.idPacijenta = id;
             this.vrstaFunkcionalnosti = vrsta;

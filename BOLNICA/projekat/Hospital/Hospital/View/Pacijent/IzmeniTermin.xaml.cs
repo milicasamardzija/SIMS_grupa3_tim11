@@ -211,7 +211,7 @@ namespace Hospital
                
                 checkupcontroller.changeCheckup(new CheckupDTO(termin.IdCh, termin.IdDoctor, termin.IdPatient, termin.Date, termin.IdRoom, 0));
 
-                FunctionalityDTO funkcionalnost = new FunctionalityDTO(idPatient,DateTime.Now, "izmena");
+                Functionality funkcionalnost = new Functionality(DateTime.Now, idPatient, "izmena");
                 funkcionalitycontroller.save(funkcionalnost);
 
 

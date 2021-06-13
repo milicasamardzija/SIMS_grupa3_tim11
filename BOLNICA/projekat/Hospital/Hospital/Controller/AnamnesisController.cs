@@ -33,19 +33,6 @@ namespace Hospital.Controller
             }
             return anamnesis;
         }
-
-
-        public void deleteById(int id)
-        {
-            service.deleteById(id);
-        }
-
-      /*  public void save(AnamnesisDTO anamnesis)
-        {
-            service.save(new Room(service.generateId(), newRoom.Floor, newRoom.Occupancy, newRoom.Purpose, newRoom.Capacity));
-        }
-      */
-
     }
 
 }

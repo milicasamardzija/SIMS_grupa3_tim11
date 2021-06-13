@@ -68,8 +68,6 @@ namespace Hospital
                 {
                     imePacijentaa.Text = patient.Name + " " + patient.Surname;
 
-
-
                     foreach (FunctionalityDTO funkcionalnost in functionalityController.getAll())
                     {
 
@@ -107,9 +105,58 @@ namespace Hospital
 
         private void dodavanje(object sender, RoutedEventArgs e)
         {
-            DodajTermin dd = new DodajTermin(AppointmentList, id);
+            DodajTermin dd = new DodajTermin(AppointmentList, id); //salje se i id ulogovang pacijenta
 
-            dd.Show(); 
+            dd.Show();
+
+         
+        
+           
+
+            
+
+            foreach (PatientDTO patient in patientController.getAll()) //prolaz kroz sve pacijente u fajlu
+            {
+                if (patient.Id == id)
+                { 
+                    foreach (FunctionalityDTO funkcionalnost in functionalityController.getAll())
+                    {
+
+                        if (patient.Id == funkcionalnost.idPacijenta  && funkcionalnost.vrstaFunkcionalnosti == "dodavanje")
+                        {
+                            count1 = count1 + 1;
+                               
+                        }
+                    }
+
+                    if (count1 > 1)
+                    {
+                        patient.Banovan = true;
+
+                       
+
+                    }
+
+                    if (patient.Banovan == false)
+                    {
+                      //  dd.Show();
+                    }
+                    else
+                    {
+                        patient.DatumBanovanja = DateTime.Now;
+                       // MessageBoxResult result = MessageBox.Show("Zakazivanje je blokirano.", "Upozorenje", MessageBoxButton.OK);
+                    }
+                  
+                 
+                    if(patient.DatumBanovanja.AddMinutes(2) <= DateTime.Now)
+                    {
+                        patient.Banovan = false;
+                        count1 = 0;
+                    }
+                }
+
+            }
+
         }
 
        
@@ -119,7 +166,43 @@ namespace Hospital
           IzmeniTermin it = new IzmeniTermin(AppointmentList, (CheckupDTO)ListaTermina.SelectedItem, ListaTermina.SelectedIndex,id);
 
             it.Show();
+            Patient ret = new Patient();
            
+
+
+            foreach (PatientDTO patient in patientController.getAll()) //prolaz kroz sve pacijente u fajlu
+            {
+                if (patient.Id == id)
+                {
+
+                    foreach (FunctionalityDTO funkcionalnost in functionalityController.getAll())
+                    {
+
+                        if (patient.Id == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkcionalnosti == "izmena")
+                        {
+                            count1 = count1 + 1;
+
+                        }
+                    }
+
+                    if (count2 > 3)
+                    {
+                        patient.Banovan = true;
+
+                    }
+                    if (patient.Banovan == false)
+                    {
+                    //   it.Show();
+                    }
+                    else
+                    {
+                      //  MessageBoxResult result = MessageBox.Show("Izmena termina je blokirana.", "Upozorenje", MessageBoxButton.OK);
+                    }
+                }
+
+            }
+
+
         }   
 
         private void obrisi(object sender, RoutedEventArgs e)
@@ -128,7 +211,43 @@ namespace Hospital
            ObrisiTermin ob = new ObrisiTermin(AppointmentList, (CheckupDTO)ListaTermina.SelectedItem, ListaTermina.SelectedIndex);
             ob.Show();
 
-     
+            Patient ret = new Patient();
+           
+
+
+            foreach (PatientDTO patient in patientController.getAll()) //prolaz kroz sve pacijente u fajlu
+            {
+                if (patient.Id == id)
+                {
+                    foreach (FunctionalityDTO funkcionalnost in functionalityController.getAll())
+                    {
+
+                        if (patient.Id == funkcionalnost.idPacijenta && funkcionalnost.vrstaFunkcionalnosti == "brisanje")
+                        {
+                            count3 = count1 + 1;
+
+                        }
+                    }
+
+                    if (count3 > 3)
+                    {
+                        patient.Banovan = true;
+
+                    }
+
+
+
+                    if (patient.Banovan == false)
+                    {
+                       // ob.Show();
+                    }
+                    else
+                    {
+                      //  MessageBoxResult result = MessageBox.Show("Brisanje termina je blokirano.", "Upozorenje", MessageBoxButton.OK);
+                    }
+                }
+
+            }
 
         }
 
