@@ -11,6 +11,7 @@ using Hospital.Model;
 using System.Collections.ObjectModel;
 using Hospital.FileStorage;
 using Hospital.FileStorage.Interfaces;
+using Hospital.DTO;
 
 public class CheckupFileStorage : GenericFileStorage<Checkup>, ICheckupFileStorage
 {
@@ -18,4 +19,8 @@ public class CheckupFileStorage : GenericFileStorage<Checkup>, ICheckupFileStora
     {
     }
 
+    internal ICheckupFileStorage Save(CheckupDTO checkup)
+    {
+        throw new NotImplementedException();
+    }
 }

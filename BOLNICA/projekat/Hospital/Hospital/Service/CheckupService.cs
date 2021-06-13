@@ -1,5 +1,5 @@
 ﻿using Hospital.DTO;
-
+using Hospital.FileStorage;
 using Hospital.FileStorage.Interfaces;
 
 using Hospital.Model;
@@ -14,6 +14,7 @@ namespace Hospital.Service
 {
     public class CheckupService
     {
+        private CheckupFactory checkupFactory;
         public  ICheckupFileStorage checkupStorage; 
         public IPatientFileStorage patientsStorage;
         public IDoctorFileStorage doctorStorage;
@@ -22,7 +23,9 @@ namespace Hospital.Service
 
         public CheckupService()
         {
-            checkupStorage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            checkupFactory = new CheckupFileFactory();
+            // checkupStorage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            checkupStorage = checkupFactory.CreateCheckup();
             patientsStorage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
             doctorStorage = new DoctorFileStorage("./../../../../Hospital/files/storageDoctor.json");
 
@@ -241,20 +244,5 @@ private List<Checkup> getDoctorTerms(int idDoctor, List<Checkup> unavailableChec
             checkupStorage.Save(newCheckup);
         }
 
-       /* public int getDoctorFromFile(int doctorId)
-        {
-            int returnDoctor = 0;
-            List<Doctor> doctors = new List<Doctor>(doctorStorage.GetAll());
-
-            foreach (Doctor doctor in doctors)
-            {
-                if (doctor.Id == doctorId)
-                {
-                    returnDoctor = doctorId;
-                    break;
-                }
-            }
-            return returnDoctor;
-        }*/
     }
 }

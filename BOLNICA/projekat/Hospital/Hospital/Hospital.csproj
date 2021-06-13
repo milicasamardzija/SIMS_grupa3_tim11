@@ -239,7 +239,11 @@
     <Compile Include="DTO\PatientDTO.cs" />
     <Compile Include="DTO\RoomSeparateDTO.cs" />
     <Compile Include="DTO\SurveyDTO.cs" />
+    <Compile Include="FileStorage\CheckupDataBase.cs" />
+    <Compile Include="FileStorage\CheckupDataBaseFactory.cs" />
+    <Compile Include="FileStorage\CheckupFileFactory.cs" />
     <Compile Include="FileStorage\FeedbackFileStorage.cs" />
+    <Compile Include="FileStorage\Interfaces\CheckupFactory.cs" />
     <Compile Include="FileStorage\Interfaces\IAlergensFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IAnamnesisFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\ICheckupFileStorage.cs" />

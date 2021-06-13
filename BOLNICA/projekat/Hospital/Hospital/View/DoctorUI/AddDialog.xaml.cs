@@ -47,7 +47,10 @@ namespace Hospital
         
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            controller.addCheckup(checkup);
+            CheckupDTO newCheckup = new CheckupDTO(checkup.IdCh, checkup.IdDoctor, checkup.IdPatient,
+                checkup.Date, checkup.IdRoom, checkup.Type);
+            controller.save(newCheckup);
+            listCheckup.Add(newCheckup);
             this.Close();
         }
 

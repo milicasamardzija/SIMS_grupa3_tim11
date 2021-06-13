@@ -100,7 +100,8 @@ namespace Hospital.Controller
 
         public void addCheckup(CheckupDTO checkup) //Ivanino
         {
-            service.addCheckup(new Checkup(service.generateIdCheckup(), checkup.IdDoctor, checkup.IdPatient, checkup.Date, checkup.IdRoom, checkup.Type));
+            Checkup newCheckup = new Checkup(service.generateIdCheckup(), checkup.IdDoctor, checkup.IdPatient, checkup.Date, checkup.IdRoom, checkup.Type);
+            service.addCheckup(newCheckup);
         }
 
         public void createCheckup(CheckupDTO checkup) //Sekretar kad zakazuje samo pregled 

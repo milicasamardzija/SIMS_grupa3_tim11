@@ -9,7 +9,5 @@ namespace Hospital.FileStorage.Interfaces
 {
     public interface ICheckupFileStorage : GenericRepository<Checkup>
     {
-
-
     }
 }
