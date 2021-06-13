@@ -38,8 +38,8 @@
             </DataGrid.Resources>
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="    Datum" Binding="{Binding datePlace}" Width="70" CanUserResize="False" />
-                <DataGridTextColumn Header="       Opis anamneze" Binding="{Binding summary}" Width="152" CanUserResize="False">
+                <DataGridTextColumn Header="    Datum" Binding="{Binding DatePlace}" Width="70" CanUserResize="False" />
+                <DataGridTextColumn Header="       Opis anamneze" Binding="{Binding Summary}" Width="152" CanUserResize="False">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="TextWrapping" Value="Wrap" />

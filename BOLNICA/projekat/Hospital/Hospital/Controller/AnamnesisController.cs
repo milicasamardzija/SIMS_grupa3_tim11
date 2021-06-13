@@ -24,14 +24,8 @@ namespace Hospital.Controller
 
         public List<Anamnesis> getAll()
         {
-            List<Anamnesis> allAnamnesis = new List<Anamnesis>(service.getAll());
-            List<Anamnesis> anamnesis = new List<Anamnesis>();
-            foreach(Anamnesis a in allAnamnesis)
-            {
-                Anamnesis newAnamnesis = new Anamnesis(a.Id, a.NameS, a.Gender, a.DatePlace, a.IdPatient, a.Adress,
-                    a.Status, a.Job, a.Summary);
-            }
-            return anamnesis;
+
+            return service.getAll();
         }
     }
 
