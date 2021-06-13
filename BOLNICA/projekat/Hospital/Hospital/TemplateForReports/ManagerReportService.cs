@@ -1,4 +1,11 @@
-﻿using System;
+﻿using Hospital.Controller;
+using Hospital.Model;
+using Hospital.Service;
+using Hospital.View.Manager.Zaposleni;
+using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
+using Syncfusion.Pdf.Tables;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -7,52 +14,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Hospital.Controller;
-using Hospital.Model;
-using Hospital.Service;
-using Hospital.TemplateForReports;
-using Syncfusion.Pdf;
-using Syncfusion.Pdf.Graphics;
-using Syncfusion.Pdf.Tables;
 
-namespace Hospital.View.Manager.Zaposleni
+namespace Hospital.TemplateForReports
 {
-    public partial class Izvestaj : UserControl
+    public class ManagerReportService : PrintReport
     {
+
       
-        private ReportController controller;
+
+        public DoctorService doctorService = new DoctorService();
+        public CheckupService checkupService = new CheckupService();
         public PdfDocument document = new PdfDocument();
-        public Izvestaj()
+        public override void CreateDocument(DateTime start, DateTime finish)
         {
-            InitializeComponent();
-            controller = new ReportController();
-        }
-
-        private void generateReport(object sender, RoutedEventArgs e)
-        {
-
-
-            controller.CreateManagerReport((DateTime)BeginDate.SelectedDate, (DateTime)EndDate.SelectedDate);
-
-
-
-
-           /* using (PdfDocument document = new PdfDocument())
-            {
+           // using (PdfDocument document = new PdfDocument())
+        
                 PdfPage page = document.Pages.Add();
 
                 PdfGraphics graphics = page.Graphics;
                 PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 6);
 
-                // HEADER
-                graphics.DrawString("Adresa: Bore Tirica 5", font, PdfBrushes.Black, new PointF(0, 19));
+            string pocetak = start.ToString("dd.MM.yyyy.");
+            string kraj = finish.ToString("dd.MM.yyyy.");
+
+            // HEADER
+            graphics.DrawString("Adresa: Bore Tirica 5", font, PdfBrushes.Black, new PointF(0, 19));
                 graphics.DrawString("21000 Novi Sad, Srbija", font, PdfBrushes.Black, new PointF(0, 26));
                 graphics.DrawString("Kontakt telefon: 0218974452", font, PdfBrushes.Black, new PointF(0, 33));
                 graphics.DrawString("E-mail adresa: zdravobolnica@gmail.com", font, PdfBrushes.Black, new PointF(0, 40));
@@ -72,11 +58,12 @@ namespace Hospital.View.Manager.Zaposleni
                 // SADRZAJ
                 font = new PdfStandardFont(PdfFontFamily.Helvetica, 9);
                 StringBuilder stringBuilder = new StringBuilder("");
-                stringBuilder.Append("U sledecoj tabeli prikazani su doktori nase bolnice i broj pregleda, operacija i kontrola koje su obavili u periodu od "); 
+                stringBuilder.Append("U sledecoj tabeli prikazani su doktori nase bolnice i broj pregleda, operacija i kontrola koje su obavili u periodu od ");
                 graphics.DrawString(stringBuilder.ToString(), font, PdfBrushes.Black, new PointF(28, 180));
                 stringBuilder = new StringBuilder("");
-                stringBuilder.Append(Convert.ToDateTime(BeginDate.Text).ToString("dd.MM.yyyy.")).Append(" do ")
-                    .Append(Convert.ToDateTime(EndDate.Text).ToString("dd.MM.yyyy."));
+                stringBuilder.Append(pocetak);
+                stringBuilder.Append(" do ");
+                stringBuilder.Append(kraj);
                 graphics.DrawString(stringBuilder.ToString(), font, PdfBrushes.Black, new PointF(28, 192));
 
 
@@ -93,19 +80,19 @@ namespace Hospital.View.Manager.Zaposleni
 
 
                 table.Rows.Add(new string[] { "Ime i prezime lekara", "Specijalizacija", "Broj obavljenih pregleda", "Broj obavljenih operacija", "Broj obavljenih kontrola" });
-                
+
                 double hours = 0;
                 int examinationsSum = 0;
                 int operationsSum = 0;
                 int controlsSum = 0;
-                foreach (Doctor doctor in storage.GetAll())
+                foreach (Doctor doctor in doctorService.getAll())
                 {
                     String name = doctor.Name + " " + doctor.Surname;
                     int examinations = 0;
                     int operations = 0;
                     int controls = 0;
-                    
-                    List<Checkup> checkupsByDoctor = controller.getCheckupDoctorsAndTime(Convert.ToDateTime(BeginDate.Text), Convert.ToDateTime(EndDate.Text), doctor.Id);
+
+                    List<Checkup> checkupsByDoctor = checkupService.getCheckupDoctorsAndTime(start, finish, doctor.Id);
                     foreach (Checkup checkup in checkupsByDoctor)
                     {
                         if (checkup.Type.Equals(CheckupType.pregled))
@@ -145,13 +132,24 @@ namespace Hospital.View.Manager.Zaposleni
                     .Append(" kontolnih").Append(" pregleda.");
                 graphics.DrawString(stringBuilder.ToString(), font, PdfBrushes.Black, new PointF(28, 204));
 
-                document.Save("./../../../../Hospital/reports/reportManager.pdf");
-                document.Close(true);
-                Obavestenje obavestenje = new Obavestenje();
-                obavestenje.Show();
-            }*/
+           
+           document.Save("./../../../../Hospital/reports/reportManager.pdf");
+         document.Close(true);
+          
+        }
+
+        public override void PrintNote()
+        {
+            MessageBox.Show("Izvestaj o zauzetosti lekara je kreiran!");
+        }
+
+        public override void SaveReport()
+        {
+           
+        }
 
 
-        } 
+       
+
     }
 }

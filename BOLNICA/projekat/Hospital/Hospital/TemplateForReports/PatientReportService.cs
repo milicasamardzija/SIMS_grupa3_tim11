@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hospital.FileStorage.Interfaces
+namespace Hospital.TemplateForReports
 {
-    public interface IDoctorFileStorage : GenericRepository<Doctor>
+    public class PatientReportService 
     {
+     
     }
 }

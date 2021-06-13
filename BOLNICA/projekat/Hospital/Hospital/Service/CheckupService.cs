@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.Service
 {
-    class CheckupService
+    public class CheckupService
     {
         public  ICheckupFileStorage checkupStorage; 
         public IPatientFileStorage patientsStorage;

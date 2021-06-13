@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.FileStorage.Interfaces
 {
-    interface ICheckupFileStorage : GenericRepository<Checkup>
+    public interface ICheckupFileStorage : GenericRepository<Checkup>
     {
 
 
