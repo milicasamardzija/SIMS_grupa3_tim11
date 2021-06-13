@@ -32,7 +32,7 @@ namespace Hospital.View.DoctorUI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (komentarText.Text == null || ocenaPerformansi.Value == null)
+            if (komentarText.Text.Equals("") || ocenaPerformansi.Value.Equals(""))
             {
                 MessageBox.Show("Morate uneti ocenu i komentar!");
             }

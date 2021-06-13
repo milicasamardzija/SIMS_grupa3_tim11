@@ -32,7 +32,7 @@ namespace Hospital.View.DoctorUI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (problemText.Text != null && emailText.Text != null)
+            if (!problemText.Text.Equals("") && !emailText.Text.Equals(""))
             {
                 feedback = new Feedback(0, FeedbackType.prijava_problema, ocenaZvezdicama.Value, komentarText.Text, problemText.Text, emailText.Text);
                 controllerFeedback.createFeedbackProblem(feedback);
