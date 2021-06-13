@@ -25,16 +25,9 @@ namespace Hospital.Controller
 
        
 
-        public List<AnamnesisDTO> getAll()
+        public List<Anamnesis> getAll()
         {
-            List<AnamnesisDTO> anamnesis = new List<AnamnesisDTO>();
-            foreach (Anamnesis anamnesa in service.getAll())
-            {
-               
-                    anamnesis.Add(new AnamnesisDTO(anamnesa.Id, anamnesa.DatePlace, anamnesa.NotesForAnamnesis1, anamnesa.NameS,anamnesa.Gender,anamnesa.IdPatient,anamnesa.Adress,anamnesa.Status,anamnesa.Job,anamnesa.Summary));
-                
-            }
-            return anamnesis;
+            return service.getAll();
         }
 
           
