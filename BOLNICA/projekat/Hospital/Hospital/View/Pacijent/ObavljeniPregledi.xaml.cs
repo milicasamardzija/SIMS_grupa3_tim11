@@ -22,15 +22,19 @@ namespace Hospital.View.Pacijent
     public partial class ObavljeniPregledi : Window
     {
 
-        int id;
-        PatientController patientController = new PatientController();
+      
+        PatientController patientController;
+        AnamnesisController anamnesisController;
         public static Anamnesis selektovanaAnamneza;
+        int id;
 
         public ObavljeniPregledi(int idP)
            
         {
             InitializeComponent();
             id = idP;
+            patientController = new PatientController();
+            anamnesisController = new AnamnesisController();
             this.DataContext = this;
             dodajbtn.IsEnabled = false;
             FillTable();
@@ -48,9 +52,8 @@ namespace Hospital.View.Pacijent
 
         private void FillTable()
         {
-            AnamnesisFileStorage storage = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
-            List <Anamnesis> anamneses = storage.GetAll();
-            foreach (Anamnesis a in anamneses)
+            
+            foreach (Anamnesis a in anamnesisController.getAll())
             {
                
                     Anamneza.Items.Add(a);
@@ -67,11 +70,7 @@ namespace Hospital.View.Pacijent
 
         }
 
-        private void DataGridAnamneses_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
+     
         private void odustani(object sender, RoutedEventArgs e)
         {
             ZdravstveniKarton karton = new ZdravstveniKarton(id);

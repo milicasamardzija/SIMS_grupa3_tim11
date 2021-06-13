@@ -1,1 +1,44 @@
-[{"nameS":"Ivan Ivanovic","gender":"Musko","NotesForAnamnesis":[{"description":"Piti vode.","StartDate":"0001-01-01T00:00:00","EndDate":"0001-01-01T00:00:00","IsSetReminder":false}],"datePlace":"05/02/2020","adress":"Narodnog fronta 15 Novi Sad","status":"Ozenjen","job":"Profesor","summary":"Utvrdjeno je da pacijent ima gastritis uzrokovan problemima oko razvoda","Id":0},{"nameS":"System.Windows.Controls.TextBox: Jovan Ugarkovic","gender":"Muski","NotesForAnamnesis":[{"description":"Sve okej.","StartDate":"0001-01-01T00:00:00","EndDate":"0001-01-01T00:00:00","IsSetReminder":false},{"description":"Trcati.","StartDate":"2021-06-12T00:00:00","EndDate":"2021-06-13T00:00:00","IsSetReminder":true}],"datePlace":"13/5/2020","adress":"Veljka Petrovica 1, Novi Sad","status":"Neozenjen","job":"Nema","summary":"Nalazi su dobri, trenutno nema tegoba. Rast i razvoj je u skladu sa brojem meseci zivota.","Id":0}]
+[
+  {
+    "adress": "Narodnog fronta 15 Novi Sad",
+    "datePlace": "05/02/2020",
+    "gender": "Musko",
+    "Id": 0,
+    "job": "Profesor",
+    "nameS": "Ivan Ivanovic",
+    "NotesForAnamnesis": [
+      {
+        "description": "Piti vode.",
+        "StartDate": "0001-01-01T00:00:00",
+        "EndDate": "0001-01-01T00:00:00",
+        "IsSetReminder": false
+      }
+    ],
+    "status": "Ozenjen",
+    "summary": "Utvrdjeno je da pacijent ima gastritis uzrokovan problemima oko razvoda"
+  },
+  {
+    "nameS": "System.Windows.Controls.TextBox: Jovan Ugarkovic",
+    "gender": "Muski",
+    "NotesForAnamnesis": [
+      {
+        "description": "Sve okej.",
+        "StartDate": "0001-01-01T00:00:00",
+        "EndDate": "0001-01-01T00:00:00",
+        "IsSetReminder": false
+      },
+      {
+        "description": "Trcati.",
+        "StartDate": "2021-06-12T00:00:00",
+        "EndDate": "2021-06-13T00:00:00",
+        "IsSetReminder": true
+      }
+    ],
+    "datePlace": "13/5/2020",
+    "adress": "Veljka Petrovica 1, Novi Sad",
+    "status": "Neozenjen",
+    "job": "Nema",
+    "summary": "Nalazi su dobri, trenutno nema tegoba. Rast i razvoj je u skladu sa brojem meseci zivota.",
+    "Id": 1
+  }
+]
