@@ -97,7 +97,7 @@ namespace Hospital.View.Pacijent
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             btnGenerisi.Visibility = Visibility.Hidden;
-            _printDialog.PrintVisual(this, "Probamo izvještaj!");
+            _printDialog.PrintVisual(this, "Izveštaj");
         }
 
         private void Nazad_na_pocetnu(object sender, RoutedEventArgs e)

@@ -14,12 +14,6 @@
                 <ColumnDefinition Width="121*"/>
                 <ColumnDefinition Width="189*"/>
             </Grid.ColumnDefinitions>
-
-            <Button Content="" VerticalAlignment="Top" Margin="-53,-231,173.4,0" FontSize="22" Height="93" Click="Nazad_na_pocetnu" Foreground="#FFF9F1F1" BorderBrush="#FFFAF6F6" RenderTransformOrigin="-4.566,0.8">
-                <Button.Background>
-                    <ImageBrush ImageSource="arrow.png" Stretch="Uniform"/>
-                </Button.Background>
-            </Button>
             <ComboBox Name="mjeseci" Margin="85.6,-193,139,372" FontFamily="Corbel" FontSize="20" VerticalContentAlignment="Center" Foreground="#ff1e243e" BorderBrush="{x:Null}" Grid.Column="1">
                 <ComboBox.Background>
                     <SolidColorBrush Color="#FFA64F4F" Opacity="1"/>
