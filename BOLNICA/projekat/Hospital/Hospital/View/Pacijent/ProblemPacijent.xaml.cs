@@ -33,10 +33,10 @@ namespace Hospital.View.Pacijent
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            if (problem.Text != null && email.Text != null)
+            if (!problem.Text.Equals("") && !email.Text.Equals(""))
             {
 
-                feedback = new Feedback(0, FeedbackType.prijava_problema, ocena.Value, komentar.Text, problem.Text, email.Text);
+                feedback = new Feedback(0, FeedbackType.prijava_problema, -1, "", problem.Text, email.Text);
                 controller.createFeedbackProblem(feedback);
 
 
