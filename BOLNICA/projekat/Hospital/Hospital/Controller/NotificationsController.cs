@@ -31,6 +31,17 @@ namespace Hospital.Controller
             }
             return patientsNotification;
         }
+
+        public List<NotificationsDTO> getNotifications(string person)
+        {
+            List<NotificationsDTO> allNotifications = new List<NotificationsDTO>();
+            foreach (Notifications n in service.getNotifications(person))
+            {
+                allNotifications.Add(new NotificationsDTO(n.Title, n.Content, n.Date, n.Id, n.Person, n.IdPatient));
+            }
+            return allNotifications;
+        }
+
         public List<NotificationsDTO> getAll()
         {
             List<Notifications> all = service.getAll();

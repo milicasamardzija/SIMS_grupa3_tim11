@@ -10,68 +10,20 @@
     <Grid>
         <Grid Margin="0,0,-0.4,0">
             <Label Foreground="#FF373434" Margin="20,30,323.8,315" FontSize="22" Grid.Column="0" FontWeight="Bold">Namena</Label>
-            <ComboBox Name ="NamenaText" Width="200" Margin="249,30,21.8,321"  FontSize="18" SelectedValue="{Binding Path=Room.Purpose , UpdateSourceTrigger=PropertyChanged}">
+            <ComboBox ItemsSource="{Binding Path = Purpose}" Name ="NamenaText" Width="200" Margin="249,30,21.8,321"  FontSize="18" SelectedValue="{Binding Path=Room.Purpose , UpdateSourceTrigger=PropertyChanged}">
             </ComboBox>
             <Label Width="100" Margin="20,124,350.8,228" Foreground="#FF373434" FontSize="22" Grid.Column="0" FontWeight="Bold" RenderTransformOrigin="0.548,0.074">Sprat</Label>
-            <TextBox Foreground="#FF373434" Name="SpratText" Width="200" Margin="249,124,21.8,235">
-                <TextBox.Text>
-                    <Binding Path="Room.Floor" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True">
-                        <Binding.ValidationRules>
-                            <validationManager:StringToInteger ValidationStep="RawProposedValue"></validationManager:StringToInteger>
-                            <validationManager:MinValue ValidationStep="ConvertedProposedValue" Min="1"></validationManager:MinValue>
-                            <validationManager:EmptyField ValidationStep="RawProposedValue"></validationManager:EmptyField>
-                        </Binding.ValidationRules>
-                    </Binding>
-                </TextBox.Text>
-                <Validation.ErrorTemplate>
-                    <ControlTemplate>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="QuantityTxt"/>
-                            <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
-                        </Grid>
-                    </ControlTemplate>
-                </Validation.ErrorTemplate>
+            <TextBox Foreground="#FF373434" Name="SpratText" Width="200" Margin="249,124,21.8,235" Text="{Binding Path = Room.Floor}">
             </TextBox>
             <Label Margin="20,212,140.8,101" Foreground="#FF373434" FontSize="22" Grid.Column="0" FontWeight="Bold" Content="Kapacitet prostorije"/>
-            <TextBox Foreground="#FF373434" Name="KapacitetText" Width="200" Margin="249,212,21.8,148" RenderTransformOrigin="0.492,1.003" TextChanged="KapacitetText_TextChanged">
-                <TextBox.Text>
-                    <Binding Path="Room.Capacity" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True">
-                        <Binding.ValidationRules>
-                            <validationManager:StringToInteger ValidationStep="RawProposedValue"></validationManager:StringToInteger>
-                            <validationManager:MinValue ValidationStep="ConvertedProposedValue" Min="1"></validationManager:MinValue>
-                            <validationManager:EmptyField ValidationStep="RawProposedValue"></validationManager:EmptyField>
-                        </Binding.ValidationRules>
-                    </Binding>
-                </TextBox.Text>
-                <Validation.ErrorTemplate>
-                    <ControlTemplate>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="QuantityTxt"/>
-                            <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
-                        </Grid>
-                    </ControlTemplate>
-                </Validation.ErrorTemplate>
+            <TextBox Foreground="#FF373434" Text="{Binding Path = Room.Capacity}" Name="KapacitetText" Width="200" Margin="249,212,21.8,148" RenderTransformOrigin="0.492,1.003" >
             </TextBox>
-            <Button Name="potvrdiBtn"  Foreground="#FF373434" Content="Potvrdi" Margin="20,316,310.8,46" Grid.Column="0" Background="#FFFFC800" Click="dodavanjeProstorije"  FontSize="22" FontWeight="Bold" RenderTransformOrigin="0.158,0.512">
+            <Button Name="potvrdiBtn"  Foreground="#FF373434" Content="Potvrdi" Margin="20,316,310.8,46" Grid.Column="0" Background="#FFFFC800" Command="{Binding dodajProstoriju}" FontSize="22" FontWeight="Bold" RenderTransformOrigin="0.158,0.512">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Button Foreground="#FF373434" Margin="318,318,21.8,44" Background="#FFFFC800" Click="odustani" FontWeight="Bold"  FontSize="18" Content="Odustani">
+            <Button Foreground="#FF373434" Margin="318,318,21.8,44" Command="{Binding odustani}" Background="#FFFFC800" FontWeight="Bold"  FontSize="18" Content="Odustani">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>

@@ -1,6 +1,7 @@
 ﻿using Hospital.Controller;
 using Hospital.DTO;
 using Hospital.FileStorage.Interfaces;
+using Hospital.MVVM.ModelView;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,51 +22,10 @@ namespace Hospital
 {
     public partial class IzmeniProstoriju : UserControl
     {
-        private ObservableCollection<RoomDTO> rooms;
-        private int index;
-        private Frame frame;
-        private RoomsController controller;
-        private RoomDTO room;
-        public RoomDTO Room
-        {
-            get { return room; }
-            set { room = value; }
-        }
-        public IzmeniProstoriju(ObservableCollection<RoomDTO> rooms, RoomDTO selectedItem, int index, Frame frame)
+        public IzmeniProstoriju(ModelViewIzmeniProstoriju izmena)
         {
             InitializeComponent();
-            this.DataContext = this;
-            this.rooms = rooms;
-            this.index = index;
-            this.frame = frame;
-            this.room = selectedItem;
-            this.controller = new RoomsController();
-            addPurpose();
-            potvrdiBtn.IsEnabled = false;
-        }
-
-        private void addPurpose()
-        {
-            namenaTxt.ItemsSource = Enum.GetValues((typeof(Purpose)));
-        }
-        private void izmenaProstorije(object sender, RoutedEventArgs e)
-        {
-            controller.update(room);
-            frame.NavigationService.Navigate(new BelsekaMagacin(1));
-            rooms[index] = room;
-        }
-
-        private void odustani(object sender, RoutedEventArgs e)
-        {
-            frame.NavigationService.Navigate(new BelsekaMagacin(1));
-        }
-
-        private void kapacitetTxt_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (!spratTxt.Text.Equals("") && !kapacitetTxt.Text.Equals("") && namenaTxt.SelectedIndex != -1)
-            {
-                potvrdiBtn.IsEnabled = true;
-            }
-        }
+            this.DataContext = izmena;
+        } 
     }
 }

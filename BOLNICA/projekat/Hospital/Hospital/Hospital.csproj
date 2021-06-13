@@ -269,6 +269,10 @@
     <Compile Include="Model\Medicine\Review.cs" />
     <Compile Include="Model\Rooms\RoomMerge.cs" />
     <Compile Include="Model\Rooms\RoomSeparate.cs" />
+    <Compile Include="MVVM\Command\RelayCommand.cs" />
+    <Compile Include="MVVM\ModelView\ModelViewDodajProstoriju.cs" />
+    <Compile Include="MVVM\ModelView\ModelViewIzmeniProstoriju.cs" />
+    <Compile Include="MVVM\ModelView\ModelViewObavestenja.cs" />
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\FeedbackService.cs" />
     <Compile Include="Service\FunctionalityService.cs" />

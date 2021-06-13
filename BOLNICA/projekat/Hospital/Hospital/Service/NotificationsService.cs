@@ -41,6 +41,11 @@ namespace Hospital.Service
             return ret;
         }
 
+        internal List<Notifications> getNotifications(string person)
+        {
+            return storageNotifications.FindByPerson(person);
+        }
+
         public List<Notifications> getAll()
         {
             return storageNotifications.GetAll();

@@ -18,6 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Hospital.View.Manager.Ostalo;
+using Hospital.MVVM.ModelView;
 
 namespace Hospital
 {
@@ -58,7 +59,7 @@ namespace Hospital
 
         private void dodavanje(object sender, RoutedEventArgs e)
         {
-            SobeFrame.NavigationService.Navigate(new DodajProstoriju(ListaProstorija,Rooms, SobeFrame));
+            SobeFrame.NavigationService.Navigate(new DodajProstoriju(new ModelViewDodajProstoriju(ListaProstorija,Rooms, SobeFrame)));
         }
 
         private void obrisi(object sender, RoutedEventArgs e)
@@ -83,7 +84,7 @@ namespace Hospital
             }
             else
             {
-                SobeFrame.NavigationService.Navigate(new IzmeniProstoriju(Rooms, (RoomDTO)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex, SobeFrame));
+                SobeFrame.NavigationService.Navigate(new IzmeniProstoriju(new ModelViewIzmeniProstoriju(Rooms, (RoomDTO)ListaProstorija.SelectedItem, ListaProstorija.SelectedIndex, SobeFrame)));
             }
         }
 
