@@ -28,6 +28,11 @@ namespace Hospital.Controller
             return service.getAll();
         }
 
+
+        public List<Anamnesis> getbyId(int id)
+        {
+            return service.getbyId(id);
+        }
         public void deleteById(int id)
         {
             service.deleteById(id);

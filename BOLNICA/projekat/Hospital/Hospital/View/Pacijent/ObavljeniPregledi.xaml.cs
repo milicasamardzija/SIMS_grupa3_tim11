@@ -23,7 +23,8 @@ namespace Hospital.View.Pacijent
     {
 
         int id;
-        PatientController patientController = new PatientController();
+        PatientController patientController;
+        AnamnesisController controller;
         public static Anamnesis selektovanaAnamneza;
 
         public ObavljeniPregledi(int idP)
@@ -31,13 +32,14 @@ namespace Hospital.View.Pacijent
         {
             InitializeComponent();
             id = idP;
+            patientController = new PatientController();
+            controller = new AnamnesisController();
             this.DataContext = this;
             dodajbtn.IsEnabled = false;
             FillTable();
 
 
-            List<PatientDTO> patients = patientController.getAll();
-            foreach (PatientDTO patient in patients)
+            foreach (PatientDTO patient in patientController.getAll())
             {
                 if (patient.Id == idP)
                 {
@@ -48,9 +50,8 @@ namespace Hospital.View.Pacijent
 
         private void FillTable()
         {
-            AnamnesisFileStorage storage = new AnamnesisFileStorage("./../../../../Hospital/files/anamnesis.json");
-            List <Anamnesis> anamneses = storage.GetAll();
-            foreach (Anamnesis a in anamneses)
+           
+            foreach (Anamnesis a in controller.getbyId(id))
             {
                
                     Anamneza.Items.Add(a);
@@ -67,11 +68,7 @@ namespace Hospital.View.Pacijent
 
         }
 
-        private void DataGridAnamneses_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
+     
         private void odustani(object sender, RoutedEventArgs e)
         {
             ZdravstveniKarton karton = new ZdravstveniKarton(id);

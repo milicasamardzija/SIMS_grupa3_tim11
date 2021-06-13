@@ -45,6 +45,22 @@ namespace Hospital.Service
             return notes;
         }
 
+        public List<Anamnesis> getbyId(int id)
+        {
+            List<Anamnesis> anamneses = storageAnamnesis.GetAll();
+            List<Anamnesis> patientanamnesis = new List<Anamnesis>();
+            foreach (Anamnesis anamnese in anamneses)
+            {
+
+                if (anamnese.IdPatient == id)
+                {
+
+                    patientanamnesis.Add(anamnese);
+                }
+            }
+            return patientanamnesis;
+        }
+
 
         public void save(Anamnesis anamnesis)
         {
