@@ -24,7 +24,15 @@ namespace Hospital.Controller
         public void changeShift(DoctorDTO chocenDoctor, ScheduleShiftDTO shift)
         {
             Doctor doctor = new Doctor(chocenDoctor.Id, chocenDoctor.Name, chocenDoctor.Surname, chocenDoctor.TelephoneNumber, chocenDoctor.Jmbg, chocenDoctor.Gender, chocenDoctor.BirthdayDate, chocenDoctor.Adress, chocenDoctor.Type, chocenDoctor.Shift, chocenDoctor.Vacation);
-            ScheduleShift newShift = new ScheduleShift(shift.Type, shift.Date, shift.Change);
+            ScheduleShift newShift = new ScheduleShift(shift.Type, shift.Date);
+            shiftService.changeShift(doctor, newShift);
+
+        }
+
+        public void changeShift2(DoctorDTO chocenDoctor, ScheduleShiftDTO shift)
+        {
+            Doctor doctor = new Doctor(chocenDoctor.Id, chocenDoctor.Name, chocenDoctor.Surname, chocenDoctor.TelephoneNumber, chocenDoctor.Jmbg, chocenDoctor.Gender, chocenDoctor.BirthdayDate, chocenDoctor.Adress, chocenDoctor.Type, chocenDoctor.Shift, chocenDoctor.Vacation);
+            ScheduleShift newShift = new ScheduleShift(shift.Type, shift.Date);
             shiftService.changeShift(doctor, newShift);
 
         }

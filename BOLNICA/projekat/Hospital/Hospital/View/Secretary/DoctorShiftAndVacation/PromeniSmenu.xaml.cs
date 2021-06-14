@@ -53,18 +53,11 @@ namespace Hospital.View.Secretary.DoctorShiftAndVacation
         private void sacuvajBtn(object sender, RoutedEventArgs e)
         {
             if(datumPicker.SelectedDate != null && lekari.SelectedItem != null)
-            {
-                if((bool)rolajCh.IsChecked)
-                {
-                    ScheduleShiftDTO newShift = new ScheduleShiftDTO((DateTime)datumPicker.SelectedDate, (ShiftType)smene.SelectedValue, true);
-                    shiftController.changeShift((DoctorDTO)lekari.SelectedItem, newShift);
-                } else
-                {
-                    ScheduleShiftDTO newShift = new ScheduleShiftDTO((DateTime)datumPicker.SelectedDate, (ShiftType)smene.SelectedValue, false);
-                  
-                    shiftController.changeShift((DoctorDTO)lekari.SelectedItem, newShift);
-                    MessageBox.Show("Zakazali ste smenu!");
-                }
+            { 
+                ScheduleShiftDTO newShift = new ScheduleShiftDTO((DateTime)datumPicker.SelectedDate, (ShiftType)smene.SelectedValue);
+                shiftController.changeShift2((DoctorDTO)lekari.SelectedItem, newShift);
+                MessageBox.Show("Zakazali ste smenu!");
+                
             } else
             {
                 MessageBox.Show("Niste odabrali potrebne podatke!");

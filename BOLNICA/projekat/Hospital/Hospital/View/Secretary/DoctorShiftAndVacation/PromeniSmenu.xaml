@@ -61,7 +61,7 @@
         </DataGrid>
         <DatePicker
             Name="datumPicker"
-            Width="107"
+            Width="158"
             Height="30"
             Margin="32,256,0,0"
             HorizontalAlignment="Left"
@@ -81,10 +81,10 @@
             Margin="32,379,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="sacuvajBtn"
+            Click="izadjiBtn"
             Content="Izadji" />
         <Label
-            Margin="189,221,0,0"
+            Margin="291,221,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Smena:"
@@ -93,28 +93,10 @@
             TextElement.Foreground="#FF0852AE" />
         <ComboBox
             Name="smene"
-            Width="104"
+            Width="156"
             Height="25"
-            Margin="189,256,0,0"
+            Margin="291,256,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top" />
-        <Label
-            Margin="343,221,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Rolaj od sada:"
-            FontSize="15"
-            TextElement.FontWeight="Bold"
-            TextElement.Foreground="#FF0852AE" />
-        <CheckBox
-            Name="rolajCh"
-            Width="137"
-            Height="22"
-            Margin="347,259,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="da, rolaj trajno"
-            FontSize="14"
-            TextElement.Foreground="#FF0852AE" />
     </Grid>
 </Window>

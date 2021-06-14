@@ -13,16 +13,16 @@ namespace Hospital.DTO
 
         private DateTime date;
         private ShiftType type;
-        private Boolean change;
+       
 
 
         public ScheduleShiftDTO() { }
 
-        public ScheduleShiftDTO(DateTime date, ShiftType type, bool change)
+        public ScheduleShiftDTO(DateTime date, ShiftType type)
         {
             this.date = date;
             this.type = type;
-            this.change = change;
+           
 
         }
 
@@ -43,21 +43,7 @@ namespace Hospital.DTO
             }
         }
 
-        public Boolean Change
-        {
-            get
-            {
-                return change;
-            }
-            set
-            {
-                if (value != change)
-                {
-                    change = value;
-                    OnPropertyChanged("Change");
-                }
-            }
-        }
+      
         public ShiftType Type
         {
             get

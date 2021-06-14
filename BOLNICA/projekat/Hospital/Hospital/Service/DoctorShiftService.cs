@@ -14,65 +14,80 @@ namespace Hospital.Service
     public class DoctorShiftService
     {
         private IDoctorFileStorage doctorStorage;
+        private ICheckupFileStorage checkupStorage;
         public List<DateTime> lisOfFreeDays;
+        public NotificationsService notificationsService;
+
+
 
 
         public DoctorShiftService()
         {
             doctorStorage = new DoctorFileStorage("./../../../../Hospital/files/storageDoctor.json");
+            checkupStorage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
+            notificationsService = new NotificationsService();
             lisOfFreeDays = daysFree();
         }
 
       public void updatingShift()
         {
+            
             List<Doctor> all = doctorStorage.GetAll();
-            int count = 0;
-
-            foreach(Doctor d in all)
+            foreach (Doctor d in all)
             {
-                if(d.Shift.LastUpdated.Equals(DateTime.Now))
+                if(d.Shift.LastUpdated.Date.Equals(DateTime.Now.Date))
                 {
                     continue;
                 }
                 else
                 {
-                    if(d.Shift.ScheduledShifts.Count() != 0)
+                    if (d.Shift.ScheduledShifts.Count() != 0)
                     {
-                        foreach(ScheduleShift s in d.Shift.ScheduledShifts)
+                        foreach (ScheduleShift s in d.Shift.ScheduledShifts) //prolazim kroz sve zakazane smene 
                         {
-                            if(s.Date.Equals(DateTime.Now) && s.Change == false)
+                            if (s.Date.Date.Equals(DateTime.Now.Date)) //ako postoji zakazana za danas 
                             {
-                                d.Shift.Type.Equals( s.Type); //stavljam tip sadasnje smene na tip zakazane, control ne diram, pa to ovde preskacem 
-                               
+                                d.Shift.Type = s.Type; //stavljam tip sadasnje smene na tip zakazane
+                                break;
                             }
-                            else if(s.Date.Equals(DateTime.Now) && s.Change == true)
-                            {
-                                d.Shift.Type.Equals(s.Type);
-                                d.Shift.ControlType.Equals(s.Type); //ako je rolanje obe stavljam na taj navedeni tip
-
-                            }
-                            //ako nije nista od toga izlazim
-
                         }
-                    } else
-                    {
-                        //ovde menjam smenu klasicno u odnosu na lastUpdate dan
-                        count = countDaysFromLastUpdate(d.Shift.LastUpdated);
-                        int numberOfType = (count + Convert.ToInt32(d.Shift.Type)) % 4;
-                        d.Shift.Type.Equals(numberOfType);
-                        d.Shift.ControlType.Equals(numberOfType);
+                    }                      //ovde menjam smenu klasicno u odnosu na lastUpdate dan
+                    int count = countDaysFromLastUpdate(d.Shift.LastUpdated);
+                    int numberOfType = (count + Convert.ToInt32(d.Shift.Type)) % 4;
+                    setDoctorsShiftType(d, numberOfType);
+                    d.Shift.LastUpdated = DateTime.Now;
 
-                    }
+
                 }
             }
             doctorStorage.SaveAll(all);
+        }
+
+        private static void setDoctorsShiftType(Doctor d, int numberOfType)
+        {
+            if (numberOfType == 0)
+            {
+                d.Shift.Type = ShiftType.pause;
+            }
+            else if (numberOfType == 1)
+            {
+                d.Shift.Type = ShiftType.first;
+            }
+            else if (numberOfType == 2)
+            {
+                d.Shift.Type = ShiftType.second;
+            }
+            else
+            {
+                d.Shift.Type = ShiftType.third;
+            }
         }
 
         public String PredictDoctorShift(Doctor doctor, DateTime predict)
         {
             Doctor foundedDoctor = doctorStorage.FindById(doctor.Id);
             int curentShift = Convert.ToInt32(doctor.Shift.Type);
-            int controlShift = Convert.ToInt32(doctor.Shift.ControlType);
+           
             int days = countDays(predict); //nadjem koliko je dana izmedju zakazanih 
             int  numberOfType= 0;
             String typeOfShift = "";
@@ -121,7 +136,7 @@ namespace Hospital.Service
             foundedDoctor.FreeDays -= freeD; //smanjim broj slobodnih dana
             for ( DateTime countDate = start; countDate <= end; countDate = countDate.AddDays(1))
             {
-                ScheduleShift s = new ScheduleShift(countDate, ShiftType.free, false);
+                ScheduleShift s = new ScheduleShift(countDate, ShiftType.free);
                 shifts.Add(s);
             } 
 
@@ -175,10 +190,11 @@ namespace Hospital.Service
         public void changeShift(Doctor doctor, ScheduleShift shift )
         {
             List<Doctor> all = doctorStorage.GetAll();
+
             Doctor foundedDoctor = doctorStorage.FindById(doctor.Id);
             List<ScheduleShift> newList = new List<ScheduleShift>();
             newList.Add(shift);
-            Shift s = new Shift(doctor.Shift.Type, doctor.Shift.ControlType, doctor.Shift.LastUpdated, newList);
+            Shift s = new Shift(doctor.Shift.Type, doctor.Shift.LastUpdated, newList);
           // MessageBox.Show("CHANGE SHIFT");
           //  MessageBox.Show(foundedDoctor.Name);
           //  MessageBox.Show(foundedDoctor.Surname);
@@ -190,6 +206,74 @@ namespace Hospital.Service
            // doctorStorage.SaveAll(all);
             
         }
+
+        //drugi nacin za change
+        public void changeShift2(Doctor doctor, ScheduleShift shift)
+        {
+            List<Doctor> all = doctorStorage.GetAll();
+
+            DateTime datum = shift.Date;
+
+            foreach (Doctor d in all)
+            {
+                if(d.Id == doctor.Id)
+                {
+                    d.Shift.ScheduledShifts.Add(shift);
+                }
+            }
+              otkaziTermine(doctor.Id, shift);
+              doctorStorage.SaveAll(all);
+
+        }
+
+        //metoda za otkazivanje termina 
+        public void otkaziTermine(int idDoctor, ScheduleShift shift) //Datum imam u smeni 
+        {
+            DateTime start;
+            DateTime end;
+            if (shift.Type == ShiftType.first)
+            {
+                start = new DateTime(shift.Date.Year, shift.Date.Month, shift.Date.Day, 7, 0, 0);
+                end = new DateTime(shift.Date.Year, shift.Date.Month, shift.Date.Day, 14, 0, 0);
+
+            } else if(shift.Type == ShiftType.second)
+            {
+                start = new DateTime(shift.Date.Year, shift.Date.Month, shift.Date.Day, 14, 0, 0);
+                end = new DateTime(shift.Date.Year, shift.Date.Month, shift.Date.Day, 21, 0, 0);
+            } else if (shift.Type == ShiftType.third )
+            {
+                start = new DateTime(shift.Date.Year, shift.Date.Month, shift.Date.Day, 21, 0, 0);
+                end = new DateTime(shift.Date.Year, shift.Date.Month, shift.Date.Day, 23, 59, 0);
+            }
+            else
+            {
+                start = new DateTime(shift.Date.Year, shift.Date.Month, shift.Date.Day, 0, 1, 0);
+                end = new DateTime(shift.Date.Year, shift.Date.Month, shift.Date.Day, 23, 59, 0);
+            }
+
+            List<Checkup> allCheckups = checkupStorage.GetAll();
+            List<Checkup> found = new List<Checkup>();
+            foreach(Checkup c in allCheckups)
+            {
+                if(c.IdDoctor == idDoctor && c.Date == shift.Date)
+                {
+                    if (c.Date < end && c.Date > start)
+                    {
+                        found.Add(c);
+                        checkupStorage.DeleteById(c.Id);
+                        Notifications note = new Notifications("obavestenje", "Termin u " + c.Date + "je otkazan", DateTime.Now, notificationsService.generisiId(), "pacijent", c.IdPatient);
+                        notificationsService.createNotificationForPatient(note);
+                        MessageBox.Show("Termin je otkazan i pacijent je obavesten");
+                    }
+                }
+            }
+
+         
+        }
+
+       
+  
+
 
         private String convertToShift(int predict)
         {
@@ -215,10 +299,11 @@ namespace Hospital.Service
             return ispisiSmenu;
         }
 
+        
 
         public int countDaysFromLastUpdate(DateTime lastUpdate)
         {
-            int count = 0;
+            int count;
             DateTime now = DateTime.Now;
             count = ( now.Date - lastUpdate).Days;
             return count;

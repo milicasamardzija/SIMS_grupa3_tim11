@@ -11,7 +11,7 @@ namespace Hospital.DTO
     public class ShiftDTO : INotifyPropertyChanged
     { 
         private ShiftType typeToday;
-        private ShiftType controlType;
+      
         private DateTime lastUpdated;
         private List<ScheduleShift> scheduledShifts;
      
@@ -27,7 +27,7 @@ namespace Hospital.DTO
         public ShiftDTO() { }
 
 
-        public ShiftDTO(ShiftType type, ShiftType control, DateTime lastUpdate, List<ScheduleShift> shift) 
+        public ShiftDTO(ShiftType type, DateTime lastUpdate, List<ScheduleShift> shift) 
         {
            
             this.typeToday = type;
@@ -67,21 +67,7 @@ namespace Hospital.DTO
                 }
             }
         }
-        public ShiftType ControlType
-        {
-            get
-            {
-                return controlType;
-            }
-            set
-            {
-                if (value != controlType)
-                {
-                    controlType = value;
-                    OnPropertyChanged("ControlType");
-                }
-            }
-        }
+    
 
         public List<ScheduleShift> ScheduledShifts
         {

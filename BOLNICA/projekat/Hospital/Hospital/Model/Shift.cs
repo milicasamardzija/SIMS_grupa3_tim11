@@ -10,7 +10,7 @@ namespace Hospital.Model
     {
       
         private ShiftType type;
-        private ShiftType controlType;
+        
         private DateTime lastUpdated;
         private List<ScheduleShift> scheduledShifts;
 
@@ -18,7 +18,7 @@ namespace Hospital.Model
         public Shift() { }
 
 
-        public Shift(ShiftType type, ShiftType control, DateTime lastUpdate, List<ScheduleShift> shift ) {
+        public Shift(ShiftType type, DateTime lastUpdate, List<ScheduleShift> shift ) {
          
             this.type = type;
             this.lastUpdated = lastUpdate;
@@ -56,21 +56,7 @@ namespace Hospital.Model
                 }
             }
         }
-        public ShiftType ControlType
-        {
-            get
-            {
-                return controlType;
-            }
-            set
-            {
-                if (value != controlType)
-                {
-                    controlType = value;
-
-                }
-            }
-        }
+     
 
         public List<ScheduleShift> ScheduledShifts {
             get

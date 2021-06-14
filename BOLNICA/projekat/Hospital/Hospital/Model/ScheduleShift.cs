@@ -12,24 +12,24 @@ namespace Hospital.Model
 
         private DateTime date;
         private ShiftType type;
-        private Boolean change;
+      
 
 
         public ScheduleShift() { }
 
-        public ScheduleShift(DateTime date, ShiftType type, bool change)
+        public ScheduleShift(DateTime date, ShiftType type)
         {
             this.date = date;
             this.type = type;
-            this.change = change;
+            
 
         }
 
-        public ScheduleShift(ShiftType type, DateTime date, bool change)
+        public ScheduleShift(ShiftType type, DateTime date)
         {
             this.type = type;
             this.date = date;
-            this.change = change;
+           
         }
 
         public DateTime Date
@@ -48,21 +48,7 @@ namespace Hospital.Model
             }
         }
 
-        public Boolean Change
-        {
-            get
-            {
-                return change;
-            }
-            set
-            {
-                if (value != change)
-                {
-                    change = value;
-                   
-                }
-            }
-        }
+      
         public ShiftType Type
         {
             get
