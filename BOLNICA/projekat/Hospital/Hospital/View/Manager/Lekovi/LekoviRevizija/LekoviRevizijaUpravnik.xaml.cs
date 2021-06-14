@@ -60,7 +60,6 @@ namespace Hospital
         private void dodaj(object sender, RoutedEventArgs e)
         {
             if (ListaLekovaRevizija.SelectedItem != null)
-                // LekoviRevizijaFrame.NavigationService.Navigate(new DodavanjeLekaUpravnik(frame, (ReviewDTO)ListaLekovaRevizija.SelectedItem));
             {
                 DodavanjeLekaPotvrda dodavanje = new DodavanjeLekaPotvrda(frame, (ReviewDTO)ListaLekovaRevizija.SelectedItem);
                 dodavanje.Show();
@@ -74,7 +73,6 @@ namespace Hospital
         private void izbrisi(object sender, RoutedEventArgs e)
         {
             if (ListaLekovaRevizija.SelectedItem != null)
-                // LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeLekaUpravnik(frame,(ReviewDTO)ListaLekovaRevizija.SelectedItem));
             {
                 BrisanjeLekaPotvrda brisanje = new BrisanjeLekaPotvrda(frame, (ReviewDTO)ListaLekovaRevizija.SelectedItem);
                 brisanje.Show();
@@ -94,7 +92,6 @@ namespace Hospital
         private void izbrisiRezenziju(object sender, RoutedEventArgs e)
         {
             if (ListaLekovaRevizija.SelectedItem != null)
-                // LekoviRevizijaFrame.NavigationService.Navigate(new BrisanjeRecenzijeUpravnik(frame, (ReviewDTO)ListaLekovaRevizija.SelectedItem));
             {
                 BrisanjeRecenzijaPotvrda brisanje =
                     new BrisanjeRecenzijaPotvrda(frame, (ReviewDTO) ListaLekovaRevizija.SelectedItem);
