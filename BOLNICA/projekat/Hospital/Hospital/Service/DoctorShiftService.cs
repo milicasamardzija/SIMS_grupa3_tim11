@@ -201,7 +201,7 @@ namespace Hospital.Service
           //  MessageBox.Show(foundedDoctor.Id.ToString());
             // foundedDoctor.Shift.ScheduledShifts.Add(shift);
             Doctor proba = new Doctor(doctor.Id, doctor.Name, doctor.Surname, doctor.TelephoneNumber, doctor.Jmbg, doctor.Gender, doctor.BirthdayDate, doctor.Adress, doctor.SpecializationType, s, doctor.Vacation);
-            doctorStorage.Delete(foundedDoctor);
+            doctorStorage.DeleteById(foundedDoctor.Id);
             doctorStorage.Save(proba);
            // doctorStorage.SaveAll(all);
             
