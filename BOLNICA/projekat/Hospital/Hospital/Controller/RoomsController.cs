@@ -72,5 +72,10 @@ namespace Hospital.Controller
             }
             return rooms;
         }
+
+        internal bool isRoomAvailableInventoryMovement(StaticInventoryMovement newMovement)
+        {
+            return service.isRoomAvailableInventoryMovement(newMovement);
+        }
     }
 }

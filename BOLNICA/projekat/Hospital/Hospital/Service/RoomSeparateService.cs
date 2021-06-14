@@ -17,7 +17,7 @@ namespace Hospital.Service
         private IRoomInventoryFileStorage roominventoryStorage;
         private ICheckupFileStorage checkupStorage;
         private InventoryIFileStorage inventoryStorage;
-        private StaticInvnetoryMovementFileStorage staticInventoryStorage;
+        private IStaticInventoryMovementFileStorage staticInventoryStorage;
         private RoomIFileStorage roomStorage;
         private RoomsService roomsService;
         public RoomSeparateService()
@@ -25,7 +25,7 @@ namespace Hospital.Service
             separateStorage = new RoomSeparateFileStorage("./../../../../Hospital/files/storageRoomSeparate.json");
             roominventoryStorage = new RoomInventoryFileStorage("./../../../../Hospital/files/storageRoomInventory.json");
             inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
-            staticInventoryStorage = new StaticInvnetoryMovementFileStorage();
+            staticInventoryStorage = new StaticInvnetoryMovementFileStorage("./../../../../Hospital/files/storageStaticInventory.json");
             checkupStorage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
             roomsService = new RoomsService();
             roomStorage = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");

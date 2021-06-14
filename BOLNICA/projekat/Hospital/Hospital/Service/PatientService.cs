@@ -51,7 +51,7 @@ namespace Hospital.Service
                 if (p.Id == patient.Id)
                 {
                     Patient unblocked = new Patient(patient.Name, patient.Surname, patient.TelephoneNumber, patient.Jmbg, patient.Gender, patient.BirthdayDate, patient.Id, patient.HealthCareCategory, patient.IdHealthCard, patient.Occupation, patient.Insurence, patient.Adress);
-                    patientStorage.Delete(p);
+                    patientStorage.DeleteById(p.Id);
                     patientStorage.Save(unblocked);
                     break;
                 }

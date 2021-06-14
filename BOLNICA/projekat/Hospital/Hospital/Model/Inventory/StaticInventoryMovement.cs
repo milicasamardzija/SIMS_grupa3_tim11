@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.Model 
 {
-    public class StaticInventoryMovement
+    public class StaticInventoryMovement : Entity
     {
         private int roomInId;
         private int roomOutId;
@@ -22,6 +22,10 @@ namespace Hospital.Model
             inventoryId = idInv;
             quantity = q;
             date = d;
+        }
+
+        public StaticInventoryMovement()
+        {
         }
 
         public int RoomInId
@@ -85,6 +89,21 @@ namespace Hospital.Model
             {
                 date = value;
             }
+        }
+
+        internal void saveNewMovement(StaticInventoryMovement staticInventoryMovement)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void doWork()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void moveInventoryStatic(StaticInventoryMovement movement)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -45,21 +45,6 @@ namespace Hospital.FileStorage
             }
         }
 
-        public void Delete(T entity)
-        {
-            List<T> all = GetAll();
-
-            foreach (T temp in all)
-            {
-                if (temp.Id == entity.Id)
-                {
-                    all.Remove(temp);
-                    break;
-                }
-            }
-            SaveAll(all);
-        }
-
         public void DeleteById(int id)
         {
             List<T> all = GetAll();
@@ -92,21 +77,6 @@ namespace Hospital.FileStorage
             return ret;
         }
 
-        public Boolean ExistsById(int id)
-        {
-            List<T> all = GetAll();
-            Boolean ret = false;
-
-            foreach (T entity in all)
-            {
-                if (entity.Id == id)
-                {
-                    ret = true;
-                    break;
-                }
-            }
-            return ret;
-        }
     }
 }
 

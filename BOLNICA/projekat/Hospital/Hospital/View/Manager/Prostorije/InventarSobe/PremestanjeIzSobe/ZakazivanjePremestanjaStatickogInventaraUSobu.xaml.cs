@@ -17,30 +17,30 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Hospital.FileStorage.Interfaces;
+using Hospital.DTO;
+using Hospital.Controller;
 
 namespace Hospital
 {
     public partial class ZakazivanjePremestanjaStatickogInventaraUSobu : UserControl
     {
-        private ObservableCollection<Inventory> listInventory;
-        private Inventory inventory;
+        private ObservableCollection<InventoryDTO> inventories;
+        private InventoryDTO inventory;
         private Frame frame;
-        private DateTime date;
-        private int idRoom;
-        private int quantity;
-        private DateTime dateExecution;
-        private String time;
-        private Room roomOut;
+        private RoomDTO roomOut;
         private DataGrid tabelaPrikaz;
-        private RoomsService serviceRoom = new RoomsService();
-        public ZakazivanjePremestanjaStatickogInventaraUSobu(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, Room room, DataGrid inventarTabela)
+        private StaticInventoryMovement movement;
+        private RoomsController roomController = new RoomsController();
+        private InventoryController inventoryController = new InventoryController();
+        private StaticInventoryMovementController staticController = new StaticInventoryMovementController();
+        public ZakazivanjePremestanjaStatickogInventaraUSobu(Frame frame, ObservableCollection<InventoryDTO> inventories, InventoryDTO inventory, int selectedIndex, RoomDTO room, DataGrid inventarTabela)
         {
             InitializeComponent();
-            frame = magacinFrame;
-            listInventory = list;
-            inventory = selecetedInventory;
-            roomOut = room;
-            tabelaPrikaz = inventarTabela;
+            this.frame = frame;
+            this.inventories = inventories;
+            this.inventory = inventory;
+            this.roomOut = room;
+            this.tabelaPrikaz = inventarTabela;
 
             ImeTxt.SelectedText = inventory.Name;
             KolicinaTxt.SelectedText = Convert.ToString(inventory.Quantity);
@@ -55,54 +55,30 @@ namespace Hospital
 
         private void prikaz()
         {
-            tabelaPrikaz.ItemsSource = loadJason();
-        }
-
-        public ObservableCollection<Inventory> loadJason()
-        {
-            IRoomInventoryFileStorage storage = new RoomInventoryFileStorage("./../../../../Hospital/files/storageRoomInventory.json");
-            InventoryFileStorage inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
-
-            ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>();
-
-            foreach (RoomInventory r in storage.GetAll())
-            {
-                if (r.IdRoom.Equals(roomOut.Id))
-                {
-                    Inventory i = inventoryStorage.FindById(r.IdInventory);
-                    if (i != null)
-                        ret.Add(new Inventory(i.Id, i.Name, r.Quantity, i.Type));
-                    else
-                        break;
-                }
-
-            }
-
-            return ret;
+            tabelaPrikaz.ItemsSource = inventoryController.getAll();
         }
 
         public async Task doWork()
         {
-            StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
-            TimeSpan t = dateExecution.Subtract(DateTime.Now); //ovo racuna vreme koje je potrebno da nit spava
+            TimeSpan t = movement.Date.Subtract(DateTime.Now);
 
-            if (dateExecution < DateTime.Now) //ovo je slucaj kada je vreme premestanja proslo dok je aplikacija bila iskljucena,
-                                              //pa cim se ukljuci dolazi do premestanja
+            if (movement.Date < DateTime.Now) 
             {
-                storage.moveInventoryStatic(inventory, idRoom, roomOut.Id, quantity);
+                staticController.moveInventoryStatic(movement);
                 prikaz();
             }
             else
             {
                 await Task.Delay(t);
-                storage.moveInventoryStatic(inventory, idRoom, roomOut.Id, quantity);
+                staticController.moveInventoryStatic(movement);
                 prikaz();
             }
         }
 
         private async void premesti(object sender, RoutedEventArgs e)
         {
-            //argumenti
+            int idRoom;
+  
             if (!IdSobeTxt.Text.Equals(""))
             {
                 idRoom = Convert.ToInt32(IdSobeTxt.Text);
@@ -110,19 +86,14 @@ namespace Hospital
             {
                 idRoom = -1;
             }
-            quantity = Convert.ToInt32(KolicinaTxt.Text);
-            date = (DateTime)DatumTxt.SelectedDate;
-            time = VremeTxt.Text;
+  
+            TimeSpan t = TimeSpan.ParseExact(VremeTxt.Text, "c", null);
+            DateTime dateExecution = ((DateTime)DatumTxt.SelectedDate).Add(t);
+            movement = new StaticInventoryMovement(idRoom, roomOut.Id, inventory.Id, Convert.ToInt32(KolicinaTxt.Text), dateExecution);
 
-            //ove dve linije dodaju na datum uneto vreme(datum uzimam preko DatePicker-a a vreme je String)
-            TimeSpan t = TimeSpan.ParseExact(time, "c", null); 
-            dateExecution = date.Add(t);
-
-            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, roomOut.Id, inventory.Id, quantity, dateExecution);
-
-            if (serviceRoom.isRoomAvailableInventoryMovement(newMovement))
+            if (roomController.isRoomAvailableInventoryMovement(movement))
             {
-                saveNewMovement();
+                staticController.saveNewMovement(movement);
             } else
             {
                 PremestanjeOdbijeno odbijeno = new PremestanjeOdbijeno();
@@ -130,16 +101,7 @@ namespace Hospital
             }
 
             doWork();
-
             frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
-
-        private void saveNewMovement()
-        {
-            StaticInventoryMovement newMovement = new StaticInventoryMovement(idRoom, roomOut.Id, inventory.Id, quantity, dateExecution);
-            StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
-            storage.Save(newMovement);
-        }
-
     }
 }

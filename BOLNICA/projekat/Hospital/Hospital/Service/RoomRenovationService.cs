@@ -20,7 +20,7 @@ namespace Hospital.Service
         private StaticInventoryMovemenetService movementService;
         private ICheckupFileStorage checkupStorage;
         private InventoryIFileStorage inventoryStorage;
-        private StaticInvnetoryMovementFileStorage staticInventoryStorage;
+        private IStaticInventoryMovementFileStorage staticInventoryStorage;
         private RoomIFileStorage roomStorage;
         public RoomRenovationService()
         {
@@ -30,7 +30,7 @@ namespace Hospital.Service
             movementService = new StaticInventoryMovemenetService();
             roominventoryStorage = new RoomInventoryFileStorage("./../../../../Hospital/files/storageRoomInventory.json");
             inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
-            staticInventoryStorage = new StaticInvnetoryMovementFileStorage();
+            staticInventoryStorage = new StaticInvnetoryMovementFileStorage("./../../../../Hospital/files/storageStaticInventory.json");
             checkupStorage = new CheckupFileStorage("./../../../../Hospital/files/storageCheckup.json");
         }
         public void deleteRenovation(RoomRenovation renovation)

@@ -46,13 +46,11 @@ namespace Hospital
                 InventarPemesti.NavigationService.Navigate(new BelsekaMagacin(3));
                 MessageBoxResult result = MessageBox.Show("Niste selektovali inventar!");
             }
-            else
-            {
-               /* Inventory inventory = (Inventory)ListaInventara.SelectedItem;
-                if (inventory.Type == InventoryType.staticki)
-                    InventarPemesti.NavigationService.Navigate(new PremestanjeInventara(InventarPemesti, listInventory, ListaInventara, false, room, ListaInventara));
+            else { 
+                if (((InventoryDTO)ListaInventara.SelectedItem).Type == InventoryType.staticki)
+                    InventarPemesti.NavigationService.Navigate(new PremestanjeInventara(InventarPemesti, inventories, ListaInventara, false, room, ListaInventara));
                 else
-                    InventarPemesti.NavigationService.Navigate(new PremestanjeInventaraDijalog(InventarPemesti, listInventory, (Inventory)ListaInventara.SelectedItem, ListaInventara.SelectedIndex, room, ListaInventara));*/
+                    InventarPemesti.NavigationService.Navigate(new PremestanjeInventaraDijalog(InventarPemesti, inventories, (InventoryDTO)ListaInventara.SelectedItem, ListaInventara.SelectedIndex, room, ListaInventara));
             }
         }
 
@@ -62,7 +60,7 @@ namespace Hospital
             if (PretragaTxt.Text.Equals(""))
             {
                 ListaInventara.ItemsSource = inventoryController.getInventoryForRoom(room.Id);
-            } else //fali pretraga za tip i kolicinu
+            } else 
             {
                 ListaInventara.ItemsSource = inventoryController.inventoryByName(PretragaTxt.Text);
             }

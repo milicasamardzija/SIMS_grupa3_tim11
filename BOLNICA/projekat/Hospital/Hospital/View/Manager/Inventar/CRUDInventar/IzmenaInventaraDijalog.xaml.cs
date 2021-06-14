@@ -22,17 +22,17 @@ namespace Hospital
     public partial class IzmenaInventaraDijalog : UserControl
     {
         private Frame frame;
-        private ObservableCollection<Inventory> inventories;
+        private ObservableCollection<InventoryDTO> inventories;
         private int index;
-        private Inventory inventory = new Inventory();
-        public Inventory Inventory
+        private InventoryDTO inventory = new InventoryDTO();
+        public InventoryDTO Inventory
         {
             get { return inventory;}
             set { inventory = value; }
         }
 
         private InventoryController controller;
-        public IzmenaInventaraDijalog(Frame frame, ObservableCollection<Inventory> inventories,Inventory inventory, int index)
+        public IzmenaInventaraDijalog(Frame frame, ObservableCollection<InventoryDTO> inventories, InventoryDTO inventory, int index)
         {
             InitializeComponent();
             this.DataContext = this;

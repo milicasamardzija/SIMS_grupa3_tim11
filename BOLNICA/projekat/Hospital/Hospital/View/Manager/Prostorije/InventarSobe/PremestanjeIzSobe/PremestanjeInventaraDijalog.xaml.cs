@@ -16,32 +16,26 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Hospital.FileStorage.Interfaces;
+using Hospital.DTO;
 
 namespace Hospital
 {
     public partial class PremestanjeInventaraDijalog : UserControl
     {
         public Frame frame;
-        public ObservableCollection<Inventory> listInventory;
-        public int index;
-        public int idInventory;
-        public Inventory inventory;
+        public ObservableCollection<InventoryDTO> inventories;
+        public InventoryDTO inventory;
         public Boolean magacin;
         public int roomOutId;
-        private StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
         private int idRoom;
-        private int quantity;
-        private InventoryFileStorage inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
         private DataGrid listaInvetara;
         private InventoryController inventoryController = new InventoryController();
-        public PremestanjeInventaraDijalog(Frame m, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, Room roomOut, DataGrid tablaPrikaz)
+        public PremestanjeInventaraDijalog(Frame frame, ObservableCollection<InventoryDTO> inventories, InventoryDTO selecetedInventory, int selectedIndex, RoomDTO roomOut, DataGrid tablaPrikaz)
         {
             InitializeComponent();
-            frame = m;
-            listInventory = list;
-            index = selectedIndex;
-            inventory = selecetedInventory;
-            idInventory = selecetedInventory.Id;
+            this.frame = frame;
+            this.inventories = inventories;
+            this.inventory = selecetedInventory;
             roomOutId = roomOut.Id;
             listaInvetara = tablaPrikaz;
 
@@ -64,35 +58,11 @@ namespace Hospital
             {
                 idRoom = Convert.ToInt32(IdSobeTxt.Text);
             }
-            quantity = Convert.ToInt32(KolicinaTxt.Text);
 
-            inventoryController.moveInventory(new RoomInventory(-1,idRoom, inventory.Id, quantity), roomOutId);
-            listaInvetara.ItemsSource = loadJasonInventory();
+            inventoryController.moveInventory(new RoomInventory(-1,idRoom, inventory.Id, Convert.ToInt32(KolicinaTxt.Text)), roomOutId);
+            listaInvetara.ItemsSource = new ObservableCollection<InventoryDTO>(inventoryController.loadJasonInventory(roomOutId));
 
             frame.NavigationService.Navigate(new BelsekaMagacin(3));
-        }
-
-        public ObservableCollection<Inventory> loadJasonInventory()
-        {
-            IRoomInventoryFileStorage storage = new RoomInventoryFileStorage("./../../../../Hospital/files/storageRoomInventory.json");
-            InventoryFileStorage inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
-
-            ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>();
-
-            foreach (RoomInventory r in storage.GetAll())
-            {
-                if (r.IdRoom.Equals(roomOutId))
-                {
-                    Inventory i = inventoryStorage.FindById(r.IdInventory);
-                    if (i != null)
-                        ret.Add(new Inventory(i.Id, i.Name, r.Quantity, i.Type));
-                    else
-                        break;
-                }
-
-            }
-
-            return ret;
         }
     }
 }

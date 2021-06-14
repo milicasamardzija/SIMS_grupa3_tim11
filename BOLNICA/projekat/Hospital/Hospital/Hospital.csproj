@@ -271,6 +271,7 @@
     <Compile Include="FileStorage\Interfaces\IRoomInventoryFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IRoomMergeFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\IRoomSeparateFileStorage.cs" />
+    <Compile Include="FileStorage\Interfaces\IStaticInventoryMovementFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />

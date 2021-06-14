@@ -1,16 +1,1 @@
-[
-  {
-    "RoomInId": -1,
-    "RoomOutId": 0,
-    "InventoryId": 1,
-    "Quantity": 5,
-    "Date": "2021-12-12T00:00:00"
-  },
-  {
-    "RoomInId": 2,
-    "RoomOutId": -1,
-    "InventoryId": 0,
-    "Quantity": 45,
-    "Date": "2021-08-09T12:00:00"
-  }
-]
+[]

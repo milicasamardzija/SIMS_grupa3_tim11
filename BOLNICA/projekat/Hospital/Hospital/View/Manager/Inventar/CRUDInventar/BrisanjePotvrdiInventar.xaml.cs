@@ -20,17 +20,16 @@ namespace Hospital.View.Manager.Inventar.CRUDInventar
     public partial class BrisanjePotvrdiInventar : Window
     {
         private int id;
-        private ObservableCollection<Inventory> inventories;
+        private ObservableCollection<InventoryDTO> inventories;
         private int index;
-        private InventoryController controller;
+        private InventoryController controller = new InventoryController();
 
-        public BrisanjePotvrdiInventar(int id, System.Collections.ObjectModel.ObservableCollection<Inventory> inventories,int index)
+        public BrisanjePotvrdiInventar(int id, System.Collections.ObjectModel.ObservableCollection<InventoryDTO> inventories,int index)
         {
             InitializeComponent();
             this.id = id;
             this.inventories = inventories;
             this.index = index;
-            this.controller = new InventoryController();
         }
 
         private void Potvrdi(object sender, RoutedEventArgs e)

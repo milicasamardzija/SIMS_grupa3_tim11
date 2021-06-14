@@ -49,6 +49,24 @@ namespace Hospital.Service
             return inventoryStorage.GetAll();
         }
 
+        public List<Inventory> loadJasonInventory(int roomOutId)
+        {
+            List<Inventory> ret = new List<Inventory>();
+            foreach (RoomInventory r in roomInventoryStorage.GetAll())
+            {
+                if (r.IdRoom.Equals(roomOutId))
+                {
+                    Inventory i = inventoryStorage.FindById(r.IdInventory);
+                    if (i != null)
+                        ret.Add(new Inventory(i.Id, i.Name, r.Quantity, i.Type));
+                    else
+                        break;
+                }
+
+            }
+            return ret;
+        }
+
         public void delete(int id)
         {
             inventoryStorage.DeleteById(id);

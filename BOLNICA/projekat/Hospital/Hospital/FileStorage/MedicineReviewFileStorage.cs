@@ -20,7 +20,7 @@ namespace Hospital.Model
             {
                 if (review.IdMedicine == idMedicine)
                 {
-                    Delete(review);
+                    DeleteById(review.Id);
                 }
             }
         }

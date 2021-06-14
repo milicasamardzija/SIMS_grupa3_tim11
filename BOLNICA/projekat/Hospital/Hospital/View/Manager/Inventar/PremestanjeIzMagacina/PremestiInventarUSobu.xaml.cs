@@ -22,29 +22,18 @@ namespace Hospital
     public partial class PremestiInventarUSobu : UserControl
     {
         public Frame frame;
-        public ObservableCollection<Inventory> listInventory;
-        public int index;
-        public int idInventory;
-        public Inventory inventory;
-        public ObservableCollection<Room> listRooms;
-        private StaticInvnetoryMovementFileStorage storage = new StaticInvnetoryMovementFileStorage();
-        private InventoryFileStorage inventoryStorage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
-        private int idRoom;
-        private int quantity;
+        public ObservableCollection<InventoryDTO> inventories;
+        public InventoryDTO inventory;
         private DataGrid inventarTabela;
         private InventoryController inventoryController = new InventoryController();
         private RoomsController roomController = new RoomsController();
-        public PremestiInventarUSobu(Frame magacinFrame, ObservableCollection<Inventory> list, Inventory selecetedInventory, int selectedIndex, DataGrid listaInventara)
+        public PremestiInventarUSobu(Frame frame, ObservableCollection<InventoryDTO> inventories, InventoryDTO inventory, int selectedIndex, DataGrid listaInventara)
         {
             InitializeComponent();
-
-            frame = magacinFrame;
-            listInventory = list;
-            index = selectedIndex;
-            inventory = selecetedInventory; //selektovani inevntar
-            idInventory = selecetedInventory.Id; //id selektovanog inventara
-            listRooms = loadJason();
-            inventarTabela = listaInventara;
+            this.frame = frame;
+            this.inventories = inventories;
+            this.inventory = inventory;
+            this.inventarTabela = listaInventara;
             addRooms();
             potvrdiBtn.IsEnabled = false;
 
@@ -65,20 +54,6 @@ namespace Hospital
             }
         }
 
-        public ObservableCollection<Room> loadJason()
-        {
-            RoomFileStorage fs = new RoomFileStorage("./../../../../Hospital/files/storageRooms.json");
-            ObservableCollection<Room> rs = new ObservableCollection<Room>(fs.GetAll());
-            return rs;
-        }
-
-        public ObservableCollection<Inventory> loadJsonInventory()
-        {
-            InventoryFileStorage storage = new InventoryFileStorage("./../../../../Hospital/files/storageInventory.json");
-            ObservableCollection<Inventory> ret = new ObservableCollection<Inventory>(storage.GetAll());
-            return ret;
-        }
-
         private void odustani(object sender, RoutedEventArgs e)
         {
             frame.NavigationService.Navigate(new BelsekaMagacin(0));
@@ -86,11 +61,8 @@ namespace Hospital
 
         private void premesti(object sender, RoutedEventArgs e)
         {
-            idRoom = Convert.ToInt32(((ComboBoxItem)SobeComboBox.SelectedItem).Tag);
-            quantity = Convert.ToInt32(KolicinaTxt.Text);
-
-            inventoryController.moveInventory(new RoomInventory(-1,idRoom, inventory.Id, quantity), -1);
-            inventarTabela.ItemsSource = loadJsonInventory();
+            inventoryController.moveInventory(new RoomInventory(-1, Convert.ToInt32(((ComboBoxItem)SobeComboBox.SelectedItem).Tag), inventory.Id, Convert.ToInt32(KolicinaTxt.Text)), -1);
+            inventarTabela.ItemsSource = inventoryController.getAll();
             frame.NavigationService.Navigate(new BelsekaMagacin(0));
         }
 
