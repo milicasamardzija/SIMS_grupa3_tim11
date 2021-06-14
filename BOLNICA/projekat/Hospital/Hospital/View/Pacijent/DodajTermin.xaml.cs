@@ -2,6 +2,7 @@
 using Hospital.DTO;
 using Hospital.Model;
 using Hospital.View.Pacijent;
+using Hospital.View.Pacijent.Strategy;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -178,7 +179,9 @@ namespace Hospital
                 String t = item.ToString();
                 String d = date.Text;
                 DateTime dt = DateTime.Parse(d + " " + t);
-                checkupcontroller.getAvailableTimes(dt, l);
+
+                // checkupcontroller.getAvailableTimes(dt, l);
+                new ContextClass(new AddStrategy()).availableTimes(dt, l);
 
             }
 

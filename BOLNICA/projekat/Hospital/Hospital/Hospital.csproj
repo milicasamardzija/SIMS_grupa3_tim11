@@ -495,6 +495,10 @@
     <Compile Include="View\Pacijent\ProblemPacijent.xaml.cs">
       <DependentUpon>ProblemPacijent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pacijent\Strategy\AddStrategy.cs" />
+    <Compile Include="View\Pacijent\Strategy\ContextClass.cs" />
+    <Compile Include="View\Pacijent\Strategy\EditStrategy.cs" />
+    <Compile Include="View\Pacijent\Strategy\IStrategy.cs" />
     <Compile Include="View\Pacijent\UtisakPacijent.xaml.cs">
       <DependentUpon>UtisakPacijent.xaml</DependentUpon>
     </Compile>
