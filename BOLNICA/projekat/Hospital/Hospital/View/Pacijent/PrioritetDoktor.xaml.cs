@@ -123,7 +123,7 @@ namespace Hospital.View.Pacijent
                 {
                     if (t.IdDoctor == d.Id)
                     {
-                        if (d.jmbg.Equals(doktor.jmbg))
+                        if (d.Jmbg.Equals(doktor.Jmbg))
                         {
                             if (t.Date.Date.Equals(date.SelectedDate))
                             {
