@@ -168,7 +168,7 @@ namespace Hospital
             }
 
             dostupnoVrijeme = new List<string>();
-            List<Checkup> termini = new List<Checkup>();
+            List<CheckupDTO> termini = new List<CheckupDTO>();
 
 
 
@@ -191,7 +191,7 @@ namespace Hospital
             for (DateTime tm = danas.AddHours(8); tm < danas.AddHours(20); tm = tm.AddMinutes(15))
             {
                 bool slobodno = true;
-                foreach (Checkup termin in termini)
+                foreach (CheckupDTO termin in termini)
                 {
                     DateTime start = DateTime.Parse(termin.Date.ToString("HH:mm"));
                     DateTime end = DateTime.Parse(termin.Date.AddMinutes(termin.Duration).ToString("HH:mm"));
