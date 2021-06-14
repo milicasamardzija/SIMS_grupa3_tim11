@@ -35,7 +35,7 @@ namespace Hospital.View.Secretary.AppOrganisation
         {
 
             //iz nekog razloga ne radi ako je obrnuo kao sto bi i trebalo???
-            if(problem.Text.Equals("")  && email.Text.Equals(""))
+            if(problem.Text.Equals("") ||  email.Text.Equals(""))
             {
                 MessageBox.Show("Morate popuniti polje za opis problema i email");
             
@@ -44,7 +44,7 @@ namespace Hospital.View.Secretary.AppOrganisation
             {
                 feedback = new Feedback(0, FeedbackType.prijava_problema, ocena.Value, komentar.Text, problem.Text, email.Text);
                 controller.createFeedbackProblem(feedback);
-
+                MessageBox.Show("Uspesno ste prijavili problem.");
             }
 
         }
