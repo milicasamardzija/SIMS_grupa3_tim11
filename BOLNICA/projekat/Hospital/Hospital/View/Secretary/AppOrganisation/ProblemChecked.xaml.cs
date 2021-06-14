@@ -35,12 +35,9 @@ namespace Hospital.View.Secretary.AppOrganisation
         {
 
             //iz nekog razloga ne radi ako je obrnuo kao sto bi i trebalo???
-            if(problem.Text != null && email.Text != null )
+            if(problem.Text.Equals("")  && email.Text.Equals(""))
             {
                 MessageBox.Show("Morate popuniti polje za opis problema i email");
-             
-
-              
             
              
             } else

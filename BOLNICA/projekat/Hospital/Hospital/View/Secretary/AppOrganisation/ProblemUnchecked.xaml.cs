@@ -35,7 +35,7 @@ namespace Hospital.View.Secretary.AppOrganisation
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (komentar.Text == null || ocena.Value == null)
+            if (!komentar.Text.Equals("") || !ocena.Value.Equals(""))
             {
 
                 feedback = new Feedback(0, FeedbackType.utisak, ocena.Value, komentar.Text);
