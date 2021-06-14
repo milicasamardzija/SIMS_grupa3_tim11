@@ -21,7 +21,7 @@ namespace Hospital.Controller
             List<RoomMergeDTO> renovations = new List<RoomMergeDTO>();
             foreach (RoomMerge renovation in service.getAllMergeRenovations())
             {
-                renovations.Add(new RoomMergeDTO(renovation.Id,renovation.IdRoom,renovation.IdRoomSecond,renovation.DateBegin,renovation.DateEnd,renovation.Purpose,renovation.Description));
+                renovations.Add(new RoomMergeDTO(renovation.Id,renovation.IdRoom,renovation.IdRoomSecond,renovation.DateBegin,renovation.DateEnd,renovation.Purpose,renovation.Description,renovation.IdNewRoom));
             }
             return renovations;
         }
