@@ -11,11 +11,11 @@ namespace Hospital.Service
 {
     public class RecipeService
     {
-        public RecipeFileStorage storageRecipe;
+        private IRecipeFileStorage storageRecipe;
 
-        public RecipeService()
+        public RecipeService(IRecipeFileStorage storageRecipe)
         {
-            storageRecipe = new RecipeFileStorage("./../../../../Hospital/files/recepti.json");
+           this.storageRecipe = storageRecipe;
         }
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)

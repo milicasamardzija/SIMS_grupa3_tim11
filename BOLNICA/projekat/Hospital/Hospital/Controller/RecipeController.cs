@@ -13,7 +13,7 @@ namespace Hospital.Controller
 
         public RecipeController()
         {
-            service = new RecipeService();
+            service = new RecipeService(new RecipeFileStorage("./../../../../Hospital/files/recepti.json"));
         }
 
 

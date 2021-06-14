@@ -28,9 +28,8 @@ namespace Hospital.Service
             checkupStorage = checkupFactory.CreateCheckup();
             patientsStorage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
             doctorStorage = new DoctorFileStorage("./../../../../Hospital/files/storageDoctor.json");
-
         }
-        
+
         public int generateIdCheckup() 
         {
             int val = 0;

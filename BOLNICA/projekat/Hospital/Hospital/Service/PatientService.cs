@@ -16,7 +16,6 @@ namespace Hospital.Service
         public PatientService()
         {
             patientStorage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
-
         }
 
         public void save(Patient patient)
