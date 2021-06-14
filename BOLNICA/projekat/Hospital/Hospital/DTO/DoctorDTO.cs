@@ -22,6 +22,9 @@ namespace Hospital.DTO
         private Adress adress;
         private int freeDays = 25;
         private SpecializationType type;
+        private Shift shift;
+        private Vacation vacation; 
+
 
         public DoctorDTO() { }
 
@@ -39,6 +42,21 @@ namespace Hospital.DTO
 
         }
 
+        public DoctorDTO(int id, String name, String surname, String telephone, String jmbg, Gender gender, DateTime date, Adress address, SpecializationType type, Shift shift, Vacation vacation)
+        {
+            this.id = id;
+            this.name = name;
+            this.surname = surname;
+            this.telephoneNumber = telephone;
+            this.jmbg = jmbg;
+            this.gender = gender;
+            this.birthdayDate = date;
+            this.adress = address;
+            this.type = type;
+            this.Shift = shift;
+            this.vacation = vacation;
+
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnProperychanged(string name)
@@ -228,5 +246,36 @@ namespace Hospital.DTO
             }
         }
 
+        public Shift Shift
+        {
+            get
+            {
+                return shift;
+            }
+            set
+            {
+                if (value != shift)
+                {
+                    shift = value;
+                    OnProperychanged("Shift");
+                }
+            }
+        }
+        public Vacation Vacation
+
+        {
+            get
+            {
+                return vacation;
+            }
+            set
+            {
+                if (value != vacation)
+                {
+                    vacation = value;
+                    OnProperychanged("Vacation");
+                }
+            }
+        }
     }
 }

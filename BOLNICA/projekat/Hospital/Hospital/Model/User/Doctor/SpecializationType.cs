@@ -15,6 +15,7 @@ namespace Hospital.Model
         ginekologija,
         dermatologija,
         psihijatrija,
-        ORL
+        ORL, 
+        opsti
     }
 }

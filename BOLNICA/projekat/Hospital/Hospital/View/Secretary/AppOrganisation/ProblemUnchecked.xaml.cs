@@ -35,17 +35,18 @@ namespace Hospital.View.Secretary.AppOrganisation
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (komentar.Text == null || ocena.Value == null)
-            {
-
-                MessageBox.Show("Morate uneti ocenu i komentar!");
-            }
-            else
+            if (!komentar.Text.Equals("") || !ocena.Value.Equals(""))
             {
 
                 feedback = new Feedback(0, FeedbackType.utisak, ocena.Value, komentar.Text);
                 controller.createFeedbackUtisak(feedback);
                 MessageBox.Show("Uspesno ste uneli feedback!");
+             
+            }
+            else
+            {
+
+                MessageBox.Show("Morate uneti ocenu i komentar!");
             }
             
                

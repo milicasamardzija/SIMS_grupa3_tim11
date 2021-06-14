@@ -1,4 +1,5 @@
 ﻿using Hospital.View.Secretary.AppOrganisation;
+using Hospital.View.Secretary.DoctorShiftAndVacation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,8 +64,10 @@ namespace Hospital
             frameS.Navigate(a);
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void radnoVreme(object sender, RoutedEventArgs e)
         {
+            Shifts s = new Shifts();
+            frameS.Navigate(s);
 
         }
     }

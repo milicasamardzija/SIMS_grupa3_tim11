@@ -34,23 +34,19 @@ namespace Hospital.View.Secretary.AppOrganisation
         private void posalji(object sender, RoutedEventArgs e)
         {
 
-            
-            if(problem.Text != null && email.Text != null )
+            //iz nekog razloga ne radi ako je obrnuo kao sto bi i trebalo???
+            if(problem.Text.Equals("")  && email.Text.Equals(""))
             {
-
-                feedback = new Feedback(0, FeedbackType.prijava_problema, ocena.Value, komentar.Text, problem.Text, email.Text);
-                controller.createFeedbackProblem(feedback);
-
-
-                MessageBox.Show("Uspesno ste uneli feedback!");
+                MessageBox.Show("Morate popuniti polje za opis problema i email");
             
              
             } else
             {
-                MessageBox.Show("Morate popuniti polje za opis problema i email");
+                feedback = new Feedback(0, FeedbackType.prijava_problema, ocena.Value, komentar.Text, problem.Text, email.Text);
+                controller.createFeedbackProblem(feedback);
 
             }
-           
+
         }
     }
 }

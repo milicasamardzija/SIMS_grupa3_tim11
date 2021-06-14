@@ -13,10 +13,9 @@
                         Margin="0,0,2,0"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
-                        Content="{Binding  Path [0].ErrorContent}"
+                        Content="{Binding Path [0].ErrorContent}"
                         Foreground="OrangeRed"
-                        TextElement.FontSize="8">
-                    </Label>
+                        TextElement.FontSize="8" />
                 </Grid>
             </Border>
         </ControlTemplate>

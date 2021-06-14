@@ -122,7 +122,7 @@ namespace Hospital.Controller
             List<DoctorDTO> availableDoctors = new List<DoctorDTO>();
             foreach(Doctor d in doctors )
             {
-                DoctorDTO doctor = new DoctorDTO(d.Id, d.Name, d.Surname, d.telephoneNumber, d.jmbg, d.gender, d.BirthdayDate, d.adress, d.SpecializationType);
+                DoctorDTO doctor = new DoctorDTO(d.Id, d.Name, d.Surname, d.TelephoneNumber, d.Jmbg, d.Gender, d.BirthdayDate, d.Adress, d.SpecializationType);
                 availableDoctors.Add(doctor);
             }
             return availableDoctors;

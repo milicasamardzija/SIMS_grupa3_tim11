@@ -205,6 +205,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controller\DoctorController.cs" />
+    <Compile Include="Controller\DoctorShiftController.cs" />
     <Compile Include="Controller\FeedbackController.cs" />
     <Compile Include="Controller\FunctionalityController.cs" />
     <Compile Include="Controller\IngredientController.cs" />
@@ -221,6 +222,7 @@
     <Compile Include="Controller\RoomInventoryController.cs" />
     <Compile Include="Controller\RoomRenovationController.cs" />
     <Compile Include="Controller\StaticInventoryMovementController.cs" />
+    <Compile Include="Controller\VacationController.cs" />
     <Compile Include="DTO\DoctorDTO.cs" />
     <Compile Include="DTO\FunkcionalityDTO.cs" />
     <Compile Include="DTO\IngredientDTO.cs" />
@@ -237,11 +239,19 @@
     <Compile Include="DTO\RoomRenovationDTO.cs" />
     <Compile Include="Controller\PatientController.cs" />
     <Compile Include="DTO\PatientDTO.cs" />
+
     <Compile Include="DTO\RoomSeparateDTO.cs" />
     <Compile Include="DTO\SurveyDTO.cs" />
     <Compile Include="FileStorage\CheckupDataBase.cs" />
     <Compile Include="FileStorage\CheckupDataBaseFactory.cs" />
     <Compile Include="FileStorage\CheckupFileFactory.cs" />
+
+    <Compile Include="DTO\ScheduleShiftDTO.cs" />
+    <Compile Include="DTO\ShiftDTO.cs" />
+    <Compile Include="DTO\SurveyDTO.cs" />
+    <Compile Include="DTO\VacationDTO .cs" />
+    <Compile Include="Model\Vacation.cs" />
+
     <Compile Include="FileStorage\FeedbackFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\CheckupFactory.cs" />
     <Compile Include="FileStorage\Interfaces\IAlergensFileStorage.cs" />
@@ -264,20 +274,29 @@
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
+
     <Compile Include="FileStorage\RoomMergeFileStorage.cs" />
     <Compile Include="FileStorage\RoomSeparateFileStorage.cs" />
+    <Compile Include="Model\ScheduleShift.cs" />
+
     <Compile Include="Model\Feedback.cs" />
     <Compile Include="Model\FeedbackType.cs" />
     <Compile Include="Model\ManagerNote.cs" />
     <Compile Include="Model\Note.cs" />
     <Compile Include="Model\Medicine\Review.cs" />
+
     <Compile Include="Model\Rooms\RoomMerge.cs" />
     <Compile Include="Model\Rooms\RoomSeparate.cs" />
     <Compile Include="MVVM\Command\RelayCommand.cs" />
     <Compile Include="MVVM\ModelView\ModelViewDodajProstoriju.cs" />
     <Compile Include="MVVM\ModelView\ModelViewIzmeniProstoriju.cs" />
     <Compile Include="MVVM\ModelView\ModelViewObavestenja.cs" />
+
+    <Compile Include="Model\Shift.cs" />
+    <Compile Include="Model\ShiftType.cs" />
+
     <Compile Include="Service\DoctorService.cs" />
+    <Compile Include="Service\DoctorShiftService.cs" />
     <Compile Include="Service\FeedbackService.cs" />
     <Compile Include="Service\FunctionalityService.cs" />
     <Compile Include="Service\IngredientService.cs" />
@@ -295,12 +314,16 @@
     <Compile Include="Service\RoomRenovationService.cs" />
     <Compile Include="Service\StaticInventoryMovemenetService.cs" />
     <Compile Include="Service\PatientService.cs" />
+
     <Compile Include="TemplateForReports\DoctorReportService.cs" />
     <Compile Include="TemplateForReports\ManagerReportService.cs" />
     <Compile Include="TemplateForReports\PatientReportService.cs" />
     <Compile Include="TemplateForReports\PrintReport.cs" />
     <Compile Include="TemplateForReports\ReportController.cs" />
     <Compile Include="TemplateForReports\SecretaryReportService.cs" />
+
+    <Compile Include="Service\VacationService.cs" />
+
     <Compile Include="View\DoctorUI\BolnickoLecenje.xaml.cs">
       <DependentUpon>BolnickoLecenje.xaml</DependentUpon>
     </Compile>
@@ -525,6 +548,18 @@
     </Compile>
     <Compile Include="View\Secretary\CRUDPatient\RegistredPatient\OdblokirajPacijenta.xaml.cs">
       <DependentUpon>OdblokirajPacijenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Secretary\DoctorShiftAndVacation\OtvoriGodisnji.xaml.cs">
+      <DependentUpon>OtvoriGodisnji.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Secretary\DoctorShiftAndVacation\PromeniSmenu.xaml.cs">
+      <DependentUpon>PromeniSmenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Secretary\DoctorShiftAndVacation\PronadjiSmenu.xaml.cs">
+      <DependentUpon>PronadjiSmenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Secretary\DoctorShiftAndVacation\Shifts.xaml.cs">
+      <DependentUpon>Shifts.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Secretary\Notifications\Blog\DodajObavestenjeBlog.xaml.cs">
       <DependentUpon>DodajObavestenjeBlog.xaml</DependentUpon>
@@ -1059,6 +1094,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Secretary\DoctorShiftAndVacation\OtvoriGodisnji.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Secretary\DoctorShiftAndVacation\PromeniSmenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Secretary\DoctorShiftAndVacation\PronadjiSmenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Secretary\DoctorShiftAndVacation\Shifts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Secretary\Notifications\Blog\DodajObavestenjeBlog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1526,14 +1577,13 @@
   <ItemGroup>
     <Resource Include="View\Images\profile-icon.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\Secretary\NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Content\Chart.css" />
     <Content Include="Content\Chart.min.css" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\Chart.min.js" />
+    <Resource Include="View\Secretary\DoctorShiftAndVacation\Baggage-icon.png" />
     <Resource Include="View\Secretary\AppOrganisation\telegram-icon.png" />
     <Resource Include="View\Secretary\AppOrganisation\Document-help-icon.png" />
     <Resource Include="View\Secretary\AppOrganisation\important-icon.png" />

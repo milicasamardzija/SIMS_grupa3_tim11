@@ -18,8 +18,6 @@ namespace Hospital.Service
         {
             this.storage = storage;
         }
-
-
         public int generisiId()
         {
             int ret = 0;

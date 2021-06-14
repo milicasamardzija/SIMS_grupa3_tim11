@@ -98,7 +98,7 @@
             <MenuItem
                 Width="153"
                 Height="30"
-                Click="MenuItem_Click"
+                Click="radnoVreme"
                 Cursor="Hand"
                 FontSize="16"
                 FontWeight="Bold"

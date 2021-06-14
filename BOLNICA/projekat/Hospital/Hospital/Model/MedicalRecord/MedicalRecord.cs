@@ -31,11 +31,11 @@ public class MedicalRecord : Patient
     }
     public MedicalRecord(String ime, String prezime, String jmbgg, Gender pol, DateTime drodj, int id, HealthCareCategory hcc, int idhc, BloodType kg, ObservableCollection<Alergens> alergeni)
     {
-        this.name = ime;
-        this.surname = prezime;
-        this.jmbg = jmbgg;
-        this.gender = pol;
-        this.birthdayDate = drodj;
+        this.Name = ime;
+        this.Surname = prezime;
+        this.Jmbg = jmbgg;
+        this.Gender = pol;
+        this.BirthdayDate = drodj;
         this.HealthCareCategory = hcc;
         this.medicalRecordId = id;   //medical record id ce biti isto sto i patientId, pa cu po tome traziti
         this.IdHealthCard = idhc;

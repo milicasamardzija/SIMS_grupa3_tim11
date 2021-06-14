@@ -1,4 +1,5 @@
 
+using Hospital;
 using Hospital.Model;
 using System;
 
@@ -6,13 +7,54 @@ using System;
     public class Doctor : User
     {
 
-       
-        public int freeDays = 25;
+        // public String specialization;
+        private int freeDays;
         private SpecializationType specializationType;
+        private Shift shift;
+        private Vacation vacation;
+    private SpecializationType type;
 
-     
+    public Doctor(int id, string name, string surname, string telephoneNumber, string jmbg, Gender gender, DateTime birthdayDate, Adress adress, SpecializationType type, Shift shift, Vacation vacation)
+    {
+        Id = id;
+        this.Name = name;
+        this.Surname = surname;
+        this.TelephoneNumber = telephoneNumber;
+        this.Jmbg = jmbg;
+        this.Gender = gender;
+        this.BirthdayDate = birthdayDate;
+        this.Adress = adress;
+        this.type = type;
+        this.shift = shift;
+        this.vacation = vacation;
+    }
 
-        public SpecializationType SpecializationType
+
+
+
+    // private int doctorId;
+
+
+
+
+    /*
+        public int DoctorId
+        {
+            get
+            {
+                return doctorId;
+            }
+            set
+            {
+                if (value != doctorId)
+                {
+                    doctorId = value;
+                    OnProperychanged("DoctorId");
+                }
+            }
+        }*/
+
+    public SpecializationType SpecializationType
         {
             get
             {
@@ -23,7 +65,7 @@ using System;
                 if (value != specializationType)
                 {
                     specializationType = value;
-                    OnProperychanged("SpecializationType");
+                  
                 }
             }
         }
@@ -39,8 +81,39 @@ using System;
                 if (value != freeDays)
                 {
                     freeDays = value;
-                    OnProperychanged("FreeDays");
+                   
                 }
             }
         }
+
+    public Shift Shift
+    {
+        get
+        {
+            return shift;
+        }
+        set
+        {
+            if (value != shift)
+            {
+                shift = value;
+            
+            }
+        }
     }
+    public Vacation Vacation
+    {
+        get
+        {
+            return vacation;
+        }
+        set
+        {
+            if (value != vacation)
+            {
+                vacation = value;
+                
+            }
+        }
+    }
+}

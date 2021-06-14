@@ -1,4 +1,5 @@
 ﻿using Hospital.DTO;
+using Hospital.Model;
 using Hospital.Service;
 using System;
 using System.Collections.Generic;
@@ -29,11 +30,24 @@ namespace Hospital.Controller
             List<DoctorDTO> doctors = new List<DoctorDTO>();
             foreach(Doctor d in all)
             {
-                DoctorDTO doctor = new DoctorDTO(d.Id, d.name, d.surname, d.TelephoneNumber, d.jmbg, d.gender, d.BirthdayDate, d.adress, d.SpecializationType);
+                DoctorDTO doctor = new DoctorDTO(d.Id, d.Name, d.Surname, d.TelephoneNumber, d.Jmbg, d.Gender, d.BirthdayDate, d.Adress, d.SpecializationType, d.Shift, d.Vacation);
                 doctors.Add(doctor);
 
             }
             return doctors;
+        }
+
+        public List<DoctorDTO> doctorInShift(ShiftType type)
+        {
+            List<DoctorDTO> doctors = new List<DoctorDTO>();
+            List<Doctor> founded = doctorService.doctorsInShift(type);
+            foreach (Doctor d in founded)
+            {
+                DoctorDTO doctor = new DoctorDTO(d.Id, d.Name, d.Surname, d.TelephoneNumber, d.Jmbg, d.Gender, d.BirthdayDate, d.Adress, d.SpecializationType, d.Shift, d.Vacation);
+                doctors.Add(doctor);
+            }
+            return doctors;
+
         }
     }
 }
