@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.FileStorage.Interfaces
 {
-    interface IRecipeFileStorage : GenericRepository<Recipe>
+    public interface IRecipeFileStorage : GenericRepository<Recipe>
     {
     }
 }

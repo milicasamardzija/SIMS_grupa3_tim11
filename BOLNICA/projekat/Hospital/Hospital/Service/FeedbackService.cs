@@ -13,9 +13,10 @@ namespace Hospital.Service
     {
 
         private IFeedbackFileStorage storage;
-        public FeedbackService()
+
+        public FeedbackService(IFeedbackFileStorage storage)
         {
-            storage = new FeedbackFileStorage("./../../../../Hospital/files/storageFeedback.json");
+            this.storage = storage;
         }
 
 

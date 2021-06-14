@@ -1,4 +1,5 @@
-﻿using Hospital.Model;
+﻿using Hospital.FileStorage;
+using Hospital.Model;
 using Hospital.Service;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,11 @@ namespace Hospital.Controller
 {
    public  class FeedbackController
     {
-        private FeedbackService service ;
+        private FeedbackService service;
         public FeedbackController()
         {
 
-            service = new FeedbackService();
+            service = new FeedbackService(new FeedbackFileStorage("./../../../../Hospital/files/storageFeedback.json"));
 
         }
 
