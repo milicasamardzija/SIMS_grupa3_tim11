@@ -38,9 +38,9 @@
             TextElement.Foreground="#FF0852AE" />
         <DataGrid
             x:Name="lekari"
-            Width="325"
+            Width="366"
             Height="137"
-            Margin="122,46,0,0"
+            Margin="95,49,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
@@ -58,6 +58,10 @@
                     Width="120"
                     Binding="{Binding Name}"
                     Header="Specijalizacija" />
+                <DataGridTextColumn
+                    Width="100"
+                    Binding="{Binding Id}"
+                    Header="Id" />
             </DataGrid.Columns>
         </DataGrid>
         <DatePicker
@@ -71,7 +75,7 @@
         <Button
             Width="100"
             Height="29"
-            Margin="347,219,0,0"
+            Margin="361,219,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="nadjiSmenu"

@@ -33,7 +33,7 @@ namespace Hospital.Controller
         {
             Doctor doctor = new Doctor(chocenDoctor.Id, chocenDoctor.Name, chocenDoctor.Surname, chocenDoctor.TelephoneNumber, chocenDoctor.Jmbg, chocenDoctor.Gender, chocenDoctor.BirthdayDate, chocenDoctor.Adress, chocenDoctor.Type, chocenDoctor.Shift, chocenDoctor.Vacation);
             ScheduleShift newShift = new ScheduleShift(shift.Type, shift.Date);
-            shiftService.changeShift(doctor, newShift);
+            shiftService.changeShift2(doctor, newShift);
 
         }
         public String PredictDoctorShift(DoctorDTO chosenDoctor, DateTime date)

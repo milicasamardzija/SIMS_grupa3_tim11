@@ -219,6 +219,7 @@ namespace Hospital.Service
                 if(d.Id == doctor.Id)
                 {
                     d.Shift.ScheduledShifts.Add(shift);
+                    break;
                 }
             }
               otkaziTermine(doctor.Id, shift);
@@ -255,15 +256,15 @@ namespace Hospital.Service
             List<Checkup> found = new List<Checkup>();
             foreach(Checkup c in allCheckups)
             {
-                if(c.IdDoctor == idDoctor && c.Date == shift.Date)
+                if(c.IdDoctor == idDoctor && c.Date.Date == shift.Date.Date)
                 {
-                    if (c.Date < end && c.Date > start)
+                    if ( c.Date > end || c.Date < start)   //ako nije u opsegu 
                     {
                         found.Add(c);
                         checkupStorage.DeleteById(c.Id);
-                        Notifications note = new Notifications("obavestenje", "Termin u " + c.Date + "je otkazan", DateTime.Now, notificationsService.generisiId(), "pacijent", c.IdPatient);
+                        Notifications note = new Notifications("obavestenje", "Vas termin u " + c.Date + " je otkazan.", DateTime.Now, notificationsService.generisiId(), "pacijent", c.IdPatient);
                         notificationsService.createNotificationForPatient(note);
-                        MessageBox.Show("Termin je otkazan i pacijent je obavesten");
+                      
                     }
                 }
             }

@@ -30,7 +30,7 @@ namespace Hospital
             InitializeComponent();
             this.DataContext = this;
             controller = new NotificationsController();
-            listNotification = loadMyNotifications("Sekretar");
+            listNotification = loadMyNotifications("pacijent");
           
         }
   
