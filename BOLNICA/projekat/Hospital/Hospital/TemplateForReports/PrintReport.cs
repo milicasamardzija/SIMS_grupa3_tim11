@@ -13,19 +13,14 @@ namespace Hospital.TemplateForReports
 {
     public abstract class PrintReport
     {
-   
-
         public abstract void CreateDocument(DateTime start, DateTime finish);
-
-      
         public abstract void SaveReport();
         public abstract void PrintNote();
 
-        //ova metoda se ne menja, uvek mora ovako da izgleda
+      
         public  void generateReport(DateTime dateStart, DateTime dateEnd)
         {
             CreateDocument(dateStart, dateEnd);
-     
             SaveReport();
             PrintNote();
 

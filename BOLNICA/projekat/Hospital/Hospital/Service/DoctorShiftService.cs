@@ -138,7 +138,24 @@ namespace Hospital.Service
             {
                 ScheduleShift s = new ScheduleShift(countDate, ShiftType.free);
                 shifts.Add(s);
-            } 
+            }
+            //otkazujem termine ako ima u tom periodu 
+            List<Checkup> allCheckups = checkupStorage.GetAll();
+            foreach (Checkup c in allCheckups)
+            {
+                if(c.IdDoctor == doctor.Id)
+                {
+                    if(c.Date.Date > start.Date.Date && c.Date < end.Date)
+                    {
+                        checkupStorage.DeleteById(c.Id);
+                        Notifications note = new Notifications("obavestenje", "Vas termin u " + c.Date + " je otkazan. Lekar na odmoru.", DateTime.Now, notificationsService.generisiId(), "pacijent", c.IdPatient);
+                        notificationsService.createNotificationForPatient(note);
+                       
+                    }
+                }
+            }
+
+
 
             foundedDoctor.Shift.ScheduledShifts.Equals(shifts);
           

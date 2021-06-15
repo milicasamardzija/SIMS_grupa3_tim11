@@ -69,7 +69,7 @@
             GridLinesVisibility="None"
             ItemsSource="{Binding listNotification}"
             RowHeight="40"
-            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.HorizontalScrollBarVisibility="Visible"
             ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <DataGrid.Columns>
 

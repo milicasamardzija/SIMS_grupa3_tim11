@@ -15,7 +15,7 @@ namespace Hospital.Model
     {
         public NotificationsFileStorage(String filePath) : base(filePath) { }
 
-        //dodala da svako moze da ocita svoje 
+       
         public List<Notifications> FindByPerson(String person)
         {
             List<Notifications> allNotifications = GetAll();

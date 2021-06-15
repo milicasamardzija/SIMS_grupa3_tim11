@@ -239,19 +239,16 @@
     <Compile Include="DTO\RoomRenovationDTO.cs" />
     <Compile Include="Controller\PatientController.cs" />
     <Compile Include="DTO\PatientDTO.cs" />
-
     <Compile Include="DTO\RoomSeparateDTO.cs" />
     <Compile Include="DTO\SurveyDTO.cs" />
     <Compile Include="FileStorage\CheckupDataBase.cs" />
     <Compile Include="FileStorage\CheckupDataBaseFactory.cs" />
     <Compile Include="FileStorage\CheckupFileFactory.cs" />
-
     <Compile Include="DTO\ScheduleShiftDTO.cs" />
     <Compile Include="DTO\ShiftDTO.cs" />
     <Compile Include="DTO\SurveyDTO.cs" />
     <Compile Include="DTO\VacationDTO .cs" />
     <Compile Include="Model\Vacation.cs" />
-
     <Compile Include="FileStorage\FeedbackFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\CheckupFactory.cs" />
     <Compile Include="FileStorage\Interfaces\IAlergensFileStorage.cs" />
@@ -275,27 +272,22 @@
     <Compile Include="FileStorage\Interfaces\MedicineIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\MedicineReviewIFileStorage.cs" />
     <Compile Include="FileStorage\Interfaces\RenovationIFileStorage.cs" />
-
     <Compile Include="FileStorage\RoomMergeFileStorage.cs" />
     <Compile Include="FileStorage\RoomSeparateFileStorage.cs" />
     <Compile Include="Model\ScheduleShift.cs" />
-
     <Compile Include="Model\Feedback.cs" />
     <Compile Include="Model\FeedbackType.cs" />
     <Compile Include="Model\ManagerNote.cs" />
     <Compile Include="Model\Note.cs" />
     <Compile Include="Model\Medicine\Review.cs" />
-
     <Compile Include="Model\Rooms\RoomMerge.cs" />
     <Compile Include="Model\Rooms\RoomSeparate.cs" />
     <Compile Include="MVVM\Command\RelayCommand.cs" />
     <Compile Include="MVVM\ModelView\ModelViewDodajProstoriju.cs" />
     <Compile Include="MVVM\ModelView\ModelViewIzmeniProstoriju.cs" />
     <Compile Include="MVVM\ModelView\ModelViewObavestenja.cs" />
-
     <Compile Include="Model\Shift.cs" />
     <Compile Include="Model\ShiftType.cs" />
-
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\DoctorShiftService.cs" />
     <Compile Include="Service\FeedbackService.cs" />
@@ -315,16 +307,12 @@
     <Compile Include="Service\RoomRenovationService.cs" />
     <Compile Include="Service\StaticInventoryMovemenetService.cs" />
     <Compile Include="Service\PatientService.cs" />
-
     <Compile Include="TemplateForReports\DoctorReportService.cs" />
     <Compile Include="TemplateForReports\ManagerReportService.cs" />
-    <Compile Include="TemplateForReports\PatientReportService.cs" />
     <Compile Include="TemplateForReports\PrintReport.cs" />
     <Compile Include="TemplateForReports\ReportController.cs" />
     <Compile Include="TemplateForReports\SecretaryReportService.cs" />
-
     <Compile Include="Service\VacationService.cs" />
-
     <Compile Include="View\DoctorUI\BolnickoLecenje.xaml.cs">
       <DependentUpon>BolnickoLecenje.xaml</DependentUpon>
     </Compile>

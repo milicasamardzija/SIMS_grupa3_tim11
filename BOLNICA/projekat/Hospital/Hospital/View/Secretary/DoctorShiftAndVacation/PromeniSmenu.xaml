@@ -44,7 +44,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
-            ItemsSource="{Binding sviLekari}">
+            ItemsSource="{Binding sviLekari}"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="100"
@@ -74,20 +76,26 @@
             RenderTransformOrigin="0.476,1.16" />
         <Button
             Width="100"
-            Height="29"
-            Margin="347,379,0,0"
+            Height="32"
+            Margin="370,368,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="sacuvajBtn"
-            Content="Sacuvaj" />
+            Content="Sacuvaj"
+            FontSize="15"
+            TextElement.FontWeight="Bold"
+            TextElement.Foreground="#FF0852AE" />
         <Button
-            Width="75"
+            Width="87"
             Height="31"
-            Margin="32,379,0,0"
+            Margin="32,368,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="izadjiBtn"
-            Content="Izadji" />
+            Content="Izadji"
+            FontSize="15"
+            TextElement.FontWeight="Bold"
+            TextElement.Foreground="#FF0852AE" />
         <Label
             Margin="291,221,0,0"
             HorizontalAlignment="Left"

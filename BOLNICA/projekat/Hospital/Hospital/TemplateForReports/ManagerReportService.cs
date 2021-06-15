@@ -27,7 +27,6 @@ namespace Hospital.TemplateForReports
         public PdfDocument document = new PdfDocument();
         public override void CreateDocument(DateTime start, DateTime finish)
         {
-           // using (PdfDocument document = new PdfDocument())
         
                 PdfPage page = document.Pages.Add();
 

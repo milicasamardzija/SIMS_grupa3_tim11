@@ -18,11 +18,6 @@ namespace Hospital.Service
            this.storageRecipe = storageRecipe;
         }
 
-        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
-        {
-            DateTime newdate = (DateTime)(((DatePicker)sender).SelectedDate);
-        }
-
         public int generateID()
         {
             int returnRecipe = 0;

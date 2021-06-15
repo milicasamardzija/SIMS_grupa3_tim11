@@ -8,6 +8,7 @@
     Title="Otvori godisnji"
     Width="500"
     Height="450"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
         <Grid.Background>
@@ -37,13 +38,15 @@
             TextElement.Foreground="#FF0852AE" />
         <DataGrid
             x:Name="lekari"
-            Width="325"
+            Width="367"
             Height="137"
-            Margin="122,46,0,0"
+            Margin="95,46,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             AutoGenerateColumns="False"
-            ItemsSource="{Binding sviLekari}">
+            ItemsSource="{Binding sviLekari}"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="100"
@@ -55,8 +58,12 @@
                     Header="Prezime" />
                 <DataGridTextColumn
                     Width="120"
-                    Binding="{Binding Name}"
+                    Binding="{Binding Type}"
                     Header="Specijalizacija" />
+                <DataGridTextColumn
+                    Width="100"
+                    Binding="{Binding Id}"
+                    Header="Id" />
             </DataGrid.Columns>
         </DataGrid>
         <DatePicker
