@@ -22,7 +22,7 @@ namespace Hospital.Service
 
         public List<Notifications> findNotificationsByIdPatient(int id) => new List<Notifications>(storageNotifications.FindByIdPatient(id));
 
-        public int generisiId()
+        public int generateId()
         {
             int ret = 0;
             List<Notifications> allNotifications = storageNotifications.GetAll();

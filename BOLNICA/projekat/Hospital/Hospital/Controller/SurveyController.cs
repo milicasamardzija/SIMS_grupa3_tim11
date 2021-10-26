@@ -14,8 +14,6 @@ namespace Hospital.Controller
 
         private SurveyService service = new SurveyService();
 
-
-
         public List<SurveyDTO> getAll()
         {
             List<SurveyDTO> surveys = new List<SurveyDTO>();

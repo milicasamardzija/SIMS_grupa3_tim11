@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 
 namespace Hospital.Service
 {
-
- 
     class FunctionalityService
     {
         private FunctionalityFileStorage functionalitystorage;

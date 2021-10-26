@@ -148,7 +148,7 @@ namespace Hospital.Service
                     if(c.Date.Date > start.Date.Date && c.Date < end.Date)
                     {
                         checkupStorage.DeleteById(c.Id);
-                        Notifications note = new Notifications("obavestenje", "Vas termin u " + c.Date + " je otkazan. Lekar na odmoru.", DateTime.Now, notificationsService.generisiId(), "pacijent", c.IdPatient);
+                        Notifications note = new Notifications("obavestenje", "Vas termin u " + c.Date + " je otkazan. Lekar na odmoru.", DateTime.Now, notificationsService.generateId(), "pacijent", c.IdPatient);
                         notificationsService.createNotificationForPatient(note);
                        
                     }
@@ -166,7 +166,7 @@ namespace Hospital.Service
 
         }
 
-        public int preostaliDani(Doctor doctor)
+        public int lastFreeDays(Doctor doctor)
         {
            Doctor docr= doctorStorage.FindById(doctor.Id);
             int days = docr.FreeDays;
@@ -212,15 +212,11 @@ namespace Hospital.Service
             List<ScheduleShift> newList = new List<ScheduleShift>();
             newList.Add(shift);
             Shift s = new Shift(doctor.Shift.Type, doctor.Shift.LastUpdated, newList);
-          // MessageBox.Show("CHANGE SHIFT");
-          //  MessageBox.Show(foundedDoctor.Name);
-          //  MessageBox.Show(foundedDoctor.Surname);
-          //  MessageBox.Show(foundedDoctor.Id.ToString());
-            // foundedDoctor.Shift.ScheduledShifts.Add(shift);
+    
             Doctor proba = new Doctor(doctor.Id, doctor.Name, doctor.Surname, doctor.TelephoneNumber, doctor.Jmbg, doctor.Gender, doctor.BirthdayDate, doctor.Adress, doctor.SpecializationType, s, doctor.Vacation);
             doctorStorage.DeleteById(foundedDoctor.Id);
             doctorStorage.Save(proba);
-           // doctorStorage.SaveAll(all);
+       
             
         }
 
@@ -279,7 +275,7 @@ namespace Hospital.Service
                     {
                         found.Add(c);
                         checkupStorage.DeleteById(c.Id);
-                        Notifications note = new Notifications("obavestenje", "Vas termin u " + c.Date + " je otkazan.", DateTime.Now, notificationsService.generisiId(), "pacijent", c.IdPatient);
+                        Notifications note = new Notifications("obavestenje", "Vas termin u " + c.Date + " je otkazan.", DateTime.Now, notificationsService.generateId(), "pacijent", c.IdPatient);
                         notificationsService.createNotificationForPatient(note);
                       
                     }
@@ -288,10 +284,6 @@ namespace Hospital.Service
 
          
         }
-
-       
-  
-
 
         private String convertToShift(int predict)
         {

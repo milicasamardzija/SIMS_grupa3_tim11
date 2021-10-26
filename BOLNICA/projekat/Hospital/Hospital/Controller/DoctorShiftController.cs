@@ -51,11 +51,11 @@ namespace Hospital.Controller
 
 
         //za ispis koliko je jos slobodnih dana ostalo
-        public int preostaliDani (DoctorDTO doctor)
+        public int lastFreeDays (DoctorDTO doctor)
         {
             Doctor forDays = new Doctor(doctor.Id, doctor.Name, doctor.Surname, doctor.TelephoneNumber, doctor.Jmbg, doctor.Gender, doctor.BirthdayDate, doctor.Adress
                , doctor.Type, doctor.Shift, doctor.Vacation);
-            return shiftService.preostaliDani(forDays);
+            return shiftService.lastFreeDays(forDays);
         }
     }
 }

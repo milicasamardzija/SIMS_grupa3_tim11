@@ -26,8 +26,8 @@ namespace Hospital.Service
             return doctorStorage.GetAll();
         }
 
-
-        public int brojZaposlenihPoSpecijalizaciji(String specijalizacija)
+        //nije bila potrebna, bilo je dovoljno samo da se hardkoduju podaci
+        public int numberOfDoctorsBySpecialization(String specialization)
         {
             int count = 0;
             return count;

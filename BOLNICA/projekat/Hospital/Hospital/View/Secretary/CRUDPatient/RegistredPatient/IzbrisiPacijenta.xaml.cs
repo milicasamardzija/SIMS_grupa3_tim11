@@ -38,7 +38,7 @@ namespace Hospital
         private void potvrdiB(object sender, RoutedEventArgs e)
         {
            
-            patientController.obrisiPacijenta(selectedPatient);
+            patientController.deletePatient(selectedPatient);
             listPatient.RemoveAt(index);
             this.Close();
            

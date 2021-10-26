@@ -23,12 +23,8 @@ namespace Hospital.Service
         {
             Doctor doctorWithRequst  = doctorStorage.FindById(doctor.Id);
             List<DateTime> dates = new List<DateTime>();
-           
-
-
+        
         }
-
-
 
         
         public List<DateTime> daysFree()

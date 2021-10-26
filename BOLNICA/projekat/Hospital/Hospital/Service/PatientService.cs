@@ -43,7 +43,7 @@ namespace Hospital.Service
 
             return blockedPatients;
         }
-        public void odblokirajPacijenta(PatientDTO patient)
+        public void unblockPatient(PatientDTO patient)
         {
             List<Patient> patients = patientStorage.GetAll();
             foreach (Patient p in patients)
@@ -98,7 +98,7 @@ namespace Hospital.Service
             return registred;
         }
 
-        public void izmeniPacijenta(PatientDTO patient)
+        public void editPatient(PatientDTO patient)
         {
             List<Patient> allPatients = patientStorage.GetAll();
             foreach (Patient p in allPatients)
@@ -124,7 +124,7 @@ namespace Hospital.Service
             patientStorage.SaveAll(allPatients);
         }
 
-        public void obrisiPacijenta(PatientDTO patient)
+        public void deletePatient(PatientDTO patient)
         {
             foreach (Patient p in patientStorage.GetAll())
             {
@@ -136,7 +136,7 @@ namespace Hospital.Service
             }
         }
 
-        public int generisiId()
+        public int generateId()
         {
             int ret = 0;
             List<Patient> allPatients = patientStorage.GetAll();
@@ -157,7 +157,7 @@ namespace Hospital.Service
 
         public void save(PatientDTO patient)
         {
-            Patient newPatient = new Patient(patient.Name, patient.Surname, patient.TelephoneNumber, patient.Jmbg, patient.Gender, patient.BirthdayDate, generisiId(), patient.HealthCareCategory, patient.IdHealthCard, patient.Occupation, patient.Insurence, patient.Adress);
+            Patient newPatient = new Patient(patient.Name, patient.Surname, patient.TelephoneNumber, patient.Jmbg, patient.Gender, patient.BirthdayDate, generateId(), patient.HealthCareCategory, patient.IdHealthCard, patient.Occupation, patient.Insurence, patient.Adress);
             patientStorage.Save(newPatient);
         }
 

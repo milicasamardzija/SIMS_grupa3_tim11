@@ -28,7 +28,7 @@ namespace Hospital
             DataContext=this;
         }
 
-        public int generisiIdG()
+        public int generateIdGuest()
         {
             int ret = 100;
 
@@ -54,7 +54,7 @@ namespace Hospital
             PatientFileStorage pStorage = new PatientFileStorage("./../../../../Hospital/files/storagePatient.json");
             Patient newPatient = new Patient(imeText.Text, prezimeText.Text, brojTelText.Text, jmbgText.Text, (Gender)pol.SelectedIndex,
                 (DateTime)datum.SelectedDate,
-              generisiIdG());
+              generateIdGuest());
 
             pStorage.Save(newPatient);
            // listPatient.Add(newPatient);

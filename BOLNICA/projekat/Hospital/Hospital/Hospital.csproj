@@ -214,7 +214,6 @@
     <Compile Include="Controller\NotificationsController.cs" />
     <Compile Include="Controller\AnamnesisController.cs" />
     <Compile Include="Controller\InstructionController.cs" />
-    <Compile Include="Controller\MedicineController1.cs" />
     <Compile Include="Controller\RecipeController.cs" />
     <Compile Include="Controller\RoomSeparateController.cs" />
     <Compile Include="Controller\SurveyController.cs" />
@@ -297,7 +296,6 @@
     <Compile Include="Service\NotificationsService.cs" />
     <Compile Include="Service\AnamnesisService.cs" />
     <Compile Include="Service\InstructionService.cs" />
-    <Compile Include="Service\MedicineService1.cs" />
     <Compile Include="Service\RecipeService.cs" />
     <Compile Include="Service\RoomMergeService.cs" />
     <Compile Include="Service\RoomSeparateService.cs" />

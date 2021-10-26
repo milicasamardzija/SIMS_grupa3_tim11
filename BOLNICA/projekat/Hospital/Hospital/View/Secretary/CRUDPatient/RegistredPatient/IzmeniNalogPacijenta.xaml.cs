@@ -47,7 +47,7 @@ namespace Hospital
 
         private void izmenaPacijentaB(object sender, RoutedEventArgs e)
         {
-            patientContoller.izmeniPacijenta(patient);
+            patientContoller.editPatient(patient);
             this.Close();
             
          

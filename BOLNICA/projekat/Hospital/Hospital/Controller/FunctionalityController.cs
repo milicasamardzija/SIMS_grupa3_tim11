@@ -10,17 +10,12 @@ namespace Hospital.Controller
 {
     class FunctionalityController
     {
-
-
         private FunctionalityService service = new FunctionalityService();
 
         public void save(FunctionalityDTO functionality)
         {
             service.save(new Functionality( functionality.datumIzvrsavanja, functionality.idPacijenta, functionality.vrstaFunkcionalnosti));
         }
-
-       
-
 
         public List<FunctionalityDTO> getAll()
         {

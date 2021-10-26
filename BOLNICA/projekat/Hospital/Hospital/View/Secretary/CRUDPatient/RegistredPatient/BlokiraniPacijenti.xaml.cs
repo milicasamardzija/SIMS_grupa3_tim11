@@ -54,7 +54,7 @@ namespace Hospital.View.Secretary.CRUDPatient.RegistredPatient
         {
             if ((PatientDTO)PrikazPacijenata.SelectedItem != null)
             {
-                patientController.odblokirajPacijenta((PatientDTO)PrikazPacijenata.SelectedItem);
+                patientController.unblockPatient((PatientDTO)PrikazPacijenata.SelectedItem);
                 OdblokirajPacijenta odblokiranNote = new OdblokirajPacijenta(listBlocked, PrikazPacijenata.SelectedIndex);
                 odblokiranNote.Show();
 

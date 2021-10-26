@@ -24,9 +24,9 @@ namespace Hospital.Controller
             return patientService.loadBlockedPatients();
         }
 
-        public void odblokirajPacijenta(PatientDTO patient)
+        public void unblockPatient(PatientDTO patient)
         {
-            patientService.odblokirajPacijenta(patient);
+            patientService.unblockPatient(patient);
 
         }
 
@@ -58,14 +58,14 @@ namespace Hospital.Controller
             return patientService.loadRegistred();
         }
 
-        public void izmeniPacijenta(PatientDTO patient)
+        public void editPatient(PatientDTO patient)
         {
-            patientService.izmeniPacijenta(patient);
+            patientService.editPatient(patient);
         }
 
-        public void obrisiPacijenta(PatientDTO patient)
+        public void deletePatient(PatientDTO patient)
         {
-            patientService.obrisiPacijenta(patient);
+            patientService.deletePatient(patient);
         }
         
         public void save(PatientDTO newPatient)

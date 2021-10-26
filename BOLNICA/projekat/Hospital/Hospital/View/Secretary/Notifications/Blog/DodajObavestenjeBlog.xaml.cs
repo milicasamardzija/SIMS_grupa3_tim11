@@ -30,7 +30,7 @@ namespace Hospital.Sekretar
             myUpdate = list;
         }
 
-        public int generisiId()
+        public int generateId()
         {
             int ret = 1;
 
@@ -61,7 +61,7 @@ namespace Hospital.Sekretar
         }
         private void da(object sender, RoutedEventArgs e)
         {
-            Notice n = new Notice(sadrzaj.Text, generisiId());
+            Notice n = new Notice(sadrzaj.Text, generateId());
             storage.Save(n);
           
             myUpdate.Add(n); //da se vidi da postoji

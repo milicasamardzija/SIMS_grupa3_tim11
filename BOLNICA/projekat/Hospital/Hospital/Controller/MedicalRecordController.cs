@@ -14,8 +14,6 @@ namespace Hospital.Controller
   public class MedicalRecordController
     {
       
-       
-        
         private MedicalRecordService servis;
 
         public MedicalRecordController()

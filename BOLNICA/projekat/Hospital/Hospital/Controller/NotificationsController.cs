@@ -64,7 +64,7 @@ namespace Hospital.Controller
             return notifications;
         }
 
-        public int generisiId()
+        public int generateId()
         {
             int ret = 0;
 
@@ -86,12 +86,12 @@ namespace Hospital.Controller
 
         public void createNotification(NotificationsDTO notification)
         {
-            Notifications newNotification = new Notifications(notification.Title, notification.Content, notification.Date, generisiId(), notification.Person);
+            Notifications newNotification = new Notifications(notification.Title, notification.Content, notification.Date, generateId(), notification.Person);
             service.createNotification(newNotification);
         }
         public void createNotificationForPatient(NotificationsDTO notification)
         {
-            Notifications newNotification = new Notifications(notification.Title, notification.Content, notification.Date, generisiId(), notification.Person, notification.IdPatient);
+            Notifications newNotification = new Notifications(notification.Title, notification.Content, notification.Date, generateId(), notification.Person, notification.IdPatient);
             service.createNotificationForPatient(newNotification);
         }
 

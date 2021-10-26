@@ -16,7 +16,7 @@ namespace Hospital.Service
         public MedicalRecordService()
         {
             mrstorage = new MedicalRecordsFileStorage("./../../../../Hospital/files/storageMRecords.json");
-             mrStorage = new MedicalRecordsFileStorage("./../../../../Hospital/files/storageMRecords.json");
+            mrStorage = new MedicalRecordsFileStorage("./../../../../Hospital/files/storageMRecords.json");
             alergensFileStorage = new AlergensFileStorage("./../../../../Hospital/files/alergens.json");
         }
         public List<MedicalRecord> getAll()

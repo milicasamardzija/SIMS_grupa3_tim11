@@ -53,7 +53,7 @@ namespace Hospital.View.Secretary.DoctorShiftAndVacation
                 bool ret=  shiftController.addFreeShift((DoctorDTO)lekari.SelectedItem, (DateTime)datumOd.SelectedDate, (DateTime)datumDo.SelectedDate);
                 if(ret == true)
                 {
-                    int i = shiftController.preostaliDani((DoctorDTO)lekari.SelectedItem);
+                    int i = shiftController.lastFreeDays((DoctorDTO)lekari.SelectedItem);
                     MessageBox.Show("Ovom lekaru je ostalo jos " + i + " slobodnih dana");
                 }
                 else
